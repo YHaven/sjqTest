@@ -2,13 +2,27 @@
 <div class="container">
   <div class="content home" distance="55" v-pull-to-refresh="refresh">
     <v-layer></v-layer>
+    <top-title v-bind:parent-apptitle="apptitle"></top-title>
     <slider :banner="banner"></slider>
     <bar class="home-bar">
-      <bar-item path="/rank" label="排行榜" icon="rank"></bar-item>
-      <bar-item path="/user/tasks" label="我的任务" icon="task"></bar-item>
-      <bar-item path="/invite" label="邀请有奖" icon="invitefriend"></bar-item>
+      <bar-item path="/rank" label="男士入口" icon="invitefriend"></bar-item>
+      <bar-item path="/user/tasks" label="女士入口" icon="rank"></bar-item>
+      <bar-item path="/invite" label="设计师专栏" icon="invitefriend"></bar-item>
     </bar>
-      <v-content type="block-title" style="margin: 0 0 0.4rem;
+
+    <div class="webo-v">
+      <img src="/static/img/1.jpg">
+    </div>
+    <div class="second-title">限时抢购</div>
+    <ul class="buy-shop">
+      <li>
+        <img src="/static/img/1.jpg">
+      </li>
+      <li>
+        <img src="/static/img/1.jpg">
+      </li>
+    </ul>
+    <!-- <v-content type="block-title" style="margin: 0 0 0.4rem;
     -webkit-box-shadow: 0 .06rem 0 #ccc;box-shadow: 0 .06rem 0 #ccc;background-color: white;">
       <btn style="float:left;margin: .4rem 0 .3rem .6rem;border:0;color:#6d6d72;padding:0">
       任务推荐
@@ -45,13 +59,13 @@
           <span :style="{color: task.status === '1' ? 'orange': 'gray',fontWeight:'bold'}">{{task.read_profit}} 积分</span>
         </card>
       </v-card-container>
-    </div>
+    </div> -->
   </div>
-</div>
 </div>
 </template>
 
 <script>
+import TopTitle from '../components/TopTitle'
 import Slider from '../components/Slider'
 import Bar from '../components/Bar'
 import BarItem from '../components/BarItem'
@@ -62,6 +76,7 @@ import Card from '../components/CardItem'
 import VContent from '../components/Content'
 import List from '../components/List'
 import Item from '../components/ListItem'
+
 import $ from 'zepto'
 
 export default {
@@ -69,7 +84,9 @@ export default {
     data () {
       return this.$http.get('tasks.json')
       .then(({data: {code, message, data}}) => {
-        this.$set('tasks', data)
+        this.$set('tasks', data);
+        // this.$set('apptitle', data[0].title);
+        // this.$set('apptitle', '解忧大码');
       })
     }
   },
@@ -79,7 +96,8 @@ export default {
   data () {
     return {
       banner: [],
-      tasks: []
+      tasks: [],
+      apptitle: '解忧大码'
     }
   },
   computed: {
@@ -108,6 +126,7 @@ export default {
     }
   },
   components: {
+    TopTitle,
     Slider,
     Bar,
     BarItem,
@@ -144,5 +163,11 @@ export default {
 .home-bar .tab-item {
   height: 2.8rem;
   background-color: white;
+  color: #000;
 }
+
+.webo-v img{width:100%;height:8rem}
+.second-title{text-align: center;}
+.buy-shop{margin: 1rem;margin-bottom: 2.5rem;}
+.buy-shop img{width: 100%}
 </style>
