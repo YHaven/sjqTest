@@ -8,6 +8,6 @@
 .tab-item.active {
   color:  #ed8e07 !important;
 }
-.tab-item.inactive {
-}
+
+
 </style>

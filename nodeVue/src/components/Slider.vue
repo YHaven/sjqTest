@@ -34,7 +34,7 @@ export default {
 
 <style>
 #islider {
-  height: 10.5rem;
+  height: 6rem;
   width: 100%;
   overflow: hidden;
   position: relative;

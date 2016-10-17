@@ -2,26 +2,17 @@
 <div class="container">
   <div class="content home" distance="55" v-pull-to-refresh="refresh">
     <v-layer></v-layer>
-    <top-title v-bind:parent-apptitle="apptitle"></top-title>
+    <!-- <top-title v-bind:parent-apptitle="apptitle"></top-title> -->
+    <top-search></top-search>
     <slider :banner="banner"></slider>
     <bar class="home-bar">
-      <bar-item path="/rank" label="男士入口" icon="invitefriend"></bar-item>
-      <bar-item path="/user/tasks" label="女士入口" icon="rank"></bar-item>
-      <bar-item path="/invite" label="设计师专栏" icon="invitefriend"></bar-item>
+      <bar-item path="/rank" label="男士入口" icon="clothesfill"></bar-item>
+      <bar-item path="/user/tasks" label="女士入口" icon="goodsnewfill"></bar-item>
+      <bar-item path="/invite" label="新品" icon="creativefill"></bar-item>
+      <bar-item path="/invite" label="红人店" icon="medalfill"></bar-item>
     </bar>
-
-    <div class="webo-v">
-      <img src="/static/img/1.jpg">
-    </div>
-    <div class="second-title">限时抢购</div>
-    <ul class="buy-shop">
-      <li>
-        <img src="/static/img/1.jpg">
-      </li>
-      <li>
-        <img src="/static/img/1.jpg">
-      </li>
-    </ul>
+    <div class="second-title"><i class="iconfont icon-time"></i>限时抢购</div>
+    <shop-list class="shop-list"></shop-list>
     <!-- <v-content type="block-title" style="margin: 0 0 0.4rem;
     -webkit-box-shadow: 0 .06rem 0 #ccc;box-shadow: 0 .06rem 0 #ccc;background-color: white;">
       <btn style="float:left;margin: .4rem 0 .3rem .6rem;border:0;color:#6d6d72;padding:0">
@@ -65,7 +56,7 @@
 </template>
 
 <script>
-import TopTitle from '../components/TopTitle'
+import TopSearch from '../components/TopSearch'
 import Slider from '../components/Slider'
 import Bar from '../components/Bar'
 import BarItem from '../components/BarItem'
@@ -76,6 +67,7 @@ import Card from '../components/CardItem'
 import VContent from '../components/Content'
 import List from '../components/List'
 import Item from '../components/ListItem'
+import ShopList from '../components/ShopList'
 
 import $ from 'zepto'
 
@@ -126,7 +118,7 @@ export default {
     }
   },
   components: {
-    TopTitle,
+    TopSearch,
     Slider,
     Bar,
     BarItem,
@@ -136,7 +128,8 @@ export default {
     VContent,
     List,
     Item,
-    Btn
+    Btn,
+    ShopList
   }
 }
 </script>
@@ -163,11 +156,10 @@ export default {
 .home-bar .tab-item {
   height: 2.8rem;
   background-color: white;
-  color: #000;
+  color: #f7009d;
 }
 
 .webo-v img{width:100%;height:8rem}
-.second-title{text-align: center;}
-.buy-shop{margin: 1rem;margin-bottom: 2.5rem;}
-.buy-shop img{width: 100%}
+.second-title{text-align: center;height: 2rem;line-height: 2rem;}
+.shop-list{margin-bottom: 3rem;}
 </style>
