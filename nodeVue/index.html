@@ -9,6 +9,9 @@
     <link rel="bookmark" href="/favicon.ico"/>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <style type="text/css">
+      #app{max-width: 640px;margin: 0 auto;}
+    </style>
   </head>
   <body>
     <div id="app">
@@ -29,5 +32,16 @@
     }
     </script>
     <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+    <script type="text/javascript">
+      // 设置html页面根节点字体大小
+      var _html,view_width;
+      fontSize();
+      window.onresize = fontSize;
+      function fontSize(){
+        _html = document.getElementsByTagName('html')[0];
+        view_width = _html.getBoundingClientRect().width;
+        view_width>640?_html.style.fontSize = 640 / 16 + 'px':_html.style.fontSize = view_width / 16 + 'px';
+      }
+    </script>
   </body>
 </html>

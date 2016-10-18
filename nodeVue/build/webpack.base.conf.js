@@ -61,7 +61,7 @@ module.exports = {
       },
       {
         test: /\.html$/,
-        loader: 'vue-html'
+        loader: 'vue-html?minimize=false'
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,

@@ -1,10 +1,10 @@
 <template>
   <div class="page page-current">
       <bar v-if="isIndex">
-        <bar-item path="/home" label="首页" icon="home"></bar-item>
+        <bar-item path="/index" label="首页" icon="homefill"></bar-item>
         <!-- <bar-item path="/tasks" label="任务" icon="tasks"></bar-item> -->
-        <bar-item path="/list" label="时尚圈" icon="mytask"></bar-item>
-        <bar-item path="/user" label="专属" icon="me"></bar-item>
+        <bar-item path="/list" label="时尚圈" icon="attentionfavor"></bar-item>
+        <bar-item path="/user" label="专属" icon="people"></bar-item>
         <!-- <bar-item path="/more" label="更多" icon="more"></bar-item> -->
       </bar>
       <router-view transition="fade" transition-mode="out-in" keep-alive></router-view>

@@ -3,15 +3,23 @@
   <div class="content home" distance="55" v-pull-to-refresh="refresh" v-infinite-scroll="loadMore">
     <v-layer></v-layer>
     <!-- <top-title v-bind:parent-apptitle="apptitle"></top-title> -->
-    <top-search></top-search>
+    <top-search v-top-search="topSearch"></top-search>
     <slider :banner="banner"></slider>
     <bar class="home-bar">
-      <bar-item path="/rank" label="男士入口" icon="clothesfill"></bar-item>
-      <bar-item path="/user/tasks" label="女士入口" icon="goodsnewfill"></bar-item>
-      <bar-item path="/invite" label="新品" icon="creativefill"></bar-item>
-      <bar-item path="/invite" label="红人店" icon="medalfill"></bar-item>
+      <a class="tab-item" href="/rank">
+        <i class="man-in"></i>
+      </a>
+      <a class="tab-item" href="/user/tasks">
+        <i class="women-in"></i>
+      </a>
+      <a class="tab-item" href="/invite">
+        <i class="new-in"></i>
+      </a>
+      <a class="tab-item" href="/invite">
+        <i class="hot-in"></i>
+      </a>
     </bar>
-    <div class="second-title"><i class="iconfont icon-time"></i>限时抢购</div>
+    <div class="second-title"><i class="iconfont icon-time"></i>品牌限时特惠</div>
     <!-- <shop-list class="shop-list"></shop-list> -->
     <!-- <v-content type="block-title" style="margin: 0 0 0.4rem;
     -webkit-box-shadow: 0 .06rem 0 #ccc;box-shadow: 0 .06rem 0 #ccc;background-color: white;">
@@ -152,6 +160,9 @@ export default {
         this.loading = false
         loader.hide()
       }, 1500)
+    },
+    topSearch(){
+      alert('开发中...');
     }
   },
   components: {
@@ -186,10 +197,11 @@ export default {
   margin-bottom: 2.2rem;
 }
 .home-bar {
-  background: #efeff4;
-  height: 2.8rem;
+  background: #fff;
   position: relative;
-  box-shadow: 0 .01rem .05rem rgba(0,0,0,.3);
+  /*box-shadow: 0 .01rem .05rem rgba(0,0,0,.3);*/
+  margin-bottom: .5rem;
+  margin-top: .5rem;
 }
 .home-bar .tab-item {
   height: 2.8rem;
@@ -197,7 +209,7 @@ export default {
   color: #f7009d;
 }
 
-.webo-v img{width:100%;height:8rem}
+.webo-v img{width:100%;height:9rem}
 .second-title{text-align: center;height: 2rem;line-height: 2rem;}
 .shop-list{margin-bottom: 3rem;}
 </style>

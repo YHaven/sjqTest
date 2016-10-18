@@ -15,7 +15,7 @@
 export default {
   ready () {
     setTimeout(() => {
-      this.$route.router.go({path: '/home', replace: true})
+      this.$route.router.go({path: '/index', replace: true})
     }, 1500)
   }
 }
