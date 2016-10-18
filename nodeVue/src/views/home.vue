@@ -1,6 +1,6 @@
 <template>
 <div class="container">
-  <div class="content home" distance="55" v-pull-to-refresh="refresh">
+  <div class="content home" distance="55" v-pull-to-refresh="refresh" v-infinite-scroll="loadMore">
     <v-layer></v-layer>
     <!-- <top-title v-bind:parent-apptitle="apptitle"></top-title> -->
     <top-search></top-search>
@@ -12,7 +12,7 @@
       <bar-item path="/invite" label="红人店" icon="medalfill"></bar-item>
     </bar>
     <div class="second-title"><i class="iconfont icon-time"></i>限时抢购</div>
-    <shop-list class="shop-list"></shop-list>
+    <!-- <shop-list class="shop-list"></shop-list> -->
     <!-- <v-content type="block-title" style="margin: 0 0 0.4rem;
     -webkit-box-shadow: 0 .06rem 0 #ccc;box-shadow: 0 .06rem 0 #ccc;background-color: white;">
       <btn style="float:left;margin: .4rem 0 .3rem .6rem;border:0;color:#6d6d72;padding:0">
@@ -23,9 +23,9 @@
         v-link="{path: '/tasks', replace: true}">
         更多任务
       </btn>
-    </v-content>
+    </v-content> -->
     <div class="card-container">
-      <v-card-container v-for="task in tasks | orderBy 'created' -1"
+      <v-card-container v-for="task in tasks | orderBy 'created' 1"
       :style="{backgroundColor: task.status === '1' ? 'white': 'rgb(224, 224, 224)' }">
         <card type="content">
           <list type="media">
@@ -50,7 +50,7 @@
           <span :style="{color: task.status === '1' ? 'orange': 'gray',fontWeight:'bold'}">{{task.read_profit}} 积分</span>
         </card>
       </v-card-container>
-    </div> -->
+    </div>
   </div>
 </div>
 </template>
@@ -69,6 +69,7 @@ import List from '../components/List'
 import Item from '../components/ListItem'
 import ShopList from '../components/ShopList'
 
+import {loader} from '../util/util'
 import $ from 'zepto'
 
 export default {
@@ -89,7 +90,8 @@ export default {
     return {
       banner: [],
       tasks: [],
-      apptitle: '解忧大码'
+      apptitle: '解忧大码',
+      loading: false
     }
   },
   computed: {
@@ -100,6 +102,38 @@ export default {
   methods: {
     refresh () {
       setTimeout(function () {
+        
+        this.$http.get('tasks.json')
+        .then(({data: {code, message, data}}) => {
+          console.log(data);
+          this.$set('tasks', data);
+          // this.$set('apptitle', data[0].title);
+          // this.$set('apptitle', '解忧大码');
+        });
+        // let num = this.length + 1
+        // let title = `标题${num}`
+        // let adv = `abc${num}`
+        // let time = (new Date()).getTime() / 1000
+        // let point = 100 + num - 1
+        // this.tasks.push({
+        //   id: num,
+        //   title: title,
+        //   advertiser: adv,
+        //   status: '1',
+        //   created: time,
+        //   read_profit: point
+        // })
+        $.pullToRefreshDone('.pull-to-refresh-content')
+      }.bind(this), 1500)
+    },
+    loadMore () {
+      if (this.loading) {
+        return
+      }
+      this.loading = true
+      let scroller = $('.content')
+      loader.show()
+      setTimeout(() => {
         let num = this.length + 1
         let title = `标题${num}`
         let adv = `abc${num}`
@@ -113,8 +147,11 @@ export default {
           created: time,
           read_profit: point
         })
-        $.pullToRefreshDone('.pull-to-refresh-content')
-      }.bind(this), 1500)
+        let scrollTop = scroller[0].scrollHeight - scroller.height() - 20
+        scroller.scrollTop(scrollTop)
+        this.loading = false
+        loader.hide()
+      }, 1500)
     }
   },
   components: {
@@ -146,6 +183,7 @@ export default {
 }
 .home {
   top: -2.2rem !important;
+  margin-bottom: 2.2rem;
 }
 .home-bar {
   background: #efeff4;

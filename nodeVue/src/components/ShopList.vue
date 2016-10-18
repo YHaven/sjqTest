@@ -71,7 +71,7 @@ export default {
 }
 .list {
   bottom: 2.5rem;
-  height: 90%;
+  height: 75%;
   overflow-y:scroll; 
 }
 .s-title{width: 100%;}

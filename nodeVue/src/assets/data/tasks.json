@@ -21,6 +21,16 @@
       "type": "1",
       "read_profit": "5",
       "created": "1452094126"
+    },
+    {
+      "tid": "3",
+      "title": "看看你22？",
+      "thumbnail": "adv.jpg",
+      "advertiser": "abc2",
+      "status": "0",
+      "type": "1",
+      "read_profit": "5",
+      "created": "1452094126"
     }
   ]
 }
