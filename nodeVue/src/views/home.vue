@@ -6,19 +6,20 @@
     <top-search v-top-search="topSearch"></top-search>
     <slider :banner="banner"></slider>
     <bar class="home-bar">
-      <a class="tab-item" href="/rank">
+      <a class="tab-item" v-link="{path: '/rank'}">
         <i class="man-in"></i>
       </a>
-      <a class="tab-item" href="/user/tasks">
+      <a class="tab-item" v-link="{path: '/user/tasks'}">
         <i class="women-in"></i>
       </a>
-      <a class="tab-item" href="/invite">
+      <a class="tab-item" v-link="{path: '/invite'}">
         <i class="new-in"></i>
       </a>
-      <a class="tab-item" href="/invite">
+      <a class="tab-item" v-link="{path: '/invite'}">
         <i class="hot-in"></i>
       </a>
     </bar>
+    <router-view transition="fade" transition-mode="out-in" keep-alive></router-view>
     <div class="second-title"><i class="iconfont icon-time"></i>品牌限时特惠</div>
     <!-- <shop-list class="shop-list"></shop-list> -->
     <!-- <v-content type="block-title" style="margin: 0 0 0.4rem;
@@ -35,7 +36,7 @@
     <div class="card-container">
       <v-card-container v-for="task in tasks | orderBy 'created' 1"
       :style="{backgroundColor: task.status === '1' ? 'white': 'rgb(224, 224, 224)' }">
-        <card type="content">
+        <!-- <card type="content">
           <list type="media">
               <li class="item-content">
                 <item type="media">
@@ -56,7 +57,10 @@
           <span style="margin-left: 1rem;padding: .1rem;border: 1px solid #929292;" :style="{color: task.status === '1' ? 'green': 'gray' }">{{task.status === '0' ? '结束' : '已领'}}</span>
           </div>
           <span :style="{color: task.status === '1' ? 'orange': 'gray',fontWeight:'bold'}">{{task.read_profit}} 积分</span>
-        </card>
+        </card> -->
+        <div class="item-content" >
+          <img v-bind:src="task.detailLogo" alt="">
+        </div>
       </v-card-container>
     </div>
   </div>
@@ -83,9 +87,16 @@ import $ from 'zepto'
 export default {
   route: {
     data () {
-      return this.$http.get('tasks.json')
-      .then(({data: {code, message, data}}) => {
-        this.$set('tasks', data);
+      // return this.$http.get('/static/data/tasks.json')
+      // .then(({data: {code, message, data}}) => {
+      //   this.$set('tasks', data);
+      //   // this.$set('apptitle', data[0].title);
+      //   // this.$set('apptitle', '解忧大码');
+      // })
+      return this.$http.get('/main/index')
+      .then(({data: {success, info, data}}) => {
+        
+        this.$set('tasks', data.productList);
         // this.$set('apptitle', data[0].title);
         // this.$set('apptitle', '解忧大码');
       })
@@ -111,13 +122,14 @@ export default {
     refresh () {
       setTimeout(function () {
         
-        this.$http.get('tasks.json')
-        .then(({data: {code, message, data}}) => {
-          console.log(data);
-          this.$set('tasks', data);
-          // this.$set('apptitle', data[0].title);
-          // this.$set('apptitle', '解忧大码');
-        });
+      this.$http.get('/main/index')
+      .then(({data: {success, info, data}}) => {
+        
+        this.$set('tasks', data.productList)
+        // this.$set('apptitle', data[0].title);
+        // this.$set('apptitle', '解忧大码');
+      })
+
         // let num = this.length + 1
         // let title = `标题${num}`
         // let adv = `abc${num}`
@@ -142,19 +154,14 @@ export default {
       let scroller = $('.content')
       loader.show()
       setTimeout(() => {
-        let num = this.length + 1
-        let title = `标题${num}`
-        let adv = `abc${num}`
-        let time = (new Date()).getTime() / 1000
-        let point = 100 + num - 1
-        this.tasks.push({
-          id: num,
-          title: title,
-          advertiser: adv,
-          status: '1',
-          created: time,
-          read_profit: point
+        this.$http.get('/main/index')
+          .then(({data: {success, info, data}}) => {
+            var productList = data.productList
+            for (var i = 0; i < productList.length; i++) {
+              this.tasks.push(productList[i]);
+            };
         })
+      
         let scrollTop = scroller[0].scrollHeight - scroller.height() - 20
         scroller.scrollTop(scrollTop)
         this.loading = false
@@ -212,4 +219,7 @@ export default {
 .webo-v img{width:100%;height:9rem}
 .second-title{text-align: center;height: 2rem;line-height: 2rem;}
 .shop-list{margin-bottom: 3rem;}
+
+.item-content{max-height:6rem; }
+.item-content img{max-width: 100%;}
 </style>

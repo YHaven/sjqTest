@@ -7,12 +7,12 @@ export default function (router) {
         require(['./views/welcome'], resolve)
       }
     },
-    '/main/index': {
+    '/main': {
       component (resolve) {
         require(['./views/welcome'], resolve)
       }
     },
-    '/index': {
+    '/home': {
       component (resolve) {
         require(['./views/home'], resolve)
       }
