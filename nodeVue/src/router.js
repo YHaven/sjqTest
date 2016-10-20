@@ -12,6 +12,11 @@ export default function (router) {
         require(['./views/welcome'], resolve)
       }
     },
+    '/login': {
+      component (resolve) {
+        require(['./views/login'], resolve)
+      }
+    },
     '/home': {
       component (resolve) {
         require(['./views/home'], resolve)
@@ -91,8 +96,11 @@ export default function (router) {
     if (toPath.replace(/[^/]/g, '').length > 1 ) {
       router.app.isIndex = false
     }
-    if(toPath.indexOf('/index')>0){
+    if(toPath.indexOf('/home')>=0){
       router.app.isIndex = true
+    }
+    if(toPath.indexOf('/login')>=0){
+      router.app.isIndex = false
     }
     else {
       let depath = toPath === '/' || toPath === '/invite' || toPath === '/rank'
