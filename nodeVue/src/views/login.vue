@@ -1,8 +1,9 @@
 <template>
   <div class="container">
+    <top-title v-bind:parent-apptitle="apptitle"></top-title>
     <form class="loginForm">
-      <input type="text" placeholder="手机/昵称/邮箱">
-      <input type="text" placeholder="密码">
+      <input type="text" placeholder="手机/昵称/邮箱" name="username" v-model="userName">
+      <input type="text" placeholder="密码" name="password" v-model="password">
       <v-slider-captcha></v-slider-captcha>
       <div class="three-login clearfix">
         <h2>第三方帐号快速登录</h2>
@@ -22,6 +23,7 @@
 <script>
 
 import VSliderCaptcha from '../components/SliderCaptcha'
+import TopTitle from '../components/TopTitle'
 
 import {loader} from '../util/util'
 import $ from 'zepto'
@@ -33,13 +35,31 @@ export default {
     //   this.$route.router.go({path: '/home', replace: true})
     // }, 1500)
   },
+  data () {
+    return {
+      loginUrl : '',
+      formParams: {},
+      userName:'',
+      password:'',
+      apptitle: '登录'
+    }
+  },
+  methods: {
+    submitForm(){
+      this.$http.post(this.loginUrl, this.formParams)
+        .then((response) => {
+          console.log(response)
+        })
+    }
+  },
   components: {
-    VSliderCaptcha
+    VSliderCaptcha,
+    TopTitle
   }
 }
 </script>
 
-<style scoped>
+<style >
   .loginForm{padding-top: 1rem;}
   .loginForm input{border: 0px;border-bottom: 1px solid #ddd;height: 2rem;width: 100%;margin-bottom: 1rem;padding-left: 1rem;padding-right: 1rem;}
   .three-login {margin-top: 1rem;}

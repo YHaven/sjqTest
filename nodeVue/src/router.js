@@ -86,7 +86,23 @@ export default function (router) {
       component (resolve) {
         require(['./views/more/about'], resolve)
       }
+    },
+    '/fashion/recommend': {
+      component (resolve) {
+        require(['./views/fashion/recommend'], resolve)
+      }
+    },
+    '/fashion/concern': {
+      component (resolve) {
+        require(['./views/fashion/concern'], resolve)
+      }
+    },
+    '/fashion/topic': {
+      component (resolve) {
+        require(['./views/fashion/topic'], resolve)
+      }
     }
+
   })
 
   router.beforeEach(({to, from, next}) => {
@@ -101,6 +117,9 @@ export default function (router) {
     }
     if(toPath.indexOf('/login')>=0){
       router.app.isIndex = false
+    }
+    if(toPath.indexOf('/fashion')>=0){
+      router.app.isIndex = true
     }
     else {
       let depath = toPath === '/' || toPath === '/invite' || toPath === '/rank'
