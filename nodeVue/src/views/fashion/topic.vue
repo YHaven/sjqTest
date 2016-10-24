@@ -145,7 +145,8 @@ export default {
 .fashion .cardTopicItem{width:100%;height:4.75rem;margin: 0px;padding: .25rem;box-shadow:none;margin-bottom: .75rem;}
 .fashion .cardTopicItem img{height: 4.75rem;width: 4.375rem;float: left;}
 .fashion .cardTopicItem .right{margin-left: 4.375rem;height: 4.75rem;text-align: center;border-bottom: 1px solid #000;border-top: 1px solid #000;}
-.fashion .cardTopicItem .right .r-t{font-size: .9rem;margin-top: .2rem;}
+.fashion .cardTopicItem .right .r-t{font-size: .9rem;margin-top: .2rem;font-weight: 700;}
+.fashion .cardTopicItem .right .r-c{font-size: .6rem;margin-top: .2rem;color: #aaa;}
 .fashion .cardTopicItem .right .r-h{text-align: right;}
 
 .webo-v img{width:100%;height:9rem}
