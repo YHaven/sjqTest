@@ -14,7 +14,7 @@
 		methods: {
 			goback(){
 				// console.log(router)
-				router.go({path:'home'})
+				router.go({path:'/home'})
 			}
 		}
     }
