@@ -12,53 +12,29 @@ export default {
     }
   },
   ready () {
-    // this.$http.get('/static/data/bannertasks.json')
-    this.$http.get('/main/index')
-    .then(function(response) {
-            let imgs = []
-            let bannerData = response.data.data.banner
-            for (let i = 0; i < bannerData.length; i++) {
-              var imgcontent = {};
-              imgcontent.content = bannerData[i].imgUrl
-              imgs.push(imgcontent)
-            }
-            let self = this
-            this.slider = new ISlider({
-              dom: self.$el,
-              data: imgs,
-              isVertical: false,
-              isLooping: true,
-              isDebug: false,
-              isAutoplay: true
-            })
-        }, function(response) {
-            // handle error
-        }
-
-      );
-    // this.$http.get('/static/data/banner.json')
-    // .then(({data: {code, message, data}}) => {
-    //   let imgs = []
-    //   for (let i = 0; i < data.length; i++) {
-    //     imgs.push(data[i])
-    //   }
-    //   let self = this
-    //   this.slider = new ISlider({
-    //     dom: self.$el,
-    //     data: imgs,
-    //     isVertical: false,
-    //     isLooping: true,
-    //     isDebug: false,
-    //     isAutoplay: true
-    //   })
-    // })
+    this.$http.get('/static/data/banner.json')
+    .then(({data: {code, message, data}}) => {
+      let imgs = []
+      for (let i = 0; i < data.length; i++) {
+        imgs.push(data[i])
+      }
+      let self = this
+      this.slider = new ISlider({
+        dom: self.$el,
+        data: imgs,
+        isVertical: false,
+        isLooping: true,
+        isDebug: false,
+        isAutoplay: true
+      })
+    })
   }
 }
 </script>
 
 <style>
 #islider {
-  height: 8.15rem;
+  height: 5rem;
   width: 100%;
   overflow: hidden;
   position: relative;

@@ -2,8 +2,6 @@
 <div class="container">
   <div class="content home" distance="55" v-pull-to-refresh="refresh" v-infinite-scroll="loadMore">
     <v-layer></v-layer>
-    <!-- <top-title v-bind:parent-apptitle="apptitle"></top-title> -->
-    <top-search v-top-search="topSearch"></top-search>
     <slider :banner="banner"></slider>
     <bar class="home-bar">
       <a class="tab-item" v-link="{path: '/rank'}">
@@ -18,9 +16,10 @@
       <a class="tab-item" v-link="{path: '/invite'}">
         <i class="hot-in"></i>
       </a>
+      <a class="tab-item" v-link="{path: '/invite'}">
+        <i class="icon icon-roundright"></i>
+      </a>
     </bar>
-    <router-view transition="fade" transition-mode="out-in" keep-alive></router-view>
-    <div class="second-title"><i class="iconfont icon-time"></i>品牌限时特惠</div>
     <!-- <shop-list class="shop-list"></shop-list> -->
     <!-- <v-content type="block-title" style="margin: 0 0 0.4rem;
     -webkit-box-shadow: 0 .06rem 0 #ccc;box-shadow: 0 .06rem 0 #ccc;background-color: white;">
@@ -68,7 +67,6 @@
 </template>
 
 <script>
-import TopSearch from '../components/TopSearch'
 import Slider from '../components/Slider'
 import Bar from '../components/Bar'
 import BarItem from '../components/BarItem'
@@ -173,7 +171,6 @@ export default {
     }
   },
   components: {
-    TopSearch,
     Slider,
     Bar,
     BarItem,
