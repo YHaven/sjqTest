@@ -27,6 +27,7 @@ Vue.use(VueResource)
 // Vue.http.options.root = process.env.NODE_ENV === 'development' ? '/src/assets/data' : '/static/data'
 Vue.http.options.emulateJSON = true
 
+
 // Directive
 Vue.directive('pullToRefresh', pullToRefresh)
 Vue.directive('infiniteScroll', infiniteScroll)

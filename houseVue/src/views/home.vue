@@ -3,23 +3,13 @@
   <div class="content home" distance="55" v-pull-to-refresh="refresh" v-infinite-scroll="loadMore">
     <v-layer></v-layer>
     <slider :banner="banner"></slider>
-    <bar class="home-bar">
-      <a class="tab-item" v-link="{path: '/rank'}">
-        <i class="man-in"></i>
-      </a>
-      <a class="tab-item" v-link="{path: '/user/tasks'}">
-        <i class="women-in"></i>
-      </a>
-      <a class="tab-item" v-link="{path: '/invite'}">
-        <i class="new-in"></i>
-      </a>
-      <a class="tab-item" v-link="{path: '/invite'}">
-        <i class="hot-in"></i>
-      </a>
-      <a class="tab-item" v-link="{path: '/invite'}">
-        <i class="icon icon-roundright"></i>
-      </a>
-    </bar>
+      <bar v-if="isFashion" class="home-bar">
+        <bar-item path="/home" label="推荐" icon="appreciatefill"></bar-item>
+        <!-- <bar-item path="/tasks" label="任务" icon="tasks"></bar-item> -->
+        <bar-item path="/fashion/concern" label="小房子" icon="likefill"></bar-item>
+        <bar-item path="/fashion/topic" label="话题" icon="comment"></bar-item>
+        <!-- <bar-item path="/more" label="更多" icon="more"></bar-item> -->
+      </bar>
     <!-- <shop-list class="shop-list"></shop-list> -->
     <!-- <v-content type="block-title" style="margin: 0 0 0.4rem;
     -webkit-box-shadow: 0 .06rem 0 #ccc;box-shadow: 0 .06rem 0 #ccc;background-color: white;">
@@ -91,7 +81,7 @@ export default {
       //   // this.$set('apptitle', data[0].title);
       //   // this.$set('apptitle', '解忧大码');
       // })
-      return this.$http.get('/main/index')
+      return this.$http.get('/static/data/bannertasks.json')
       .then(({data: {success, info, data}}) => {
         
         this.$set('tasks', data.productList);
@@ -107,6 +97,7 @@ export default {
     return {
       banner: [],
       tasks: [],
+      isFashion: true,
       apptitle: '解忧大码',
       loading: false
     }
@@ -120,7 +111,7 @@ export default {
     refresh () {
       setTimeout(function () {
         
-      this.$http.get('/main/index')
+      this.$http.get('/static/data/bannertasks.json')
       .then(({data: {success, info, data}}) => {
         
         this.$set('tasks', data.productList)
@@ -152,7 +143,7 @@ export default {
       let scroller = $('.content')
       loader.show()
       setTimeout(() => {
-        this.$http.get('/main/index')
+        this.$http.get('/static/data/bannertasks.json')
           .then(({data: {success, info, data}}) => {
             var productList = data.productList
             for (var i = 0; i < productList.length; i++) {
@@ -207,11 +198,10 @@ export default {
   margin-bottom: .5rem;
   margin-top: .5rem;
 }
-.home-bar .tab-item {
-  height: 2.8rem;
-  background-color: white;
-  color: #f7009d;
-}
+
+
+
+
 
 .webo-v img{width:100%;height:9rem}
 .second-title{text-align: center;height: 2rem;line-height: 2rem;}
