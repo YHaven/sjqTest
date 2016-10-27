@@ -3,11 +3,19 @@
   <div class="content home" distance="55" v-pull-to-refresh="refresh" v-infinite-scroll="loadMore">
     <v-layer></v-layer>
     <slider :banner="banner"></slider>
-      <bar v-if="isFashion" class="home-bar">
-        <bar-item path="/home" label="推荐" icon="appreciatefill"></bar-item>
-        <!-- <bar-item path="/tasks" label="任务" icon="tasks"></bar-item> -->
-        <bar-item path="/fashion/concern" label="小房子" icon="likefill"></bar-item>
-        <bar-item path="/fashion/topic" label="话题" icon="comment"></bar-item>
+      <bar class="home-bar">
+        <a class="tab-item active" href="/home">
+          <span class="icon iconfont icon-appreciatefill"></span>
+          <span class="tab-label">推荐</span>
+        </a>
+        <a class="tab-item " href="/fashion/concern">
+          <span class="icon iconfont icon-likefill"></span>
+          <span class="tab-label">小房子</span>
+        </a>
+        <a class="tab-item " href="/fashion/topic">
+          <span class="icon iconfont icon-comment"></span>
+          <span class="tab-label">话题</span>
+        </a>
         <!-- <bar-item path="/more" label="更多" icon="more"></bar-item> -->
       </bar>
     <!-- <shop-list class="shop-list"></shop-list> -->
@@ -48,7 +56,12 @@
           <span :style="{color: task.status === '1' ? 'orange': 'gray',fontWeight:'bold'}">{{task.read_profit}} 积分</span>
         </card> -->
         <div class="item-content" >
-          <img v-bind:src="task.detailLogo" alt="">
+          <a href="javascript:;" class="head-img"><img src="{{task.headurl}}" alt=""></a>
+          <div class="info-content">
+            <a href="" class="info-author">{{task.author}}<span class="author-role">{{task.authorrole === 1 ? '管理员' : task.authorrole === 2 ? '会员' : '其他'}}</span><i class="icon iconfont {{task.authorsex === 1? 'icon-male' : 'icon-female'}}"></i></a>
+            <a href="" class="info-title">{{task.msginfo}}</a>
+          </div>
+          
         </div>
       </v-card-container>
     </div>
@@ -81,12 +94,9 @@ export default {
       //   // this.$set('apptitle', data[0].title);
       //   // this.$set('apptitle', '解忧大码');
       // })
-      return this.$http.get('/static/data/bannertasks.json')
-      .then(({data: {success, info, data}}) => {
-        
-        this.$set('tasks', data.productList);
-        // this.$set('apptitle', data[0].title);
-        // this.$set('apptitle', '解忧大码');
+      return this.$http.get('http://www.zhencome.com/plana/msg!list.action?vt=1&page=1&msgResource=3')
+      .then(({data: {status, page, datalist}}) => {
+        this.$set('tasks', datalist);
       })
     }
   },
@@ -97,6 +107,7 @@ export default {
     return {
       banner: [],
       tasks: [],
+      page:1,
       isFashion: true,
       apptitle: '解忧大码',
       loading: false
@@ -110,13 +121,11 @@ export default {
   methods: {
     refresh () {
       setTimeout(function () {
-        
-      this.$http.get('/static/data/bannertasks.json')
-      .then(({data: {success, info, data}}) => {
-        
-        this.$set('tasks', data.productList)
-        // this.$set('apptitle', data[0].title);
-        // this.$set('apptitle', '解忧大码');
+        this.page = 1
+        var page = '&page='+ this.page
+        this.$http.get('http://www.zhencome.com/plana/msg!list.action?vt=1&msgResource=3'+page)
+      .then(({data: {status, page, datalist}}) => {
+        this.$set('tasks', datalist);
       })
 
         // let num = this.length + 1
@@ -143,11 +152,12 @@ export default {
       let scroller = $('.content')
       loader.show()
       setTimeout(() => {
-        this.$http.get('/static/data/bannertasks.json')
-          .then(({data: {success, info, data}}) => {
-            var productList = data.productList
-            for (var i = 0; i < productList.length; i++) {
-              this.tasks.push(productList[i]);
+        this.page = this.page + 1
+        var page = '&page='+ this.page
+        this.$http.get('http://www.zhencome.com/plana/msg!list.action?vt=1&msgResource=3'+page)
+          .then(({data: {status, page, datalist}}) => {
+            for (var i = 0; i < datalist.length; i++) {
+              this.tasks.push(datalist[i]);
             };
         })
       
@@ -199,14 +209,13 @@ export default {
   margin-top: .5rem;
 }
 
+.item-content{height:3rem; }
+.item-content .head-img{width: 4rem;height: 3rem;display: block;float: left;}
+.item-content .head-img img{height: 100%;width: 100%;}
+.item-content .info-content{margin-left: 4.5rem;}
+.info-content .info-author{color: #333;display: block;}
+.info-author .author-role{margin-right: .3rem;margin-left: .3rem;background-color: #62ffc9;border-radius: 3px;color: #536160;font-size: 0.5rem;}
+.info-author .iconfont{color: #ff3136;}
+.info-content .info-title{color: #aaa;display: block;}
 
-
-
-
-.webo-v img{width:100%;height:9rem}
-.second-title{text-align: center;height: 2rem;line-height: 2rem;}
-.shop-list{margin-bottom: 3rem;}
-
-.item-content{max-height:6rem; }
-.item-content img{max-width: 100%;}
 </style>
