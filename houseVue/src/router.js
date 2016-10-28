@@ -87,6 +87,21 @@ export default function (router) {
         require(['./views/more/about'], resolve)
       }
     },
+    '/msg/house': {
+      component (resolve) {
+        require(['./views/msg/house'], resolve)
+      }
+    },
+    '/msg/topic': {
+      component (resolve) {
+        require(['./views/msg/topic'], resolve)
+      }
+    },
+    '/house/entry': {
+      component (resolve) {
+        require(['./views/house/entry'], resolve)
+      }
+    },
     '/fashion/recommend': {
       component (resolve) {
         require(['./views/fashion/recommend'], resolve)

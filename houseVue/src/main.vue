@@ -2,7 +2,7 @@
   <div class="page page-current">
       <bar v-if="isIndex">
         <bar-item path="/home" label="时尚圈" icon="attentionfavor"></bar-item>
-        <bar-item path="/fashion/recommend" label="房子" icon="homefill"></bar-item>
+        <bar-item path="/house/entry" label="房子" icon="homefill"></bar-item>
         <bar-item path="/user" label="我呀" icon="people"></bar-item>
       </bar>
       <router-view transition="fade" transition-mode="out-in" keep-alive></router-view>

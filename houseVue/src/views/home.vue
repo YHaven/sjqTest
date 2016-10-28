@@ -8,11 +8,11 @@
           <span class="icon iconfont icon-appreciatefill"></span>
           <span class="tab-label">推荐</span>
         </a>
-        <a class="tab-item " href="/fashion/concern">
+        <a class="tab-item " href="/msg/house">
           <span class="icon iconfont icon-likefill"></span>
           <span class="tab-label">小房子</span>
         </a>
-        <a class="tab-item " href="/fashion/topic">
+        <a class="tab-item " href="/msg/topic">
           <span class="icon iconfont icon-comment"></span>
           <span class="tab-label">话题</span>
         </a>
@@ -32,7 +32,7 @@
     </v-content> -->
     <div class="card-container">
       <v-card-container v-for="task in tasks | orderBy 'created' 1"
-      :style="{backgroundColor: task.status === '1' ? 'white': 'rgb(224, 224, 224)' }">
+      :style="{backgroundColor: task.status === '1' ? 'white': 'rgb(235, 235, 235)' }">
         <!-- <card type="content">
           <list type="media">
               <li class="item-content">
