@@ -115,9 +115,6 @@ export default function (router) {
     if(toPath.indexOf('/home')>=0){
       router.app.isIndex = true
     }
-    if(toPath.indexOf('/login')>=0){
-      router.app.isIndex = false
-    }
     if(toPath.indexOf('/fashion')>=0){
       router.app.isIndex = true
     }

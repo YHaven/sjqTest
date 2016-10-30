@@ -7,20 +7,20 @@
     <slider :banner="banner"></slider>
     <bar class="home-bar">
       <a class="tab-item" v-link="{path: '/rank'}">
-        <i class="man-in"></i>
+        <span class="man-in"></span>
+        <span class="tab-label">男士大码</span>
       </a>
       <a class="tab-item" v-link="{path: '/user/tasks'}">
-        <i class="women-in"></i>
+        <span class="women-in"></span>
+        <span class="tab-label">女士大码</span>
       </a>
       <a class="tab-item" v-link="{path: '/invite'}">
-        <i class="new-in"></i>
-      </a>
-      <a class="tab-item" v-link="{path: '/invite'}">
-        <i class="hot-in"></i>
+        <span class="show-in"></span>
+        <span class="tab-label">设计师</span>
       </a>
     </bar>
     <router-view transition="fade" transition-mode="out-in" keep-alive></router-view>
-    <div class="second-title"><i class="iconfont icon-time"></i>品牌限时特惠</div>
+    <div class="second-title"><i class="iconfont icon-time"></i>限时抢购</div>
     <!-- <shop-list class="shop-list"></shop-list> -->
     <!-- <v-content type="block-title" style="margin: 0 0 0.4rem;
     -webkit-box-shadow: 0 .06rem 0 #ccc;box-shadow: 0 .06rem 0 #ccc;background-color: white;">
@@ -93,6 +93,7 @@ export default {
       //   // this.$set('apptitle', data[0].title);
       //   // this.$set('apptitle', '解忧大码');
       // })
+      // return this.$http.get('/static/data/bannertasks.json')
       return this.$http.get('/main/index')
       .then(({data: {success, info, data}}) => {
         
@@ -210,16 +211,13 @@ export default {
   margin-bottom: .5rem;
   margin-top: .5rem;
 }
-.home-bar .tab-item {
-  height: 2.8rem;
-  background-color: white;
-  color: #f7009d;
-}
 
 .webo-v img{width:100%;height:9rem}
 .second-title{text-align: center;height: 2rem;line-height: 2rem;}
 .shop-list{margin-bottom: 3rem;}
 
-.item-content{max-height:6rem; }
-.item-content img{max-width: 100%;}
+.item-content{height:6rem; }
+.item-content img{width: 100%;height: 100%;}
+.bar-tab .tab-label{display: block;color: #000;font-weight: bold;font-size: 12px;}
+
 </style>

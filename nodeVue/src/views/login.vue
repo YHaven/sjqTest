@@ -34,6 +34,7 @@ export default {
     // setTimeout(() => {
     //   this.$route.router.go({path: '/home', replace: true})
     // }, 1500)
+    router.app.isIndex = false
   },
   data () {
     return {

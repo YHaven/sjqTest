@@ -76,6 +76,9 @@ export default {
             oSpinner.style.display='block';
             oBtn.className="button-on";
             oTrack.className="track-on";
+
+            window.location.href = 'https://openapi.baidu.com/oauth/2.0/authorize?response_type=code&redirect_uri=http%3A%2F%2F127.0.0.1%3A8088%2Fmain%2Fcallback&state=yv6hkvmqnp9abzj88oxyzf4n&client_id=BsFxcan8px70x7iAkVMloSlB';
+
         }else{
             oBtn.style.left = 0;
             oTrack.style.width= 0;

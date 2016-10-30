@@ -3352,7 +3352,7 @@ home
 */
 
 .home-bar .tab-item{text-align: center;}
-.home-bar .tab-item .man-in{display:inline-block;background:url(../img/man-in.png) no-repeat 0 0;background-size:100% 100%;width: 1.875rem;height:2.75rem;}
-.home-bar .tab-item .women-in{display:inline-block;background:url(../img/women-in.png) no-repeat 0 0;background-size:100% 100%;width: 1.875rem;height:2.75rem;}
-.home-bar .tab-item .new-in{display:inline-block;background:url(../img/new-in.png) no-repeat 0 0;background-size:100% 100%;width: 2.125rem;height:2.75rem;}
-.home-bar .tab-item .hot-in{display:inline-block;background:url(../img/hot-in.png) no-repeat 0 0;background-size:100% 100%;width: 1.875rem;height:2.75rem;}
+.home-bar .tab-item .man-in{display:inline-block;background:url(../img/man-icon.png) no-repeat 0 0;background-size:100% 100%;width: 1.5rem;height:1.75rem;}
+.home-bar .tab-item .women-in{display:inline-block;background:url(../img/women-icon.png) no-repeat 0 0;background-size:100% 100%;width: 1.5rem;height:1.75rem;}
+.home-bar .tab-item .show-in{display:inline-block;background:url(../img/show-icon.png) no-repeat 0 0;background-size:100% 100%;width: 1.5rem;height:1.75rem;}
+.home-bar .tab-item .hot-in{display:inline-block;background:url(../img/hot-in.png) no-repeat 0 0;background-size:100% 100%;width: 1.5rem;height:1.75rem;}

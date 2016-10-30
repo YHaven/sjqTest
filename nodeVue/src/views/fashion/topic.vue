@@ -8,7 +8,7 @@
         <bar v-if="isFashion">
           <bar-item path="/fashion/recommend" label="推荐" icon=""></bar-item>
           <!-- <bar-item path="/tasks" label="任务" icon="tasks"></bar-item> -->
-          <bar-item path="/fashion/concern" label="关注" icon=""></bar-item>
+          <bar-item path="/fashion/concern" label="朋友圈" icon=""></bar-item>
           <bar-item path="/fashion/topic" label="话题" icon=""></bar-item>
           <!-- <bar-item path="/more" label="更多" icon="more"></bar-item> -->
         </bar>
