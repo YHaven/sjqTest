@@ -1,25 +1,18 @@
 <template>
 <div class="container">
-  <div class="content home" distance="55" v-pull-to-refresh="refresh" v-infinite-scroll="loadMore">
+  <div class="content profile fade-transition home" distance="55" v-pull-to-refresh="refresh" v-infinite-scroll="loadMore">
     <v-layer></v-layer>
-    <slider :banner="banner"></slider>
-      <bar class="home-bar">
-        <a class="tab-item " href="/home">
-          <span class="icon iconfont icon-appreciatefill"></span>
-          <span class="tab-label">推荐</span>
-        </a>
-        <a class="tab-item" href="/msg/house">
-          <span class="icon iconfont icon-likefill"></span>
-          <span class="tab-label">小房子</span>
-        </a>
-        <a class="tab-item active" href="/msg/topic">
-          <span class="icon iconfont icon-comment"></span>
-          <span class="tab-label">话题</span>
-        </a>
-        
-      </bar>
+    <header class="bar bar-nav" >
+    <a class="button button-link button-nav pull-left" v-link="{path: '/house/entry', replace: true}">
+    <span class="icon icon-left"></span>
+    </a>
+    <h1 class="title">我的房产</h1>
+  </header>
 
-    <div class="card-container">
+    <div class="submit-button">
+    <button class="button button-big button-fill" v-link="{path: '/house/lessor/renteroper', replace: true}">+添加房产</button>
+  </div>
+    <div class="card-container" >
       <v-card-container v-for="task in tasks | orderBy 'created' 1"
       :style="{backgroundColor: task.status === '1' ? 'white': 'rgb(235, 235, 235)' }">
         
@@ -77,7 +70,6 @@ export default {
       banner: [],
       tasks: [],
       page:1,
-      isFashion: true,
       apptitle: '解忧大码',
       loading: false
     }
@@ -178,6 +170,8 @@ export default {
   margin-top: .5rem;
 }
 
+
+
 .item-content{}
 .item-content .head-img{width: 4rem;height: 4.75rem;display: block;float: left;}
 .item-content .head-img img{height: 100%;width: 100%;}
@@ -191,5 +185,21 @@ export default {
 .item-content .right .r-t{font-size: .9rem;margin-top: .2rem;font-weight: 700;}
 .item-content .right .r-c{font-size: .6rem;margin-top: .2rem;color: #aaa;}
 .item-content .right .r-h{text-align: right;}
+
+.profile .bar{position: relative;}
+.profile .bar .title{font-weight: bold;}
+.profile .submit-button {
+  margin: 0 auto ;
+  width: 100%;
+  padding: 0 .45rem;
+  margin-top: .45rem;
+}
+.profile .submit-button button {
+  background-color: #ed8e07;
+  width: 100%;
+  line-height: 1.8rem !important;
+  height: 1.8rem !important;
+}
+
 
 </style>
