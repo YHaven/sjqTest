@@ -102,6 +102,46 @@ export default function (router) {
         require(['./views/house/entry'], resolve)
       }
     },
+    '/house/lessor/houselist': {
+      component (resolve) {
+        require(['./views/house/lessor/houselist'], resolve)
+      }
+    },
+    '/house/lessor/roomlist': {
+      component (resolve) {
+        require(['./views/house/lessor/roomlist'], resolve)
+      }
+    },
+    '/house/lessor/renterlist': {
+      component (resolve) {
+        require(['./views/house/lessor/renterlist'], resolve)
+      }
+    },
+    '/house/lessor/rentallist': {
+      component (resolve) {
+        require(['./views/house/lessor/rentallist'], resolve)
+      }
+    },
+    '/house/lessor/houseoper': {
+      component (resolve) {
+        require(['./views/house/lessor/houseoper'], resolve)
+      }
+    },
+    '/house/lessor/roomoper': {
+      component (resolve) {
+        require(['./views/house/lessor/roomoper'], resolve)
+      }
+    },
+    '/house/lessor/renteroper': {
+      component (resolve) {
+        require(['./views/house/lessor/renteroper'], resolve)
+      }
+    },
+    '/house/lessor/rentaloper': {
+      component (resolve) {
+        require(['./views/house/lessor/rentaloper'], resolve)
+      }
+    },
     '/fashion/recommend': {
       component (resolve) {
         require(['./views/fashion/recommend'], resolve)
