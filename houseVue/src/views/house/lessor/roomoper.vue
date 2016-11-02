@@ -1,31 +1,17 @@
 <template>
 <div class="content profile">
   <header class="bar bar-nav">
-    <a class="button button-link button-nav pull-left" v-link="{path: '/user', replace: true}">
+    <a class="button button-link button-nav pull-left" v-link="{path: '/house/lessor/roomlist', replace: true}">
     <span class="icon icon-left"></span>
     </a>
-    <h1 class="title">个人资料</h1>
+    <h1 class="title">编辑房号</h1>
   </header>
   <div class="list-block">
     <ul>
-      <li style="height: 3rem;">
-        <div class="item-content" style="min-height: 3rem;">
-          <div class="item-media"><img src="" height="auto" style='width: 2.2rem;'></div>
-          <div class="item-inner" style="min-height: 3rem;">
-            <div class="item-title-row">
-            </div>
-            <input type="file" style="display:none;">
-            <div class="item-subtitle"><span class="imgpath"></span>房子主图</div>
-          </div>
-        </div>
-      </li>
       <li>
         <div class="item-content">
             <div class="item-inner">
-                <div class="item-title label">房子名称</div>
-                <div class="item-input">
-                    <input id="nickname" type="text" name="nickname" placeholder="请输入房产名称" value="国际花园">
-                </div>
+                采荷新村
             </div>
         </div>
       </li>
@@ -34,9 +20,9 @@
       <li>
         <div class="item-content">
             <div class="item-inner">
-                <div class="item-title label">我的邀请ID</div>
+                <div class="item-title label">房号</div>
                 <div class="item-input">
-                    <input id="name" type="text" name="name" placeholder="邀请ID" value="76167" readonly="true">
+                    <input id="name" type="text" name="name" placeholder="邀请ID" value="76167" >
                 </div>
             </div>
         </div>
@@ -44,79 +30,15 @@
       <li>
         <div class="item-content">
             <div class="item-inner">
-                <div class="item-title label">真实姓名</div>
+                <div class="item-title label">备注</div>
                 <div class="item-input">
-                    <input id="name" type="text" name="name" placeholder="请输入真实姓名" value="一二三">
+                    <input id="name" type="text" name="name" placeholder="房间配置备注" value="" >
                 </div>
             </div>
         </div>
-      </li>
-      <li>
-        <div class="item-content">
-            <div class="item-inner">
-                <div class="item-title label">微信号</div>
-                <div class="item-input">
-                    <input id="name" type="text" name="name" placeholder="请输入微信号" value="hhhh">
-                </div>
-            </div>
-        </div>
-      </li>
-      <li>
-        <div class="item-content">
-            <div class="item-inner">
-                <div class="item-title label">性别</div>
-                <div class="item-input">
-                    <select name="sex">
-                        <option selected>男</option>
-                        <option >女</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-      </li>
-      <li>
-          <div class="item-content">
-              <div class="item-inner">
-                  <div class="item-title label">年龄</div>
-                  <div class="item-input">
-                      <input id="age" type="number" name="age" placeholder="年龄">
-                  </div>
-              </div>
-          </div>
       </li>
     </ul>
-    <ul style="margin-top:.5rem">
-      <li>
-        <div class="item-link item-content">
-            <div class="item-inner">
-                <div class="item-title label">手机号</div>
-                <div class="item-input">
-                    <input id="phone" type="text"  name="phone" placeholder="手机号" >
-                </div>
-            </div>
-        </div>
-      </li>
-      <li>
-          <div class="item-content">
-              <div class="item-inner">
-                  <div class="item-title label">职业</div>
-                  <div class="item-input">
-                      <input id="occupation" type="text" name="occupation" placeholder="职业">
-                  </div>
-              </div>
-          </div>
-      </li>
-      <li>
-          <div class="item-content">
-              <div class="item-inner">
-                  <div class="item-title label">地址</div>
-                  <div class="item-input">
-                      <textarea id="address" name="address" placeholder="地址" ></textarea>
-                  </div>
-              </div>
-          </div>
-      </li>
-    </ul>
+    
   </div>
   <div class="submit-button">
     <button class="button button-big button-fill">保存</button>

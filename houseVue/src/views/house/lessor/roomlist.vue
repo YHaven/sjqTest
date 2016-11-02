@@ -3,27 +3,35 @@
   <div class="content profile fade-transition home" distance="55" v-pull-to-refresh="refresh" v-infinite-scroll="loadMore">
     <v-layer></v-layer>
     <header class="bar bar-nav" >
-    <a class="button button-link button-nav pull-left" v-link="{path: '/house/entry', replace: true}">
+    <a class="button button-link button-nav pull-left" v-link="{path: '/house/lessor/houselist', replace: true}">
     <span class="icon icon-left"></span>
     </a>
-    <h1 class="title">我的房产</h1>
+    <h1 class="title">房号</h1>
   </header>
-
+    <div class="tph-info">
+      <a href="javascript:;" class="head-img"><img src="/static/img/sw3.jpg" alt=""></a>
+        <div class="right">
+          <a href="/house/lessor/houseoper">
+          <div class="r-t">采荷新村</div>
+          <div class="r-c">住宅</div>
+          </a>
+        </div>
+    </div>
     <div class="submit-button">
-    <button class="button button-big button-fill" v-link="{path: '/house/lessor/renteroper', replace: true}">+添加房产</button>
+    <button class="button button-big button-fill" v-link="{path: '/house/lessor/roomoper', replace: true}">+添加房号</button>
   </div>
     <div class="card-container" >
       <v-card-container v-for="task in tasks | orderBy 'created' 1"
       :style="{backgroundColor: task.status === '1' ? 'white': 'rgb(235, 235, 235)' }">
         
         <div class="item-content" >
-          <a href="javascript:;" class="head-img"><img src="{{task.headurl}}" alt=""></a>
-          <div class="right">
-            <div class="r-t">#夏末如何穿更显瘦#</div>
-            <div class="r-c">专属女生的美丽选择，怎么能只穿春秋不顾秋冬呢？</div>
-            <div class="r-h">人气:1000</div>
+          <a href="/house/lessor/renterlist">
+          <div class="room-item">
+            <div class="r-t">508</div>
+            <div class="r-c">1租客</div>
+            <i class="icon icon-roundright"></i>
           </div>
-          
+          </a>
         </div>
       </v-card-container>
     </div>
@@ -181,10 +189,20 @@ export default {
 .info-author .iconfont{color: #ff3136;}
 .info-content .info-title{color: #aaa;display: block;}
 
-.item-content .right{margin-left: 4.375rem;height: 4.75rem;text-align: center;}
-.item-content .right .r-t{font-size: .9rem;margin-top: .2rem;font-weight: 700;}
-.item-content .right .r-c{font-size: .6rem;margin-top: .2rem;color: #aaa;}
-.item-content .right .r-h{text-align: right;}
+
+.room-item {padding: .5rem; position: relative;}
+.room-item .r-t{color: #333;font-weight: 700;}
+.room-item .r-c{color: #999;font-size: .2rem;}
+.room-item .icon{position: absolute;right: .5rem;top: .8rem;font-size: 1rem;}
+
+.tph-info {margin: .5rem;box-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.3)}
+.tph-info .head-img{width: 4rem;height: 4.75rem;display: block;float: left;}
+.tph-info .head-img img{height: 100%;width: 100%;}
+.tph-info .right{margin-left: 4.375rem;height: 4.75rem;text-align: center;padding-top: 1rem;}
+.tph-info .right .r-t{font-size: .9rem;margin-top: .2rem;font-weight: 700;}
+.tph-info .right .r-c{font-size: .6rem;margin-top: .2rem;color: #aaa;}
+.tph-info .right .r-h{text-align: right;}
+
 
 .profile .bar{position: relative;}
 .profile .bar .title{font-weight: bold;}

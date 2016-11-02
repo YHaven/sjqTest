@@ -18,12 +18,12 @@
         
         <div class="item-content" >
           <a href="javascript:;" class="head-img"><img src="{{task.headurl}}" alt=""></a>
+          <a href="/house/lessor/roomlist">
           <div class="right">
-            <div class="r-t">#夏末如何穿更显瘦#</div>
-            <div class="r-c">专属女生的美丽选择，怎么能只穿春秋不顾秋冬呢？</div>
-            <div class="r-h">人气:1000</div>
+            <div class="r-t">采荷新村</div>
+            <div class="r-c">住宅3套，空闲1套</div>
           </div>
-          
+          </a>
         </div>
       </v-card-container>
     </div>
@@ -181,7 +181,7 @@ export default {
 .info-author .iconfont{color: #ff3136;}
 .info-content .info-title{color: #aaa;display: block;}
 
-.item-content .right{margin-left: 4.375rem;height: 4.75rem;text-align: center;}
+.item-content .right{margin-left: 4.375rem;height: 4.75rem;text-align: center;padding-top: 1rem;}
 .item-content .right .r-t{font-size: .9rem;margin-top: .2rem;font-weight: 700;}
 .item-content .right .r-c{font-size: .6rem;margin-top: .2rem;color: #aaa;}
 .item-content .right .r-h{text-align: right;}
