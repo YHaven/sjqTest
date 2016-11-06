@@ -13,7 +13,7 @@ export default {
   },
   ready () {
     // this.$http.get('/static/data/bannertasks.json')
-    this.$http.get('/main/index')
+    this.$http.get('/main/index?start=1')
     .then(function(response) {
             let imgs = []
             let bannerData = response.data.data.banner

@@ -59,7 +59,7 @@
           <span :style="{color: task.status === '1' ? 'orange': 'gray',fontWeight:'bold'}">{{task.read_profit}} 积分</span>
         </card> -->
         <div class="item-content" >
-          <img v-bind:src="task.detailLogo" alt="">
+          <img v-bind:src="task.imgUrl" alt="">
         </div>
       </v-card-container>
     </div>
@@ -94,10 +94,10 @@ export default {
       //   // this.$set('apptitle', '解忧大码');
       // })
       // return this.$http.get('/static/data/bannertasks.json')
-      return this.$http.get('/main/index')
+      return this.$http.get('/main/index?start=1')
       .then(({data: {success, info, data}}) => {
         
-        this.$set('tasks', data.productList);
+        this.$set('tasks', data.product);
         // this.$set('apptitle', data[0].title);
         // this.$set('apptitle', '解忧大码');
       })
@@ -123,10 +123,10 @@ export default {
     refresh () {
       setTimeout(function () {
         
-      this.$http.get('/main/index')
+      this.$http.get('/main/index?start=1')
       .then(({data: {success, info, data}}) => {
         
-        this.$set('tasks', data.productList)
+        this.$set('tasks', data.product)
         // this.$set('apptitle', data[0].title);
         // this.$set('apptitle', '解忧大码');
       })
@@ -155,9 +155,9 @@ export default {
       let scroller = $('.content')
       loader.show()
       setTimeout(() => {
-        this.$http.get('/main/index')
+        this.$http.get('/main/index?start=1')
           .then(({data: {success, info, data}}) => {
-            var productList = data.productList
+            var productList = data.product
             for (var i = 0; i < productList.length; i++) {
               this.tasks.push(productList[i]);
             };
