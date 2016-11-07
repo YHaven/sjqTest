@@ -110,6 +110,7 @@ export default {
     return {
       banner: [],
       tasks: [],
+      pageIndex : 0,
       apptitle: '解忧大码',
       loading: false
     }
@@ -122,8 +123,8 @@ export default {
   methods: {
     refresh () {
       setTimeout(function () {
-        
-      this.$http.get('/main/index?start=1')
+        this.pageIndex = 1
+      this.$http.get('/main/index?start='+this.pageIndex)
       .then(({data: {success, info, data}}) => {
         
         this.$set('tasks', data.product)
@@ -155,7 +156,8 @@ export default {
       let scroller = $('.content')
       loader.show()
       setTimeout(() => {
-        this.$http.get('/main/index?start=1')
+        this.pageIndex += 1;
+        this.$http.get('/main/index?start='+this.pageIndex)
           .then(({data: {success, info, data}}) => {
             var productList = data.product
             for (var i = 0; i < productList.length; i++) {
