@@ -4,19 +4,23 @@
     <div class="logo">
         <div class="logo_img">
             <img src="../assets/img/logo.png" class="img-responsive" style="border:solid 1px #fff;border-radius: 50px;overflow:hidden;" width="64" height="64">
-            <div style="color:white;line-height: 1;">eteplus</div>
+            <div style="color:white;line-height: 1;">我的名字</div>
         </div>
+        <!-- <div class="logo_txt">
+            <span class="yue">我的签名</span>
+            <span class="amount timer count-title" id="count-number" data-to="300" data-speed="500" data-decimals="0">你是傻逼吗</span>
+        </div> -->
         <div class="logo_txt">
-            <span class="yue">我的余额(积分)</span>
-            <span class="amount timer count-title" id="count-number" data-to="300" data-speed="500" data-decimals="0">300</span>
+            <span class="yue">我的签名是大傻逼，你造吗</span>
+            <span class="amount timer count-title" id="count-number" data-to="300" data-speed="500" data-decimals="0"></span>
         </div>
     </div>
-    <div class="in">
+    <!-- <div class="in">
         <div class="incomes">今日收入 0 积分</div>
         <div class="students">今日邀请 0 个</div>
-    </div>
+    </div> -->
   </div>
-  <nav class="bar bar-tab user-tab">
+  <!-- <nav class="bar bar-tab user-tab">
     <a class="tab-item">
       <span class="icon icon-shouyi"></span>
       <span class="tab-label">已提现</span>
@@ -29,7 +33,7 @@
       <span class="icon icon-shouyimingxi"></span>
       <span class="tab-label">我要提现</span>
     </a>
-  </nav>
+  </nav> -->
   <div class="list-block user-list">
     <ul>
       <li>
@@ -41,7 +45,7 @@
         </a>
       </li>
     </ul>
-    <ul>
+    <!-- <ul>
       <li>
         <a class="item-content item-link"  v-link="{ path: '/user/tasks', replace: true}">
           <div class="item-media"><span class="icon icon-star"></sapn></div>
@@ -80,7 +84,7 @@
         </div>
         </a>
       </li>
-    </ul>
+    </ul> -->
     <br>
   </div>
 </div>
@@ -94,6 +98,7 @@ export default {
 <style>
 .banner {
   width: 100%;
+
   background-color: white;
   padding: 12.7999992px;
 }
@@ -101,19 +106,19 @@ export default {
   background-color: #ed8e07;
   border-radius: 10px;
   width: 100%;
-  height: 110px;
+  height: 5.5rem;
   padding: 20.2666654px 21.333332px 5.333333px;
   box-shadow: 0 .0rem .8rem rgba(0,0,0,.3);
 }
 .banner .logo .logo_img {
   margin-top: 0px;
-  width: 58.666663px;
-  height: 58.666663px;
+  width: 3.5rem;
+  height: 2.5rem;
+  float: left;
   display: inline-block;
 }
 .banner .logo .logo_txt {
   margin-top: 7px;
-  float: right;
   text-align: right;
 }
 .banner .logo .logo_txt .yue {
@@ -153,6 +158,9 @@ export default {
   font-size: 12.7999992px;
   background-color: #ed8e07 ;
 }
+
+.user .bar{position: relative;}
+
 .user-tab {
   background: #efeff4;
   height: 3rem;

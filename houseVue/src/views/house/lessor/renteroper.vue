@@ -1,15 +1,18 @@
 <template>
 <div class="content profile">
   <header class="bar bar-nav">
-    <a class="button button-link button-nav pull-left" v-link="{path: '/house/lessor/renterlist', replace: true}">
+    <a class="button button-link button-nav pull-left" href="javascript:history.back(-1);">
     <span class="icon icon-left"></span>
     </a>
     <h1 class="title">编辑租客</h1>
   </header>
-  <div class="list-block">
+  <form class="list-block">
+    <input type="hidden" id="roomId" name="roomId" value=""/>
+    <input type="hidden" id="id" name="id" value=""/>
     <ul>
       <li style="height: 3rem;">
         <div class="item-content" style="min-height: 3rem;">
+          <input type="hidden" name="uploadImg" value="">
           <div class="item-media"><img src="" height="auto" style='width: 2.2rem;'></div>
           <div class="item-inner" style="min-height: 3rem;">
             <div class="item-title-row">
@@ -24,7 +27,7 @@
             <div class="item-inner">
                 <div class="item-title label">租客姓名</div>
                 <div class="item-input">
-                    <input id="nickname" type="text" name="nickname" placeholder="请输入房产名称" value="国际花园">
+                    <input id="renterName" type="text" name="renterName" placeholder="请输入租客姓名" value="">
                 </div>
             </div>
         </div>
@@ -34,7 +37,7 @@
             <div class="item-inner">
                 <div class="item-title label">电话号码</div>
                 <div class="item-input">
-                    <input id="name" type="text" name="name" placeholder="邀请ID" value="76167" readonly="true">
+                    <input id="renterPhone" type="text" name="renterPhone" placeholder="暂未填写电话号码" value="">
                 </div>
             </div>
         </div>
@@ -44,7 +47,7 @@
             <div class="item-inner">
                 <div class="item-title label">身份证</div>
                 <div class="item-input">
-                    <input id="name" type="text" name="name" placeholder="请输入真实姓名" value="一二三">
+                    <input id="cid" type="text" name="cid" placeholder="暂无身份信息" value="">
                 </div>
             </div>
         </div>
@@ -52,23 +55,22 @@
     </ul>
     <div class="s-title">签约资料</div>
     <ul style="margin-top:.5rem;">
-      
       <li>
-        <div class="item-content">
+        <div class="item-content item-link">
             <div class="item-inner">
                 <div class="item-title label">起租日期</div>
                 <div class="item-input">
-                    <input id="name" type="text" name="name" placeholder="请输入微信号" value="hhhh">
+                    <input id="startTime" type="text" name="startTime" placeholder="" value="">
                 </div>
             </div>
         </div>
       </li>
       <li>
-        <div class="item-content">
+        <div class="item-content item-link">
             <div class="item-inner">
                 <div class="item-title label">到租日期</div>
                 <div class="item-input">
-                    <input id="name" type="text" name="name" placeholder="请输入微信号" value="hhhh">
+                    <input id="endTime" type="text" name="endTime" placeholder="" value="">
                 </div>
             </div>
         </div>
@@ -78,19 +80,17 @@
               <div class="item-inner">
                   <div class="item-title label">缴费周期</div>
                   <div class="item-input">
-                      <input id="age" type="number" name="age" placeholder="年龄">
+                      <input id="cycleTime" type="number" name="cycleTime" placeholder="月" value="">
                   </div>
               </div>
           </div>
       </li>
-    </ul>
-    <ul style="margin-top:.5rem">
       <li>
-        <div class="item-link item-content">
+        <div class=" item-content">
             <div class="item-inner">
                 <div class="item-title label">每期缴租</div>
                 <div class="item-input">
-                    <input id="phone" type="text"  name="phone" placeholder="手机号" >
+                    <input id="money" type="text"  name="money" placeholder="0.00" >
                 </div>
             </div>
         </div>
@@ -100,7 +100,7 @@
               <div class="item-inner">
                   <div class="item-title label">押金</div>
                   <div class="item-input">
-                      <input id="occupation" type="text" name="occupation" placeholder="职业">
+                      <input id="deposit" type="text" name="deposit" placeholder="0.00">
                   </div>
               </div>
           </div>
@@ -108,9 +108,22 @@
       <li>
           <div class="item-content">
               <div class="item-inner">
+                  <div class="item-title label">居住人数</div>
+                  <div class="item-input">
+                      <input id="renterNumber" type="text" name="renterNumber" placeholder="0">
+                  </div>
+              </div>
+          </div>
+      </li>
+    </ul>
+    <div class="s-title">收租提醒</div>
+    <ul style="margin-top:.5rem;">
+      <li>
+          <div class="item-content">
+              <div class="item-inner">
                   <div class="item-title label">提前提醒天数</div>
                   <div class="item-input">
-                      <input id="occupation" type="text" name="occupation" placeholder="职业">
+                      <input id="remindDay" type="number" name="remindDay" placeholder="0">
                   </div>
               </div>
           </div>
@@ -120,17 +133,20 @@
               <div class="item-inner">
                   <div class="item-title label">提醒时间</div>
                   <div class="item-input">
-                      <input id="occupation" type="text" name="occupation" placeholder="职业">
+                      <input id="remindTime" type="text" name="remindTime" placeholder="00:00">
                   </div>
               </div>
           </div>
       </li>
+      </ul>
+    <div class="s-title">表度数</div>
+    <ul style="margin-top:.5rem;">
       <li>
           <div class="item-content">
               <div class="item-inner">
                   <div class="item-title label">电表度数</div>
                   <div class="item-input">
-                      <textarea id="address" name="address" placeholder="地址" ></textarea>
+                      <input id="electric" type="text" name="electric" placeholder="0">
                   </div>
               </div>
           </div>
@@ -140,7 +156,7 @@
               <div class="item-inner">
                   <div class="item-title label">水表度数</div>
                   <div class="item-input">
-                      <textarea id="address" name="address" placeholder="地址" ></textarea>
+                      <input id="water" type="text" name="water" placeholder="0">
                   </div>
               </div>
           </div>
@@ -150,7 +166,7 @@
               <div class="item-inner">
                   <div class="item-title label">燃气度数</div>
                   <div class="item-input">
-                      <textarea id="address" name="address" placeholder="地址" ></textarea>
+                      <input id="gas" type="text" name="gas" placeholder="0">
                   </div>
               </div>
           </div>
@@ -160,13 +176,13 @@
               <div class="item-inner">
                   <div class="item-title label">备注</div>
                   <div class="item-input">
-                      <textarea id="address" name="address" placeholder="地址" ></textarea>
+                      <textarea id="remark" name="remark"  ></textarea>
                   </div>
               </div>
           </div>
       </li>
     </ul>
-  </div>
+  </form>
   <div class="submit-button">
     <button class="button button-big button-fill">保存</button>
   </div>

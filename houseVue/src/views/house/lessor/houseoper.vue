@@ -1,21 +1,23 @@
 <template>
 <div class="content profile">
   <header class="bar bar-nav">
-    <a class="button button-link button-nav pull-left" v-link="{path: '/house/lessor/houselist', replace: true}">
+    <a class="button button-link button-nav pull-left" href="javascript:history.back(-1);">
     <span class="icon icon-left"></span>
     </a>
     <h1 class="title">编辑房产</h1>
   </header>
-  <div class="list-block">
+  <form class="list-block">
+    <input type="hidden" id="id" name="id" value=""/>
     <ul>
       <li style="height: 3rem;">
         <div class="item-content" style="min-height: 3rem;">
+          <input type="hidden" name="uploadImg" value="">
           <div class="item-media"><img src="" height="auto" style='width: 2.2rem;'></div>
           <div class="item-inner" style="min-height: 3rem;">
             <div class="item-title-row">
             </div>
             <input type="file" style="display:none;">
-            <div class="item-subtitle"><span class="imgpath"></span>房子主图</div>
+            <div class="item-subtitle"><span class="imgpath"></span>图片</div>
           </div>
         </div>
       </li>
@@ -24,7 +26,7 @@
             <div class="item-inner">
                 <div class="item-title label">房子名称</div>
                 <div class="item-input">
-                    <input id="nickname" type="text" name="nickname" placeholder="请输入房产名称" value="国际花园">
+                    <input id="houseName" type="text" name="houseName" placeholder="请输入房产名称" value="国际花园">
                 </div>
             </div>
         </div>
@@ -36,11 +38,11 @@
             <div class="item-inner">
                 <div class="item-title label">房产类型</div>
                 <div class="item-input">
-                    <select name="sex">
-                        <option selected>住宅/小区/公寓</option>
-                        <option >办公室/写字楼</option>
-                        <option >商铺</option>
-                        <option >仓库</option>
+                    <select name="houseType">
+                        <option value="1" selected>住宅/小区/公寓</option>
+                        <option value="2">办公室/写字楼</option>
+                        <option value="3">商铺</option>
+                        <option value="4">仓库</option>
                     </select>
                 </div>
             </div>
@@ -48,7 +50,7 @@
       </li>
      
     </ul>
-  </div>
+  </form>
   <div class="submit-button">
     <button class="button button-big button-fill">保存</button>
   </div>

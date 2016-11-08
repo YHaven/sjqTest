@@ -1,12 +1,14 @@
 <template>
 <div class="content profile">
   <header class="bar bar-nav">
-    <a class="button button-link button-nav pull-left" v-link="{path: '/house/lessor/roomlist', replace: true}">
+    <a class="button button-link button-nav pull-left"  href="javascript:history.back(-1);">
     <span class="icon icon-left"></span>
     </a>
     <h1 class="title">编辑房号</h1>
   </header>
-  <div class="list-block">
+  <form class="list-block">
+    <input type="hidden" id="houseId" name="houseId" value=""/>
+    <input type="hidden" id="id" name="id" value=""/>
     <ul>
       <li>
         <div class="item-content">
@@ -22,7 +24,7 @@
             <div class="item-inner">
                 <div class="item-title label">房号</div>
                 <div class="item-input">
-                    <input id="name" type="text" name="name" placeholder="邀请ID" value="76167" >
+                    <input id="roomName" type="text" name="roomName" placeholder="房号" value="" >
                 </div>
             </div>
         </div>
@@ -32,7 +34,7 @@
             <div class="item-inner">
                 <div class="item-title label">备注</div>
                 <div class="item-input">
-                    <input id="name" type="text" name="name" placeholder="房间配置备注" value="" >
+                    <input id="roomRemark" type="text" name="roomRemark" placeholder="房间配置备注" value="" >
                 </div>
             </div>
         </div>

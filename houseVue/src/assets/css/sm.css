@@ -3356,3 +3356,7 @@ home
 .home-bar .tab-item .women-in{display:inline-block;background:url(../img/women-in.png) no-repeat 0 0;background-size:100% 100%;width: 1.875rem;height:2.75rem;}
 .home-bar .tab-item .new-in{display:inline-block;background:url(../img/new-in.png) no-repeat 0 0;background-size:100% 100%;width: 2.125rem;height:2.75rem;}
 .home-bar .tab-item .hot-in{display:inline-block;background:url(../img/hot-in.png) no-repeat 0 0;background-size:100% 100%;width: 1.875rem;height:2.75rem;}
+
+.list-block{background-color: #ddd}
+.list-block ul{margin-bottom: .5rem;}
+.s-title{font-weight: bold;border-left: 3px solid #1e00ff;margin-left: .5rem;padding-left: .2rem;font-size: .8rem;}
