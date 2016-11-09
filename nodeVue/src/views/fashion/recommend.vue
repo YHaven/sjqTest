@@ -167,7 +167,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .fashion {
   top: -2.2rem !important;
   margin-bottom: 2.2rem;

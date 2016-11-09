@@ -6,11 +6,11 @@
     <top-search v-top-search="topSearch"></top-search>
     <slider :banner="banner"></slider>
     <bar class="home-bar">
-      <a class="tab-item" v-link="{path: '/rank'}">
+      <a class="tab-item" v-link="{path: '/home/manlist'}">
         <span class="man-in"></span>
         <span class="tab-label">男士大码</span>
       </a>
-      <a class="tab-item" v-link="{path: '/user/tasks'}">
+      <a class="tab-item" v-link="{path: '/home/manlist'}">
         <span class="women-in"></span>
         <span class="tab-label">女士大码</span>
       </a>
@@ -220,6 +220,6 @@ export default {
 
 .item-content{height:6rem; }
 .item-content img{width: 100%;height: 100%;}
-.bar-tab .tab-label{display: block;color: #000;font-weight: bold;font-size: 12px;}
+.bar-tab .tab-label{display: block;font-weight: bold;font-size: 12px;}
 
 </style>

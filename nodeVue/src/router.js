@@ -22,6 +22,11 @@ export default function (router) {
         require(['./views/home'], resolve)
       }
     },
+    '/home/manlist': {
+      component (resolve) {
+        require(['./views/home/manlist'], resolve)
+      }
+    },
     '/list': {
       component (resolve) {
         require(['./views/list'], resolve)
