@@ -20,20 +20,20 @@
         <div class="students">今日邀请 0 个</div>
     </div> -->
   </div>
-  <!-- <nav class="bar bar-tab user-tab">
+  <nav class="bar bar-tab user-tab">
     <a class="tab-item">
       <span class="icon icon-shouyi"></span>
-      <span class="tab-label">已提现</span>
+      <span class="tab-label">消息</span>
     </a>
     <a class="tab-item">
-      <span class="icon icon-me"></span>
-      <span class="tab-label">余额</span>
+      <span class="icon icon-shouyimingxi"></span>
+      <span class="tab-label">账单</span>
     </a>
     <a class="tab-item" v-link="{ path: '/user/withdraw', replace: true}">
-      <span class="icon icon-shouyimingxi"></span>
-      <span class="tab-label">我要提现</span>
+      <span class="icon icon-me"></span>
+      <span class="tab-label">小屋</span>
     </a>
-  </nav> -->
+  </nav>
   <div class="list-block user-list">
     <ul>
       <li>

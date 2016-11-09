@@ -1,7 +1,7 @@
 <template>
 <div class="content profile">
   <header class="bar bar-nav">
-    <a class="button button-link button-nav pull-left" href="javascript:history.back(-1);">
+    <a class="button button-link button-nav pull-left" href="/house/lessor/houselist">
     <span class="icon icon-left"></span>
     </a>
     <h1 class="title">编辑房产</h1>
@@ -59,6 +59,9 @@
 
 
 <style>
+.profile .bar{
+  position: relative;
+}
 .profile .list-block {
   /*margin: 2.4rem 0 1rem 0;*/
   margin-top: .2rem;

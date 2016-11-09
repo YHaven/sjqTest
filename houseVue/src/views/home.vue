@@ -1,7 +1,9 @@
 <template>
 <div class="container">
+  <home-btn></home-btn>
   <div class="content home" distance="55" v-pull-to-refresh="refresh" v-infinite-scroll="loadMore">
     <v-layer></v-layer>
+
     <slider :banner="banner"></slider>
       <bar class="home-bar">
         <a class="tab-item active" href="/home">
@@ -81,6 +83,7 @@ import VContent from '../components/Content'
 import List from '../components/List'
 import Item from '../components/ListItem'
 import ShopList from '../components/ShopList'
+import HomeBtn from '../components/HomeBtn'
 
 import {loader} from '../util/util'
 import $ from 'zepto'
@@ -182,12 +185,13 @@ export default {
     List,
     Item,
     Btn,
-    ShopList
+    ShopList,
+    HomeBtn
   }
 }
 </script>
 
-<style>
+<style scoped>
 .container {
   position: absolute;
   top: 0;
