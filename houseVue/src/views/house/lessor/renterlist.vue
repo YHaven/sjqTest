@@ -9,11 +9,11 @@
     <h1 class="title">租客</h1>
   </header>
     <div class="tph-info">
-      <a href="javascript:;" class="head-img"><img src="/static/img/sw3.jpg" alt=""></a>
+      <a href="javascript:;" class="head-img"><img src="{{roominfo.uploadImg}}" alt=""></a>
         <div class="right">
           <a href="/house/lessor/roomoper">
-          <div class="r-t">508</div>
-          <div class="r-c">采荷新村</div>
+          <div class="r-t">{{roominfo.roomName}}</div>
+          <div class="r-c">{{roominfo.houseName}}</div>
           </a>
         </div>
     </div>
@@ -27,8 +27,8 @@
         <div class="item-content" >
           <a href="/house/lessor/rentallist">
           <div class="room-item">
-            <div class="r-t"> 可以的</div>
-            <div class="r-c">18888888</div>
+            <div class="r-t"> {{task.renterName}}</div>
+            <div class="r-c">{{task.renterPhone}}</div>
             <i class="icon icon-roundright"></i>
           </div>
           </a>
@@ -58,15 +58,10 @@ import $ from 'zepto'
 export default {
   route: {
     data () {
-      // return this.$http.get('/static/data/tasks.json')
-      // .then(({data: {code, message, data}}) => {
-      //   this.$set('tasks', data);
-      //   // this.$set('apptitle', data[0].title);
-      //   // this.$set('apptitle', '解忧大码');
-      // })
-      return this.$http.get('http://www.zhencome.com/plana/msg!list.action?vt=1&page=1&msgResource=3')
-      .then(({data: {status, page, datalist}}) => {
+      return this.$http.get('/static/data/renterlist.json?vt=2')
+      .then(({data: {status, page, roominfo, datalist}}) => {
         this.$set('tasks', datalist);
+        this.$set('roominfo', roominfo);
       })
     }
   },
@@ -75,10 +70,9 @@ export default {
   },
   data () {
     return {
-      banner: [],
+      roominfo: {},
       tasks: [],
       page:1,
-      apptitle: '解忧大码',
       loading: false
     }
   },
@@ -92,7 +86,7 @@ export default {
       setTimeout(function () {
         this.page = 1
         var page = '&page='+ this.page
-        this.$http.get('http://www.zhencome.com/plana/msg!list.action?vt=1&msgResource=3'+page)
+        this.$http.get('/static/data/renterlist.json?vt=2'+page)
       .then(({data: {status, page, datalist}}) => {
         this.$set('tasks', datalist);
       })
@@ -123,7 +117,7 @@ export default {
       setTimeout(() => {
         this.page = this.page + 1
         var page = '&page='+ this.page
-        this.$http.get('http://www.zhencome.com/plana/msg!list.action?vt=1&msgResource=3'+page)
+        this.$http.get('/static/data/renterlist.json?vt=2'+page)
           .then(({data: {status, page, datalist}}) => {
             for (var i = 0; i < datalist.length; i++) {
               this.tasks.push(datalist[i]);

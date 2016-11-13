@@ -57,7 +57,28 @@
 </div>
 </template>
 
+<script>
+  import {loader} from '../../../util/commonUtil'
+  import $ from 'zepto'
 
+  export default {
+  ready () {
+    
+  },
+  data () {
+
+  },
+  computed: {
+
+  },
+  methods: {
+    refresh () {
+      
+    }
+  }
+}
+
+</script>
 <style>
 .profile .bar{
   position: relative;

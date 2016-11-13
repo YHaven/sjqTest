@@ -12,8 +12,8 @@
       <a href="javascript:;" class="head-img"><img src="/static/img/sw3.jpg" alt=""></a>
         <div class="right">
           <a href="/house/lessor/renteroper">
-          <div class="r-t">张三</div>
-          <div class="r-c">1888888888</div>
+          <div class="r-t">{{renterinfo.renterName}}</div>
+          <div class="r-c">{{renterinfo.renterPhone}}</div>
           </a>
         </div>
     </div>
@@ -27,9 +27,10 @@
         <div class="item-content" >
           <a href="/house/lessor/rentaloper">
           <div class="room-item">
-            <div class="r-t"> 2016-11-11 账单</div>
-            <div class="r-c">今日收租</div>
-            <i class="icon icon-roundright">2000</i>
+            <div class="r-t"> {{task.rentalTime}} 账单</div>
+            <div class="r-c" v-if="(task.arriveTime === '0' )">今日收租</div>
+            <div class="r-c" v-if="(task.arriveTime !== '0' )">{{task.arriveTime}}到期</div>
+            <i class="icon icon-roundright">{{task.rental}}</i>
           </div>
           </a>
         </div>
@@ -58,15 +59,10 @@ import $ from 'zepto'
 export default {
   route: {
     data () {
-      // return this.$http.get('/static/data/tasks.json')
-      // .then(({data: {code, message, data}}) => {
-      //   this.$set('tasks', data);
-      //   // this.$set('apptitle', data[0].title);
-      //   // this.$set('apptitle', '解忧大码');
-      // })
-      return this.$http.get('http://www.zhencome.com/plana/msg!list.action?vt=1&page=1&msgResource=3')
-      .then(({data: {status, page, datalist}}) => {
+      return this.$http.get('/static/data/rentallist.json?vt=2')
+      .then(({data: {status, page, renterinfo, datalist}}) => {
         this.$set('tasks', datalist);
+        this.$set('renterinfo', renterinfo);
       })
     }
   },
@@ -75,10 +71,9 @@ export default {
   },
   data () {
     return {
-      banner: [],
+      renterinfo: {},
       tasks: [],
       page:1,
-      apptitle: '解忧大码',
       loading: false
     }
   },
@@ -92,24 +87,10 @@ export default {
       setTimeout(function () {
         this.page = 1
         var page = '&page='+ this.page
-        this.$http.get('http://www.zhencome.com/plana/msg!list.action?vt=1&msgResource=3'+page)
+        this.$http.get('/static/data/rentallist.json?vt=2'+page)
       .then(({data: {status, page, datalist}}) => {
         this.$set('tasks', datalist);
       })
-
-        // let num = this.length + 1
-        // let title = `标题${num}`
-        // let adv = `abc${num}`
-        // let time = (new Date()).getTime() / 1000
-        // let point = 100 + num - 1
-        // this.tasks.push({
-        //   id: num,
-        //   title: title,
-        //   advertiser: adv,
-        //   status: '1',
-        //   created: time,
-        //   read_profit: point
-        // })
         $.pullToRefreshDone('.pull-to-refresh-content')
       }.bind(this), 1500)
     },
@@ -123,7 +104,7 @@ export default {
       setTimeout(() => {
         this.page = this.page + 1
         var page = '&page='+ this.page
-        this.$http.get('http://www.zhencome.com/plana/msg!list.action?vt=1&msgResource=3'+page)
+        this.$http.get('/static/data/rentallist.json?vt=2'+page)
           .then(({data: {status, page, datalist}}) => {
             for (var i = 0; i < datalist.length; i++) {
               this.tasks.push(datalist[i]);

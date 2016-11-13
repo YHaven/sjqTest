@@ -9,11 +9,16 @@
     <h1 class="title">房号</h1>
   </header>
     <div class="tph-info">
-      <a href="javascript:;" class="head-img"><img src="/static/img/sw3.jpg" alt=""></a>
+      <a href="javascript:;" class="head-img"><img src="{{houseinfo.uploadImg}}" alt="房屋图"></a>
         <div class="right">
-          <a href="/house/lessor/houseoper">
-          <div class="r-t">采荷新村</div>
-          <div class="r-c">住宅</div>
+          <a href="/house/lessor/houseoper?id={{houseinfo.id}}">
+          <div class="r-t">{{houseinfo.houseName}}</div>
+          <div class="r-c">
+            {{houseinfo.houseType === '1' ? '住宅/小区/公寓':''}}
+            {{houseinfo.houseType === '2' ? '办公室/写字楼':''}}
+            {{houseinfo.houseType === '3' ? '商铺':''}}
+            {{houseinfo.houseType === '4' ? '仓库':''}}
+          </div>
           </a>
         </div>
     </div>
@@ -25,10 +30,10 @@
       :style="{backgroundColor: task.status === '1' ? 'white': 'rgb(235, 235, 235)' }">
         
         <div class="item-content" >
-          <a href="/house/lessor/renterlist">
+          <a href="/house/lessor/renterlist?id={{task.id}}">
           <div class="room-item">
-            <div class="r-t">508</div>
-            <div class="r-c">1租客</div>
+            <div class="r-t">{{task.roomName}}</div>
+            <div class="r-c">{{task.renterCount}}租客</div>
             <i class="icon icon-roundright"></i>
           </div>
           </a>
@@ -58,15 +63,10 @@ import $ from 'zepto'
 export default {
   route: {
     data () {
-      // return this.$http.get('/static/data/tasks.json')
-      // .then(({data: {code, message, data}}) => {
-      //   this.$set('tasks', data);
-      //   // this.$set('apptitle', data[0].title);
-      //   // this.$set('apptitle', '解忧大码');
-      // })
-      return this.$http.get('http://www.zhencome.com/plana/msg!list.action?vt=1&page=1&msgResource=3')
-      .then(({data: {status, page, datalist}}) => {
+      return this.$http.get('/static/data/roomlist.json?vt=2')
+      .then(({data: {status, page, houseinfo, datalist}}) => {
         this.$set('tasks', datalist);
+        this.$set('houseinfo', houseinfo);
       })
     }
   },
@@ -75,10 +75,9 @@ export default {
   },
   data () {
     return {
-      banner: [],
+      houseinfo:{},
       tasks: [],
       page:1,
-      apptitle: '解忧大码',
       loading: false
     }
   },
@@ -92,7 +91,7 @@ export default {
       setTimeout(function () {
         this.page = 1
         var page = '&page='+ this.page
-        this.$http.get('http://www.zhencome.com/plana/msg!list.action?vt=1&msgResource=3'+page)
+        this.$http.get('/static/data/roomlist.json?vt=2'+page)
       .then(({data: {status, page, datalist}}) => {
         this.$set('tasks', datalist);
       })
@@ -123,7 +122,7 @@ export default {
       setTimeout(() => {
         this.page = this.page + 1
         var page = '&page='+ this.page
-        this.$http.get('http://www.zhencome.com/plana/msg!list.action?vt=1&msgResource=3'+page)
+        this.$http.get('/static/data/roomlist.json?vt=2'+page)
           .then(({data: {status, page, datalist}}) => {
             for (var i = 0; i < datalist.length; i++) {
               this.tasks.push(datalist[i]);
