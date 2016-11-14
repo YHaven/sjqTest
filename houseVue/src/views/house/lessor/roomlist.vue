@@ -58,26 +58,34 @@ import Item from '../../../components/ListItem'
 import ShopList from '../../../components/ShopList'
 
 import {loader} from '../../../util/util'
+import common from '../../../util/commonUtil'
+
 import $ from 'zepto'
+
 
 export default {
   route: {
     data () {
+
       return this.$http.get('/static/data/roomlist.json?vt=2')
       .then(({data: {status, page, houseinfo, datalist}}) => {
         this.$set('tasks', datalist);
         this.$set('houseinfo', houseinfo);
+        
       })
     }
   },
   ready () {
-    $.init()
+    $.init();
+    console.log(getQueryString);
+
   },
   data () {
     return {
       houseinfo:{},
       tasks: [],
       page:1,
+      houseId:'',
       loading: false
     }
   },

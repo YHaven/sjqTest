@@ -46,12 +46,12 @@ export default {
       //   // this.$set('apptitle', '解忧大码');
       // })
       var entryList = [];
-      for (var i = 0; i < 2; i++) {
+      for (var i = 0; i < 1; i++) {
         var entryObj = {};
         entryObj.id = i+1
         if(i == 0) entryObj.path = 'lessor/houselist'
         if(i == 1) entryObj.path = 'lessee/houselist'
-        entryObj.imgurl = '/static/img/sw'+ (i+1) +'.jpg'
+        entryObj.imgurl = '/static/img/rent.jpg'
         entryList.push(entryObj)
       };
     

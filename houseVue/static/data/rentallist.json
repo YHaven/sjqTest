@@ -1,0 +1,44 @@
+{
+  "status": true,
+  "message": "获取成功",
+  "pagesize":15,
+  "page":1,
+  "renterinfo":{
+      "id": "1",
+      "uploadImg": "/static/img/1.jpg",
+      "renterName": "我的名字",
+      "renterPhone": "19888888888"
+    },
+  "datalist": [
+    {
+      "id": "1",
+      "rentalTime": "2016-11-11",
+      "arriveTime": "1",
+      "rental":"2000"
+    },
+    {
+      "id": "1",
+      "rentalTime": "2016-11-11",
+      "arriveTime": "5",
+      "rental":"2500"
+    },
+    {
+      "id": "1",
+      "rentalTime": "2016-11-11",
+      "arriveTime": "1",
+      "rental":"2600"
+    },
+    {
+      "id": "1",
+      "rentalTime": "2016-11-12",
+      "arriveTime": "0",
+      "rental":"2000"
+    },
+    {
+      "id": "1",
+      "rentalTime": "2016-11-11",
+      "arriveTime": "1",
+      "rental":"3500"
+    }
+  ]
+}

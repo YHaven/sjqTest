@@ -11,7 +11,7 @@
     <div class="tph-info">
       <a href="javascript:;" class="head-img"><img src="{{roominfo.uploadImg}}" alt=""></a>
         <div class="right">
-          <a href="/house/lessor/roomoper">
+          <a href="/house/lessor/roomoper" >
           <div class="r-t">{{roominfo.roomName}}</div>
           <div class="r-c">{{roominfo.houseName}}</div>
           </a>

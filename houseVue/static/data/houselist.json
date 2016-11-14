@@ -1,0 +1,32 @@
+{
+  "status": true,
+  "message": "获取成功",
+  "pagesize":15,
+  "page":1,
+  "datalist": [
+    {
+      "id": "1",
+      "uploadImg": "/static/img/1.jpg",
+      "houseName": "采荷新村",
+      "houseType": "1",
+      "allCount": "8",
+      "emptyCount": "1"
+    },
+    {
+      "id": "2",
+      "uploadImg": "/static/img/1.jpg",
+      "houseName": "采荷新村",
+      "houseType": "1",
+      "allCount": "8",
+      "emptyCount": "1"
+    },
+    {
+      "id": "3",
+      "uploadImg": "/static/img/1.jpg",
+      "houseName": "采荷新村",
+      "houseType": "1",
+      "allCount": "8",
+      "emptyCount": "1"
+    }
+  ]
+}
