@@ -86,6 +86,7 @@ import ShopList from '../components/ShopList'
 import HomeBtn from '../components/HomeBtn'
 
 import {loader} from '../util/util'
+import * as commonUtil from '../util/commonUtil'
 import $ from 'zepto'
 
 export default {
@@ -104,7 +105,8 @@ export default {
     }
   },
   ready () {
-    $.init()
+    $.init();
+    console.log(commonUtil.getQueryString("id"));
   },
   data () {
     return {
