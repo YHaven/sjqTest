@@ -134,8 +134,8 @@ export default {
     margin-top: .5rem;
   }
   .home-bar img{width: 3.475rem;height: 3.475rem;}
-  .man-class{width: 90%;margin: 0 auto;}
-  .man-class li{width: 1.7rem;float: left;margin: 0 .58rem;}
+  .man-class{width: 14.5rem;margin: 0 auto;}
+  .man-class li{width: 1.7rem;float: left;margin: 0 .6rem;}
   .man-class li img{width: 1.7rem;height:1.7rem;}
   .man-class .man-en{font-size: .3rem;text-align: center;font-weight: bold;border-bottom: 1px solid #ddd}
   .man-class .man-cn{font-size: .1rem;text-align: center;}
