@@ -58,7 +58,7 @@ import Item from '../../../components/ListItem'
 import ShopList from '../../../components/ShopList'
 
 import {loader} from '../../../util/util'
-import common from '../../../util/commonUtil'
+import * as common from '../../../util/commonUtil'
 
 import $ from 'zepto'
 
@@ -77,7 +77,7 @@ export default {
   },
   ready () {
     $.init();
-    console.log(getQueryString);
+    console.log(common.getQueryString('id'));
 
   },
   data () {

@@ -1,0 +1,290 @@
+<html>
+<head>
+    <title>JavaScript串口（通过vb的MSCOMM32.OCX控件）</title>
+
+    <script id="clientEventHandlersJS" language="javascript">   
+  <!--   
+  //重写mscomm控件的唯一事件处理代码   
+  function   MSComm1_OnComm()     
+  {   
+	var myDate = new Date();
+	var mytime=myDate.toLocaleTimeString();     //获取当前时间
+	//myDate.toLocaleString( );        //获取日期与时间
+    var   len=0; 
+	//window.alert("happy");  
+    if(MSComm1.CommEvent==1)//如果是发送事件   
+    {   
+        document.getElementById("Textarea1").value =mytime + ":发送成功！\n" + document.getElementById("Textarea1").innerText; 
+    } 
+    else if(MSComm1.CommEvent==2)//如果是接收事件   
+    {   
+		var temp = MSComm1.Input;
+		//document.getElementById("Textarea1").innerHTML = 
+		//	"" + document.getElementById("Textarea1").innerText + mytime + ":" + temp + "";
+		document.getElementById("Textarea1").value =mytime + ":" + temp + "\n" + document.getElementById("Textarea1").innerText;
+    }   
+	return false;   
+  }
+  
+ //-->   
+    </script>
+
+    <script language="javascript" for="MSComm1" event="OnComm">   
+  <!--  
+  // MSComm1控件每遇到OnComm事件就调用MSComm1_OnComm()函数
+          MSComm1_OnComm()
+   //-->   
+    </script>
+    <script language="vbscript" type="text/vbscript" src="VBScript.vbs"></script>
+    <script language="JavaScript" type="text/JavaScript">   
+  <!-- 
+  //打开端口并发送命令程序    
+  
+  -->   
+    </script>
+    <script type="text/javascript" src="JScript.js"></script>
+</head>
+<body>
+    <object classid="clsid:648A5600-2C6E-101B-82B6-000000000014" id="MSComm1" codebase="C:\Windows\System32\MSCOMM32.OCX"
+        type="application/x-oleobject" style="left: 54px; top: 14px">
+        <param name="CommPort" value="2"><!--设置并返回通讯端口号。-->
+        <param name="DTREnable" value="1">
+        <param name="Handshaking" value="0">
+        <param name="InBufferSize" value="1024">
+        <param name="InputLen" value="0">
+        <param name="NullDiscard" value="0">
+        <param name="OutBufferSize" value="512">
+        <param name="ParityReplace" value="?">
+        <param name="RThreshold" value="1">
+        <param name="RTSEnable" value="1">
+        <param name="SThreshold" value="2">
+        <param name="EOFEnable" value="0">
+        <param name="InputMode" value="0"><!--comInputModeText 0 （缺省） 通过 Input 属性以文本方式取回数据。comInputModeBinary 1  通过 Input 属性以二进制方式检取回数据。-->
+        <param name="DataBits" value="8">
+        <param name="StopBits" value="1">
+        <param name="BaudRate" value="9600">
+        <param name="Settings" value="9600,N,8,1">
+    </object>
+    <input type="submit" name="Submit" value="OpenAndSend" onclick="OpenPort()">
+    <input type="submit" name="Submit" value="Send" onclick="SendMessage()">
+    <input type="submit" name="Submit" value="close" onclick="ClosePort()">&nbsp;
+    <br />
+    <textarea id="txtReceive" style="width: 391px; height: 100px">0x68,0x91,0x01,0x01,0x00,0x0D,0x21,0x68,0x01,0x0A,0x00,0x01,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x30,0x80,0x4D,0x16</textarea><br />
+    <textarea id="Textarea1" style="width: 391px; height: 405px"></textarea>
+</body>
+</html>
+
+其中VBScript.vbs 内容：
+' VBScript 文件
+
+function   bytes2BSTR(vIn)   
+    dim strReturn,i,ThisCharCode,innerCode,Hight8,Low8,NextCharCode   
+    strReturn=""   
+    for   i=1   to   LenB(vIn)   
+        ThisCharCode=AscB(MidB(vIn,i,1))   
+        if   ThisCharCode<&H80   Then   
+            strReturn=strReturn   &   Chr(ThisCharCode)   
+        else   
+        NextCharCode=AscB(MidB(vIn,i+1,1))   
+        strReturn=strReturn&Chr(CLng(ThisCharCode)*&H100+CInt(NextCharCode))   
+        i=i+1   
+        end   if   
+    next   
+    bytes2BSTR=strReturn   
+end   function   
+其中JScript.js 内容：
+
+
+<script type="text/javascript">
+  // JScript 文件
+
+// JScript 文件
+
+var http_request = false;
+
+function send_request(url,processRequest,para) {
+    http_request = false;
+    //开始初始化XMLHttpRequest对象
+    if(window.XMLHttpRequest) { //Mozilla 浏览器
+        http_request = new XMLHttpRequest();
+        if (http_request.overrideMimeType) {//设置MiME类别
+            http_request.overrideMimeType('text/xml');
+        }
+    }
+    else if (window.ActiveXObject) { // IE浏览器
+        try {
+            http_request = new ActiveXObject("Msxml2.XMLHTTP");
+        } catch (e) {
+            try {
+                http_request = new ActiveXObject("Microsoft.XMLHTTP");
+            } catch (e) {}
+        }
+    }
+    if (!http_request) { // 异常，创建对象实例失败
+        window.alert("不能创建XMLHttpRequest对象实例.");
+        return false;
+    }
+    //http_request.onreadystatechange = processRequest; function(){HandleStateChange(123)};   
+    http_request.onreadystatechange = function(){processRequest(para)};  
+    // 确定发送请求的方式和URL以及是否同步执行下段代码
+    http_request.open("GET", url, true);
+    http_request.send(null);
+}
+
+
+//打开串口
+function OpenSerialComm() { 
+    if(!document.getElementById('axMSComm1').PortOpen){ 
+        document.getElementById('axMSComm1').PortOpen = true; 
+    }
+    else{ 
+        alert("Port already opened !"); 
+    } 
+//document.getElementById('MSComm1').Output=document.getElementById('Text1').value; 
+} 
+
+
+
+function $(id)
+{
+    return document.getElementById(id);
+}
+
+function Button2_onclick() { 
+    if(!document.getElementById('MSComm1').PortOpen){ 
+        document.getElementById('MSComm1').PortOpen = true; 
+    }else{ 
+        alert("Port already opened !"); 
+    } 
+    //document.getElementById('MSComm1').Output=document.getElementById('Text1').value; 
+} 
+
+  function OpenPort()   
+  {   
+  if(!document.getElementById('MSComm1').PortOpen){ 
+        document.getElementById('MSComm1').PortOpen = true; 
+    }else{ 
+        alert("Port already opened !"); 
+    }
+    var cmd_send = "";
+    var result = $('txtReceive').value;
+    var results = result.split(',');
+    for(var i=0;i<results.length;i++)
+    {
+        cmd_send += String.fromCharCode(eval(results[i]));
+    }
+    
+    if(MSComm1.PortOpen==false)   
+    {   
+        MSComm1.PortOpen=true;   
+        MSComm1.Output=cmd_send;//发送命令
+    }     
+    else   
+    {   
+        window.alert   ("已经准备接收数据!");     
+    }   
+  } 
+  
+  
+  function ClosePort()
+  {
+    if(MSComm1.PortOpen==true)   
+    {   
+        MSComm1.PortOpen=false;   
+    }     
+    else   
+    {   
+        window.alert   ("串口已经关闭!");     
+    } 
+  }
+  
+  function SendMessage()
+  {
+    var cmd_send = "";
+    var result = $('txtReceive').value;
+    var results = result.split(',');
+    for(var i=0;i<results.length;i++)
+    {
+        cmd_send += String.fromCharCode(eval(results[i]));
+    } 
+    if(MSComm1.PortOpen==false)   
+    {    
+        window.alert("串口已经关闭!!");  
+    }     
+    else   
+    {   
+        MSComm1.Output=cmd_send;//发送命令    
+    } 
+  }
+  
+  
+  String.prototype.stringToArray()     //串转为数组   
+  {   
+  var   ar   =   new   Array()   
+  for   (var   i=0   ;   i<this.length   ;   i++)   
+  ar[i]   =   this.charCodeAt(i);   
+  return   ar;   
+  }   
+    
+  Array.prototype.arrayToStringtring()   //数组转为传   
+  {   
+  var   str   =   "";   
+  for   (var   i=0   ;   i<this.length   ;   i++)   
+  str   +=   String.fromCharCode(this[i]);   
+  return   str;   
+  }   
+Array.prototype.or(ar)     //数组或操作   
+  {   
+  var   l   =   ar.length;   
+  var   result   =   new   Array();   
+  if   (ar.length>this.length)   l   =   this.length;   
+  for   (var   i=0;i<l;i++)   
+  result[i]   =   this[i]   |   ar[i];   
+  return   result;   
+  }   
+    
+  Array.prototype.and(ar)   //数组与操作   
+  {   
+  var   l   =   ar.length;   
+  var   result   =   new   Array();   
+  if   (ar.length>this.length)   l   =   this.length;   
+  for   (var   i=0;i<l;i++)   
+  result[i]   =   this[i]   &   ar[i];   
+  return   result;   
+  }   
+  
+  
+  
+  function parseString(data)
+  {
+    for(var i=0;i<data.length;i++)
+    {
+        var temp = data[i];
+    }
+  }
+  
+  function doubleMessage(data)
+  {
+    var temp="";
+    if(data.length<2)
+        temp += "0";
+    return temp.toUpperCase() +data.toUpperCase();
+  }
+  
+function endParseMessage(data)
+{
+    if (http_request.readyState == 4) 
+    { // 判断对象状态
+        if (http_request.status == 200) 
+        { // 信息已经成功返回，开始处理信息              
+           $('Textarea1').value +="\r\n"+http_request.responseText;
+        } 
+        else 
+        { //页面不正常
+            alert("sorry,system error!");
+        }
+    }
+}
+
+
+</script>

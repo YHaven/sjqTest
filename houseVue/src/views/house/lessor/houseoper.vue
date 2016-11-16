@@ -56,14 +56,16 @@
   </div>
 </div>
 </template>
-
 <script>
-  import {loader} from '../../../util/commonUtil'
+  
   import $ from 'zepto'
+  import common from '../../../util/commonUtil'
+  import  {target} from '../../../util/ajaxfileupload'
 
   export default {
   ready () {
-    
+
+    console.log(target);
   },
   data () {
 
