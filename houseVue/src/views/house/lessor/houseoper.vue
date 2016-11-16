@@ -9,16 +9,36 @@
   <form class="list-block">
     <input type="hidden" id="id" name="id" value=""/>
     <ul>
-      <li style="height: 3rem;">
+      <!-- <li style="height: 3rem;">
         <div class="item-content" style="min-height: 3rem;">
-          <input type="hidden" name="uploadImg" value="">
-          <div class="item-media"><img src="" height="auto" style='width: 2.2rem;'></div>
-          <div class="item-inner" style="min-height: 3rem;">
+          
+          <div class="item-media"></div>
+          <div class="item-inner" class="uploadBtn" style="min-height: 3rem;">
             <div class="item-title-row">
             </div>
-            <input type="file" style="display:none;">
+            <input style="display:-none;" accept="image/*" onchange="uploadImgFile(this)" id="Filedata" name="Filedata" type="file">
+            <input type="hidden" name="uploadImg" value="">
             <div class="item-subtitle"><span class="imgpath"></span>图片</div>
           </div>
+        </div>
+      </li> -->
+      <li>
+        <div class="item-content">
+          <div class="item-inner">
+            <img src="/static/img/1.jpg" height="auto" style='width: 2.2rem;'>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="item-content">
+            <div class="item-inner">
+                <div class="item-title label">房子图片</div>
+                <div class="item-input">
+                    <input style="display:-none;" accept="image/*" v-on:change="uploadImgFile(this)" id="Filedata" name="Filedata" type="file">
+                    <input type="hidden" name="uploadImg" value="">
+
+                </div>
+            </div>
         </div>
       </li>
       <li>
@@ -64,7 +84,7 @@
 
   export default {
   ready () {
-
+    
     console.log(target);
   },
   data () {
@@ -74,9 +94,32 @@
 
   },
   methods: {
-    refresh () {
-      
+    uploadImgFile(thisFile){
+      var fileName = thisFile.id;
+      target.ajaxFileUpload ({ 
+
+                url : 'http://www.zhencome.com/plana/index!userProfile.action?vt=1',
+
+                secureuri :false, 
+
+                fileElementId : thisFile.id, 
+
+                dataType : 'json', 
+
+                data : {},
+
+                success : function (data,status){
+                  if(data.status){
+                    $('input[name="uploadImg"]').val(data.imgid);
+                    $('.house-short-img img').attr('src',data.imgurl);
+                  }else{
+                    PLANA.showbox.showMessageBox(data.errorinfo,true,3000);
+                  }
+                }
+
+            });
     }
+
   }
 }
 

@@ -65,13 +65,13 @@ export const target = {
         // Watch for a new set of requests
         if ( s.global && ! $.active++ )
 		{
-			$.event.trigger( "ajaxStart" );
+			$('body').trigger( "ajaxStart" );
 		}            
         var requestDone = false;
         // Create the request object
         var xml = {}   
         if ( s.global )
-            $.event.trigger("ajaxSend", [xml, s]);
+            $('body').trigger("ajaxSend", [xml, s]);
         // Wait for a response to come back
         var uploadCallback = function(isTimeout)
 		{			
@@ -90,7 +90,7 @@ export const target = {
 				}						
             }catch(e)
 			{
-				$.handleError(s, xml, null, e);
+				// $.handleError(s, xml, null, e);
 			}
             if ( xml || isTimeout == "timeout") 
 			{				
@@ -102,7 +102,7 @@ export const target = {
                     if ( status != "error" )
 					{
 						// process the data (runs the xml through httpData regardless of callback)
-                        var data = $.uploadHttpData( xml, s.dataType );    
+                        var data = target.uploadHttpData( xml, s.dataType );    
                         // If a local callback was specified, fire it and pass it the data
 						if ( s.success )
                             s.success( data, status );
