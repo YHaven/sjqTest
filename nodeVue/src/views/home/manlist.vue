@@ -5,13 +5,13 @@
     <div class="home-bar-container">
       <bar class="home-bar">
         <a class="tab-item">
-          <img src="/static/img/man-img1.jpg" alt="">
+          <img src="{{baseHome}}/static/img/man-img1.jpg" alt="">
         </a>
         <a class="tab-item">
-          <img src="/static/img/man-img2.jpg" alt="">
+          <img src="{{baseHome}}/static/img/man-img2.jpg" alt="">
         </a>
         <a class="tab-item" v-link="{path: '/invite'}">
-          <img src="/static/img/man-img3.jpg" alt="">
+          <img src="{{baseHome}}/static/img/man-img3.jpg" alt="">
         </a>
       </bar>
     </div>
@@ -27,7 +27,7 @@
     <div class="card-container">
       <v-card-container v-for="task in tasks | orderBy 'created' 1" class="cardItem">
         <div class="item-content" >
-          <img src="/static/img/man-img.jpg" alt="">
+          <img src="{{baseHome}}/static/img/man-img.jpg" alt="">
         </div>
       </v-card-container>
     </div>
@@ -50,14 +50,14 @@ export default {
         var manClassObj = {};
         manClassObj.en = 'man';
         manClassObj.cn = '男人';
-        var img = '/static/img/man-img_0'+ (i+1) +'.jpg';
-        if(i >= 9) img = '/static/img/man-img_'+ (i+1) +'.jpg';
+        var img = baseStaticPath+'/static/img/man-img_0'+ (i+1) +'.jpg';
+        if(i >= 9) img = baseStaticPath+'/static/img/man-img_'+ (i+1) +'.jpg';
         manClassObj.img = img;
         this.manclass.push(manClassObj);
       };
 
 
-      return this.$http.get('/static/data/bannertasks.json')
+      return this.$http.get(baseStaticPath+'/static/data/bannertasks.json')
       .then(({data: {success, info, data}}) => {
         
         this.$set('tasks', data.productList);
@@ -69,6 +69,7 @@ export default {
   },
   data () {
     return {
+      baseHome:baseStaticPath,  //全局变量   /fat
       tasks: [],
       manclass:[],
       loading: false
@@ -83,7 +84,7 @@ export default {
     refresh () {
       setTimeout(function () {
         
-      this.$http.get('/static/data/bannertasks.json')
+      this.$http.get(baseStaticPath+'/static/data/bannertasks.json')
       .then(({data: {success, info, data}}) => {
         
         this.$set('tasks', data.productList)
@@ -100,7 +101,7 @@ export default {
       let scroller = $('.content')
       loader.show()
       setTimeout(() => {
-        this.$http.get('/static/data/bannertasks.json')
+        this.$http.get(baseStaticPath+'/static/data/bannertasks.json')
           .then(({data: {success, info, data}}) => {
             var productList = data.productList
             for (var i = 0; i < productList.length; i++) {

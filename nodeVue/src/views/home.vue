@@ -6,7 +6,7 @@
     <top-search v-top-search="topSearch"></top-search>
     <slider :banner="banner"></slider>
     <bar class="home-bar">
-      <a class="tab-item" v-link="{path: '/home/manlist'}">
+      <a class="tab-item" v-link="{path:'/home/manlist'}">
         <span class="man-in"></span>
         <span class="tab-label">男士大码</span>
       </a>
@@ -94,7 +94,7 @@ export default {
       //   // this.$set('apptitle', '解忧大码');
       // })
       // return this.$http.get('/static/data/bannertasks.json')
-      return this.$http.get('/fat/main/index?start=1')
+      return this.$http.get(baseStaticPath+'/main/index?start=1')
       .then(({data: {success, info, data}}) => {
         
         this.$set('tasks', data.product);
@@ -108,6 +108,7 @@ export default {
   },
   data () {
     return {
+      baseHome:baseStaticPath,  //全局变量   /fat
       banner: [],
       tasks: [],
       pageIndex : 0,
@@ -124,7 +125,7 @@ export default {
     refresh () {
       setTimeout(function () {
         this.pageIndex = 1
-      this.$http.get('/fat/main/index?start='+this.pageIndex)
+      this.$http.get(baseStaticPath+'/main/index?start='+this.pageIndex)
       .then(({data: {success, info, data}}) => {
         
         this.$set('tasks', data.product)
@@ -157,7 +158,7 @@ export default {
       loader.show()
       setTimeout(() => {
         this.pageIndex += 1;
-        this.$http.get('/fat/main/index?start='+this.pageIndex)
+        this.$http.get(baseStaticPath+'/main/index?start='+this.pageIndex)
           .then(({data: {success, info, data}}) => {
             var productList = data.product
             for (var i = 0; i < productList.length; i++) {

@@ -1,6 +1,7 @@
 import $ from 'zepto'
 
 export default function (router) {
+
   router.map({
     '*': {
       component (resolve) {
@@ -134,4 +135,8 @@ export default function (router) {
     console.log(`成功浏览到: ${to.path}`)
     $.refreshScroller()
   })
+
+  // router.redirect({//定义全局的重定向规则。全局的重定向会在匹配当前路径之前执行。
+  //   '*':"/fat/main"//重定向任意未匹配路径到/index
+  // })
 }

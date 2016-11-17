@@ -6,10 +6,10 @@
     <top-search v-top-search="topSearch"></top-search>
     <div class="top-current">
         <bar v-if="isFashion">
-          <bar-item path="/fashion/recommend" label="推荐" icon=""></bar-item>
+          <bar-item path="/fashion/recommend" label="推荐" icon="more"></bar-item>
           <!-- <bar-item path="/tasks" label="任务" icon="tasks"></bar-item> -->
-          <bar-item path="/fashion/concern" label="朋友圈" icon=""></bar-item>
-          <bar-item path="/fashion/topic" label="话题" icon=""></bar-item>
+          <bar-item path="/fashion/concern" label="朋友圈" icon="more"></bar-item>
+          <bar-item path="/fashion/topic" label="话题" icon="more"></bar-item>
           <!-- <bar-item path="/more" label="更多" icon="more"></bar-item> -->
         </bar>
     </div>
@@ -40,7 +40,7 @@ import $ from 'zepto'
 export default {
   route: {
     data () {
-      return this.$http.get('/static/data/bannertasks.json')
+      return this.$http.get(baseStaticPath+'/static/data/bannertasks.json')
       .then(({data: {success, info, data}}) => {
         
         this.$set('tasks', data.productList);
@@ -52,10 +52,11 @@ export default {
   },
   data () {
     return {
+      baseHome:baseStaticPath,  //全局变量   /fat
       banner: [],
       tasks: [],
       isFashion: true,
-      topBannerImg:'/static/img/s2.jpg',
+      topBannerImg:baseStaticPath+'/static/img/s2.jpg',
       apptitle: '解忧大码',
       loading: false
     }
