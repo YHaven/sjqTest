@@ -24,7 +24,7 @@
       </li> -->
       <li>
         <div class="item-content">
-          <div class="item-inner">
+          <div class="item-inner ">
             <img src="/static/img/1.jpg" height="auto" style='width: 2.2rem;'>
           </div>
         </div>
@@ -34,8 +34,9 @@
             <div class="item-inner">
                 <div class="item-title label">房子图片</div>
                 <div class="item-input">
-                    <input style="display:-none;" accept="image/*" v-on:change="uploadImgFile(this)" id="Filedata" name="Filedata" type="file">
-                    <input type="hidden" name="uploadImg" value="">
+                    <file-input></file-input>
+                    <!-- <input style="display:-none;" accept="image/*" v-on:change="uploadImgFile(this)" id="Filedata" name="Filedata" type="file">
+                    <input type="hidden" name="uploadImg" value=""> -->
 
                 </div>
             </div>
@@ -71,21 +72,23 @@
      
     </ul>
   </form>
+
+  
+
   <div class="submit-button">
     <button class="button button-big button-fill">保存</button>
   </div>
 </div>
 </template>
 <script>
-  
   import $ from 'zepto'
+  import FileInput from '../../../components/FileInput'  
   import common from '../../../util/commonUtil'
-  import  {target} from '../../../util/ajaxfileupload'
+  
 
   export default {
   ready () {
-    
-    console.log(target);
+
   },
   data () {
 
@@ -120,6 +123,9 @@
             });
     }
 
+  },
+  components: {
+    FileInput
   }
 }
 
@@ -163,4 +169,5 @@
   line-height: 2.1rem !important;
   height: 2.1rem !important;
 }
+.thumb img{width: 100%;height: 100%;}
 </style>
