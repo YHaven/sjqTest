@@ -8,12 +8,13 @@ import ISlider from '../assets/js/iSlider'
 export default {
   data () {
     return {
-      slider: null
+      slider: null,
+      baseHome:baseStaticPath,  //全局变量   /fat
     }
   },
   ready () {
     // this.$http.get('/static/data/bannertasks.json')
-    this.$http.get('/fat/main/index?start=1')
+    this.$http.get(baseStaticPath+'/main/index?start=1')
     .then(function(response) {
             let imgs = []
             let bannerData = response.data.data.banner
