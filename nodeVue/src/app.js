@@ -20,7 +20,7 @@ const router = new VueRouter({
 })
 
 routerConfig(router)
-window.baseStaticPath = '/fat'
+window.baseStaticPath = ''
 // Resource
 Vue.use(VueResource)
 
