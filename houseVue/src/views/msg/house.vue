@@ -4,15 +4,15 @@
     <v-layer></v-layer>
     <slider :banner="banner"></slider>
       <bar class="home-bar">
-        <a class="tab-item " href="/home">
+        <a class="tab-item " v-link="{path: '/home'}">
           <span class="icon iconfont icon-appreciatefill"></span>
           <span class="tab-label">推荐</span>
         </a>
-        <a class="tab-item active" href="/msg/house">
+        <a class="tab-item active" v-link="{path: '/msg/house'}">
           <span class="icon iconfont icon-likefill"></span>
           <span class="tab-label">小房子</span>
         </a>
-        <a class="tab-item " href="/msg/topic">
+        <a class="tab-item " v-link="{path: '/msg/topic'}">
           <span class="icon iconfont icon-comment"></span>
           <span class="tab-label">话题</span>
         </a>

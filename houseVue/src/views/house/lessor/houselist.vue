@@ -17,7 +17,7 @@
         
         <div class="item-content" >
           <a href="javascript:;" class="head-img"><img src="{{task.uploadImg}}" alt="房屋缩略图"></a>
-          <a href="/house/lessor/roomlist?id={{task.id}}">
+          <a v-link="{path: '/house/lessor/roomlist?id='+task.id, replace: true}">
           <div class="right">
             <div class="r-t">{{task.houseName}}</div>
             <div class="r-c">住宅{{task.allCount}}套，空闲{{task.emptyCount}}套</div>

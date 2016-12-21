@@ -9,7 +9,7 @@
         
 
         <div class="item-content">
-          <a href="/house/{{task.path}}">
+          <a  v-link="{path:task.path}">
             <img v-bind:src="task.imgurl" alt="">
           </a>
           
@@ -49,8 +49,8 @@ export default {
       for (var i = 0; i < 1; i++) {
         var entryObj = {};
         entryObj.id = i+1
-        if(i == 0) entryObj.path = 'lessor/houselist'
-        if(i == 1) entryObj.path = 'lessee/houselist'
+        if(i == 0) entryObj.path = '/house/lessor/houselist'
+        if(i == 1) entryObj.path = '/house/lessee/houselist'
         entryObj.imgurl = '/static/img/rent.jpg'
         entryList.push(entryObj)
       };
