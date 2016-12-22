@@ -14,7 +14,7 @@ export default {
   },
   ready () {
     // this.$http.get('/static/data/bannertasks.json')
-    this.$http.get(baseStaticPath+'/main/index?start=1')
+    this.$http.get(planPro.ajaxUrl.homeBT+'?start=1')
     .then(function(response) {
             let imgs = []
             let bannerData = response.data.data.banner
@@ -59,7 +59,7 @@ export default {
 
 <style>
 #islider {
-  height: 8.15rem;
+  height: 8.75rem;
   width: 100%;
   overflow: hidden;
   position: relative;
