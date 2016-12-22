@@ -1,7 +1,7 @@
 <template>
 <div class="content profile">
   <header class="bar bar-nav">
-    <a class="button button-link button-nav pull-left" href="javascript:history.back(-1);">
+    <a class="button button-link button-nav pull-left" v-link="{path: '/house/lessor/rentallist', replace: true}">
     <span class="icon icon-left"></span>
     </a>
     <h1 class="title">采荷新村-508-可以的-账单</h1>

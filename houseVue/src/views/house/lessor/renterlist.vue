@@ -11,7 +11,7 @@
     <div class="tph-info">
       <a href="javascript:;" class="head-img"><img src="{{roominfo.uploadImg}}" alt=""></a>
         <div class="right">
-          <a href="/house/lessor/roomoper" >
+          <a v-link="{path: '/house/lessor/roomoper'}">
           <div class="r-t">{{roominfo.roomName}}</div>
           <div class="r-c">{{roominfo.houseName}}</div>
           </a>
@@ -25,7 +25,7 @@
       :style="{backgroundColor: task.status === '1' ? 'white': 'rgb(235, 235, 235)' }">
         
         <div class="item-content" >
-          <a href="/house/lessor/rentallist">
+          <a v-link="{path: '/house/lessor/rentallist'}">
           <div class="room-item">
             <div class="r-t"> {{task.renterName}}</div>
             <div class="r-c">{{task.renterPhone}}</div>
@@ -58,7 +58,7 @@ import $ from 'zepto'
 export default {
   route: {
     data () {
-      return this.$http.get('/static/data/renterlist.json?vt=2')
+      return this.$http.get(planPro.ajaxUrl.renterlist+'?vt=2')
       .then(({data: {status, page, roominfo, datalist}}) => {
         this.$set('tasks', datalist);
         this.$set('roominfo', roominfo);
@@ -86,7 +86,7 @@ export default {
       setTimeout(function () {
         this.page = 1
         var page = '&page='+ this.page
-        this.$http.get('/static/data/renterlist.json?vt=2'+page)
+        this.$http.get(planPro.ajaxUrl.renterlist+'?vt=2'+page)
       .then(({data: {status, page, datalist}}) => {
         this.$set('tasks', datalist);
       })
@@ -117,7 +117,7 @@ export default {
       setTimeout(() => {
         this.page = this.page + 1
         var page = '&page='+ this.page
-        this.$http.get('/static/data/renterlist.json?vt=2'+page)
+        this.$http.get(planPro.ajaxUrl.renterlist+'?vt=2'+page)
           .then(({data: {status, page, datalist}}) => {
             for (var i = 0; i < datalist.length; i++) {
               this.tasks.push(datalist[i]);

@@ -30,7 +30,7 @@
       :style="{backgroundColor: task.status === '1' ? 'white': 'rgb(235, 235, 235)' }">
         
         <div class="item-content" >
-          <a href="/house/lessor/renterlist?id={{task.id}}">
+          <a v-link="{path: '/house/lessor/renterlist'+task.id}">
           <div class="room-item">
             <div class="r-t">{{task.roomName}}</div>
             <div class="r-c">{{task.renterCount}}租客</div>
@@ -67,7 +67,7 @@ export default {
   route: {
     data () {
 
-      return this.$http.get('/static/data/roomlist.json?vt=2')
+      return this.$http.get(planPro.ajaxUrl.roomlist+'?vt=2')
       .then(({data: {status, page, houseinfo, datalist}}) => {
         this.$set('tasks', datalist);
         this.$set('houseinfo', houseinfo);
@@ -99,7 +99,7 @@ export default {
       setTimeout(function () {
         this.page = 1
         var page = '&page='+ this.page
-        this.$http.get('/static/data/roomlist.json?vt=2'+page)
+        this.$http.get(planPro.ajaxUrl.roomlist+'?vt=2'+page)
       .then(({data: {status, page, datalist}}) => {
         this.$set('tasks', datalist);
       })
@@ -130,7 +130,7 @@ export default {
       setTimeout(() => {
         this.page = this.page + 1
         var page = '&page='+ this.page
-        this.$http.get('/static/data/roomlist.json?vt=2'+page)
+        this.$http.get(planPro.ajaxUrl.roomlist+'?vt=2'+page)
           .then(({data: {status, page, datalist}}) => {
             for (var i = 0; i < datalist.length; i++) {
               this.tasks.push(datalist[i]);

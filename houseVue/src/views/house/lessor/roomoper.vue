@@ -1,7 +1,7 @@
 <template>
 <div class="content profile">
   <header class="bar bar-nav">
-    <a class="button button-link button-nav pull-left"  href="javascript:history.back(-1);">
+    <a class="button button-link button-nav pull-left"  v-link="{path: '/house/lessor/roomlist'}">
     <span class="icon icon-left"></span>
     </a>
     <h1 class="title">编辑房号</h1>

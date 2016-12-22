@@ -49,7 +49,7 @@ import $ from 'zepto'
 export default {
   route: {
     data () {
-      return this.$http.get('/static/data/houselist.json')
+      return this.$http.get(planPro.ajaxUrl.houselist)
       .then(({data: {status, page, datalist}}) => {
         this.$set('tasks', datalist);
       })
@@ -77,7 +77,7 @@ export default {
       setTimeout(function () {
         this.page = 1
         var page = '&page='+ this.page
-        this.$http.get('/static/data/houselist.json?vt=2'+page)
+        this.$http.get(planPro.ajaxUrl.houselist+'?vt=2'+page)
         .then(({data: {status, page, datalist}}) => {
           this.$set('tasks', datalist);
         })
@@ -95,7 +95,7 @@ export default {
       setTimeout(() => {
         this.page = this.page + 1
         var page = '&page='+ this.page
-        this.$http.get('/static/data/houselist.json?vt=2'+page)
+        this.$http.get(planPro.ajaxUrl.houselist+'?vt=2'+page)
           .then(({data: {status, page, datalist}}) => {
             for (var i = 0; i < datalist.length; i++) {
               this.tasks.push(datalist[i]);
