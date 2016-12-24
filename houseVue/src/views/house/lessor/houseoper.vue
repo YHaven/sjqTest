@@ -7,7 +7,7 @@
     <h1 class="title">编辑房产</h1>
   </header>
   <form class="list-block">
-    <input type="hidden" id="id" name="id" value=""/>
+    <input type="hidden" id="id" name="id" value="{{fdata.id}}"/>
     <ul>
       <!-- <li style="height: 3rem;">
         <div class="item-content" style="min-height: 3rem;">
@@ -34,7 +34,7 @@
             <div class="item-inner">
                 <div class="item-title label">房子图片</div>
                 <div class="item-input">
-                    <file-input></file-input>
+                    <file-input :pdata="fdata"></file-input>
                     <!-- <input style="display:-none;" accept="image/*" v-on:change="uploadImgFile(this)" id="Filedata" name="Filedata" type="file">
                     <input type="hidden" name="uploadImg" value=""> -->
 
@@ -45,9 +45,9 @@
       <li>
         <div class="item-content">
             <div class="item-inner">
-                <div class="item-title label">房子名称</div>
+                <div class="item-title label">*房子名称</div>
                 <div class="item-input">
-                    <input id="houseName" type="text" name="houseName" placeholder="请输入房产名称" value="国际花园">
+                    <input id="houseName" type="text" name="houseName" placeholder="请输入房产名称" value="{{fdata.houseName}}">
                 </div>
             </div>
         </div>
@@ -60,10 +60,14 @@
                 <div class="item-title label">房产类型</div>
                 <div class="item-input">
                     <select name="houseType">
-                        <option value="1" selected>住宅/小区/公寓</option>
-                        <option value="2">办公室/写字楼</option>
-                        <option value="3">商铺</option>
-                        <option value="4">仓库</option>
+                        <option value="1" v-if="fdata.houseType === '1'" seleted>住宅/小区/公寓</option>
+                        <option value="1" v-else>住宅/小区/公寓</option>
+                        <option value="1" v-if="fdata.houseType === '2'" seleted>办公室/写字楼</option>
+                        <option value="1" v-else>办公室/写字楼</option>
+                        <option value="1" v-if="fdata.houseType === '3'" seleted>商铺</option>
+                        <option value="1" v-else>商铺</option>
+                        <option value="1" v-if="fdata.houseType === '4'" seleted>仓库</option>
+                        <option value="1" v-else>仓库</option>
                     </select>
                 </div>
             </div>
@@ -82,16 +86,26 @@
 </template>
 <script>
   import $ from 'zepto'
-  import FileInput from '../../../components/FileInput'  
-  import common from '../../../util/commonUtil'
+  import FileInput from '../../../components/FileInput'
   
 
   export default {
+  route: {
+    data () {
+
+      return this.$http.get(planPro.ajaxUrl.houseoper+'?id='+planPro.fun.getQueryString('id'))
+      .then(({data: {status,data}}) => {
+        this.$set('fdata', data);
+      })
+    }
+  },
   ready () {
 
   },
   data () {
-
+    return {
+      fdata: {}
+    }
   },
   computed: {
 

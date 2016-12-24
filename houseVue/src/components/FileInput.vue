@@ -2,7 +2,7 @@
 	<div class="camera-area">
         <input type="file" name="fileToUpload" class="fileToUpload" id="fileToUpload" accept="image/*" capture="camera" style="display:-none"/>
         <div class="upload-progress"><span></span></div>
-       	<input type="hidden" id="uploadImg" name="uploadImg" value="">
+       	<input type="hidden" id="uploadImg" name="uploadImg" value="{{pdata.uploadImg}}">
       	<div class="thumb"></div>
   	</div>
 </template>
@@ -18,13 +18,14 @@
 	import $ from 'zepto'
 	import '../util/upload'
 
-
 	export default {
+		props: [
+            'pdata'
+        ],
 		ready () {
-			console.log('start');
 		    $(".camera-area").fileUpload({
-		        "url": "savetofile.php",
-		        "file": "myFile"
+		        "url": planPro.ajaxUrl.uploadImg,
+		        "file": "myFile" //Filedata
 		    });
 		}
 	}
