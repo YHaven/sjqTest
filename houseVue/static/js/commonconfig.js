@@ -10,6 +10,7 @@ planPro.ajaxUrl = {
     homeBT : '/static/data/bannertasks.json',//首页ajax   ///main/index
     houselist : '/static/data/houselist.json',
     houseoper : '/static/data/houseoper.json',
+    posthouseoper : '/static/data/houseoper.json',
     roomlist : '/static/data/roomlist.json',
     renterlist : '/static/data/renterlist.json',
     rentallist: '/static/data/rentallist.json'

@@ -59,7 +59,7 @@
             <div class="item-inner">
                 <div class="item-title label">房产类型</div>
                 <div class="item-input">
-                    <select name="houseType">
+                    <select name="houseType" id="houseType">
                         <option value="1" v-if="fdata.houseType === '1'" seleted>住宅/小区/公寓</option>
                         <option value="1" v-else>住宅/小区/公寓</option>
                         <option value="1" v-if="fdata.houseType === '2'" seleted>办公室/写字楼</option>
@@ -79,12 +79,13 @@
 
   
 
-  <div class="submit-button">
-    <button class="button button-big button-fill">保存</button>
+  <div class="submit-button" @click="postForm">
+    <button class="button button-big button-fill" >保存</button>
   </div>
 </div>
 </template>
 <script>
+  import {loader} from '../../../util/util'
   import $ from 'zepto'
   import FileInput from '../../../components/FileInput'
   
@@ -104,7 +105,8 @@
   },
   data () {
     return {
-      fdata: {}
+      fdata: {},
+      loading : false
     }
   },
   computed: {
@@ -135,6 +137,31 @@
                 }
 
             });
+    },
+    //提交
+    postForm () {
+      console.log('post');
+      if (this.loading) {
+        return
+      }
+      this.loading = true
+      let scroller = $('.content')
+      loader.show()
+      setTimeout(() => {
+        let params = {
+            id:$('#id').val(),
+            uploadImg:$('#uploadImg').val(),
+            houseName:$('#houseName').val(),
+            houseType:$('#houseType').val()
+        }
+        this.$http.post(planPro.ajaxUrl.posthouseoper,params)
+          .then(({data: {status, page, datalist}}) => {
+            
+        })
+      
+        this.loading = false
+        loader.hide()
+      }, 1500)
     }
 
   },
