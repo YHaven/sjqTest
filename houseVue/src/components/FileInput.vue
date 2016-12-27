@@ -24,8 +24,8 @@
         ],
 		ready () {
 		    $(".camera-area").fileUpload({
-		        "url": planPro.ajaxUrl.uploadImg,
-		        "file": "myFile" //Filedata
+		        "url": planPro.ajaxUrl.fileUpload,
+		        "file": "Filedata" //Filedata
 		    });
 		}
 	}

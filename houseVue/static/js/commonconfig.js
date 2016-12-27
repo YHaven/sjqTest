@@ -6,6 +6,7 @@ var planPro = planPro || {};
 planPro.homePath = 'http://localhost:8080';
 //ajax地址
 planPro.ajaxUrl = {
+	fileUpload : planPro.homePath + '/plana/file!upfile.action',
 	uploadImg : 'http://www.zhencome.com/plana/index!userProfile.action?vt=1',
     homeBT : '/static/data/bannertasks.json',//首页ajax   ///main/index
     houselist : '/static/data/houselist.json',
