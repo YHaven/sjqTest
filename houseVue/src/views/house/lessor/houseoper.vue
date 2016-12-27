@@ -149,14 +149,15 @@
       loader.show()
       setTimeout(() => {
         let params = {
+            vt:1, //1表示处理
             id:$('#id').val(),
             uploadImg:$('#uploadImg').val(),
             houseName:$('#houseName').val(),
             houseType:$('#houseType').val()
         }
         this.$http.post(planPro.ajaxUrl.posthouseoper,params)
-          .then(({data: {status, page, datalist}}) => {
-            
+          .then(({data: {status}}) => {
+            console.log(status);
         })
       
         this.loading = false
