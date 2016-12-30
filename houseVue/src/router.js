@@ -12,7 +12,7 @@ export default function (router) {
         require(['./views/welcome'], resolve)
       }
     },
-    '/login.html': {
+    '/login': {
       component (resolve) {
         require(['./views/login'], resolve)
       }
@@ -167,17 +167,10 @@ export default function (router) {
     if (toPath.replace(/[^/]/g, '').length > 1 ) {
       router.app.isIndex = false
     }
-    if(toPath.indexOf('/home')>=0){
+    if(toPath.indexOf('/fashion')>=0 || toPath.indexOf('/home')>=0){
       router.app.isIndex = true
-    }
-    if(toPath.indexOf('/login')>=0){
-      router.app.isIndex = false
-    }
-    if(toPath.indexOf('/fashion')>=0){
-      router.app.isIndex = true
-    }
-    else {
-      let depath = toPath === '/' || toPath === '/invite' || toPath === '/rank'
+    }else {
+      let depath = toPath === '/' || toPath === '/invite' || toPath === '/rank' || toPath === '/login'
       router.app.isIndex = depath ? 0 : 1
     }
     next()

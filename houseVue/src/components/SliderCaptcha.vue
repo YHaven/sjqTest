@@ -1,9 +1,9 @@
 <template>
   <div class="stage">
       <div class="slider" id="slider">
-          <div class="label">向右滑动验证</div>
+          <div class="label">向右滑动登录</div>
           <div class="track" id="track">
-              <div class="bg-green"></div>
+              <div class="bg-green">朕来了</div>
           </div>
           <div class="button" id="btn">
               <div class="icon" id="icon"></div>
@@ -33,11 +33,47 @@
 </template>
 
 <script>
+import $ from 'zepto'
 export default {
+  methods: {
+    submitForm(){
+        var _this = this;
+        // layer.open({
+        //     title: [
+        //       '我是标题',
+        //       'background-color: #FF4351; color:#fff;'
+        //     ]
+        //     ,content: '标题风格任你定义。'
+        // });
+        
+        layer.open({
+            content: '您确定要进入主页？'
+            ,btn: ['要', '不要']
+            ,yes: function(index){
+               _this.$route.router.go({path: '/home', replace: true});
+               layer.close(index);
+            }
+        });
+        
+       return false;
+
+        var formParams = {
+            username : $('input[name="username"]').val(),
+            password : $('input[name="password"]').val()
+        }
+        // $('.loginForm').serialize()
+        _this.$http.post(planPro.ajaxUrl.login, formParams)
+        .then((response) => {
+            //_this.$route.router.go({path: '/home', replace: true})
+          console.log(response)
+        })
+    }
+  },
   ready () {
     // setTimeout(() => {
     //   this.$route.router.go({path: '/home', replace: true})
     // }, 1500)
+    var _this = this; 
     var oBtn = document.getElementById('btn');
     var oW,oLeft;
     var oSlider=document.getElementById('slider');
@@ -46,7 +82,6 @@ export default {
     var oSpinner=document.getElementById('spinner');
  
     oBtn.addEventListener('touchstart',function(e){
-        console.log(e);
         var touches = e.touches[0];
         oW = touches.clientX - oBtn.offsetLeft;
         oBtn.className="button";
@@ -67,8 +102,6 @@ export default {
     },false);
  
     oBtn.addEventListener("touchend",function() {
-      console.log('oLeft:'+oLeft);
-      console.log('oSlider.clientWidth-oBtn.clientWidth:'+(oSlider.clientWidth-oBtn.clientWidth));
         if(oLeft>=(oSlider.clientWidth-oBtn.clientWidth-2)){
             oBtn.style.left = (document.documentElement.clientWidth - oBtn.offsetWidth-30);
             oTrack.style.width= (document.documentElement.clientWidth - oBtn.offsetWidth-30);
@@ -76,6 +109,10 @@ export default {
             oSpinner.style.display='block';
             oBtn.className="button-on";
             oTrack.className="track-on";
+
+
+            _this.submitForm();
+
         }else{
             oBtn.style.left = 0;
             oTrack.style.width= 0;
@@ -163,17 +200,16 @@ export default {
     -webkit-transition: width .5s;
 }
 .icon  {
-    width: 32px;
-    height: 32px;
+    width: 52px;
+    height: 52px;
     position: relative;
-    top:10px;
-    left:0px;
+    left:-16px;
     font-family: sans-serif;
 }
 .icon:before{
     content:'>>';
     color:#ccc;
-    line-height:32px;
+    line-height:52px;
 }
 .spinner {
     margin: 16px auto;

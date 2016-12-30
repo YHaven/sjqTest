@@ -155,7 +155,9 @@
             houseName:$('#houseName').val(),
             houseType:$('#houseType').val()
         }
-        this.$http.post(planPro.ajaxUrl.posthouseoper,params)
+        var postUrl = planPro.ajaxUrl.posthouseoper; //添加的
+        if(params.id !== '') postUrl = planPro.ajaxUrl.posthouseopermodify;  //修改的
+        this.$http.post(postUrl,params)
           .then(({data: {status}}) => {
             console.log(status);
         })

@@ -2,10 +2,10 @@
   <div class="container">
     <top-title v-bind:parent-apptitle="apptitle"></top-title>
     <form class="loginForm">
-      <input type="text" placeholder="手机/昵称/邮箱" name="username" v-model="userName">
-      <input type="text" placeholder="密码" name="password" v-model="password">
-      <v-slider-captcha></v-slider-captcha>
-      <div class="three-login clearfix">
+      <input type="text" placeholder="手机/昵称/邮箱" name="username">
+      <input type="text" placeholder="密码" name="password">
+      <v-slider-captcha ></v-slider-captcha>
+      <!-- <div class="three-login clearfix">
         <h2>第三方帐号快速登录</h2>
         <ul class="clearfix">
           <li>QQ</li>
@@ -13,7 +13,7 @@
           <li>微博</li>
         </ul>
           
-      </div>
+      </div> -->
       
     </form>
     
@@ -37,19 +37,12 @@ export default {
   },
   data () {
     return {
-      loginUrl : '',
-      formParams: {},
-      userName:'',
-      password:'',
       apptitle: '登录'
     }
   },
   methods: {
     submitForm(){
-      this.$http.post(this.loginUrl, this.formParams)
-        .then((response) => {
-          console.log(response)
-        })
+      
     }
   },
   components: {
