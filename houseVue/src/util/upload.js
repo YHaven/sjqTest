@@ -1,3 +1,4 @@
+
 (function($) {
   $.extend($.fn, {
     fileUpload: function(opts) {
@@ -62,8 +63,38 @@
             }
           },
           "uploadComplete": function(evt) {
-            alert(evt.target.responseText)
-            $self.find(".uploadImg").val('evt.target.responseText');
+            // alert(evt.target.responseText);
+            var responseJson = JSON.parse(evt.target.responseText);
+            if(responseJson.status){
+               $self.find(".uploadImg").val(responseJson.imgid);
+               layer.open({
+                    title: [
+                      '提示',
+                      'background-color: #FF4351; color:#fff;'
+                    ],
+                    time:1.5,
+                    content: '上传成功！'
+                });
+            }else{
+                if (!responseJson.islogin) {
+                  layer.open({
+                      content: responseJson.errorinfo
+                      ,btn: ['是', '否']
+                      ,yes: function(index){
+                        router.go({path: '/login', replace: true});
+                        layer.close(index);
+                      }
+                  });
+                }else{
+                    layer.open({
+                        title: ['提示','background-color: #FF4351; color:#fff;'],
+                        time:3,
+                        content: responseJson.errorinfo
+                    });
+                }
+                
+            }
+            
           }
         };
         doms.fileToUpload.on("change", function() {
