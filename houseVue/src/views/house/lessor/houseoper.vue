@@ -93,11 +93,14 @@
   export default {
   route: {
     data () {
-
-      return this.$http.get(planPro.ajaxUrl.houseoper+'?id='+planPro.fun.getQueryString('id'))
-      .then(({data: {status,data}}) => {
-        this.$set('fdata', data);
-      })
+      var pId = planPro.fun.getQueryString('id');
+      if(pId){
+        return this.$http.get(planPro.ajaxUrl.houseoper+'?id='+planPro.fun.getQueryString('id'))
+        .then(({data: {status,data}}) => {
+          this.$set('fdata', data);
+        })
+      }
+      
     }
   },
   ready () {
