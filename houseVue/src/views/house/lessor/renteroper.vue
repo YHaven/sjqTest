@@ -4,7 +4,7 @@
     <a class="button button-link button-nav pull-left" v-link="{path: '/house/lessor/renterlist'}">
     <span class="icon icon-left"></span>
     </a>
-    <h1 class="title">编辑租客</h1>
+    <div class="title">编辑租客</div>
   </header>
   <form class="list-block">
     <input type="hidden" id="roomId" name="roomId" value=""/>

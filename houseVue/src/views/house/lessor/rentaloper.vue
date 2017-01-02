@@ -1,21 +1,16 @@
 <template>
 <div class="content profile">
-  <header class="bar bar-nav">
-    <a class="button button-link button-nav pull-left" v-link="{path: '/house/lessor/rentallist', replace: true}">
-    <span class="icon icon-left"></span>
-    </a>
-    <h1 class="title">采荷新村-508-可以的-账单</h1>
-  </header>
-  <form class="list-block">
-    <input type="hidden" id="renterId" name="renterId" value=""/>
-    <input type="hidden" id="id" name="id" value=""/>
+  <top-header path="/house/lessor/rentallist" label="采荷新村-508-可以的-账单"></top-header>
+  <form class="list-block" id="rentalForm">
+    <input type="hidden" id="renterId" name="renterId" value="{{fdata.renterId}}"/>
+    <input type="hidden" id="id" name="id" value="{{fdata.id}}"/>
     <ul>
       <li>
         <div class="item-content item-link">
             <div class="item-inner">
                 <div class="item-title label">收租日期</div>
                 <div class="item-input">
-                    <input id="rentalTime" type="text" name="rentalTime" placeholder="请输入日期" value="">
+                    <input id="rentalTime" type="text" name="rentalTime" placeholder="请输入日期" value="{{fdata.rentalTime}}">
                 </div>
             </div>
         </div>
@@ -25,7 +20,7 @@
             <div class="item-inner">
                 <div class="item-title label">租金</div>
                 <div class="item-input">
-                    <input id="rental" type="text" name="rental" placeholder="0" value="" >
+                    <input id="rental" type="text" name="rental" placeholder="0" value="{{fdata.rental}}" >
                 </div>
             </div>
         </div>
@@ -37,9 +32,9 @@
       <li>
           <div class="item-content">
               <div class="item-inner">
-                  <div class="item-title label">电表度数</div>
+                  <div class="item-title label">电单价</div>
                   <div class="item-input">
-                      <input id="electric" type="text" name="electricPrice" placeholder="每度价格">
+                      <input id="electricPrice" type="text" name="electricPrice" placeholder="每度价格" value="{{fdata.electricPrice}}">
                   </div>
               </div>
           </div>
@@ -47,9 +42,9 @@
       <li>
           <div class="item-content">
               <div class="item-inner">
-                  <div class="item-title label">水表度数</div>
+                  <div class="item-title label">水单价</div>
                   <div class="item-input">
-                      <input id="water" type="text" name="waterPrice" placeholder="每度价格">
+                      <input id="waterPrice" type="text" name="waterPrice" placeholder="每度价格" value="{{fdata.waterPrice}}">
                   </div>
               </div>
           </div>
@@ -57,9 +52,9 @@
       <li>
           <div class="item-content">
               <div class="item-inner">
-                  <div class="item-title label">燃气度数</div>
+                  <div class="item-title label">燃气单价</div>
                   <div class="item-input">
-                      <input id="gas" type="text" name="gasPrice" placeholder="每度价格">
+                      <input id="gasPrice" type="text" name="gasPrice" placeholder="每度价格" value="{{fdata.gasPrice}}">
                   </div>
               </div>
           </div>
@@ -72,7 +67,7 @@
               <div class="item-inner">
                   <div class="item-title label">电表度数</div>
                   <div class="item-input">
-                      <input id="electricNow" type="text" name="electricNow" placeholder="0">
+                      <input id="electricNow" type="text" name="electricNow" placeholder="0" value="{{fdata.electricNow}}">
                   </div>
               </div>
           </div>
@@ -82,7 +77,7 @@
               <div class="item-inner">
                   <div class="item-title label">水表度数</div>
                   <div class="item-input">
-                      <input id="waterNow" type="text" name="waterNow" placeholder="0">
+                      <input id="waterNow" type="text" name="waterNow" placeholder="0" value="{{fdata.waterNow}}">
                   </div>
               </div>
           </div>
@@ -92,7 +87,7 @@
               <div class="item-inner">
                   <div class="item-title label">燃气度数</div>
                   <div class="item-input">
-                      <input id="gasNow" type="text" name="gasNow" placeholder="0">
+                      <input id="gasNow" type="text" name="gasNow" placeholder="0" value="{{fdata.gasNow}}">
                   </div>
               </div>
           </div>
@@ -105,7 +100,7 @@
               <div class="item-inner">
                   <div class="item-title label">电表度数</div>
                   <div class="item-input">
-                      0
+                      {{fdata.electricPre}}
                   </div>
               </div>
           </div>
@@ -115,7 +110,7 @@
               <div class="item-inner">
                   <div class="item-title label">水表度数</div>
                   <div class="item-input">
-                      0
+                      {{fdata.waterPre}}
                   </div>
               </div>
           </div>
@@ -125,7 +120,7 @@
               <div class="item-inner">
                   <div class="item-title label">燃气度数</div>
                   <div class="item-input">
-                     0
+                     {{fdata.gasPre}}
                   </div>
               </div>
           </div>
@@ -137,7 +132,7 @@
             <div class="item-inner">
                 <div class="item-title label">其他费用</div>
                 <div class="item-input">
-                    <input id="otherPrice" type="text"  name="otherPrice" placeholder="0.00" >
+                    <input id="otherPrice" type="text"  name="otherPrice" placeholder="0.00" value="{{fdata.otherPrice}}">
                 </div>
             </div>
         </div>
@@ -148,7 +143,7 @@
               <div class="item-inner">
                   <div class="item-title label">备注</div>
                   <div class="item-input">
-                      <textarea id="remark" name="remark" placeholder="" ></textarea>
+                      <textarea id="remark" name="remark" placeholder="" >{{fdata.remark}}</textarea>
                   </div>
               </div>
           </div>
@@ -160,6 +155,73 @@
   </div>
 </div>
 </template>
+
+<script>
+  import TopHeader from '../../../components/TopHeader'
+  import {loader} from '../../../util/util'
+  import $ from 'zepto'
+  export default {
+  route: {
+    data () {
+      var pId = planPro.fun.getQueryString('id');
+      if(pId){
+        return this.$http.get(planPro.ajaxUrl.houseoper+'?id='+planPro.fun.getQueryString('id'))
+        .then(({data: {status,data}}) => {
+          this.$set('fdata', data);
+        })
+      }
+      
+    }
+  },
+  ready () {
+
+  },
+  data () {
+    return {
+      fdata: {},
+      loading : false
+    }
+  },
+  computed: {
+
+  },
+  methods: {
+    //提交
+    postForm () {
+      if (this.loading) {
+        return
+      }
+      this.loading = true
+      let scroller = $('.content')
+      loader.show()
+      setTimeout(() => {
+        let params = {
+            vt:1, //1表示处理
+            id:$('#id').val(),
+            uploadImg:$('#uploadImg').val(),
+            houseName:$('#houseName').val(),
+            houseType:$('#houseType').val()
+        }
+        var postUrl = planPro.ajaxUrl.posthouseoper; //添加的
+        if(params.id !== '') postUrl = planPro.ajaxUrl.posthouseopermodify;  //修改的
+        this.$http.post(postUrl,params)
+          .then(({data: {status}}) => {
+            console.log(status);
+        })
+      
+        this.loading = false
+        loader.hide()
+      }, 1500)
+    }
+
+  },
+  components: {
+    FileInput,
+    TopHeader
+  }
+}
+
+</script>
 
 
 <style>

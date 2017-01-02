@@ -6,7 +6,7 @@
     <a class="button button-link button-nav pull-left" v-link="{path: '/house/lessor/houselist', replace: true}">
     <span class="icon icon-left"></span>
     </a>
-    <h1 class="title">房号</h1>
+    <div class="title">房号</div>
   </header>
     <div class="tph-info">
       <a href="javascript:;" class="head-img"><img src="{{houseinfo.uploadImg}}" alt="房屋图"></a>

@@ -3,7 +3,7 @@
 *全局配置
 */
 var planPro = planPro || {};
-planPro.homePath = 'http://localhost:8080';
+// planPro.homePath = 'http://www.zhencome.com';
 //ajax地址
 planPro.ajaxUrl = {
     login : planPro.homePath + '/plana/login',//登录

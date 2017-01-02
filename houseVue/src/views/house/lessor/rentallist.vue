@@ -2,12 +2,8 @@
 <div class="container">
   <div class="content profile fade-transition home" distance="55" v-pull-to-refresh="refresh" v-infinite-scroll="loadMore">
     <v-layer></v-layer>
-    <header class="bar bar-nav" >
-    <a class="button button-link button-nav pull-left" v-link="{path: '/house/lessor/renterlist', replace: true}">
-    <span class="icon icon-left"></span>
-    </a>
-    <h1 class="title">账单</h1>
-  </header>
+    
+    <top-header path="/house/lessor/renterlist" label="账单"></top-header>
     <div class="tph-info">
       <a href="javascript:;" class="head-img"><img src="/static/img/sw3.jpg" alt=""></a>
         <div class="right">
@@ -52,6 +48,7 @@ import VContent from '../../../components/Content'
 import List from '../../../components/List'
 import Item from '../../../components/ListItem'
 import ShopList from '../../../components/ShopList'
+import TopHeader from '../../../components/TopHeader'
 
 import {loader} from '../../../util/util'
 import $ from 'zepto'
@@ -132,7 +129,8 @@ export default {
     List,
     Item,
     Btn,
-    ShopList
+    ShopList,
+    TopHeader
   }
 }
 </script>

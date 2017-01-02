@@ -1,12 +1,7 @@
 <template>
 <div class="content profile">
-  <header class="bar bar-nav">
-    <a class="button button-link button-nav pull-left" v-link="{path: '/house/lessor/houselist', replace: true}">
-    <span class="icon icon-left"></span>
-    </a>
-    <h1 class="title">编辑房产</h1>
-  </header>
-  <form class="list-block">
+  <top-header path="/house/lessor/houselist" label="编辑房产"></top-header>
+  <form class="list-block" id="houseForm">
     <input type="hidden" id="id" name="id" value="{{fdata.id}}"/>
     <ul>
       <!-- <li style="height: 3rem;">
@@ -25,7 +20,7 @@
       <li>
         <div class="item-content">
           <div class="item-inner ">
-            <img src="/static/img/1.jpg" height="auto" style='width: 2.2rem;'>
+            <img src="{{fdata.uploadImg}}" height="auto" style='width: 2.2rem;'>
           </div>
         </div>
       </li>
@@ -85,6 +80,7 @@
 </div>
 </template>
 <script>
+  import TopHeader from '../../../components/TopHeader'
   import {loader} from '../../../util/util'
   import $ from 'zepto'
   import FileInput from '../../../components/FileInput'
@@ -151,13 +147,21 @@
       let scroller = $('.content')
       loader.show()
       setTimeout(() => {
-        let params = {
-            vt:1, //1表示处理
-            id:$('#id').val(),
-            uploadImg:$('#uploadImg').val(),
-            houseName:$('#houseName').val(),
-            houseType:$('#houseType').val()
+        let params = planPro.fun.serializeArrayToJson($('#houseForm').serializeArray());
+        var checkResult = true;
+        if(params.houseName === ''){
+          layer.open({content: '房屋名称未填写',time:2});
+          checkResult = false;
         }
+
+        if(!checkResult){
+          this.loading = false;
+          loader.hide()
+          return false;
+        }
+
+        params.vt = 1;
+
         var postUrl = planPro.ajaxUrl.posthouseoper; //添加的
         if(params.id !== '') postUrl = planPro.ajaxUrl.posthouseopermodify;  //修改的
         this.$http.post(postUrl,params)
@@ -172,12 +176,13 @@
 
   },
   components: {
-    FileInput
+    FileInput,
+    TopHeader
   }
 }
 
 </script>
-<style>
+<style scoped>
 .profile .bar{
   position: relative;
 }

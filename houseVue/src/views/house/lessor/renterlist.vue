@@ -6,7 +6,7 @@
     <a class="button button-link button-nav pull-left" v-link="{path: '/house/lessor/roomlist', replace: true}">
     <span class="icon icon-left"></span>
     </a>
-    <h1 class="title">租客</h1>
+    <div class="title">租客</div>
   </header>
     <div class="tph-info">
       <a href="javascript:;" class="head-img"><img src="{{roominfo.uploadImg}}" alt=""></a>

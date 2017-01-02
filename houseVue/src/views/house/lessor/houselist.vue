@@ -2,11 +2,7 @@
 <div class="container">
   <div class="content profile fade-transition home" distance="55" v-pull-to-refresh="refresh" v-infinite-scroll="loadMore">
     <v-layer></v-layer>
-    <header class="bar bar-nav" >
-    <a class="button button-link button-nav pull-left" v-link="{path: '/house/entry', replace: true}">
-    <span class="icon icon-left"></span>
-    </a>
-    <h1 class="title">我的房产</h1>
+    <top-header path="/house/entry" label="我的房产"></top-header>
   </header>
     <div class="submit-button">
     <button class="button button-big button-fill" v-link="{path: '/house/lessor/houseoper', replace: true}">+添加房产</button>
@@ -42,6 +38,7 @@ import VContent from '../../../components/Content'
 import List from '../../../components/List'
 import Item from '../../../components/ListItem'
 import ShopList from '../../../components/ShopList'
+import TopHeader from '../../../components/TopHeader'
 
 import {loader} from '../../../util/util'
 import $ from 'zepto'
@@ -120,12 +117,13 @@ export default {
     List,
     Item,
     Btn,
-    ShopList
+    ShopList,
+    TopHeader
   }
 }
 </script>
 
-<style>
+<style scoped>
 .container {
   position: absolute;
   top: 0;
@@ -169,7 +167,6 @@ export default {
   margin: 0 auto ;
   width: 100%;
   padding: 0 .45rem;
-  margin-top: .45rem;
 }
 .profile .submit-button button {
   background-color: #ed8e07;
