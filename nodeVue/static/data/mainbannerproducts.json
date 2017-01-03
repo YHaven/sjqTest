@@ -1,0 +1,102 @@
+{
+    "data": {
+        "banner": [
+            {
+                "bannerName": "大码3",
+                "id": 138,
+                "imgUrl": "/static/img/s1.jpg",
+                "startTime": 1477065600000,
+                "url": "https://www.taobao.com/?spm=a2107.1.1000340.1.rXWbRJ"
+            },
+            {
+                "bannerName": "大码2",
+                "id": 137,
+                "imgUrl": "/static/img/s2.jpg",
+                "startTime": 1477065600000,
+                "url": "https://www.taobao.com/?spm=a2107.1.1000340.1.rXWbRJ"
+            },
+            {
+                "bannerName": "大码1",
+                "id": 136,
+                "imgUrl": "/static/img/s3.jpg",
+                "startTime": 1477065600000,
+                "url": "https://www.taobao.com/?spm=a2107.1.1000340.1.rXWbRJ"
+            }
+        ],
+        "pageSize": 3,
+        "product": [
+            {
+                "shop": {
+                    "id": "1",
+                    "name": "xxx店铺",
+                    "sale": "500",
+                    "count": "1000",
+                    "shopimg": "/static/img/shop-name-icon.jpg"
+                },
+                "shopProduct": [
+                    {
+                        "belongCompany": "3",
+                        "companyId": "1",
+                        "id": "1",
+                        "imgUrl": "",
+                        "name": "大码百分百189",
+                        "price":"12.3"
+                    },
+                    {
+                        "belongCompany": "3",
+                        "companyId": "1",
+                        "id": "2",
+                        "imgUrl": "",
+                        "name": "大码百分百店主实拍79",
+                        "price":"123.0"
+                    },
+                    {
+                        "belongCompany": "3",
+                        "companyId": "1",
+                        "id": "3",
+                        "imgUrl": "",
+                        "name": "大码百分百店主实拍89",
+                        "price":"1.23"
+                    }
+                ]
+            },
+            {
+                "shop": {
+                    "id": "2",
+                    "name": "xxx店铺",
+                    "sale": "800",
+                    "count": "2000",
+                    "shopimg": "/static/img/shop-name-icon.jpg"
+                },
+                "shopProduct": [
+                    {
+                        "belongCompany": "3",
+                        "companyId": "1",
+                        "id": "1",
+                        "imgUrl": "/static/img/shop-name-icon.jpg",
+                        "name": "大码百分百189",
+                        "price":"1.23"
+                    },
+                    {
+                        "belongCompany": "3",
+                        "companyId": "1",
+                        "id": "2",
+                        "imgUrl": "",
+                        "name": "大码百分百店主实拍79",
+                        "price":"12.3"
+                    },
+                    {
+                        "belongCompany": "3",
+                        "companyId": "1",
+                        "id": "3",
+                        "imgUrl": "",
+                        "name": "大码百分百店主实拍89",
+                        "price":"123"
+                    }
+                ]
+            }
+        ]
+    },
+    "info": "操作成功",
+    "success": true
+}

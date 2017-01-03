@@ -20,7 +20,7 @@ export default {
             let bannerData = response.data.data.banner
             for (let i = 0; i < bannerData.length; i++) {
               var imgcontent = {};
-              imgcontent.content = bannerData[i].imgUrl
+              imgcontent.content = '<a href="'+ bannerData[i].url +'"><img src="'+ bannerData[i].imgUrl +'" width="100%"></a>'
               imgs.push(imgcontent)
             }
             let self = this

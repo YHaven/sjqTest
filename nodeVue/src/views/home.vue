@@ -66,24 +66,16 @@
         </card> -->
         <div class="item-content" >
           <div class="shop-title">
-            <img class="shop-name-icon" src="/static/img/shop-name-icon.jpg" alt="">
+            <img class="shop-name-icon" src="{{task.shop.shopimg}}" alt="">
             <div class="shop-name-info">
-                <p class="shop-name">XX店铺</p>
-                <p class="shop-sale">销量10000 共500件宝贝</p>
+                <p class="shop-name">{{task.shop.name}}</p>
+                <p class="shop-sale">销量{{task.shop.sale}} 共{{task.shop.count}}件宝贝</p>
             </div>
           </div>
           <ul class="product-list">
-            <li>
-                <img v-bind:src="task.imgUrl" alt="">
-                <div class="zs">￥123.00</div>
-            </li>
-            <li>
-                <img v-bind:src="task.imgUrl" alt="">
-                <div class="zs">￥123.00</div>
-            </li>
-            <li>
-                <img v-bind:src="task.imgUrl" alt="">
-                <div class="zs">￥123.00</div>
+            <li v-for="product in task.shopProduct | orderBy 'created' 1">
+                <img v-bind:src="product.imgUrl" alt="">
+                <div class="zs">￥{{product.price}}</div>
             </li>
           </ul>
           
@@ -125,6 +117,7 @@ export default {
       .then(({data: {success, info, data}}) => {
         
         this.$set('tasks', data.product);
+        console.log(data.product)
         // this.$set('apptitle', data[0].title);
         // this.$set('apptitle', '解忧大码');
       })
