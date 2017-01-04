@@ -91,7 +91,7 @@
     data () {
       var pId = planPro.fun.getQueryString('id');
       if(pId){
-        return this.$http.get(planPro.ajaxUrl.houseoper+'?id='+planPro.fun.getQueryString('id'))
+        return this.$http.get(planPro.ajaxUrl.houseoper+'?id='+pId)
         .then(({data: {status,data}}) => {
           this.$set('fdata', data);
         })
@@ -139,11 +139,11 @@
     },
     //提交
     postForm () {
-      console.log('post');
-      if (this.loading) {
+      var _this = this;
+      if (_this.loading) {
         return
       }
-      this.loading = true
+      _this.loading = true
       let scroller = $('.content')
       loader.show()
       setTimeout(() => {
@@ -155,7 +155,7 @@
         }
 
         if(!checkResult){
-          this.loading = false;
+          _this.loading = false;
           loader.hide()
           return false;
         }
@@ -164,12 +164,12 @@
 
         var postUrl = planPro.ajaxUrl.posthouseoper; //添加的
         if(params.id !== '') postUrl = planPro.ajaxUrl.posthouseopermodify;  //修改的
-        this.$http.post(postUrl,params)
+        _this.$http.post(postUrl,params)
           .then(({data: {status}}) => {
-            console.log(status);
+            _this.$route.router.go({path: '/house/lessor/houselist', replace: true});
         })
       
-        this.loading = false
+        _this.loading = false
         loader.hide()
       }, 1500)
     }
@@ -187,8 +187,8 @@
   position: relative;
 }
 .profile .list-block {
-  /*margin: 2.4rem 0 1rem 0;*/
-  margin-top: .2rem;
+  margin: 2.4rem 0 1rem 0;
+  /*margin-top: .2rem;*/
   font-size: .65rem;
 }
 .profile .list-block .item-subtitle {

@@ -1,0 +1,19 @@
+{
+  "status": true,
+  "message": "获取成功",
+  "data": {
+    "id": "3",
+    "uploadImg": "/static/img/1.jpg",
+    "roomName": "508",
+    "allCount": "8",
+    "emptyCount": "1",
+    "house":{
+        "id": "3",
+        "uploadImg": "/static/img/1.jpg",
+        "houseName": "采荷新村",
+        "houseType": "1",
+        "allCount": "8",
+        "emptyCount": "1"
+    }
+  }
+}

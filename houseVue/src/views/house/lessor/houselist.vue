@@ -60,7 +60,6 @@ export default {
       banner: [],
       tasks: [],
       page:1,
-      apptitle: '解忧大码',
       loading: false
     }
   },
@@ -74,7 +73,7 @@ export default {
       setTimeout(function () {
         this.page = 1
         var page = '&page='+ this.page
-        this.$http.get(planPro.ajaxUrl.houselist+'?vt=2'+page)
+        this.$http.get(planPro.ajaxUrl.houselist+'?vt=1'+page)
         .then(({data: {status, page, datalist}}) => {
           this.$set('tasks', datalist);
         })
@@ -92,7 +91,7 @@ export default {
       setTimeout(() => {
         this.page = this.page + 1
         var page = '&page='+ this.page
-        this.$http.get(planPro.ajaxUrl.houselist+'?vt=2'+page)
+        this.$http.get(planPro.ajaxUrl.houselist+'?vt=1'+page)
           .then(({data: {status, page, datalist}}) => {
             for (var i = 0; i < datalist.length; i++) {
               this.tasks.push(datalist[i]);

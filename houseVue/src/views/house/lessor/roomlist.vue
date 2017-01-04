@@ -2,12 +2,7 @@
 <div class="container">
   <div class="content profile fade-transition home" distance="55" v-pull-to-refresh="refresh" v-infinite-scroll="loadMore">
     <v-layer></v-layer>
-    <header class="bar bar-nav" >
-    <a class="button button-link button-nav pull-left" v-link="{path: '/house/lessor/houselist', replace: true}">
-    <span class="icon icon-left"></span>
-    </a>
-    <div class="title">房号</div>
-  </header>
+    <top-header path="/house/lessor/houselist" label="房号"></top-header>
     <div class="tph-info">
       <a href="javascript:;" class="head-img"><img src="{{houseinfo.uploadImg}}" alt="房屋图"></a>
         <div class="right">
@@ -26,11 +21,11 @@
     <button class="button button-big button-fill" v-link="{path: '/house/lessor/roomoper', replace: true}">+添加房号</button>
   </div>
     <div class="card-container" >
-      <v-card-container v-for="task in tasks | orderBy 'created' 1"
+      <v-card-container v-for="task in tasks | orderBy 'roomName' 1"
       :style="{backgroundColor: task.status === '1' ? 'white': 'rgb(235, 235, 235)' }">
         
         <div class="item-content" >
-          <a v-link="{path: '/house/lessor/renterlist'+task.id}">
+          <a v-link="{path: '/house/lessor/renterlist?id='+task.id}">
           <div class="room-item">
             <div class="r-t">{{task.roomName}}</div>
             <div class="r-c">{{task.renterCount}}租客</div>
@@ -56,6 +51,7 @@ import VContent from '../../../components/Content'
 import List from '../../../components/List'
 import Item from '../../../components/ListItem'
 import ShopList from '../../../components/ShopList'
+import TopHeader from '../../../components/TopHeader'
 
 import {loader} from '../../../util/util'
 import * as common from '../../../util/commonUtil'
@@ -67,7 +63,7 @@ export default {
   route: {
     data () {
 
-      return this.$http.get(planPro.ajaxUrl.roomlist+'?vt=2')
+      return this.$http.get(planPro.ajaxUrl.roomlist+'?vt=2&id='+ planPro.fun.getQueryString('id'))
       .then(({data: {status, page, houseinfo, datalist}}) => {
         this.$set('tasks', datalist);
         this.$set('houseinfo', houseinfo);
@@ -77,8 +73,6 @@ export default {
   },
   ready () {
     $.init();
-    console.log(common.getQueryString('id'));
-
   },
   data () {
     return {
@@ -158,12 +152,13 @@ export default {
     List,
     Item,
     Btn,
-    ShopList
+    ShopList,
+    TopHeader
   }
 }
 </script>
 
-<style>
+<style scoped>
 .container {
   position: absolute;
   top: 0;
