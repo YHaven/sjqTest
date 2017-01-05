@@ -1,6 +1,6 @@
 <template>
 	<header class="bar bar-nav">
-		<a class="button button-link button-nav pull-left" v-link="{path: path, replace: true}">
+		<a class="button button-link button-nav pull-left" v-link="{path: path+(pid||''), replace: true}">
 	    	<span class="icon icon-left"></span>
 	    </a>
     	<div class="title" v-text="label"></div>
@@ -12,6 +12,7 @@
 	// import router from "./router.js" //首先导入路由对象
 	export default {
 		props: {
+			pid:'',
 		    path: '',
 		    icon: '',
 		    label: ''

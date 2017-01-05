@@ -1,7 +1,7 @@
 <template>
   
   <div class="content profile">
-  <top-header path="/house/lessor/roomlist" label="编辑房号"></top-header>
+  <top-header path="/house/lessor/roomlist?id=" label="编辑房号" :pid="fdata.house.id"></top-header>
   <form class="list-block" id="roomForm">
     <input type="hidden" id="houseId" name="houseId" value="{{fdata.house.id}}"/>
     <input type="hidden" id="id" name="id" value="{{fdata.id}}"/>
@@ -108,7 +108,7 @@
           .then(({data: {status}}) => {
             _this.$route.router.go({path: '/house/lessor/roomlist', replace: true});
         })
-      
+       
         _this.loading = false
         loader.hide()
       }, 1500)

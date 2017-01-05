@@ -2,7 +2,7 @@
 <div class="container">
   <div class="content profile fade-transition home" distance="55" v-pull-to-refresh="refresh" v-infinite-scroll="loadMore">
     <v-layer></v-layer>
-    <top-header path="/house/lessor/houselist" label="房号"></top-header>
+    <top-header path="/house/lessor/houselist?id=" label="房号"></top-header>
     <div class="tph-info">
       <a href="javascript:;" class="head-img"><img src="{{houseinfo.uploadImg}}" alt="房屋图"></a>
         <div class="right">

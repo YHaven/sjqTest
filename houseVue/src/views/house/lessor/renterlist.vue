@@ -2,18 +2,13 @@
 <div class="container">
   <div class="content profile fade-transition home" distance="55" v-pull-to-refresh="refresh" v-infinite-scroll="loadMore">
     <v-layer></v-layer>
-    <header class="bar bar-nav" >
-    <a class="button button-link button-nav pull-left" v-link="{path: '/house/lessor/roomlist', replace: true}">
-    <span class="icon icon-left"></span>
-    </a>
-    <div class="title">租客</div>
-  </header>
+  <top-header path="/house/lessor/roomlist?id=" label="租客" :pid="fdata.houseinfo.id"></top-header>
     <div class="tph-info">
-      <a href="javascript:;" class="head-img"><img src="{{roominfo.uploadImg}}" alt=""></a>
+      <a href="javascript:;" class="head-img"><img src="{{fdata.uploadImg}}" alt=""></a>
         <div class="right">
           <a v-link="{path: '/house/lessor/roomoper'}">
-          <div class="r-t">{{roominfo.roomName}}</div>
-          <div class="r-c">{{roominfo.houseName}}</div>
+          <div class="r-t">{{fdata.roomName}}</div>
+          <div class="r-c">{{fdata.houseName}}</div>
           </a>
         </div>
     </div>
@@ -51,6 +46,7 @@ import VContent from '../../../components/Content'
 import List from '../../../components/List'
 import Item from '../../../components/ListItem'
 import ShopList from '../../../components/ShopList'
+import TopHeader from '../../../components/TopHeader'
 
 import {loader} from '../../../util/util'
 import $ from 'zepto'
@@ -61,7 +57,7 @@ export default {
       return this.$http.get(planPro.ajaxUrl.renterlist+'?vt=2')
       .then(({data: {status, page, roominfo, datalist}}) => {
         this.$set('tasks', datalist);
-        this.$set('roominfo', roominfo);
+        this.$set('fdata', roominfo);
       })
     }
   },
@@ -70,7 +66,7 @@ export default {
   },
   data () {
     return {
-      roominfo: {},
+      fdata: {},
       tasks: [],
       page:1,
       loading: false
@@ -145,7 +141,8 @@ export default {
     List,
     Item,
     Btn,
-    ShopList
+    ShopList,
+    TopHeader
   }
 }
 </script>
