@@ -66,10 +66,10 @@
         </card> -->
         <div class="item-content" >
           <div class="shop-title">
-            <img class="shop-name-icon" src="{{task.shop.shopimg}}" alt="">
+            <img class="shop-name-icon" src="{{task.company.imgUrl}}" alt="">
             <div class="shop-name-info">
-                <p class="shop-name">{{task.shop.name}}</p>
-                <p class="shop-sale">销量{{task.shop.sale}} 共{{task.shop.count}}件宝贝</p>
+                <p class="shop-name">{{task.company.name}}</p>
+                <p class="shop-sale">销量{{task.company.sellCount}} 共{{task.company.count}}件宝贝</p>
             </div>
           </div>
           <ul class="product-list">
