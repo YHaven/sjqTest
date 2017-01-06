@@ -4,6 +4,7 @@
   "data": {
             "id": "3",
             "uploadImg": "/static/img/1.jpg",
+            "imgId":"2",
             "houseName": "采荷新村",
             "houseType": "1",
             "allCount": "8",

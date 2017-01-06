@@ -3,11 +3,16 @@
   "message": "获取成功",
   "pagesize":15,
   "page":1,
-  "roominfo":{
+  "room":{
       "id": "1",
       "uploadImg": "/static/img/1.jpg",
       "roomName": "508",
-      "houseName": "采荷新村"
+      "house":{
+        "id":"2",
+        "uploadImg": "/static/img/1.jpg",
+        "houseName": "采荷新村"
+      }
+      
     },
   "datalist": [
     {

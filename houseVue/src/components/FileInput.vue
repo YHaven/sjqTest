@@ -2,7 +2,7 @@
 	<div class="camera-area">
         <input type="file" name="fileToUpload" class="fileToUpload" id="fileToUpload" accept="image/*" capture="camera" style="display:-none"/>
         <div class="upload-progress"><span></span></div>
-       	<input type="hidden" id="uploadImg" class="uploadImg" name="uploadImg" value="{{pdata.houseimgid}}">
+       	<input type="hidden" id="uploadImg" class="uploadImg" name="uploadImg" value="{{pdata.imgId}}">
       	<div class="thumb"></div>
   	</div>
 </template>

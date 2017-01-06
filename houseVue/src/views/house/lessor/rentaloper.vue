@@ -1,9 +1,18 @@
 <template>
 <div class="content profile">
-  <top-header path="/house/lessor/rentallist" label="采荷新村-508-可以的-账单"></top-header>
+  <top-header path="/house/lessor/rentallist?id=" label="账单编辑" :pid="fdata.renter.id"></top-header>
   <form class="list-block" id="rentalForm">
-    <input type="hidden" id="renterId" name="renterId" value="{{fdata.renterId}}"/>
+    <input type="hidden" id="renterId" name="renterId" value="{{fdata.renter.id}}"/>
     <input type="hidden" id="id" name="id" value="{{fdata.id}}"/>
+    <ul>
+      <li>
+        <div class="item-content">
+            <div class="item-inner">
+                {{fdata.renter.renterName}}
+            </div>
+        </div>
+      </li>
+    </ul>
     <ul>
       <li>
         <div class="item-content item-link">
@@ -165,10 +174,13 @@
     data () {
       var pId = planPro.fun.getQueryString('id');
       if(pId){
-        return this.$http.get(planPro.ajaxUrl.houseoper+'?id='+planPro.fun.getQueryString('id'))
+        return this.$http.get(planPro.ajaxUrl.rentaloper+'?id='+pId)
         .then(({data: {status,data}}) => {
+
           this.$set('fdata', data);
         })
+      }else{
+          this.$set('fdata', {});
       }
       
     }
@@ -188,35 +200,51 @@
   methods: {
     //提交
     postForm () {
-      if (this.loading) {
+      var _this = this;
+      if (_this.loading) {
         return
       }
-      this.loading = true
+      _this.loading = true
       let scroller = $('.content')
       loader.show()
       setTimeout(() => {
-        let params = {
-            vt:1, //1表示处理
-            id:$('#id').val(),
-            uploadImg:$('#uploadImg').val(),
-            houseName:$('#houseName').val(),
-            houseType:$('#houseType').val()
+        let params = planPro.fun.serializeArrayToJson($('#rentalForm').serializeArray());
+        var checkResult = true;
+        if(params.renterName === ''){
+          layer.open({content: '租客姓名未填写',time:2});
+          checkResult = false;
         }
-        var postUrl = planPro.ajaxUrl.posthouseoper; //添加的
-        if(params.id !== '') postUrl = planPro.ajaxUrl.posthouseopermodify;  //修改的
-        this.$http.post(postUrl,params)
+        if(params.renterPhone === ''){
+          layer.open({content: '租客电话未填写',time:2});
+          checkResult = false;
+        }
+        if(params.money === '' || Number(params.money) < 0 ){
+          layer.open({content: '租金必须大于等于0',time:2});
+          checkResult = false;
+        }
+
+        if(!checkResult){
+          _this.loading = false;
+          loader.hide()
+          return false;
+        }
+
+        params.vt = 1;
+
+        var postUrl = planPro.ajaxUrl.postrentaloper; //添加的
+        if(params.id !== '') postUrl = planPro.ajaxUrl.postrentalopermodify;  //修改的
+        _this.$http.post(postUrl,params)
           .then(({data: {status}}) => {
-            console.log(status);
+            _this.$route.router.go({path: '/house/lessor/rentallist?id='+_this.fdata.renter.id, replace: true});
         })
-      
-        this.loading = false
+       
+        _this.loading = false
         loader.hide()
       }, 1500)
     }
 
   },
   components: {
-    FileInput,
     TopHeader
   }
 }

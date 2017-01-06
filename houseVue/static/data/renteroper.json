@@ -2,11 +2,38 @@
   "status": true,
   "message": "获取成功",
   "data": {
-            "id": "3",
-            "uploadImg": "/static/img/1.jpg",
-            "houseName": "采荷新村",
-            "houseType": "1",
-            "allCount": "8",
-            "emptyCount": "1"
-          }
+    "id": "3",
+    "uploadImg": "/static/img/1.jpg",
+    "imgId":"2",
+    "renterName": "508",
+    "renterPhone":"19888888888",
+    "cid":"xxxxxxxxxx",
+    "startTime":"2012-01-01",
+    "endTime":"2012-01-02",
+    "cycleTime":"3",
+    "money":"1000",
+    "deposit":"500",
+    "renterNumber":"2",
+    "remindDay":"3",
+    "remindTime":"08:00",
+    "electric":"32.8",
+    "water":"12.5",
+    "gas":"123",
+    "remark":"我是备注",
+    "room":{
+        "id": "3",
+        "uploadImg": "/static/img/1.jpg",
+        "roomName": "508",
+        "allCount": "8",
+        "emptyCount": "1",
+        "house":{
+          "id": "3",
+          "uploadImg": "/static/img/1.jpg",
+          "houseName": "采荷新村",
+          "houseType": "1",
+          "allCount": "8",
+          "emptyCount": "1"
+        }
+    }
+  }
 }

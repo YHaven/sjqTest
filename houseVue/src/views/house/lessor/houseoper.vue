@@ -17,17 +17,10 @@
           </div>
         </div>
       </li> -->
-      <li>
-        <div class="item-content">
-          <div class="item-inner ">
-            <img src="{{fdata.uploadImg}}" height="auto" style='width: 2.2rem;'>
-          </div>
-        </div>
-      </li>
-      <li>
+      <li style="height: 3rem;">
         <div class="item-content">
             <div class="item-inner">
-                <div class="item-title label">房子图片</div>
+                <div class="item-title label"><img src="{{fdata.uploadImg}}" height="auto" style='width: 2.2rem;'></div>
                 <div class="item-input">
                     <file-input :pdata="fdata"></file-input>
                     <!-- <input style="display:-none;" accept="image/*" v-on:change="uploadImgFile(this)" id="Filedata" name="Filedata" type="file">
@@ -95,6 +88,8 @@
         .then(({data: {status,data}}) => {
           this.$set('fdata', data);
         })
+      }else{
+        this.$set('fdata', {});
       }
       
     }
@@ -187,8 +182,9 @@
   position: relative;
 }
 .profile .list-block {
-  margin: 2.4rem 0 1rem 0;
+  /*margin: 2.4rem 0 1rem 0;*/
   /*margin-top: .2rem;*/
+  margin: 0px;
   font-size: .65rem;
 }
 .profile .list-block .item-subtitle {

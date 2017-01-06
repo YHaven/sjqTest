@@ -2,7 +2,7 @@
 <div class="container">
   <div class="content profile fade-transition home" distance="55" v-pull-to-refresh="refresh" v-infinite-scroll="loadMore">
     <v-layer></v-layer>
-    <top-header path="/house/entry" label="我的房产"></top-header>
+    <top-header path="/house" label="我的房产"></top-header>
   </header>
     <div class="submit-button">
     <button class="button button-big button-fill" v-link="{path: '/house/lessor/houseoper', replace: true}">+添加房产</button>

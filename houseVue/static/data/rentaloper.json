@@ -2,6 +2,32 @@
   "status": true,
   "message": "获取成功",
   "data": {
+    "id": "3",
+    "uploadImg": "/static/img/1.jpg",
+    "imgId":"2",
+    "rentalTime": "2012-01-01",
+    "rental":"1000.00",
+    "electricPrice":"1.30",
+    "waterPrice":"5.40",
+    "gasPrice":"0.54",
+    "electricNow":"133",
+    "waterNow":"12.3",
+    "gasNow":"15.5",
+    "electricPre":"2",
+    "waterPre":"3",
+    "gasPre":"8",
+    "otherPrice":"32.8",
+    "remark":"我是备注zh",
+    "renter":{
+        "id": "3",
+        "uploadImg": "/static/img/1.jpg",
+        "renterName": "我的名字",
+        "renterPhone": "19888888888",
+        "room":{
+          "id": "3",
+          "uploadImg": "/static/img/1.jpg",
+          "roomName": "采荷新村",
+          "house":{
             "id": "3",
             "uploadImg": "/static/img/1.jpg",
             "houseName": "采荷新村",
@@ -9,4 +35,7 @@
             "allCount": "8",
             "emptyCount": "1"
           }
+        }
+    }
+  }
 }

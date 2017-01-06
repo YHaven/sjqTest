@@ -1,25 +1,30 @@
 <template>
 <div class="content profile">
-  <header class="bar bar-nav">
-    <a class="button button-link button-nav pull-left" v-link="{path: '/house/lessor/renterlist'}">
-    <span class="icon icon-left"></span>
-    </a>
-    <div class="title">编辑租客</div>
-  </header>
-  <form class="list-block">
-    <input type="hidden" id="roomId" name="roomId" value=""/>
-    <input type="hidden" id="id" name="id" value=""/>
+  <top-header path="/house/lessor/renterlist?id=" label="编辑租客" :pid="fdata.room.id"></top-header>
+  <form class="list-block" id="renterForm">
+    <input type="hidden" id="roomId" name="roomId" value="{{fdata.room.id}}"/>
+    <input type="hidden" id="id" name="id" value="{{fdata.id}}"/>
+    <ul>
+      <li>
+        <div class="item-content">
+            <div class="item-inner">
+                {{fdata.room.roomName}}
+            </div>
+        </div>
+      </li>
+    </ul>
     <ul>
       <li style="height: 3rem;">
-        <div class="item-content" style="min-height: 3rem;">
-          <input type="hidden" name="uploadImg" value="">
-          <div class="item-media"><img src="" height="auto" style='width: 2.2rem;'></div>
-          <div class="item-inner" style="min-height: 3rem;">
-            <div class="item-title-row">
+        <div class="item-content">
+            <div class="item-inner">
+                <div class="item-title label"><img src="{{fdata.uploadImg}}" height="auto" style='width: 2.2rem;'></div>
+                <div class="item-input">
+                    <file-input :pdata="fdata"></file-input>
+                    <!-- <input style="display:-none;" accept="image/*" v-on:change="uploadImgFile(this)" id="Filedata" name="Filedata" type="file">
+                    <input type="hidden" name="uploadImg" value=""> -->
+
+                </div>
             </div>
-            <input type="file" style="display:none;">
-            <div class="item-subtitle"><span class="imgpath"></span>图片</div>
-          </div>
         </div>
       </li>
       <li>
@@ -27,7 +32,7 @@
             <div class="item-inner">
                 <div class="item-title label">租客姓名</div>
                 <div class="item-input">
-                    <input id="renterName" type="text" name="renterName" placeholder="请输入租客姓名" value="">
+                    <input id="renterName" type="text" name="renterName" placeholder="请输入租客姓名" value="{{fdata.renterName}}">
                 </div>
             </div>
         </div>
@@ -37,7 +42,7 @@
             <div class="item-inner">
                 <div class="item-title label">电话号码</div>
                 <div class="item-input">
-                    <input id="renterPhone" type="text" name="renterPhone" placeholder="暂未填写电话号码" value="">
+                    <input id="renterPhone" type="text" name="renterPhone" placeholder="暂未填写电话号码" value="{{fdata.renterPhone}}">
                 </div>
             </div>
         </div>
@@ -47,7 +52,7 @@
             <div class="item-inner">
                 <div class="item-title label">身份证</div>
                 <div class="item-input">
-                    <input id="cid" type="text" name="cid" placeholder="暂无身份信息" value="">
+                    <input id="cid" type="text" name="cid" placeholder="暂无身份信息" value="{{fdata.cid}}">
                 </div>
             </div>
         </div>
@@ -60,7 +65,7 @@
             <div class="item-inner">
                 <div class="item-title label">起租日期</div>
                 <div class="item-input">
-                    <input id="startTime" type="text" name="startTime" placeholder="" value="">
+                    <input id="startTime" type="text" name="startTime" placeholder="" value="{{fdata.startTime}}">
                 </div>
             </div>
         </div>
@@ -70,7 +75,7 @@
             <div class="item-inner">
                 <div class="item-title label">到租日期</div>
                 <div class="item-input">
-                    <input id="endTime" type="text" name="endTime" placeholder="" value="">
+                    <input id="endTime" type="text" name="endTime" placeholder="" value="{{fdata.endTime}}">
                 </div>
             </div>
         </div>
@@ -80,7 +85,7 @@
               <div class="item-inner">
                   <div class="item-title label">缴费周期</div>
                   <div class="item-input">
-                      <input id="cycleTime" type="number" name="cycleTime" placeholder="月" value="">
+                      <input id="cycleTime" type="number" name="cycleTime" placeholder="月" value="{{fdata.cycleTime}}">
                   </div>
               </div>
           </div>
@@ -88,9 +93,9 @@
       <li>
         <div class=" item-content">
             <div class="item-inner">
-                <div class="item-title label">每期缴租</div>
+                <div class="item-title label">每期租金</div>
                 <div class="item-input">
-                    <input id="money" type="text"  name="money" placeholder="0.00" >
+                    <input id="money" type="number"  name="money" placeholder="0.00" value="{{fdata.money}}">
                 </div>
             </div>
         </div>
@@ -100,7 +105,7 @@
               <div class="item-inner">
                   <div class="item-title label">押金</div>
                   <div class="item-input">
-                      <input id="deposit" type="text" name="deposit" placeholder="0.00">
+                      <input id="deposit" type="number" name="deposit" placeholder="0.00" value="{{fdata.deposit}}">
                   </div>
               </div>
           </div>
@@ -110,7 +115,7 @@
               <div class="item-inner">
                   <div class="item-title label">居住人数</div>
                   <div class="item-input">
-                      <input id="renterNumber" type="text" name="renterNumber" placeholder="0">
+                      <input id="renterNumber" type="number" name="renterNumber" placeholder="0" value="{{fdata.renterNumber}}">
                   </div>
               </div>
           </div>
@@ -123,7 +128,7 @@
               <div class="item-inner">
                   <div class="item-title label">提前提醒天数</div>
                   <div class="item-input">
-                      <input id="remindDay" type="number" name="remindDay" placeholder="0">
+                      <input id="remindDay" type="number" name="remindDay" placeholder="0" value="{{fdata.remindDay}}">
                   </div>
               </div>
           </div>
@@ -133,20 +138,20 @@
               <div class="item-inner">
                   <div class="item-title label">提醒时间</div>
                   <div class="item-input">
-                      <input id="remindTime" type="text" name="remindTime" placeholder="00:00">
+                      <input id="remindTime" type="text" name="remindTime" placeholder="00:00" value="{{fdata.remindTime}}">
                   </div>
               </div>
           </div>
       </li>
       </ul>
-    <div class="s-title">表度数</div>
+    <div class="s-title">上次表度数</div>
     <ul style="margin-top:.5rem;">
       <li>
           <div class="item-content">
               <div class="item-inner">
                   <div class="item-title label">电表度数</div>
                   <div class="item-input">
-                      <input id="electric" type="text" name="electric" placeholder="0">
+                      <input id="electric" type="text" name="electric" placeholder="0" value="{{fdata.electric}}">
                   </div>
               </div>
           </div>
@@ -156,7 +161,7 @@
               <div class="item-inner">
                   <div class="item-title label">水表度数</div>
                   <div class="item-input">
-                      <input id="water" type="text" name="water" placeholder="0">
+                      <input id="water" type="text" name="water" placeholder="0" value="{{fdata.water}}">
                   </div>
               </div>
           </div>
@@ -166,7 +171,7 @@
               <div class="item-inner">
                   <div class="item-title label">燃气度数</div>
                   <div class="item-input">
-                      <input id="gas" type="text" name="gas" placeholder="0">
+                      <input id="gas" type="text" name="gas" placeholder="0" value="{{fdata.gas}}">
                   </div>
               </div>
           </div>
@@ -176,24 +181,113 @@
               <div class="item-inner">
                   <div class="item-title label">备注</div>
                   <div class="item-input">
-                      <textarea id="remark" name="remark"  ></textarea>
+                      <textarea id="remark" name="remark"  >{{fdata.remark}}</textarea>
                   </div>
               </div>
           </div>
       </li>
     </ul>
   </form>
-  <div class="submit-button">
+  <div class="submit-button" @click="postForm">
     <button class="button button-big button-fill">保存</button>
   </div>
 </div>
 </template>
 
+<script>
+  import TopHeader from '../../../components/TopHeader'
+  import {loader} from '../../../util/util'
+  import $ from 'zepto'
+  import FileInput from '../../../components/FileInput'
+  
 
-<style>
+  export default {
+  route: {
+    data () {
+      var pId = planPro.fun.getQueryString('id');
+      if(pId){
+        return this.$http.get(planPro.ajaxUrl.renteroper+'?id='+pId)
+        .then(({data: {status,data}}) => {
+          this.$set('fdata', data);
+        })
+      }else{
+        this.$set('fdata', {});
+      }
+      
+    }
+  },
+  ready () {
+
+  },
+  data () {
+    return {
+      fdata: {},
+      loading : false
+    }
+  },
+  computed: {
+
+  },
+  methods: {
+    //提交
+    postForm () {
+      var _this = this;
+      if (_this.loading) {
+        return
+      }
+      _this.loading = true
+      let scroller = $('.content')
+      loader.show()
+      setTimeout(() => {
+        let params = planPro.fun.serializeArrayToJson($('#renterForm').serializeArray());
+        var checkResult = true;
+        if(params.renterName === ''){
+          layer.open({content: '租客姓名未填写',time:2});
+          checkResult = false;
+        }
+        if(params.renterPhone === ''){
+          layer.open({content: '租客电话未填写',time:2});
+          checkResult = false;
+        }
+        if(params.money === '' || Number(params.money) < 0 ){
+          layer.open({content: '租金必须大于等于0',time:2});
+          checkResult = false;
+        }
+
+        if(!checkResult){
+          _this.loading = false;
+          loader.hide()
+          return false;
+        }
+
+        params.vt = 1;
+
+        var postUrl = planPro.ajaxUrl.postrenteroper; //添加的
+        if(params.id !== '') postUrl = planPro.ajaxUrl.postrenteropermodify;  //修改的
+        _this.$http.post(postUrl,params)
+          .then(({data: {status}}) => {
+            _this.$route.router.go({path: '/house/lessor/renterlist?id='+_this.fdata.room.id, replace: true});
+        })
+       
+        _this.loading = false
+        loader.hide()
+      }, 1500)
+    }
+
+  },
+  components: {
+    FileInput,
+    TopHeader
+  }
+}
+
+</script>
+
+<style scoped>
 .profile .list-block {
   /*margin: 2.4rem 0 1rem 0;*/
-  margin-top: .2rem;
+  margin: 0px;
+  /*margin-top: .2rem;*/
   font-size: .65rem;
 }
 .profile .list-block .item-subtitle {

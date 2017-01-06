@@ -1,26 +1,26 @@
 <template>
 <div class="container">
   <div class="content profile fade-transition home" distance="55" v-pull-to-refresh="refresh" v-infinite-scroll="loadMore">
-    <v-layer></v-layer>
-  <top-header path="/house/lessor/roomlist?id=" label="租客" :pid="fdata.houseinfo.id"></top-header>
+  <v-layer></v-layer>
+  <top-header path="/house/lessor/roomlist?id=" label="租客" :pid="fdata.house.id"></top-header>
     <div class="tph-info">
       <a href="javascript:;" class="head-img"><img src="{{fdata.uploadImg}}" alt=""></a>
         <div class="right">
-          <a v-link="{path: '/house/lessor/roomoper'}">
+          <a v-link="{path: '/house/lessor/roomoper?id='+fdata.id}">
           <div class="r-t">{{fdata.roomName}}</div>
-          <div class="r-c">{{fdata.houseName}}</div>
+          <div class="r-c">{{fdata.house.houseName}}</div>
           </a>
         </div>
     </div>
     <div class="submit-button">
-    <button class="button button-big button-fill" v-link="{path: '/house/lessor/renteroper', replace: true}">+添加租客</button>
+    <button class="button button-big button-fill" v-link="{path: '/house/lessor/renteroper?roomId='+fdata.id, replace: true}">+添加租客</button>
   </div>
     <div class="card-container" >
       <v-card-container v-for="task in tasks | orderBy 'created' 1"
       :style="{backgroundColor: task.status === '1' ? 'white': 'rgb(235, 235, 235)' }">
         
         <div class="item-content" >
-          <a v-link="{path: '/house/lessor/rentallist'}">
+          <a v-link="{path: '/house/lessor/rentallist?id='+task.id}">
           <div class="room-item">
             <div class="r-t"> {{task.renterName}}</div>
             <div class="r-c">{{task.renterPhone}}</div>
@@ -54,11 +54,17 @@ import $ from 'zepto'
 export default {
   route: {
     data () {
-      return this.$http.get(planPro.ajaxUrl.renterlist+'?vt=2')
-      .then(({data: {status, page, roominfo, datalist}}) => {
-        this.$set('tasks', datalist);
-        this.$set('fdata', roominfo);
-      })
+      var pId = planPro.fun.getQueryString('id');
+      if(pId){
+        return this.$http.get(planPro.ajaxUrl.renterlist+'?vt=2&id='+ pId)
+        .then(({data: {status, page, room, datalist}}) => {
+          this.$set('tasks', datalist);
+          this.$set('fdata', room);
+        })
+      }else{
+        this.$set('tasks', []);
+        this.$set('fdata', {});
+      }
     }
   },
   ready () {
@@ -82,7 +88,7 @@ export default {
       setTimeout(function () {
         this.page = 1
         var page = '&page='+ this.page
-        this.$http.get(planPro.ajaxUrl.renterlist+'?vt=2'+page)
+        this.$http.get(planPro.ajaxUrl.renterlist+'?vt=2'+page+'&id='+this.fdata.id)
       .then(({data: {status, page, datalist}}) => {
         this.$set('tasks', datalist);
       })
@@ -113,7 +119,7 @@ export default {
       setTimeout(() => {
         this.page = this.page + 1
         var page = '&page='+ this.page
-        this.$http.get(planPro.ajaxUrl.renterlist+'?vt=2'+page)
+        this.$http.get(planPro.ajaxUrl.renterlist+'?vt=2'+page+'&id='+this.fdata.id)
           .then(({data: {status, page, datalist}}) => {
             for (var i = 0; i < datalist.length; i++) {
               this.tasks.push(datalist[i]);
@@ -183,7 +189,7 @@ export default {
 
 .room-item {padding: .5rem; position: relative;}
 .room-item .r-t{color: #333;font-weight: 700;}
-.room-item .r-c{color: #999;font-size: .2rem;}
+.room-item .r-c{color: #999;font-size: .6rem;}
 .room-item .icon{position: absolute;right: .5rem;top: .8rem;font-size: 1rem;}
 
 .tph-info {margin: .5rem;box-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.3)}

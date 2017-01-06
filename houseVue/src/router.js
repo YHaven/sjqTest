@@ -97,7 +97,7 @@ export default function (router) {
         require(['./views/msg/topic'], resolve)
       }
     },
-    '/house/entry': {
+    '/house': {
       component (resolve) {
         require(['./views/house/entry'], resolve)
       }

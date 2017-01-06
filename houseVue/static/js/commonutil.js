@@ -3,8 +3,7 @@
 *全局配置
 */
 var planPro = planPro || {};
-planPro.homePath = '';
-//ajax地址
+
 planPro.fun = {
 	getQueryString : function(name){
 		var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');

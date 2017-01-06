@@ -37,7 +37,7 @@
       </li>
     </ul>
   </form>
-  <div class="submit-button">
+  <div class="submit-button" @click="postForm">
     <button class="button button-big button-fill">保存</button>
   </div>
 </div>
@@ -58,8 +58,9 @@
         return this.$http.get(planPro.ajaxUrl.roomoper+'?id='+pId)
         .then(({data: {status,data}}) => {
           this.$set('fdata', data);
-
         })
+      }else{
+        this.$set('fdata', {});
       }
       
     }
@@ -89,8 +90,8 @@
       setTimeout(() => {
         let params = planPro.fun.serializeArrayToJson($('#roomForm').serializeArray());
         var checkResult = true;
-        if(params.houseName === ''){
-          layer.open({content: '房屋名称未填写',time:2});
+        if(params.roomName === ''){
+          layer.open({content: '房号未填写',time:2});
           checkResult = false;
         }
 
@@ -101,12 +102,11 @@
         }
 
         params.vt = 1;
-
         var postUrl = planPro.ajaxUrl.postroomoper; //添加的
         if(params.id !== '') postUrl = planPro.ajaxUrl.postroomopermodify;  //修改的
         _this.$http.post(postUrl,params)
           .then(({data: {status}}) => {
-            _this.$route.router.go({path: '/house/lessor/roomlist', replace: true});
+            _this.$route.router.go({path: '/house/lessor/roomlist?id='+_this.fdata.house.id, replace: true});
         })
        
         _this.loading = false
@@ -126,7 +126,8 @@
 
 <style scoped>
 .profile .list-block {
-  margin: 2.4rem 0 1rem 0;
+  /*margin: 2.4rem 0 1rem 0;*/
+  margin: 0px;
   font-size: .65rem;
 }
 .profile .list-block .item-subtitle {

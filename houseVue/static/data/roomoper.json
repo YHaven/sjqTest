@@ -4,6 +4,7 @@
   "data": {
     "id": "3",
     "uploadImg": "/static/img/1.jpg",
+    "imgId":"2",
     "roomName": "508",
     "allCount": "8",
     "emptyCount": "1",

@@ -4,21 +4,21 @@
     <v-layer></v-layer>
     <top-header path="/house/lessor/houselist?id=" label="房号"></top-header>
     <div class="tph-info">
-      <a href="javascript:;" class="head-img"><img src="{{houseinfo.uploadImg}}" alt="房屋图"></a>
+      <a href="javascript:;" class="head-img"><img src="{{fdata.uploadImg}}" alt="房屋图"></a>
         <div class="right">
-          <a href="/house/lessor/houseoper?id={{houseinfo.id}}">
-          <div class="r-t">{{houseinfo.houseName}}</div>
+          <a href="/house/lessor/houseoper?id={{fdata.id}}">
+          <div class="r-t">{{fdata.houseName}}</div>
           <div class="r-c">
-            {{houseinfo.houseType === '1' ? '住宅/小区/公寓':''}}
-            {{houseinfo.houseType === '2' ? '办公室/写字楼':''}}
-            {{houseinfo.houseType === '3' ? '商铺':''}}
-            {{houseinfo.houseType === '4' ? '仓库':''}}
+            {{fdata.houseType === '1' ? '住宅/小区/公寓':''}}
+            {{fdata.houseType === '2' ? '办公室/写字楼':''}}
+            {{fdata.houseType === '3' ? '商铺':''}}
+            {{fdata.houseType === '4' ? '仓库':''}}
           </div>
           </a>
         </div>
     </div>
     <div class="submit-button">
-    <button class="button button-big button-fill" v-link="{path: '/house/lessor/roomoper', replace: true}">+添加房号</button>
+    <button class="button button-big button-fill" v-link="{path: '/house/lessor/roomoper?houseId='+fdata.id, replace: true}">+添加房号</button>
   </div>
     <div class="card-container" >
       <v-card-container v-for="task in tasks | orderBy 'roomName' 1"
@@ -62,13 +62,17 @@ import $ from 'zepto'
 export default {
   route: {
     data () {
-
-      return this.$http.get(planPro.ajaxUrl.roomlist+'?vt=2&id='+ planPro.fun.getQueryString('id'))
-      .then(({data: {status, page, houseinfo, datalist}}) => {
-        this.$set('tasks', datalist);
-        this.$set('houseinfo', houseinfo);
-        
-      })
+      var pId = planPro.fun.getQueryString('id');
+      if(pId){
+        return this.$http.get(planPro.ajaxUrl.roomlist+'?vt=2&id='+ pId)
+        .then(({data: {status, page, house, datalist}}) => {
+          this.$set('tasks', datalist);
+          this.$set('fdata', house);
+        })
+      }else{
+        this.$set('tasks', []);
+        this.$set('fdata', {});
+      }
     }
   },
   ready () {
@@ -76,7 +80,7 @@ export default {
   },
   data () {
     return {
-      houseinfo:{},
+      fdata: {},
       tasks: [],
       page:1,
       houseId:'',
@@ -93,7 +97,7 @@ export default {
       setTimeout(function () {
         this.page = 1
         var page = '&page='+ this.page
-        this.$http.get(planPro.ajaxUrl.roomlist+'?vt=2'+page)
+        this.$http.get(planPro.ajaxUrl.roomlist+'?vt=2'+page+'&id='+this.fdata.id)
       .then(({data: {status, page, datalist}}) => {
         this.$set('tasks', datalist);
       })
@@ -124,7 +128,7 @@ export default {
       setTimeout(() => {
         this.page = this.page + 1
         var page = '&page='+ this.page
-        this.$http.get(planPro.ajaxUrl.roomlist+'?vt=2'+page)
+        this.$http.get(planPro.ajaxUrl.roomlist+'?vt=2'+page+'&id='+this.fdata.id)
           .then(({data: {status, page, datalist}}) => {
             for (var i = 0; i < datalist.length; i++) {
               this.tasks.push(datalist[i]);
@@ -194,7 +198,7 @@ export default {
 
 .room-item {padding: .5rem; position: relative;}
 .room-item .r-t{color: #333;font-weight: 700;}
-.room-item .r-c{color: #999;font-size: .2rem;}
+.room-item .r-c{color: #999;font-size: .6rem;}
 .room-item .icon{position: absolute;right: .5rem;top: .8rem;font-size: 1rem;}
 
 .tph-info {margin: .5rem;box-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.3)}

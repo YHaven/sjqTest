@@ -3,11 +3,18 @@
   "message": "获取成功",
   "pagesize":15,
   "page":1,
-  "renterinfo":{
+  "renter":{
       "id": "1",
       "uploadImg": "/static/img/1.jpg",
       "renterName": "我的名字",
-      "renterPhone": "19888888888"
+      "renterPhone": "19888888888",
+      "room":{
+        "id": "3",
+        "uploadImg": "/static/img/1.jpg",
+        "roomName": "508",
+        "allCount": "8",
+        "emptyCount": "1"
+      }
     },
   "datalist": [
     {
