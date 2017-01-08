@@ -85,8 +85,26 @@
       var pId = planPro.fun.getQueryString('id');
       if(pId){
         return this.$http.get(planPro.ajaxUrl.houseoper+'?id='+pId)
-        .then(({data: {status,data}}) => {
-          this.$set('fdata', data);
+        .then(({data}) => {
+          if(data.status){
+            this.$set('fdata', data.data);
+          }else{
+            this.$set('fdata', {});
+            if(!data.islogin){
+              layer.open({
+                    content: data.errorinfo
+                    ,btn: ['去登录']
+                    ,yes: function(index){
+                      router.go({path: planPro.loginPath, replace: true});
+                      layer.close(index);
+                    }
+                });
+            }else{
+              layer.open({content: data.errorinfo,time:2});
+            }
+            
+          }
+          
         })
       }else{
         this.$set('fdata', {});

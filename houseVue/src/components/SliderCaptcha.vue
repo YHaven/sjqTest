@@ -46,16 +46,16 @@ export default {
         //     ,content: '标题风格任你定义。'
         // });
         
-        layer.open({
-            content: '您确定要进入主页？'
-            ,btn: ['要', '不要']
-            ,yes: function(index){
-               _this.$route.router.go({path: '/home', replace: true});
-               layer.close(index);
-            }
-        });
+       //  layer.open({
+       //      content: '您确定要进入主页？'
+       //      ,btn: ['要', '不要']
+       //      ,yes: function(index){
+       //         _this.$route.router.go({path: '/home', replace: true});
+       //         layer.close(index);
+       //      }
+       //  });
         
-       return false;
+       // return false;
 
         var formParams = {
             username : $('input[name="username"]').val(),
@@ -63,9 +63,17 @@ export default {
         }
         // $('.loginForm').serialize()
         _this.$http.post(planPro.ajaxUrl.login, formParams)
-        .then((response) => {
-            //_this.$route.router.go({path: '/home', replace: true})
-          console.log(response)
+        .then(({data}) => {
+            if(data.status){
+                _this.$route.router.go({path: planPro.indexPath, replace: true})
+            }else{
+                layer.open({content: data.errorinfo,time:2});
+                var oBtn = document.getElementById('btn');
+                var oTrack=document.getElementById('track');
+                oBtn.style.left = 0;
+                oTrack.style.width= 0;
+            }
+            
         })
     }
   },

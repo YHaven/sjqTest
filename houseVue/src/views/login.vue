@@ -2,8 +2,8 @@
   <div class="container">
     <top-title v-bind:parent-apptitle="apptitle"></top-title>
     <form class="loginForm">
-      <input type="text" placeholder="手机/昵称/邮箱" name="username">
-      <input type="text" placeholder="密码" name="password">
+      <input type="text" placeholder="手机/昵称/邮箱" name="username" value="">
+      <input type="password" name="password" value="">
       <v-slider-captcha ></v-slider-captcha>
       <!-- <div class="three-login clearfix">
         <h2>第三方帐号快速登录</h2>

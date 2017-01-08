@@ -3,16 +3,20 @@
 *全局配置
 */
 var planPro = planPro || {};
-// planPro.homePath = 'http://www.zhencome.com';
+planPro.indexPath = '/home';
+planPro.loginPath = '/login';
+planPro.homePath = 'http://www.zhencome.com';
+planPro.homePath = 'http://localhost:8080';
 //ajax地址
 planPro.ajaxUrl = {
-    login : planPro.homePath + '/plana/login',//登录
+    login : planPro.homePath + '/plana/index!alogin.action?vt=1',//登录
 	fileUpload : planPro.homePath + '/plana/file!upfile.action',
 	uploadImg : 'http://www.zhencome.com/plana/index!userProfile.action?vt=1',
     homeBT : '/static/data/bannertasks.json',//首页ajax   ///main/index
     //房屋
     houselist : '/static/data/houselist.json',
-    houseoper : '/static/data/houseoper.json', //get页面data
+    // houseoper : '/static/data/houseoper.json', //get页面data
+    houseoper : planPro.homePath + '/plana/house!modify.action', //get页面data
     posthouseoper : planPro.homePath + '/plana/house!add.action',
     posthouseopermodify : planPro.homePath + '/plana/house!modify.action',
     //房间
