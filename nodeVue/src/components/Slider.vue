@@ -6,37 +6,63 @@
 import ISlider from '../assets/js/iSlider'
 
 export default {
+  props: ['banner'],
   data () {
     return {
-      slider: null,
-      baseHome:baseStaticPath,  //全局变量   /fat
+      slider: null
     }
   },
   ready () {
-    // this.$http.get('/static/data/bannertasks.json')
-    this.$http.get(planPro.ajaxUrl.homeBT+'?start=1')
-    .then(function(response) {
-            let imgs = []
-            let bannerData = response.data.data.banner
-            for (let i = 0; i < bannerData.length; i++) {
-              var imgcontent = {};
-              imgcontent.content = '<a href="'+ bannerData[i].url +'"><img src="'+ bannerData[i].imgUrl +'" width="100%"></a>'
-              imgs.push(imgcontent)
-            }
-            let self = this
-            this.slider = new ISlider({
-              dom: self.$el,
-              data: imgs,
-              isVertical: false,
-              isLooping: true,
-              isDebug: false,
-              isAutoplay: true
-            })
-        }, function(response) {
-            // handle error
-        }
 
-      );
+    let self = this
+    var timer = setInterval(function(){
+      if(self.banner.length>0){
+        let imgs = []
+        let bannerData = self.banner
+        for (let i = 0; i < bannerData.length; i++) {
+          var imgcontent = {};
+          imgcontent.content = '<a href="'+ bannerData[i].url +'"><img src="'+ bannerData[i].imgUrl +'" width="100%"></a>'
+          imgs.push(imgcontent)
+        }
+        
+        self.slider = new ISlider({
+          dom: self.$el,
+          data: imgs,
+          isVertical: false,
+          isLooping: true,
+          isDebug: false,
+          isAutoplay: true
+        })
+        
+        clearInterval(timer);
+      }
+      
+    },100); 
+    
+    // this.$http.get('/static/data/bannertasks.json')
+    // this.$http.get(planPro.ajaxUrl.homeBT+'?start=1')
+    // .then(function(response) {
+    //         let imgs = []
+    //         let bannerData = response.data.data.banner
+    //         for (let i = 0; i < bannerData.length; i++) {
+    //           var imgcontent = {};
+    //           imgcontent.content = '<a href="'+ bannerData[i].url +'"><img src="'+ bannerData[i].imgUrl +'" width="100%"></a>'
+    //           imgs.push(imgcontent)
+    //         }
+    //         let self = this
+    //         this.slider = new ISlider({
+    //           dom: self.$el,
+    //           data: imgs,
+    //           isVertical: false,
+    //           isLooping: true,
+    //           isDebug: false,
+    //           isAutoplay: true
+    //         })
+    //     }, function(response) {
+    //         // handle error
+    //     }
+
+    //   );
     // this.$http.get('/static/data/banner.json')
     // .then(({data: {code, message, data}}) => {
     //   let imgs = []
@@ -57,7 +83,7 @@ export default {
 }
 </script>
 
-<style>
+<style >
 #islider {
   height: 8.75rem;
   width: 100%;

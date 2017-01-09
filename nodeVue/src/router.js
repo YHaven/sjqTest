@@ -28,6 +28,21 @@ export default function (router) {
         require(['./views/home/manlist'], resolve)
       }
     },
+    '/home/man': {
+      component (resolve) {
+        require(['./views/home/man'], resolve)
+      }
+    },
+    '/home/women': {
+      component (resolve) {
+        require(['./views/home/women'], resolve)
+      }
+    },
+    '/home/news': {
+      component (resolve) {
+        require(['./views/home/news'], resolve)
+      }
+    },
     '/list': {
       component (resolve) {
         require(['./views/list'], resolve)

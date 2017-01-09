@@ -2,96 +2,88 @@
     "data": {
         "banner": [
             {
-                "bannerName": "大码3",
-                "id": 138,
-                "imgUrl": "/static/img/s1.jpg",
-                "startTime": 1477065600000,
-                "url": "https://www.taobao.com/?spm=a2107.1.1000340.1.rXWbRJ"
+                "bannerName": "活动",
+                "id": 141,
+                "imgUrl": "http://mangodm.oss-cn-shanghai.aliyuncs.com/static/images/banner/2017/01/05/175613110.jpeg",
+                "startTime": 1483545600000,
+                "url": "www.baidu.com"
             },
             {
-                "bannerName": "大码2",
-                "id": 137,
-                "imgUrl": "/static/img/s2.jpg",
-                "startTime": 1477065600000,
-                "url": "https://www.taobao.com/?spm=a2107.1.1000340.1.rXWbRJ"
+                "bannerName": "活动",
+                "id": 140,
+                "imgUrl": "http://mangodm.oss-cn-shanghai.aliyuncs.com/static/images/banner/2017/01/05/175532008.jpeg",
+                "startTime": 1483545600000,
+                "url": "www.baidu.com"
             },
             {
-                "bannerName": "大码1",
-                "id": 136,
-                "imgUrl": "/static/img/s3.jpg",
-                "startTime": 1477065600000,
-                "url": "https://www.taobao.com/?spm=a2107.1.1000340.1.rXWbRJ"
+                "bannerName": "活动",
+                "id": 139,
+                "imgUrl": "http://mangodm.oss-cn-shanghai.aliyuncs.com/static/images/banner/2017/01/05/175442667.jpeg",
+                "startTime": 1483372800000,
+                "url": "www.baidu.com"
             }
         ],
         "pageSize": 3,
         "product": [
             {
-                "shop": {
-                    "id": "1",
-                    "name": "xxx店铺",
-                    "sale": "500",
-                    "count": "1000",
-                    "shopimg": "/static/img/shop-name-icon.jpg"
+                "company": {
+                    "count": 180,
+                    "id": 3,
+                    "imgUrl": "http://mangodm.oss-cn-shanghai.aliyuncs.com/static/images/product/2016/12/26/180533366.jpeg",
+                    "name": "baifenbai",
+                    "sellCount": 7
                 },
                 "shopProduct": [
                     {
                         "belongCompany": "3",
                         "companyId": "1",
                         "id": "1",
-                        "imgUrl": "",
+                        "imgUrl": "http://mangodm.oss-cn-shanghai.aliyuncs.com/static/images/product/2016/12/26/180820457.jpeg",
                         "name": "大码百分百189",
-                        "price":"12.3"
+                        "price": "58.0"
                     },
                     {
                         "belongCompany": "3",
                         "companyId": "1",
                         "id": "2",
-                        "imgUrl": "",
+                        "imgUrl": "http://mangodm.oss-cn-shanghai.aliyuncs.com/static/images/product/2016/12/26/181139277.jpeg",
                         "name": "大码百分百店主实拍79",
-                        "price":"123.0"
+                        "price": "68.0"
                     },
                     {
                         "belongCompany": "3",
                         "companyId": "1",
                         "id": "3",
-                        "imgUrl": "",
+                        "imgUrl": "http://mangodm.oss-cn-shanghai.aliyuncs.com/static/images/product/2016/12/26/181216701.jpeg",
                         "name": "大码百分百店主实拍89",
-                        "price":"1.23"
+                        "price": "78.0"
                     }
                 ]
             },
             {
-                "shop": {
-                    "id": "2",
-                    "name": "xxx店铺",
-                    "sale": "800",
-                    "count": "2000",
-                    "shopimg": "/static/img/shop-name-icon.jpg"
+                "company": {
+                    "count": 180,
+                    "id": 4,
+                    "imgUrl": "http://mangodm.oss-cn-shanghai.aliyuncs.com/static/images/product/2016/12/26/180628109.jpeg",
+                    "name": "msshe",
+                    "sellCount": 8
                 },
                 "shopProduct": [
                     {
-                        "belongCompany": "3",
+                        "belongCompany": "4",
                         "companyId": "1",
-                        "id": "1",
-                        "imgUrl": "/static/img/shop-name-icon.jpg",
-                        "name": "大码百分百189",
-                        "price":"1.23"
+                        "id": "5",
+                        "imgUrl": "http://mangodm.oss-cn-shanghai.aliyuncs.com/static/images/product/2016/12/26/181402109.jpeg",
+                        "name": "Msshe加大码379",
+                        "price": "57.0"
                     },
                     {
-                        "belongCompany": "3",
+                        "belongCompany": "4",
                         "companyId": "1",
-                        "id": "2",
-                        "imgUrl": "",
-                        "name": "大码百分百店主实拍79",
-                        "price":"12.3"
-                    },
-                    {
-                        "belongCompany": "3",
-                        "companyId": "1",
-                        "id": "3",
-                        "imgUrl": "",
-                        "name": "大码百分百店主实拍89",
-                        "price":"123"
+                        "id": "4",
+                        "imgUrl": "http://mangodm.oss-cn-shanghai.aliyuncs.com/static/images/product/2016/12/26/181311999.jpeg",
+                        "name": "Msshe加大码329",
+                        "price": "69.0"
                     }
                 ]
             }
