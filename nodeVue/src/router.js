@@ -122,6 +122,11 @@ export default function (router) {
       component (resolve) {
         require(['./views/fashion/topic'], resolve)
       }
+    },
+    '/playclub/clubmain': {
+      component (resolve) {
+        require(['./views/playclub/clubmain'], resolve)
+      }
     }
 
   })
@@ -140,7 +145,7 @@ export default function (router) {
       router.app.isIndex = true
     }
     else {
-      let depath = toPath === '/' || toPath === '/invite' || toPath === '/rank'
+      let depath = toPath === '/' || toPath === '/invite' || toPath === '/rank' || toPath === '/playclub/clubmain'
       router.app.isIndex = depath ? 0 : 1
     }
     next()
