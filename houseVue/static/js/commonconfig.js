@@ -14,7 +14,8 @@ planPro.ajaxUrl = {
 	uploadImg : 'http://www.zhencome.com/plana/index!userProfile.action?vt=1',
     homeBT : '/static/data/bannertasks.json',//首页ajax   ///main/index
     //房屋
-    houselist : '/static/data/houselist.json',
+    //houselist : '/static/data/houselist.json',
+    houselist : planPro.homePath + '/plana/house!list.action',
     // houseoper : '/static/data/houseoper.json', //get页面data
     houseoper : planPro.homePath + '/plana/house!modify.action', //get页面data
     posthouseoper : planPro.homePath + '/plana/house!add.action',

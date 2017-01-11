@@ -9,10 +9,10 @@
           <a href="/house/lessor/houseoper?id={{fdata.id}}">
           <div class="r-t">{{fdata.houseName}}</div>
           <div class="r-c">
-            {{fdata.houseType === '1' ? '住宅/小区/公寓':''}}
-            {{fdata.houseType === '2' ? '办公室/写字楼':''}}
-            {{fdata.houseType === '3' ? '商铺':''}}
-            {{fdata.houseType === '4' ? '仓库':''}}
+            {{fdata.houseType === 1 ? '住宅/小区/公寓':''}}
+            {{fdata.houseType === 2 ? '办公室/写字楼':''}}
+            {{fdata.houseType === 3 ? '商铺':''}}
+            {{fdata.houseType === 4 ? '仓库':''}}
           </div>
           </a>
         </div>

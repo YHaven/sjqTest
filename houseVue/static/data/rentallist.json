@@ -4,12 +4,12 @@
   "pagesize":15,
   "page":1,
   "renter":{
-      "id": "1",
+      "id": 1,
       "uploadImg": "/static/img/1.jpg",
       "renterName": "我的名字",
       "renterPhone": "19888888888",
       "room":{
-        "id": "3",
+        "id": 1,
         "uploadImg": "/static/img/1.jpg",
         "roomName": "508",
         "allCount": "8",
@@ -18,31 +18,31 @@
     },
   "datalist": [
     {
-      "id": "1",
+      "id": 1,
       "rentalTime": "2016-11-11",
       "arriveTime": "1",
       "rental":"2000"
     },
     {
-      "id": "1",
+      "id": 1,
       "rentalTime": "2016-11-11",
       "arriveTime": "5",
       "rental":"2500"
     },
     {
-      "id": "1",
+      "id": 1,
       "rentalTime": "2016-11-11",
       "arriveTime": "1",
       "rental":"2600"
     },
     {
-      "id": "1",
+      "id": 1,
       "rentalTime": "2016-11-12",
       "arriveTime": "0",
       "rental":"2000"
     },
     {
-      "id": "1",
+      "id": 1,
       "rentalTime": "2016-11-11",
       "arriveTime": "1",
       "rental":"3500"

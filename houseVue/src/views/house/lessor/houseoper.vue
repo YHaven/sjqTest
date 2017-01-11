@@ -48,14 +48,14 @@
                 <div class="item-title label">房产类型</div>
                 <div class="item-input">
                     <select name="houseType" id="houseType">
-                        <option value="1" v-if="fdata.houseType === '1'" seleted>住宅/小区/公寓</option>
+                        <option value="1" v-if="fdata.houseType === 1" selected>住宅/小区/公寓</option>
                         <option value="1" v-else>住宅/小区/公寓</option>
-                        <option value="1" v-if="fdata.houseType === '2'" seleted>办公室/写字楼</option>
-                        <option value="1" v-else>办公室/写字楼</option>
-                        <option value="1" v-if="fdata.houseType === '3'" seleted>商铺</option>
-                        <option value="1" v-else>商铺</option>
-                        <option value="1" v-if="fdata.houseType === '4'" seleted>仓库</option>
-                        <option value="1" v-else>仓库</option>
+                        <option value="2" v-if="fdata.houseType === 2" selected>办公室/写字楼</option>
+                        <option value="2" v-else>办公室/写字楼</option>
+                        <option value="3" v-if="fdata.houseType === 3" selected>商铺</option>
+                        <option value="3" v-else>商铺</option>
+                        <option value="4" v-if="fdata.houseType === 4" selected>仓库</option>
+                        <option value="4" v-else>仓库</option>
                     </select>
                 </div>
             </div>
@@ -84,7 +84,7 @@
     data () {
       var pId = planPro.fun.getQueryString('id');
       if(pId){
-        return this.$http.get(planPro.ajaxUrl.houseoper+'?id='+pId)
+        return this.$http.post(planPro.ajaxUrl.houseoper+'?id='+pId,{},{credentials: true})
         .then(({data}) => {
           if(data.status){
             this.$set('fdata', data.data);
@@ -166,7 +166,6 @@
           layer.open({content: '房屋名称未填写',time:2});
           checkResult = false;
         }
-
         if(!checkResult){
           _this.loading = false;
           loader.hide()
@@ -177,9 +176,28 @@
 
         var postUrl = planPro.ajaxUrl.posthouseoper; //添加的
         if(params.id !== '') postUrl = planPro.ajaxUrl.posthouseopermodify;  //修改的
-        _this.$http.post(postUrl,params)
-          .then(({data: {status}}) => {
-            _this.$route.router.go({path: '/house/lessor/houselist', replace: true});
+        _this.$http.post(postUrl,params,{credentials: true})
+          .then(({data}) => {
+
+            if(data.status){
+              _this.$route.router.go({path: '/house/lessor/houselist', replace: true});
+            }else{
+              if(!data.islogin){
+                layer.open({
+                      content: data.errorinfo
+                      ,btn: ['去登录']
+                      ,yes: function(index){
+                        router.go({path: planPro.loginPath, replace: true});
+                        layer.close(index);
+                      }
+                  });
+              }else{
+                layer.open({content: data.errorinfo,time:2});
+              }
+              
+            }
+
+            
         })
       
         _this.loading = false

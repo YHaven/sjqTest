@@ -46,9 +46,31 @@ import $ from 'zepto'
 export default {
   route: {
     data () {
-      return this.$http.get(planPro.ajaxUrl.houselist)
-      .then(({data: {status, page, datalist}}) => {
-        this.$set('tasks', datalist);
+      return this.$http.post(planPro.ajaxUrl.houselist,{'vt':'1'},{credentials: true})
+      .then(({data}) => {
+
+        if(data.status){
+            this.$set('tasks', data.datalist);
+            this.page = this.page + 1;
+        }else{
+          this.$set('tasks', []);
+          if(!data.islogin){
+            layer.open({
+                  content: data.errorinfo
+                  ,btn: ['去登录']
+                  ,yes: function(index){
+                    router.go({path: planPro.loginPath, replace: true});
+                    layer.close(index);
+                  }
+              });
+          }else{
+            layer.open({content: data.errorinfo,time:2});
+          }
+          
+        }
+
+
+        
       })
     }
   },
@@ -73,9 +95,10 @@ export default {
       setTimeout(function () {
         this.page = 1
         var page = '&page='+ this.page
-        this.$http.get(planPro.ajaxUrl.houselist+'?vt=1'+page)
+        this.$http.post(planPro.ajaxUrl.houselist+'?vt=1'+page,{},{credentials: true})
         .then(({data: {status, page, datalist}}) => {
           this.$set('tasks', datalist);
+          this.page = this.page + 1;
         })
 
         $.pullToRefreshDone('.pull-to-refresh-content')
@@ -89,13 +112,18 @@ export default {
       let scroller = $('.content')
       loader.show()
       setTimeout(() => {
-        this.page = this.page + 1
         var page = '&page='+ this.page
-        this.$http.get(planPro.ajaxUrl.houselist+'?vt=1'+page)
+        this.$http.post(planPro.ajaxUrl.houselist+'?vt=1'+page,{},{credentials: true})
           .then(({data: {status, page, datalist}}) => {
-            for (var i = 0; i < datalist.length; i++) {
-              this.tasks.push(datalist[i]);
-            };
+            if(datalist.length>0){
+              for (var i = 0; i < datalist.length; i++) {
+                this.tasks.push(datalist[i]);
+              };
+              this.page = this.page + 1
+            }else{
+              layer.open({content: "没有更多数据了",time:2});
+            }
+            
         })
       
         let scrollTop = scroller[0].scrollHeight - scroller.height() - 20

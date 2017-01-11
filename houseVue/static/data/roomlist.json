@@ -4,21 +4,21 @@
   "pagesize":15,
   "page":1,
   "house":{
-      "id": "1",
+      "id": 1,
       "uploadImg": "/static/img/1.jpg",
       "houseName": "采荷新村",
-      "houseType": "1",
-      "allCount": "8",
-      "emptyCount": "1"
+      "houseType": 1,
+      "allCount": 8,
+      "emptyCount": 1
     },
   "datalist": [
     {
-      "id": "1",
+      "id": 1,
       "roomName": "510",
       "renterCount": "2"
     },
     {
-      "id": "1",
+      "id": 1,
       "roomName": "509",
       "renterCount": "2"
     },

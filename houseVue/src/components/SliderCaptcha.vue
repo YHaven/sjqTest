@@ -62,7 +62,7 @@ export default {
             password : $('input[name="password"]').val()
         }
         // $('.loginForm').serialize()
-        _this.$http.post(planPro.ajaxUrl.login, formParams)
+        _this.$http.post(planPro.ajaxUrl.login, formParams,{credentials: true})
         .then(({data}) => {
             if(data.status){
                 _this.$route.router.go({path: planPro.indexPath, replace: true})
