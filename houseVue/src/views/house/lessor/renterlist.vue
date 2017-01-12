@@ -56,10 +56,31 @@ export default {
     data () {
       var pId = planPro.fun.getQueryString('id');
       if(pId){
-        return this.$http.get(planPro.ajaxUrl.renterlist+'?vt=2&id='+ pId)
-        .then(({data: {status, page, room, datalist}}) => {
-          this.$set('tasks', datalist);
-          this.$set('fdata', room);
+        return this.$http.post(planPro.ajaxUrl.renterlist+'?vt=1&id='+ pId,{},{credentials: true})
+        .then(({data}) => {
+
+          if(data.status){
+            this.$set('tasks', data.datalist);
+            this.$set('fdata', data.room);
+            this.page = this.page + 1;
+          }else{
+            this.$set('tasks', []);
+            this.$set('fdata', {});
+            if(!data.islogin){
+              layer.open({
+                    content: data.errorinfo
+                    ,btn: ['去登录']
+                    ,yes: function(index){
+                      router.go({path: planPro.loginPath, replace: true});
+                      layer.close(index);
+                    }
+                });
+            }else{
+              layer.open({content: data.errorinfo,time:2});
+            }
+            
+          }
+          
         })
       }else{
         this.$set('tasks', []);
@@ -88,24 +109,12 @@ export default {
       setTimeout(function () {
         this.page = 1
         var page = '&page='+ this.page
-        this.$http.get(planPro.ajaxUrl.renterlist+'?vt=2'+page+'&id='+this.fdata.id)
+        this.$http.post(planPro.ajaxUrl.renterlist+'?vt=1'+page+'&id='+this.fdata.id,{},{credentials: true})
       .then(({data: {status, page, datalist}}) => {
         this.$set('tasks', datalist);
+        this.page = this.page + 1;
       })
 
-        // let num = this.length + 1
-        // let title = `标题${num}`
-        // let adv = `abc${num}`
-        // let time = (new Date()).getTime() / 1000
-        // let point = 100 + num - 1
-        // this.tasks.push({
-        //   id: num,
-        //   title: title,
-        //   advertiser: adv,
-        //   status: '1',
-        //   created: time,
-        //   read_profit: point
-        // })
         $.pullToRefreshDone('.pull-to-refresh-content')
       }.bind(this), 1500)
     },
@@ -117,13 +126,17 @@ export default {
       let scroller = $('.content')
       loader.show()
       setTimeout(() => {
-        this.page = this.page + 1
         var page = '&page='+ this.page
-        this.$http.get(planPro.ajaxUrl.renterlist+'?vt=2'+page+'&id='+this.fdata.id)
+        this.$http.post(planPro.ajaxUrl.renterlist+'?vt=1'+page+'&id='+this.fdata.id,{},{credentials: true})
           .then(({data: {status, page, datalist}}) => {
-            for (var i = 0; i < datalist.length; i++) {
-              this.tasks.push(datalist[i]);
-            };
+            if(datalist.length>0){
+              for (var i = 0; i < datalist.length; i++) {
+                this.tasks.push(datalist[i]);
+              };
+              this.page = this.page + 1
+            }else{
+              layer.open({content: "没有更多数据了",time:2});
+            }
         })
       
         let scrollTop = scroller[0].scrollHeight - scroller.height() - 20

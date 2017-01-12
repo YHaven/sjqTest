@@ -55,9 +55,26 @@
     data () {
       var pId = planPro.fun.getQueryString('id');
       if(pId){
-        return this.$http.get(planPro.ajaxUrl.roomoper+'?id='+pId)
-        .then(({data: {status,data}}) => {
-          this.$set('fdata', data);
+        return this.$http.post(planPro.ajaxUrl.roomoper+'?id='+pId,{},{credentials: true})
+        .then(({data}) => {
+          if(data.status){
+            this.$set('fdata', data.data);
+          }else{
+            this.$set('fdata', {});
+            if(!data.islogin){
+              layer.open({
+                    content: data.errorinfo
+                    ,btn: ['去登录']
+                    ,yes: function(index){
+                      router.go({path: planPro.loginPath, replace: true});
+                      layer.close(index);
+                    }
+                });
+            }else{
+              layer.open({content: data.errorinfo,time:2});
+            }
+            
+          }
         })
       }else{
         this.$set('fdata', {});
@@ -104,9 +121,29 @@
         params.vt = 1;
         var postUrl = planPro.ajaxUrl.postroomoper; //添加的
         if(params.id !== '') postUrl = planPro.ajaxUrl.postroomopermodify;  //修改的
-        _this.$http.post(postUrl,params)
-          .then(({data: {status}}) => {
-            _this.$route.router.go({path: '/house/lessor/roomlist?id='+_this.fdata.house.id, replace: true});
+        _this.$http.post(postUrl,params,{credentials: true})
+          .then(({data}) => {
+
+            if(data.status){
+              _this.$route.router.go({path: '/house/lessor/roomlist?id='+_this.fdata.house.id, replace: true});
+            }else{
+              if(!data.islogin){
+                layer.open({
+                      content: data.errorinfo
+                      ,btn: ['去登录']
+                      ,yes: function(index){
+                        router.go({path: planPro.loginPath, replace: true});
+                        layer.close(index);
+                      }
+                  });
+              }else{
+                layer.open({content: data.errorinfo,time:2});
+              }
+              
+            }
+
+
+            
         })
        
         _this.loading = false
