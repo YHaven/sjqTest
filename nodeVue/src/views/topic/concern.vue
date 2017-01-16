@@ -1,41 +1,55 @@
 <template>
-<div class="art-edit" @click="commentDialog"><i class="icon iconfont icon-write"></i></div>
 <div class="container">
   <div class="content home" distance="55" v-pull-to-refresh="refresh" v-infinite-scroll="loadMore">
     <v-layer></v-layer>
     <div class="top-title">
       <i class="icon iconfont icon-creative cameralight"></i>
       <ul class="top-tab clearfix">
-        <li class="active"><span>广场</span><span class="cl"></span></li>
+        <li><span>广场</span><span class="cl"></span></li>
         <li><span>热门</span><span class="cl"></span></li>
-        <li><span>关注</span><span class="cl"></span></li>
+        <li class="active"><span>关注</span><span class="cl"></span></li>
       </ul> 
       <i class="icon iconfont icon-search search"></i>
     </div>
     
-    <slider :banner="banner"></slider>
-
-    <bar class="home-bar clearfix">
-      <a class="tab-item" href="/topic/aaa">
-        <span class="icon iconfont icon-copy"></span>
-        <span class="tab-label">干货</span>
-      </a>
-      <a class="tab-item" href="/topic/aaa">
-        <span class="icon iconfont icon-voice"></span>
-        <span class="tab-label">话题</span>
-      </a>
-      <a class="tab-item" href="/topic/aaa">
-        <span class="icon iconfont icon-group"></span>
-        <span class="tab-label">拍档</span>
-      </a>
-    </bar>
-    
-    
-    <div class="recommend">
-      <span>推荐</span>
-      <span class="icon iconfont icon-apps"></span>
-      <span class="icon iconfont icon-sort active"></span>
+    <div class="recommend-for">
+      <p class="recommend-top"><span>为你推荐</span><i class="icon iconfont icon-close_light"></i></p>
+      <ul class="clearfix">
+        <li>
+          <img src="/static/img/1.jpg" alt="">
+          <div class="recommend-name">奥运xxx</div>
+          <div class="recommend-real">认证:xxx达人</div>
+        </li>
+        <li>
+          <img src="/static/img/1.jpg" alt="">
+          <div class="recommend-name">奥运xxx</div>
+          <div class="recommend-real">认证:xxx达人</div>
+        </li>
+        <li>
+          <img src="/static/img/1.jpg" alt="">
+          <div class="recommend-name">奥运xxx</div>
+          <div class="recommend-real">认证:xxx达人</div>
+        </li>
+        <li>
+          <img src="/static/img/1.jpg" alt="">
+          <div class="recommend-name">奥运xxx</div>
+          <div class="recommend-real">认证:xxx达人</div>
+        </li>
+        <li>
+          <img src="/static/img/1.jpg" alt="">
+          <div class="recommend-name">奥运xxx</div>
+          <div class="recommend-real">认证:xxx达人</div>
+        </li>
+        <li>
+          <img src="/static/img/1.jpg" alt="">
+          <div class="recommend-name">奥运xxx</div>
+          <div class="recommend-real">认证:xxx达人</div>
+        </li>
+      </ul>
     </div>
+    
+    <div class="search-more-group"><i class="icon iconfont icon-friend"></i>查看更多小伙伴<i class="icon iconfont icon-right"></i></div>
+
 
 
     <div class="card-container">
@@ -244,6 +258,16 @@ export default {
 .search{position: absolute; font-size: 0.6rem;right:0.4rem;top: 0.5rem;color: #f59e83;}
 
 .container {position: absolute;  top: 0;  right: 0;  bottom: 0;  left: 0;  overflow: auto;  -webkit-overflow-scrolling: touch;background-color: #f8f8f8;color: #929292;}
+
+
+.recommend-for{font-size: 0.6rem;text-align: center;}
+.recommend-top{text-align: left;padding:0rem 0.5rem;}
+.recommend-top .icon{float: right;}
+.recommend-for li{width:5.325rem;float: left;margin: 0.5rem 0rem;  }
+.recommend-for li img{border-radius: 50%;width: 3.5rem;height: 3.5rem;}
+.recommend-name{color: #333;}
+.search-more-group{text-align: center;font-size: 0.8rem;margin: 0.3rem 0rem;}
+.search-more-group i{font-size: 1rem;}
 
 .art-edit{position:fixed;bottom: 3rem;right: 0.5rem;width: 2rem;height: 2rem;line-height: 2rem;border-radius: 50%;text-align: center;background-color: #f59e83;color: #fff;z-index: 2;}
 .home { }
