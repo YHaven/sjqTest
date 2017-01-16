@@ -127,6 +127,11 @@ export default function (router) {
       component (resolve) {
         require(['./views/playclub/clubmain'], resolve)
       }
+    },
+    '/topic/index': {
+      component (resolve) {
+        require(['./views/topic/index'], resolve)
+      }
     }
 
   })
