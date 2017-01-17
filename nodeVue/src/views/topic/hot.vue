@@ -6,37 +6,68 @@
     <div class="top-title">
       <i class="icon iconfont icon-creative cameralight"></i>
       <ul class="top-tab clearfix">
-        <li v-link="{path: '/topic/index', replace: true}" class="active"><span>广场</span><span class="cl"></span></li>
-        <li v-link="{path: '/topic/hot', replace: true}" ><span>热门</span><span class="cl"></span></li>
+        <li v-link="{path: '/topic/index', replace: true}" ><span>广场</span><span class="cl"></span></li>
+        <li v-link="{path: '/topic/hot', replace: true}" class="active"><span>热门</span><span class="cl"></span></li>
         <li v-link="{path: '/topic/concern', replace: true}"><span>关注</span><span class="cl"></span></li>
       </ul> 
       <i class="icon iconfont icon-search search"></i>
     </div>
-    
-    <slider :banner="banner"></slider>
 
-    <bar class="home-bar clearfix">
-      <a class="tab-item" href="/topic/aaa">
-        <span class="icon iconfont icon-copy"></span>
-        <span class="tab-label">干货</span>
-      </a>
-      <a class="tab-item" href="/topic/aaa">
-        <span class="icon iconfont icon-voice"></span>
-        <span class="tab-label">话题</span>
-      </a>
-      <a class="tab-item" href="/topic/aaa">
-        <span class="icon iconfont icon-group"></span>
-        <span class="tab-label">拍档</span>
-      </a>
-    </bar>
-    
-    
-    <div class="recommend">
-      <span>推荐</span>
-      <span class="icon iconfont icon-apps"></span>
-      <span class="icon iconfont icon-sort active"></span>
+    <div class="f-block">
+      <img src="/static/img/1.jpg" alt="">
+      <div class="msg-title">《明星》鹿晗年度封面大集合,哪款造型才是你的菜？</div>
+      <div class="msg-view"><i class="icon iconfont icon-attentionfavor"></i>9527</div>
     </div>
+    
+    <ul class="s-block">
+      <li>
+        <img src="/static/img/1.jpg" alt="">
+        <div class="msg-title">1/16 《美妆》如何在雾霾中提升能见度？化个美到发光的妆呗！</div>
+        <div class="msg-view"><i class="icon iconfont icon-attentionfavor"></i>9527</div>
+      </li>
+      <li>
+        <img src="/static/img/1.jpg" alt="">
+        <div class="msg-title">1/16 《话题》关于萌宝，你比较喜欢女儿还是儿子？</div>
+        <div class="msg-view"><i class="icon iconfont icon-attentionfavor"></i>9527</div>
+      </li>
+    </ul>
 
+    <!--搭配方案  start -->
+    <div class="d-block">
+      <div class="msg-title">1/16 《崭新2017 塑造全新自我》</div>
+      <img src="/static/img/1.jpg" alt="">
+      <div class="msg-case">
+        <ul class="msg-person">
+          <li>
+            <img src="/static/img/1.jpg" alt="">
+          </li>
+          <li>
+            <img src="/static/img/1.jpg" alt="">
+          </li>
+          <li>
+            <img src="/static/img/1.jpg" alt="">
+          </li>
+          <li>
+            <img src="/static/img/1.jpg" alt="">
+          </li>
+        </ul>
+        <div class="msg-count">9527人提供了搭配方案</div>
+      </div>
+    </div>
+    <!--搭配方案  end -->
+  
+    <ul class="s-block">
+      <li>
+        <img src="/static/img/1.jpg" alt="">
+        <div class="msg-title">1/16 《美妆》如何在雾霾中提升能见度？化个美到发光的妆呗！</div>
+        <div class="msg-view"><i class="icon iconfont icon-attentionfavor"></i>9527</div>
+      </li>
+      <li>
+        <img src="/static/img/1.jpg" alt="">
+        <div class="msg-title">1/16 《话题》关于萌宝，你比较喜欢女儿还是儿子？</div>
+        <div class="msg-view"><i class="icon iconfont icon-attentionfavor"></i>9527</div>
+      </li>
+    </ul>
 
     <div class="card-container">
       
@@ -243,18 +274,28 @@ export default {
 .cameralight{position: absolute;left:0.4rem;  font-size: 0.65rem; top: 0.5rem; color: #f59e83;}
 .search{position: absolute; font-size: 0.6rem;right:0.4rem;top: 0.5rem;color: #f59e83;}
 
-.container {position: absolute;  top: 0;  right: 0;  bottom: 0;  left: 0;  overflow: auto;  -webkit-overflow-scrolling: touch;background-color: #f8f8f8;color: #929292;}
+.container {position: absolute;  top: 0;  right: 0;  bottom: 0;  left: 0;  overflow: auto;  -webkit-overflow-scrolling: touch;background-color: #f8f8f8;color: #929292;font-size: 0.5rem;}
 
-.art-edit{position:fixed;bottom: 3rem;right: 0.5rem;width: 2rem;height: 2rem;line-height: 2rem;border-radius: 50%;text-align: center;background-color: #f59e83;color: #fff;z-index: 2;}
-.home { }
-.home-bar {background: #fff;position: relative;/*box-shadow: 0 .01rem .05rem rgba(0,0,0,.3);*/padding-bottom: .5rem;padding-top: .5rem;height: 4rem;}
-.home-bar .icon{color:#f59e83;}
-.home-bar .tab-item{border-right: 1px solid #ddd;}
-.home-bar .tab-item:last-child{border-right: 0px;}
+.f-block{padding: 0.5rem;margin-bottom: 0.5rem;background-color: #fff;}
+.f-block img{width: 100%;}
+.f-block .msg-title{color: #333;}
+.f-block .msg-view{text-align: right;}
+.f-block .msg-view .icon{margin-right: 0.5rem;}
 
-.recommend{margin-top: 0.4rem;height:2rem;padding-top: 0.45rem;background-color: #fff; font-size: 0.5rem;padding-left: .625rem;padding-right: .625rem;border-bottom: 1px solid #e2e2e2;}
-.recommend .icon{float: right;margin-left: 1rem;}
-.recommend .active{color: #f59e83;}
+.s-block{}
+.s-block li{margin-bottom: 0.5rem;padding: 0.5rem;background-color: #fff;}
+.s-block img{width: 3.2rem;float: left;}
+.s-block .msg-title{color: #333;margin-left: 3.5rem;}
+.s-block .msg-view{text-align: right;}
+.s-block .msg-view .icon{margin-right: 0.5rem;}
+
+.d-block{padding: 0.5rem;margin-bottom: 0.5rem;background-color: #fff;}
+.d-block img{width: 100%;}
+.d-block .msg-title{color: #333;margin-bottom: 0.5rem;}
+.d-block .msg-person{width: 9rem;float: left;}
+.d-block .msg-person li{float: left;width: 1rem;height: 1rem;border-radius: 50%;overflow: hidden;margin: 0.2rem;}
+.d-block .msg-person li img{width: 100%;}
+.d-block .msg-count{text-align: center;font-size: 0.2rem;}
 
 
 .item-content{margin-bottom: .5rem;padding: 0rem 0.625rem;background-color: #fff;}

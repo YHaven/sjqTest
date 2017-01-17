@@ -137,6 +137,11 @@ export default function (router) {
       component (resolve) {
         require(['./views/topic/concern'], resolve)
       }
+    },
+    '/topic/hot': {
+      component (resolve) {
+        require(['./views/topic/hot'], resolve)
+      }
     }
 
   })
