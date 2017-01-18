@@ -5,7 +5,7 @@
     <div class="top-title">
       <i class="icon iconfont icon-creative cameralight"></i>
       <ul class="top-tab clearfix">
-        <li v-link="{path: '/topic/index', replace: true}"><span>广场</span><span class="cl"></span></li>
+        <li v-link="{path: '/topic', replace: true}"><span>广场</span><span class="cl"></span></li>
         <li v-link="{path: '/topic/hot', replace: true}" ><span>热门</span><span class="cl"></span></li>
         <li v-link="{path: '/topic/concern', replace: true}" class="active"><span>关注</span><span class="cl"></span></li>
       </ul> 

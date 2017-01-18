@@ -1,10 +1,11 @@
 <template>
+<div class="art-edit" @click="commentDialog"><i class="icon iconfont icon-write"></i></div>
 <div class="container">
   <div class="content home" distance="55" v-pull-to-refresh="refresh" v-infinite-scroll="loadMore">
     <v-layer></v-layer>
     <div class="top-title">
       <i class="icon iconfont icon-back_light left"></i>
-        时尚频道
+        时尚搭配
       <i class="icon iconfont icon-more right"></i>
     </div>
     <div class="fashion-title">
@@ -161,13 +162,45 @@ export default {
       alert('开发中...');
     },
     commentDialog(){
+      var _this = this;
+
+      var topicHtml = '<form id="topicForm" class="dialogForm"><table>';
+      topicHtml += '<tr><td style="width:2rem;">*标题:</td><td><input name="title" id="title" type="text" value=""/></td></tr>';
+      topicHtml += '<tr><td>图片:</td><td><input name="imgUrl" id="imgUrl" type="text" value=""/></td></tr>';
+      topicHtml += '<tr><td>内容:</td><td><textarea name="artContent" id="artContent" cols="30" rows="10"></textarea></td></tr>';
+      topicHtml += '</table></form>';
+
+
       layer.open({
-        content: '我要发表评论了！',
+        content: topicHtml,
         btn: ['发布', '取消'],
         skin: 'footer',
         shadeClose: false,
         yes: function(index){
           //
+          var params = $('#topicForm').serializeArray();
+          var paramsJson = planPro.fun.serializeArrayToJson(params);
+          if(paramsJson.title === ''){
+            layer.open({content: '标题未填写！',skin: 'msg',time: 2});
+            return false;
+          }
+          if(paramsJson.artContent === ''){
+            layer.open({content: '内容不能为空！',skin: 'msg',time: 2});
+            return false;
+          }
+          paramsJson.type = '1'; //（话题类型：不传表示首页，1表示时尚搭配，2表示减肥）
+          if (_this.loading) return false
+
+          _this.loading = true
+          loader.show()
+          _this.$http.post(planPro.ajaxUrl.addcommunitycomment,paramsJson)
+          .then(({data}) => {
+              console.log(data)
+              _this.loading = false
+              loader.hide()
+          })
+
+
         }
       });
     }
@@ -190,6 +223,7 @@ export default {
 </script>
 
 <style scoped>
+.art-edit{position:fixed;bottom: 3rem;right: 0.5rem;width: 2rem;height: 2rem;line-height: 2rem;border-radius: 50%;text-align: center;background-color: #f59e83;color: #fff;z-index: 2;}
 .container {position: absolute;  top: 0;  right: 0;  bottom: 0;  left: 0;  overflow: auto;  -webkit-overflow-scrolling: touch;background-color: #f8f8f8;color: #929292;font-size: 0.5rem;}
 .home{padding: 0.45rem;background-color: #fff;}
 .card-container{background-color: #f5f5f5;}

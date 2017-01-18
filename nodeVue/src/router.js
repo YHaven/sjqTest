@@ -128,9 +128,9 @@ export default function (router) {
         require(['./views/playclub/clubmain'], resolve)
       }
     },
-    '/topic/index': {
+    '/topic': {
       component (resolve) {
-        require(['./views/topic/index'], resolve)
+        require(['./views/topic'], resolve)
       }
     },
     '/topic/concern': {
@@ -151,6 +151,11 @@ export default function (router) {
     '/topic/alltopic': {
       component (resolve) {
         require(['./views/topic/alltopic'], resolve)
+      }
+    },
+    '/topic/weight': {
+      component (resolve) {
+        require(['./views/topic/weight'], resolve)
       }
     }
 

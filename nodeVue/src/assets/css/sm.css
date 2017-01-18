@@ -3323,7 +3323,7 @@ html:not(.watch-active-state) .card-header a.link:active, html:not(.watch-active
 .ball-beat {
   top: 50%;
   left: 50%;
-  z-index: 11000;
+  z-index: 19891015;
   margin-top: -.55rem;
   margin-left: -1.5rem;
   position: absolute;
@@ -3361,3 +3361,7 @@ home
 .home-bar .tab-item .wc-jfjs-in{display:inline-block;background:url(../img/wc-jfjs-icon.jpg) no-repeat 0 0;background-size:100% 100%;width: 3.5rem;height:4rem;}
 .home-bar .tab-item .wc-sjz-in{display:inline-block;background:url(../img/wc-sjz-icon.jpg) no-repeat 0 0;background-size:100% 100%;width: 3.5rem;height:4rem;}
 .home-bar .tab-item .wc-ylgb-in{display:inline-block;background:url(../img/wc-ylgb-icon.jpg) no-repeat 0 0;background-size:100% 100%;width: 3.5rem;height:4rem;}
+
+
+.dialogForm input,.dialogForm textarea{border: 0px;width: 100%;margin: 0.25rem 0rem;}
+.dialogForm input{height: 0.75rem;}

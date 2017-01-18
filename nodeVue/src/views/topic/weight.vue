@@ -4,27 +4,19 @@
   <div class="content home" distance="55" v-pull-to-refresh="refresh" v-infinite-scroll="loadMore">
     <v-layer></v-layer>
     <div class="top-title">
-      <i class="icon iconfont icon-creative cameralight"></i>
-      <ul class="top-tab clearfix">
-        <li v-link="{path: '/topic/index', replace: true}" class="active"><span>广场</span><span class="cl"></span></li>
-        <li v-link="{path: '/topic/hot', replace: true}" ><span>热门</span><span class="cl"></span></li>
-        <li v-link="{path: '/topic/concern', replace: true}"><span>关注</span><span class="cl"></span></li>
-      </ul> 
-      <i class="icon iconfont icon-search search"></i>
+      <i class="icon iconfont icon-back_light left"></i>
+        减肥
+      <i class="icon iconfont icon-more right"></i>
     </div>
     
     <slider :banner="banner"></slider>
 
     <bar class="home-bar clearfix">
-      <a class="tab-item" href="/topic/aaa">
+      <a class="tab-item" v-link="{path: '/topic/fashion', replace: true}">
         <span class="icon iconfont icon-copy"></span>
         <span class="tab-label">干货</span>
       </a>
-      <a class="tab-item" href="/topic/aaa">
-        <span class="icon iconfont icon-voice"></span>
-        <span class="tab-label">话题</span>
-      </a>
-      <a class="tab-item" href="/topic/aaa">
+      <a class="tab-item" v-link="{path: '/topic/alltopic', replace: true}">
         <span class="icon iconfont icon-group"></span>
         <span class="tab-label">拍档</span>
       </a>
@@ -203,13 +195,45 @@ export default {
       alert('开发中...');
     },
     commentDialog(){
+      var _this = this;
+
+      var topicHtml = '<form id="topicForm" class="dialogForm"><table>';
+      topicHtml += '<tr><td style="width:2rem;">*标题:</td><td><input name="title" id="title" type="text" value=""/></td></tr>';
+      topicHtml += '<tr><td>图片:</td><td><input name="imgUrl" id="imgUrl" type="text" value=""/></td></tr>';
+      topicHtml += '<tr><td>内容:</td><td><textarea name="artContent" id="artContent" cols="30" rows="10"></textarea></td></tr>';
+      topicHtml += '</table></form>';
+
+
       layer.open({
-        content: '我要发表评论了！',
+        content: topicHtml,
         btn: ['发布', '取消'],
         skin: 'footer',
         shadeClose: false,
         yes: function(index){
           //
+          var params = $('#topicForm').serializeArray();
+          var paramsJson = planPro.fun.serializeArrayToJson(params);
+          if(paramsJson.title === ''){
+            layer.open({content: '标题未填写！',skin: 'msg',time: 2});
+            return false;
+          }
+          if(paramsJson.artContent === ''){
+            layer.open({content: '内容不能为空！',skin: 'msg',time: 2});
+            return false;
+          }
+          paramsJson.type = '2'; //（话题类型：不传表示首页，1表示时尚搭配，2表示减肥）
+          if (_this.loading) return false
+
+          _this.loading = true
+          loader.show()
+          _this.$http.post(planPro.ajaxUrl.addcommunitycomment,paramsJson)
+          .then(({data}) => {
+              console.log(data)
+              _this.loading = false
+              loader.hide()
+          })
+
+
         }
       });
     }
@@ -232,7 +256,13 @@ export default {
 </script>
 
 <style scoped>
-.top-title{background-color: #4b4744; text-align: center;position: relative;color: #fff;height: 1.8rem;padding-top: 0.375rem;}
+
+.top-title{text-align: center;font-size: 1.2rem;padding: 0.45rem;padding-bottom: 0rem;border-bottom: 1px solid #000;position: relative;}
+.top-title i{font-size: 1rem;}
+.left{float: left;}
+.right{float: right;}
+
+
 .top-tab{width: 5.625rem;margin: 0 auto;}
 .top-tab li{width: 1.875rem;float: left;text-align: center;font-size: 0.5rem;}
 .top-tab li.active{color: #f59e83;}
@@ -240,9 +270,6 @@ export default {
 .top-tab li .cl{border-radius: 50%;display: none;width: 0.15rem;height: 0.15rem;background-color: #f59e83;margin: 0 auto;}
 .top-topic .zd{background-color: #5fa92e;padding: 0.1rem 0.3rem;border-radius: 3px;margin-right: 1.5rem;color: #333;}
 .top-topic a{color: #333;}
-.cameralight{position: absolute;left:0.4rem;  font-size: 0.65rem; top: 0.5rem; color: #f59e83;}
-.search{position: absolute; font-size: 0.6rem;right:0.4rem;top: 0.5rem;color: #f59e83;}
-
 .container {position: absolute;  top: 0;  right: 0;  bottom: 0;  left: 0;  overflow: auto;  -webkit-overflow-scrolling: touch;background-color: #f8f8f8;color: #929292;}
 
 .art-edit{position:fixed;bottom: 3rem;right: 0.5rem;width: 2rem;height: 2rem;line-height: 2rem;border-radius: 50%;text-align: center;background-color: #f59e83;color: #fff;z-index: 2;}

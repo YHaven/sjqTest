@@ -13,6 +13,9 @@ planPro.ajaxUrl = {
     newsBT : '/static/data/mainbannerproducts.json',
 
     //社区信息
-    getcommunitynews: '/static/data/getCommunityNews.json'
-    // getcommunitynews: '/community/getCommunityNews'
+    // getcommunitynews: '/static/data/getCommunityNews.json',
+    getcommunitynews: '/community/getCommunityNews',
+
+    //添加话题评论
+    addcommunitycomment:'/community/addCommunityComment'
 }
