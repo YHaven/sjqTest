@@ -147,6 +147,11 @@ export default function (router) {
       component (resolve) {
         require(['./views/topic/fashion'], resolve)
       }
+    },
+    '/topic/alltopic': {
+      component (resolve) {
+        require(['./views/topic/alltopic'], resolve)
+      }
     }
 
   })

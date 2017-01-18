@@ -1,46 +1,21 @@
 <template>
+
 <div class="container">
   <div class="content home" distance="55" v-pull-to-refresh="refresh" v-infinite-scroll="loadMore">
     <v-layer></v-layer>
     <div class="top-title">
       <i class="icon iconfont icon-back_light left"></i>
-        时尚频道
+        全部话题
       <i class="icon iconfont icon-more right"></i>
     </div>
-    <div class="fashion-title">
-      <span class="f-block"></span>
-      <span>时尚频道</span>
-    </div>
-    <div class="top-img">
-      <img src="/static/img/fashion-img1.jpg" alt="">
-    </div>
-    <div class="top-img">
-      <img src="/static/img/fashion-img2.jpg" alt="">
-    </div>
-    <div class="top-img">
-      <img src="/static/img/fashion-img3.jpg" alt="">
-    </div>
-
     <div class="card-container">
-      <div class="top-img">
-        <img src="/static/img/fashion-img4.jpg" alt="">
-      </div>
       <ul class="clearfix">
         <li class="item-content" v-for="task in tasks ">
           <img class="content-img" src="{{task.logoImg}}" alt="">
-          <div class="user-info clearfix">
-            <img src="/static/img/1.jpg" alt="">
-            <div class="user-name">
-              <div class="nick">久呢</div>
-              <!-- <div class="size">163cm,70kg</div> -->
-            </div>
-            <!-- <i class="icon iconfont icon-likefill" :style="{color: '1' === '1' ? 'red': 'gray'}"></i> -->
-            
+          <div class="tip-info">
+            <p>#瘦到最后#</p>
+            <p>49516人参加</p>
           </div>
-          <div class="c-tips">
-            <span>逛街</span><span>显瘦</span><span>显高</span>
-          </div>
-          
         </li>
       </ul>
     </div>
@@ -191,24 +166,22 @@ export default {
 
 <style scoped>
 .container {position: absolute;  top: 0;  right: 0;  bottom: 0;  left: 0;  overflow: auto;  -webkit-overflow-scrolling: touch;background-color: #f8f8f8;color: #929292;font-size: 0.5rem;}
-.home{padding: 0.45rem;background-color: #fff;}
+.home{background-color: #fff;}
 .card-container{background-color: #f5f5f5;}
 
 
-.item-content{margin: 0rem 0.15rem; margin-bottom: .5rem;background-color: #fff;width:7.2rem;float: left;}
-.item-content .content-img{height: 10.5rem;width:100%;border: 0px;}
-.user-info img{width: 1.3rem;height: 1.3rem;border-radius: 50%;float: left;margin-left: 0.3rem;}
-.user-name{width: 3rem;display: inline-block;margin-left: 0.25rem;font-size: 0.5rem;margin-top: 0.25rem;}
-.user-info .icon{float: right;}
-.c-tips{margin: 0.3rem;}
-.c-tips span{display: inline-block;padding:0rem 0.3rem;border-right: 1px solid #ddd;}
-.c-tips span:last-child{border-right: 0px;}
+
+.item-content{position: relative; padding: 0rem 0.35rem; background-color: #fff;width:50%;float: left;}
+.item-content .tip-info{position: absolute;width: 7.5rem;height:4.25rem;background: rgba(0,0,0,0.3);top: 0px;color: #fff;font-size: 0.8rem;text-align: center;}
+.item-content .tip-info p{margin-bottom: 0px;margin-top: 0.5rem;}
+.item-content img{width: 7.5rem;height:4.25rem;border-radius: 0.2rem; border: 0px;}
+
 
 .fashion-title{font-size: 1rem;color: #333;}
 .fashion-title .f-block{display: inline-block;height: 0.45rem;width: 0.225rem;background-color: #8b5ab6;}
 .top-img img{width: 100%;}
 
-.top-title{text-align: center;font-size: 1.2rem;padding-bottom: 0.25rem;border-bottom: 1px solid #000;position: relative;}
+.top-title{text-align: center;font-size: 1.2rem;padding-bottom: 0.25rem;position: relative;color: #fff;background-color: #4b4744;margin-bottom: 0.3rem;}
 .top-title i{font-size: 1rem;}
 .left{float: left;}
 .right{float: right;}
