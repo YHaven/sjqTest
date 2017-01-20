@@ -15,19 +15,9 @@
     </ul>
     <ul>
       <li>
-        <div class="item-content item-link">
-            <div class="item-inner">
-                <div class="item-title label">收租日期</div>
-                <div class="item-input">
-                    <input id="rentalTime" type="text" name="rentalTime" placeholder="请输入日期" value="{{fdata.rentalTime}}">
-                </div>
-            </div>
-        </div>
-      </li>
-      <li>
         <div class="item-content">
             <div class="item-inner">
-                <div class="item-title label">租金</div>
+                <div class="item-title label">实收租金</div>
                 <div class="item-input">
                     <input id="rental" type="text" name="rental" placeholder="0" value="{{fdata.rental}}" >
                 </div>
@@ -36,39 +26,7 @@
       </li>
       
     </ul>
-    <div class="s-title">非固定费用</div>
-    <ul style="margin-top:.5rem;">
-      <li>
-          <div class="item-content">
-              <div class="item-inner">
-                  <div class="item-title label">电单价</div>
-                  <div class="item-input">
-                      <input id="electricPrice" type="text" name="electricPrice" placeholder="每度价格" value="{{fdata.electricPrice}}">
-                  </div>
-              </div>
-          </div>
-      </li>
-      <li>
-          <div class="item-content">
-              <div class="item-inner">
-                  <div class="item-title label">水单价</div>
-                  <div class="item-input">
-                      <input id="waterPrice" type="text" name="waterPrice" placeholder="每度价格" value="{{fdata.waterPrice}}">
-                  </div>
-              </div>
-          </div>
-      </li>
-      <li>
-          <div class="item-content">
-              <div class="item-inner">
-                  <div class="item-title label">燃气单价</div>
-                  <div class="item-input">
-                      <input id="gasPrice" type="text" name="gasPrice" placeholder="每度价格" value="{{fdata.gasPrice}}">
-                  </div>
-              </div>
-          </div>
-      </li>
-    </ul>
+    
     <div class="s-title">本期表读数</div>
     <ul style="margin-top:.5rem;">
       <li>

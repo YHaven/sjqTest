@@ -36,6 +36,40 @@
         </div>
       </li>
     </ul>
+
+    <div class="s-title">水电煤单价</div>
+    <ul style="margin-top:.5rem;">
+      <li>
+          <div class="item-content">
+              <div class="item-inner">
+                  <div class="item-title label">电单价</div>
+                  <div class="item-input">
+                      <input id="electricPrice" type="text" name="electricPrice" placeholder="每度价格" value="{{fdata.electricPrice}}">
+                  </div>
+              </div>
+          </div>
+      </li>
+      <li>
+          <div class="item-content">
+              <div class="item-inner">
+                  <div class="item-title label">水单价</div>
+                  <div class="item-input">
+                      <input id="waterPrice" type="text" name="waterPrice" placeholder="每度价格" value="{{fdata.waterPrice}}">
+                  </div>
+              </div>
+          </div>
+      </li>
+      <li>
+          <div class="item-content">
+              <div class="item-inner">
+                  <div class="item-title label">燃气单价</div>
+                  <div class="item-input">
+                      <input id="gasPrice" type="text" name="gasPrice" placeholder="每度价格" value="{{fdata.gasPrice}}">
+                  </div>
+              </div>
+          </div>
+      </li>
+    </ul>
   </form>
   <div class="submit-button" @click="postForm">
     <button class="button button-big button-fill">保存</button>
