@@ -39,18 +39,12 @@ import $ from 'zepto'
 export default {
   route: {
     data () {
-      // return this.$http.get('/static/data/tasks.json')
-      // .then(({data: {code, message, data}}) => {
-      //   this.$set('tasks', data);
-      //   // this.$set('apptitle', data[0].title);
-      //   // this.$set('apptitle', '解忧大码');
-      // })
       var entryList = [];
-      for (var i = 0; i < 1; i++) {
+      for (var i = 0; i < 2; i++) {
         var entryObj = {};
         entryObj.id = i+1
         if(i == 0) entryObj.path = '/house/lessor/houselist'
-        if(i == 1) entryObj.path = '/house/lessee/houselist'
+        if(i == 1) entryObj.path = '/house/op/index'
         entryObj.imgurl = '/static/img/rent.jpg'
         entryList.push(entryObj)
       };
@@ -65,7 +59,18 @@ export default {
   },
   data () {
     return {
-      banner: [],
+      banner: [{
+                  "imgUrl": "/static/img/sw1.jpg",
+                  "url": "/"
+                },
+                {
+                  "imgUrl": "/static/img/sw2.jpg",
+                  "url": "/"
+                },
+                {
+                  "imgUrl": "/static/img/sw3.jpg",
+                  "url": "/"
+                }],
       tasks: [],
       loading: false
     }

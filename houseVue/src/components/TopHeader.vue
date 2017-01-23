@@ -1,9 +1,9 @@
 <template>
 	<header class="bar bar-nav">
 		<a class="button button-link button-nav pull-left" v-link="{path: path+(pid||''), replace: true}">
-	    	<span class="icon icon-back"></span>
+	    	<span class="icon icon-back" style="{{iconclass}}"></span>
 	    </a>
-    	<div class="title" v-text="label"></div>
+    	<div class="title" v-text="label" style="{{titleclass}}"></div>
   </header>
 </template>
 
@@ -15,7 +15,9 @@
 			pid:'',
 		    path: '',
 		    icon: '',
-		    label: ''
+		    label: '',
+		    titleclass:'',
+		    iconclass :''
 		},
 		methods: {
 			goback(){

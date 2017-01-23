@@ -102,6 +102,16 @@ export default function (router) {
         require(['./views/house/entry'], resolve)
       }
     },
+    '/house/entry': {
+      component (resolve) {
+        require(['./views/house/entry'], resolve)
+      }
+    },
+    '/house/op/index': {
+      component (resolve) {
+        require(['./views/house/op/index'], resolve)
+      }
+    },
     '/house/lessor/houselist': {
       component (resolve) {
         require(['./views/house/lessor/houselist'], resolve)
@@ -169,10 +179,13 @@ export default function (router) {
     }
     if(toPath.indexOf('/fashion')>=0 || toPath.indexOf('/home')>=0){
       router.app.isIndex = true
+    }else if(toPath.indexOf('/house/op/index')>=0){
+      router.app.isIndex = 0
     }else {
       let depath = toPath === '/' || toPath === '/invite' || toPath === '/rank' || toPath === '/login'
       router.app.isIndex = depath ? 0 : 1
     }
+
     next()
   })
 

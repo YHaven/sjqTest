@@ -110,7 +110,20 @@ export default {
   },
   data () {
     return {
-      banner: [],
+      banner: [
+                {
+                  "imgUrl": "/static/img/sw1.jpg",
+                  "url": "/"
+                },
+                {
+                  "imgUrl": "/static/img/sw2.jpg",
+                  "url": "/"
+                },
+                {
+                  "imgUrl": "/static/img/sw3.jpg",
+                  "url": "/"
+                }
+            ],
       tasks: [],
       page:1,
       isFashion: true,
