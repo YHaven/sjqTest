@@ -1,5 +1,5 @@
 <template>
-<div class="art-edit" @click="commentDialog"><i class="icon iconfont icon-write"></i></div>
+<div class="art-edit" v-link="{path: '/topic/addtopic?type=1', replace: true}"><i class="icon iconfont icon-write"></i></div>
 <div class="container">
   <div class="content home" distance="55" v-pull-to-refresh="refresh" v-infinite-scroll="loadMore">
     <v-layer></v-layer>

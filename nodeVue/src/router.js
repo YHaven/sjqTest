@@ -157,6 +157,11 @@ export default function (router) {
       component (resolve) {
         require(['./views/topic/weight'], resolve)
       }
+    },
+    '/topic/addtopic': {
+      component (resolve) {
+        require(['./views/topic/addtopic'], resolve)
+      }
     }
 
   })
