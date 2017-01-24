@@ -3396,3 +3396,9 @@ home
 .list-block{background-color: #ddd}
 .list-block ul{margin-bottom: .5rem;}
 .s-title{font-weight: bold;border-left: 3px solid #1e00ff;margin-left: .5rem;padding-left: .2rem;font-size: .8rem;}
+
+.bar-col{text-align: center;font-size: 0.65rem;padding: 0.5rem 0rem;background-color: #fff;margin-bottom: 0.5rem;}
+.bar-col .bar-item{display: table-cell;width: 1%;color: #929292;vertical-align: middle;border-right: 1px solid #ddd;}
+.bar-col .bar-label,.bar-col .bar-value{display: block;}
+.bar-col .bar-item.active{color: #0894ec;border-bottom: 1px solid #0894ec;font-weight: bold;}
+

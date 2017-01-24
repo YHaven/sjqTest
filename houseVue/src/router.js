@@ -112,6 +112,51 @@ export default function (router) {
         require(['./views/house/op/index'], resolve)
       }
     },
+    '/house/op/uncollected': {
+      component (resolve) {
+        require(['./views/house/op/uncollected'], resolve)
+      }
+    },
+    '/house/op/uncollectedbyhouse': {
+      component (resolve) {
+        require(['./views/house/op/uncollectedbyhouse'], resolve)
+      }
+    },
+    '/house/op/willexpire': {
+      component (resolve) {
+        require(['./views/house/op/willexpire'], resolve)
+      }
+    },
+    '/house/op/renterlist': {
+      component (resolve) {
+        require(['./views/house/op/renterlist'], resolve)
+      }
+    },
+    '/house/op/roomlist': {
+      component (resolve) {
+        require(['./views/house/op/roomlist'], resolve)
+      }
+    },
+    '/house/op/accountbook': {
+      component (resolve) {
+        require(['./views/house/op/accountbook'], resolve)
+      }
+    },
+    '/house/op/accountbooksy': {
+      component (resolve) {
+        require(['./views/house/op/accountbooksy'], resolve)
+      }
+    },
+    '/house/op/accountbookgz': {
+      component (resolve) {
+        require(['./views/house/op/accountbookgz'], resolve)
+      }
+    },
+    '/house/op/accountdetail': {
+      component (resolve) {
+        require(['./views/house/op/accountdetail'], resolve)
+      }
+    },
     '/house/lessor/houselist': {
       component (resolve) {
         require(['./views/house/lessor/houselist'], resolve)
