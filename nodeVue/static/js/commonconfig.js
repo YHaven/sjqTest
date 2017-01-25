@@ -4,8 +4,10 @@
 */
 var planPro = planPro || {};
 planPro.homePath = '';
+
 //ajax地址
 planPro.ajaxUrl = {
+    fileUpload : '/upload/uploadImg', //1，上传话题参数：fileBizType：11
     //homeBT :  '/static/data/mainbannerproducts.json'//首页ajax   ///main/index
     homeBT :  '/main/index',
     manBT : '/static/data/mainbannerproducts.json',

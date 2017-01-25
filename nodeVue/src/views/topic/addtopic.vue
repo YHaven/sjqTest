@@ -5,20 +5,14 @@
       发帖
     <i class="icon iconfont icon-forward right" @click="sendTopic()">发送</i>
   </div>
-  <div class="content home" distance="55" v-pull-to-refresh="refresh" v-infinite-scroll="loadMore">
-    <v-layer></v-layer>
+  <div class="content home" >
     <form class="topic-form" id="topicForm">
-      <input type="text" value="" name="title" id="title"/>
-      <textarea name="artContent" id="artContent" cols="30" rows="10" class="topic-content"></textarea>
+      <input type="text" value="" name="title" id="title" placeholder="标题"/>
+      <textarea name="artContent" id="artContent" cols="30" rows="10" class="topic-content" placeholder="内容"></textarea>
       <div class="imgDiv">
-        <ul class="imgShow">
-          <!-- <li> <img src="" alt=""> <input name="imgUrl" type="hidden" value=""/> </li> -->
-        </ul>
-        <div class="addImgBtn">+</div>
-        <div style="display:none;">
-          <input type="file" @change="">
-        </div>
+        <file-input></file-input>
       </div>
+      
     </form>
     
   </div>
@@ -38,6 +32,8 @@ import VContent from '../../components/Content'
 import List from '../../components/List'
 import Item from '../../components/ListItem'
 import ShopList from '../../components/ShopList'
+
+import FileInput from '../../components/FileInput'
 
 import {loader} from '../../util/util'
 import $ from 'zepto'
@@ -133,6 +129,11 @@ export default {
         return false;
       }
       paramsJson.type = planPro.fun.getQueryString('type'); //（话题类型：不传表示首页，1表示时尚搭配，2表示减肥）
+      var imgUrlArr = [];
+      $('.camera-area .imgShow').find('li').each(function(){
+        imgUrlArr.push($(this).find('input').val())
+      })
+      paramsJson.imgUrl = imgUrlArr.join(',');
       if (_this.loading) return false
 
       _this.loading = true
@@ -158,7 +159,8 @@ export default {
     List,
     Item,
     Btn,
-    ShopList
+    ShopList,
+    FileInput
   }
 }
 </script>
@@ -166,6 +168,8 @@ export default {
 <style scoped>
 .art-edit{position:fixed;bottom: 3rem;right: 0.5rem;width: 2rem;height: 2rem;line-height: 2rem;border-radius: 50%;text-align: center;background-color: #f59e83;color: #fff;z-index: 2;}
 .container {position: absolute;  top: 0;  right: 0;  bottom: 0;  left: 0;  overflow: auto;  -webkit-overflow-scrolling: touch;background-color: #f8f8f8;color: #929292;font-size: 0.5rem;}
+
+.content{margin-bottom: 2.5rem;}
 
 .topic-form{margin: 0.5rem;}
 .topic-form input,.topic-form textarea{border: 0px;border-radius: 5px;width: 100%;margin-bottom: 0.5rem;}
