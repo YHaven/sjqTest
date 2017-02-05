@@ -12,7 +12,7 @@
       :style="{backgroundColor: task.status === '1' ? 'white': 'rgb(235, 235, 235)' }">
         
         <div class="item-content" >
-          <a href="javascript:;" class="head-img"><img src="{{task.uploadImg}}" alt="房屋缩略图"></a>
+          <a href="javascript:;" class="head-img"><img src="{{task.uploadImg}}" alt="房屋缩略图" onerror="javascript:this.src='/static/img/default-house.jpg';"></a>
           <a v-link="{path: '/house/lessor/roomlist?id='+task.id, replace: true}">
           <div class="right">
             <div class="r-t">{{task.houseName}}</div>

@@ -4,7 +4,7 @@
   <v-layer></v-layer>
   <top-header path="/house/lessor/roomlist?id=" label="租客" :pid="fdata.house.id"></top-header>
     <div class="tph-info">
-      <a href="javascript:;" class="head-img"><img src="{{fdata.uploadImg}}" alt=""></a>
+      <a href="javascript:;" class="head-img"><img src="{{fdata.uploadImg}}" alt="" onerror="javascript:this.src='/static/img/default-house.jpg';"></a>
         <div class="right">
           <a v-link="{path: '/house/lessor/roomoper?id='+fdata.id}">
           <div class="r-t">{{fdata.roomName}}</div>

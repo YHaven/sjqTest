@@ -5,7 +5,7 @@
     
     <top-header path="/house/lessor/renterlist?id=" label="账单" :pid="fdata.room.id"></top-header>
     <div class="tph-info">
-      <a href="javascript:;" class="head-img"><img src="{{fdata.uploadImg}}" alt=""></a>
+      <a href="javascript:;" class="head-img"><img src="{{fdata.uploadImg}}" alt="" onerror="javascript:this.src='/static/img/default-user.jpg';"></a>
         <div class="right">
           <a v-link="{path: '/house/lessor/renteroper?id='+fdata.id, replace: true}">
           <div class="r-t">{{fdata.renterName}}</div>
@@ -58,7 +58,7 @@ export default {
     data () {
       var pId = planPro.fun.getQueryString('id');
       if(pId){
-        return this.$http.get(planPro.ajaxUrl.rentallist+'?vt=1&id='+ pId,{},{credentials: true})
+        return this.$http.post(planPro.ajaxUrl.rentallist+'?vt=1&id='+ pId,{},{credentials: true})
         .then(({data}) => {
 
 

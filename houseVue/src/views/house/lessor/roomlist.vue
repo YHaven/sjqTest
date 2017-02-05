@@ -2,9 +2,9 @@
 <div class="container">
   <div class="content profile fade-transition home" distance="55" v-pull-to-refresh="refresh" v-infinite-scroll="loadMore">
     <v-layer></v-layer>
-    <top-header path="/house/lessor/houselist?id=" label="房号"></top-header>
+    <top-header path="/house/lessor/houselist" label="房号"></top-header>
     <div class="tph-info">
-      <a href="javascript:;" class="head-img"><img src="{{fdata.uploadImg}}" alt="房屋图"></a>
+      <a href="javascript:;" class="head-img"><img src="{{fdata.uploadImg}}" alt="房屋图2" onerror="javascript:this.src='/static/img/default-house.jpg';"></a>
         <div class="right">
           <a href="/house/lessor/houseoper?id={{fdata.id}}">
           <div class="r-t">{{fdata.houseName}}</div>
@@ -64,7 +64,7 @@ export default {
     data () {
       var pId = planPro.fun.getQueryString('id');
       if(pId){
-        return this.$http.post(planPro.ajaxUrl.roomlist+'?vt=2&id='+ pId,{},{credentials: true})
+        return this.$http.post(planPro.ajaxUrl.roomlist+'?vt=1&id='+ pId,{},{credentials: true})
         .then(({data}) => {
           
 
