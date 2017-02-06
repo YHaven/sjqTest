@@ -3,26 +3,25 @@
 <div class="container">
   <div class="content home" distance="55" v-pull-to-refresh="refresh" v-infinite-scroll="loadMore">
     <v-layer></v-layer>
-    <div class="top-title">
-      <i class="icon iconfont icon-creative cameralight"></i>
+      <div class="top-title">
+      <!-- <i class="icon iconfont icon-creative cameralight"></i> -->
       <ul class="top-tab clearfix">
         <li v-link="{path: '/topic', replace: true}" class="active"><span>广场</span><span class="cl"></span></li>
         <li v-link="{path: '/topic/hot', replace: true}" ><span>热门</span><span class="cl"></span></li>
-        <li v-link="{path: '/topic/concern', replace: true}"><span>关注</span><span class="cl"></span></li>
+        <li v-link="{path: '/topic/alltopic', replace: true}"><span>话题</span><span class="cl"></span></li>
       </ul> 
-      <i class="icon iconfont icon-search search"></i>
+      <!-- <i class="icon iconfont icon-search search"></i> -->
     </div>
-    
     <slider :banner="banner"></slider>
 
     <bar class="home-bar clearfix">
       <a class="tab-item" v-link="{path: '/topic/fashion', replace: true}">
         <span class="icon iconfont icon-copy"></span>
-        <span class="tab-label">时尚搭配</span>
+        <span class="tab-label">问穿搭</span>
       </a>
       <a class="tab-item" v-link="{path: '/topic/alltopic', replace: true}">
         <span class="icon iconfont icon-voice"></span>
-        <span class="tab-label">话题</span>
+        <span class="tab-label">设计师</span>
       </a>
       <a class="tab-item" v-link="{path: '/topic/weight', replace: true}">
         <span class="icon iconfont icon-group"></span>
@@ -30,6 +29,7 @@
       </a>
     </bar>
     
+
     
     <div class="recommend">
       <span>推荐</span>
