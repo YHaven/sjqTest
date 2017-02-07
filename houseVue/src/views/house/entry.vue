@@ -98,31 +98,16 @@ export default {
 }
 </script>
 
-<style>
-.container {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-}
-.home {
-  top: -2.2rem !important;
-  margin-bottom: 2.2rem;
-}
-.home-bar {
-  background: #fff;
-  position: relative;
-  /*box-shadow: 0 .01rem .05rem rgba(0,0,0,.3);*/
-  margin-bottom: .5rem;
-  margin-top: .5rem;
-}
-
-</style>
 
 <style scoped>
+  .container {position: absolute;top: 0;right: 0;bottom: 0;left: 0;overflow: auto;-webkit-overflow-scrolling: touch;}
+  .home {top: -2.2rem !important;margin-bottom: 2.2rem;}
+  .home-bar {background: #fff;position: relative;
+    /*box-shadow: 0 .01rem .05rem rgba(0,0,0,.3);*/
+    margin-bottom: .5rem;margin-top: .5rem;
+  }
+
+
   .item-content{height:9rem; text-align: center;line-height: 9rem;font-size: 1.5rem;}
   .item-content{margin: 0px;padding: .25rem;box-shadow:none;}
   .item-content img{height: 8.5rem;width: 100%;}
