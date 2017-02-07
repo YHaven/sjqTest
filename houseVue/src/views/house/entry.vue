@@ -9,8 +9,10 @@
         
 
         <div class="item-content">
-          <a  v-link="{path:task.path}">
-            <img v-bind:src="task.imgurl" alt="">
+          <a  v-link="{path:task.path}" >
+            {{task.tname}}
+            <!-- <img v-bind:src="task.imgurl" alt=""> -->
+
           </a>
           
         </div>
@@ -39,18 +41,6 @@ import $ from 'zepto'
 export default {
   route: {
     data () {
-      var entryList = [];
-      for (var i = 0; i < 2; i++) {
-        var entryObj = {};
-        entryObj.id = i+1
-        if(i == 0) entryObj.path = '/house/lessor/houselist'
-        if(i == 1) entryObj.path = '/house/op/index'
-        entryObj.imgurl = '/static/img/rent.jpg'
-        entryList.push(entryObj)
-      };
-    
-
-      this.$set('tasks', entryList);
       
     }
   },
@@ -71,7 +61,16 @@ export default {
                   "imgUrl": "/static/img/sw3.jpg",
                   "url": "/"
                 }],
-      tasks: [],
+      tasks: [{
+                "path":"/house/lessor/houselist",
+                "imgurl":"/static/img/rent.jpg",
+                "tname":"我的房产"
+              },
+              {
+                "path":"/house/op/index",
+                "imgurl":"/static/img/rent.jpg",
+                "tname":"房租信息"
+              }],
       loading: false
     }
   },
@@ -124,10 +123,10 @@ export default {
 </style>
 
 <style scoped>
-  .item-content{height:9rem; }
+  .item-content{height:9rem; text-align: center;line-height: 9rem;font-size: 1.5rem;}
   .item-content{margin: 0px;padding: .25rem;box-shadow:none;}
   .item-content img{height: 8.5rem;width: 100%;}
   .item-content .nick,.item-content .size{color: #aaa;font-size: .1rem;}
   .item-content .nick .icon{float: right;}
-  
+  .item-content a{color: #333;}
 </style>
