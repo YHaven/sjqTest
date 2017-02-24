@@ -228,7 +228,8 @@
           }
         })
       }else{
-        this.$set('fdata', {});
+        var fId = planPro.fun.getQueryString('roomId');
+        if(fId){this.$set('fdata', {"room":{"id":fId}});}
       }
       
     }

@@ -111,7 +111,8 @@
           }
         })
       }else{
-        this.$set('fdata', {});
+        var fId = planPro.fun.getQueryString('houseId');
+        if(fId){this.$set('fdata', {"house":{"id":fId}});}
       }
       
     }

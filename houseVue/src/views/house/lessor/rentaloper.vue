@@ -132,7 +132,7 @@
     data () {
       var pId = planPro.fun.getQueryString('id');
       if(pId){
-        return this.$http.get(planPro.ajaxUrl.rentaloper+'?id='+pId,{},{credentials: true})
+        return this.$http.post(planPro.ajaxUrl.rentaloper+'?id='+pId,{},{credentials: true})
         .then(({data}) => {
 
           if(data.status){
