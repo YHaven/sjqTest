@@ -156,7 +156,8 @@
 
         })
       }else{
-          this.$set('fdata', {});
+        var fId = planPro.fun.getQueryString('renterId');
+        if(fId){this.$set('fdata', {"renter":{"id":fId}});}
       }
       
     }
@@ -247,10 +248,11 @@
 </script>
 
 
-<style>
+<style scoped>
 .profile .list-block {
   /*margin: 2.4rem 0 1rem 0;*/
-  margin-top: .2rem;
+  margin: 0px;
+  /*margin-top: .2rem;*/
   font-size: .65rem;
 }
 .profile .list-block .item-subtitle {
