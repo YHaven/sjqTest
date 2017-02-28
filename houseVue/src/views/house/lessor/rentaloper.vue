@@ -119,6 +119,7 @@
   </form>
   <div class="submit-button">
     <button class="button button-big button-fill">保存</button>
+    <button class="button button-big button-green">确认已收</button>
   </div>
 </div>
 </template>
@@ -284,5 +285,10 @@
   width: 100%;
   line-height: 2.1rem !important;
   height: 2.1rem !important;
+}
+.profile .submit-button .button-green{
+  background-color: #15e400;
+  color: #fff;
+  margin-top: 0.5rem;
 }
 </style>
