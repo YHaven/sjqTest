@@ -65,7 +65,7 @@
             <div class="item-inner">
                 <div class="item-title label">起租日期</div>
                 <div class="item-input">
-                    <input id="startTime" type="text" name="startTime" placeholder="" value="{{fdata.startTime}}">
+                    <input id="startTime" type="date" name="startTime" placeholder="" value="{{fdata.startTime}}">
                 </div>
             </div>
         </div>
@@ -75,7 +75,7 @@
             <div class="item-inner">
                 <div class="item-title label">到租日期</div>
                 <div class="item-input">
-                    <input id="endTime" type="text" name="endTime" placeholder="" value="{{fdata.endTime}}">
+                    <input id="endTime" type="date" name="endTime" placeholder="" value="{{fdata.endTime}}">
                 </div>
             </div>
         </div>
@@ -271,7 +271,12 @@
           layer.open({content: '租金必须大于等于0',time:2});
           checkResult = false;
         }
-
+        if(params.startTime !== ''){
+          params.startTime = params.startTime.replace('/','-')+' 00:00:00';
+        }
+        if(params.endTime !== ''){
+          params.endTime = params.endTime.replace('/','-')+' 00:00:00';
+        }
         if(!checkResult){
           _this.loading = false;
           loader.hide()
@@ -287,7 +292,7 @@
             if(data.status){
               _this.$route.router.go({path: '/house/lessor/renterlist?id='+_this.fdata.room.id, replace: true});
             }else{
-              if(!data.islogin){
+              if(data.islogin === false){
                 layer.open({
                       content: data.errorinfo
                       ,btn: ['去登录']

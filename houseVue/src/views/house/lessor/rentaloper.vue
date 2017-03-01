@@ -2,7 +2,7 @@
 <div class="content profile">
   <top-header path="/house/lessor/rentallist?id=" label="账单编辑" :pid="fdata.renter.id"></top-header>
   <form class="list-block" id="rentalForm">
-    <input type="hidden" id="renterId" name="renterId" value="{{fdata.renter.id}}"/>
+    <input type="hidden" id="renterId" name="renterId" value="{{fdata.renterId.id}}"/>
     <input type="hidden" id="id" name="id" value="{{fdata.id}}"/>
     <ul>
       <li>
@@ -17,24 +17,54 @@
       <li>
         <div class="item-content">
             <div class="item-inner">
-                <div class="item-title label">实收租金</div>
+                <div class="item-title label">收租日期</div>
                 <div class="item-input">
-                    <input id="rental" type="text" name="rental" placeholder="0" value="{{fdata.rental}}" >
+                    <input id="rentalTime" type="date" name="rentalTime" placeholder="0" value="{{fdata.rentalTime}}" >
                 </div>
             </div>
         </div>
       </li>
-      
+      <li>
+        <div class="item-content">
+            <div class="item-inner">
+                <div class="item-title label">实收租金</div>
+                <div class="item-input">
+                    <input onkeyup="planPro.rentalFun.testAllCount()" id="rental" type="text" name="rental" placeholder="0" value="{{fdata.rental}}" >
+                </div>
+            </div>
+        </div>
+      </li>
+      <li>
+        <div class="item-content">
+            <div class="item-inner">
+                <div class="item-title label">水电煤</div>
+                <div class="item-input">
+                    <input onkeyup="planPro.rentalFun.testAllCount()" id="sdmCount" type="text" placeholder="0" name="sdmCount" value="{{fdata.sdmCount}}" >
+                </div>
+            </div>
+        </div>
+      </li>
+      <li>
+        <div class="item-content">
+            <div class="item-inner">
+                <div class="item-title label">总计</div>
+                <div class="item-input">
+                    <input id="allCount" type="text" placeholder="0" name="allCount" readonly value="{{fdata.allCount}}" >
+                </div>
+            </div>
+        </div>
+      </li>
     </ul>
     
-    <div class="s-title">本期表读数</div>
+    <div class="s-title">本期表读数,<span class="zs">电<i class="d">12.5</i>+水<i class="s">12.4</i>+燃气<i class="m">2.0</i>=<i class="all-count">26.9</i></span></div>
+    
     <ul style="margin-top:.5rem;">
       <li>
           <div class="item-content">
               <div class="item-inner">
                   <div class="item-title label">电表度数</div>
                   <div class="item-input">
-                      <input id="electricNow" type="text" name="electricNow" placeholder="0" value="{{fdata.electricNow}}">
+                      <input onkeyup="planPro.rentalFun.testSDMCount()" id="electricNow" type="text" name="electricNow" placeholder="0" value="{{fdata.electricNow}}">
                   </div>
               </div>
           </div>
@@ -44,7 +74,7 @@
               <div class="item-inner">
                   <div class="item-title label">水表度数</div>
                   <div class="item-input">
-                      <input id="waterNow" type="text" name="waterNow" placeholder="0" value="{{fdata.waterNow}}">
+                      <input onkeyup="planPro.rentalFun.testSDMCount()" id="waterNow" type="text" name="waterNow" placeholder="0" value="{{fdata.waterNow}}">
                   </div>
               </div>
           </div>
@@ -54,7 +84,7 @@
               <div class="item-inner">
                   <div class="item-title label">燃气度数</div>
                   <div class="item-input">
-                      <input id="gasNow" type="text" name="gasNow" placeholder="0" value="{{fdata.gasNow}}">
+                      <input onkeyup="planPro.rentalFun.testSDMCount()" id="gasNow" type="text" name="gasNow" placeholder="0" value="{{fdata.gasNow}}">
                   </div>
               </div>
           </div>
@@ -66,7 +96,7 @@
           <div class="item-content">
               <div class="item-inner">
                   <div class="item-title label">电表度数</div>
-                  <div class="item-input">
+                  <div class="item-input electricPre" price="{{fdata.room.electricPrice}}">
                       {{fdata.electricPre}}
                   </div>
               </div>
@@ -76,7 +106,7 @@
           <div class="item-content">
               <div class="item-inner">
                   <div class="item-title label">水表度数</div>
-                  <div class="item-input">
+                  <div class="item-input waterPre" price="{{fdata.room.waterPrice}}">
                       {{fdata.waterPre}}
                   </div>
               </div>
@@ -86,7 +116,7 @@
           <div class="item-content">
               <div class="item-inner">
                   <div class="item-title label">燃气度数</div>
-                  <div class="item-input">
+                  <div class="item-input gasPre" price="{{fdata.room.gasPrice}}">
                      {{fdata.gasPre}}
                   </div>
               </div>
@@ -118,8 +148,8 @@
     </ul>
   </form>
   <div class="submit-button">
-    <button class="button button-big button-fill">保存</button>
-    <button class="button button-big button-green">确认已收</button>
+    <button class="button button-big button-fill" @click="postForm" v-if="isAdd === true">保存</button>
+    <button class="button button-big button-green" v-if="isAdd === false">确认已收</button>
   </div>
 </div>
 </template>
@@ -158,7 +188,10 @@
         })
       }else{
         var fId = planPro.fun.getQueryString('renterId');
-        if(fId){this.$set('fdata', {"renter":{"id":fId}});}
+        if(fId){
+          this.$set('fdata', {"renter":{"id":fId}});
+          this.$set('isAdd', true);
+        }
       }
       
     }
@@ -169,6 +202,7 @@
   data () {
     return {
       fdata: {},
+      isAdd:false,
       loading : false
     }
   },
@@ -176,6 +210,10 @@
 
   },
   methods: {
+    //计算总价
+    testAllCount(){
+
+    },
     //提交
     postForm () {
       var _this = this;
@@ -200,7 +238,9 @@
           layer.open({content: '租金必须大于等于0',time:2});
           checkResult = false;
         }
-
+        if(params.rentalTime !== ''){
+          params.rentalTime = params.rentalTime.replace('/','-')+' 00:00:00';
+        }
         if(!checkResult){
           _this.loading = false;
           loader.hide()
@@ -291,4 +331,6 @@
   color: #fff;
   margin-top: 0.5rem;
 }
+.zs{font-size: 0.6rem;}
+.zs .all-count{font-size: 1rem;color: rgb(216, 65, 65);}
 </style>
