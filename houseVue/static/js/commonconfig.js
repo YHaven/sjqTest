@@ -35,6 +35,7 @@ planPro.ajaxUrl = {
     //租金
     rentallist: planPro.homePath + '/plana/rental!list.action',
     rentaloper : planPro.homePath + '/plana/rental!modify.action',
+    deleterentaloper : planPro.homePath + '/plana/rental!delete.action',
     postrentaloper : planPro.homePath + '/plana/rental!add.action',
     postrentalopermodify : planPro.homePath + '/plana/rental!modify.action'
 }

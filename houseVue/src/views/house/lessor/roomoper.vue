@@ -71,8 +71,9 @@
       </li>
     </ul>
   </form>
-  <div class="submit-button" @click="postForm">
-    <button class="button button-big button-fill">保存</button>
+  <div class="submit-button" >
+    <button class="button button-big button-fill @click="postForm"">保存</button>
+    <button class="button button-big button-green" v-if="isAdd === false">删除</button>
   </div>
 </div>
 </template>
@@ -112,7 +113,10 @@
         })
       }else{
         var fId = planPro.fun.getQueryString('houseId');
-        if(fId){this.$set('fdata', {"house":{"id":fId}});}
+        if(fId){
+          this.$set('fdata', {"house":{"id":fId}});
+          this.$set('isAdd', true);
+        }
       }
       
     }
@@ -123,6 +127,7 @@
   data () {
     return {
       fdata: {},
+      isAdd:false,
       loading : false
     }
   },
@@ -231,5 +236,10 @@
   width: 100%;
   line-height: 2.1rem !important;
   height: 2.1rem !important;
+}
+.profile .submit-button .button-green{
+  background-color: #15e400;
+  color: #fff;
+  margin-top: 0.5rem;
 }
 </style>

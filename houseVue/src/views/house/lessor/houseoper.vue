@@ -67,8 +67,9 @@
 
   
 
-  <div class="submit-button" @click="postForm">
-    <button class="button button-big button-fill" >保存</button>
+  <div class="submit-button">
+    <button class="button button-big button-fill"  @click="postForm" >保存</button>
+    <button class="button button-big button-green" v-if="isAdd === false">删除</button>
   </div>
 </div>
 </template>
@@ -108,6 +109,7 @@
         })
       }else{
         this.$set('fdata', {});
+        this.$set('isAdd', true);
       }
       
     }
@@ -118,6 +120,7 @@
   data () {
     return {
       fdata: {},
+      isAdd:false,
       loading : false
     }
   },
@@ -253,5 +256,10 @@
   line-height: 2.1rem !important;
   height: 2.1rem !important;
 }
+.profile .submit-button .button-green{
+  background-color: #15e400;
+  color: #fff;
+  margin-top: 0.5rem;
+} 
 .thumb img{width: 100%;height: 100%;}
 </style>
