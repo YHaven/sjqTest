@@ -69,7 +69,7 @@
 
   <div class="submit-button">
     <button class="button button-big button-fill"  @click="postForm" >保存</button>
-    <button class="button button-big button-green" v-if="isAdd === false">删除</button>
+    <button class="button button-big button-green" v-if="isAdd === false" @click="deleteData">删除</button>
   </div>
 </div>
 </template>
@@ -152,6 +152,46 @@
                 }
 
             });
+    },
+    //删除
+    deleteData(){
+      var _this = this;
+      if (_this.loading) {
+        return
+      }
+      _this.loading = true
+      let scroller = $('.content')
+      loader.show()
+      setTimeout(() => {
+          let params = {'id':$('#id').val()}
+        var postUrl = planPro.ajaxUrl.deletehouseoper; 
+        _this.$http.post(postUrl,params,{credentials: true})
+          .then(({data}) => {
+
+            if(data.status){
+              _this.$route.router.go({path: '/house/lessor/houselist?id='+_this.fdata.renter.id, replace: true});
+            }else{
+              if(!data.islogin){
+                layer.open({
+                      content: data.errorinfo
+                      ,btn: ['去登录']
+                      ,yes: function(index){
+                        router.go({path: planPro.loginPath, replace: true});
+                        layer.close(index);
+                      }
+                  });
+              }else{
+                layer.open({content: data.errorinfo,time:2});
+              }
+              
+            }
+
+            
+        })
+       
+        _this.loading = false
+        loader.hide()
+      }, 1500)
     },
     //提交
     postForm () {

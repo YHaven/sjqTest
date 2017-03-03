@@ -20,16 +20,21 @@ planPro.ajaxUrl = {
     houselist : planPro.homePath + '/plana/house!list.action',
     // houseoper : '/static/data/houseoper.json', //get页面data
     houseoper : planPro.homePath + '/plana/house!modify.action', //get页面data
+    deletehouseoper : planPro.homePath + '/plana/house!delete.action',
+    
     posthouseoper : planPro.homePath + '/plana/house!add.action',
     posthouseopermodify : planPro.homePath + '/plana/house!modify.action',
     //房间
     roomlist : planPro.homePath + '/plana/room!list.action',
     roomoper : planPro.homePath + '/plana/room!modify.action',
+    deleteroomoper : planPro.homePath + '/plana/room!delete.action',
+
     postroomoper : planPro.homePath + '/plana/room!add.action',
     postroomopermodify : planPro.homePath + '/plana/room!modify.action',
     //租客
     renterlist : planPro.homePath + '/plana/renter!list.action',
     renteroper : planPro.homePath + '/plana/renter!modify.action',
+    deleterenteroper : planPro.homePath + '/plana/renter!delete.action',
     postrenteroper : planPro.homePath + '/plana/renter!add.action',
     postrenteropermodify : planPro.homePath + '/plana/renter!modify.action',
     //租金
