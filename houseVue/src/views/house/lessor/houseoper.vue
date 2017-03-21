@@ -169,7 +169,7 @@
           .then(({data}) => {
 
             if(data.status){
-              _this.$route.router.go({path: '/house/lessor/houselist?id='+_this.fdata.renter.id, replace: true});
+              _this.$route.router.go({path: '/house/lessor/houselist', replace: true});
             }else{
               if(!data.islogin){
                 layer.open({

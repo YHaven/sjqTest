@@ -138,7 +138,7 @@
               <div class="item-inner">
                   <div class="item-title label">提醒时间</div>
                   <div class="item-input">
-                      <input id="remindTime" type="text" name="remindTime" placeholder="00:00" value="{{fdata.remindTime}}">
+                      <input id="remindTime" type="time" name="remindTime" placeholder="00:00" value="{{fdata.remindTime}}">
                   </div>
               </div>
           </div>

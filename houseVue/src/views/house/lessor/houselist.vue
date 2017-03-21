@@ -8,7 +8,7 @@
     <button class="button button-big button-fill" v-link="{path: '/house/lessor/houseoper', replace: true}">+添加房产</button>
   </div>
     <div class="card-container" >
-      <v-card-container v-for="task in tasks | orderBy 'created' 1"
+      <v-card-container v-for="task in tasks 
       :style="{backgroundColor: task.status === '1' ? 'white': 'rgb(235, 235, 235)' }">
         
         <div class="item-content" >

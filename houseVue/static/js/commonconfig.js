@@ -41,6 +41,7 @@ planPro.ajaxUrl = {
     rentallist: planPro.homePath + '/plana/rental!list.action',
     rentaloper : planPro.homePath + '/plana/rental!modify.action',
     deleterentaloper : planPro.homePath + '/plana/rental!delete.action',
+    confirmpayrental : planPro.homePath + '/plana/rental!confirmPay.action',
     postrentaloper : planPro.homePath + '/plana/rental!add.action',
     postrentalopermodify : planPro.homePath + '/plana/rental!modify.action'
 }

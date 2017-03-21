@@ -2,7 +2,7 @@
 <div class="content profile">
   <top-header path="/house/lessor/rentallist?id=" label="账单编辑" :pid="fdata.renter.id"></top-header>
   <form class="list-block" id="rentalForm">
-    <input type="hidden" id="renterId" name="renterId" value="{{fdata.renterId.id}}"/>
+    <input type="hidden" id="renterId" name="renterId" value="{{fdata.renter.id}}"/>
     <input type="hidden" id="id" name="id" value="{{fdata.id}}"/>
     <ul>
       <li>
@@ -56,7 +56,7 @@
       </li>
     </ul>
     
-    <div class="s-title">本期表读数,<span class="zs">电<i class="d">12.5</i>+水<i class="s">12.4</i>+燃气<i class="m">2.0</i>=<i class="all-count">26.9</i></span></div>
+    <div class="s-title">本期表读数,<span class="zs">电<i class="d">0.0</i>+水<i class="s">0.0</i>+燃气<i class="m">0.0</i>=<i class="all-count">0.0</i></span></div>
     
     <ul style="margin-top:.5rem;">
       <li>
@@ -149,8 +149,9 @@
   </form>
   <div class="submit-button">
     <button class="button button-big button-fill" @click="postForm" v-if="isAdd === true">保存</button>
-    <button class="button button-big button-fill" v-if="isAdd === false">确认已收</button>
-    <button class="button button-big button-green" v-if="isAdd === false" @click="deleteData">删除</button>
+    <button class="button button-big button-blue" v-if="isAdd === false && fdata.confirmPay !==1" @click="postForm">修改</button>
+    <button class="button button-big button-fill" v-if="isAdd === false && fdata.confirmPay !==1" @click="confirmPay">确认已收</button>
+    <button class="button button-big button-green" v-if="isAdd === false && fdata.confirmPay !==1" @click="deleteData">删除</button>
   </div>
 </div>
 </template>
@@ -164,7 +165,7 @@
     data () {
       var pId = planPro.fun.getQueryString('id');
       if(pId){
-        return this.$http.post(planPro.ajaxUrl.rentaloper+'?id='+pId,{},{credentials: true})
+        this.$http.post(planPro.ajaxUrl.rentaloper+'?id='+pId,{},{credentials: true})
         .then(({data}) => {
 
           if(data.status){
@@ -190,15 +191,42 @@
       }else{
         var fId = planPro.fun.getQueryString('renterId');
         if(fId){
-          this.$set('fdata', {"renter":{"id":fId}});
           this.$set('isAdd', true);
+
+          this.$http.post(planPro.ajaxUrl.rentaloper+'?renterId='+fId,{},{credentials: true})
+            .then(({data}) => {
+
+              if(data.status){
+                this.$set('fdata', data.data);
+              }else{
+                this.$set('fdata', {});
+                if(!data.islogin){
+                  layer.open({
+                        content: data.errorinfo
+                        ,btn: ['去登录']
+                        ,yes: function(index){
+                          router.go({path: planPro.loginPath, replace: true});
+                          layer.close(index);
+                        }
+                    });
+                }else{
+                  layer.open({content: data.errorinfo,time:2});
+                }
+                
+              }
+
+            })
+          
         }
       }
       
     }
   },
   ready () {
-
+    setTimeout(function(){
+      planPro.rentalFun.testSDMCount();
+    }, 500);
+      
   },
   data () {
     return {
@@ -211,6 +239,45 @@
 
   },
   methods: {
+    //确认收款
+    confirmPay(){
+      var _this = this;
+      if (_this.loading) {
+        return
+      }
+      _this.loading = true
+      let scroller = $('.content')
+      loader.show()
+      setTimeout(() => {
+          let params = {'id':$('#id').val()}
+        var postUrl = planPro.ajaxUrl.confirmpayrental; 
+        _this.$http.post(postUrl,params,{credentials: true})
+          .then(({data}) => {
+
+            if(data.status){
+              _this.$route.router.go({path: '/house/lessor/rentallist?id='+_this.fdata.renter.id, replace: true});
+            }else{
+              if(!data.islogin){
+                layer.open({
+                      content: data.errorinfo
+                      ,btn: ['去登录']
+                      ,yes: function(index){
+                        router.go({path: planPro.loginPath, replace: true});
+                        layer.close(index);
+                      }
+                  });
+              }else{
+                layer.open({content: data.errorinfo,time:2});
+              }
+              
+            }
+            
+        })
+       
+        _this.loading = false
+        loader.hide()
+      }, 1500)
+    },
     //删除
     deleteData(){
       var _this = this;
@@ -263,21 +330,21 @@
       setTimeout(() => {
         let params = planPro.fun.serializeArrayToJson($('#rentalForm').serializeArray());
         var checkResult = true;
-        if(params.renterName === ''){
-          layer.open({content: '租客姓名未填写',time:2});
+        if(params.rental === '' || params.rental === '0'){
+          layer.open({content: '租金未填写',time:2});
           checkResult = false;
         }
-        if(params.renterPhone === ''){
-          layer.open({content: '租客电话未填写',time:2});
-          checkResult = false;
-        }
-        if(params.money === '' || Number(params.money) < 0 ){
-          layer.open({content: '租金必须大于等于0',time:2});
+        if(params.allCount === '' || params.allCount === '0'){
+          layer.open({content: '总计未填写',time:2});
           checkResult = false;
         }
         if(params.rentalTime !== ''){
           params.rentalTime = params.rentalTime.replace('/','-')+' 00:00:00';
+        }else{
+          layer.open({content: '收租日期未填写',time:2});
+          checkResult = false;
         }
+
         if(!checkResult){
           _this.loading = false;
           loader.hide()
@@ -365,6 +432,12 @@
 }
 .profile .submit-button .button-green{
   background-color: #15e400;
+  color: #fff;
+  margin-top: 0.5rem;
+}
+
+.profile .submit-button .button-blue{
+  background-color: #04a8a2;
   color: #fff;
   margin-top: 0.5rem;
 }

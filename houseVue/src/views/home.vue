@@ -114,14 +114,6 @@ export default {
                 {
                   "imgUrl": "/static/img/sw1.jpg",
                   "url": "/"
-                },
-                {
-                  "imgUrl": "/static/img/sw2.jpg",
-                  "url": "/"
-                },
-                {
-                  "imgUrl": "/static/img/sw3.jpg",
-                  "url": "/"
                 }
             ],
       tasks: [],

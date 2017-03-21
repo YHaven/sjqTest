@@ -52,14 +52,6 @@ export default {
       banner: [{
                   "imgUrl": "/static/img/sw1.jpg",
                   "url": "/"
-                },
-                {
-                  "imgUrl": "/static/img/sw2.jpg",
-                  "url": "/"
-                },
-                {
-                  "imgUrl": "/static/img/sw3.jpg",
-                  "url": "/"
                 }],
       tasks: [{
                 "path":"/house/lessor/houselist",
@@ -108,7 +100,7 @@ export default {
   }
 
 
-  .item-content{height:9rem; text-align: center;line-height: 9rem;font-size: 1.5rem;}
+  .item-content{ text-align: center;font-size: 1.5rem;}
   .item-content{margin: 0px;padding: .25rem;box-shadow:none;}
   .item-content img{height: 8.5rem;width: 100%;}
   .item-content .nick,.item-content .size{color: #aaa;font-size: .1rem;}

@@ -72,7 +72,7 @@
     </ul>
   </form>
   <div class="submit-button" >
-    <button class="button button-big button-fill @click="postForm"">保存</button>
+    <button class="button button-big button-fill " @click="postForm">保存</button>
     <button class="button button-big button-green" v-if="isAdd === false" @click="deleteData">删除</button>
   </div>
 </div>
