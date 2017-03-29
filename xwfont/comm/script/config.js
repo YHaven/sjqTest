@@ -28,8 +28,8 @@ module.exports = {
         personDetail: 'https://api.douban.com/v2/movie/celebrity/',
         baiduMap: 'https://api.map.baidu.com/geocoder/v2/'
     },
-    hotKeyword: ['功夫熊猫', '烈日灼心', '摆渡人', '长城', '我不是潘金莲', '这个杀手不太冷', '驴得水', '海贼王之黄金城', '西游伏妖片', '我在故宫修文物', '你的名字'],
-    hotTag: ['动作', '喜剧', '爱情', '悬疑'],
+    hotKeyword: ['杭州', '萧山', '盛达', '盛乐'],
+    hotTag: ['热', '门', '标', '签'],
     bannerList: [
         {type:'film', id: '26683290', imgUrl: url + '/images/banner_1.jpg'},
         {type:'film', id: '25793398', imgUrl: url + '/images/banner_2.jpg'},

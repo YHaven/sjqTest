@@ -1,5 +1,5 @@
 import Tools from 'Tools'
-import es6 from '../assets/plugins/es6-promise'
+import es6 from 'es6-promise'
 
 class Service {
     constructor() {

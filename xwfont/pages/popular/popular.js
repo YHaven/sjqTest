@@ -15,7 +15,7 @@ Page({
 		app.getCity(function(){
 			wx.hideNavigationBarLoading()
 			wx.setNavigationBarTitle({
-				title: '正在热映 - ' + config.city
+				title: '首页 - ' + config.city
 			})
 			douban.fetchFilms.call(that, config.apiList.popular, that.data.start, config.count)
 		})

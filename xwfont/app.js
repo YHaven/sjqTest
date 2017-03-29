@@ -1,3 +1,5 @@
+import Tools from 'comm/script/Tools'
+import WxService from 'comm/script/WxService'
 var config = require('comm/script/config')
 App({
   WxService: new WxService, 

@@ -1,5 +1,6 @@
 {
-	"navigationBarBackgroundColor": "#41d3cb",
-    "navigationBarTitleText": "欢迎您的到来",
+	"navigationBarBackgroundColor": "#84d9d4",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "欢迎来到小屋",
     "disableScroll": "true"
 }

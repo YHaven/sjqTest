@@ -22,34 +22,34 @@
     "pages/location/location"
   ],
   "window": {
-    "navigationBarBackgroundColor": "#47a86c",
+    "navigationBarBackgroundColor": "#84d9d4",
     "navigationBarTextStyle": "white",
-    "navigationBarTitleText":  "电影推荐",
+    "navigationBarTitleText":  "小屋",
     "backgroundColor": "#fff",
     "backgroundTextStyle": "dark",
     "enablePullDownRefresh": true
   },
   "tabBar": {
     "color": "#686868",
-    "selectedColor": "#47a86c",
+    "selectedColor": "#84d9d4",
     "backgroundColor": "#ffffff",
     "borderStyle": "white",
     "list": [{
       "pagePath": "pages/popular/popular",
       "iconPath": "dist/images/popular_icon.png",
       "selectedIconPath": "dist/images/popular_active_icon.png",
-      "text": "热映"
+      "text": "告示"
     }, {
       "pagePath": "pages/coming/coming",
       "iconPath": "dist/images/coming_icon.png",
       "selectedIconPath": "dist/images/coming_active_icon.png",
-      "text": "待映"
+      "text": "惊喜"
     },
     {
       "pagePath": "pages/top/top",
       "iconPath": "dist/images/top_icon.png",
       "selectedIconPath": "dist/images/top_active_icon.png",
-      "text": "口碑"
+      "text": "房屋"
     },
     {
       "pagePath": "pages/my/my",
