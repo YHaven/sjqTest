@@ -1,4 +1,4 @@
-var douban = require('../../comm/script/fetch')
+var plana = require('../../comm/script/plana')
 var config = require('../../comm/script/config')
 var app = getApp()
 Page({
@@ -6,7 +6,8 @@ Page({
 		films: [],
 		hasMore: true,
 		showLoading: true,
-		start: 0,
+		start: 1,
+		msgResource: 3,
 		bannerList: config.bannerList
 	},
 	onLoad: function() {
@@ -17,7 +18,7 @@ Page({
 			wx.setNavigationBarTitle({
 				title: '首页 - ' + config.city
 			})
-			douban.fetchFilms.call(that, config.apiList.popular, that.data.start, config.count)
+			plana.getMessageList.call(that, config.apiList.plana.getMessageList, that.data.start, that.data.msgResource)
 		})
 	},
 	onPullDownRefresh: function() {
@@ -33,7 +34,7 @@ Page({
 	onReachBottom: function() {
 		var that = this
 		if (!that.data.showLoading) {
-			douban.fetchFilms.call(that, config.apiList.popular, that.data.start, config.count)
+			plana.getMessageList.call(that, config.apiList.popular, that.data.start, config.count)
 		}
 	},
 	viewFilmDetail: function(e) {

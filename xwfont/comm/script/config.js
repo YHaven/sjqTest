@@ -17,6 +17,9 @@ module.exports = {
     count: 20,
     baiduAK: 'Y1R5guY8Y2GNRdDpLz7SUeM3QgADAXec',
     apiList: {
+        plana:{
+            getMessageList:'https://www.zhencome.com/plana/msg!list.action'
+        },
         popular: 'https://api.douban.com/v2/movie/in_theaters',
         coming: 'https://api.douban.com/v2/movie/coming_soon',
         top: 'https://api.douban.com/v2/movie/top250',
@@ -31,11 +34,7 @@ module.exports = {
     hotKeyword: ['杭州', '萧山', '盛达', '盛乐'],
     hotTag: ['热', '门', '标', '签'],
     bannerList: [
-        {type:'film', id: '26683290', imgUrl: url + '/images/banner_1.jpg'},
-        {type:'film', id: '25793398', imgUrl: url + '/images/banner_2.jpg'},
-        {type:'film', id: '26630781', imgUrl: url + '/images/banner_3.jpg'},
-        {type:'film', id: '26415200', imgUrl: url + '/images/banner_4.jpg'},
-        {type:'film', id: '3025375', imgUrl: url + '/images/banner_5.jpg'}
+        {type:'film', id: '26683290', imgUrl: url + '/images/banner_1.jpg'}
     ],
     skinList: [
         {title: '公路', imgUrl: url + '/images/user_bg_1.jpg'},

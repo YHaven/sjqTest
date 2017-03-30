@@ -10,7 +10,7 @@
     </block>
 </swiper>
 </block>
-<import src="../../component/filmList/filmList.wxml"/>
-<template is="filmList" data="{{films: films, hasMore: hasMore, showLoading: showLoading}}"/>
+<import src="../../component/messageList/messageList.wxml"/>
+<template is="messageList" data="{{films: films, hasMore: hasMore, showLoading: showLoading}}"/>
 <import src="../../component/message/message.wxml"/>
 <template is="message" data="{{message: message}}"/>

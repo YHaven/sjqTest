@@ -38,7 +38,7 @@
       "pagePath": "pages/popular/popular",
       "iconPath": "dist/images/popular_icon.png",
       "selectedIconPath": "dist/images/popular_active_icon.png",
-      "text": "告示"
+      "text": "消息"
     }, {
       "pagePath": "pages/coming/coming",
       "iconPath": "dist/images/coming_icon.png",
