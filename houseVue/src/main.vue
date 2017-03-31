@@ -50,7 +50,7 @@ export default {
 
 <style>
 @import './assets/css/sm.css';
-@import './assets/css/iconfont-tb.css';
+@import './assets/fonts/iconfont.css';
 [v-cloak] {
   display: none;
 }

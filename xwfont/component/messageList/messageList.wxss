@@ -11,7 +11,8 @@
 }
 
 .film-item {
-    width: 350rpx;
+    width: 100%;
+    height: 180rpx;
     margin-bottom: 20rpx;
     border-radius: 10rpx;
     background-color: #fff;
@@ -19,16 +20,44 @@
     box-shadow: 0 20rpx 40rpx #eee;
     overflow: hidden;
     animation: fadeIn 1s;
+    display:flex;
 }
-
-.film-cover, .film-cover-img {
-    width: 350rpx;
-    height: 508rpx;
-}
-
 .film-cover {
-    position: relative;
+    flex: 1;
     overflow: hidden;
+}
+.file-intro {
+    flex: 4;
+    padding: 10rpx;
+}
+.film-cover, .film-cover-img {
+    width: 100%;
+    background-color: #eaeaea;
+    /*width: 350rpx;
+    height: 508rpx;*/
+}
+.film-top{
+    display:flex;
+}
+.film-author{
+    flex: 1;
+}
+
+.film-role{
+    flex: 1;
+    
+}
+.film-role span{
+    font-size: 18rpx;
+    border-radius: 5rpx;
+    background-color: #84d9d4;
+}
+.film-sex{
+    flex: 5;
+}
+
+.film-content{
+    margin-top: 15rpx;
 }
 
 .film-rating {
@@ -46,10 +75,7 @@
     color: #fff;
 }
 
-.file-intro {
-    padding: 16rpx;
-    margin-top: -8rpx;
-}
+
 
 .film-title {
     white-space: nowrap;

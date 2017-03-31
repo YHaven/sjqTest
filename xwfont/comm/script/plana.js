@@ -2,7 +2,7 @@ var config = require('./config.js')
 var message = require('../../component/message/message') //dialog提示
 
 
-// 获取电影列表
+// 获取消息信息
 function getMessageList(url, start, msg_resource, cb, fail_cb) {
   var that = this
   message.hide.call(that)
@@ -22,14 +22,14 @@ function getMessageList(url, start, msg_resource, cb, fail_cb) {
         "Content-Type": "application/json,application/json"
       },
       success: function(res){
-        if(res.data.subjects.length === 0){
+        if(res.data.datalist.length === 0){
           that.setData({
             hasMore: false,
           })
         }else{
           that.setData({
-            films: that.data.films.concat(res.data.subjects),
-            start: that.data.start + res.data.subjects.length,
+            films: that.data.films.concat(res.data.datalist),
+            start: that.data.start + 1,
             showLoading: false
           })
         }

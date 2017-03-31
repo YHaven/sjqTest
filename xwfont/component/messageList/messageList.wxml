@@ -6,6 +6,30 @@
     <view class="film">
         <block wx:for="{{films}}" wx:for-index="filmIndex" wx:for-item="filmItem" wx:key="film">
             <view data-id="{{filmItem.id}}" class="film-item" catchtap="viewFilmDetail">
+               <view class="film-cover">
+                  <image src="{{filmItem.images.headurl}}" class="film-cover-img"></image>
+               </view>
+               <view class="file-intro">
+                    <view class="film-top">
+                        <view class="film-author">{{filmItem.author}}</view>
+                        <view class="film-role">
+                            <span>
+                            <block wx:if="{{filmItem.authorrole == 1}}">管理员</block>
+                            <block wx:elif="{{filmItem.authorrole == 3}}">会员</block>
+                            <block wx:else>游客</block>
+                            </span>
+                        </view>
+                        <view class="film-sex">
+                            <block wx:if="{{filmItem.authorsex == 1}}">男</block>
+                            <block wx:elif="{{filmItem.authorsex == 2}}">女</block>
+                            <block wx:else><i class="icon iconfont icon-people"></i></block>
+                        </view>
+                    </view>
+                    <view class="film-content">{{filmItem.msginfo}}</view>
+               </view>
+            </view>
+
+            <!--<view data-id="{{filmItem.id}}" class="film-item" catchtap="viewFilmDetail">
                 <view class="film-cover">
                     <image src="{{filmItem.images.large}}" class="film-cover-img"></image>
                     <view class="film-rating">
@@ -25,7 +49,7 @@
                         </view>
                     </view>
                 </view>
-            </view>
+            </view>-->
         </block>
         <block wx:if="{{hasMore}}">
             <view class="loading-tip">拼命加载中…</view>

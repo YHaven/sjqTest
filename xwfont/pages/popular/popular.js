@@ -34,7 +34,7 @@ Page({
 	onReachBottom: function() {
 		var that = this
 		if (!that.data.showLoading) {
-			plana.getMessageList.call(that, config.apiList.popular, that.data.start, config.count)
+			plana.getMessageList.call(that, config.apiList.plana.getMessageList, that.data.start, that.data.msgResource)
 		}
 	},
 	viewFilmDetail: function(e) {
