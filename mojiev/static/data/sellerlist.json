@@ -1,0 +1,500 @@
+{
+    "data": [
+        {
+            "street_thumb": "data/store_street/street_thumb/1490729458450018613.jpg",
+            "market_id": "43",
+            "id": "46941",
+            "shop_name": "致爱青春",
+            "shop_logo": "http://test.sjq.cn/seller_imgs/seller_logo/seller_logo46941.png",
+            "company_type": "",
+            "coupon_str": "满10减3,满10减5",
+            "new_num": 0,
+            "is_fav": 1,
+            "score": "5.0",
+            "buyer": 0,
+            "sale_num": 0,
+            "seller_goods": [
+                {
+                    "goods_id": "654",
+                    "goods_name": "独家定制简约宽松百搭肩带可调节吊带V领小背心无袖双层打底衫女",
+                    "market_price": "￥0.00",
+                    "shop_price": "￥60.00",
+                    "img": {
+                        "thumb": "http://test.sjq.cn/images/201703/thumb_img/654_thumb_G_1490728821973.jpg",
+                        "url": "http://test.sjq.cn/images/201703/source_img/654_G_1490728821305.png",
+                        "small": "http://test.sjq.cn/images/201703/goods_img/654_G_1490728821717.png"
+                    }
+                },
+                {
+                    "goods_id": "679",
+                    "goods_name": "基本主义新款舒适修身显瘦高挑条纹连帽长袖卫衣裙中长款连衣裙",
+                    "market_price": "￥0.00",
+                    "shop_price": "￥89.00",
+                    "img": {
+                        "thumb": "http://test.sjq.cn/images/201703/thumb_img/679_thumb_G_1490729155292.jpg",
+                        "url": "http://test.sjq.cn/images/201703/source_img/679_G_1490729155233.png",
+                        "small": "http://test.sjq.cn/images/201703/goods_img/679_G_1490729155387.png"
+                    }
+                },
+                {
+                    "goods_id": "689",
+                    "goods_name": "小朵娘秋冬装韩版加厚加绒宽松复古羊羔毛翻领水洗牛仔外套女包邮",
+                    "market_price": "￥0.00",
+                    "shop_price": "￥165.00",
+                    "img": {
+                        "thumb": "http://test.sjq.cn/images/201703/thumb_img/689_thumb_G_1490729313775.jpg",
+                        "url": "http://test.sjq.cn/images/201703/source_img/689_G_1490729313396.png",
+                        "small": "http://test.sjq.cn/images/201703/goods_img/689_G_1490729313343.png"
+                    }
+                }
+            ]
+        },
+        {
+            "street_thumb": "data/store_street/street_thumb/1490729529584029139.jpg",
+            "market_id": "43",
+            "id": "46760",
+            "shop_name": "爱粤社",
+            "shop_logo": "http://test.sjq.cn/seller_imgs/seller_logo/seller_logo46760.png",
+            "company_type": "",
+            "coupon_str": "满300减100",
+            "new_num": 0,
+            "is_fav": 1,
+            "score": "5.0",
+            "buyer": 16,
+            "sale_num": 2,
+            "seller_goods": [
+                {
+                    "goods_id": "524",
+                    "goods_name": "2017春装新款韩版中长款学生宽松显瘦休闲百搭图案连帽风衣外套女",
+                    "market_price": "￥0.00",
+                    "shop_price": "￥140.00",
+                    "img": {
+                        "thumb": "http://test.sjq.cn/images/201703/thumb_img/524_thumb_G_1490661984047.jpg",
+                        "url": "http://test.sjq.cn/images/201703/source_img/524_G_1490661984055.jpg",
+                        "small": "http://test.sjq.cn/images/201703/goods_img/524_G_1490661984103.jpg"
+                    }
+                },
+                {
+                    "goods_id": "525",
+                    "goods_name": "春秋文艺棉麻大摆红色半身裙夏长裙复古森女高腰A字伞裙度假裙",
+                    "market_price": "￥0.00",
+                    "shop_price": "￥270.00",
+                    "img": {
+                        "thumb": "http://test.sjq.cn/images/201703/thumb_img/525_thumb_G_1490662076701.jpg",
+                        "url": "http://test.sjq.cn/images/201703/source_img/525_G_1490662076509.jpg",
+                        "small": "http://test.sjq.cn/images/201703/goods_img/525_G_1490662076447.jpg"
+                    }
+                },
+                {
+                    "goods_id": "526",
+                    "goods_name": "条纹衬衫女棉立方打底衫2017春装新款职业女装韩版拼接修身棉衬衣",
+                    "market_price": "￥0.00",
+                    "shop_price": "￥100.00",
+                    "img": {
+                        "thumb": "http://test.sjq.cn/images/201703/thumb_img/526_thumb_G_1490662416113.jpg",
+                        "url": "http://test.sjq.cn/images/201703/source_img/526_G_1490662416001.jpg",
+                        "small": "http://test.sjq.cn/images/201703/goods_img/526_G_1490662416610.jpg"
+                    }
+                }
+            ]
+        },
+        {
+            "street_thumb": "data/store_street/street_thumb/1490644610064737986.jpg",
+            "market_id": "32",
+            "id": "48378",
+            "shop_name": "酷爽",
+            "shop_logo": "http://test.sjq.cn/seller_imgs/seller_logo/seller_logo48378.png",
+            "company_type": "",
+            "coupon_str": "满200减10",
+            "new_num": 0,
+            "is_fav": 0,
+            "score": "5.0",
+            "buyer": 0,
+            "sale_num": 0,
+            "seller_goods": [
+                {
+                    "goods_id": "436",
+                    "goods_name": "2016秋季男装夹克新款春秋薄上衣服青年休闲外衣秋装男士外套男潮",
+                    "market_price": "￥0.00",
+                    "shop_price": "￥88.00",
+                    "img": {
+                        "thumb": "http://test.sjq.cn/images/201703/thumb_img/436_thumb_G_1490654969118.jpg",
+                        "url": "http://test.sjq.cn/images/201703/source_img/436_G_1490654969134.jpg",
+                        "small": "http://test.sjq.cn/images/201703/goods_img/436_G_1490654969754.jpg"
+                    }
+                },
+                {
+                    "goods_id": "445",
+                    "goods_name": "小黑裙连衣裙大裙摆背心裙专柜同款法式复古赫本风极简名媛气质裙",
+                    "market_price": "￥0.00",
+                    "shop_price": "￥120.00",
+                    "img": {
+                        "thumb": "http://test.sjq.cn/images/201703/thumb_img/445_thumb_G_1490655954928.jpg",
+                        "url": "http://test.sjq.cn/images/201703/source_img/445_G_1490655954964.jpg",
+                        "small": "http://test.sjq.cn/images/201703/goods_img/445_G_1490655954877.jpg"
+                    }
+                },
+                {
+                    "goods_id": "478",
+                    "goods_name": "2017春新品女装上衣时尚七分喇叭袖中长款小西装外套纯色一粒扣",
+                    "market_price": "￥0.00",
+                    "shop_price": "￥130.00",
+                    "img": {
+                        "thumb": "http://test.sjq.cn/images/201703/thumb_img/478_thumb_G_1490656306577.jpg",
+                        "url": "http://test.sjq.cn/images/201703/source_img/478_G_1490656306760.jpg",
+                        "small": "http://test.sjq.cn/images/201703/goods_img/478_G_1490656306198.jpg"
+                    }
+                }
+            ]
+        },
+        {
+            "street_thumb": "data/store_street/street_thumb/1490554842927994127.jpg",
+            "market_id": "43",
+            "id": "48382",
+            "shop_name": "魔法の诱惑",
+            "shop_logo": "http://test.sjq.cn/seller_imgs/seller_logo/seller_logo48382.png",
+            "company_type": "",
+            "coupon_str": "满0减0",
+            "new_num": 0,
+            "is_fav": 0,
+            "score": "5.0",
+            "buyer": 0,
+            "sale_num": 0,
+            "seller_goods": [
+                {
+                    "goods_id": "309",
+                    "goods_name": "青云阁 QYG6019",
+                    "market_price": "￥150.00",
+                    "shop_price": "￥125.00",
+                    "img": {
+                        "thumb": "http://test.sjq.cn/images/shopfw/main/seller_id/48382/2017/03/28/thumb_img/thumburl_G_39a13ce2bb3b486fb480c8b8fe6fa972_main.jpg",
+                        "url": "http://test.sjq.cn/images/shopfw/main/seller_id/48382/2017/03/28/source_img/original_G_39a13ce2bb3b486fb480c8b8fe6fa972_main.jpg",
+                        "small": "http://test.sjq.cn/images/shopfw/main/seller_id/48382/2017/03/28/goods_img/imgurl_G_39a13ce2bb3b486fb480c8b8fe6fa972_main.jpg"
+                    }
+                },
+                {
+                    "goods_id": "314",
+                    "goods_name": "青云阁 QYG6653",
+                    "market_price": "￥180.00",
+                    "shop_price": "￥150.00",
+                    "img": {
+                        "thumb": "http://test.sjq.cn/images/shopfw/main/seller_id/48382/2017/03/28/thumb_img/thumburl_G_6365ea61994d4f88a28d87f90e17c2a6_main.jpg",
+                        "url": "http://test.sjq.cn/images/shopfw/main/seller_id/48382/2017/03/28/source_img/original_G_6365ea61994d4f88a28d87f90e17c2a6_main.jpg",
+                        "small": "http://test.sjq.cn/images/shopfw/main/seller_id/48382/2017/03/28/goods_img/imgurl_G_6365ea61994d4f88a28d87f90e17c2a6_main.jpg"
+                    }
+                },
+                {
+                    "goods_id": "315",
+                    "goods_name": "青云阁 QYG6736",
+                    "market_price": "￥174.00",
+                    "shop_price": "￥145.00",
+                    "img": {
+                        "thumb": "http://test.sjq.cn/images/shopfw/main/seller_id/48382/2017/03/28/thumb_img/thumburl_G_ac296176b7714487a8875ab4d48d28f6_main.jpg",
+                        "url": "http://test.sjq.cn/images/shopfw/main/seller_id/48382/2017/03/28/source_img/original_G_ac296176b7714487a8875ab4d48d28f6_main.jpg",
+                        "small": "http://test.sjq.cn/images/shopfw/main/seller_id/48382/2017/03/28/goods_img/imgurl_G_ac296176b7714487a8875ab4d48d28f6_main.jpg"
+                    }
+                }
+            ]
+        },
+        {
+            "street_thumb": "data/store_street/street_thumb/1490729790240944142.jpg",
+            "market_id": "28",
+            "id": "49434",
+            "shop_name": "甜心",
+            "shop_logo": "http://test.sjq.cn/seller_imgs/seller_logo/seller_logo49434.png",
+            "company_type": "",
+            "coupon_str": "",
+            "new_num": 0,
+            "is_fav": 0,
+            "score": "5.0",
+            "buyer": 10,
+            "sale_num": 10,
+            "seller_goods": [
+                {
+                    "goods_id": "748",
+                    "goods_name": "牛仔外套女宽松短款bf风韩版潮学生2017春秋新款贴布薄牛仔衣服女",
+                    "market_price": "￥0.00",
+                    "shop_price": "￥160.00",
+                    "img": {
+                        "thumb": "http://test.sjq.cn/images/201703/thumb_img/748_thumb_G_1490730218023.jpg",
+                        "url": "http://test.sjq.cn/images/201703/source_img/748_G_1490730218483.jpg",
+                        "small": "http://test.sjq.cn/images/201703/goods_img/748_G_1490730218633.jpg"
+                    }
+                },
+                {
+                    "goods_id": "776",
+                    "goods_name": "抢新款！小姿家春夏新款欧美翻领条纹拼色衬衣高腰带短裙两件套装",
+                    "market_price": "￥0.00",
+                    "shop_price": "￥0.01",
+                    "img": {
+                        "thumb": "http://test.sjq.cn/images/201704/thumb_img/776_thumb_G_1492017279466.jpg",
+                        "url": "http://test.sjq.cn/images/201704/source_img/776_G_1492017279464.jpg",
+                        "small": "http://test.sjq.cn/images/201704/goods_img/776_G_1492017279311.jpg"
+                    }
+                },
+                {
+                    "goods_id": "779",
+                    "goods_name": "2017早春新款日韩红格子开衫 复古BF风外套宽松显瘦百搭潮 衬衫女",
+                    "market_price": "￥0.00",
+                    "shop_price": "￥70.00",
+                    "img": {
+                        "thumb": "http://test.sjq.cn/images/201703/thumb_img/779_thumb_G_1490731130616.jpg",
+                        "url": "http://test.sjq.cn/images/201703/source_img/779_G_1490731130696.jpg",
+                        "small": "http://test.sjq.cn/images/201703/goods_img/779_G_1490731130506.jpg"
+                    }
+                }
+            ]
+        },
+        {
+            "street_thumb": "data/store_street/street_thumb/1490729580558475554.png",
+            "market_id": "28",
+            "id": "49352",
+            "shop_name": "裙下之臣",
+            "shop_logo": "http://test.sjq.cn/seller_imgs/seller_logo/seller_logo49352.png",
+            "company_type": "配饰",
+            "coupon_str": "",
+            "new_num": 0,
+            "is_fav": 0,
+            "score": "5.0",
+            "buyer": 0,
+            "sale_num": 0,
+            "seller_goods": [
+                {
+                    "goods_id": "590",
+                    "goods_name": "新颖哥弟特微喇叭女裤2017春秋新款品牌四面弹面料直筒休闲长裤子",
+                    "market_price": "￥0.00",
+                    "shop_price": "￥168.00",
+                    "img": {
+                        "thumb": "http://test.sjq.cn/images/201703/thumb_img/590_thumb_G_1490727557980.jpg",
+                        "url": "http://test.sjq.cn/images/201703/source_img/590_G_1490727557465.png",
+                        "small": "http://test.sjq.cn/images/201703/goods_img/590_G_1490727557680.png"
+                    }
+                },
+                {
+                    "goods_id": "591",
+                    "goods_name": "2016秋冬高腰复古毛呢阔腿裤女宽腿裤大码显瘦九分休闲直筒裤加厚",
+                    "market_price": "￥0.00",
+                    "shop_price": "￥89.00",
+                    "img": {
+                        "thumb": "http://test.sjq.cn/images/201703/thumb_img/591_thumb_G_1490727657658.jpg",
+                        "url": "http://test.sjq.cn/images/201703/source_img/591_G_1490727657083.png",
+                        "small": "http://test.sjq.cn/images/201703/goods_img/591_G_1490727657857.png"
+                    }
+                },
+                {
+                    "goods_id": "594",
+                    "goods_name": "夏秋款韩国高腰微喇叭牛仔裤女九分裤修身显瘦毛边流苏阔腿喇叭裤",
+                    "market_price": "￥0.00",
+                    "shop_price": "￥65.00",
+                    "img": {
+                        "thumb": "http://test.sjq.cn/images/201703/thumb_img/594_thumb_G_1490727858774.jpg",
+                        "url": "http://test.sjq.cn/images/201703/source_img/594_G_1490727858488.png",
+                        "small": "http://test.sjq.cn/images/201703/goods_img/594_G_1490727858300.png"
+                    }
+                }
+            ]
+        },
+        {
+            "street_thumb": "data/store_street/street_thumb/1490725805691352183.jpg",
+            "market_id": "31",
+            "id": "49436",
+            "shop_name": "糖门",
+            "shop_logo": "http://test.sjq.cn/seller_imgs/seller_logo/seller_logo49436.png",
+            "company_type": "",
+            "coupon_str": "满100减50",
+            "new_num": 0,
+            "is_fav": 0,
+            "score": "5.0",
+            "buyer": 0,
+            "sale_num": 0,
+            "seller_goods": [
+                {
+                    "goods_id": "573",
+                    "goods_name": "2017春 瑶依坊 新款早春韩版时尚花朵刺绣衬衫 271",
+                    "market_price": "￥0.00",
+                    "shop_price": "￥88.00",
+                    "img": {
+                        "thumb": "http://test.sjq.cn/images/201703/thumb_img/573_thumb_G_1490730411528.jpg",
+                        "url": "http://test.sjq.cn/images/201703/source_img/573_G_1490730411535.jpg",
+                        "small": "http://test.sjq.cn/images/201703/goods_img/573_G_1490730411302.jpg"
+                    }
+                },
+                {
+                    "goods_id": "575",
+                    "goods_name": "2017年春季长袖时尚简约纯色时尚优雅显瘦OL两件套装",
+                    "market_price": "￥0.00",
+                    "shop_price": "￥180.00",
+                    "img": {
+                        "thumb": "http://test.sjq.cn/images/201703/thumb_img/575_thumb_G_1490730380191.jpg",
+                        "url": "http://test.sjq.cn/images/201703/source_img/575_G_1490730380927.jpg",
+                        "small": "http://test.sjq.cn/images/201703/goods_img/575_G_1490730380330.jpg"
+                    }
+                },
+                {
+                    "goods_id": "578",
+                    "goods_name": "2017春曼琳秋伊刘涛同款衬衫明星同款花边小衫",
+                    "market_price": "￥0.00",
+                    "shop_price": "￥78.00",
+                    "img": {
+                        "thumb": "http://test.sjq.cn/images/201703/thumb_img/578_thumb_G_1490730354442.jpg",
+                        "url": "http://test.sjq.cn/images/201703/source_img/578_G_1490730354722.jpg",
+                        "small": "http://test.sjq.cn/images/201703/goods_img/578_G_1490730354297.jpg"
+                    }
+                }
+            ]
+        },
+        {
+            "street_thumb": "data/store_street/street_thumb/1490727097547864706.jpg",
+            "market_id": "30",
+            "id": "49437",
+            "shop_name": "ORANGE",
+            "shop_logo": "http://test.sjq.cn/seller_imgs/seller_logo/seller_logo49437.png",
+            "company_type": "",
+            "coupon_str": "",
+            "new_num": 0,
+            "is_fav": 0,
+            "score": "5.0",
+            "buyer": 0,
+            "sale_num": 0,
+            "seller_goods": [
+                {
+                    "goods_id": "588",
+                    "goods_name": "2017拜金女孩 微喇叭九分牛仔裤90991",
+                    "market_price": "￥0.00",
+                    "shop_price": "￥85.00",
+                    "img": {
+                        "thumb": "http://test.sjq.cn/images/201703/thumb_img/588_thumb_G_1490730262867.jpg",
+                        "url": "http://test.sjq.cn/images/201703/source_img/588_G_1490730262571.jpg",
+                        "small": "http://test.sjq.cn/images/201703/goods_img/588_G_1490730262285.jpg"
+                    }
+                },
+                {
+                    "goods_id": "592",
+                    "goods_name": "2017春 瑶依坊 新款早春韩版条纹爆款女式衬衫 570",
+                    "market_price": "￥0.00",
+                    "shop_price": "￥108.00",
+                    "img": {
+                        "thumb": "http://test.sjq.cn/images/201703/thumb_img/592_thumb_G_1490728267013.jpg",
+                        "url": "http://test.sjq.cn/images/201703/source_img/592_G_1490728267644.jpg",
+                        "small": "http://test.sjq.cn/images/201703/goods_img/592_G_1490728267511.jpg"
+                    }
+                },
+                {
+                    "goods_id": "595",
+                    "goods_name": "2017拜金女孩 89656532653290991皮衣",
+                    "market_price": "￥0.00",
+                    "shop_price": "￥185.00",
+                    "img": {
+                        "thumb": "http://test.sjq.cn/images/201703/thumb_img/595_thumb_G_1490727962166.jpg",
+                        "url": "http://test.sjq.cn/images/201703/source_img/595_G_1490727962555.jpg",
+                        "small": "http://test.sjq.cn/images/201703/goods_img/595_G_1490727962268.jpg"
+                    }
+                }
+            ]
+        },
+        {
+            "street_thumb": "data/store_street/street_thumb/1490729636478751635.jpg",
+            "market_id": "30",
+            "id": "49438",
+            "shop_name": "PRAY",
+            "shop_logo": "http://test.sjq.cn/seller_imgs/seller_logo/seller_logo49438.png",
+            "company_type": "",
+            "coupon_str": "满100减99",
+            "new_num": 0,
+            "is_fav": 0,
+            "score": "5.0",
+            "buyer": 0,
+            "sale_num": 0,
+            "seller_goods": [
+                {
+                    "goods_id": "505",
+                    "goods_name": "ATAR白色蕾丝礼服2017春夏季新款七分袖连衣裙女装镂空公主裙中裙",
+                    "market_price": "￥0.00",
+                    "shop_price": "￥210.00",
+                    "img": {
+                        "thumb": "http://test.sjq.cn/images/201703/thumb_img/505_thumb_G_1490659498255.jpg",
+                        "url": "http://test.sjq.cn/images/201703/source_img/505_G_1490659498053.jpg",
+                        "small": "http://test.sjq.cn/images/201703/goods_img/505_G_1490659498280.jpg"
+                    }
+                },
+                {
+                    "goods_id": "506",
+                    "goods_name": "2017新款欧美BF风衬衣简约蝙蝠袖女中长款长袖宽松大码衬衫裙",
+                    "market_price": "￥0.00",
+                    "shop_price": "￥200.00",
+                    "img": {
+                        "thumb": "http://test.sjq.cn/images/201703/thumb_img/506_thumb_G_1490659748109.jpg",
+                        "url": "http://test.sjq.cn/images/201703/source_img/506_G_1490659748065.jpg",
+                        "small": "http://test.sjq.cn/images/201703/goods_img/506_G_1490659748185.jpg"
+                    }
+                },
+                {
+                    "goods_id": "507",
+                    "goods_name": "2016秋冬新款韩版学院风高领纯色套头毛衣女长袖短款打底针织衫",
+                    "market_price": "￥0.00",
+                    "shop_price": "￥130.00",
+                    "img": {
+                        "thumb": "http://test.sjq.cn/images/201703/thumb_img/507_thumb_G_1490659956640.jpg",
+                        "url": "http://test.sjq.cn/images/201703/source_img/507_G_1490659956175.jpg",
+                        "small": "http://test.sjq.cn/images/201703/goods_img/507_G_1490659956827.jpg"
+                    }
+                }
+            ]
+        },
+        {
+            "street_thumb": "data/store_street/street_thumb/1490729695269455372.jpg",
+            "market_id": "28",
+            "id": "49439",
+            "shop_name": "渴慕",
+            "shop_logo": "http://test.sjq.cn/seller_imgs/seller_logo/seller_logo49439.png",
+            "company_type": "",
+            "coupon_str": "",
+            "new_num": 0,
+            "is_fav": 0,
+            "score": "5.0",
+            "buyer": 0,
+            "sale_num": 0,
+            "seller_goods": [
+                {
+                    "goods_id": "489",
+                    "goods_name": "春季外套男韩版潮学生2017新款夹克个性帅气青少年潮流褂子棒球服",
+                    "market_price": "￥0.00",
+                    "shop_price": "￥150.00",
+                    "img": {
+                        "thumb": "http://test.sjq.cn/images/201703/thumb_img/489_thumb_G_1490657849819.jpg",
+                        "url": "http://test.sjq.cn/images/201703/source_img/489_G_1490657849051.jpg",
+                        "small": "http://test.sjq.cn/images/201703/goods_img/489_G_1490657849881.jpg"
+                    }
+                },
+                {
+                    "goods_id": "491",
+                    "goods_name": "新年特卖宝宝轻薄儿童羽绒服男女童卡通书包款连帽短款童装外套",
+                    "market_price": "￥0.00",
+                    "shop_price": "￥100.00",
+                    "img": {
+                        "thumb": "http://test.sjq.cn/images/201703/thumb_img/491_thumb_G_1490657930906.jpg",
+                        "url": "http://test.sjq.cn/images/201703/source_img/491_G_1490657930670.jpg",
+                        "small": "http://test.sjq.cn/images/201703/goods_img/491_G_1490657930026.jpg"
+                    }
+                },
+                {
+                    "goods_id": "492",
+                    "goods_name": "春款外套女2017刺绣春装宽松破洞情侣长袖 翅膀牛仔服女gracechow",
+                    "market_price": "￥0.00",
+                    "shop_price": "￥110.00",
+                    "img": {
+                        "thumb": "http://test.sjq.cn/images/201703/thumb_img/492_thumb_G_1490658008562.jpg",
+                        "url": "http://test.sjq.cn/images/201703/source_img/492_G_1490658008196.jpg",
+                        "small": "http://test.sjq.cn/images/201703/goods_img/492_G_1490658008294.jpg"
+                    }
+                }
+            ]
+        }
+    ],
+    "status": {
+        "succeed": 1
+    },
+    "paginated": {
+        "more": 0
+    }
+}
