@@ -10,6 +10,10 @@
     </block>
 </swiper>
 </block>
+
+<import src="../../component/nav/nav.wxml"/>
+<template is="nav"/>
+
 <import src="../../component/messageList/messageList.wxml"/>
 <template is="messageList" data="{{films: films, hasMore: hasMore, showLoading: showLoading}}"/>
 <import src="../../component/message/message.wxml"/>

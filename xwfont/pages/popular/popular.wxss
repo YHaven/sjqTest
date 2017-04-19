@@ -1,5 +1,6 @@
 @import "../../component/messageList/messageList.wxss";
 @import "../../component/message/message.wxss";
+@import "../../component/nav/nav.wxss";
 .search-bar {
     box-sizing: border-box;
     position: fixed;
