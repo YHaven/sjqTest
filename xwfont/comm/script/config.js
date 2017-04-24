@@ -11,14 +11,16 @@ skinList: “我的”页面背景列表
 shakeSound: 摇一摇音效地址（带url表示远程地址）
 shakeWelcomeImg: 摇一摇欢迎图片
 */
-var url = 'https://static.sesine.com/wechat-weapp-movie'
+var url = 'https://static.sesine.com/wechat-weapp-movie';
+var zhencomehost = 'https://www.zhencome.com'
 module.exports = {
     city: '',
     count: 20,
     baiduAK: 'Y1R5guY8Y2GNRdDpLz7SUeM3QgADAXec',
     apiList: {
         plana:{
-            getMessageList:'https://www.zhencome.com/plana/msg!list.action'
+            getMessageList:zhencomehost+'/plana/msg!list.action',
+            getMessageDetail:zhencomehost+'/tempdata/messageDetail.json'
         },
         popular: 'https://api.douban.com/v2/movie/in_theaters',
         coming: 'https://api.douban.com/v2/movie/coming_soon',

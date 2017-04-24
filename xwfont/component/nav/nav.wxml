@@ -1,10 +1,10 @@
 <template name="nav">
     <view class="nav-block">
-        <view class="nav-item">
+        <view class="nav-item" data-url="../coming/coming" catchtap="viewNavDetail">
             <view class="nav-icon gift-icon"></view>
             <view class="nav-name">看一下</view>
         </view>
-        <view class="nav-item">
+        <view class="nav-item" data-url="../top/top" catchtap="viewNavDetail">
             <view class="nav-icon msg-icon"></view>
             <view class="nav-name">消息</view>
         </view>

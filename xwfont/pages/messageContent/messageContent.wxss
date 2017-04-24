@@ -1,0 +1,6 @@
+@import "../../comm/style/reset.wxss";
+
+page{padding: 10rpx;}
+.message-id{display: none;}
+.message-title{font-size: 45rpx;font-weight: bold;}
+.ad-bar{padding: 15rpx 0rpx;font-size: 24rpx;color: #999999;}

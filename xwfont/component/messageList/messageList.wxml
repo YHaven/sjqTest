@@ -5,7 +5,7 @@
 <block wx:else>
     <view class="film">
         <block wx:for="{{films}}" wx:for-index="filmIndex" wx:for-item="filmItem" wx:key="film">
-            <view data-id="{{filmItem.id}}" class="film-item" catchtap="viewFilmDetail">
+            <view data-id="{{filmItem.id}}" class="film-item" catchtap="viewMessageDetail">
                <view class="film-cover">
                   <image src="{{filmItem.images.headurl}}" class="film-cover-img"></image>
                </view>

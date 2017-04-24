@@ -2,6 +2,7 @@
   "pages": [
     "pages/start/index",
     "pages/popular/popular",
+    "pages/messageContent/messageContent",
     "pages/coming/coming",
     "pages/top/top",
     "pages/search/search",

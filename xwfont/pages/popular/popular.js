@@ -37,12 +37,18 @@ Page({
 			plana.getMessageList.call(that, config.apiList.plana.getMessageList, that.data.start, that.data.msgResource)
 		}
 	},
-	viewFilmDetail: function(e) {
+	viewMessageDetail: function(e) {
 		var data = e.currentTarget.dataset;
 		wx.navigateTo({
-			url: "../filmDetail/filmDetail?id=" + data.id
+			url: "../messageContent/messageContent?id=" + data.id
 		})
-	},	
+	},
+	viewNavDetail:function(e){
+		var data = e.currentTarget.dataset;
+		wx.switchTab({
+			url: data.url
+		})
+	},
 	viewFilmByTag: function(e) {
 		var data = e.currentTarget.dataset
 		var keyword = data.tag

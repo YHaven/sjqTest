@@ -1,0 +1,9 @@
+<block wx:if="{{! showLoading}}">
+    <view class="message-id">{{id}}</view>
+    <view class="message-title">{{title}}</view>
+    <view class="ad-bar clearfix">
+        <span class="message-author">{{author}}</span><span class="message-datatime">{{datatime}}</span>
+    </view>
+    
+    <view class="message-content">{{content}}</view>
+</block>

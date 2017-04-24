@@ -6,7 +6,7 @@ var planPro = planPro || {};
 planPro.isTest = false;
 planPro.indexPath = '/home';
 planPro.loginPath = '/login';
-planPro.homePath = 'http://www.zhencome.com';
+// planPro.homePath = 'http://www.zhencome.com';
 planPro.homePath = 'http://localhost:8080';
 
 //ajax地址
@@ -14,12 +14,12 @@ planPro.ajaxUrl = {
     login : planPro.homePath + '/plana/index!alogin.action?vt=1',//登录
 	fileUpload : planPro.homePath + '/plana/file!upfile.action',
 	uploadImg : planPro.homePath + '/plana/index!userProfile.action?vt=1',
-    homeBT : '/static/data/bannertasks.json',//首页ajax   ///main/index
+    // homeBT : '/static/data/bannertasks.json',//首页ajax   ///main/index
     //房屋
-    //houselist : '/static/data/houselist.json',
-    houselist : planPro.homePath + '/plana/house!list.action',
-    // houseoper : '/static/data/houseoper.json', //get页面data
-    houseoper : planPro.homePath + '/plana/house!modify.action', //get页面data
+    houselist : '/static/data/houselist.json',
+    // houselist : planPro.homePath + '/plana/house!list.action',
+    houseoper : '/static/data/houseoper.json', //get页面data
+    // houseoper : planPro.homePath + '/plana/house!modify.action', //get页面data
     deletehouseoper : planPro.homePath + '/plana/house!delete.action',
     
     posthouseoper : planPro.homePath + '/plana/house!add.action',

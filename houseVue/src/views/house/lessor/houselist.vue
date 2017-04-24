@@ -46,7 +46,7 @@ import $ from 'zepto'
 export default {
   route: {
     data () {
-      return this.$http.post(planPro.ajaxUrl.houselist,{'vt':'1'},{credentials: true})
+      return this.$http.get(planPro.ajaxUrl.houselist,{'vt':'1'},{credentials: true})
       .then(({data}) => {
 
         if(data.status){
