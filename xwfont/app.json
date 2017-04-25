@@ -1,11 +1,12 @@
 {
   "pages": [
-    "pages/personalHouseEdit/personalHouseEdit",
+    
     "pages/start/index",
     "pages/popular/popular",
     "pages/messageContent/messageContent",
     "pages/personalHouse/personalHouse",
     "pages/personalHouseInfo/personalHouseInfo",
+    "pages/personalHouseEdit/personalHouseEdit",
     "pages/coming/coming",
     "pages/top/top",
     "pages/search/search",
