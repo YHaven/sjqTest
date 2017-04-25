@@ -20,7 +20,8 @@ module.exports = {
     apiList: {
         plana:{
             getMessageList:zhencomehost+'/plana/msg!list.action',
-            getMessageDetail:zhencomehost+'/tempdata/messageDetail.json'
+            getMessageDetail:zhencomehost+'/tempdata/messageDetail.json',
+            getHouseList:zhencomehost+'/tempdata/houselist.json'
         },
         popular: 'https://api.douban.com/v2/movie/in_theaters',
         coming: 'https://api.douban.com/v2/movie/coming_soon',
@@ -33,6 +34,9 @@ module.exports = {
         personDetail: 'https://api.douban.com/v2/movie/celebrity/',
         baiduMap: 'https://api.map.baidu.com/geocoder/v2/'
     },
+    defaultImg:{
+header:'http://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83epBXIYAUnlcXcBzCFFiaGR3AzBezHic1RUSWf2zh7tkf8hTT8uRUQ9PR8jl9955xl7KOMG3L0btV5hw/0'
+        },
     hotKeyword: ['杭州', '萧山', '盛达', '盛乐'],
     hotTag: ['热', '门', '标', '签'],
     bannerList: [

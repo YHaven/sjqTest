@@ -3,3 +3,6 @@
 .clearfix:after{visibility:hidden; display:block; font-size:0; content:'\20'; clear:both; height:0;}
 .clear_f:after{visibility:hidden; display:block; font-size:0; content:'\20'; clear:both; height:0;}
 .cle_float:after{visibility:hidden; display:block; font-size:0; content:'\20'; clear:both; height:0;}
+
+.f-l{float: left;}
+.f-r{float: right;}

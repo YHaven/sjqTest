@@ -1,8 +1,11 @@
 {
   "pages": [
+    "pages/personalHouseEdit/personalHouseEdit",
     "pages/start/index",
     "pages/popular/popular",
     "pages/messageContent/messageContent",
+    "pages/personalHouse/personalHouse",
+    "pages/personalHouseInfo/personalHouseInfo",
     "pages/coming/coming",
     "pages/top/top",
     "pages/search/search",
@@ -47,7 +50,7 @@
       "text": "惊喜"
     },
     {
-      "pagePath": "pages/top/top",
+      "pagePath": "pages/personalHouse/personalHouse",
       "iconPath": "dist/images/top_icon.png",
       "selectedIconPath": "dist/images/top_active_icon.png",
       "text": "房屋"

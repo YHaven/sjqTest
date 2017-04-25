@@ -1,6 +1,5 @@
 .nav-block{display: flex;text-align: center}
 .nav-item{flex: 1;padding:20rpx 0rpx;}
 
-.gift-icon{background: rgba(0, 0, 0, 0) url("../../dist/images/nav-2.png") no-repeat scroll 0 0; }
-.msg-icon{background: rgba(0, 0, 0, 0) url("../../dist/images/nav-3.png") no-repeat scroll 0 0; }
-.nav-icon{display: inline-block;background-size: 100% 100%;width:110rpx;height:110rpx;}
+.nav-icon{display: inline-block;width:110rpx;height:110rpx;}
+.nav-icon image{width: 100%;height: 100%;}

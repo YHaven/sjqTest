@@ -1,6 +1,30 @@
 @import "../../comm/style/reset.wxss";
 
-page{padding: 10rpx;}
+.message-page{padding: 20rpx;}
 .message-id{display: none;}
 .message-title{font-size: 45rpx;font-weight: bold;}
 .ad-bar{padding: 15rpx 0rpx;font-size: 24rpx;color: #999999;}
+.ad-bar span{margin-right: 15rpx;}
+.message-bottom{position: fixed;bottom: 0rpx;height: 80rpx;border-top:1rpx solid #eaeaea;width: 100%;left: -1rpx;background-color: #fff; }
+.message-response{width: 300rpx;border: 1px solid #eaeaea;border-radius: 50rpx;display: inline-block;margin-top: 8rpx;height: 60rpx;line-height: 60rpx;margin-left: 20rpx;color: #999999;}
+.message-response i{margin-left: 20rpx;margin-right: 20rpx;}
+.message-readcount{float: right;margin-top: 20rpx;margin-right: 20rpx;}
+
+.message-hot-response{border: 1rpx solid #eaeaea;margin-top: 100rpx;}
+.response-title{height: 60rpx;line-height: 60rpx;padding:0rpx 20rpx;border-bottom: 1px solid #eaeaea;color:#e12000;}
+.response-item{padding: 20rpx;border-bottom: 1rpx solid #eaeaea;}
+.response-item:last-child{border-bottom: 0rpx;}
+.head-img{width: 50rpx;height: 50rpx; float: left;}
+.head-img image{width: 100%;height: 100%;}
+.user-info{margin-left: 60rpx;}
+.info-name{color: #15a3f9;}
+.info-time{color: #999999;font-size: 24rpx;margin-bottom: 20rpx;}
+.info-content{font-size: 32rpx;}
+
+
+.block-mark{position: absolute;left: 0rpx;top: 0rpx;right: 0rpx;bottom: 0rpx;background: rgba(0, 0, 0, 0.5)}
+.block-content{position: absolute;top: 30%;background: #eaeaea;width: 100%;}
+.block-title{height: 50rpx;text-align: center;padding-top: 20rpx;}
+.block-title span{padding:0rpx 20rpx;}
+.block-title .t-m{font-size: 32rpx;}
+.block-input{background-color: #fff;border: 1px solid #ddd;margin: 20rpx auto;width: 95%;text-indent: 20rpx;padding-top: 10px;}

@@ -8,7 +8,8 @@ Page({
 		showLoading: true,
 		start: 1,
 		msgResource: 3,
-		bannerList: config.bannerList
+		bannerList: config.bannerList,
+		errImg:config.defaultImg.header
 	},
 	onLoad: function() {
 		var that = this
@@ -27,7 +28,7 @@ Page({
 			films: [],
 			hasMore: true,
 			showLoading: true,
-			start: 0
+			start: 1
 		})
 		this.onLoad()
 	},
@@ -45,7 +46,7 @@ Page({
 	},
 	viewNavDetail:function(e){
 		var data = e.currentTarget.dataset;
-		wx.switchTab({
+		wx.navigateTo({
 			url: data.url
 		})
 	},

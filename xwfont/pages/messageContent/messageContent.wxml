@@ -1,9 +1,60 @@
 <block wx:if="{{! showLoading}}">
-    <view class="message-id">{{id}}</view>
-    <view class="message-title">{{title}}</view>
-    <view class="ad-bar clearfix">
-        <span class="message-author">{{author}}</span><span class="message-datatime">{{datatime}}</span>
+    <view class="message-page">
+        <view class="message-id">{{id}}</view>
+        <view class="message-title">{{title}}</view>
+        <view class="ad-bar clearfix">
+            <span class="message-author">{{author}}</span><span class="message-datatime">{{datatime}}</span>
+        </view>
+        <view class="message-content">{{content}}</view>
+
+        <view class="message-hot-response">
+            <view class="response-title clearfix">热门回复</view>
+            <view class="response-list">
+                <view class="response-item clearfix">
+                    <view class="head-img">
+                        <image src="../../dist/images/nav-2.png"></image>
+                    </view>
+                    <view class="user-info">
+                        <view class="info-name">用事实说话</view>
+                        <view class="info-time">34分钟前</view>
+                        <view class="info-content">这样才能使教育复兴</view>
+                    </view>
+                </view>
+                <view class="response-item clearfix">
+                    <view class="head-img">
+                        <image src="../../dist/images/nav-2.png"></image>
+                    </view>
+                    <view class="user-info">
+                        <view class="info-name">用事实说话</view>
+                        <view class="info-time">34分钟前</view>
+                        <view class="info-content">这样才能使教育复兴</view>
+                    </view>
+                </view>
+                <view class="response-item clearfix">
+                    <view class="head-img">
+                        <image src="../../dist/images/nav-2.png"></image>
+                    </view>
+                    <view class="user-info">
+                        <view class="info-name">用事实说话</view>
+                        <view class="info-time">34分钟前</view>
+                        <view class="info-content">这样才能使教育复兴</view>
+                    </view>
+                </view>
+            </view>
+        </view>
     </view>
-    
-    <view class="message-content">{{content}}</view>
+    <view class="message-bottom">
+        <span class="message-response" catchtap="onResponseMessage"><i class="icon iconfont icon-edit"></i>写回复</span>
+        <span class="message-readcount">阅读:1990</span>
+    </view>
+    <view class="block-mark" wx:if="{{! showBlock}}">
+        <view class="block-content">
+            <view class="block-title">
+                <span class="t-l f-l" catchtap="cancelBlock">取消</span>
+                <span class="t-m">写回复</span>
+                <span class="t-r f-r" catchtap="sendResponse">发送</span>
+            </view>
+            <textarea value="内容输入" class="block-input"/>
+        </view>
+    </view>
 </block>

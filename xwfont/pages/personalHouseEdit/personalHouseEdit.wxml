@@ -1,0 +1,42 @@
+<form bindsubmit="savePersonInfo">
+    <view class="form-list">
+        <view class="form-item">
+            <view class="form-item-hd">房屋主图</view>
+            <view class="form-item-bd">
+                <input type="text" name="uploadImg" value="{{uploadImg}}" placeholder="请选择主图"/>
+            </view>
+        </view>
+        <view class="form-item">
+            <view class="form-item-hd">房屋名称</view>
+            <view class="form-item-bd">
+                <input type="text" name="houseName" value="{{houseName}}" placeholder="请输入名称" maxlength="5"/>
+            </view>
+        </view>
+    </view>
+    <view class="form-list">
+        <view class="form-item">
+            <view class="form-item-hd">房屋类型</view>
+            <view class="form-item-bd">
+                <picker mode="selector" value="{{houseTypeIndex}}" range="{{houseTypeArray}}" bindchange="changehouseType">
+                    <block wx:if="{{houseType == ''}}">
+                        <view class="input input-placeholder">请选择类型</view>
+                        <input type="text" name="houseType" value="" class="hidden" maxlength="1"/>
+                    </block>
+                    <block wx:else>
+                        <view class="input">{{houseTypeArray[houseTypeIndex]}}</view>
+                        <input type="text" name="houseType" value="{{houseTypeArray[houseTypeIndex]}}" class="hidden" maxlength="1"/>
+                    </block>
+                </picker>
+            </view>
+        </view>
+    </view>
+    <view class="form-list">
+        <view class="form-item">
+            <view class="form-item-hd">备注</view>
+            <view class="form-item-bd">
+                <input type="text" name="remark" value="{{remark}}" placeholder="请输入备注"/>
+            </view>
+        </view>
+    </view>
+    <button formType="submit" class="edit-btn">保 存</button>
+</form>

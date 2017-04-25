@@ -6,22 +6,22 @@ Page({
 		title: '文章详情',
 		content:'',
 		hasMore: true,
-		showLoading: true
+		start:1,
+		showLoading: true,
+		showBlock:true,
+		tapContent:false
 	},
-	onLoad: function() {
+	onLoad: function(options) {
 		var that = this
-		console.log(this.data.filmDetail.id);
-		//wx.showNavigationBarLoading()
-		//wx.hideNavigationBarLoading()
-		var params = {id:1}
-		plana.getMessageDetail.call(that,config.apiList.plana.getMessageDetail,params)
-		// app.getCity(function(){
-		// 	wx.hideNavigationBarLoading()
-		// 	wx.setNavigationBarTitle({
-		// 		title: '首页 - ' + config.city
-		// 	})
-		// 	plana.getMessageList.call(that, config.apiList.plana.getMessageList, that.data.start, that.data.msgResource)
-		// })
+		wx.showNavigationBarLoading()
+		var params = {id:options.id}
+		
+		plana.getMessageDetail.call(that,config.apiList.plana.getMessageDetail,params,function(res){
+			that.setData({
+				messageDetailId: options.id
+			})
+			wx.hideNavigationBarLoading()
+		});
 	},
 	onPullDownRefresh: function() {
 		var that = this
@@ -29,12 +29,27 @@ Page({
 			hasMore: true,
 			showLoading: true
 		})
-		this.onLoad()
+		var data = {
+			id: this.data.messageDetailId
+		}
+		this.onLoad(data)
 	},
 	onReachBottom: function() {
 		var that = this
-		if (!that.data.showLoading) {
-			plana.getMessageList.call(that, config.apiList.plana.getMessageList, that.data.start, that.data.msgResource)
-		}
+	},
+	onResponseMessage:function(){
+		var that = this
+		that.setData({
+			showBlock: false
+		})
+	},
+	cancelBlock:function(){
+		var that = this
+		that.setData({
+			showBlock: true
+		})
+	},
+	sendResponse:function(){
+		console.log('xxsend')
 	}
 })

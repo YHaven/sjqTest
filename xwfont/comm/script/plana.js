@@ -96,7 +96,57 @@ function getMessageDetail(url, params, cb, fail_cb){
     })
 }
 
+//获取个人房屋列表
+function getPersonalHouseList(url, params, cb, fail_cb){
+   var that = this
+   message.hide.call(that)
+   wx.request({
+      url: url,
+      data:params,
+      method: 'GET', 
+      header: {
+        "Content-Type": "application/json,application/json"
+      },
+      success: function(res){
+        if(res.data.status === true){
+          if(res.data.datalist.length === 0){
+            that.setData({
+              hasMore: false,
+            })
+          }else{
+            that.setData({
+              dataList: that.data.dataList.concat(res.data.datalist),
+              start: that.data.start + 1,
+              showLoading: false
+            })
+            if(res.data.datalist.length<res.data.pagesize){
+              that.setData({
+                hasMore: false,
+              })
+            }
+          }
+        }
+        wx.stopPullDownRefresh()
+        typeof cb == 'function' && cb(res)
+      },
+      fail: function() {
+        that.setData({
+            showLoading: false
+        })
+        message.show.call(that,{
+          content: '网络开小差了',
+          icon: 'offline',
+          duration: 3000
+        })
+        wx.stopPullDownRefresh()
+        typeof fail_cb == 'function' && fail_cb()
+      }
+    })
+}
+
+
 module.exports = {
   getMessageList: getMessageList,
-  getMessageDetail:getMessageDetail
+  getMessageDetail:getMessageDetail,
+  getPersonalHouseList:getPersonalHouseList
 }
