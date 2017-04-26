@@ -1,4 +1,6 @@
 var util = require('../../util/util')
+var plana = require('../../comm/script/plana')
+var config = require('../../comm/script/config')
 Page({
   data:{
     uploadImg: '',
@@ -31,38 +33,52 @@ Page({
         })
       }
     })
+    wx.showNavigationBarLoading()
+		var params = {
+						id:options.id
+					}
+		plana.getPersonalInfo.call(that,config.apiList.plana.getHouseInfo,params,function(res){
+      var data = res.data.data
+      that.setData({
+          uploadImg: data.uploadImg,
+          houseName: data.houseName,
+          houseType: data.houseType,
+          remark: data.remark
+        })
+			wx.hideNavigationBarLoading()
+		});
   },
   savePersonInfo: function(e) {
     var data = e.detail.value
     console.log(data);
-    wx.setStorage({
-      key: 'person_info',
-      data: {
-        name: data.name,
-        nickName: data.nickName,
-        gender: data.gender,
-        age: data.age,
-        birthday: data.birthday,
-        constellation: data.constellation,
-        company: data.company,
-        school: data.school,
-        tel: data.tel,
-        email:data.email,
-        intro: data.intro
-      },
-      success: function(res){
-        wx.showToast({
-          title: '修改成功',
-          icon: 'success',
-          duration: 2000
-        })
-        setTimeout(function(){
-          wx.navigateTo({
-            url: '../personInfo/personInfo'
-          })
-        },2000)
-      }
-    })
+    // wx.setStorage({
+    //   key: 'person_info',
+    //   data: {
+    //     name: data.name,
+    //     nickName: data.nickName,
+    //     gender: data.gender,
+    //     age: data.age,
+    //     birthday: data.birthday,
+    //     constellation: data.constellation,
+    //     company: data.company,
+    //     school: data.school,
+    //     tel: data.tel,
+    //     email:data.email,
+    //     intro: data.intro
+    //   },
+    //   success: function(res){
+    //     wx.showToast({
+    //       title: '修改成功',
+    //       icon: 'success',
+    //       duration: 2000
+    //     })
+    //     setTimeout(function(){
+    //       wx.navigateTo({
+    //         url: '../personInfo/personInfo'
+    //       })
+    //     },2000)
+    //   }
+    // })
   },
   changehouseType: function(e) {
     var houseTypeIndex = e.detail.value

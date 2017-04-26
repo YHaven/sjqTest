@@ -97,7 +97,7 @@ function getMessageDetail(url, params, cb, fail_cb){
 }
 
 //获取个人房屋列表
-function getPersonalHouseList(url, params, cb, fail_cb){
+function getPersonalList(url, params, cb, fail_cb){
    var that = this
    message.hide.call(that)
    wx.request({
@@ -144,9 +144,44 @@ function getPersonalHouseList(url, params, cb, fail_cb){
     })
 }
 
+//获取个人房屋信息
+function getPersonalInfo(url, params, cb, fail_cb){
+   var that = this
+   message.hide.call(that)
+   wx.request({
+      url: url,
+      data:params,
+      method: 'GET', 
+      header: {
+        "Content-Type": "application/json,application/json"
+      },
+      success: function(res){
+        if(res.data.status === true){
+            that.setData({
+              dataInfo: res.data.data
+            })
+        }
+        wx.stopPullDownRefresh()
+        typeof cb == 'function' && cb(res)
+      },
+      fail: function() {
+        that.setData({
+            showLoading: false
+        })
+        message.show.call(that,{
+          content: '网络开小差了',
+          icon: 'offline',
+          duration: 3000
+        })
+        wx.stopPullDownRefresh()
+        typeof fail_cb == 'function' && fail_cb()
+      }
+    })
+}
 
 module.exports = {
   getMessageList: getMessageList,
   getMessageDetail:getMessageDetail,
-  getPersonalHouseList:getPersonalHouseList
+  getPersonalList:getPersonalList,
+  getPersonalInfo:getPersonalInfo
 }

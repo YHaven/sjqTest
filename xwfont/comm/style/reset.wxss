@@ -6,3 +6,5 @@
 
 .f-l{float: left;}
 .f-r{float: right;}
+
+.blue-btn{padding: 10rpx;background: #84d9d4;border-radius: 50rpx;margin: 10rpx auto;width:200rpx; }

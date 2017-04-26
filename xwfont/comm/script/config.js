@@ -21,7 +21,10 @@ module.exports = {
         plana:{
             getMessageList:zhencomehost+'/plana/msg!list.action',
             getMessageDetail:zhencomehost+'/tempdata/messageDetail.json',
-            getHouseList:zhencomehost+'/tempdata/houselist.json'
+            getHouseList:zhencomehost+'/tempdata/houselist.json',
+            getHouseInfo:zhencomehost+'/tempdata/houseoper.json',
+            getRoomList:zhencomehost+'/tempdata/roomlist.json',
+            getRoomInfo:zhencomehost+'/tempdata/roomoper.json'
         },
         popular: 'https://api.douban.com/v2/movie/in_theaters',
         coming: 'https://api.douban.com/v2/movie/coming_soon',

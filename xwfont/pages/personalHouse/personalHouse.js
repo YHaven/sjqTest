@@ -14,7 +14,8 @@ Page({
 		var params = {
 						page:that.data.start
 					}
-		plana.getPersonalHouseList.call(that,config.apiList.plana.getHouseList,params,function(res){
+		plana.getPersonalList.call(that,config.apiList.plana.getHouseList,params,function(res){
+
 			wx.hideNavigationBarLoading()
 		});
 	},
@@ -34,7 +35,47 @@ Page({
 			var params = {
 						page:that.data.start
 					}
-			plana.getPersonalHouseList.call(that,config.apiList.plana.getHouseList,params);
+			plana.getPersonalList.call(that,config.apiList.plana.getHouseList,params);
 		}
+	},
+	showOpera:function(e){
+		var data = e.currentTarget.dataset;
+		this.hideOpera();
+		var oldData = this.data.dataList;
+		oldData[data.index].show = true;
+		this.setData({
+			dataList: oldData
+		})
+	},
+	hideOpera:function(){
+		var that = this;
+		var oldData = that.data.dataList;
+		for(var i=0;i<oldData.length;i++){
+			oldData[i].show = false;
+		}
+		that.setData({
+			dataList: oldData
+		})
+	},
+	viewData:function(e){
+		var data = e.currentTarget.dataset;
+		wx.navigateTo({
+			url: "../personalRoom/personalRoom?id=" + data.id
+		})
+	},
+	editData:function(e){
+		var data = e.currentTarget.dataset;
+		wx.navigateTo({
+			url: "../personalHouseEdit/personalHouseEdit?id=" + data.id
+		})
+	},
+	deleteData:function(e){
+		var data = e.currentTarget.dataset;
+		wx.navigateTo({
+			url: "../personalHouseEdit/personalHouseEdit?id=" + data.id
+		})
+	},
+	addData:function(){
+
 	}
 })
