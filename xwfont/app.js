@@ -15,16 +15,60 @@ App({
   },
   getUserInfo:function(cb){
     var that = this
-    wx.login({
-      success: function () {
-        wx.getUserInfo({
-          success: function (res) {
-            that.globalData.userInfo = res.userInfo
-            typeof cb == "function" && cb(that.globalData.userInfo)
+    // wx.checkSession({
+    //   success: function(){
+    //     //session 未过期，并且在本生命周期一直有效
+    //   },
+    //   fail: function(){
+        //登录态过期
+        wx.login({
+          success: function (login_res) {
+            wx.getUserInfo({
+              success: function (res) {
+                console.log(res)
+
+                that.toLogin(login_res.code,res,function(t_res){
+                  console.log(t_res);
+                })
+                that.globalData.userInfo = res.userInfo
+                typeof cb == "function" && cb(that.globalData.userInfo)
+              }
+            })
           }
         })
-      }
-    })
+        
+    //   }
+    // })
+
+
+    
+  },
+  toLogin:function(code,userinfo,cb, fail_cb){
+    var url = config.apiList.plana.login;
+    var params = userinfo.userInfo;
+    params.vt = 1;
+    params.type ='wCode';
+    params.wxCode = code;
+    params.businessId = config.apiList.plana.business;
+    //params.rawData = userinfo.rawData;
+    params.signature = userinfo.signature;
+    params.encryptedData = userinfo.encryptedData;
+    params.iv = userinfo.iv;
+    
+    wx.request({
+        url: url,
+        data:params,
+        method: 'GET', 
+        header: {
+          "Content-Type": "application/json,application/json"
+        },
+        success: function(res){
+          typeof cb == 'function' && cb(res)
+        },
+        fail: function() {
+          typeof fail_cb == 'function' && fail_cb()
+        }
+      })
   },
   getCity: function(cb) {
     var that = this
