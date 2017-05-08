@@ -19,6 +19,8 @@ module.exports = {
     baiduAK: 'Y1R5guY8Y2GNRdDpLz7SUeM3QgADAXec',
     apiList: {
         plana:{
+            business:4,
+            login:zhencomehost+'/plana/index!alogin.action',
             getMessageList:zhencomehost+'/plana/msg!list.action',
             getMessageDetail:zhencomehost+'/tempdata/messageDetail.json',
             getHouseList:zhencomehost+'/tempdata/houselist.json',
