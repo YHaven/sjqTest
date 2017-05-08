@@ -5,11 +5,13 @@
         <view class="ad-bar clearfix">
             <span class="message-author">{{author}}</span><span class="message-datatime">{{datatime}}</span>
         </view>
-        <view class="message-content">{{content}}</view>
+        <import src="../../wxParse/wxParse.wxml"/>
+        <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+        <view class="message-content" style="display:none;">{{content}}</view>
 
         <view class="message-hot-response">
             <view class="response-title clearfix">热门回复</view>
-            <view class="response-list">
+            <view class="response-list" style="display:none;">
                 <view class="response-item clearfix">
                     <view class="head-img">
                         <image src="../../dist/images/nav-2.png"></image>
@@ -45,7 +47,7 @@
     </view>
     <view class="message-bottom">
         <span class="message-response" catchtap="onResponseMessage"><i class="icon iconfont icon-edit"></i>写回复</span>
-        <span class="message-readcount">阅读:1990</span>
+        <span class="message-readcount">阅读:{{readnum}}</span>
     </view>
     <view class="block-mark" wx:if="{{! showBlock}}">
         <view class="block-content">

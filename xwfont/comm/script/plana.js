@@ -3,25 +3,24 @@ var message = require('../../component/message/message') //dialog提示
 
 
 // 获取消息信息
-function getMessageList(url, start, msg_resource, cb, fail_cb) {
+function getMessageList(url, params, cb, fail_cb) {
   var that = this
   message.hide.call(that)
   if (that.data.hasMore) {
     wx.request({
       url: url,
-      data: {
-        vt:'1',
-        page:start,
-        msgResource:msg_resource
-      },
+      data: params,
       method: 'GET', 
       header: {
         "Content-Type": "application/json,application/json"
       },
       success: function(res){
+        
         if(res.data.datalist.length === 0){
+          console.log(res.data.datalist.length)
           that.setData({
             hasMore: false,
+            showLoading: false
           })
         }else{
           that.setData({
@@ -62,15 +61,17 @@ function getMessageDetail(url, params, cb, fail_cb){
       },
       success: function(res){
         if(res.data.status === true){
+          
           that.setData({
-            id:res.data.data.id,
-            datatime:res.data.data.datatime,
-            author:res.data.data.author,
-            title: res.data.data.title,
-            content: res.data.data.content,
+            id:res.data.id,
+            datatime: res.data.timer,
+            author:res.data.author,
+            title: res.data.title,
+            content: res.data.content,
+            readnum: res.data.readnum,
             showLoading: false
           })
-          var pageTitle = res.data.data.title;
+          var pageTitle = res.data.title;
           if(pageTitle.length>10){
             pageTitle = pageTitle.substring(0,10)+'...'
           }

@@ -21,8 +21,10 @@ module.exports = {
         plana:{
             business:4,
             login:zhencomehost+'/plana/index!alogin.action',
-            getMessageList:zhencomehost+'/plana/msg!list.action',
-            getMessageDetail:zhencomehost+'/tempdata/messageDetail.json',
+            // getMessageList:zhencomehost+'/plana/msg!list.action',
+            getMessageList: zhencomehost + '/plana/msg!msglist.action',
+            getMessageDetail: zhencomehost + '/plana/msg!msgview.action',
+            // getMessageDetail:zhencomehost+'/tempdata/messageDetail.json',
             getHouseList:zhencomehost+'/tempdata/houselist.json',
             getHouseInfo:zhencomehost+'/tempdata/houseoper.json',
             getRoomList:zhencomehost+'/tempdata/roomlist.json',

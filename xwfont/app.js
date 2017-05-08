@@ -25,10 +25,10 @@ App({
           success: function (login_res) {
             wx.getUserInfo({
               success: function (res) {
-                console.log(res)
+                //console.log(res)
 
                 that.toLogin(login_res.code,res,function(t_res){
-                  console.log(t_res);
+                  //console.log(t_res);
                 })
                 that.globalData.userInfo = res.userInfo
                 typeof cb == "function" && cb(that.globalData.userInfo)

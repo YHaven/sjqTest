@@ -19,7 +19,13 @@ Page({
 			wx.setNavigationBarTitle({
 				title: '首页 - ' + config.city
 			})
-			plana.getMessageList.call(that, config.apiList.plana.getMessageList, that.data.start, that.data.msgResource)
+      var params = {
+        vt: '1',
+        page: that.data.start,
+        msgResource: that.data.msgResource,
+        businessId: 1
+      };
+      plana.getMessageList.call(that, config.apiList.plana.getMessageList, params)
 		})
 	},
 	onPullDownRefresh: function() {
@@ -35,7 +41,13 @@ Page({
 	onReachBottom: function() {
 		var that = this
 		if (!that.data.showLoading) {
-			plana.getMessageList.call(that, config.apiList.plana.getMessageList, that.data.start, that.data.msgResource)
+      var params = {
+        vt: '1',
+        page: that.data.start,
+        msgResource: that.data.msgResource,
+        businessId: config.apiList.plana.business
+      };
+      plana.getMessageList.call(that, config.apiList.plana.getMessageList, params)
 		}
 	},
 	viewMessageDetail: function(e) {

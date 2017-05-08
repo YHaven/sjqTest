@@ -1,5 +1,6 @@
 var plana = require('../../comm/script/plana')
 var config = require('../../comm/script/config')
+var WxParse = require('../../wxParse/wxParse.js')
 var app = getApp()
 Page({
 	data: {
@@ -17,8 +18,9 @@ Page({
 		var params = {id:options.id}
 		
 		plana.getMessageDetail.call(that,config.apiList.plana.getMessageDetail,params,function(res){
+      WxParse.wxParse('article', 'html', res.data.content, that, 5);
 			that.setData({
-				messageDetailId: options.id
+				id: options.id
 			})
 			wx.hideNavigationBarLoading()
 		});

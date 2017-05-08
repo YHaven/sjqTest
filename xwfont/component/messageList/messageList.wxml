@@ -7,13 +7,17 @@
         <block wx:for="{{films}}" wx:for-index="filmIndex" wx:for-item="filmItem" wx:key="film">
             <view data-id="{{filmItem.id}}" class="film-item" catchtap="viewMessageDetail">
                <view class="film-cover">
-                  <image src="{{filmItem.images.headurl}}" class="film-cover-img"></image>
+                  <image src="{{filmItem.img}}" class="film-cover-img"></image>
                </view>
                <view class="file-intro">
-                    <view class="film-top">
+                    <view class="film-top">{{filmItem.title}}</view>
+                    <view class="film-top">{{filmItem.timer}}</view>
+                    <view class="film-top" style="display:none;">
+                      
                         <view class="film-author">{{filmItem.author}}</view>
                         <view class="film-role">
-                            <span>
+                            
+                            <span >
                             <block wx:if="{{filmItem.authorrole == 1}}">管理员</block>
                             <block wx:elif="{{filmItem.authorrole == 3}}">会员</block>
                             <block wx:else>游客</block>
@@ -25,7 +29,7 @@
                             <block wx:else><i class="icon iconfont icon-people"></i></block>
                         </view>
                     </view>
-                    <view class="film-content">{{filmItem.msginfo}}</view>
+                    <view class="film-content">{{filmItem.alt}}</view>
                </view>
             </view>
 
