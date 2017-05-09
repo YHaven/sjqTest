@@ -101,18 +101,26 @@ function getMessageDetail(url, params, cb, fail_cb){
 function getPersonalList(url, params, cb, fail_cb){
    var that = this
    message.hide.call(that)
+
+   var session_id = wx.getStorageSync('PHPSESSID');//本地取存储的sessionID  
+   if (session_id != "" && session_id != null) {
+     var header = { 'content-type': 'application/x-www-form-urlencoded', 'Cookie': 'JSESSIONID=' + session_id }
+   } else {
+     var header = { 'content-type': 'application/x-www-form-urlencoded'     }
+   }  
+
    wx.request({
       url: url,
       data:params,
-      method: 'GET', 
-      header: {
-        "Content-Type": "application/json,application/json"
-      },
+      method: 'POST', 
+      header: header,
       success: function(res){
+        console.log(res.data.status);
         if(res.data.status === true){
           if(res.data.datalist.length === 0){
             that.setData({
               hasMore: false,
+              showLoading: false
             })
           }else{
             that.setData({
@@ -126,6 +134,15 @@ function getPersonalList(url, params, cb, fail_cb){
               })
             }
           }
+        }else{
+          that.setData({
+            showLoading: false
+          })
+          message.show.call(that, {
+            content: '网络开小差了',
+            icon: 'offline',
+            duration: 3000
+          })
         }
         wx.stopPullDownRefresh()
         typeof cb == 'function' && cb(res)
@@ -149,18 +166,31 @@ function getPersonalList(url, params, cb, fail_cb){
 function getPersonalInfo(url, params, cb, fail_cb){
    var that = this
    message.hide.call(that)
+   var session_id = wx.getStorageSync('PHPSESSID');//本地取存储的sessionID  
+   if (session_id != "" && session_id != null) {
+     var header = { 'content-type': 'application/x-www-form-urlencoded', 'Cookie': 'JSESSIONID=' + session_id }
+   } else {
+     var header = { 'content-type': 'application/x-www-form-urlencoded' }
+   }  
    wx.request({
       url: url,
       data:params,
       method: 'GET', 
-      header: {
-        "Content-Type": "application/json,application/json"
-      },
+      header: header,
       success: function(res){
         if(res.data.status === true){
             that.setData({
               dataInfo: res.data.data
             })
+        }else{
+          that.setData({
+            showLoading: false
+          })
+            message.show.call(that, {
+            content: '网络开小差了',
+            icon: 'offline',
+            duration: 3000
+          })
         }
         wx.stopPullDownRefresh()
         typeof cb == 'function' && cb(res)

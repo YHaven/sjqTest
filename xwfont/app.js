@@ -29,6 +29,8 @@ App({
 
                 that.toLogin(login_res.code,res,function(t_res){
                   //console.log(t_res);
+                  console.log(t_res.data.sessionId);
+                  wx.setStorageSync('PHPSESSID', t_res.data.sessionId)
                 })
                 that.globalData.userInfo = res.userInfo
                 typeof cb == "function" && cb(that.globalData.userInfo)

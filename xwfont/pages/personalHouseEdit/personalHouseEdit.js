@@ -13,38 +13,26 @@ Page({
   onLoad:function(options){
     var birthdayEndDate = util.getDate()
     var that = this
-    wx.getStorage({
-      key: 'person_info',
-      success: function(res){
-        var data = res.data
-        that.setData({
-          name: data.name,
-          nickName: data.nickName,
-          gender: data.gender,
-          age: data.age,
-          birthday: data.birthday,
-          constellation: data.constellation,
-          company: data.company,
-          school: data.school,
-          tel: data.tel,
-          email: data.email,
-          intro: data.intro,
-          birthdayEndDate: birthdayEndDate
-        })
-      }
-    })
     wx.showNavigationBarLoading()
-		var params = {
-						id:options.id
-					}
+    if (options.id){
+      var params = {
+        id: options.id
+      }
+    }else{
+      var params = {}
+    }
+		
 		plana.getPersonalInfo.call(that,config.apiList.plana.getHouseInfo,params,function(res){
-      var data = res.data.data
-      that.setData({
+      if (res.data.status){
+        var data = res.data.data
+        that.setData({
           uploadImg: data.uploadImg,
           houseName: data.houseName,
           houseType: data.houseType,
           remark: data.remark
         })
+      }
+     
 			wx.hideNavigationBarLoading()
 		});
   },

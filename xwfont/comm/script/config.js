@@ -25,8 +25,10 @@ module.exports = {
             getMessageList: zhencomehost + '/plana/msg!msglist.action',
             getMessageDetail: zhencomehost + '/plana/msg!msgview.action',
             // getMessageDetail:zhencomehost+'/tempdata/messageDetail.json',
-            getHouseList:zhencomehost+'/tempdata/houselist.json',
-            getHouseInfo:zhencomehost+'/tempdata/houseoper.json',
+            // getHouseList:zhencomehost+'/tempdata/houselist.json',
+            getHouseList: zhencomehost + '/plana/house!list.action',
+            // getHouseInfo: zhencomehost + '/tempdata/houseoper.json',
+            getHouseInfo: zhencomehost +'/plana/house!modify.action',
             getRoomList:zhencomehost+'/tempdata/roomlist.json',
             getRoomInfo:zhencomehost+'/tempdata/roomoper.json'
         },
