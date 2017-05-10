@@ -3,33 +3,45 @@ var config = require('../../comm/script/config')
 var app = getApp()
 Page({
 	data: {
+    parentid:'',
 		dataList:[],
 		hasMore: true,
 		start:1,
 		showLoading: true
 	},
-  onLoad: function (options) {
-		var that = this
-		wx.showNavigationBarLoading()
-    console.log(options.id)
-    if (options.id) {
+  onShow:function(){
+    var that = this
+    wx.showNavigationBarLoading()
+    var parentid = that.data.parentid
+
+    if (parentid != '' && parentid != null) {
       var params = {
-        id: options.id
+        id: parentid
       }
       that.setData({
-        id: options.id
+        id: parentid
       })
     } else {
       var params = {}
     }
-		params.page = 1;
-		that.setData({
-			dataList: []
-		})
-   
-		plana.getPersonalList.call(that,config.apiList.plana.getRoomList,params,function(res){
-			wx.hideNavigationBarLoading()
-		});
+    params.page = 1;
+    that.setData({
+      dataList: []
+    })
+
+    plana.getPersonalList.call(that, config.apiList.plana.getRoomList, params, function (res) {
+      wx.hideNavigationBarLoading()
+    });
+  },
+  onLoad: function (options) {
+		var that = this
+    if (options.id != '' && options.id != null) {
+      that.setData({
+        parentid: options.id
+      })
+    }
+    
+    
 	},
 	onPullDownRefresh: function() {
 		var that = this

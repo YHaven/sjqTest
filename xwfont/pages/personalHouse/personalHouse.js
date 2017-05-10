@@ -10,7 +10,6 @@ Page({
 	},
 	onShow:function(){
 		var that = this
-		console.log('show')
 		wx.showNavigationBarLoading()
 		var params = {
 						page:1
@@ -23,15 +22,17 @@ Page({
 		});
 	},
 	// onLoad: function() {
-	// 	var that = this
-	// 	wx.showNavigationBarLoading()
-	// 	var params = {
-	// 					page:that.data.start
-	// 				}
-	// 	plana.getPersonalList.call(that,config.apiList.plana.getHouseList,params,function(res){
-
-	// 		wx.hideNavigationBarLoading()
-	// 	});
+  //   var that = this
+  //   wx.showNavigationBarLoading()
+  //   var params = {
+  //     page: 1
+  //   }
+  //   that.setData({
+  //     dataList: []
+  //   })
+  //   plana.getPersonalList.call(that, config.apiList.plana.getHouseList, params, function (res) {
+  //     wx.hideNavigationBarLoading()
+  //   });
 	// },
 	onPullDownRefresh: function() {
 		var that = this
