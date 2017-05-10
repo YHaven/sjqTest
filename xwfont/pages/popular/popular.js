@@ -19,13 +19,14 @@ Page({
 			wx.setNavigationBarTitle({
 				title: '首页 - ' + config.city
 			})
-      var params = {
-        vt: '1',
-        page: that.data.start,
-        msgResource: that.data.msgResource,
-        businessId: 1
-      };
-      plana.getMessageList.call(that, config.apiList.plana.getMessageList, params)
+			var params = {
+				vt: '1',
+				page: that.data.start,
+				msgResource: that.data.msgResource,
+				// businessId: config.apiList.plana.business
+				businessId: 1
+			};
+			plana.getMessageList.call(that, config.apiList.plana.getMessageList, params)
 		})
 	},
 	onPullDownRefresh: function() {

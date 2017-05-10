@@ -1,6 +1,27 @@
 var config = require('./config.js')
 var message = require('../../component/message/message') //dialog提示
 
+//
+function serializeArrayToJson(a){
+		// var a = searchForm.serializeArray();
+    var o = {};
+    var oStr = '';
+    $.each(a, function () {
+        if (o[this.name] !== undefined) {
+          if (!o[this.name].push) {
+            o[this.name] = [o[this.name]];
+          }
+
+          if(this.value !== '') oStr += ',' +this.value;
+          o[this.name].push(this.value || '');
+        } else {
+          o[this.name] = this.value || '';
+          if(this.value !== '') oStr += '&'+this.name +'=' +this.value;
+        }
+    });
+    return o;
+}
+
 
 // 获取消息信息
 function getMessageList(url, params, cb, fail_cb) {
@@ -28,6 +49,11 @@ function getMessageList(url, params, cb, fail_cb) {
             start: that.data.start + 1,
             showLoading: false
           })
+          if(res.data.datalist.length < 5){
+            that.setData({
+              hasMore: false
+            })
+          }
         }
         wx.stopPullDownRefresh()
         typeof cb == 'function' && cb(res.data)
@@ -115,7 +141,6 @@ function getPersonalList(url, params, cb, fail_cb){
       method: 'POST', 
       header: header,
       success: function(res){
-        console.log(res.data.status);
         if(res.data.status === true){
           if(res.data.datalist.length === 0){
             that.setData({
@@ -128,7 +153,7 @@ function getPersonalList(url, params, cb, fail_cb){
               start: that.data.start + 1,
               showLoading: false
             })
-            if(res.data.datalist.length<res.data.pagesize){
+            if(res.data.datalist.length<5){
               that.setData({
                 hasMore: false,
               })
@@ -210,7 +235,55 @@ function getPersonalInfo(url, params, cb, fail_cb){
     })
 }
 
+
+function formSubmit(url, params, cb, fail_cb){
+   var that = this
+   message.hide.call(that)
+
+   var session_id = wx.getStorageSync('PHPSESSID');//本地取存储的sessionID  
+   if (session_id != "" && session_id != null) {
+     var header = { 'content-type': 'application/x-www-form-urlencoded', 'Cookie': 'JSESSIONID=' + session_id }
+   } else {
+     var header = { 'content-type': 'application/x-www-form-urlencoded'     }
+   }  
+
+   wx.request({
+      url: url,
+      data:params,
+      method: 'POST', 
+      header: header,
+      success: function(res){
+        if(res.data.status === true){
+          
+        }else{
+          message.show.call(that, {
+            content: '网络开小差了',
+            icon: 'offline',
+            duration: 3000
+          })
+        }
+        wx.stopPullDownRefresh()
+        typeof cb == 'function' && cb(res)
+      },
+      fail: function() {
+        that.setData({
+            showLoading: false
+        })
+        message.show.call(that,{
+          content: '网络开小差了',
+          icon: 'offline',
+          duration: 3000
+        })
+        wx.stopPullDownRefresh()
+        typeof fail_cb == 'function' && fail_cb()
+      }
+    })
+}
+
+
 module.exports = {
+  serializeArrayToJson:serializeArrayToJson,
+  formSubmit:formSubmit,
   getMessageList: getMessageList,
   getMessageDetail:getMessageDetail,
   getPersonalList:getPersonalList,

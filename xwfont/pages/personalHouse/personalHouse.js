@@ -8,26 +8,35 @@ Page({
 		start:1,
 		showLoading: true
 	},
-	onLoad: function() {
+	onShow:function(){
 		var that = this
+		console.log('show')
 		wx.showNavigationBarLoading()
 		var params = {
-						page:that.data.start
+						page:1
 					}
+		that.setData({
+			dataList: []
+		})
 		plana.getPersonalList.call(that,config.apiList.plana.getHouseList,params,function(res){
-
 			wx.hideNavigationBarLoading()
 		});
 	},
+	// onLoad: function() {
+	// 	var that = this
+	// 	wx.showNavigationBarLoading()
+	// 	var params = {
+	// 					page:that.data.start
+	// 				}
+	// 	plana.getPersonalList.call(that,config.apiList.plana.getHouseList,params,function(res){
+
+	// 		wx.hideNavigationBarLoading()
+	// 	});
+	// },
 	onPullDownRefresh: function() {
 		var that = this
-		that.setData({
-			dataList: [],
-			hasMore: true,
-			showLoading: true,
-			start: 1
-		})
-		this.onLoad()
+		
+		that.onShow()
 	},
 	onReachBottom: function() {
 		var that = this
@@ -75,6 +84,7 @@ Page({
 			url: "../personalHouseEdit/personalHouseEdit?id=" + data.id
 		})
 	},
+
 	addData:function(){
 
 	}

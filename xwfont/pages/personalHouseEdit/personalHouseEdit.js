@@ -3,7 +3,9 @@ var plana = require('../../comm/script/plana')
 var config = require('../../comm/script/config')
 Page({
   data:{
+    id:0,
     uploadImg: '',
+    uploadImgUrl:'',
     houseName: '',
     houseType: 0,
     houseTypeArray: ['住宅', '仓库'],
@@ -18,6 +20,9 @@ Page({
       var params = {
         id: options.id
       }
+      that.setData({
+         id:options.id
+        })
     }else{
       var params = {}
     }
@@ -26,9 +31,11 @@ Page({
       if (res.data.status){
         var data = res.data.data
         that.setData({
-          uploadImg: data.uploadImg,
+          uploadImg: data.imgId,
+          uploadImgUrl:data.uploadImg,
           houseName: data.houseName,
-          houseType: data.houseType,
+          houseTypeIndex: data.houseType,
+          houseType: that.data.houseTypeArray[data.houseType],
           remark: data.remark
         })
       }
@@ -37,36 +44,22 @@ Page({
 		});
   },
   savePersonInfo: function(e) {
+    var that = this;
     var data = e.detail.value
     console.log(data);
-    // wx.setStorage({
-    //   key: 'person_info',
-    //   data: {
-    //     name: data.name,
-    //     nickName: data.nickName,
-    //     gender: data.gender,
-    //     age: data.age,
-    //     birthday: data.birthday,
-    //     constellation: data.constellation,
-    //     company: data.company,
-    //     school: data.school,
-    //     tel: data.tel,
-    //     email:data.email,
-    //     intro: data.intro
-    //   },
-    //   success: function(res){
-    //     wx.showToast({
-    //       title: '修改成功',
-    //       icon: 'success',
-    //       duration: 2000
-    //     })
-    //     setTimeout(function(){
-    //       wx.navigateTo({
-    //         url: '../personInfo/personInfo'
-    //       })
-    //     },2000)
-    //   }
-    // })
+    var params = data;
+    params.vt = 1;
+    var url = config.apiList.plana.getHouseInfoAdd
+    if (params.id != "" && params.id != null) {
+      url = config.apiList.plana.getHouseInfo
+    }
+    plana.formSubmit.call(that,url,params,function(res){
+      if(res.data.status){
+        wx.switchTab({
+            url: '/pages/personalHouse/personalHouse'
+        })
+      }
+		});
   },
   changehouseType: function(e) {
     var houseTypeIndex = e.detail.value
@@ -103,5 +96,43 @@ Page({
         constellation: this.data.constellationArray[this.data.constellationIndex]
       })
     }
-  }
+  },
+  chooseImg:function(){
+      var that = this;
+        wx.chooseImage({
+            count: 1, // 默认9
+            sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+            sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+            success: function (res) {
+                var tempFilePaths = res.tempFilePaths;
+                var session_id = wx.getStorageSync('PHPSESSID');//本地取存储的sessionID  
+                if (session_id != "" && session_id != null) {
+                  var header = { 'content-type': 'application/x-www-form-urlencoded', 'Cookie': 'JSESSIONID=' + session_id }
+                } else {
+                  var header = { 'content-type': 'application/x-www-form-urlencoded'     }
+                }  
+                wx.uploadFile({
+                    url: config.apiList.plana.fileUpload,
+                    filePath: tempFilePaths[0],
+                    name: 'Filedata',
+                    header:header,
+                    formData:{
+                        'user': 'test'
+                    },
+                    success: function(res){
+                      console.log(res);
+                        var data = JSON.parse(res.data)
+                        // console.log(data.status)
+                        if(data.status){
+                          // console.log(data.imgurl)
+                          that.setData({
+                            uploadImg: data.imgid,
+                            uploadImgUrl:data.imgurl,
+                          })
+                        }
+                    }
+                })
+            }
+        })
+    }
 })

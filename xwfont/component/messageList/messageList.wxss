@@ -23,7 +23,7 @@
     display:flex;
 }
 .film-cover {
-    flex: 1;
+    flex: 2;
     overflow: hidden;
 }
 .file-intro {
@@ -39,6 +39,10 @@
 }
 .film-top{
     display:flex;
+}
+.film-time{
+    font-size: 20rpx;
+    color: #999;
 }
 .film-author{
     flex: 1;

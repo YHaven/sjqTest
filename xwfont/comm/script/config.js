@@ -20,6 +20,7 @@ module.exports = {
     apiList: {
         plana:{
             business:4,
+            fileUpload:zhencomehost+'/plana/file!upfile.action',
             login:zhencomehost+'/plana/index!alogin.action',
             // getMessageList:zhencomehost+'/plana/msg!list.action',
             getMessageList: zhencomehost + '/plana/msg!msglist.action',
@@ -29,6 +30,7 @@ module.exports = {
             getHouseList: zhencomehost + '/plana/house!list.action',
             // getHouseInfo: zhencomehost + '/tempdata/houseoper.json',
             getHouseInfo: zhencomehost +'/plana/house!modify.action',
+            getHouseInfoAdd: zhencomehost +'/plana/house!add.action',
             getRoomList:zhencomehost+'/tempdata/roomlist.json',
             getRoomInfo:zhencomehost+'/tempdata/roomoper.json'
         },

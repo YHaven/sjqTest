@@ -11,7 +11,7 @@
                </view>
                <view class="file-intro">
                     <view class="film-top">{{filmItem.title}}</view>
-                    <view class="film-top">{{filmItem.timer}}</view>
+                    <view class="film-time">{{filmItem.timer}}</view>
                     <view class="film-top" style="display:none;">
                       
                         <view class="film-author">{{filmItem.author}}</view>
