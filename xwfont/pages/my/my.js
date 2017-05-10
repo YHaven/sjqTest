@@ -3,10 +3,10 @@ var app = getApp();
 Page({
   data:{
     gridList: [
-      {enName:'favorite', zhName:'我的操作'},
+      // {enName:'favorite', zhName:'我的操作'},
       // {enName:'history', zhName:'浏览记录'},
       // {enName:'shake', zhName:'摇一摇'},
-      {enName:'gallery', zhName:'相册'},
+      // {enName:'gallery', zhName:'相册'},
       {enName:'setting', zhName:'设置'}
     ],
     skin: ''
