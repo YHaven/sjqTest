@@ -31,8 +31,11 @@ module.exports = {
             // getHouseInfo: zhencomehost + '/tempdata/houseoper.json',
             getHouseInfo: zhencomehost +'/plana/house!modify.action',
             getHouseInfoAdd: zhencomehost +'/plana/house!add.action',
-            getRoomList:zhencomehost+'/tempdata/roomlist.json',
-            getRoomInfo:zhencomehost+'/tempdata/roomoper.json'
+            // getRoomList:zhencomehost+'/tempdata/roomlist.json',
+            // getRoomInfo:zhencomehost+'/tempdata/roomoper.json',
+            getRoomList: zhencomehost + '/plana/room!list.action',
+            getRoomInfo: zhencomehost + '/plana/room!modify.action',
+            getRoomInfoAdd: zhencomehost + '/plana/room!add.action'
         },
         popular: 'https://api.douban.com/v2/movie/in_theaters',
         coming: 'https://api.douban.com/v2/movie/coming_soon',
