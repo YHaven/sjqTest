@@ -27,14 +27,14 @@ Page({
 	},
 	onPullDownRefresh: function() {
 		var that = this
-		that.setData({
-			hasMore: true,
-			showLoading: true
-		})
-		var data = {
-			id: this.data.messageDetailId
-		}
-		this.onLoad(data)
+		// that.setData({
+		// 	hasMore: true,
+		// 	showLoading: true
+		// })
+		// var data = {
+		// 	id: this.data.messageDetailId
+		// }
+		// this.onLoad(data)
 	},
 	onReachBottom: function() {
 		var that = this
