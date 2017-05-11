@@ -9,7 +9,6 @@ Page({
     data:{}
   },
   onLoad:function(options){
-    var birthdayEndDate = util.getDate()
     var that = this
     wx.showNavigationBarLoading()
     that.setData({

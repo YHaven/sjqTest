@@ -9,11 +9,11 @@ Page({
     data:{}
   },
   onLoad:function(options){
-    var birthdayEndDate = util.getDate()
     var that = this
     wx.showNavigationBarLoading()
     that.setData({
-          parentid:options.parentid
+          // parentid:options.parentid
+      parentid: 4
         })
     if (options.id){
       var params = {
@@ -23,15 +23,19 @@ Page({
          id:options.id
         })
     }else{
-      var params = {}
+      var params = {
+        // renterId: options.parentid
+        renterId: 4
+      }
     }
 		
 		plana.getPersonalInfo.call(that,config.apiList.plana.getRentalInfo,params,function(res){
       if (res.data.status){
         that.setData({
           data:res.data.data,
-          parentData:res.data.data.house,
-          parentid:res.data.data.house.id
+          parentData:res.data.data.renter,
+          parentid: res.data.data.renter.id,
+          roomData: res.data.data.room
         })
       }
      
@@ -69,6 +73,42 @@ Page({
         {data: thatData}
       )
     }
+  },
+  //计算水电煤
+  sdmAllCount: function () {
+    var that = this
+    var rantalData = that.data.data
+    var roomData = that.data.roomData
+    //电费
+    var electricNow = 0;
+    if (rantalData.electricNow) electricNow = Number(rantalData.electricNow)
+    var electricResult = (electricNow - Number(rantalData.electricPre)) * roomData.electricPrice
+    //水费
+    var waterNow = 0;
+    if (rantalData.waterNow) waterNow = Number(rantalData.waterNow)
+    var waterResult = (waterNow - Number(rantalData.waterPre)) * roomData.waterPrice
+    //燃气费
+    var gascNow = 0;
+    if (rantalData.gascNow) gascNow = Number(rantalData.gascNow)
+    var gasResult = (gascNow - Number(rantalData.gasPre)) * roomData.gasPrice
+    //总计
+    var sdmCount = electricResult + waterResult + gasResult
+    var allCount = sdmCount + rantalData.rental
+
+    console.log('电费' + sdmCount + allCount)
+
+    var newData = that.data.data
+    console.log('s费' + electricResult)
+
+    newData.sdmCount = sdmCount
+    newData.allCount = allCount
+    console.log(newData)
+    that.setData({
+      data: newData,
+      electricResult: electricResult,
+      waterResult: waterResult,
+      gasResult: gasResult
+    })
   },
   chooseImg:function(){
       var that = this;

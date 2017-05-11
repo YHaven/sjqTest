@@ -4,7 +4,7 @@
     <view class="loading">玩命加载中…</view>
 </block>
 <block wx:else>
-    <view class="text-c">房屋：{{parentData.houseName}}</view>
+    <view class="text-c">{{parentData.room.house.houseName+'-'+parentData.room.roomName+'-'+parentData.renterName}}</view>
     <view class="film">
         <block wx:for="{{dataList}}" wx:for-index="dataIndex" wx:for-item="dataItem" wx:key="data">
             <view data-id="{{dataItem.id}}" data-index="{{dataIndex}}" class="film-item" catchtap="showOpera">

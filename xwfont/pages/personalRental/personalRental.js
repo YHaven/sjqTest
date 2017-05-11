@@ -25,6 +25,7 @@ Page({
     } else {
       var params = {}
     }
+    params.vt = 1;
     params.page = 1;
     that.setData({
       dataList: []
@@ -32,7 +33,7 @@ Page({
 
     plana.getPersonalList.call(that, config.apiList.plana.getRentalList, params, function (res) {
       that.setData({
-        parentData: res.data.house
+        parentData: res.data.renter
       })
       wx.hideNavigationBarLoading()
     });
