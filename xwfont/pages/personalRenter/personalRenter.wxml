@@ -4,6 +4,7 @@
     <view class="loading">玩命加载中…</view>
 </block>
 <block wx:else>
+    <view class="text-c">{{parentData.house.houseName +'-'+parentData.roomName}}</view>
     <view class="film">
         <block wx:for="{{dataList}}" wx:for-index="dataIndex" wx:for-item="dataItem" wx:key="data">
             <view data-id="{{dataItem.id}}" data-index="{{dataIndex}}" class="film-item" catchtap="showOpera">
@@ -11,10 +12,10 @@
                   <image src="{{dataItem.uploadImg}}" class="film-cover-img"></image>
                </view>
                <view class="file-intro">
-                    <view class="house-name">{{dataItem.houseName}}</view>
-                    <view class="house-count">住宅{{dataItem.allCount}}套,空闲{{dataItem.emptyCount}}套</view>
+                     <view class="house-name">{{dataItem.renterName}}</view>
+                    <view class="house-count">{{dataItem.renterPhone}}</view>
                     <view class="opera-block" wx-if="{{dataItem.show}}">
-                        <view data-id="{{dataItem.id}}" catchtap="viewData" class="blue-btn">浏览房间</view>
+                        <view data-id="{{dataItem.id}}" catchtap="viewData" class="blue-btn">账单</view>
                         <view data-id="{{dataItem.id}}" catchtap="editData" class="blue-btn">编辑</view>
                         <view data-id="{{dataItem.id}}" catchtap="deleteData" class="blue-btn">删除</view>
                     </view>
@@ -28,8 +29,5 @@
             <view class="loading-tip">没有更多内容了</view>
         </block>
     </view>
-    <navigator url="../personalHouseEdit/personalHouseEdit" class="add-btn">新增</navigator>
+    <navigator url="../personalRenterEdit/personalRenterEdit?parentid={{parentid}}" class="add-btn">新增</navigator>
 </block>
-
-<import src="../../component/message/message.wxml"/>
-<template is="message" data="{{message: message}}"/>

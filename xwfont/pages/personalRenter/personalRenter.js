@@ -30,9 +30,9 @@ Page({
       dataList: []
     })
 
-    plana.getPersonalList.call(that, config.apiList.plana.getRoomList, params, function (res) {
+    plana.getPersonalList.call(that, config.apiList.plana.getRenterList, params, function (res) {
       that.setData({
-        parentData: res.data.house
+        parentData: res.data.room
       })
       wx.hideNavigationBarLoading()
     });
@@ -58,7 +58,7 @@ Page({
 			var params = {
 						page:that.data.start
 					}
-			plana.getPersonalList.call(that,config.apiList.plana.getRoomList,params);
+			plana.getPersonalList.call(that,config.apiList.plana.getRenterList,params);
 		}
 	},
   showOpera:function(e){
@@ -83,13 +83,13 @@ Page({
 	viewData:function(e){
 		var data = e.currentTarget.dataset;
 		wx.navigateTo({
-			url: "../personalRenter/personalRenter?parentid=" + data.id
+			url: "../personalRental/personalRental?parentid=" + data.id
 		})
 	},
   editData:function(e){
 		var data = e.currentTarget.dataset;
 		wx.navigateTo({
-			url: "../personalRoomEdit/personalRoomEdit?id=" + data.id
+			url: "../personalRenterEdit/personalRenterEdit?id=" + data.id
 		})
 	},
 	deleteData:function(e){
@@ -100,11 +100,11 @@ Page({
 			id:data.id
 		};
     params.vt = 1;
-    var url = config.apiList.plana.getRoomInfoDelete
+    var url = config.apiList.plana.getRenterInfoDelete
 
 		wx.showModal({
 			title: '提示',
-			content: ' 确定删除？',
+			content: '确定删除？',
 			success: function(res) {
 				if (res.confirm) {
 					plana.dataDelete.call(that,url,params,function(res){
@@ -117,6 +117,8 @@ Page({
 				}
 			}
 		})
+    
+		
 	},
 	addData:function(){
 

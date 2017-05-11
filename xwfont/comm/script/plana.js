@@ -164,7 +164,7 @@ function getPersonalList(url, params, cb, fail_cb){
             showLoading: false
           })
           message.show.call(that, {
-            content: '网络开小差了',
+            content: res.data.errorinfo,
             icon: 'offline',
             duration: 3000
           })
@@ -280,10 +280,54 @@ function formSubmit(url, params, cb, fail_cb){
     })
 }
 
+function dataDelete(url, params, cb, fail_cb){
+   var that = this
+   message.hide.call(that)
+
+   var session_id = wx.getStorageSync('PHPSESSID');//本地取存储的sessionID  
+   if (session_id != "" && session_id != null) {
+     var header = { 'content-type': 'application/x-www-form-urlencoded', 'Cookie': 'JSESSIONID=' + session_id }
+   } else {
+     var header = { 'content-type': 'application/x-www-form-urlencoded'     }
+   }  
+
+   wx.request({
+      url: url,
+      data:params,
+      method: 'POST', 
+      header: header,
+      success: function(res){
+        if(res.data.status === true){
+          
+        }else{
+          message.show.call(that, {
+            content: '网络开小差了',
+            icon: 'offline',
+            duration: 3000
+          })
+        }
+        wx.stopPullDownRefresh()
+        typeof cb == 'function' && cb(res)
+      },
+      fail: function() {
+        that.setData({
+            showLoading: false
+        })
+        message.show.call(that,{
+          content: '网络开小差了',
+          icon: 'offline',
+          duration: 3000
+        })
+        wx.stopPullDownRefresh()
+        typeof fail_cb == 'function' && fail_cb()
+      }
+    })
+}
 
 module.exports = {
   serializeArrayToJson:serializeArrayToJson,
   formSubmit:formSubmit,
+  dataDelete:dataDelete,
   getMessageList: getMessageList,
   getMessageDetail:getMessageDetail,
   getPersonalList:getPersonalList,

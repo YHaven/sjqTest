@@ -31,11 +31,24 @@ module.exports = {
             // getHouseInfo: zhencomehost + '/tempdata/houseoper.json',
             getHouseInfo: zhencomehost +'/plana/house!modify.action',
             getHouseInfoAdd: zhencomehost +'/plana/house!add.action',
+            getHouseInfoDelete: zhencomehost +'/plana/house!delete.action',
             // getRoomList:zhencomehost+'/tempdata/roomlist.json',
             // getRoomInfo:zhencomehost+'/tempdata/roomoper.json',
             getRoomList: zhencomehost + '/plana/room!list.action',
             getRoomInfo: zhencomehost + '/plana/room!modify.action',
-            getRoomInfoAdd: zhencomehost + '/plana/room!add.action'
+            getRoomInfoAdd: zhencomehost + '/plana/room!add.action',
+            getRoomInfoDelete: zhencomehost +'/plana/room!delete.action',
+
+            getRenterList: zhencomehost + '/plana/renter!list.action',
+            getRenterInfo: zhencomehost + '/plana/renter!modify.action',
+            getRenterInfoAdd: zhencomehost + '/plana/renter!add.action',
+            getRenterInfoDelete: zhencomehost + '/plana/renter!delete.action',
+
+            getRentalList: zhencomehost + '/plana/rental!list.action',
+            getRentalInfo: zhencomehost + '/plana/rental!modify.action',
+            getRentalInfoAdd: zhencomehost + '/plana/rental!add.action',
+            getRentalInfoDelete: zhencomehost + '/plana/rental!delete.action',
+            getRentalInfoConfirmPay: zhencomehost + '/plana/rental!confirmPay.action'
         },
         popular: 'https://api.douban.com/v2/movie/in_theaters',
         coming: 'https://api.douban.com/v2/movie/coming_soon',

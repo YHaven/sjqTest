@@ -1,0 +1,95 @@
+<form bindsubmit="savePersonInfo" class="subForm">
+    <input type="hidden" id="renterId" name="renterId" value="{{parentid}}" style="display:none;"/>
+    <input type="te" name="id" value="{{id}}" style="display:none;"/>
+
+
+
+    <view class="form-list">
+        <view class="form-item">
+            <view class="form-item-hd">收租日期</view>
+            <view class="form-item-bd">
+                <picker mode="date" value="{{data.rentalTime}}" bindchange="changeRentalTime">
+                    <view class="picker">
+                    当前选择: {{rentalTime}}
+                    </view>
+                </picker>
+                <!--<input type="text" name="rentalTime" value="{{data.rentalTime}}" placeholder="" />-->
+            </view>
+        </view>
+        <view class="form-item">
+            <view class="form-item-hd">实收租金</view>
+            <view class="form-item-bd">
+                <input type="digit" name="rental" value="{{data.rental}}" placeholder="0.00" maxlength="11"/>
+            </view>
+        </view>
+        <view class="form-item">
+            <view class="form-item-hd">备注</view>
+            <view class="form-item-bd">
+                <input type="text" name="remark" value="{{data.remark}}" placeholder=""/>
+            </view>
+        </view>
+    </view>
+    <view class="form-list">
+        <view class="form-item">
+            <view class="form-item-hd">水电煤</view>
+            <view class="form-item-bd">
+                <input type="digit" name="sdmCount" value="{{data.sdmCount}}" readonly placeholder="0.0" maxlength="11"/>
+            </view>
+        </view>
+        <view class="form-item">
+            <view class="form-item-hd">总计</view>
+            <view class="form-item-bd">
+                <input type="digit" name="allCount" value="{{data.allCount}}" readonly placeholder="0.0" maxlength="11"/>
+            </view>
+        </view>
+    </view>
+    <view class="form-list">
+        <view class="form-item">
+            <view class="form-item-hd">电表度数</view>
+            <view class="form-item-bd">
+                <input type="digit" name="electricNow" value="{{data.electricNow}}" placeholder="0.0" maxlength="11"/>
+            </view>
+        </view>
+        <view class="form-item">
+            <view class="form-item-hd">水表度数</view>
+            <view class="form-item-bd">
+                <input type="digit" name="waterNow" value="{{data.waterNow}}" placeholder="0.0" maxlength="11"/>
+            </view>
+        </view>
+        <view class="form-item">
+            <view class="form-item-hd">燃气度数</view>
+            <view class="form-item-bd">
+                <input type="digit" name="gasNow" value="{{data.gasNow}}" placeholder="0.0" maxlength="11"/>
+            </view>
+        </view>
+    </view>
+    <view class="form-list">
+        <view class="form-item">
+            <view class="form-item-hd">电表度数</view>
+            <view class="form-item-bd">
+                {{data.electricPre}}
+            </view>
+        </view>
+        <view class="form-item">
+            <view class="form-item-hd">水表度数</view>
+            <view class="form-item-bd">
+                {{data.waterPrice}}
+            </view>
+        </view>
+        <view class="form-item">
+            <view class="form-item-hd">燃气度数</view>
+            <view class="form-item-bd">
+                 {{data.gasPrice}}
+            </view>
+        </view>
+    </view>
+    <view class="form-list">
+        <view class="form-item">
+            <view class="form-item-hd">其他费用</view>
+            <view class="form-item-bd">
+                <input type="digit" name="otherPrice" value="{{data.otherPrice}}" placeholder="0.0" maxlength="5"/>
+            </view>
+        </view>
+    </view>
+    <button formType="submit" class="edit-btn">保 存</button>
+</form>

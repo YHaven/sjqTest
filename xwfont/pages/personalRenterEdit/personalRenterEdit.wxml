@@ -1,0 +1,132 @@
+<form bindsubmit="savePersonInfo" class="subForm">
+    <input type="hidden" id="roomId" name="roomId" value="{{parentid}}" style="display:none;"/>
+    <input type="te" name="id" value="{{id}}" style="display:none;"/>
+
+
+
+    <view class="form-list">
+        <view class="form-item">
+            <view class="form-item-hd">租客照片</view>
+            <view class="form-item-bd">
+                <input type="hidden" id="uploadImg" class="uploadImg" name="uploadImg" value="{{uploadImg}}" style="display:none;"/>
+                <span bindtap="chooseImg" class="selectFile" wx:if="{{uploadImgUrl == ''}}">请选择照片</span>
+                <span bindtap="chooseImg" class="selectFile" wx:if="{{uploadImgUrl != ''}}">{{uploadImgUrl}}</span>
+                <!--<input type="text" name="uploadImgUrl" value="{{uploadImgUrl}}" bindtap="chooseImg" placeholder="请选择主图"/>-->
+            </view>
+        </view>
+        <view class="form-item">
+            <view class="form-item-hd">租客姓名</view>
+            <view class="form-item-bd">
+                <input type="text" name="renterName" value="{{data.renterName}}" placeholder="租客姓名" maxlength="12"/>
+            </view>
+        </view>
+        <view class="form-item">
+            <view class="form-item-hd">电话号码</view>
+            <view class="form-item-bd">
+                <input type="number" name="renterPhone" value="{{data.renterPhone}}" placeholder="暂未填写电话号码" maxlength="11"/>
+            </view>
+        </view>
+        <view class="form-item">
+            <view class="form-item-hd">身份证</view>
+            <view class="form-item-bd">
+                <input type="idcard" name="cid" value="{{data.cid}}" placeholder="暂无身份信息" />
+            </view>
+        </view>
+        <view class="form-item">
+            <view class="form-item-hd">备注</view>
+            <view class="form-item-bd">
+                <input type="text" name="remark" value="{{data.remark}}" placeholder="备注信息" />
+            </view>
+        </view>
+    </view>
+    <view class="form-list">
+        <view class="form-item">
+            <view class="form-item-hd">起租日期</view>
+            <view class="form-item-bd">
+                <picker mode="date" value="{{data.startTime}}" start="" end="{{data.endTime}}" bindchange="changeStartTime">
+                    <view class="picker">
+                        {{data.startTime}}
+                    </view>
+                </picker>
+                <!--<input type="date" name="startTime" value="{{data.startTime}}" placeholder="" />-->
+            </view>
+        </view>
+        <view class="form-item">
+            <view class="form-item-hd">到租日期</view>
+            <view class="form-item-bd">
+                <picker mode="date" value="{{data.endTime}}" start="{{data.startTime}}" end="" bindchange="changeEndTime">
+                    <view class="picker">
+                        {{data.endTime}}
+                    </view>
+                </picker>
+                <!--<input type="date" name="endTime" value="{{data.endTime}}" placeholder=""/>-->
+            </view>
+        </view>
+        <view class="form-item">
+            <view class="form-item-hd">缴费周期</view>
+            <view class="form-item-bd">
+                <input type="number" name="cycleTime" value="{{data.cycleTime}}" placeholder="0" maxlength="5"/>
+            </view>
+        </view>
+        <view class="form-item">
+            <view class="form-item-hd">每期租金</view>
+            <view class="form-item-bd">
+                <input type="digit" name="money" value="{{data.money}}" placeholder="0.00" maxlength="11"/>
+            </view>
+        </view>
+
+
+        <view class="form-item">
+            <view class="form-item-hd">押金</view>
+            <view class="form-item-bd">
+                <input type="digit" name="deposit" value="{{data.deposit}}" placeholder="0.00" maxlength="11"/>
+            </view>
+        </view>
+        <view class="form-item">
+            <view class="form-item-hd">居住人数</view>
+            <view class="form-item-bd">
+                <input type="number" name="renterNumber" value="{{data.renterNumber}}" placeholder="0" maxlength="5"/>
+            </view>
+        </view>
+    </view>
+    <view class="form-list">
+        <view class="form-item">
+            <view class="form-item-hd">天数提醒</view>
+            <view class="form-item-bd">
+                <input type="number" name="remindDay" value="{{data.remindDay}}" placeholder="0" maxlength="5"/>
+            </view>
+        </view>
+        <view class="form-item">
+            <view class="form-item-hd">提醒时间</view>
+            <view class="form-item-bd">
+                <picker mode="time" value="{{data.remindTime}}" bindchange="changeRemindTime">
+                    <view class="picker">
+                    {{data.remindTime}}
+                    </view>
+                </picker>
+                <!--<input type="time" name="remindTime" value="{{data.remindTime}}" placeholder="00:00" maxlength="5"/>-->
+            </view>
+        </view>
+    </view>
+    <view class="form-list">
+        <view class="form-item">
+            <view class="form-item-hd">电表度数</view>
+            <view class="form-item-bd">
+                <input type="digit" name="electric" value="{{data.electric}}" placeholder="0.0" maxlength="5"/>
+            </view>
+        </view>
+        <view class="form-item">
+            <view class="form-item-hd">水表度数</view>
+            <view class="form-item-bd">
+                <input type="digit" name="water" value="{{data.water}}" placeholder="0.0" maxlength="5"/>
+            </view>
+        </view>
+        <view class="form-item">
+            <view class="form-item-hd">燃气度数</view>
+            <view class="form-item-bd">
+                <input type="digit" name="gas" value="{{data.gas}}" placeholder="0.0" maxlength="5"/>
+            </view>
+        </view>
+    </view>
+    <button formType="submit" class="edit-btn">保 存</button>
+</form>

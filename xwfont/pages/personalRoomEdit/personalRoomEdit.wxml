@@ -1,0 +1,45 @@
+<form bindsubmit="savePersonInfo" class="subForm">
+    <input type="hidden" id="houseId" name="houseId" value="{{parentid}}" style="display:none;"/>
+    <input type="te" name="id" value="{{id}}" style="display:none;"/>
+
+
+
+    <view class="form-list">
+        <view class="form-item">
+            <view class="form-item-hd">房间号</view>
+            <view class="form-item-bd">
+                <input type="text" name="roomName" value="{{data.roomName}}" placeholder="请输入名称" maxlength="5"/>
+            </view>
+        </view>
+        <view class="form-item">
+            <view class="form-item-hd">备注</view>
+            <view class="form-item-bd">
+                <input type="text" name="roomRemark" value="{{data.roomRemark}}" placeholder="请输入备注"/>
+            </view>
+        </view>
+    </view>
+    <view class="form-list">
+        <view class="form-item">
+            <view class="form-item-hd">电单价</view>
+            <view class="form-item-bd">
+                <input type="digit" name="electricPrice" value="{{data.electricPrice}}" placeholder="0.0" maxlength="5"/>
+            </view>
+        </view>
+        <view class="form-item">
+            <view class="form-item-hd">水单价</view>
+            <view class="form-item-bd">
+                <input type="digit" name="waterPrice" value="{{data.waterPrice}}" placeholder="0.0" maxlength="5"/>
+            </view>
+        </view>
+        <view class="form-item">
+            <view class="form-item-hd">燃气单价</view>
+            <view class="form-item-bd">
+                <input type="digit" name="gasPrice" value="{{data.gasPrice}}" placeholder="0.0" maxlength="5"/>
+            </view>
+        </view>
+    </view>
+    <view class="form-list">
+        
+    </view>
+    <button formType="submit" class="edit-btn">保 存</button>
+</form>

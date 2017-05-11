@@ -70,7 +70,7 @@ Page({
 	viewData:function(e){
 		var data = e.currentTarget.dataset;
 		wx.navigateTo({
-			url: "../personalRoom/personalRoom?id=" + data.id
+			url: "../personalRoom/personalRoom?parentid=" + data.id
 		})
 	},
 	editData:function(e){
@@ -81,9 +81,31 @@ Page({
 	},
 	deleteData:function(e){
 		var data = e.currentTarget.dataset;
-		wx.navigateTo({
-			url: "../personalHouseEdit/personalHouseEdit?id=" + data.id
+		var that = this;
+    
+    var params = {
+			id:data.id
+		};
+    params.vt = 1;
+    var url = config.apiList.plana.getHouseInfoDelete
+
+		wx.showModal({
+			title: '提示',
+			content: '确定删除？',
+			success: function(res) {
+				if (res.confirm) {
+					plana.dataDelete.call(that,url,params,function(res){
+						if(res.data.status){
+							that.onShow();
+						}
+					});
+				} else if (res.cancel) {
+					console.log('用户点击取消')
+				}
+			}
 		})
+    
+		
 	},
 
 	addData:function(){
