@@ -56,8 +56,9 @@ Page({
 		var that = this
 		if (!that.data.showLoading) {
 			var params = {
-						page:that.data.start
-					}
+        id: that.data.parentid,
+				page:that.data.start
+			}
 			plana.getPersonalList.call(that,config.apiList.plana.getRoomList,params);
 		}
 	},

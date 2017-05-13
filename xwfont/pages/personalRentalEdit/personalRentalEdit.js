@@ -12,8 +12,8 @@ Page({
     var that = this
     wx.showNavigationBarLoading()
     that.setData({
-          // parentid:options.parentid
-      parentid: 4
+          parentid:options.parentid
+      // parentid: 4
         })
     if (options.id){
       var params = {
@@ -24,18 +24,22 @@ Page({
         })
     }else{
       var params = {
-        // renterId: options.parentid
-        renterId: 4
+        renterId: options.parentid
+        // renterId: 4
       }
     }
 		
 		plana.getPersonalInfo.call(that,config.apiList.plana.getRentalInfo,params,function(res){
       if (res.data.status){
+        var resData = res.data.data;
+        if (!resData.electricNow) resData.electricNow = resData.electricPre
+        if (!resData.waterNow) resData.waterNow = resData.waterPre
+        if (!resData.gasNow) resData.gasNow = resData.gasPre
         that.setData({
-          data:res.data.data,
-          parentData:res.data.data.renter,
-          parentid: res.data.data.renter.id,
-          roomData: res.data.data.room
+          data: resData,
+          parentData: resData.renter,
+          parentid: resData.renter.id,
+          roomData: resData.room
         })
       }
      
@@ -55,11 +59,18 @@ Page({
       url = config.apiList.plana.getRentalInfo
     }
     plana.formSubmit.call(that,url,params,function(res){
-      if(res.data.status){
-        wx.navigateTo({
-          url: "../getRentalInfo/getRentalInfo?parentid=" + that.data.parentid
-        })
+      if (res.status||res.data.status){
+        // wx.navigateTo({
+        //   url: "../personalRental/personalRental?parentid=" + that.data.parentid
+        // })
+        wx.navigateBack()
         
+      }else{
+        wx.showToast({
+          title: res.data.errorinfo,
+          icon:'loading',
+          duration: 2000
+        })
       }
 		});
   },
@@ -72,6 +83,66 @@ Page({
       that.setData(
         {data: thatData}
       )
+    }
+  },
+  changeRental: function (e) {
+    var rval = e.detail.value
+    var that = this
+    if (rval != "null") {
+      var thatData = that.data.data
+      thatData.rental = Number(rval)
+      that.setData(
+        { data: thatData }
+      )
+      that.sdmAllCount()
+    }
+  },
+  changeElectric: function (e) {
+    var rval = e.detail.value
+    var that = this
+    if (rval != "null") {
+      var thatData = that.data.data
+      thatData.electricNow = Number(rval)
+      that.setData(
+        { data: thatData }
+      )
+      that.sdmAllCount()
+    }
+  },
+  changeWater: function (e) {
+    var rval = e.detail.value
+    var that = this
+    if (rval != "null") {
+      var thatData = that.data.data
+      thatData.waterNow = Number(rval)
+      that.setData(
+        { data: thatData }
+      )
+      that.sdmAllCount()
+    }
+  },
+  changeGas: function (e) {
+    var rval = e.detail.value
+    var that = this
+    if (rval != "null") {
+      var thatData = that.data.data
+      thatData.gasNow = Number(rval)
+      that.setData(
+        { data: thatData }
+      )
+      that.sdmAllCount()
+    }
+  },
+  changeOtherPrice: function (e) {
+    var rval = e.detail.value
+    var that = this
+    if (rval != "null") {
+      var thatData = that.data.data
+      thatData.otherPrice = Number(rval)
+      that.setData(
+        { data: thatData }
+      )
+      that.sdmAllCount()
     }
   },
   //计算水电煤
@@ -88,26 +159,27 @@ Page({
     if (rantalData.waterNow) waterNow = Number(rantalData.waterNow)
     var waterResult = (waterNow - Number(rantalData.waterPre)) * roomData.waterPrice
     //燃气费
-    var gascNow = 0;
-    if (rantalData.gascNow) gascNow = Number(rantalData.gascNow)
-    var gasResult = (gascNow - Number(rantalData.gasPre)) * roomData.gasPrice
+    var gasNow = 0;
+    if (rantalData.gasNow) gasNow = Number(rantalData.gasNow)
+    var gasResult = (gasNow - Number(rantalData.gasPre)) * roomData.gasPrice
     //总计
     var sdmCount = electricResult + waterResult + gasResult
-    var allCount = sdmCount + rantalData.rental
+    var allCount = sdmCount + Number(rantalData.rental)
+    if(rantalData.otherPrice){
+      allCount += Number(rantalData.otherPrice)
+    }
 
-    console.log('电费' + sdmCount + allCount)
-
+    
     var newData = that.data.data
-    console.log('s费' + electricResult)
 
-    newData.sdmCount = sdmCount
-    newData.allCount = allCount
+    newData.sdmCount = sdmCount.toFixed(2)
+    newData.allCount = allCount.toFixed(2)
     console.log(newData)
     that.setData({
       data: newData,
-      electricResult: electricResult,
-      waterResult: waterResult,
-      gasResult: gasResult
+      electricResult: electricResult.toFixed(2),
+      waterResult: waterResult.toFixed(2),
+      gasResult: gasResult.toFixed(2)
     })
   },
   chooseImg:function(){

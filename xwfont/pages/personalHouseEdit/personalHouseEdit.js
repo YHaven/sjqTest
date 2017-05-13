@@ -55,9 +55,10 @@ Page({
     }
     plana.formSubmit.call(that,url,params,function(res){
       if(res.data.status){
-        wx.switchTab({
-            url: '/pages/personalHouse/personalHouse'
-        })
+        // wx.switchTab({
+        //     url: '/pages/personalHouse/personalHouse'
+        // })
+        wx.navigateBack()
       }
 		});
   },

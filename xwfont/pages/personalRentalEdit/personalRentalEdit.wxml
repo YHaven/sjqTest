@@ -19,7 +19,7 @@
         <view class="form-item">
             <view class="form-item-hd">实收租金</view>
             <view class="form-item-bd">
-                <input type="digit" name="rental" value="{{data.rental}}" placeholder="0.00" maxlength="11" bindchange="sdmAllCount"/>
+                <input type="digit" name="rental" value="{{data.rental}}" placeholder="0.00" maxlength="11" bindchange="changeRental"/>
             </view>
         </view>
         <view class="form-item">
@@ -39,7 +39,8 @@
         <view class="form-item">
             <view class="form-item-hd">总计</view>
             <view class="form-item-bd">
-                <input type="digit" name="allCount" value="{{data.allCount}}" readonly placeholder="0.0" maxlength="11"/>
+              {{data.allCount}}
+                <input type="digit" name="allCount" value="{{data.allCount}}" style="display:none" placeholder="0.0" maxlength="11"/>
             </view>
         </view>
     </view>
@@ -57,19 +58,19 @@
         <view class="form-item">
             <view class="form-item-hd">电表度数</view>
             <view class="form-item-bd">
-                <input type="digit" name="electricNow" value="{{data.electricNow}}" placeholder="0.0" maxlength="11" bindblur="sdmAllCount"/>
+                <input type="digit" name="electricNow" value="{{data.electricNow}}" placeholder="0.0" maxlength="11" bindchange="changeElectric"/>
             </view>
         </view>
         <view class="form-item">
             <view class="form-item-hd">水表度数</view>
             <view class="form-item-bd">
-                <input type="digit" name="waterNow" value="{{data.waterNow}}" placeholder="0.0" maxlength="11" bindchange="sdmAllCount"/>
+                <input type="digit" name="waterNow" value="{{data.waterNow}}" placeholder="0.0" maxlength="11" bindchange="changeWater"/>
             </view>
         </view>
         <view class="form-item">
             <view class="form-item-hd">燃气度数</view>
             <view class="form-item-bd">
-                <input type="digit" name="gasNow" value="{{data.gasNow}}" placeholder="0.0" maxlength="11" bindchange="sdmAllCount"/>
+                <input type="digit" name="gasNow" value="{{data.gasNow}}" placeholder="0.0" maxlength="11" bindchange="changeGas"/>
             </view>
         </view>
     </view>
@@ -100,7 +101,7 @@
         <view class="form-item">
             <view class="form-item-hd">其他费用</view>
             <view class="form-item-bd">
-                <input type="digit" name="otherPrice" value="{{data.otherPrice}}" placeholder="0.0" maxlength="5"/>
+                <input type="digit" name="otherPrice" value="{{data.otherPrice}}" placeholder="0.0" bindchange="changeOtherPrice"/>
             </view>
         </view>
     </view>

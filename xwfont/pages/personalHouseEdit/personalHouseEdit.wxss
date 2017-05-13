@@ -62,6 +62,7 @@ page{background: #f4f4f4;}
 .form-item-bd {
     flex: 1;
     height: 60rpx;
+    line-height: 60rpx;
 }
 
 input, .input {

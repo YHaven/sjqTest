@@ -1,6 +1,6 @@
 {
   "pages": [
-    "pages/personalRentalEdit/personalRentalEdit",
+    
     "pages/start/index",
     "pages/popular/popular",
     "pages/messageContent/messageContent",
@@ -12,7 +12,7 @@
     "pages/personalRenter/personalRenter",
     "pages/personalRenterEdit/personalRenterEdit",
     "pages/personalRental/personalRental",
-    
+    "pages/personalRentalEdit/personalRentalEdit",
     "pages/coming/coming",
     "pages/top/top",
     "pages/search/search",

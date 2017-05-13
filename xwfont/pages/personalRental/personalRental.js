@@ -57,8 +57,10 @@ Page({
 		var that = this
 		if (!that.data.showLoading) {
 			var params = {
-						page:that.data.start
-					}
+        vt:1,
+        id: that.data.parentid,
+				page:that.data.start
+			}
 			plana.getPersonalList.call(that,config.apiList.plana.getRentalList,params);
 		}
 	},
@@ -121,6 +123,34 @@ Page({
     
 		
 	},
+  confirmPay: function (e) {
+    var data = e.currentTarget.dataset;
+    var that = this;
+
+    var params = {
+      id: data.id
+    };
+    params.vt = 1;
+    var url = config.apiList.plana.getRentalInfoConfirmPay
+
+    wx.showModal({
+      title: '提示',
+      content: '确定收款？',
+      success: function (res) {
+        if (res.confirm) {
+          plana.dataDelete.call(that, url, params, function (res) {
+            if (res.data.status) {
+              that.onShow();
+            }
+          });
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+
+
+  },
 	addData:function(){
 
 	}

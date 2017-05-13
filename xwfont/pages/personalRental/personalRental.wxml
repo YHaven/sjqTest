@@ -14,9 +14,11 @@
                <view class="file-intro">
                      <view class="house-name">{{dataItem.rentalTime}}账单</view>
                     <view class="house-count">{{dataItem.rental}}</view>
-                    <view class="opera-block" wx-if="{{dataItem.show}}">
-                        <view data-id="{{dataItem.id}}" catchtap="editData" class="blue-btn">编辑</view>
-                        <view data-id="{{dataItem.id}}" catchtap="deleteData" class="blue-btn">删除</view>
+                    <view class="opera-block" wx-if="{{dataItem.show ||dataItem.confirmPay==1 }}">
+                        <view data-id="{{dataItem.id}}" catchtap="editData" class="blue-btn" wx:if="{{dataItem.confirmPay==0}}">编辑</view>
+                        <view data-id="{{dataItem.id}}" catchtap="deleteData" class="blue-btn" wx:if="{{dataItem.confirmPay==0}}">删除</view>
+                         <view data-id="{{dataItem.id}}" catchtap="confirmPay" class="blue-btn" wx:if="{{dataItem.confirmPay==0}}">确认收款</view>
+                         <view data-id="{{dataItem.id}}"  class="blue-btn" wx:if="{{dataItem.confirmPay==1}}">已收款</view>
                     </view>
                </view>
             </view>

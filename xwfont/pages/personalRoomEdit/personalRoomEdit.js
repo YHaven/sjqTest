@@ -50,10 +50,10 @@ Page({
     }
     plana.formSubmit.call(that,url,params,function(res){
       if(res.data.status){
-        wx.navigateTo({
-          url: "../personalRoom/personalRoom?parentid=" + that.data.parentid
-        })
-        
+        // wx.navigateTo({
+        //   url: "../personalRoom/personalRoom?parentid=" + that.data.parentid
+        // })
+        wx.navigateBack()
       }
 		});
   },
