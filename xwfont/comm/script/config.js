@@ -48,7 +48,10 @@ module.exports = {
             getRentalInfo: zhencomehost + '/plana/rental!modify.action',
             getRentalInfoAdd: zhencomehost + '/plana/rental!add.action',
             getRentalInfoDelete: zhencomehost + '/plana/rental!delete.action',
-            getRentalInfoConfirmPay: zhencomehost + '/plana/rental!confirmPay.action'
+            getRentalInfoConfirmPay: zhencomehost + '/plana/rental!confirmPay.action',
+
+            getShowRentalList: zhencomehost + '/plana/rentalshow!list.action'
+
         },
         popular: 'https://api.douban.com/v2/movie/in_theaters',
         coming: 'https://api.douban.com/v2/movie/coming_soon',

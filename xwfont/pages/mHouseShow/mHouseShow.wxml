@@ -1,0 +1,31 @@
+<view class="nav-block">
+        <view class="nav-item" data-url="../showRentalList/showRentalList?confirmPay=0" catchtap="viewNavDetail">
+            <view class="icon iconfont icon-news_hot_light"></view>
+            <view class="nav-name">未收账单</view>
+        </view>
+        <view class="nav-item" data-url="../showRentalList/showRentalList?confirmPay=1" catchtap="viewNavDetail">
+            <view class="icon iconfont icon-news_hot_fill_light"></view>
+            <view class="nav-name">到账账单</view>
+        </view>
+</view>
+
+<view class="nav-block white-nav-block">
+        <view class="nav-item">
+            <view class="nav-val">0.00</view>
+            <view class="nav-name">本月收入</view>
+        </view>
+        <view class="nav-item">
+            <view class="nav-val">0.00</view>
+            <view class="nav-name">本月支出</view>
+        </view>
+        <view class="nav-item">
+            <view class="nav-val">0.00</view>
+            <view class="nav-name">今年结余</view>
+        </view>
+</view>
+
+
+<button class="bottom-botton" bindtap="setBill"><view class="icon iconfont icon-write"></view>记一笔</button>
+
+<import src="../../component/message/message.wxml"/>
+<template is="message" data="{{message: message}}"/>

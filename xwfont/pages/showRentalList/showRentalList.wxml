@@ -1,0 +1,32 @@
+
+
+<block wx:if="{{showLoading}}">
+    <view class="loading">玩命加载中…</view>
+</block>
+<block wx:else>
+    <view class="film">
+        <block wx:for="{{dataList}}" wx:for-index="dataIndex" wx:for-item="dataItem" wx:key="data">
+            <view data-id="{{dataItem.id}}" data-index="{{dataIndex}}" class="film-item" catchtap="showOpera">
+               <view class="film-cover">
+                  <view data-id="{{dataItem.id}}" wx:if="{{dataItem.confirmPay==1}}" style="text-align:center;margin-top:50rpx;">已收款</view>
+                  <view data-id="{{dataItem.id}}" wx:if="{{dataItem.confirmPay==0}}" style="text-align:center;margin-top:50rpx;">未收款</view>
+               </view>
+               <view class="file-intro">
+                     <view class="house-name">{{dataItem.rentalTime}}账单</view>
+                    <view class="house-count">{{dataItem.rental}}</view>
+                    <view class="opera-block" wx-if="{{dataItem.show ||dataItem.confirmPay==1 }}">
+                         <view data-id="{{dataItem.id}}" catchtap="confirmPay" class="blue-btn" wx:if="{{dataItem.confirmPay==0}}">确认收款</view>
+                         <view data-id="{{dataItem.id}}"  class="blue-btn" wx:if="{{dataItem.confirmPay==1}}">已收款</view>
+                    </view>
+               </view>
+            </view>
+        </block>
+        <block wx:if="{{hasMore}}">
+            <view class="loading-tip">拼命加载中…</view>
+        </block>
+        <block wx:else>
+            <view class="loading-tip">没有更多内容了</view>
+        </block>
+    </view>
+    <navigator url="../personalRentalEdit/personalRentalEdit?parentid={{parentid}}" class="add-btn">新增</navigator>
+</block>
