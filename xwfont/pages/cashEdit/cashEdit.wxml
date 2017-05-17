@@ -1,0 +1,47 @@
+<form bindsubmit="savePersonInfo" class="subForm">
+    <input type="hidden" id="houseId" name="houseId" value="{{parentid}}" style="display:none;"/>
+    <input type="te" name="id" value="{{id}}" style="display:none;"/>
+
+
+
+    <view class="form-list">
+        <view class="form-item">
+            <view class="form-item-hd">人员</view>
+            <view class="form-item-bd">
+                <input type="text" name="realName_" value="{{realName_}}" placeholder="请输入人员名称" maxlength="12"/>
+            </view>
+        </view>
+        <view class="form-item">
+            <view class="form-item-hd">收支类型</view>
+            <view class="form-item-bd">
+                <picker mode="selector" value="{{moneyTypeIndex}}" range="{{moneyTypeArray}}" bindchange="changemoneyType">
+                    <block wx:if="{{moneyType_ == ''}}">
+                        <view class="input input-placeholder">请选择类型</view>
+                        <input type="text" name="moneyType_" value="" class="hidden" maxlength="1"/>
+                    </block>
+                    <block wx:else>
+                        <view class="input">{{moneyTypeArray[moneyTypeIndex]}}</view>
+                        <input type="text" name="moneyType_" value="{{moneyType_}}" class="hidden" maxlength="1"/>
+                    </block>
+                </picker>
+            </view>
+        </view>
+        <view class="form-item">
+            <view class="form-item-hd">发生金额</view>
+            <view class="form-item-bd">
+                <input type="digit" name="cashCount_" value="{{cashCount_}}" placeholder="请输入金额" maxlength="11"/>
+            </view>
+        </view>
+        <view class="form-item">
+            <view class="form-item-hd">备注</view>
+            <view class="form-item-bd">
+                <input type="text" name="remarkContent_" value="{{remarkContent_}}" placeholder="请输入备注" />
+            </view>
+        </view>
+    </view>
+   
+    <view class="form-list">
+        
+    </view>
+    <button formType="submit" class="edit-btn">保 存</button>
+</form>

@@ -9,16 +9,28 @@ Page({
 	onShow:function(){
 		var that = this
 		wx.showNavigationBarLoading()
-		var params = {
-						page:1
-					}
+		var params = {}
 		that.setData({
       billData: {}
 		})
-    plana.getPersonalInfo.call(that,config.apiList.plana.getHouseList,params,function(res){
-			wx.hideNavigationBarLoading()
+    plana.getPersonalInfo.call(that, config.apiList.plana.getShowRentalAllCount,params,function(res){
+      if (res.data.status){
+        that.setData({
+          billData: res.data
+        })
+      }else{
+
+      }
+      
+      wx.hideNavigationBarLoading()
 		});
 	},
+  setBill: function (e) {
+    var data = e.currentTarget.dataset;
+    wx.navigateTo({
+      url: '../cashEdit/cashEdit'
+    })
+  },
   viewNavDetail: function (e) {
     var data = e.currentTarget.dataset;
     wx.navigateTo({

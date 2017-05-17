@@ -1,6 +1,6 @@
 {
   "pages": [
-    "pages/mHouseShow/mHouseShow",
+    
     "pages/start/index",
     "pages/popular/popular",
     "pages/messageContent/messageContent",
@@ -14,7 +14,9 @@
     "pages/personalRental/personalRental",
     "pages/personalRentalEdit/personalRentalEdit",
 
+    "pages/mHouseShow/mHouseShow",
     "pages/showRentalList/showRentalList",
+    "pages/cashEdit/cashEdit",
 
 
     "pages/coming/coming",

@@ -50,7 +50,10 @@ module.exports = {
             getRentalInfoDelete: zhencomehost + '/plana/rental!delete.action',
             getRentalInfoConfirmPay: zhencomehost + '/plana/rental!confirmPay.action',
 
-            getShowRentalList: zhencomehost + '/plana/rentalshow!list.action'
+            getShowRentalList: zhencomehost + '/plana/rentalshow!list.action',
+            getShowRentalAllCount: zhencomehost + '/plana/rentalshow!allCount.action',
+            getShowRentalAddCash: zhencomehost + '/plana/rentalshow!addCash.action'
+            
 
         },
         popular: 'https://api.douban.com/v2/movie/in_theaters',
