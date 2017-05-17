@@ -1,5 +1,5 @@
 <block wx:if="{{! showLoading}}">
-<view class="search-bar" style="display:none;">
+<view class="search-bar" style="display:-none;">
     <input class="search-txt" placeholder-class="search-txt-plc" bindfocus="viewSearch" placeholder="请输入关键词搜索" type="text"/>
 </view>
 <swiper class="banner" indicator-dots="true" autoplay="true">
