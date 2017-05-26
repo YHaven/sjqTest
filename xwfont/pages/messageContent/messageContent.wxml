@@ -9,9 +9,9 @@
         <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
         <view class="message-content" style="display:none;">{{content}}</view>
 
-        <view class="message-hot-response">
+        <view class="message-hot-response" style="display:none;">
             <view class="response-title clearfix">热门回复</view>
-            <view class="response-list" style="display:none;">
+            <view class="response-list" >
                 <view class="response-item clearfix">
                     <view class="head-img">
                         <image src="../../dist/images/nav-2.png"></image>
@@ -46,7 +46,7 @@
         </view>
     </view>
     <view class="message-bottom">
-        <span class="message-response" catchtap="onResponseMessage"><i class="icon iconfont icon-edit"></i>写回复</span>
+        <span class="message-response" catchtap="onResponseMessage" style="display:none;"><i class="icon iconfont icon-edit"></i>写回复</span>
         <span class="message-readcount">阅读:{{readnum}}</span>
     </view>
     <view class="block-mark" wx:if="{{! showBlock}}">

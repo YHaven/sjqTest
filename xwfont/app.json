@@ -1,7 +1,7 @@
 {
   "pages": [
     
-    "pages/start/index",
+    
     "pages/popular/popular",
     "pages/messageContent/messageContent",
     "pages/personalHouse/personalHouse",
@@ -17,7 +17,9 @@
     "pages/mHouseShow/mHouseShow",
     "pages/showRentalList/showRentalList",
     "pages/cashEdit/cashEdit",
+    "pages/cashList/cashList",
 
+    "pages/start/index",
 
     "pages/coming/coming",
     "pages/top/top",
@@ -56,11 +58,6 @@
       "iconPath": "dist/images/popular_icon.png",
       "selectedIconPath": "dist/images/popular_active_icon.png",
       "text": "消息"
-    }, {
-      "pagePath": "pages/coming/coming",
-      "iconPath": "dist/images/coming_icon.png",
-      "selectedIconPath": "dist/images/coming_active_icon.png",
-      "text": "惊喜"
     },
     {
       "pagePath": "pages/personalHouse/personalHouse",

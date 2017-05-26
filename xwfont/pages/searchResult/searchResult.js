@@ -23,11 +23,14 @@ Page({
 			title: options.keyword
 		})
 		douban.search.call(that, that.data.url, that.data.keyword, that.data.start, config.count, function(data){
-			if (data.subjects.length == 0) {
-				that.setData({
+			// if (data.subjects.length == 0) {
+			// 	that.setData({
+			// 		isNull: true
+			// 	})
+			// }
+			that.setData({
 					isNull: true
 				})
-			}
 		})
 	},
 	onPullDownRefresh: function() {

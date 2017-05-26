@@ -23,10 +23,10 @@ Page({
 				vt: '1',
 				page: that.data.start,
 				msgResource: that.data.msgResource,
-				// businessId: config.apiList.plana.business
-				businessId: 1
+				businessId: config.apiList.plana.business
+				// businessId: 1
 			};
-			plana.getMessageList.call(that, config.apiList.plana.getMessageList, params)
+			// plana.getMessageList.call(that, config.apiList.plana.getMessageList, params)
 		})
 	},
 	onPullDownRefresh: function() {
@@ -72,21 +72,21 @@ Page({
 	},
 	viewBannerDetail: function(e) {
 		var data = e.currentTarget.dataset
-		if (data.type == 'film') {
-			wx.navigateTo({
-				url: "../filmDetail/filmDetail?id=" + data.id
-			})
-		} else if (data.type == 'person') {
-			wx.navigateTo({
-				url: '../personDetail/personDetail?id=' + data.id
-			})
-		} else if (data.type == 'search') {
-			// stype(searchType) 0:关键词, 1:类型标签
-			var searchUrl = stype == 'keyword' ? config.search.byKeyword : config.search.byTag
-			wx.navigateTo({
-				url: '../searchResult/searchResult?url=' + encodeURIComponent(searchUrl) + '&keyword=' + keyword
-			})
-		}
+		// if (data.type == 'film') {
+		// 	wx.navigateTo({
+		// 		url: "../filmDetail/filmDetail?id=" + data.id
+		// 	})
+		// } else if (data.type == 'person') {
+		// 	wx.navigateTo({
+		// 		url: '../personDetail/personDetail?id=' + data.id
+		// 	})
+		// } else if (data.type == 'search') {
+		// 	// stype(searchType) 0:关键词, 1:类型标签
+		// 	var searchUrl = stype == 'keyword' ? config.search.byKeyword : config.search.byTag
+		// 	wx.navigateTo({
+		// 		url: '../searchResult/searchResult?url=' + encodeURIComponent(searchUrl) + '&keyword=' + keyword
+		// 	})
+		// }
 	},
 	viewSearch: function() {
 		wx.navigateTo({

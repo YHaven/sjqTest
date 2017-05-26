@@ -52,8 +52,9 @@ module.exports = {
 
             getShowRentalList: zhencomehost + '/plana/rentalshow!list.action',
             getShowRentalAllCount: zhencomehost + '/plana/rentalshow!allCount.action',
-            getShowRentalAddCash: zhencomehost + '/plana/rentalshow!addCash.action'
-            
+            getShowRentalAddCash: zhencomehost + '/plana/rentalshow!addCash.action',
+            // getCashList: zhencomehost + '/plana/rentalshow!cashList.action'
+            getCashList: zhencomehost + '/plana/rentalshow!list.action'
 
         },
         popular: 'https://api.douban.com/v2/movie/in_theaters',
@@ -73,7 +74,7 @@ header:'http://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83epBXIYAUnlcXcBzCFFiaGR3AzBezHic
     hotKeyword: ['杭州', '萧山', '盛达', '盛乐'],
     hotTag: ['热', '门', '标', '签'],
     bannerList: [
-        {type:'film', id: '26683290', imgUrl: url + '/images/banner_1.jpg'}
+        {type:'headbanner', id: '', imgUrl: zhencomehost + '/images/index-banner.jpg'}
     ],
     skinList: [
         {title: '公路', imgUrl: url + '/images/user_bg_1.jpg'},

@@ -1,4 +1,4 @@
-<block wx:if="{{! showLoading}}">
+
 <view class="search-bar" style="display:-none;">
     <input class="search-txt" placeholder-class="search-txt-plc" bindfocus="viewSearch" placeholder="请输入关键词搜索" type="text"/>
 </view>
@@ -9,12 +9,18 @@
         </swiper-item>
     </block>
 </swiper>
-</block>
+
+
+
 
 <import src="../../component/nav/nav.wxml"/>
 <template is="nav"/>
-
+<block wx:if="{{! showLoading}}">
+<!--
 <import src="../../component/messageList/messageList.wxml"/>
 <template is="messageList" data="{{films: films, hasMore: hasMore, showLoading: showLoading}}"/>
+-->
+
+</block>
 <import src="../../component/message/message.wxml"/>
 <template is="message" data="{{message: message}}"/>
