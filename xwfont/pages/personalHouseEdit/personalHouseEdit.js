@@ -3,7 +3,7 @@ var plana = require('../../comm/script/plana')
 var config = require('../../comm/script/config')
 Page({
   data:{
-    id:0,
+    id:'',
     uploadImg: '',
     uploadImgUrl:'',
     houseName: '',
