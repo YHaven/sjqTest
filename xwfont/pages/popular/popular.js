@@ -26,7 +26,7 @@ Page({
 				businessId: config.apiList.plana.business
 				// businessId: 1
 			};
-			// plana.getMessageList.call(that, config.apiList.plana.getMessageList, params)
+			plana.getMessageList.call(that, config.apiList.plana.getMessageList, params)
 		})
 	},
 	onPullDownRefresh: function() {

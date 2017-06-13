@@ -39,6 +39,13 @@
         </view>
     </view>
     <view class="form-list">
+        <view class="form-item">表格不会填写,请在白纸上手写并拍照上传</view>
+        <input type="hidden" id="dataImg" class="dataImg" name="dataImg" value="{{dataImg}}" style="display:none;"/>
+        <view class="form-item"><i class="icon iconfont icon-camera_light" style="font-size:76rpx;" bindtap="chooseDataImg"></i></view>
+        <view class="dataImg"><image src="{{dataImgUrl}}" class="dataImg-img"></image></view>
+        
+    </view>
+    <view class="form-list">
         
     </view>
     <button formType="submit" class="edit-btn">保 存</button>

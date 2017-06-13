@@ -5,8 +5,20 @@
 <block wx:else>
     <view class="film">
         <block wx:for="{{films}}" wx:for-index="filmIndex" wx:for-item="filmItem" wx:key="film">
-            <view data-id="{{filmItem.id}}" class="film-item" catchtap="viewMessageDetail">
-               <view class="film-cover">
+            <view data-id="{{filmItem.id}}" class="msg-item" catchtap="viewMessageDetail">
+               <view class="msg-alt">{{filmItem.alt}}</view>
+               <view class="msg-middle clearfix">
+                    <image src="{{filmItem.img}}" class="msg-img"></image>
+                    <view class="msg-title">
+                        <view class="title">{{filmItem.title}}</view>
+                        <view class="msg-author">{{filmItem.author}}</view>
+                    </view>
+               </view>
+               <view class="msg-bottom">
+                    <i class="icon iconfont icon-group"></i>{{filmItem.readnum}}
+                    <view class="msg-timer f-r"><i class="icon iconfont icon-countdown"></i>{{filmItem.timer}}</view>
+               </view>
+               <!--<view class="film-cover">
                   <image src="{{filmItem.img}}" class="film-cover-img"></image>
                </view>
                <view class="file-intro">
@@ -30,7 +42,7 @@
                         </view>
                     </view>
                     <view class="film-content">{{filmItem.alt}}</view>
-               </view>
+               </view>-->
             </view>
 
             <!--<view data-id="{{filmItem.id}}" class="film-item" catchtap="viewFilmDetail">
@@ -55,6 +67,8 @@
                 </view>
             </view>-->
         </block>
+
+        
         <block wx:if="{{hasMore}}">
             <view class="loading-tip">拼命加载中…</view>
         </block>

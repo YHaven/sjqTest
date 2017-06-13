@@ -1,4 +1,6 @@
 @import "../../comm/style/animation.wxss";
+@import "../../comm/style/reset.wxss";
+@import "../../comm/style/fontic.wxss";
 .film {
     box-sizing: border-box;
     width: 750rpx;
@@ -113,3 +115,12 @@
     text-align: center;
     color: #ccc;
 }
+
+
+.msg-item{width: 100%;border-bottom: 2rpx solid #ddd;padding-bottom:18rpx; box-shadow: 0 20rpx 40rpx #eee;}
+.msg-alt{padding: 18rpx 0rpx;font-size: 36rpx;}
+.msg-middle{margin-bottom: 10rpx;}
+.msg-img{width: 120rpx;height: 120rpx;float: left}
+.msg-title{margin-left: 160rpx;padding-top: 10rpx;}
+.msg-title .title{font-weight: bold;}
+.msg-timer{color: #dfbd00;}

@@ -20,6 +20,7 @@ module.exports = {
     apiList: {
         plana:{
             business:4,
+            host:zhencomehost,
             fileUpload:zhencomehost+'/plana/file!upfile.action',
             login:zhencomehost+'/plana/index!alogin.action',
             // getMessageList:zhencomehost+'/plana/msg!list.action',

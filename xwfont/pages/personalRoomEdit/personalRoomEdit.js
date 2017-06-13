@@ -6,6 +6,8 @@ Page({
     parentid:0,
     parentData:{},
     id:0,
+    dataImg: '',
+    dataImgUrl:'',
     data:{}
   },
   onLoad:function(options){
@@ -30,6 +32,8 @@ Page({
       if (res.data.status){
         that.setData({
           data:res.data.data,
+          dataImg: res.data.data.dataImgId,
+          dataImgUrl:res.data.data.dataImg,
           parentData:res.data.data.house,
           parentid:res.data.data.house.id
         })
@@ -116,7 +120,7 @@ Page({
                         'user': 'test'
                     },
                     success: function(res){
-                      console.log(res);
+                      // console.log(res);
                         var data = JSON.parse(res.data)
                         // console.log(data.status)
                         if(data.status){
@@ -124,6 +128,44 @@ Page({
                           that.setData({
                             uploadImg: data.imgid,
                             uploadImgUrl:data.imgurl,
+                          })
+                        }
+                    }
+                })
+            }
+        })
+    },
+    chooseDataImg:function(){
+      var that = this;
+        wx.chooseImage({
+            count: 1, // 默认9
+            sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+            sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+            success: function (res) {
+                var tempFilePaths = res.tempFilePaths;
+                var session_id = wx.getStorageSync('PHPSESSID');//本地取存储的sessionID  
+                if (session_id != "" && session_id != null) {
+                  var header = { 'content-type': 'application/x-www-form-urlencoded', 'Cookie': 'JSESSIONID=' + session_id }
+                } else {
+                  var header = { 'content-type': 'application/x-www-form-urlencoded'     }
+                }  
+                wx.uploadFile({
+                    url: config.apiList.plana.fileUpload,
+                    filePath: tempFilePaths[0],
+                    name: 'Filedata',
+                    header:header,
+                    formData:{
+                        'user': 'test'
+                    },
+                    success: function(res){
+                      // console.log(res);
+                        var data = JSON.parse(res.data)
+                        // console.log(data.status)
+                        if(data.status){
+                          // console.log(data.imgurl)
+                          that.setData({
+                            dataImg: data.imgid,
+                            dataImgUrl:config.apiList.plana.host+data.imgurlsmall,
                           })
                         }
                     }

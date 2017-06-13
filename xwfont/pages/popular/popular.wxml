@@ -16,10 +16,10 @@
 <import src="../../component/nav/nav.wxml"/>
 <template is="nav"/>
 <block wx:if="{{! showLoading}}">
-<!--
+
 <import src="../../component/messageList/messageList.wxml"/>
 <template is="messageList" data="{{films: films, hasMore: hasMore, showLoading: showLoading}}"/>
--->
+
 
 </block>
 <import src="../../component/message/message.wxml"/>
