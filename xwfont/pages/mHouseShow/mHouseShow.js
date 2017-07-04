@@ -19,6 +19,12 @@ Page({
         if(resData.monthOut == '.00'){
           resData.monthOut = '0.00'
         }
+        if(resData.monthIn == '.00'){
+          resData.monthIn = '0.00'
+        }
+        if(resData.yearIn == '.00'){
+          resData.yearIn = '0.00'
+        }
         that.setData({
           billData: resData
         })
