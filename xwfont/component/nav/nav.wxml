@@ -4,9 +4,17 @@
             <view class="nav-icon gift-icon"><image src="../../dist/images/nav-2.png"></image></view>
             <view class="nav-name">账单</view>
         </view>
-        <!--<view class="nav-item" data-url="../top/top" catchtap="viewNavDetail">
+        <view class="nav-item" data-url="../emptyHouse/emptyHouse" catchtap="viewNavDetail" hidden="{{isRenter =='1' ? false : true}}">
+            <view class="nav-icon msg-icon"><image src="../../dist/images/nav-1.png"></image></view>
+            <view class="nav-name">空房屋</view>
+        </view>
+        <view class="nav-item" data-url="../personalHouse/personalHouse" catchtap="viewNavDetail" hidden="{{isRenter =='0' ? false : true}}">
+            <view class="nav-icon msg-icon"><image src="../../dist/images/nav-1.png"></image></view>
+            <view class="nav-name">房屋登记</view>
+        </view>
+        <view class="nav-item" data-url="../fixHouse/fixHouse" catchtap="viewNavDetail">
             <view class="nav-icon msg-icon"><image src="../../dist/images/nav-3.png"></image></view>
-            <view class="nav-name">口碑电影</view>
-        </view>-->
+            <view class="nav-name">房屋修理</view>
+        </view>
     </view>
 </template>

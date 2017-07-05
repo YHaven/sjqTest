@@ -1,3 +1,14 @@
-<import src="../../component/list/list.wxml"/>
-<template is="list" data="{{cells: cells}}"/>
-<navigator url="../personalHouseEdit/personalHouseEdit?id={{dataInfo.id}}" class="edit-btn">编 辑</navigator>
+<view data-id="{{dataInfo.id}}" class="data-info">
+    <view class="data-img">
+        <image src="{{dataInfo.dataImg}}" class="data-cover-img"></image>
+    </view>
+    <view class="data-intro">
+        <view class="house-name">{{dataInfo.roomName}}</view>
+        <view class="house-count">{{dataInfo.roomRemark}}</view>
+        <view class="house-count">水单价:{{dataInfo.waterPrice}}</view>
+        <view class="house-count">电单价:{{dataInfo.electricPrice}}</view>
+        <view class="house-count">燃气单价:{{dataInfo.gasPrice}}</view>
+    </view>
+
+    <view class="data-o-intro"></view>
+</view>

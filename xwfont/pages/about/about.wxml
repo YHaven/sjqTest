@@ -9,7 +9,7 @@
         </view>
         <view class="webapp-intro-item">
             <view class="webapp-intro-title">作者</view>
-            <view class="webapp-intro-content">姚海威</view>
+            <view class="webapp-intro-content">朕来了</view>
         </view>
         <!--<view class="webapp-intro-item">
             <view class="webapp-intro-title">此项目所使用到的API</view>

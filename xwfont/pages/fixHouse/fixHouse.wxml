@@ -1,0 +1,32 @@
+
+
+<block wx:if="{{showLoading}}">
+    <view class="loading">玩命加载中…</view>
+</block>
+<block wx:else>
+    <view class="data-list">
+        <block wx:for="{{dataList}}" wx:for-index="dataIndex" wx:for-item="dataItem" wx:key="data">
+            <view data-id="{{dataItem.id}}" data-index="{{dataIndex}}" class="data-item" catchtap="viewData">
+                <view class="data-title">
+                    <text>{{dataItem.houseName}}（水电工）</text>
+                    <text class="f-r">18888888888</text>
+                </view>
+                <view class="data-content">服务地址：xxxx小镇</view>
+                <!--<view class="opera-block" wx-if="{{dataItem.show}}">
+                    <view data-id="{{dataItem.id}}" catchtap="viewData" class="blue-btn">查看详情</view>
+                    <view data-id="{{dataItem.id}}" catchtap="editData" class="blue-btn">编辑</view>
+                    <view data-id="{{dataItem.id}}" catchtap="deleteData" class="blue-btn">删除</view>
+                </view>-->
+            </view>
+        </block>
+        <block wx:if="{{hasMore}}">
+            <view class="loading-tip">拼命加载中…</view>
+        </block>
+        <block wx:else>
+            <view class="loading-tip">没有更多内容了</view>
+        </block>
+    </view>
+</block>
+
+<import src="../../component/message/message.wxml"/>
+<template is="message" data="{{message: message}}"/>

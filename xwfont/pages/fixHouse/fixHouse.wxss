@@ -1,0 +1,37 @@
+@import "../../component/message/message.wxss";
+@import "../../comm/style/reset.wxss";
+@import "../../comm/style/animation.wxss";
+
+.data-list {
+    box-sizing: border-box;
+    width: 750rpx;
+    padding: 10rpx 15rpx;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    box-shadow: 0 0 40rpx #f4f4f4 inset;
+}
+
+.data-item {
+    width: 100%;
+    margin-bottom: 20rpx;
+    border-radius: 10rpx;
+    background-color: #fff;
+    border: 1px solid #e4e4e4;
+    box-shadow: 0 20rpx 40rpx #eee;
+    overflow: hidden;
+    animation: fadeIn 1s;
+    padding: 24rpx;
+}
+
+.data-title{padding:24rpx 0rpx;}
+.data-content{padding-bottom:24rpx;}
+
+.loading-tip {
+    width: 100%;
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+    color: #ccc;
+}

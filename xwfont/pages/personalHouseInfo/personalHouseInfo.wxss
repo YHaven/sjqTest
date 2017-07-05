@@ -1,20 +1,2 @@
-@import '../../component/list/list.wxss';
-page::after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 1px;
-}
-
-.edit-btn {
-    width: 300rpx;
-    height: 80rpx;
-    margin: 0 auto;
-    margin-bottom: 30rpx;
-    font-size: 32rpx;
-    text-align: center;
-    line-height: 80rpx;
-    background-color: #84d9d4;
-    border-radius: 80rpx;
-    color: #fff;
-}
+.data-cover-img{width: 100%;}
+.data-intro{text-align: center;}

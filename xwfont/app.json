@@ -18,6 +18,10 @@
     "pages/showRentalList/showRentalList",
     "pages/cashEdit/cashEdit",
     "pages/cashList/cashList",
+    "pages/personalSetting/personalSetting",
+    "pages/emptyHouse/emptyHouse",
+    "pages/emptyRoom/emptyRoom",
+    "pages/fixHouse/fixHouse",
 
     "pages/start/index",
 
@@ -56,14 +60,8 @@
     "list": [{
       "pagePath": "pages/popular/popular",
       "iconPath": "dist/images/popular_icon.png",
-      "selectedIconPath": "dist/images/popular_active_icon.png",
-      "text": "消息"
-    },
-    {
-      "pagePath": "pages/personalHouse/personalHouse",
-      "iconPath": "dist/images/top_icon.png",
       "selectedIconPath": "dist/images/top_active_icon.png",
-      "text": "房屋"
+      "text": "首页"
     },
     {
       "pagePath": "pages/my/my",

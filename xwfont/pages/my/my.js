@@ -7,6 +7,7 @@ Page({
       // {enName:'history', zhName:'浏览记录'},
       // {enName:'shake', zhName:'摇一摇'},
       // {enName:'gallery', zhName:'相册'},
+      {enName:'personalSetting', zhName:'个人登记'},
       {enName:'setting', zhName:'设置'}
     ],
     skin: ''

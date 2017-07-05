@@ -78,24 +78,24 @@ header:'http://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83epBXIYAUnlcXcBzCFFiaGR3AzBezHic
         {type:'headbanner', id: '', imgUrl: zhencomehost + '/images/index-banner.jpg'}
     ],
     skinList: [
-        {title: '公路', imgUrl: url + '/images/user_bg_1.jpg'},
-        {title: '黑夜森林', imgUrl: url + '/images/user_bg_2.jpg'},
-        {title: '鱼与水', imgUrl: url + '/images/user_bg_3.jpg'},
-        {title: '山之剪影', imgUrl: url + '/images/user_bg_4.jpg'},
-        {title: '火山', imgUrl: url + '/images/user_bg_5.jpg'},
-        {title: '科技', imgUrl: url + '/images/user_bg_6.jpg'},
-        {title: '沙漠', imgUrl: url + '/images/user_bg_7.jpg'},
-        {title: '叶子', imgUrl: url + '/images/user_bg_8.jpg'},
-        {title: '早餐', imgUrl: url + '/images/user_bg_9.jpg'},
-        {title: '英伦骑车', imgUrl: url + '/images/user_bg_10.jpg'},
-        {title: '草原', imgUrl: url + '/images/user_bg_11.jpg'},
-        {title: '城市', imgUrl: url + '/images/user_bg_12.jpg'}
+        {title: '公路', imgUrl: zhencomehost + '/images/wxcbg/user_bg_1.jpg'},
+        {title: '黑夜森林', imgUrl: zhencomehost + '/images/wxcbg/user_bg_2.jpg'},
+        {title: '鱼与水', imgUrl: zhencomehost + '/images/wxcbg/user_bg_3.jpg'},
+        {title: '山之剪影', imgUrl: zhencomehost + '/images/wxcbg/user_bg_4.jpg'},
+        {title: '火山', imgUrl: zhencomehost + '/images/wxcbg/user_bg_5.jpg'},
+        {title: '科技', imgUrl: zhencomehost + '/images/wxcbg/user_bg_6.jpg'},
+        {title: '沙漠', imgUrl: zhencomehost + '/images/wxcbg/user_bg_7.jpg'},
+        {title: '叶子', imgUrl: zhencomehost + '/images/wxcbg/user_bg_8.jpg'},
+        {title: '早餐', imgUrl: zhencomehost + '/images/wxcbg/user_bg_9.jpg'},
+        {title: '英伦骑车', imgUrl: zhencomehost + '/images/wxcbg/user_bg_10.jpg'},
+        {title: '草原', imgUrl: zhencomehost + '/images/wxcbg/user_bg_11.jpg'},
+        {title: '城市', imgUrl: zhencomehost + '/images/wxcbg/user_bg_12.jpg'}
     ],
     shakeSound: {
-        startUrl: url + '/sound/shake.mp3',
+        startUrl: zhencomehost + '/images/wxcbg/shake.mp3',
         start: '',
-        completeUrl: url + '/sound/shakeComplete.wav',
+        completeUrl: zhencomehost + '/images/wxcbg/shakeComplete.wav',
         complete: ''
     },
-    shakeWelcomeImg: url + '/images/shake_welcome.png'
+    shakeWelcomeImg: zhencomehost + '/images/wxcbg/shake_welcome.png'
 }

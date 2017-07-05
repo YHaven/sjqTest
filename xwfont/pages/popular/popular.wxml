@@ -14,7 +14,7 @@
 
 
 <import src="../../component/nav/nav.wxml"/>
-<template is="nav"/>
+<template is="nav" data="{{isRenter:'1'}}"/>
 <block wx:if="{{! showLoading}}">
 
 <import src="../../component/messageList/messageList.wxml"/>
