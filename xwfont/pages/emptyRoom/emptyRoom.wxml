@@ -30,5 +30,4 @@
             <view class="loading-tip">没有更多内容了</view>
         </block>
     </view>
-    <navigator url="../personalRoomEdit/personalRoomEdit?parentid={{parentid}}" class="add-btn">新增</navigator>
 </block>
