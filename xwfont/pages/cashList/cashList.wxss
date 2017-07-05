@@ -85,3 +85,5 @@
     text-align: center;
     color: #ccc;
 }
+.font-red{color: red}
+.font-green{color: green}

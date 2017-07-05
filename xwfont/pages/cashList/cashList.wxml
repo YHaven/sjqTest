@@ -8,16 +8,17 @@
         <block wx:for="{{dataList}}" wx:for-index="dataIndex" wx:for-item="dataItem" wx:key="data">
             <view data-id="{{dataItem.id}}" data-index="{{dataIndex}}" class="film-item" catchtap="showOpera">
                <view class="film-cover">
-                  {{dataItem.rentalTime}}
+                  {{dataItem.postTime}}
                </view>
                <view class="file-intro">
-                    <view class="house-count">金额：+{{dataItem.rental
+                    <view class="house-count">
+                    金额：<text class="font-red" wx:if="{{dataItem.moneyType === 2}}">+{{dataItem.money}}</text>
+                    <text class="font-green"  wx:if="{{dataItem.moneyType === 1}}">-{{dataItem.money}}</text>
                     
-                    
-                    }}</view>
-                    <view class="opera-block" wx-if="{{dataItem.show}}">
-                        <view data-id="{{dataItem.id}}" catchtap="deleteData" class="blue-btn">删除</view>
                     </view>
+                    <!--<view class="opera-block" wx:if="{{dataItem.show}}">
+                        <view data-id="{{dataItem.id}}" catchtap="deleteData" class="blue-btn">删除</view>
+                    </view>-->
                </view>
             </view>
         </block>
