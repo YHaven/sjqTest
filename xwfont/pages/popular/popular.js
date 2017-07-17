@@ -14,6 +14,7 @@ Page({
 	onLoad: function() {
 		var that = this
 		wx.showNavigationBarLoading()
+    that.getUserInfo();
 		app.getCity(function(){
 			wx.hideNavigationBarLoading()
 			wx.setNavigationBarTitle({
@@ -29,6 +30,19 @@ Page({
 			plana.getMessageList.call(that, config.apiList.plana.getMessageList, params)
 		})
 	},
+
+  getUserInfo:function(){
+    var that = this;
+    // 检测是否存在用户信息
+    if (app.globalData.userInfo != null) {
+      that.setData({
+        userInfo: app.globalData.userInfo
+      })
+    } else {
+      app.getUserInfo()
+    }
+  },
+
 	onPullDownRefresh: function() {
 		var that = this
 		that.setData({

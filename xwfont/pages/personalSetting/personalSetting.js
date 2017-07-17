@@ -31,20 +31,30 @@ Page({
       var params = {}
     }
 		
-		plana.getPersonalInfo.call(that,config.apiList.plana.getHouseInfo,params,function(res){
+		plana.getPersonalInfo.call(that,config.apiList.plana.getUserType,params,function(res){
       if (res.data.status){
-        var data = res.data.data
-        that.setData({
-          serviceTypeMore: data.serviceTypeMore,
-          userName: data.userName,
-          userPhone: data.userPhone,
-          serviceAddress: data.serviceAddress,
-          userTypeIndex: data.userType,
-          userType: that.data.userTypeArray[data.userType],
-          serviceTypeIndex: data.serviceType,
-          serviceType: that.data.serviceTypeArray[data.serviceType],
-          remark: data.remark
-        })
+        var data = res.data.data;
+
+        if (data.userType == 6){
+          that.setData({
+            serviceTypeMore: data.serviceTypeMore,
+            userName: data.userName,
+            userPhone: data.userPhone,
+            serviceAddress: data.serviceAddress,
+            userTypeIndex: data.userType,
+            userType: that.data.userTypeArray[data.userType],
+            serviceTypeIndex: data.serviceType,
+            serviceType: that.data.serviceTypeArray[data.serviceType],
+            remark: data.remark
+          })
+        }else{
+          that.setData({
+            userPhone: data.userPhone,
+            userTypeIndex: data.userType,
+            userType: that.data.userTypeArray[data.userType]
+          })
+        }
+        
       }
      
 			wx.hideNavigationBarLoading()
@@ -58,10 +68,7 @@ Page({
 
     var params = data;
     params.vt = 1;
-    var url = config.apiList.plana.getHouseInfoAdd
-    if (params.id != "" && params.id != null) {
-      url = config.apiList.plana.getHouseInfo
-    }
+    var url = config.apiList.plana.addUserType
     plana.formSubmit.call(that,url,params,function(res){
       if(res.data.status){
         // wx.switchTab({

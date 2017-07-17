@@ -1,5 +1,6 @@
 <form bindsubmit="savePersonInfo" class="subForm">
-    <input type="te" name="id" value="{{id}}" style="display:none;"/>
+    <input type="text" name="id" value="{{id}}" style="display:none;"/>
+    
     <view class="form-list">
         <view class="form-item">
             <view class="form-item-hd">身份类型</view>
@@ -46,24 +47,26 @@
                 <input type="text" name="userName" value="{{userName}}" placeholder="请输入姓名" maxlength="12"/>
             </view>
         </view>
-        <view class="form-item">
-            <view class="form-item-hd">手机号码</view>
-            <view class="form-item-bd">
-                <input type="text" name="userPhone" value="{{userPhone}}" placeholder="请输入手机号码" maxlength="11"  minlength="11"/>
-            </view>
-        </view>
+        
         <view class="form-item">
             <view class="form-item-hd">服务地址</view>
             <view class="form-item-bd">
                 <input type="text" name="serviceAddress" value="{{serviceAddress}}" placeholder="请输入服务地址"/>
             </view>
         </view>
-    </view>
-    <view class="form-list">
+
         <view class="form-item" style="height:150px">
             <view class="form-item-hd">备注</view>
             <view class="form-item-bd">
                 <textarea name="remark" value="{{remark}}" placeholder="请输入备注" />
+            </view>
+        </view>
+    </view>
+    <view class="form-list">
+      <view class="form-item">
+            <view class="form-item-hd">手机号码</view>
+            <view class="form-item-bd">
+                <input type="text" name="userPhone" value="{{userPhone}}" placeholder="请输入手机号码" maxlength="11"  minlength="11"/>
             </view>
         </view>
     </view>

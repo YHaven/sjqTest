@@ -29,6 +29,7 @@ module.exports = {
             // getMessageDetail:zhencomehost+'/tempdata/messageDetail.json',
             // getHouseList:zhencomehost+'/tempdata/houselist.json',
             getHouseList: zhencomehost + '/plana/house!list.action',
+            getEmptyHouseList: zhencomehost + '/plana/house!emptyList.action',
             // getHouseInfo: zhencomehost + '/tempdata/houseoper.json',
             getHouseInfo: zhencomehost +'/plana/house!modify.action',
             getHouseInfoAdd: zhencomehost +'/plana/house!add.action',
@@ -50,12 +51,14 @@ module.exports = {
             getRentalInfoAdd: zhencomehost + '/plana/rental!add.action',
             getRentalInfoDelete: zhencomehost + '/plana/rental!delete.action',
             getRentalInfoConfirmPay: zhencomehost + '/plana/rental!confirmPay.action',
-
+            getUserType: zhencomehost + '/plana/service!getUserType.action',
+            addUserType: zhencomehost + '/plana/service!addUserType.action',
+            getServiceList: zhencomehost + '/plana/service!list.action',
             getShowRentalList: zhencomehost + '/plana/rentalshow!list.action',
             getShowRentalAllCount: zhencomehost + '/plana/rentalshow!allCount.action',
             getShowRentalAddCash: zhencomehost + '/plana/rentalshow!addCash.action',
-            // getCashList: zhencomehost + '/plana/rentalshow!cashList.action'
-            getCashList: zhencomehost + '/plana/rentalshow!list.action'
+            getCashList: zhencomehost + '/plana/rentalshow!cashList.action'
+            // getCashList: zhencomehost + '/plana/rentalshow!list.action'
 
         },
         popular: 'https://api.douban.com/v2/movie/in_theaters',

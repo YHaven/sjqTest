@@ -106,3 +106,4 @@ input, .input {
 
 .dataImg{text-align: center}
 .dataImg-img{width: 360rpx;height: 360rpx;}
+textarea{width: 100%;}
