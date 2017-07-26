@@ -13,7 +13,7 @@
                <view class="file-intro">
                     <view class="house-name">{{dataItem.houseName}}(房东)</view>
                     <view class="house-count">住宅{{dataItem.allCount}}套,空闲{{dataItem.emptyCount}}套</view>
-                    <view class="house-count">联系电话:18888888888</view>
+                    <view class="house-count">联系电话:{{dataItem.housePhone}}</view>
                     <!--<view class="opera-block" wx-if="{{dataItem.show}}">
                         <view data-id="{{dataItem.id}}" catchtap="viewData" class="blue-btn">浏览房间</view>
                         <view data-id="{{dataItem.id}}" catchtap="editData" class="blue-btn">编辑</view>

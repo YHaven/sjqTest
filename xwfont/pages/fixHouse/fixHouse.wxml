@@ -8,10 +8,10 @@
         <block wx:for="{{dataList}}" wx:for-index="dataIndex" wx:for-item="dataItem" wx:key="data">
             <view data-id="{{dataItem.id}}" data-index="{{dataIndex}}" class="data-item" catchtap="viewData">
                 <view class="data-title">
-                    <text>{{dataItem.houseName}}（水电工）</text>
-                    <text class="f-r">18888888888</text>
+                    <text>{{dataItem.userName}}（{{dataItem.serviceTypeMore}}）</text>
+                    <text class="f-r">{{dataItem.userPhone}}</text>
                 </view>
-                <view class="data-content">服务地址：xxxx小镇</view>
+                <view class="data-content">服务地址：{{dataItem.serviceAddress}}</view>
                 <!--<view class="opera-block" wx-if="{{dataItem.show}}">
                     <view data-id="{{dataItem.id}}" catchtap="viewData" class="blue-btn">查看详情</view>
                     <view data-id="{{dataItem.id}}" catchtap="editData" class="blue-btn">编辑</view>

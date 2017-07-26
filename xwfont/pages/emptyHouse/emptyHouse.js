@@ -17,7 +17,7 @@ Page({
 		that.setData({
 			dataList: []
 		})
-		plana.getPersonalList.call(that,config.apiList.plana.getHouseList,params,function(res){
+    plana.getPersonalList.call(that, config.apiList.plana.getEmptyHouseList,params,function(res){
 			wx.hideNavigationBarLoading()
 		});
 	},

@@ -33,16 +33,18 @@ Page({
 		
 		plana.getPersonalInfo.call(that,config.apiList.plana.getUserType,params,function(res){
       if (res.data.status){
-        var data = res.data.data;
-
-        if (data.userType == 6){
+        var data = res.data;
+        var userType = 0;
+        if (data.userType == 5) userType = 1;
+        if (data.userType == 6) userType = 2;
+        if (userType == 2){
           that.setData({
             serviceTypeMore: data.serviceTypeMore,
             userName: data.userName,
             userPhone: data.userPhone,
             serviceAddress: data.serviceAddress,
-            userTypeIndex: data.userType,
-            userType: that.data.userTypeArray[data.userType],
+            userTypeIndex: userType,
+            userType: that.data.userTypeArray[userType],
             serviceTypeIndex: data.serviceType,
             serviceType: that.data.serviceTypeArray[data.serviceType],
             remark: data.remark
@@ -64,7 +66,7 @@ Page({
     var that = this;
     var data = e.detail.value
     console.log(data);
-    return false;
+    // return false;
 
     var params = data;
     params.vt = 1;

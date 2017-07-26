@@ -17,7 +17,7 @@ Page({
 		that.setData({
 			dataList: []
 		})
-		plana.getPersonalList.call(that,config.apiList.plana.getHouseList,params,function(res){
+    plana.getPersonalList.call(that, config.apiList.plana.getServiceList,params,function(res){
 			wx.hideNavigationBarLoading()
 		});
 	},
@@ -45,7 +45,7 @@ Page({
 			var params = {
 						page:that.data.start
 					}
-			plana.getPersonalList.call(that,config.apiList.plana.getHouseList,params);
+      plana.getPersonalList.call(that, config.apiList.plana.getServiceList,params);
 		}
 	},
 	showOpera:function(e){

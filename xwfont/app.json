@@ -13,12 +13,12 @@
     "pages/personalRenterEdit/personalRenterEdit",
     "pages/personalRental/personalRental",
     "pages/personalRentalEdit/personalRentalEdit",
-
+    "pages/personalSetting/personalSetting",
     "pages/mHouseShow/mHouseShow",
     "pages/showRentalList/showRentalList",
     "pages/cashEdit/cashEdit",
     "pages/cashList/cashList",
-    "pages/personalSetting/personalSetting",
+    
     "pages/emptyHouse/emptyHouse",
     "pages/emptyRoom/emptyRoom",
     "pages/fixHouse/fixHouse",
