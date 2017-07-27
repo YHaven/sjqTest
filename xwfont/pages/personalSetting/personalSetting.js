@@ -70,6 +70,24 @@ Page({
 
     var params = data;
     params.vt = 1;
+    if(typeof params.userPhone === 'undefined' || params.userPhone.trim() === '' || params.userPhone === null ){
+      wx.showModal({
+          title: '提示',
+          content: '手机号码未填写。'
+        })
+      
+      return false;
+    }else{
+
+      if(!(/^1(3|4|5|7|8)\d{9}$/.test(params.userPhone))){ 
+        wx.showModal({
+          title: '提示',
+          content: '手机号码不正确。'
+        })
+
+        return false;
+      } 
+    }
     var url = config.apiList.plana.addUserType
     plana.formSubmit.call(that,url,params,function(res){
       if(res.data.status){
