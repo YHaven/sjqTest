@@ -1,0 +1,73 @@
+{
+    "data": {
+        "order_sn": "2017070315450417521",
+        "add_time": "2017-07-03 15:37:39",
+        "out_time": 259122,
+        "pay_time": "",
+        "goods_amount": "98.00",
+        "shipping_fee": "0.00",
+        "bonus": "0.00",
+        "coupons": "0.00",
+        "discount": "0.00",
+        "discountall": 0,
+        "total_fee": 98,
+        "pay_name": "支付宝",
+        "pay_id": "17",
+        "status_code": "await_pay",
+        "label_order_status": "待付款",
+        "order_amount": "98.00",
+        "amount_paid": 0,
+        "group_type": 0,
+        "is_cac": 1,
+        "cac_mobile": "13386500588",
+        "cac_address": "四季青老市场1F0105-0106",
+        "cac_user_name": "徐正芳",
+        "consignee": "黄盛彦",
+        "country": "中国",
+        "province": "浙江",
+        "city": "杭州",
+        "district": "萧山区",
+        "address": "新街镇盛乐村14组30号",
+        "zipcode": "",
+        "tel": "",
+        "mobile": "18817386792",
+        "sign_building": "",
+        "invoice_no": "",
+        "shipping_name": "上门自提",
+        "is_commented": 1,
+        "is_showorder": 1,
+        "ret_id": 0,
+        "ceiling": 0,
+        "ceiling_shipping_fee": 0,
+        "can_return": 0,
+        "order_type": 0,
+        "ru_id": "48373",
+        "shop_name": "阿哲牛仔",
+        "goods_list": [
+            {
+                "rec_id": "2196",
+                "goods_id": "3610",
+                "name": "2017夏 阿哲牛仔 条纹腰带时尚潮流女士休闲牛仔裤",
+                "goods_attr": "图片款,25*1",
+                "goods_price": "98.00",
+                "goods_number": "1",
+                "subtotal": "¥98.00",
+                "ceiling": 98,
+                "shipping_fee": 0,
+                "formated_shop_price": "¥98.00",
+                "is_commented": 0,
+                "return": 0,
+                "return_status": 0,
+                "ret_id": 0,
+                "img": {
+                    "small": "http://www.topws.cn/images/201704/thumb_img/3610_thumb_G_1491779747669.jpg",
+                    "thumb": "http://www.topws.cn/images/201704/goods_img/3610_G_1491779747840.jpg",
+                    "url": "http://www.topws.cn/images/201704/source_img/3610_G_1491779747816.jpg"
+                }
+            }
+        ]
+    },
+    "status": {
+        "succeed": 1
+    }
+}

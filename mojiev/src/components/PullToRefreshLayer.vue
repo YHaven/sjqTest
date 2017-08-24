@@ -16,7 +16,7 @@
       <slot></slot>
       <footer class="load-more">
         <slot name="load-more">
-          <span>下拉加载更多……</span>
+          <span>查看更多</span>
         </slot>
       </footer>
     </section>
@@ -186,10 +186,11 @@ export default {
 }
 .yo-scroll .load-more {
   margin-bottom: 2.5rem;
-  /*height: 2.453rem;*/
+  height: 1.706rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.5rem;
+  font-size: 0.512rem;
+  background-color: #f8f8f8;
 }  
 </style>

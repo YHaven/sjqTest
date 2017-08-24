@@ -41,8 +41,9 @@
             <p class="inforPro clearfix"><span>综合分值：{{seller.score}}</span><span>{{seller.buyer}}位采购商</span><span>共卖出{{seller.sale_num}}件商品</span></p>
         </div>
 
-
+        
         </v-scroll>
+        <back-top></back-top>
     </div>
 </template>
 
@@ -50,10 +51,12 @@
   
     import FontReset from 'common/js/font.reset'        //移动头部
     import MojiAjax from 'common/js/moji.ajax'          //摩街数据方法类
+    import config from 'common/js/moji.config'
     import Layer from 'common/js/layer'          //layer
     import ZpTimer from 'common/js/zepto.timer'        //倒计时
     import NewPifaBanner from 'components/NewPifaBanner'              //滑动
     import VScroll from 'components/PullToRefreshLayer' //刷新加载
+    import BackTop from 'components/BackTop' //返回顶部
     import $ from 'zepto'
     export default {
     name: 'app',
@@ -124,8 +127,9 @@
                                 count: _this.count
                             }
                         };
-            var paramsStr = JSON.stringify(params);
-            MojiAjax.indexFuns.getSellerList({json:paramsStr},cb)
+            // var paramsStr = JSON.stringify(params);
+            var url = config.indexAjax.sellerlist;
+            MojiAjax.indexFuns.postJsonAjax(url,params,cb)
         },
         addgaze(shop){
             if(shop!=''){
@@ -200,7 +204,8 @@
     },
     components: {
       VScroll,
-      NewPifaBanner
+      NewPifaBanner,
+      BackTop
     }
   }
 </script>

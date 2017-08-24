@@ -7,7 +7,7 @@
             <div class="product-img">
               <img :src="seller_good.img.small" alt="">
             </div>
-            <p class="product-name" :title="seller_good.name">{{seller_good.nameShort}}</p>
+            <!-- <p class="product-name" :title="seller_good.name">{{seller_good.nameShort}}</p> -->
             <p class="product-price">{{seller_good.shop_price}}</p>
           </a>
           

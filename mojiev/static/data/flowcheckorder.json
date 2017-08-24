@@ -1,0 +1,97 @@
+{
+    "data": {
+        "order_type": "GENERAL_GOODS",
+        "consignee": {
+            "address_name": "",
+            "consignee": "黄盛彦",
+            "email": "",
+            "country": "1",
+            "province": "31",
+            "city": "383",
+            "district": "3235",
+            "street": "0",
+            "address": "新街镇盛乐村14组30号",
+            "zipcode": "",
+            "tel": "18817386792",
+            "mobile": "18817386792",
+            "sign_building": "",
+            "best_time": "",
+            "audit": "0",
+            "id": "10148",
+            "country_name": "中国",
+            "province_name": "浙江",
+            "city_name": "杭州",
+            "district_name": "萧山区"
+        },
+        "shop_list": [
+            {
+                "shop_id": 48373,
+                "shop_name": "阿哲牛仔",
+                "goods_list": [
+                    {
+                        "goods_id": 3610,
+                        "goods_sn": "A877",
+                        "goods_name": "2017夏 阿哲牛仔 条纹腰带时尚潮流女士休闲牛仔裤",
+                        "goods_number": 1,
+                        "goods_price": "98.00",
+                        "goods_image": "http://www.topws.cn/images/201704/thumb_img/3610_thumb_G_1491779747669.jpg",
+                        "spec": [
+                            {
+                                "rec_id": "569",
+                                "color": "图片款|25",
+                                "size": "",
+                                "product_number": "1",
+                                "product_id": "20473",
+                                "goods_attr": "图片款|25",
+                                "goods_attr_id": "24716,24717"
+                            }
+                        ]
+                    }
+                ],
+                "goods_total": 1,
+                "shop_money": 98,
+                "shipping_list": [
+                    {
+                        "shipping_id": "52",
+                        "shipping_code": "cac",
+                        "shipping_name": "上门自提",
+                        "shipping_desc": "买家自己到商家指定地点取货",
+                        "shipping_fee": 0,
+                        "is_use": 0,
+                        "cac_name": "上门自提",
+                        "cac_address": "四季青老市场1F0105-0106",
+                        "cac_day": "周一至周一",
+                        "cac_time": "8:00--21:00",
+                        "cac_goods_weight": "1kg"
+                    },
+                    {
+                        "shipping_id": "37",
+                        "shipping_code": "a_express",
+                        "shipping_name": "快递配送",
+                        "shipping_desc": "新增快递配送方式，商家自定义 By ECJIA TEAM.",
+                        "shipping_fee": 5,
+                        "cac_name": "",
+                        "is_use": 1
+                    }
+                ],
+                "shop_shipping_fee": 5,
+                "shop_favourable": {},
+                "coupons": [],
+                "cac_goods_weight": "1kg"
+            }
+        ],
+        "total_goods_num": 1,
+        "total_goods_money": 98,
+        "total_shipping_fee": 5,
+        "total_order_money": 103,
+        "allow_use_bonus": 1,
+        "bonus": [],
+        "pay_info": {
+            "pay_code": "pay_alipay",
+            "pay_id": "17"
+        }
+    },
+    "status": {
+        "succeed": 1
+    }
+}

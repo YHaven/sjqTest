@@ -19,7 +19,7 @@
         </a>
       </li> -->
       <li :class="active === 4 ? 'active' : ''">
-        <a href="/mobile/index.php?r=cart">
+        <a href="/mojivue/module/cartList.html">
           <i class="sjq-icon gouwuche-icon"></i>
           <span>购物车</span>
         </a>

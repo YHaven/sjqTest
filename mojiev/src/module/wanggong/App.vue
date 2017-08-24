@@ -20,13 +20,15 @@
         </ul>
 
         <div class="mjProdSbox aa">
+
             <div class="prod" v-for="goods in goodsList">
                 <a :href="'/mobile/index.php?r=goods&id='+goods.goods_id">
                     <img :src="goods.img.small" alt="">
                     <label>{{goods.name}}</label>
-                    <span>{{goods.shop_price.substring(0,goods.shop_price.length-3)}}<em>.00</em></span>
+                    <span>{{goods.shop_price.substring(0,goods.shop_price.length-3)}}<em>{{goods.shop_price.substring(goods.shop_price.length-3,goods.shop_price.length)}}</em></span>
                 </a>
             </div>
+
         </div>
 
         <div class="selectProd" v-for="seller in sellerList">
@@ -52,6 +54,7 @@
 
 
         </v-scroll>
+        <back-top></back-top>
     </div>
 </template>
 
@@ -59,17 +62,18 @@
   
     import FontReset from 'common/js/font.reset'        //移动头部
     import MojiAjax from 'common/js/moji.ajax'          //摩街数据方法类
+    import config from 'common/js/moji.config'
     import Layer from 'common/js/layer'          //layer
     import ZpTimer from 'common/js/zepto.timer'        //倒计时
     import NewPifaBanner from 'components/NewPifaBanner'              //滑动
     import VScroll from 'components/PullToRefreshLayer' //刷新加载
+    import BackTop from 'components/BackTop' //返回顶部
     import $ from 'zepto'
     export default {
     name: 'app',
     data (){
       return {
         proPath:MojiAjax.indexFuns.propath,
-        everyTenClock:new Date().getFullYear(),
         banner: [],
         sellerList:[],
         goodsList:[],
@@ -81,7 +85,7 @@
     },
     mounted () {                     //页面完成加载
         var _this = this;
-        _this.initCity();
+        // _this.initCity();
         _this.initBanner();
         _this.initGoodsList(function(result){
             _this.goodsList = result.data;
@@ -150,16 +154,14 @@
                     category_id:cat_name,
                     is_new:0 
                 },
-                device:{
-                    city:_this.city
-                },
                 pagination:{
                     page: _this.page,
                     count: _this.count
                 }
             };
-            var paramsStr = JSON.stringify(params);
-            MojiAjax.indexFuns.getGoodsList({json:paramsStr},cb)
+            // var paramsStr = JSON.stringify(params);
+            var url = config.indexAjax.goodslist;
+            MojiAjax.indexFuns.postJsonAjax(url,params,cb)
         },
         refresh (done) {
             console.log('refresh')
@@ -206,7 +208,8 @@
     },
     components: {
       VScroll,
-      NewPifaBanner
+      NewPifaBanner,
+      BackTop
     }
   }
 </script>

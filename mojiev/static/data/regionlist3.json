@@ -1,0 +1,76 @@
+{
+    "data": {
+        "more": 1,
+        "regions": [
+            {
+                "id": "383",
+                "name": "杭州",
+                "parent_id": "31",
+                "level": "2"
+            },
+            {
+                "id": "384",
+                "name": "湖州",
+                "parent_id": "31",
+                "level": "2"
+            },
+            {
+                "id": "385",
+                "name": "嘉兴",
+                "parent_id": "31",
+                "level": "2"
+            },
+            {
+                "id": "386",
+                "name": "金华",
+                "parent_id": "31",
+                "level": "2"
+            },
+            {
+                "id": "387",
+                "name": "丽水",
+                "parent_id": "31",
+                "level": "2"
+            },
+            {
+                "id": "388",
+                "name": "宁波",
+                "parent_id": "31",
+                "level": "2"
+            },
+            {
+                "id": "389",
+                "name": "绍兴",
+                "parent_id": "31",
+                "level": "2"
+            },
+            {
+                "id": "390",
+                "name": "台州",
+                "parent_id": "31",
+                "level": "2"
+            },
+            {
+                "id": "391",
+                "name": "温州",
+                "parent_id": "31",
+                "level": "2"
+            },
+            {
+                "id": "392",
+                "name": "舟山",
+                "parent_id": "31",
+                "level": "2"
+            },
+            {
+                "id": "393",
+                "name": "衢州",
+                "parent_id": "31",
+                "level": "2"
+            }
+        ]
+    },
+    "status": {
+        "succeed": 1
+    }
+}

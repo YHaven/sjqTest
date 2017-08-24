@@ -4,7 +4,7 @@
     <v-scroll :on-refresh="refresh" :on-infinite="loadMore">
       <!-- 头部 -->
       <ul class="header">
-        <li class="header-left"><i class="sjq-icon go-back-icon"></i></li>
+        <li class="header-left"><i class="sjq-icon go-back-icon" onClick="javascript:history.go(-1);"></i></li>
         <li class="header-middle text-c"><i>实体市场</i></li>
         <!-- <li class="header-right"><i class="sjq-icon msg-icon"></i></li> -->
       </ul>
@@ -12,52 +12,29 @@
       <div class="market-top">
         <div class="market-bg">
           <img :src="proPath+'/static/images/market-default.jpg'" alt="">
-          <div class="market-o">中国服装第一街，还该了日韩、欧美各类风格的批发市场，代表杭州 女派，同时一件代发等服务齐全。</div>
-        </div>
-        
-        <div class="market-number">
-          <span>入驻市场：6</span>
-          <span>入驻档口：3320</span>
+          <div class="market-o">{{sellerBest.desc}}</div>
         </div>
       </div>
       
       <ul class="content-block market-list">
-        <li>
-          <div class="market-img">
-            <img :src="proPath+'/static/images/market-default.jpg'" alt="">
-          </div>
-          <div class="market-info">
-            <div class="market-name">
-              <span>四季青老市场南大楼</span>
-              <i class="sjq-icon right-arrow-icon f-r" style="margin-top:0.3rem;"></i>
+        <li v-for="item in sellerBest.maket">
+          <a :href="'marketprodstore.html?id='+item.id+'&marketname='+item.name">
+            <div class="market-img">
+              <img :src="item.image" alt="">
             </div>
-            <p class="market-content">这里是市场简介这里是市场简介这里是市场 简介这里是市场简介这里是市场...</p>
-            <p class="market-num">
-              <span class="f-l">入驻市场：6</span>
-              <span class="f-r">入驻档口：3320</span>
-            </p>
+            <div class="market-info">
+              <div class="market-name">
+                <span>{{item.name}}</span>
+              </div>
+              <p class="market-content">{{item.name}}</p>
           </div>
-        </li>
-        <li>
-          <div class="market-img">
-            <img :src="proPath+'/static/images/market-default.jpg'" alt="">
-          </div>
-          <div class="market-info">
-            <p class="market-name">
-              <span>四季青老市场南大楼</span>
-              <i class="sjq-icon right-arrow-icon f-r" style="margin-top:0.3rem;"></i>
-            </p>
-            <p class="market-content">这里是市场简介这里是市场简介这里是市场 简介这里是市场简介这里是市场...</p>
-            <p class="market-num">
-              <span class="f-l">入驻市场：6</span>
-              <span class="f-r">入驻档口：3320</span>
-            </p>
-          </div>
+          </a>
         </li>
       </ul>
 
     </v-scroll>
     <page-footer :active="1"></page-footer>
+    <back-top></back-top>
   </div>
 </template>
 
@@ -67,6 +44,7 @@
   import MojiAjax from 'common/js/moji.ajax'          //摩街数据方法类
   import PageFooter from 'components/PageFooter'              //底部
   import VScroll from 'components/PullToRefreshLayer' //刷新加载
+  import BackTop from 'components/BackTop' //返回顶部
 
   import $ from 'zepto'
 
@@ -74,11 +52,15 @@
     name: 'app',
     data (){
       return {
-        proPath:MojiAjax.indexFuns.propath
+        proPath:MojiAjax.indexFuns.propath,
+        sellerBest:[]
       }
     },
     mounted () {                        //页面完成加载
-       
+       var _this = this;
+        _this.initBanner(function(data){
+         _this.sellerBest = data.data;
+        });  //初始化banner
     },
     methods: {                          //方法
       refresh (done) {
@@ -87,12 +69,20 @@
       },
       loadMore (done) {
         console.log('loadMore')
+        $('.load-more span').text('没有更多数据了')
         // done() // finsh call done
+      },
+      initBanner (cb){
+        var param = {}
+        var belong = MojiAjax.indexFuns.getQueryString('belong');
+        if(belong != null) param.belong = belong;
+        MojiAjax.indexFuns.marketlist(cb,param);
       }
     },
     components: {
       PageFooter,
-      VScroll
+      VScroll,
+      BackTop
     }
   }
 </script>

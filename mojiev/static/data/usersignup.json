@@ -1,0 +1,7 @@
+{
+    "status": {
+        "succeed": 0,
+        "error_code": 11,
+        "error_desc": "用户名或手机已使用"
+    }
+}

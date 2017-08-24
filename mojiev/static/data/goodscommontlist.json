@@ -1,0 +1,18 @@
+{
+    "data": {
+        "comment_count": 0,
+        "comment_positive": 0,
+        "comment_moderate": 0,
+        "comment_negative": 0,
+        "comment_showorder": 0,
+        "comment_list": []
+    },
+    "status": {
+        "succeed": 1
+    },
+    "paginated": {
+        "total": 0,
+        "count": 0,
+        "more": 0
+    }
+}

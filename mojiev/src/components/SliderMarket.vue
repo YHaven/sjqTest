@@ -2,11 +2,14 @@
   <div class="block-content swiper-container-market">
     <ul class="slider-market  swiper-wrapper">
       <li v-for="yunMt in yunMarket" class="swiper-slide">
+        <a :href="'marketprodstore.html?id='+ yunMt.id +'&marketname='+yunMt.name">
         <div class="market-img">
           <img :src="yunMt.image" alt="">
-          <span><i class="f-l">{{yunMt.name}}</i><i class="f-r">入驻商家：{{yunMt.shop_num}}</i></span>
+          <!-- <span><i class="f-l">{{yunMt.name}}</i><i class="f-r">入驻商家：{{yunMt.shop_num}}</i></span> -->
+          <span><i>{{yunMt.name}}</i></span>
         </div>
-        <div class="market-info">
+        </a>
+        <!-- <div class="market-info">
           <div class="market-it" v-for="shop in yunMt.shop">
             <a :href="'/mobile/index.php?r=store/index/shop_info&id='+shop.shop_id">
             <img :src="shop.shop_logo" alt="">
@@ -16,7 +19,7 @@
             </div>
             </a>
           </div>
-        </div>
+        </div> -->
       </li>
     </ul>
   </div>
@@ -39,7 +42,7 @@ export default {
       if(self.yunMarket.length>0){
 
         var swiper = new Swiper('.swiper-container-market', {
-                          slidesPerView: 1.5,
+                          slidesPerView: 2.5,
                           spaceBetween: "3%"
 
                       });

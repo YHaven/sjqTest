@@ -1,0 +1,88 @@
+{
+    "data": {
+        "banner":"../static/images/pifa_banner.jpg",
+        "goods":[
+            {
+                "id": "6029",
+                "name": "测试环境NO.6",
+                "img1": "http://www.topws.cn/images/201705/goods_img/6029_G_1494352788131.jpg",
+                "img2": "http://www.topws.cn/images/201705/goods_img/6029_P_1494352788340.jpg",
+                "img3": "http://www.topws.cn/images/201705/goods_img/6029_P_1494352789025.jpg",
+                "left_second": 254363,
+                "group_rule": [
+                    {
+                        "price": 0.01,
+                        "num": 1,
+                        "price_str": "￥0.01",
+                        "num_str": "1件成团"
+                    }
+                ],
+                "objectId": "305",
+                "recType": "GROUPBUY_GOODS",
+                "buy_num": "1"
+            },
+            {
+                "id": "6013",
+                "name": "测试商品",
+                "img1": "http://www.topws.cn/images/201705/goods_img/6013_G_1494532334802.png",
+                "img2": "http://www.topws.cn/images/201705/goods_img/6013_P_1494532334080.png",
+                "img3": "http://www.topws.cn/images/201705/goods_img/6013_P_1494532334470.jpg",
+                "left_second": 174712,
+                "group_rule": [
+                    {
+                        "price": 2,
+                        "num": 1,
+                        "price_str": "￥2",
+                        "num_str": "1件成团"
+                    },
+                    {
+                        "price": 15,
+                        "num": 20,
+                        "price_str": "￥15",
+                        "num_str": "20件"
+                    }
+                ],
+                "objectId": "303",
+                "recType": "GROUPBUY_GOODS",
+                "buy_num": "12"
+            },
+            {
+                "id": "5403",
+                "name": "测试商品请勿购买",
+                "img1": "http://www.topws.cn/images/201704/goods_img/5403_G_1492630655123.jpg",
+                "img2": "http://www.topws.cn/images/201704/goods_img/5403_G_1492630655123.jpg",
+                "img3": "http://www.topws.cn/images/201704/goods_img/5403_G_1492630655123.jpg",
+                "left_second": 779816,
+                "group_rule": [
+                    {
+                        "price": 20,
+                        "num": 10,
+                        "price_str": "￥20",
+                        "num_str": "10件成团"
+                    },
+                    {
+                        "price": 15,
+                        "num": 20,
+                        "price_str": "￥15",
+                        "num_str": "20件"
+                    },
+                    {
+                        "price": 10,
+                        "num": 30,
+                        "price_str": "￥10",
+                        "num_str": "30件"
+                    }
+                ],
+                "objectId": "302",
+                "recType": "GROUPBUY_GOODS",
+                "buy_num": 8
+            }
+        ]
+        },
+    "status": {
+        "succeed": 1
+    },
+    "paginated": {
+        "more": 0
+    }
+}

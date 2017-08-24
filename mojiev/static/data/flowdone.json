@@ -1,0 +1,19 @@
+{
+"data": {
+        "order_id": 17, 
+        "order_sn": "2017040709275819209",
+        "order_info": {
+
+            "pay_code":"pay_alipay",
+
+            "order_amount": 234, 
+            "order_id": 17,
+            "subject": "这个文字描述游泳吗",
+            "desc": "这个文字描述游泳吗",
+            "order_sn": "2017040709275819209"
+        }
+    },
+"status": {
+        "succeed": 1
+    }
+}

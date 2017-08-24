@@ -1,0 +1,111 @@
+{
+    "data": {
+        "order_sn": "2017052713165557978",
+        "add_time": "2017-05-27 13:16:11",
+        "out_time": 1495237862,
+        "pay_time": "",
+        "goods_amount": "376.00",
+        "shipping_fee": "0.00",
+        "bonus": "89.98",
+        "coupons": "0.00",
+        "discount": "20.00",
+        "discountall": 109.98,
+        "total_fee": 266.02,
+        "pay_name": "支付宝",
+        "pay_id": "9",
+        "status_code": "canceled",
+        "label_order_status": "已取消",
+        "order_amount": "266.02",
+        "amount_paid": 0,
+        "group_type": 0,
+        "is_cac": 0,
+        "cac_mobile": "",
+        "cac_address": "",
+        "cac_user_name": "",
+        "consignee": "旅行家",
+        "country": "中国",
+        "province": "北京",
+        "city": "北京",
+        "district": "东城区",
+        "address": "123456",
+        "zipcode": "",
+        "tel": "15067126937",
+        "mobile": "15067126937",
+        "sign_building": "",
+        "invoice_no": "",
+        "shipping_name": "",
+        "is_commented": 1,
+        "is_showorder": 1,
+        "order_type": 0,
+        "ru_id": "0",
+        "shop_name": null,
+        "goods_list": [
+            {
+                "rec_id": "1398",
+                "goods_id": "6043",
+                "name": "2017夏季阿加家加加123",
+                "goods_attr": "红|均码*2",
+                "goods_price": "100.00",
+                "goods_number": "2",
+                "subtotal": "¥200.00",
+                "ceiling": 200,
+                "shipping_fee": 0,
+                "formated_shop_price": "¥100.00",
+                "is_commented": 0,
+                "return": 0,
+                "return_status": 0,
+                "ret_id": 0,
+                "img": {
+                    "small": "http://www.topws.cn/images/201705/thumb_img/6043_thumb_G_1495589868842.jpg",
+                    "thumb": "http://www.topws.cn/images/201705/goods_img/6043_G_1495589868597.jpg",
+                    "url": "http://www.topws.cn/images/201705/source_img/6043_G_1495589868978.jpg"
+                }
+            },
+            {
+                "rec_id": "1399",
+                "goods_id": "6013",
+                "name": "测试商品",
+                "goods_attr": "123|均码*7",
+                "goods_price": "8.00",
+                "goods_number": "7",
+                "subtotal": "¥56.00",
+                "ceiling": 56,
+                "shipping_fee": 0,
+                "formated_shop_price": "¥8.00",
+                "is_commented": 0,
+                "return": 0,
+                "return_status": 0,
+                "ret_id": 0,
+                "img": {
+                    "small": "http://www.topws.cn/images/201705/thumb_img/6013_thumb_G_1494532334790.jpg",
+                    "thumb": "http://www.topws.cn/images/201705/goods_img/6013_G_1494532334802.png",
+                    "url": "http://www.topws.cn/images/201705/source_img/6013_G_1494532334619.png"
+                }
+            },
+            {
+                "rec_id": "1400",
+                "goods_id": "6027",
+                "name": "新商品",
+                "goods_attr": "123|均码*6",
+                "goods_price": "20.00",
+                "goods_number": "6",
+                "subtotal": "¥120.00",
+                "ceiling": 120,
+                "shipping_fee": 0,
+                "formated_shop_price": "¥20.00",
+                "is_commented": 0,
+                "return": 0,
+                "return_status": 0,
+                "ret_id": 0,
+                "img": {
+                    "small": "http://www.topws.cn/images/201705/thumb_img/6027_thumb_G_1495820414812.jpg",
+                    "thumb": "http://www.topws.cn/images/201705/goods_img/6027_G_1495820414317.jpg",
+                    "url": "http://www.topws.cn/images/201705/source_img/6027_G_1495820414127.jpg"
+                }
+            }
+        ]
+    },
+    "status": {
+        "succeed": 1
+    }
+}

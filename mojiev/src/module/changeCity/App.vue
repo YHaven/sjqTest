@@ -5,11 +5,11 @@
       <!-- 头部 -->
       <ul class="header">
         <li class="header-left"><i class="sjq-icon go-back-icon" onClick="javascript:history.go(-1);"></i></li>
-        <li class="header-middle text-c"><i>更换城市</i></li>
+        <li class="header-middle text-c"><i>选择服装产业带</i></li>
         <!-- <li class="header-right"><i class="sjq-icon msg-icon"></i></li> -->
       </ul>
       <!-- 头部 -->
-      <div class="current-address">当前: <span>杭州站</span>   </div>
+      <div class="current-address">当前: <span>浙江</span>   </div>
       <div class="select-address">
         <h5>可选城市</h5>
         <ul class="content-block market-list">
@@ -18,7 +18,7 @@
               <img :src="subweb.img" alt="">
             </div>
             <div class="market-info">
-              <p class="market-name">{{subweb.name}}</p>
+              <p class="market-name">{{subweb.name}} <span>{{subweb.label}}</span></p>
               <p class="market-content">{{subweb.des}}</p>
             </div>
           </li>
@@ -52,19 +52,19 @@
       initSite(){
         //分站
         if($('.current-address').length>0){
-          var nowAddress = '杭州';
+          var nowAddress = '浙江省';
           var hideAddress = 'hz';
           var l_host = window.location.host;
-          if(l_host === 'xa.sjq.cn'){
+          if(l_host === 'www.sjqxa.cn'){
             nowAddress = '西安';
             hideAddress = 'xa';
           }
-          if(l_host === 'test.sjqyc.cn'){
+          if(l_host === 'www.sjqyc.cn'){
             nowAddress = '银川';
             hideAddress = 'yc';
           }
             
-          if(l_host === 'gd.sjq.cn'){
+          if(l_host === 'www.sjqgd.cn'){
             nowAddress = '广州';
             hideAddress = 'gd';
           }
@@ -72,10 +72,10 @@
         }
       },
       changeCity(area){
-        if(area === 'hz') window.location.href="http://test.sjq.cn/mobile";
-        if(area === 'xa') window.location.href="http://xa.sjq.cn/mobile";
-        if(area === 'gd') window.location.href="http://gd.sjq.cn/mobile";
-        if(area === 'yc') window.location.href="http://test.sjqyc.cn/mobile";
+        if(area === 'hz') window.location.href="http://www.sjqhz.cn/mobile";
+        if(area === 'xa') window.location.href="http://www.sjqxa.cn/mobile";
+        if(area === 'gd') window.location.href="http://www.sjqgd.cn/mobile";
+        if(area === 'yc') window.location.href="http://www.sjqyc.cn/mobile";
       },
       initSubwebList(){
         var _this = this;
@@ -125,7 +125,9 @@
   .market-info .market-name{font-size:0.768rem;}
   .market-info .market-content{font-size: 0.512rem;color: #999;}
   .market-info .market-num{font-size: 0.554rem;}
-  
+  .market-info .market-name span{display: inline-block; margin-left: 0.5rem;background-color: #f5337d;color: #fff;padding:0rem 0.1rem;font-size: 0.426rem;}
+
+
   .current-address{padding: 0.5rem;font-size: 1rem;background: #fff}
   .current-address span{font-size: 1.2rem;}
   .select-address h5{font-size: 0.6rem;padding-left: 0.5rem;background: #fff;color: #999}
