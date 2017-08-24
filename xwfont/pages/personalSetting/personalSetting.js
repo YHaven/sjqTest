@@ -1,6 +1,7 @@
 var util = require('../../util/util')
 var plana = require('../../comm/script/plana')
 var config = require('../../comm/script/config')
+var app = getApp()
 Page({
   data:{
     id:'',
@@ -52,8 +53,8 @@ Page({
         }else{
           that.setData({
             userPhone: data.userPhone,
-            userTypeIndex: data.userType,
-            userType: that.data.userTypeArray[data.userType]
+            userTypeIndex: userType,
+            userType: that.data.userTypeArray[userType]
           })
         }
         
@@ -94,6 +95,7 @@ Page({
         // wx.switchTab({
         //     url: '/pages/personalHouse/personalHouse'
         // })
+        app.getUserInfo()
         wx.navigateBack()
       }
 		});

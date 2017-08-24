@@ -13,7 +13,7 @@
         <view class="form-item">
             <view class="form-item-hd">房屋名称</view>
             <view class="form-item-bd">
-                <input type="text" name="houseName" value="{{houseName}}" placeholder="请输入名称" maxlength="5"/>
+                <input type="text" name="houseName" value="{{houseName}}" placeholder="请输入名称"/>
             </view>
         </view>
     </view>

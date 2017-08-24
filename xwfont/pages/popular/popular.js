@@ -11,10 +11,13 @@ Page({
 		bannerList: config.bannerList,
 		errImg:config.defaultImg.header
 	},
+	onShow:function(){
+		var that = this
+		that.getUserInfo();
+	},
 	onLoad: function() {
 		var that = this
 		wx.showNavigationBarLoading()
-    that.getUserInfo();
 		app.getCity(function(){
 			wx.hideNavigationBarLoading()
 			wx.setNavigationBarTitle({
