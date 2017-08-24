@@ -1,0 +1,54 @@
+
+<view class="shop-header">
+    <image src="./../../../images/favor.png"></image>
+    <view>刘德华</view>
+    <view>刘德华的店</view>
+</view>
+
+
+
+<form bindsubmit="savePersonInfo" class="subForm">
+    <view class="add-shop clearfix">
+        <view class="scan">
+            <icon type="String" class="iconfont icon-scan"></icon>
+        </view>
+        <view class="info">
+            <view class="title">扫一扫</view>
+            <view class="other">请扫商家的小程序二维码进行商家绑定</view>
+        </view>
+    </view>
+    <view class="form-list">
+        <view class="form-item">
+            <view class="form-item-hd">总件数</view>
+            <view class="form-item-bd">
+                <input type="text" name="countAll" value="{{countAll}}" placeholder="请填写商品总件数"/>
+            </view>
+        </view>
+        <view class="form-item">
+            <view class="form-item-hd">总金额</view>
+            <view class="form-item-bd">
+                <input type="text" name="cashAll" value="{{cashAll}}" placeholder="请填写商品总金额"/>
+            </view>
+        </view>
+        <view class="order-images clearfix">
+            <view catchtap="chooseImg" class="add-image">
+                <icon type="String" class="iconfont icon-add"></icon>
+                <view>上传单据</view>
+            </view>
+        </view>
+    </view>
+    
+    
+    <view class="address-info">
+        <view><text>收货人:小土豆</text><text class="f-r">18888888888</text></view>
+        <view style="margin-bottom: 0rpx;"><text>收货地址:浙江省杭州市江干区UDC时代大厦23楼5-505</text></view>
+        <icon type="String" class="iconfont icon-right"></icon>
+    </view>
+</form>
+
+
+<view class="nav-block">
+    <view class="nav-item createOrder" data-url="../gathering/gathering" catchtap="viewNavDetail">
+        <view class="nav-name">提交并支付</view>
+    </view>
+</view>

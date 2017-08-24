@@ -1,0 +1,11 @@
+@import "../../../styles/reset.wxss";
+@import "../../../styles/fontic.wxss";
+@import "../../../component/nav/nav.wxss";
+
+.createOrder{background-color: cornflowerblue;color: #fff;}
+.code-title{margin-top: 120rpx;text-align: center;margin-bottom: 64rpx;font-size: 36rpx;color: #999;}
+.e-code-info{text-align: center;font-size: 26rpx;color: #999;}
+.e-code{width: 549rpx;height: 625rpx;background-color: #fff;display: inline-block;border: 1rpx solid #e5e5e5;margin-bottom: 25rpx;}
+.e-code image{width: 90%;height:90%;margin: 30rpx;}
+.download-code{color: #333;margin-top: 75rpx;}
+.download-code image{width: 18rpx;height: 20rpx;margin-left: 5rpx;}

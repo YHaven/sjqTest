@@ -1,0 +1,58 @@
+
+<view class="no-address" wx:if="{{noAddress}}">你还未设置收货地址！</view>
+<form bindsubmit="savePersonInfo" class="subForm">
+    <view class="form-list">
+        <view class="form-item">
+            
+            <view class="form-item-bd">
+                <input type="text" name="consignee" value="{{consignee}}" bindinput="bindConsigneeInput" placeholder="收货人" maxlength="15" minlength="2"/>
+            </view>
+        </view>
+        <view class="form-item">
+            <view class="form-item-bd">
+                <input type="text" name="mobile" value="{{mobile}}" bindinput="bindMobileInput" placeholder="手机号码" maxlength="11"/>
+            </view>
+        </view>
+        <view class="form-item">
+            
+            <view class="form-item-bd">
+                <input type="text" name="province" value="" class="hidden" maxlength="1"/>
+                <input type="text" name="city" value="" class="hidden" maxlength="1"/>
+                <input type="text" name="area" value="" class="hidden" maxlength="1"/>
+                <view catchtap="showAddress" style="width:100%;height:60rpx;line-height:60rpx;font-size:32rpx;">{{regionName}}<icon type="String" class="iconfont icon-right f-r"></icon></view>
+                <picker-view class="select-address-view" value="" bindchange="changeAddress" indicator-style="height: 50px;" style="{{selectAddress ? 'display:block':'display:none'}}">
+                    <view class="finish-btn" catchtap="closeAddress">完成</view>
+                    <picker-view-column>
+                        <view wx:for="{{provinceArray}}" wx:for-index="dataIndex" wx:for-item="dataItem" wx:key="data" style="line-height: 50px;" data-id="{{dataItem.value}}">{{dataItem.name}}</view>
+                    </picker-view-column>
+                    <picker-view-column>
+                        <view wx:for="{{cityArray}}" wx:for-index="dataIndex" wx:for-item="dataItem" wx:key="data" style="line-height: 50px" data-id="{{dataItem.value}}">{{dataItem.name}}</view>
+                    </picker-view-column>
+                    <picker-view-column>
+                        <view wx:for="{{areaArray}}" wx:for-index="dataIndex" wx:for-item="dataItem" wx:key="data" style="line-height: 50px" data-id="{{dataItem.value}}">{{dataItem.name}}</view>
+                    </picker-view-column>
+                </picker-view>
+
+            </view>
+        </view>
+        <view class="form-item">
+            
+            <view class="form-item-bd">
+                <input type="text" name="address" value="{{address}}" bindinput="bindAddressInput" placeholder="详细地址"/>
+            </view>
+        </view>
+    </view>
+    
+
+</form>
+
+
+<view class="nav-block">
+    <view class="nav-item createOrder" data-url="../createOrder/createOrder" catchtap="addUserAddr">
+        <view class="nav-name"> <text wx:if="{{comeform == 'home'}}"> 下一步</text><text wx:if="{{comeform != 'home'}}"> 保存</text></view>
+    </view>
+</view>
+
+
+<import src="../../../component/message/message.wxml"/>
+<template is="message" data="{{message: message}}"/>

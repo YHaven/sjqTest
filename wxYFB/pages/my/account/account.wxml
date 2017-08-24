@@ -1,0 +1,38 @@
+
+
+<view class="account-total clearfix">
+    <view class="title f-l">营业总额(元)</view>
+    <view class="value f-r"><text>￥</text>{{allOrderAmount == null?'0.00':allOrderAmount}}</view>
+</view>
+<form bindsubmit="savePersonInfo" class="subForm">
+
+
+    <view class="form-mt">
+    <view class="form-list">
+        <view class="form-item" >
+            <view class="form-item-hd">店铺名称</view>
+            <view class="form-item-bd" catchtap="viewNavDetail" data-url="../shopName/shopName?shopName={{shopName}}&alipayAccount={{alipayAccount}}">
+                 {{shopName == '' ?'去绑定':shopName}}<!--  去绑定  -->
+            </view>
+            <icon type="String" class="iconfont icon-right f-r"></icon>
+        </view>
+        <view class="form-item">
+            <view class="form-item-hd">支付宝提现账号</view>
+            <view wx:if="{{alipayAccount == ''}}" class="form-item-bd" catchtap="viewNavDetail" data-url="../payAccount/payAccount?shopName={{shopName}}&alipayAccount={{alipayAccount}}">去添加</view>
+            <view wx:if="{{alipayAccount != ''}}" class="form-item-bd">{{alipayAccount}}</view>
+            <icon type="String" class="iconfont icon-right f-r" wx:if="{{alipayAccount == ''}}"></icon>
+        </view>
+    </view>
+    </view>
+
+</form>
+
+
+<!--<view class="nav-block">
+    <view class="nav-item" data-url="../addAccount/addAccount" catchtap="viewNavDetail" >
+        <view class="nav-name">保存返回</view>
+    </view>
+    <view class="nav-item createOrder" data-url="../start/start" catchtap="viewNavDetail">
+        <view class="nav-name">发起订单</view>
+    </view>
+</view>-->

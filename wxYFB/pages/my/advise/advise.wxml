@@ -1,0 +1,14 @@
+<view class="advise-header clearfix">
+    <image src="./../../../images/kf-head.jpg"></image>
+    <view class="info">
+        <view style="margin-top:20rpx;">客服</view>
+        <!--<view class="phone">电话:0571-888888888</view>-->
+    </view>
+</view>
+
+<view class="advise-content">
+    <image src="./../../../images/kf-code.jpg"></image>
+    <view>扫一扫上面的二维码，加我微信联系</view>
+</view>
+
+

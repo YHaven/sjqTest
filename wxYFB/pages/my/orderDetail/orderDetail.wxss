@@ -1,0 +1,31 @@
+@import "../../../styles/reset.wxss";
+@import "../../../styles/fontic.wxss";
+@import "../../../component/nav/nav.wxss";
+@import "../../../component/message/message.wxss";
+
+.nav-item{height: 100rpx;line-height: 100rpx;}
+.createOrder{background-color: #00aaee;color: #fff;height: 100rpx;line-height: 100rpx;}
+.createOrder .nav-name,.nav-item .nav-name{font-size: 36rpx;}
+.createOrder .disable{background-color: #999;}
+
+
+.no-goods{padding: 50rpx;margin-top: 200rpx;text-align: center;}
+
+.upload{text-align: center;margin-top: 36rpx;}
+.upload .iconfont{font-size: 96rpx;}
+
+.cb-title{border-top: 1px solid #ddd; text-align: center;margin-top: 120rpx;}
+.cb-title text{position: relative;top: -20rpx;background-color: #eee;padding: 0rpx 10rpx;}
+
+.f-block{padding: 30rpx 15rpx;font-size: 26rpx;background-color: #fff;margin-top: 20rpx;color: #999999;border-bottom: 1px solid #e5e5e5;}
+.f-block .f-item{padding: 5rpx 0rpx;}
+.f-block .f-item .f-value{margin-left: 20rpx;}
+
+.order-info{background-color: #fff;}
+.order-s-name{padding: 30rpx;}
+.s-img{padding:0rpx 30rpx;padding-right: 0rpx;padding-bottom: 30rpx;}
+.s-img image{width: 160rpx;height:160rpx;float: left;margin-right: 19rpx;}
+.s-total{border-top: 1px solid #e5e5e5;padding: 30rpx;font-size: 28rpx;border-bottom: 1px solid #e5e5e5;}
+.s-total .item{margin-bottom: 22rpx;}
+.s-total .item:last-child{margin-bottom: 0rpx;}
+.s-total .total-money{font-size: 32rpx;color: #00aaee;}

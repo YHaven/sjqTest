@@ -1,0 +1,10 @@
+.nav-block{display: flex;text-align: center;position: fixed;bottom: 0px;width: 100%;background-color: #fff;border-top: 1px solid #e5e5e5;}
+.nav-item{flex: 1;padding:10rpx 0rpx;color: #999;}
+.nav-item.cearte-order{position: relative;flex: 0.5;}
+.nav-item.cearte-order image{position: absolute;width: 150rpx;height: 150rpx;top: -45rpx;left: 0rpx;}
+
+.nav-item.active{color: #00aaee;}
+.nav-item .iconfont{font-size: 55rpx;margin-bottom: 0rpx;}
+.nav-item .nav-name{font-size: 25rpx;}
+.nav-icon{display: inline-block;}
+.nav-icon image{width: 100%;height: 100%;}

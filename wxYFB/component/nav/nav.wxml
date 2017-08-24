@@ -1,0 +1,15 @@
+<template name="nav">
+    <view class="nav-block">
+        <view class="{{navActive =='1' ? 'nav-item active' : 'nav-item'}}" data-url="../../index/home/home" catchtap="viewNavDetail">
+            <view class="nav-icon gift-icon"><icon type="String" class="iconfont icon-shoplight"></icon></view>
+            <view class="nav-name">主页</view>
+        </view>
+        <view class="{{navActive =='2' ? 'nav-item cearte-order active' : 'nav-item cearte-order'}}" data-url="../../order/createOrder/createOrder" catchtap="viewNavDetail" >
+            <image src="../../../images/bottom_add.png" ></image>
+        </view>
+        <view class="{{navActive =='3' ? 'nav-item active' : 'nav-item'}}" data-url="../../my/my/my" catchtap="viewNavDetail">
+            <view class="nav-icon msg-icon"><icon type="String" class="iconfont icon-my"></icon></view>
+            <view class="nav-name">我的</view>
+        </view>
+    </view>
+</template>

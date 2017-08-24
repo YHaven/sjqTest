@@ -1,0 +1,75 @@
+
+<!--<view class="shop-header">
+    <image src="./../../../images/favor.png"></image>
+    <view>刘德华</view>
+    <view>刘德华的店</view>
+</view>-->
+
+
+<form bindsubmit="savePersonInfo" class="subForm">
+    <view class="subForm-view">
+    <view class="add-shop clearfix" wx:if="{{userInfo.sid !== '' && userInfo.sid != '0'}}">
+        <view class="scan">
+            <image src="{{userInfo.oUserInfo.avatarurl}}"></image>
+        </view>
+        <view class="info">
+            <view class="title" style="margin-top:50rpx;">{{userInfo.oUserInfo.shopname == ''?userInfo.oUserInfo.nickname:userInfo.oUserInfo.shopname}}</view>
+        </view>
+    </view>
+    <view class="add-shop clearfix" wx:if="{{userInfo.sid == '' || userInfo.sid == '0'}}">
+        <view class="scan" catchtap="scanCode">
+            <icon type="String" class="iconfont icon-scan"></icon>
+        </view>
+        <view class="info">
+            <view class="title">扫一扫</view>
+            <view class="other">请扫商家的小程序二维码进行商家绑定</view>
+        </view>
+    </view>
+    <view class="form-list">
+        <view class="form-item">
+            <view class="form-item-hd">总件数</view>
+            <view class="form-item-bd">
+                <input type="number" name="goodsNumber" value="{{goodsNumber}}" placeholder="请填写商品总件数" bindinput="bindgoodsNumberInput"/>
+            </view>
+        </view>
+        <view class="form-item">
+            <view class="form-item-hd">总金额</view>
+            <view class="form-item-bd">
+                <input type="digit" name="orderAmount" value="{{orderAmount}}" placeholder="请填写商品总金额" bindinput="bindorderAmountInput"/>
+            </view>
+        </view>
+        
+    </view>
+    <view class="order-images clearfix">
+        <view wx:for="{{images}}" wx:for-index="dataIndex" wx:for-item="dataItem" wx:key="data" style="position: relative;float:left;width:160rpx;margin:8rpx;">
+            <icon type="String" class="iconfont icon-close_light" data-index="{{dataIndex}}" catchtap="removeImg">
+            <image src="../../../images/close-icon.png"></image>
+            </icon>
+            <image src="{{dataItem.savePath}}" ></image>
+        </view>
+        <view catchtap="chooseImg" class="add-image">
+            <icon type="String" class="iconfont icon-add"></icon>
+            <view>上传单据</view>
+        </view>
+    </view>
+    </view>
+
+    
+    <view class="address-info" data-url="../address/address" catchtap="viewNavDetail">
+        <view><text>收货人:{{userAddress.consignee}}</text><text class="f-r">{{userAddress.mobile}}</text></view>
+        <view style="margin-bottom: 0rpx;"><text>收货地址:{{userAddress.regionName}}{{userAddress.address}}</text></view>
+        <icon type="String" class="iconfont icon-right"></icon>
+    </view>
+
+    
+</form>
+
+
+<view class="nav-block">
+    <view class="nav-item createOrder  {{checkForm ?'':'disabled'}}" data-url="../gathering/gathering" catchtap="submitForm">
+        <view class="nav-name">提交并支付</view>
+    </view>
+</view>
+
+<import src="../../../component/message/message.wxml"/>
+<template is="message" data="{{message: message}}"/>

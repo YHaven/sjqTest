@@ -1,0 +1,41 @@
+
+<!--<view class="cb-title"><text>在周润发家的订单</text></view>-->
+<view class="order-info">
+    <view class="order-s-name"><text>{{orderInfo.sellerInfo.shopName}}</text></view>
+
+    <view class="s-img clearfix">
+    <block wx:for="{{orderInfo.goodsImgList}}" wx:for-index="dataIndex" wx:for-item="dataItem" wx:key="data">
+        <image src="{{dataItem.path}}" ></image>
+    </block>
+    </view>
+
+    <view class="s-total">
+        <view class="item clearfix">
+            <text class="f-l">件数合计</text><text class="f-r"><text>x</text>{{orderInfo.orderInfo.goodsnumber}}</text>
+        </view>
+        <view class="item clearfix">
+            <text class="f-l">金额合计</text><text class="f-r total-money">￥{{orderInfo.orderInfo.orderamount}}</text>
+        </view>
+    </view>
+</view>
+
+
+<view class="f-block">
+    <view class="f-item"><text class="f-title">下单时间:</text><text class="f-value">{{orderInfo.orderInfo.addTime}}</text></view>
+    <view class="f-item"><text class="f-title">订单编号:</text><text class="f-value">{{orderInfo.orderInfo.ordersn}}</text></view>
+    <view class="f-item"><text class="f-title">付款状态:</text><text class="f-value">{{orderInfo.orderInfo.orderStatusTxt}}</text></view>
+</view>
+
+
+<import src="../../../component/message/message.wxml"/>
+<template is="message" data="{{message: message}}"/>
+
+
+<view class="nav-block" wx:if="{{orderInfo.orderInfo.orderstatus == '0'}}">
+    <!--<view class="nav-item" data-url="../../order/gathering/gathering?orderId={{orderInfo.orderInfo.id}}" catchtap="viewNavDetail">
+        <view class="nav-name">生成订单二维码</view>
+    </view>-->
+    <view class="nav-item createOrder" catchtap="toPay" wx:if="{{userInfo.userType != '1'}}">
+        <view class="nav-name">立即支付</view>
+    </view>
+</view>

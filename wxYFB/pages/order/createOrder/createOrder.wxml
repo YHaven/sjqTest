@@ -1,0 +1,26 @@
+<view class="order-title">
+    <view class="title">商品图片</view>
+    <view class="other">同一款式的商品只需添加一张</view>
+</view>
+
+<view class="order-images clearfix">
+    <view wx:for="{{images}}" wx:for-index="dataIndex" wx:for-item="dataItem" wx:key="data" style="position: relative;float:left;width:160rpx;margin:8rpx;">
+
+        <icon type="String" class="iconfont icon-close_light" data-index="{{dataIndex}}" catchtap="removeImg">
+        <image src="../../../images/close-icon.png"></image>
+        </icon>
+        <image src="{{dataItem.savePath}}" ></image>
+    </view>
+    <view catchtap="chooseImg" class="add-image">
+        <icon type="String" class="iconfont icon-add"></icon>
+        <view>相册/相机</view>
+    </view>
+</view>
+
+<view class="nav-block">
+    <view class="nav-item createOrder {{images.length>0?'':'disabled'}}" data-url="../createOrder/createOrder" catchtap="addOrderN">
+        <view class="nav-name">去填写价格</view>
+    </view>
+</view>
+<import src="../../../component/message/message.wxml"/>
+<template is="message" data="{{message: message}}"/>

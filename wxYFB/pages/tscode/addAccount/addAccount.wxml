@@ -1,0 +1,35 @@
+<form bindsubmit="savePersonInfo" class="subForm">
+    <view class="form-list">
+        <view class="form-item">
+            <view class="form-item-hd">店铺名称</view>
+            <view class="form-item-bd">
+                <input type="text" name="shopName" value="{{shopName}}" placeholder="不填则直接使用微信名称"/>
+            </view>
+        </view>
+    </view>
+    <view>
+        账号信息
+    </view>
+    <view class="form-list">
+        <view class="form-item">
+            <view class="form-item-hd">提现支付宝</view>
+            <view class="form-item-bd">
+                <input type="text" name="cashAccount" value="{{cashAccount}}" placeholder="用于提现的支付宝账号"/>
+            </view>
+        </view>
+    </view>
+
+    <view>
+        提现支付宝添加后不可被修改
+    </view>
+</form>
+
+
+<view class="nav-block">
+    <view class="nav-item" data-url="../addAccount/addAccount" catchtap="viewNavDetail" >
+        <view class="nav-name">保存返回</view>
+    </view>
+    <view class="nav-item createOrder" data-url="../start/start" catchtap="viewNavDetail">
+        <view class="nav-name">发起订单</view>
+    </view>
+</view>

@@ -1,0 +1,12 @@
+@import "../../../styles/reset.wxss";
+@import "../../../styles/fontic.wxss";
+@import "../../../component/nav/nav.wxss";
+
+
+.advise-header{margin-top: 30rpx;background-color: #fff;padding: 30rpx 30rpx;}
+.advise-header image{width: 80rpx; height: 80rpx;float: left;}
+.advise-header .info{margin-left: 110rpx;font-size: 32rpx;}
+.advise-header .info .phone{font-size: 26rpx;color: #999;margin-top: 15rpx;}
+
+.advise-content{text-align: center;padding: 50rpx 0rpx;font-size: 26rpx;color: #999;}
+.advise-content image{width: 507rpx;height: 507rpx;margin-top: 30rpx;margin-bottom: 30rpx;}

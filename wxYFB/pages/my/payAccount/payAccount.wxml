@@ -1,0 +1,18 @@
+<form class="subForm">
+    <view class="form-list">
+        <view class="form-item">
+            <input value="{{alipayAccount}}" name="alipayAccount" placeholder="请输入支付宝账号" bindinput="bindAlipayAccountInput"/>
+        </view>
+    </view>
+    <view class="o-info">
+        提现账号添加后不可更改
+    </view>
+
+    <view class="save-btn" catchtap="saveInfo">保存</view>
+
+</form>
+
+
+<import src="../../../component/message/message.wxml"/>
+<template is="message" data="{{message: message}}"/>
+

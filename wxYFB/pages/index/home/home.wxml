@@ -1,0 +1,75 @@
+<swiper class="banner" indicator-dots="false" autoplay="true">
+    <block wx:for="{{bannerList}}" wx:for-item="bannerItem" wx:for-index="bannerIndex" wx:key="banner">
+        <swiper-item data-type="{{bannerItem.type}}" data-url="{{bannerItem.ad_url}}" data-title="{{bannerItem.ad_name}}" bindtap="viewNavDetail">
+            <image src="{{bannerItem.ad_img}}" class="banner-item"></image>
+        </swiper-item>
+    </block>
+</swiper>
+
+<view class="order-list">
+
+    <view class="order-item clearfix" wx:if="{{newPayed.ordersn}}">
+        <view class="title clearfix" catchtap="viewNavDetail" data-url="../../my/orderDetail/orderDetail?orderId={{newPayed.id}}">
+            <view class="f-l">最新交易<icon type="String" class="iconfont icon-right"></icon></view>
+            <view class="f-r">{{newPayed.addTime}}</view>
+        </view>
+
+        <view class="info clearfix">
+            <view class="f-l">
+                <view class="s-name">{{userInfo.userType == '1' ? newPayed.nickName : newPayed.shopName}}</view>
+                <view class="s-count">共{{newPayed.goodsnumber}}件商品</view>
+            </view>
+            <view class="f-r">
+                <view class="s-money">实付款 <text>¥<text>{{newPayed.orderamount}}</text></text></view>
+            </view>
+        </view>
+    </view>
+    <view class="order-item clearfix" wx:if="{{!newPayed.ordersn}}">
+        <view class="title clearfix">
+            <view class="f-l"  >最新交易<icon type="String" class="iconfont icon-right"></icon></view>
+            <view class="f-r"></view>
+        </view>
+
+        <view class="info clearfix">
+            <view class="f-l">
+                <view class="s-name">暂无数据</view>
+            </view>
+        </view>
+    </view>
+
+    <view class="order-item clearfix" wx:if="{{newUnpay.ordersn}}" hidden="{{userInfo.userType == '1' ? true : false}}">
+        <view class="title clearfix" catchtap="viewNavDetail" data-url="../../my/orderDetail/orderDetail?orderId={{newUnpay.id}}">
+            <view class="f-l">未付款订单<icon type="String" class="iconfont icon-right"></icon></view>
+            <view class="f-r">{{newUnpay.addTime}}</view>
+        </view>
+
+        <view class="info clearfix">
+            <view class="f-l">
+                <view class="s-name">{{newUnpay.shopName == null?' ':newUnpay.shopName}}</view>
+                <view class="s-count">共{{newUnpay.goodsnumber}}件商品</view>
+            </view>
+            <view class="f-r">
+                <view class="s-money">实付款 <text>¥<text>{{newUnpay.orderamount}}</text></text></view>
+                <view class="s-button" data-id="{{newUnpay.id}}" catchtap="toPay" data-url="../../my/orderDetail/orderDetail?orderId={{newUnpay.id}}">立即支付</view>
+            </view>
+        </view>
+    </view>
+    <view class="order-item clearfix" wx:if="{{!newUnpay.ordersn}}" hidden="{{userInfo.userType == '1' ? true : false}}">
+        <view class="title clearfix">
+            <view class="f-l">未付款订单<icon type="String" class="iconfont icon-right"></icon></view>
+            <view class="f-r"></view>
+        </view>
+
+        <view class="info">
+            <view class="f-l">
+                <view class="s-name">暂无数据</view>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class="create-code" catchtap="viewNavDetail" data-url="../../tscode/tCode/tCode" hidden="{{userInfo.userType == '1' ? false : true}}">生成订单二维码<image src="../../../images/right-e-icon.png"></image></view>
+
+
+<import src="../../../component/nav/nav.wxml"/>
+<template is="nav" data="{{navActive:'1',isBuyer:'1'}}"/>

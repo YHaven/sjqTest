@@ -1,0 +1,7 @@
+
+<view class="code-title">扫二维码生成支付订单</view>
+<view class="gathering-money">¥{{orderInfo.orderInfo.orderamount}}</view>
+<view class="e-code-info">
+    <view class="e-code"><image src="{{tcode}}"></image></view>
+    <view class="download-code" catchtap="captureScreen">保存订单收款码<image src="../../../images/down-e-icon.png"></image></view>
+</view>

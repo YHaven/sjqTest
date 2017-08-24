@@ -1,0 +1,7 @@
+
+<view class="code-title">请扫我的订单二维码生成订单</view>
+<view class="e-code-info">
+    <view class="e-code"><image src="{{tcode}}"></image></view>
+    <view>建议将订单二维码保存打印并贴于门店内</view>
+    <view class="download-code" catchtap="captureScreen">保存订单收款码<image src="../../../images/down-e-icon.png"></image></view>
+</view>

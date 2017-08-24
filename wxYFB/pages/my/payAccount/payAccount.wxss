@@ -1,0 +1,119 @@
+@import "../../../styles/reset.wxss";
+@import "../../../styles/fontic.wxss";
+@import "../../../component/nav/nav.wxss";
+@import "../../../component/message/message.wxss";
+
+
+.subForm{font-size: 30rpx;}
+.form-list {
+    position: relative;
+    margin-bottom: 20rpx;
+    background: #fff;
+    
+}
+
+.form-list:first-child {
+    margin-top: 20rpx;
+}
+
+.form-list::before, .form-list::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    transform: scaleY(.5);
+    background-color: #e3e3e3;
+}
+
+.form-list::before {
+    top: 0;
+}
+
+.form-list::after {
+    bottom: 0;
+}
+
+.form-item {
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    width: 100%;
+    padding: 15rpx 30rpx;
+}
+
+.form-item::before {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 99;
+    left: 0;
+    top: 0;
+    height: 1px;
+    width: 100%;
+    transform: scaleY(.5);
+    background-color: #e3e3e3;
+}
+
+.form-item:first-child::before {
+    display: none;
+}
+
+.form-item .iconfont{color: #999;}
+
+.form-item-hd {
+    width: 210rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+}
+
+.form-item-bd {
+    flex: 1;
+    height: 60rpx;
+    line-height: 60rpx;
+    text-align: right;
+    color: #999;
+}
+
+input, .input {
+    box-sizing: border-box;
+    width: 100%;
+    height: 60rpx;
+    line-height: 60rpx;
+    background-color: #fff;
+    padding: 0 15rpx;
+}
+.selectFile{
+    width: 450rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    background-color: #fff;
+    padding: 0 15rpx;
+    display:block;
+
+}
+.input-placeholder {
+    color: #808080;
+}
+
+.edit-btn {
+    width: 300rpx;
+    height: 80rpx;
+    margin: 0 auto;
+    font-size: 32rpx;
+    text-align: center;
+    line-height: 80rpx;
+    background-color: #84d9d4;
+    border-radius: 80rpx;
+    color: #fff;
+}
+
+.hidden {
+    display: none;
+}
+
+.form-list .form-item .picker{width: 100%;height: 60rpx;line-height: 60rpx;}
+
+.save-btn{margin: 30rpx;text-align: center;background-color: #00aaee;color: #fff;padding-top:22rpx;padding-bottom: 22rpx;border-radius: 5rpx; }
+.o-info{padding:0rpx 30rpx;font-size: 26rpx;color: #999;}

@@ -1,0 +1,15 @@
+<form class="subForm">
+    <view class="form-list">
+        <view class="form-item">
+            <input value="{{shopName}}" name="shopName" placeholder="请输入店铺名称" bindinput="bindShopNameInput"/>
+        </view>
+    </view>
+
+    <view class="save-btn" catchtap="saveInfo">保存</view>
+
+</form>
+
+
+<import src="../../../component/message/message.wxml"/>
+<template is="message" data="{{message: message}}"/>
+

@@ -1,0 +1,122 @@
+@import "../../../styles/reset.wxss";
+@import "../../../styles/fontic.wxss";
+@import "../../../component/nav/nav.wxss";
+
+.createOrder{background-color: cornflowerblue;color: #fff;}
+
+.subForm{font-size: 30rpx;}
+.form-list {
+    position: relative;
+    /*margin-bottom: 20rpx;*/
+    background: #fff;
+    
+}
+
+.form-list:first-child {
+    /*margin-top: 20rpx;*/
+}
+
+/*.form-list::before, .form-list::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    transform: scaleY(.5);
+    background-color: #e3e3e3;
+}*/
+
+.form-list::before {
+    top: 0;
+}
+
+.form-list::after {
+    bottom: 0;
+}
+
+.form-item {
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    width: 100%;
+    padding: 20rpx 0rpx;
+}
+
+.form-item::before {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 99;
+    left: 0;
+    top: 0;
+    height: 1px;
+    width: 100%;
+    transform: scaleY(.5);
+    background-color: #e3e3e3;
+}
+
+.form-item:first-child::before {
+    display: none;
+}
+
+.form-item .iconfont{color: #999;}
+
+.form-item-hd {
+    width: 210rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+}
+
+.form-item-bd {
+    flex: 1;
+    height: 60rpx;
+    line-height: 60rpx;
+    text-align: right;
+    color: #999;
+}
+
+input, .input {
+    box-sizing: border-box;
+    width: 100%;
+    height: 60rpx;
+    line-height: 60rpx;
+    background-color: #fff;
+    padding: 0 15rpx;
+}
+.selectFile{
+    width: 450rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    background-color: #fff;
+    padding: 0 15rpx;
+    display:block;
+
+}
+.input-placeholder {
+    color: #808080;
+}
+
+.edit-btn {
+    width: 300rpx;
+    height: 80rpx;
+    margin: 0 auto;
+    font-size: 32rpx;
+    text-align: center;
+    line-height: 80rpx;
+    background-color: #84d9d4;
+    border-radius: 80rpx;
+    color: #fff;
+}
+
+.hidden {
+    display: none;
+}
+
+.form-mt{padding: 0rpx 40rpx; background-color: #fff;margin: 20rpx 0rpx;border-bottom: 1px solid #e5e5e5;}
+.form-list .form-item .picker{width: 100%;height: 60rpx;line-height: 60rpx;}
+
+.account-total{margin-top: 20rpx;background-color: #fff;border: 1px solid #ddd;padding:0rpx 30rpx;line-height: 118rpx;}
+.account-total .title{font-size: 32rpx;}
+.account-total .value{font-size: 36rpx;color: #00aaee;}
+.account-total .value text{font-size: 26rpx;}

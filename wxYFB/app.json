@@ -1,0 +1,39 @@
+{
+    "pages":[
+        
+        
+        
+        "pages/index/start/start",
+        "pages/index/home/home",
+        
+        "pages/tscode/addAccount/addAccount",
+        
+        
+        
+        
+        "pages/tscode/tCode/tCode",
+        
+        "pages/order/address/address",
+        "pages/order/createOrder/createOrder",
+        "pages/order/createOrderSeller/createOrderSeller",
+        "pages/order/createOrderDetail/createOrderDetail",
+        "pages/order/gathering/gathering",
+        "pages/order/pay/pay",
+        "pages/my/order/order",
+        "pages/my/advise/advise",
+        "pages/my/shopName/shopName",
+        "pages/my/payAccount/payAccount",
+        "pages/my/orderDetail/orderDetail",
+        "pages/my/account/account",
+        
+        "pages/my/my/my"
+        
+        
+        
+    ],
+    "window": {
+        "navigationBarBackgroundColor": "#000000",
+        "navigationBarTitleText": "衣付宝",
+        "navigationBarTextStyle":"#ffffff"
+    }
+}

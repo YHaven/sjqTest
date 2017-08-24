@@ -1,0 +1,21 @@
+.clear {clear:both; height:0; font-size:0; line-height:0; overflow:hidden;}
+.cle:after {visibility:hidden; display:block; font-size:0; content:'\20'; clear:both; height:0;}
+.clearfix:after{visibility:hidden; display:block; font-size:0; content:'\20'; clear:both; height:0;}
+.clear_f:after{visibility:hidden; display:block; font-size:0; content:'\20'; clear:both; height:0;}
+.cle_float:after{visibility:hidden; display:block; font-size:0; content:'\20'; clear:both; height:0;}
+
+.f-l{float: left;}
+.f-r{float: right;}
+
+.blue-btn{padding: 10rpx;background: #84d9d4;border-radius: 50rpx;margin: 10rpx auto;width:200rpx; }
+.text-c{text-align: center}
+.text-l{text-align: left}
+.text-r{text-align: right}
+
+page{background-color: #f6f6f6;font-family: "宋体"}
+.loading{text-align: center;color: #ccc;}
+.loading-tip {width: 100%;height: 80rpx;line-height: 80rpx;text-align: center;color: #ccc;}
+.nav-item.createOrder{background-color: #00aaee;color: #fff;height: 100rpx;line-height: 100rpx;}
+.nav-item.createOrder .nav-name{font-size: 36rpx;}
+.nav-item.createOrder.disabled{background-color: #999;}
+
