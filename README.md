@@ -1,3 +1,3 @@
 # sjqTest
 一些小测试demo
-![image](https://github.com/ButBueatiful/dotvim/raw/master/screenshots/vim-screenshot.jpg)
+![image](http://www.sjq.cn/themes/ecmoban_dsc/images/logo.gif)
