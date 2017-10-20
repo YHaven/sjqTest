@@ -1,0 +1,13 @@
+{
+    "pages":[
+
+        "pages/index/home/home",
+        "pages/my/my/my"
+        
+    ],
+    "window": {
+        "navigationBarBackgroundColor": "#cd010d",
+        "navigationBarTitleText": "来结婚吧",
+        "navigationBarTextStyle":"#ffffff"
+    }
+}

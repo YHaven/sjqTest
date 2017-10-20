@@ -1,0 +1,16 @@
+<swiper class="banner" indicator-dots="false" autoplay="true">
+    <block wx:for="{{bannerList}}" wx:for-item="bannerItem" wx:for-index="bannerIndex" wx:key="banner">
+        <swiper-item data-type="{{bannerItem.type}}" data-url="{{bannerItem.ad_url}}" data-title="{{bannerItem.ad_name}}" bindtap="viewNavDetail">
+            <image src="{{bannerItem.ad_img}}" class="banner-item"></image>
+        </swiper-item>
+    </block>
+</swiper>
+
+<view class="order-list">
+
+    
+</view>
+
+
+<import src="../../../component/nav/nav.wxml"/>
+<template is="nav" data="{{navActive:'1'}}"/>

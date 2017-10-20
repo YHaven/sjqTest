@@ -1,0 +1,70 @@
+<view class="form-mt">
+<view class="form-list">
+    <view class="form-item clearfix">
+        <image src="{{userInfo.avatarUrl}}" class="header-img"></image>
+        <view class="user-info">
+            <view class="user-name">{{userInfo.nickName}}</view>
+            <view class="user-type">身份:{{userInfo.userType == '1'?'卖家':'买家'}}</view>
+        </view>
+    </view>
+</view>
+</view>
+<view class="form-mt">
+<view class="form-list" >
+    <view class="form-item" catchtap="viewNavDetail" data-url="../order/order">
+        <view class="form-item-hd">
+            <icon type="String" class="iconfont order-icon"><image src="../../../images/order-icon.png"></image></icon>
+            <text class="item-name">订单明细</text>
+        </view>
+        <view class="form-item-bd">
+            <icon type="String" class="iconfont icon-right f-r"></icon>
+        </view>
+        
+    </view>
+    <view class="form-item" catchtap="viewNavDetail" data-url="../advise/advise">
+        <view class="form-item-hd">
+        <icon type="String" class="iconfont advice-icon"><image src="../../../images/advice-icon.png"></image></icon>
+        <text class="item-name">意见反馈</text>
+        </view>
+        <view class="form-item-bd">
+        <icon type="String" class="iconfont icon-right f-r"></icon>
+        </view>
+    </view>
+    <view class="form-item" catchtap="viewNavDetail" data-url="../account/account" wx:if="{{userInfo.userType == '1'}}">
+         <view class="form-item-hd">
+        <icon type="String" class="iconfont cash-icon"><image src="../../../images/cash-icon.png"></image></icon>
+        <text class="item-name">提现账号</text>
+        </view>
+        <view class="form-item-bd">
+            <icon type="String" class="iconfont icon-right f-r"></icon>
+        </view>
+    </view>
+</view>
+</view>
+
+
+<view class="form-mt">
+<view class="form-list" >
+    <view class="form-item" catchtap="selectRole" data-url="../../index/start/start">
+         <view class="form-item-hd">
+        <icon type="String" class="iconfont user-type-icon"><image src="../../../images/user-seller-icon.png"></image></icon>
+        <text class="item-name">{{userInfo.userType == '1' ? '转买家端':'转卖家端'}}</text>
+        </view>
+        <view class="form-item-bd">
+        <!--<icon type="String" class="iconfont icon-right f-r"></icon>-->
+        </view>
+    </view>
+    <!--<view class="form-item" catchtap="viewNavDetail" data-url="../../tscode/tCode/tCode" wx:if="{{userInfo.userType == '1'}}">
+         <view class="form-item-hd">
+        <icon type="String" class="iconfont cash-icon"><image src="../../../images/user-seller-icon.png"></image></icon>
+        <text class="item-name">商家二维码</text>
+        </view>
+        <view class="form-item-bd">
+            <icon type="String" class="iconfont icon-right f-r"></icon>
+        </view>
+    </view>-->
+</view>
+</view>
+
+<import src="../../../component/nav/nav.wxml"/>
+<template is="nav" data="{{navActive:'3',isBuyer:'0'}}"/>

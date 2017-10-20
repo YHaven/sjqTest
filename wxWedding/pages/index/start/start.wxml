@@ -1,0 +1,14 @@
+<view class="{{dataInfo.userType == '1' ? 'select-role active':'select-role '}}" catchtap="selectRole" data-usertype="1">
+<view class="cover-img"><image src="./../../../images/seller.png"></image></view>
+<!--<view class="role-title"> <icon type="String" class="iconfont icon-check"></icon> 我是卖家</view>-->
+</view>
+<view class="{{dataInfo.userType == '0' ? 'select-role active':'select-role'}}" catchtap="selectRole" data-usertype="0">
+<view class="cover-img"><image src="./../../../images/buyer.png"></image></view>
+<!--<view class="role-title"><icon type="String" class="iconfont icon-check"></icon> 我是买家</view>-->
+</view>
+
+
+<view class="change-id">请选择当前身份</view>
+
+<import src="../../../component/message/message.wxml"/>
+<template is="message" data="{{message: message}}"/>
