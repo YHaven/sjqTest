@@ -3,6 +3,7 @@ Page({
   data: {
     userInfo: {},
     dataList: [],
+    checkPass: false,
     hasMore: true,
     start: 1,
     showLoading: true
@@ -72,6 +73,9 @@ Page({
   },
   saveDataInfo: function () {
     var that = this;
+    if (!that.data.checkPass){
+      return false;
+    }
     var params = {};
     if (that.data.userInfo.userType == '0') {
       params.uid = that.data.userInfo.userId;

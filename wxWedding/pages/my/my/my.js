@@ -5,7 +5,7 @@ Page({
       // {enName:'favorite', zhName:'我的操作'},
       // {enName:'history', zhName:'浏览记录'},
       // {enName:'shake', zhName:'摇一摇'},
-      {enIcon:'magic', zhName:'签到',toPage:'toSign'},
+      // {enIcon:'magic', zhName:'签到',toPage:'toSign'},
       { enIcon: 'favor', zhName: '我的请柬', toPage: 'invitationCard'}
       // {enName:'setting', zhName:'设置'}
     ],
