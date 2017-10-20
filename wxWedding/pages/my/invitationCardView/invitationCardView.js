@@ -99,14 +99,14 @@ Page({
   viewData: function (e) {
     var data = e.currentTarget.dataset;
     wx.navigateTo({
-      url: '../invitationCardView/invitationCardView?dataid='+data.id
+      url: data.id
     })
   },
   //编辑
   editData: function (e) {
     var data = e.currentTarget.dataset;
     wx.navigateTo({
-      url: '../invitationCardEdit/invitationCardEdit?dataid=' + data.id
+      url: data.id
     })
   },
   //添加
