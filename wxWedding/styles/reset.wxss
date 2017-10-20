@@ -1,3 +1,5 @@
+@import "../styles/fontic.wxss";
+@import "../component/nav/nav.wxss";
 .clear {clear:both; height:0; font-size:0; line-height:0; overflow:hidden;}
 .cle:after {visibility:hidden; display:block; font-size:0; content:'\20'; clear:both; height:0;}
 .clearfix:after{visibility:hidden; display:block; font-size:0; content:'\20'; clear:both; height:0;}
@@ -12,7 +14,9 @@
 .text-l{text-align: left}
 .text-r{text-align: right}
 
-page{background-color: #cd010d;font-family: "宋体"}
+page{background-color: #fff;font-family: "宋体"}
+image{width: 100%;height: 100%;}
+
 .loading{text-align: center;color: #ccc;}
 .loading-tip {width: 100%;height: 80rpx;line-height: 80rpx;text-align: center;color: #ccc;}
 .nav-item.createOrder{background-color: #00aaee;color: #fff;height: 100rpx;line-height: 100rpx;}

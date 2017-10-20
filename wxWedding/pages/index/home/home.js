@@ -1,15 +1,23 @@
 var util = require('../../../utils/util.js')
 Page({
 	data: {
+    userInfo: {},
 		bannerList: [],
-		userInfo:{}
+    indicatorDots: false,
+    hasMore: true,
+    showLoading: true,
+    start: 1,
+		dataList:[]
 	},
 	onLoad: function (options) {
 		var that = this;
-		that.getInviteCode(options);
+    that.isOpenSetting();//检查授权
+    that.getUserType();//获取用户信息
+		that.getInviteCode(options);//显示访客
+    that.loadBanner([]);//加载banner
+    that.loadData();
 
-		//检查授权
-		that.isOpenSetting();
+
 	},
 	onShow:function(){
 		var that = this;
@@ -97,7 +105,7 @@ Page({
 		// [{"img":"","title":"","url":""}]
 		var that = this;
 		var defaultBanner = {};
-		defaultBanner.ad_img="../../../images/banner.jpg";
+    defaultBanner.ad_img ="../../../images/wedding-3.jpg";
 		// banner = [];
 		var bannerArray = [];
 		if(banner.length<=0){
@@ -111,6 +119,63 @@ Page({
 			bannerList: bannerArray
 		});
 	},
+
+  loadData:function(){
+      var that = this;
+      that.setData({
+        dataList:[
+          {
+            id:'222',
+            imgUrl:'../../../images/wedding-1.jpg',
+            groom:'LLLLL',
+            bride:'NNNNN',
+            weddingDate:'2018年8月8日',
+            weekDate:'星期三',
+            isTop:1
+          },
+          {
+            id: '222',
+            imgUrl: '../../../images/wedding-2.jpg',
+            groom: 'LLLLL',
+            bride: 'NNNNN',
+            weddingDate: '2018年8月9日',
+            weekDate: '星期三',
+            isTop: 0
+          },
+          {
+            id: '222',
+            imgUrl: '../../../images/wedding-2.jpg',
+            groom: 'LLLLL',
+            bride: 'NNNNN',
+            weddingDate: '2018年8月6日',
+            weekDate: '星期三',
+            isTop: 0
+          }
+        ]
+      });
+  },
+  onPullDownRefresh: function () {
+    var that = this
+    that.setData({
+      films: [],
+      hasMore: true,
+      showLoading: true,
+      start: 1
+    })
+    this.onLoad()
+  },
+  onReachBottom: function () {
+    var that = this
+    if (!that.data.showLoading) {
+      var params = {
+        vt: '1',
+        page: that.data.start,
+        msgResource: that.data.msgResource,
+        businessId: config.apiList.plana.business
+      };
+      plana.getMessageList.call(that, config.apiList.plana.getMessageList, params)
+    }
+  },
 	viewBannerDetail:function(e){
 		var that= this;
 		var data = e.currentTarget.dataset;
@@ -122,6 +187,7 @@ Page({
 		}
 		
 	},
+
 	viewNavDetail:function(e){
 		var that= this;
 		var data = e.currentTarget.dataset;
@@ -142,11 +208,15 @@ Page({
 			url: data.url
 		})
 	},
+  
+  //分享
 	onShareAppMessage: function () {
 		return {
 			title: util.config.title,
 			desc: util.config.desc,
+      imageUrl: util.config.imageUrl,
 			path: util.config.wxpath
 		}
 	}
+
 })

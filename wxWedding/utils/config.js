@@ -33,7 +33,22 @@ module.exports = {
         getaccesstoken:'https://api.weixin.qq.com/cgi-bin/token',//获取access_token   ?grant_type=client_credential&appid=APPID&secret=APPSECRET {"access_token":"ACCESS_TOKEN","expires_in":7200}
         getwxacodeunlimit:'https://api.weixin.qq.com/wxa/getwxacodeunlimit'//获取小程序码-临时?access_token=ACCESS_TOKEN
     },
-    title: '来结婚吧',
-	desc: '恭候您的光临！',
-    wxpath:'/pages/index/home/home' 
+    skinList: [
+      { title: '公路', imgUrl: homepath + '/images/wxcbg/user_bg_1.jpg' },
+      { title: '黑夜森林', imgUrl: homepath + '/images/wxcbg/user_bg_2.jpg' },
+      { title: '鱼与水', imgUrl: homepath + '/images/wxcbg/user_bg_3.jpg' },
+      { title: '山之剪影', imgUrl: homepath + '/images/wxcbg/user_bg_4.jpg' },
+      { title: '火山', imgUrl: homepath + '/images/wxcbg/user_bg_5.jpg' },
+      { title: '科技', imgUrl: homepath + '/images/wxcbg/user_bg_6.jpg' },
+      { title: '沙漠', imgUrl: homepath + '/images/wxcbg/user_bg_7.jpg' },
+      { title: '叶子', imgUrl: homepath + '/images/wxcbg/user_bg_8.jpg' },
+      { title: '早餐', imgUrl: homepath + '/images/wxcbg/user_bg_9.jpg' },
+      { title: '英伦骑车', imgUrl: homepath + '/images/wxcbg/user_bg_10.jpg' },
+      { title: '草原', imgUrl: homepath + '/images/wxcbg/user_bg_11.jpg' },
+      { title: '城市', imgUrl: homepath + '/images/wxcbg/user_bg_12.jpg' }
+    ],
+    title: '恭候您的光临！',
+    desc: '来结婚吧',
+    wxpath:'/pages/index/home/home',
+    imageUrl:'../../../images/wedding-1.jpg'
 }

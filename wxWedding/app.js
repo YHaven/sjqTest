@@ -19,7 +19,7 @@ App({
             success: function (res) {
               //console.log(res)
               var userInfo = res.userInfo;
-              userInfo.userType = '-1';
+              that.initStorage(userInfo);
 
               that.getOpenId(login_res.code, res, function (o_res) {
                 //console.log(t_res);
@@ -113,6 +113,14 @@ App({
           wx.setStorage({
             key: 'person_info',
             data: personInfo
+          })
+        }
+
+        // 判断背景卡选择数据是否存在，没有则创建
+        if (!('skin' in res.keys)) {
+          wx.setStorage({
+            key: 'skin',
+            data: ''
           })
         }
       }

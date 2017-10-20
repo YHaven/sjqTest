@@ -2,7 +2,9 @@
     "pages":[
 
         "pages/index/home/home",
-        "pages/my/my/my"
+        "pages/my/my/my",
+        "pages/my/skin/skin",
+        "pages/my/invitationCard/invitationCard"
         
     ],
     "window": {
