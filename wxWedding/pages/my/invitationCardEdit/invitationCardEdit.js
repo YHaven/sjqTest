@@ -151,7 +151,15 @@ Page({
       title: '当前页面个人请柬'
     })
   },
-
+  //分享
+  onShareAppMessage: function () {
+    return {
+      title: util.config.title,
+      desc: util.config.desc,
+      imageUrl: util.config.imageUrl,
+      path: util.config.wxpath
+    }
+  },
   saveDataInfo: function () {
     var that = this;
     if (!that.data.checkPass) {

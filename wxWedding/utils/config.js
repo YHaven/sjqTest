@@ -47,8 +47,8 @@ module.exports = {
       { title: '草原', imgUrl: homepath + '/images/wxcbg/user_bg_11.jpg' },
       { title: '城市', imgUrl: homepath + '/images/wxcbg/user_bg_12.jpg' }
     ],
-    title: '恭候您的光临！',
+    title: '一条单身狗和另一条单身狗恭候您的光临！',
     desc: '来结婚吧',
     wxpath:'/pages/index/home/home',
-    imageUrl:'../../../images/wedding-1.jpg'
+    imageUrl:'../../../images/wedding_bg_1.jpg'
 }

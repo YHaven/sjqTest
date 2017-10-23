@@ -2,7 +2,7 @@
   <view class="first-img">
     <view class="img-show-box">
       <view class="music-box"></view>
-       <image animation="{{animation}}" src="../../../images/wedding-3.jpg" class="banner-item"></image> 
+       <image animation="{{animation}}" src="../../../images/wedding_bg_1.jpg" class="banner-item"></image> 
     </view>
 
     <view class="add-first-img" wx:if="{{false}}">
@@ -42,6 +42,29 @@
     <image src="{{photo}}" data-src="{{photo}}" mode='aspectFit' bindtap="previewImage"></image>
   </view>
 </scroll-view>
+
+
+<view class="contact-us" wx:if="{{navActive == 'phone'}}">
+  <view>联系我们</view>
+   <image src="../../../images/mail_bg_1.jpg" mode='aspectFit'></image>
+  <view>
+    <view>aadasdasd</view>
+    <view><text>联系新郎</text><text>联系新娘</text></view>
+  </view>
+</view>
+
+<view class="address-location" wx:if="{{navActive == 'location'}}">
+  <view>
+    <view>新郎家位置</view>
+    <view>地图</view>
+     <button>导航到新郎家</button> 
+  </view>
+  <view>
+    <view>新娘家位置</view>
+    <view>地图</view>
+     <button>导航到新娘家</button> 
+  </view>
+</view> 
 
 <import src="../../../component/invitationNav/invitationNav.wxml" />
 <template is="invitationNav" data="{{navActive:navActive,navArray:[{navName:'请柬',navIcon:'favor_light',navKey:'favor'},{navName:'相册',navIcon:'pic',navKey:'pic'},{navName:'电话',navIcon:'phone',navKey:'phone'},{navName:'导航',navIcon:'location',navKey:'location'}]}}" />
