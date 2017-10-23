@@ -1,0 +1,8 @@
+<template name="invitationNav">
+    <view class="nav-block">
+        <view  wx:for="{{navArray}}" wx:for-item="nav" wx:for-index="navIndex" wx:key="nav" class="{{navActive == nav.navKey ? 'nav-item active' : 'nav-item'}}" data-navkey="{{nav.navKey}}" catchtap="viewInvitationNav">
+            <view class="nav-icon"><icon type="String" class="iconfont icon-{{nav.navIcon}}"></icon></view>
+            <view class="nav-name">{{nav.navName}}</view>
+        </view>
+    </view>
+</template>

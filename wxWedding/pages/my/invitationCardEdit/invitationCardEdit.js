@@ -3,6 +3,10 @@ Page({
   data: {
     userInfo: {},
     dataList: [],
+    navActive:'favor',
+    photos: ['https://www.zhencome.com/images/wxcbg/user_bg_1.jpg', 'https://www.zhencome.com/images/wxcbg/user_bg_2.jpg', 'https://www.zhencome.com/images/wxcbg/user_bg_3.jpg'],
+    animation: '',
+    interval: '',
     checkPass: false,
     hasMore: true,
     start: 1,
@@ -10,6 +14,7 @@ Page({
   },
   onLoad: function (options) {
     var that = this;
+    that.musicBox(8000);
     that.getUserType();//获取用户信息
   },
   onShow: function () {
@@ -23,7 +28,58 @@ Page({
       userInfo: userInfo
     });
   },
+  previewImage: function (e) {
+    var current = e.target.dataset.src;
+    wx.previewImage({
+      current: current, // 当前显示图片的http链接  
+      urls: this.data.photos // 需要预览的图片http链接列表  
+    })
+  },
+  musicBox: function (sleepTimer) {
+    var that = this;
+    that.animation = wx.createAnimation({
+      // 动画持续时间，单位ms，默认值 400
+      duration: sleepTimer,
+      timingFunction: 'linear',
+      // 延迟多长时间开始
+      delay: 0,
+      // transformOrigin: 'left top 0',
+      success: function (res) {
+        console.log(res)
+      }
+    });
+    that.rotate(sleepTimer);
+    // setInterval(function(){
+    //   console.log('2222')
+    //   that.rotate();
+    // }, sleepTimer);
 
+  },
+  rotate: function (sleepTimer) {
+    //两个动画组 一定要以step()结尾
+    /**
+     * 动画顺序 顺时针旋转150度>x,y 放大二倍>x，y平移10px>x,y顺时针倾斜>改变样式和设置宽度宽度
+     */
+    var that = this;
+
+    that.animation.rotate(180).step()
+    that.setData({
+      //输出动画
+      animation: this.animation.export()
+    })
+
+    var i = 2;
+    setInterval(function () {
+      that.animation.rotate(180 * (i)).step()
+      that.setData({
+        //输出动画
+        animation: this.animation.export()
+      })
+      i++;
+      // console.log(i);
+    }.bind(that), sleepTimer);
+
+  },
   loadData: function () {
     var that = this;
     that.setData({
@@ -71,9 +127,17 @@ Page({
 
 
   },
+  viewInvitationNav: function (e) {
+    var that = this;
+    var data = e.currentTarget.dataset;
+    that.setData({
+      navActive: data.navkey
+    })
+  },
+
   saveDataInfo: function () {
     var that = this;
-    if (!that.data.checkPass){
+    if (!that.data.checkPass) {
       return false;
     }
     var params = {};

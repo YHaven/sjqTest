@@ -14,6 +14,14 @@
 .text-c{text-align: center}
 .text-l{text-align: left}
 .text-r{text-align: right}
+.m-t20{margin-top: 20rpx;}
+.m-t50{margin-top: 50rpx;}
+
+.bc_green{background: green;}
+.bc_red{background: red;}
+.bc_yellow{background: yellow;}
+.bc_blue{background: blue;}
+
 
 page{background-color: #fff;font-family: "宋体"}
 image{width: 100%;height: 100%;}

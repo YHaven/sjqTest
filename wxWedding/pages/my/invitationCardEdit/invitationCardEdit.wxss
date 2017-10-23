@@ -1,53 +1,32 @@
 @import "../../../styles/reset.wxss";
-.nav-block{border: 0;}
-.banner{height: 350rpx;}
-.banner image{width: 100%;height:100%;}
+@import "../../../component/invitationNav/invitationNav.wxss";
 
-.data-list{
-    box-sizing: border-box;
-    width: 750rpx;
-    padding: 30rpx 15rpx 120rpx;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-between;
-}
-.data-item{width: 710rpx;height: 280rpx;position: relative;margin: 0 auto;margin-bottom: 20rpx;border-radius: 10rpx;overflow: hidden;}
-.data-item{border-bottom: 2rpx solid #a6010a; box-shadow: 0 10rpx 40rpx #a6010a;}
-.data-img{width: 710rpx;height: 280rpx;}
-.note-info{position: absolute;bottom: 0rpx;background: rgba(0, 0, 0, 0.5);width: 710rpx;color: #fff;padding: 10rpx 0rpx; text-align: center;font-size: 24rpx;}
+page{background: #cd010d;}
+.no-border{border: 0;}
+.first-img{text-align: center;margin-top:30rpx; }
+.first-img .add-first-img{width: 375rpx;height: 375rpx;line-height: 375rpx;margin: 0 auto;}
+.add-first-img .iconfont{font-size: 108rpx;color: #ffffff;}
 
-.data-opra{  
-  transform: rotate(0deg) scale(1) translate(-40%,0%);   
-  -webkit-transform: rotate(0deg) scale(1) translate(-40%,0%);   
-} 
-.data-p{position: relative;}
-.opera-block{position: absolute;right: 30rpx;top: 10rpx; text-align: center;}
-.add-btn{position: fixed;bottom: 80rpx;right: 10rpx;width: 100rpx;height: 100rpx;line-height: 100rpx;text-align: center; border-radius: 50%;border: 1px solid #a6010a;box-shadow:0 5rpx 5rpx #a6010a;font-size: 30rpx;color: #f9b61d;background: #a6010a;}
-.data-item-top::after {
-    content: '置顶';
-    display: block;
-    position: absolute;
-    top: 5px;
-    right: 3px;
-    z-index: 4;
-    text-align: center;
-    transform: rotate(45deg);
-    color: #fff;
-}
-.data-item-top {
-    border: 6rpx solid #a6010a;
-}
+.img-show-box{position: relative;}
+.img-show-box .music-box{position: absolute;top: -14rpx;left:50%;margin-left: -204rpx; width: 400rpx;height: 400rpx;border: 1rpx solid #666;border-radius: 50%;z-index: 1;background: #000000;z-index: -1;}
+.first-img image{width: 375rpx;height: 375rpx;border-radius: 50%;}
+.first-img image{animation: 1.2s linear 0s normal none infinite running rotating;}
 
-.data-item-top::before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: -80rpx;
-    right: -80rpx;
-    z-index: 4;
-    width: 160rpx;
-    height: 160rpx;
-    transform: rotate(45deg);
-    background-color: #a6010a;
+
+.invitation-band{background:#f3be4c;min-height: 300rpx;position: relative;margin: 30rpx;border-radius: 10rpx;overflow: hidden;padding-bottom: 200rpx;margin-bottom: 150rpx;}
+.invitation-band .mail_bg{height: 200rpx;position: absolute;bottom: 0rpx;display: block;}
+
+.invitation-band{font-family:Verdana, Geneva, Tahoma, sans-serif;text-align: center;font-size: 42rpx;}
+.invitation-band .invitation-title{padding: 20rpx 0rpx;color: #cd010d;font-weight: bold;}
+.invitation-band .invitation-title text{display: inline-block; width: 30rpx;}
+.invitation-band .invitation-font{color: #cd010d;font-size: 36rpx;}
+.invitation-band .invitation-font-i{color: #000000;min-width: 300rpx;display: inline-block;padding-left: 20rpx;}
+.invitation-band .invitation-font-i.date{width: 480rpx;text-align: left;}
+
+
+.wedding-photo .photo-item{
+    width: 340rpx;
+    height: 400rpx;
+    margin: 17rpx;
+    float: left;
 }
