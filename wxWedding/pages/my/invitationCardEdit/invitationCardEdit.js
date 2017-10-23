@@ -3,8 +3,9 @@ Page({
   data: {
     userInfo: {},
     dataList: [],
+    scrollTop: 100,
     navActive:'favor',
-    photos: ['https://www.zhencome.com/images/wxcbg/user_bg_1.jpg', 'https://www.zhencome.com/images/wxcbg/user_bg_2.jpg', 'https://www.zhencome.com/images/wxcbg/user_bg_3.jpg'],
+    photos: ['https://www.zhencome.com/images/wxcbg/user_bg_1.jpg', 'https://www.zhencome.com/images/wxcbg/user_bg_2.jpg', 'https://www.zhencome.com/images/wxcbg/user_bg_3.jpg', 'https://www.zhencome.com/images/wxcbg/user_bg_1.jpg', 'https://www.zhencome.com/images/wxcbg/user_bg_2.jpg', 'https://www.zhencome.com/images/wxcbg/user_bg_3.jpg','https://www.zhencome.com/images/wxcbg/user_bg_1.jpg', 'https://www.zhencome.com/images/wxcbg/user_bg_2.jpg', 'https://www.zhencome.com/images/wxcbg/user_bg_3.jpg'],
     animation: '',
     interval: '',
     checkPass: false,
@@ -16,6 +17,7 @@ Page({
     var that = this;
     that.musicBox(8000);
     that.getUserType();//获取用户信息
+    that.setPageTitle();
   },
   onShow: function () {
     var that = this;
@@ -34,6 +36,15 @@ Page({
       current: current, // 当前显示图片的http链接  
       urls: this.data.photos // 需要预览的图片http链接列表  
     })
+  },
+  upper: function (e) {
+    console.log(e)
+  },
+  lower: function (e) {
+    console.log(e)
+  },
+  scroll: function (e) {
+    console.log(e)
   },
   musicBox: function (sleepTimer) {
     var that = this;
@@ -132,6 +143,12 @@ Page({
     var data = e.currentTarget.dataset;
     that.setData({
       navActive: data.navkey
+    })
+  },
+
+  setPageTitle:function(){
+    wx.setNavigationBarTitle({
+      title: '当前页面个人请柬'
     })
   },
 

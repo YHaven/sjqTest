@@ -37,7 +37,7 @@
   </view>
 </view>
 
-<scroll-view class="wedding-photo" wx:if="{{navActive == 'pic'}}">
+<scroll-view class="wedding-photo" wx:if="{{navActive == 'pic'}}" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-top="{{scrollTop}}">
   <view wx:for="{{photos}}" wx:for-item="photo" wx:for-index="photoIndex" wx:key="photo" class="photo-item">
     <image src="{{photo}}" data-src="{{photo}}" mode='aspectFit' bindtap="previewImage"></image>
   </view>
