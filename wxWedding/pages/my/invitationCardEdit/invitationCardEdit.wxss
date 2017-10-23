@@ -8,13 +8,13 @@ page{background: #cd010d;}
 .add-first-img .iconfont{font-size: 108rpx;color: #ffffff;}
 
 .img-show-box{position: relative;}
-.img-show-box .music-box{position: absolute;top: -14rpx;left:50%;margin-left: -204rpx; width: 400rpx;height: 400rpx;border: 1rpx solid #666;border-radius: 50%;z-index: 1;background: #000000;z-index: -1;}
+.img-show-box .music-box{position: absolute;top: -14rpx;left:50%;margin-left: -202rpx; width: 400rpx;height: 400rpx;border: 1rpx solid #666;border-radius: 50%;z-index: 1;background: #000000;z-index: -1;}
 .first-img image{width: 375rpx;height: 375rpx;border-radius: 50%;}
 .first-img image{animation: 1.2s linear 0s normal none infinite running rotating;}
 
 
-.invitation-band{background:#f3be4c;min-height: 300rpx;position: relative;margin: 30rpx;border-radius: 10rpx;overflow: hidden;padding-bottom: 200rpx;margin-bottom: 150rpx;}
-.invitation-band .mail_bg{height: 200rpx;position: absolute;bottom: 0rpx;display: block;}
+.invitation-band{background:#f3be4c;min-height: 300rpx;position: relative;margin: 30rpx;border-radius: 10rpx;overflow: hidden;padding-bottom: 200rpx;}
+.invitation-band .mail_bg{height: 200rpx;position: absolute;bottom: 0rpx;display: block;border-radius: 10rpx;}
 
 .invitation-band{font-family:Verdana, Geneva, Tahoma, sans-serif;text-align: center;font-size: 42rpx;}
 .invitation-band .invitation-title{padding: 20rpx 0rpx;color: #cd010d;font-weight: bold;}

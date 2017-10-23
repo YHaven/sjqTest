@@ -16,6 +16,7 @@
 .text-r{text-align: right}
 .m-t20{margin-top: 20rpx;}
 .m-t50{margin-top: 50rpx;}
+.p-b150{padding-bottom: 150rpx;}
 
 .bc_green{background: green;}
 .bc_red{background: red;}

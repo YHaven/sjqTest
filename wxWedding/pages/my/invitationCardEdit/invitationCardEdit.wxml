@@ -1,4 +1,4 @@
-<view wx:if="{{navActive == 'favor'}}">
+<view wx:if="{{navActive == 'favor'}}" class="p-b150">
   <view class="first-img">
     <view class="img-show-box">
       <view class="music-box"></view>
@@ -13,8 +13,7 @@
   <view class="invitation-band">
     <view class="invitation-title">
       <view>我们结婚了</view>
-      <view>wedding
-        <text></text>invitation</view>
+      <view>wedding<text></text>invitation</view>
     </view>
     <view class="invitation-font">我们将于：</view>
     <view class="invitation-font m-t50">公历
