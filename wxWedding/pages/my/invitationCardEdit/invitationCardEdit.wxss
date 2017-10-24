@@ -2,10 +2,12 @@
 @import "../../../component/invitationNav/invitationNav.wxss";
 
 page{background: #cd010d;}
-.no-border{border: 0;}
+.no-border{border: 0;} 
 .first-img{text-align: center;margin-top:30rpx; }
 .first-img .add-first-img{width: 375rpx;height: 375rpx;line-height: 375rpx;margin: 0 auto;}
 .add-first-img .iconfont{font-size: 108rpx;color: #ffffff;}
+.nav-item.createOrder{background-color: #a10009;}
+
 
 .img-show-box{position: relative;}
 .img-show-box .music-box{position: absolute;top: -14rpx;left:50%;margin-left: -202rpx; width: 400rpx;height: 400rpx;border: 1rpx solid #666;border-radius: 50%;z-index: 1;background: #000000;z-index: -1;}
@@ -18,15 +20,28 @@ page{background: #cd010d;}
 
 .invitation-band{font-family:Verdana, Geneva, Tahoma, sans-serif;text-align: center;font-size: 42rpx;}
 .invitation-band .invitation-title{padding: 20rpx 0rpx;color: #cd010d;font-weight: bold;}
-.invitation-band .invitation-title text{display: inline-block; width: 30rpx;}
+.invitation-band .invitation-title text{display: inline-block; width: 30rpx;float: left;}
 .invitation-band .invitation-font{color: #cd010d;font-size: 36rpx;}
-.invitation-band .invitation-font-i{color: #000000;min-width: 300rpx;display: inline-block;padding-left: 20rpx;}
+.invitation-band .invitation-font-i{color: #000000;min-width: 100rpx;display: inline-block;padding-left: 20rpx;border: 1px solid #cd010d;overflow:inherit;}
 .invitation-band .invitation-font-i.date{width: 480rpx;text-align: left;}
+.invitation-band .invitation-font-i.font-name{width: 212rpx;}
+.invitation-band .invitation-font-i input{height: 48rpx;}
 
 
+.wedding-photo{height: 1100rpx;}
 .wedding-photo .photo-item{
     width: 340rpx;
     height: 400rpx;
     margin: 17rpx;
     float: left;
 }
+
+.contact-us{background: #f3be4c;min-height: 1200rpx;position: relative;text-align: center;}
+.contact-us .contact-bottom-bg{position: absolute;bottom: 102rpx;left: -1rpx;}
+.contact-us .contact-show{margin: 50rpx 0rpx;color: #cd010d;font-size: 38rpx;}
+.contact-us button{width: 50%;margin-top: 20rpx;background: #cd010d;}
+
+
+.address-location{color: #ffffff;text-indent: 30rpx;}
+.address-location .address-map{width: 90%;margin: 20rpx auto;}
+.address-location button{width: 60%;margin-top: 30rpx;margin-bottom: 50rpx; background: #a10009;}

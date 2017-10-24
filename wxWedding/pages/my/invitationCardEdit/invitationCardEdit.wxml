@@ -1,11 +1,11 @@
 <view wx:if="{{navActive == 'favor'}}" class="p-b150">
   <view class="first-img">
-    <view class="img-show-box">
+    <view class="img-show-box" wx:if="{{dataObj.surfaceImg}}">
       <view class="music-box"></view>
-       <image animation="{{animation}}" src="../../../images/wedding_bg_1.jpg" class="banner-item"></image> 
+       <image animation="{{animation}}" src="{{dataObj.surfaceImg}}" class="banner-item"></image> 
     </view>
 
-    <view class="add-first-img" wx:if="{{false}}">
+    <view class="add-first-img" wx:if="{{!dataObj.surfaceImg}}" bindtap="setSurfaceImg">
       <icon class="iconfont icon-pic"></icon>
     </view>
   </view>
@@ -17,60 +17,75 @@
     </view>
     <view class="invitation-font">我们将于：</view>
     <view class="invitation-font m-t50">公历
-      <text class="invitation-font-i date">2017年11月11日（星期一）</text>
+      <!-- <text class="invitation-font-i date">2017年11月11日（星期一）</text> -->
+          <picker class="invitation-font-i date" mode="date" value="{{date}}" bindchange="bindDateChange">  
+            <view class="picker">  
+              {{dataObj.weddingDate}}({{dataObj.weekDate}})  
+            </view>  
+          </picker>  
     </view>
     <view class="invitation-font m-t20">农历
-      <text class="invitation-font-i date">二零一七年十一月十一日</text>
+      <view class="invitation-font-i date" style='border:0px;'>{{dataObj.lunarDate}}</view>
     </view>
     <view class="invitation-font m-t50">举办结婚典礼！</view>
     <view class="invitation-font m-t50">时间
-      <text class="invitation-font-i">上午11：58</text>
+      <picker class="invitation-font-i" mode="time" value="{{dataObj.time}}" bindchange="bindTimeChange">  
+            <view class="picker">  
+              {{dataObj.timeStr}}
+            </view>  
+      </picker>  
     </view>
     <view class="invitation-font m-t20">席设
-      <text class="invitation-font-i">国际大飞机场我售后售后</text>
+      <input class="invitation-font-i" value="{{dataObj.seatDesin}}" data-key='seatDesin' bindinput="bindInputChange"></input>
     </view>
 
     <view class="invitation-font m-t50">我们恭候您的光临！</view>
-    <view class="invitation-font m-t50">新郎:氨基酸，新娘:阿斯顿</view>
+    <view class="invitation-font m-t50">新郎:<input class="invitation-font-i font-name" value="{{dataObj.groom}}" data-key='groom' bindinput="bindInputChange"></input>，新娘:<input class="invitation-font-i font-name" value="{{dataObj.bride}}" data-key='bride' bindinput="bindInputChange"></input></view>
 
     <image class="mail_bg" src="../../../images/mail_bg_1.jpg"></image>
   </view>
 </view>
+  
+<!-- 相册 -->
 
-<scroll-view class="wedding-photo" wx:if="{{navActive == 'pic'}}" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-top="{{scrollTop}}">
+<scroll-view class="wedding-photo" wx:if="{{navActive == 'pic'}}" scroll-y="true"  bindscroll="scroll" scroll-top="{{scrollTop}}">
+  <image  mode='aspectFit' src="../../../images/contact_bg_2.png" style="height:200rpx;"></image>
   <view wx:for="{{photos}}" wx:for-item="photo" wx:for-index="photoIndex" wx:key="photo" class="photo-item">
     <image src="{{photo}}" data-src="{{photo}}" mode='aspectFit' bindtap="previewImage"></image>
   </view>
 </scroll-view>
 
 
+<!-- 联系电话 -->
+
 <view class="contact-us" wx:if="{{navActive == 'phone'}}">
-  <view>联系我们</view>
-   <image src="../../../images/mail_bg_1.jpg" mode='aspectFit'></image>
+  <image src="../../../images/contact_bg_1.png" mode='widthFix'></image>
   <view>
-    <view>aadasdasd</view>
-    <view><text>联系新郎</text><text>联系新娘</text></view>
+    <view class="contact-show">诚邀您的到来！</view>
+    <view><button data-phone="18817386792" bindtap="callPhone" >联系新郎</button><button data-phone="18817386792" bindtap="callPhone">联系新娘</button></view>
   </view>
+  <image src="../../../images/mail_bg_2.jpg" mode='widthFix' class="contact-bottom-bg"></image>
 </view>
+
+
+<!-- 联系地址 -->
+
 
 <view class="address-location" wx:if="{{navActive == 'location'}}">
   <view>
     <view>新郎家位置</view>
-    <view>地图</view>
+    <map class="address-map" longitude="113.324520" latitude="23.099994" scale="16" markers="{{markers}}" bindmarkertap="markertap" show-location="{{true}}" ></map>
      <button>导航到新郎家</button> 
   </view>
   <view>
     <view>新娘家位置</view>
-    <view>地图</view>
-     <button>导航到新娘家</button> 
+    <map class="address-map" longitude="113.324520" latitude="23.099994" scale="16" markers="{{markers}}" bindmarkertap="markertap" show-location="{{true}}" ></map>
+     <button data-latitude="23.099994" data-longitude="113.324520" data-name="我擦嘞地名" data-address="地址" bindtap="openLocation">导航到新娘家</button> 
   </view>
 </view> 
 
-<import src="../../../component/invitationNav/invitationNav.wxml" />
-<template is="invitationNav" data="{{navActive:navActive,navArray:[{navName:'请柬',navIcon:'favor_light',navKey:'favor'},{navName:'相册',navIcon:'pic',navKey:'pic'},{navName:'电话',navIcon:'phone',navKey:'phone'},{navName:'导航',navIcon:'location',navKey:'location'}]}}" />
-
-<view class="nav-block no-border" wx:if="{{false}}">
-  <view class="nav-item createOrder {{checkPass?'':'disabled'}}" data-url="../createOrder/createOrder" catchtap="saveDataInfo">
-    <view class="nav-name">下一步</view>
+<view class="nav-block">
+  <view class="nav-item createOrder {{checkPass?'':'disabled'}}" catchtap="saveDataInfo">
+    <view class="nav-name">{{navActive == "location"?"发布":"下一步"}}</view>
   </view>
-</view>
+</view> 

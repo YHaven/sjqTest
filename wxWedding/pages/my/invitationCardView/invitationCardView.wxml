@@ -1,0 +1,71 @@
+<view wx:if="{{navActive == 'favor'}}" class="p-b150">
+  <view class="first-img">
+    <view class="img-show-box">
+      <view class="music-box"></view>
+       <image animation="{{animation}}" src="../../../images/wedding_bg_1.jpg" class="banner-item"></image> 
+    </view>
+
+    <view class="add-first-img" wx:if="{{false}}">
+      <icon class="iconfont icon-pic"></icon>
+    </view>
+  </view>
+
+  <view class="invitation-band">
+    <view class="invitation-title">
+      <view>我们结婚了</view>
+      <view>wedding<text></text>invitation</view>
+    </view>
+    <view class="invitation-font">我们将于：</view>
+    <view class="invitation-font m-t50">公历
+      <text class="invitation-font-i date">2017年11月11日（星期一）</text>
+    </view>
+    <view class="invitation-font m-t20">农历
+      <text class="invitation-font-i date">二零一七年十一月十一日</text>
+    </view>
+    <view class="invitation-font m-t50">举办结婚典礼！</view>
+    <view class="invitation-font m-t50">时间
+      <text class="invitation-font-i">上午11：58</text>
+    </view>
+    <view class="invitation-font m-t20">席设
+      <text class="invitation-font-i">国际大飞机场我售后售后</text>
+    </view>
+
+    <view class="invitation-font m-t50">我们恭候您的光临！</view>
+    <view class="invitation-font m-t50">新郎:氨基酸，新娘:阿斯顿</view>
+
+    <image class="mail_bg" src="../../../images/mail_bg_1.jpg"></image>
+  </view>
+</view>
+  
+<scroll-view class="wedding-photo" wx:if="{{navActive == 'pic'}}" scroll-y="true"  bindscroll="scroll" scroll-top="{{scrollTop}}">
+  <image  mode='aspectFit' src="../../../images/contact_bg_2.png" style="height:200rpx;"></image>
+  <view wx:for="{{photos}}" wx:for-item="photo" wx:for-index="photoIndex" wx:key="photo" class="photo-item">
+    <image src="{{photo}}" data-src="{{photo}}" mode='aspectFit' bindtap="previewImage"></image>
+  </view>
+</scroll-view>
+
+
+<view class="contact-us" wx:if="{{navActive == 'phone'}}">
+  <image src="../../../images/contact_bg_1.png" mode='widthFix'></image>
+  <view>
+    <view class="contact-show">诚邀您的到来！</view>
+    <view><button data-phone="18817386792" bindtap="callPhone" >联系新郎</button><button data-phone="18817386792" bindtap="callPhone">联系新娘</button></view>
+  </view>
+  <image src="../../../images/mail_bg_2.jpg" mode='widthFix' class="contact-bottom-bg"></image>
+</view>
+
+<view class="address-location" wx:if="{{navActive == 'location'}}">
+  <view>
+    <view>新郎家位置</view>
+    <map class="address-map" longitude="113.324520" latitude="23.099994" scale="16" markers="{{markers}}" bindmarkertap="markertap" show-location="{{true}}" ></map>
+     <button data-latitude="28" data-longitude="100" data-name="我擦嘞地名" data-address="地址" bindtap="openLocation">导航到新郎家</button> 
+  </view>
+  <view>
+    <view>新娘家位置</view>
+    <map class="address-map" longitude="113.324520" latitude="23.099994" scale="16" markers="{{markers}}" bindmarkertap="markertap" show-location="{{true}}" ></map>
+     <button data-latitude="23.099994" data-longitude="113.324520" data-name="我擦嘞地名" data-address="地址" bindtap="openLocation">导航到新娘家</button> 
+  </view>
+</view> 
+
+<import src="../../../component/invitationNav/invitationNav.wxml" />
+<template is="invitationNav" data="{{navActive:navActive,navArray:[{navName:'请柬',navIcon:'favor_light',navKey:'favor'},{navName:'相册',navIcon:'pic',navKey:'pic'},{navName:'电话',navIcon:'phone',navKey:'phone'},{navName:'导航',navIcon:'location',navKey:'location'}]}}" />
