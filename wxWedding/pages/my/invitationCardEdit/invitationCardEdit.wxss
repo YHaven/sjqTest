@@ -21,11 +21,13 @@ page{background: #cd010d;}
 .invitation-band{font-family:Verdana, Geneva, Tahoma, sans-serif;text-align: center;font-size: 42rpx;}
 .invitation-band .invitation-title{padding: 20rpx 0rpx;color: #cd010d;font-weight: bold;}
 .invitation-band .invitation-title text{display: inline-block; width: 30rpx;float: left;}
-.invitation-band .invitation-font{color: #cd010d;font-size: 36rpx;}
-.invitation-band .invitation-font-i{color: #000000;min-width: 100rpx;display: inline-block;padding-left: 20rpx;border: 1px solid #cd010d;overflow:inherit;}
-.invitation-band .invitation-font-i.date{width: 480rpx;text-align: left;}
-.invitation-band .invitation-font-i.font-name{width: 212rpx;}
-.invitation-band .invitation-font-i input{height: 48rpx;}
+.invitation-font{color: #cd010d;font-size: 36rpx;}
+.invitation-font-i{color: #000000;min-width: 100rpx;display: inline-block;padding-left: 20rpx;border: 1px solid #cd010d;overflow:inherit;}
+.invitation-font-i.date{width: 480rpx;text-align: left;}
+.invitation-font-i.font-name{width: 212rpx;}
+.invitation-font-i input{height: 48rpx;}
+
+
 
 
 .wedding-photo{height: 1100rpx;}
@@ -34,7 +36,13 @@ page{background: #cd010d;}
     height: 400rpx;
     margin: 17rpx;
     float: left;
+    background: rgba(0,0,0,0.7);
+    text-align: center;
+    position: relative;
 }
+.wedding-photo .photo-item .icon-close{position: absolute;right: 0rpx;top: 0rpx;color: red;font-size: 80rpx;}
+
+.wedding-photo .photo-item .icon-add{font-size: 180rpx;color: #fff;margin-top: 110rpx;}
 
 .contact-us{background: #f3be4c;min-height: 1200rpx;position: relative;text-align: center;}
 .contact-us .contact-bottom-bg{position: absolute;bottom: 102rpx;left: -1rpx;}
@@ -45,3 +53,5 @@ page{background: #cd010d;}
 .address-location{color: #ffffff;text-indent: 30rpx;}
 .address-location .address-map{width: 90%;margin: 20rpx auto;}
 .address-location button{width: 60%;margin-top: 30rpx;margin-bottom: 50rpx; background: #a10009;}
+
+.address-location .invitation-font-i{border: 1px solid #fff;}

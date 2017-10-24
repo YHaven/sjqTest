@@ -50,9 +50,14 @@
 
 <scroll-view class="wedding-photo" wx:if="{{navActive == 'pic'}}" scroll-y="true"  bindscroll="scroll" scroll-top="{{scrollTop}}">
   <image  mode='aspectFit' src="../../../images/contact_bg_2.png" style="height:200rpx;"></image>
-  <view wx:for="{{photos}}" wx:for-item="photo" wx:for-index="photoIndex" wx:key="photo" class="photo-item">
-    <image src="{{photo}}" data-src="{{photo}}" mode='aspectFit' bindtap="previewImage"></image>
+  <view class="photo-item" catchtap="choosePhotoImg">
+    <icon type="String" class="iconfont icon-add"></icon>
   </view>
+  <view wx:for="{{dataObj.photos}}" wx:for-item="photo" wx:for-index="photoIndex" wx:key="photo" class="photo-item">
+    <icon class="iconfont icon-close" data-index="{{photoIndex}}" catchtap="removeImg"></icon>
+    <image src="{{photo.savePath}}" data-src="{{photo.savePath}}" mode='aspectFit' bindtap="previewImage"></image>
+  </view>
+  
 </scroll-view>
 
 
@@ -62,7 +67,14 @@
   <image src="../../../images/contact_bg_1.png" mode='widthFix'></image>
   <view>
     <view class="contact-show">诚邀您的到来！</view>
-    <view><button data-phone="18817386792" bindtap="callPhone" >联系新郎</button><button data-phone="18817386792" bindtap="callPhone">联系新娘</button></view>
+    <view>
+      <view class="invitation-font m-t50">
+      新郎电话:<input type='number' maxlength="11" class="invitation-font-i" value="{{dataObj.groomPhone}}" data-key='groomPhone' bindinput="bindInputChange"></input>
+      </view>
+      <view class="invitation-font m-t50">
+        新娘电话:<input type='number' maxlength="11"  class="invitation-font-i" value="{{dataObj.bridePhone}}" data-key='bridePhone' bindinput="bindInputChange"></input>
+      </view>
+    </view>
   </view>
   <image src="../../../images/mail_bg_2.jpg" mode='widthFix' class="contact-bottom-bg"></image>
 </view>
@@ -73,14 +85,13 @@
 
 <view class="address-location" wx:if="{{navActive == 'location'}}">
   <view>
-    <view>新郎家位置</view>
+    <view>新郎家位置<input type='text' class="invitation-font-i" value="{{dataObj.groomAddress}}" data-key='groomAddress' bindinput="bindInputChange"></input></view>
     <map class="address-map" longitude="113.324520" latitude="23.099994" scale="16" markers="{{markers}}" bindmarkertap="markertap" show-location="{{true}}" ></map>
-     <button>导航到新郎家</button> 
+
   </view>
   <view>
-    <view>新娘家位置</view>
+    <view>新娘家位置<input type='text' class="invitation-font-i" value="{{dataObj.brideAddress}}" data-key='brideAddress' bindinput="bindInputChange"></input></view>
     <map class="address-map" longitude="113.324520" latitude="23.099994" scale="16" markers="{{markers}}" bindmarkertap="markertap" show-location="{{true}}" ></map>
-     <button data-latitude="23.099994" data-longitude="113.324520" data-name="我擦嘞地名" data-address="地址" bindtap="openLocation">导航到新娘家</button> 
   </view>
 </view> 
 

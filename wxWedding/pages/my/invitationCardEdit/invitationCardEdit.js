@@ -166,8 +166,37 @@ Page({
     });
   },
 
+  choosePhotoImg:function(){
+    var that = this;
+    var oldData = that.data.dataObj;
 
+    var imagesArray = oldData.photos;
+    var imageObj = {};
+    imageObj.imgId = "222";
+    imageObj.savePath = "https://www.zhencome.com/images/wxcbg/user_bg_1.jpg";
+    imagesArray.push(imageObj);
+    oldData.photos = imagesArray;
+    that.setData({
+      dataObj: oldData
+    });
+  },
+  removeImg: function (e) {
+    var that = this;
+    var data = e.currentTarget.dataset;
+    var removeIndex = data.index;
+    var oldData = that.data.dataObj;
 
+    var newImgArray = oldData.photos;
+    var removeImg = newImgArray[removeIndex];
+
+    newImgArray = newImgArray.slice(0, removeIndex).concat(newImgArray.slice(removeIndex + 1, newImgArray.length));
+
+    oldData.photos = newImgArray;
+
+    that.setData({
+      dataObj: oldData
+    })
+  },
   //相册预览
   previewImage: function (e) {
     var current = e.target.dataset.src;
@@ -267,8 +296,8 @@ Page({
   scroll: function (e) {
     var that = this;
     if (e.detail.scrollTop + 550 >= e.detail.scrollHeight){
-      console.log(e);
-      that.onReachBottom()
+      // console.log(e);
+      // that.onReachBottom()
     }
     
   },
@@ -376,30 +405,7 @@ Page({
     }
 
   },
-  removeImg: function (e) {
-    var that = this;
-    var data = e.currentTarget.dataset;
-    var removeIndex = data.index;
 
-    var newImgArray = that.data.images;
-    var removeImg = newImgArray[removeIndex];
-    var params = {}
-    params.imgId = removeImg.imgId;
-    util.postData.call(that, config.wxApi.deleImg, params, function (res) {
-      console.log(res)
-      if (res.data.err == 0) {
-        newImgArray = newImgArray.slice(0, removeIndex).concat(newImgArray.slice(removeIndex + 1, newImgArray.length));
-        that.setData({
-          images: newImgArray
-        })
-      }
-
-    });
-
-
-
-    // this.slice(0,n).concat(this.slice(n+1,this.length))
-  },
   chooseImg: function (cb) {
     var that = this;
     var params = {};
