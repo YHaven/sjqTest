@@ -50,8 +50,25 @@ page{background: #cd010d;}
 .contact-us button{width: 50%;margin-top: 20rpx;background: #cd010d;}
 
 
-.address-location{color: #ffffff;text-indent: 30rpx;}
-.address-location .address-map{width: 90%;margin: 20rpx auto;}
+.address-location{color: #ffffff;text-indent: 30rpx;padding-top:50rpx; padding-bottom: 88rpx;}
+.address-location .address-map{width: 90%;margin: 20rpx auto;height: 320rpx;}
 .address-location button{width: 60%;margin-top: 30rpx;margin-bottom: 50rpx; background: #a10009;}
 
 .address-location .invitation-font-i{border: 1px solid #fff;}
+
+.location-address {
+    padding: 20rpx;
+    text-align: center;
+    font-size: 30rpx;
+}
+
+.location-coord {
+    font-size: 24rpx;
+    text-align: center;
+    color: #ccc;
+}
+
+.location-refresh {
+    width: 600rpx;
+    margin-top: 60rpx;
+}

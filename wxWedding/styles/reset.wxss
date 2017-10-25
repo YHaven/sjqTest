@@ -1,5 +1,6 @@
 @import "../styles/fontic.wxss";
 @import "../component/nav/nav.wxss";
+@import "../component/message/message.wxss";
 .clear {clear:both; height:0; font-size:0; line-height:0; overflow:hidden;}
 .cle:after {visibility:hidden; display:block; font-size:0; content:'\20'; clear:both; height:0;}
 .clearfix:after{visibility:hidden; display:block; font-size:0; content:'\20'; clear:both; height:0;}

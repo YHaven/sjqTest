@@ -1,14 +1,13 @@
 var config = require('./utils/config.js')
 var util = require('./utils/util.js')
 
-
 // 授权登录
 App({
   onLaunch: function () {
     var that = this;
+    
     // 获取用户信息
-    that.getUserInfo()
-
+    that.getUserInfo();
   },
   getUserInfo: function (cb) {
     var that = this;
@@ -19,6 +18,7 @@ App({
             success: function (res) {
               //console.log(res)
               var userInfo = res.userInfo;
+
               that.initStorage(userInfo);
 
               that.getOpenId(login_res.code, res, function (o_res) {

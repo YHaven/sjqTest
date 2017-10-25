@@ -85,14 +85,21 @@
 
 <view class="address-location" wx:if="{{navActive == 'location'}}">
   <view>
-    <view>新郎家位置<input type='text' class="invitation-font-i" value="{{dataObj.groomAddress}}" data-key='groomAddress' bindinput="bindInputChange"></input></view>
-    <map class="address-map" longitude="113.324520" latitude="23.099994" scale="16" markers="{{markers}}" bindmarkertap="markertap" show-location="{{true}}" ></map>
+    <view>新郎家导航位置<input type='text' class="invitation-font-i" value="{{dataObj.groomGPSAddress}}" data-key='groomGPSAddress' bindconfirm="bindAddressChange"></input></view>
+    <view>新郎家显示地址<input type='text' class="invitation-font-i" value="{{dataObj.groomAddress}}" data-key='groomAddress' bindinput="bindInputChange"></input></view>
+    <map class="address-map" longitude="{{dataObj.groomLng != ''?dataObj.groomLng : longitude}}" latitude="{{dataObj.groomLat != ''?dataObj.groomLat : latitude}}" scale="16" markers="{{groomMarkers.length>0?groomMarkers:markers}}" bindmarkertap="markerTap" show-location="{{true}}" ></map>
 
   </view>
-  <view>
-    <view>新娘家位置<input type='text' class="invitation-font-i" value="{{dataObj.brideAddress}}" data-key='brideAddress' bindinput="bindInputChange"></input></view>
-    <map class="address-map" longitude="113.324520" latitude="23.099994" scale="16" markers="{{markers}}" bindmarkertap="markertap" show-location="{{true}}" ></map>
-  </view>
+   <view>
+    <view>新娘家导航位置<input type='text' class="invitation-font-i" value="{{dataObj.brideGPSAddress}}" data-key='brideGPSAddress' bindconfirm="bindAddressChange"></input></view>
+    <view>新娘家显示位置<input type='text' class="invitation-font-i" value="{{dataObj.brideAddress}}" data-key='brideAddress' bindinput="bindInputChange"></input></view>
+    <map class="address-map" longitude="{{dataObj.brideLng != ''? dataObj.brideLng : longitude}}" latitude="{{dataObj.brideLat != ''?dataObj.brideLat :latitude}}" scale="16" markers="{{brideMarkers.length>0?brideMarkers:markers}}" bindmarkertap="markerTap" show-location="{{true}}" ></map>
+  </view> 
+
+
+  <view class="location-address">您的当前位置在：{{formatted_address}}</view>
+  <view class="location-coord">坐标：经度({{latitude}}),纬度纬度({{longitude}})</view>
+  <button class="location-refresh" type="primary" loading="{{loading}}" bindtap="getCity">重新定位</button>
 </view> 
 
 <view class="nav-block">
@@ -100,3 +107,7 @@
     <view class="nav-name">{{navActive == "location"?"发布":"下一步"}}</view>
   </view>
 </view> 
+
+
+<import src="../../../component/message/message.wxml"/>
+<template is="message" data="{{message: message}}"/>

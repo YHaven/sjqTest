@@ -4,6 +4,9 @@ module.exports = {
     homepath:homepath,
     appId:"wxf384b1daab92204c",
     appKey:"a9197046b9b23c7e0dea7feb54b89389",
+    bmapAK:'vvGuepnx8y6cv9DeunvaZxZQYuWmGYuk',
+    baiduAK:'cG9lzE7YR4gGokie1OvLQhQ2',
+    baiduMap: 'https://api.map.baidu.com/geocoder/v2/',
     wxApi:{
         member:homepath+'/index.php?s=/Member/index', //用户信息
         getOpenId:homepath+'/index.php?s=/Member/get_openId', //用户信息

@@ -258,6 +258,70 @@ function isEmptyObject(e) {
 
 }
 
+
+function checkOpenSetting() {
+
+  // 判断是否是第一次授权，非第一次授权且授权失败则进行提醒
+
+  wx.getSetting({
+
+    success: function success(res) {
+
+      // console.log(res.authSetting);
+
+      var authSetting = res.authSetting;
+
+      if (isEmptyObject(authSetting)) {
+
+        //console.log('首次授权');
+
+      } else {
+
+        //console.log('不是第一次授权', authSetting);
+
+        // 没有授权的提醒
+
+        if (authSetting['scope.userInfo'] === false || authSetting['scope.userLocation'] === false) {
+
+          wx.showModal({
+
+            title: '用户未授权',
+
+            content: '如需正常使用该功能，请按确定并在授权管理中选中“用户信息”，然后点按确定。最后再重新进入小程序即可正常使用。',
+
+            showCancel: false,
+
+            success: function (res) {
+
+              if (res.confirm) {
+
+
+                wx.openSetting({
+
+                  success: function success(res) {
+
+                    //console.log('openSetting success', res.authSetting);
+
+                  }
+
+                });
+
+              }
+
+            }
+
+          })
+
+        }
+
+      }
+
+    }
+
+  });
+
+}
+
 module.exports = {
   formatTime: formatTime,
   formatWeek:formatWeek,
@@ -270,5 +334,6 @@ module.exports = {
   getAccessToken:getAccessToken,
   isEmptyObject:isEmptyObject,
   message:message,
+  checkOpenSetting: checkOpenSetting,
   config:config
 }

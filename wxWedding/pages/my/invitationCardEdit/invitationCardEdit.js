@@ -1,6 +1,10 @@
 var util = require('../../../utils/util.js')
 var lunarCalendar = require('../../../utils/lunarCalendar.js')
+var bmap = require('../../../utils/bmap-wx.min.js')
 var nowDate = new Date();
+var BMap = new bmap.BMapWX({
+  ak: util.config.bmapAK
+}); 
 Page({
   data: {
     userInfo: {},
@@ -15,12 +19,15 @@ Page({
       timeStr:'下午18:18',
       seatDesin:'',
       groom: '',
+      groomLat:'',
+      groomLng: '',
       bride: '',
+      brideLat: '',
+      brideLng: '',
       photos:[]
     },
     scrollTop: 0,
-    navActive:'favor',
-    photos: ['https://www.zhencome.com/images/wxcbg/user_bg_1.jpg', 'https://www.zhencome.com/images/wxcbg/user_bg_2.jpg', 'https://www.zhencome.com/images/wxcbg/user_bg_3.jpg', 'https://www.zhencome.com/images/wxcbg/user_bg_1.jpg', 'https://www.zhencome.com/images/wxcbg/user_bg_2.jpg', 'https://www.zhencome.com/images/wxcbg/user_bg_3.jpg','https://www.zhencome.com/images/wxcbg/user_bg_1.jpg', 'https://www.zhencome.com/images/wxcbg/user_bg_2.jpg', 'https://www.zhencome.com/images/wxcbg/user_bg_3.jpg'],
+    navActive:'location',
     markers: [{
       // iconPath: "/resources/others.png",
       id: 0,
@@ -41,6 +48,8 @@ Page({
     that.musicBox(8000);
     that.getUserType();//获取用户信息
     that.setPageTitle();
+    
+    that.getCity();//获取地址信息
   },
   onShow: function () {
     var that = this;
@@ -53,6 +62,70 @@ Page({
       userInfo: userInfo
     });
   },
+  getCity: function () {
+    var that = this;
+    wx.getLocation({
+      type: 'gcj02',
+      success: function (res) {
+        that.setData({
+          latitude: res.latitude,
+          longitude: res.longitude
+        });
+
+        that.getCityStr()
+
+      },
+      fail: function (res) {
+        that.setData({
+          latitude: 30.27,
+          longitude: 120.155
+        });
+        // util.message.show.call(that, {
+        //   content: "获取定位失败！",
+        //   icon: 'offline',
+        //   duration: 3000
+        // });
+        util.checkOpenSetting();//检查授权
+      }
+    })
+  },
+
+  // 获取地址
+  getCityStr:function(){
+    var that = this;
+    // 发起regeocoding检索请求 
+
+    // 获取中文详细地址
+    var locationParam = that.data.latitude + ',' + that.data.longitude;
+    wx.request({
+      url: util.config.baiduMap,
+      data: {
+        ak: util.config.baiduAK,
+        location: locationParam,
+        output: 'json',
+        pois: '1'
+      },
+      method: 'GET',
+      success: function (res) {
+        // console.log(res)
+        that.setData({
+          markers: [{
+            latitude: res.data.result.location.lat,
+            longitude: res.data.result.location.lng,
+            name: '我的位置',
+            desc: res.data.result.formatted_address
+          }],
+          addressComponent: res.data.result.addressComponent,
+          formatted_address: res.data.result.formatted_address
+        })
+
+      },
+      fail: function () {
+        
+      }
+    })
+  },
+
 
   //选择设置封面图
   setSurfaceImg:function(e){
@@ -166,6 +239,91 @@ Page({
     });
   },
 
+  bindAddressChange:function(e) {
+    var that = this;
+    var oldData = that.data.dataObj;
+    var dataKey = e.target.dataset.key;
+    var fail = function (data) {
+      console.log(data)
+    };
+    var success = function (data) {
+      console.log(data)
+      var wxMarkerData = data.result;
+      var groomMarkers = [];
+      var brideMarkers = [];
+      if (wxMarkerData.length>0){
+        if (typeof wxMarkerData[0].location == 'undefined'){
+          return false;
+        }
+        if (dataKey == 'groomGPSAddress') {
+          oldData.groomLng = Number(wxMarkerData[0].location.lng);
+          oldData.groomLat = Number(wxMarkerData[0].location.lat);
+          var markers = [];
+          // for (var i = 0; i < wxMarkerData.length; i++) {
+          for (var i = 0; i < 1; i++) {
+            var marker = {
+              iconPath: "../../../images/marker_red.png",
+              latitude: Number(wxMarkerData[i].location.lat),
+              longitude: Number(wxMarkerData[i].location.lng),
+              name: wxMarkerData[i].name,
+              desc: wxMarkerData[i].name
+            }
+            markers.push(marker);
+          }
+          
+          groomMarkers = markers;
+        }
+        if (dataKey == 'brideGPSAddress') {
+          oldData.brideLng = Number(wxMarkerData[0].location.lng);
+          oldData.brideLat = Number(wxMarkerData[0].location.lat);
+          var markers = [];
+          // for (var i = 0; i < wxMarkerData.length; i++) {
+          for (var i = 0; i < 1; i++) {
+            var marker = {
+              iconPath: "../../../images/marker_red.png",
+              latitude: Number(wxMarkerData[i].location.lat),
+              longitude: Number(wxMarkerData[i].location.lng),
+              name: wxMarkerData[i].name,
+              desc: wxMarkerData[i].name
+            }
+            markers.push(marker);
+          }
+
+          brideMarkers = markers;
+        }
+      }
+      oldData[dataKey] = e.detail.value;
+      that.setData({
+        dataObj: oldData,
+        brideMarkers: brideMarkers,
+        groomMarkers: groomMarkers
+
+      });
+      
+    } 
+    BMap.suggestion({
+      query: e.detail.value,
+      region: that.data.addressComponent.city||'杭州市',
+      city_limit: false,
+      fail: fail,
+      success: success
+    }); 
+
+    // //发起POI检索请求 
+    // BMap.search({
+    //   query: e.detail.value,
+    //   fail: fail,
+    //   success: success
+    // }); 
+
+    
+  },
+
+
+  markerTap: function(e) {
+    //console.log(e.markerId)
+  },
+
   choosePhotoImg:function(){
     var that = this;
     var oldData = that.data.dataObj;
@@ -267,21 +425,6 @@ Page({
       phoneNumber: data.phone //仅为示例，并非真实的电话号码
     })
   },
-  openLocation:function(e){
-    var that = this;
-    var data = e.currentTarget.dataset;
-    wx.openLocation({ //出发wx.openLocation API
-
-      latitude: Number(data.latitude), //坐标纬度（从地图获取坐标）
-
-      longitude: Number(data.longitude), //坐标经度（从地图获取坐标）
-
-      name: data.name, //打开后显示的地址名称
-
-      address: data.address //打开后显示的地址汉字
-
-    })
-  },
   setPageTitle:function(){
     wx.setNavigationBarTitle({
       title: '结婚请柬'
@@ -337,6 +480,7 @@ Page({
       params.uid = '';
       params.sid = that.data.userInfo.sid;
     }
+
     var nextActive = '';
     if (that.data.navActive == 'favor'){
       nextActive = 'pic';
@@ -350,9 +494,19 @@ Page({
       nextActive = 'location';
     }
 
-    that.setData({
-      navActive: nextActive
-    });
+    if (that.data.navActive == 'location') {
+      wx.navigateTo({
+        url: '../invitationCardView/invitationCardView'
+      })
+    }else{
+      that.setData({
+        navActive: nextActive
+      });
+    }
+
+    
+
+    
     //测试区
     return false;
 
