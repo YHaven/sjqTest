@@ -3,6 +3,7 @@ Page({
   data: {
     userInfo: {},
     dataList: [],
+    dataObj:{},
     scrollTop: 0,
     navActive: 'favor',
     photos: ['https://www.zhencome.com/images/wxcbg/user_bg_1.jpg', 'https://www.zhencome.com/images/wxcbg/user_bg_2.jpg', 'https://www.zhencome.com/images/wxcbg/user_bg_3.jpg', 'https://www.zhencome.com/images/wxcbg/user_bg_1.jpg', 'https://www.zhencome.com/images/wxcbg/user_bg_2.jpg', 'https://www.zhencome.com/images/wxcbg/user_bg_3.jpg', 'https://www.zhencome.com/images/wxcbg/user_bg_1.jpg', 'https://www.zhencome.com/images/wxcbg/user_bg_2.jpg', 'https://www.zhencome.com/images/wxcbg/user_bg_3.jpg'],
@@ -23,9 +24,9 @@ Page({
   },
   onLoad: function (options) {
     var that = this;
+    console.log(options.id)
     that.musicBox(8000);
     that.getUserType();//获取用户信息
-    that.setPageTitle();
   },
   onShow: function () {
     var that = this;
@@ -94,36 +95,54 @@ Page({
   loadData: function () {
     var that = this;
     that.setData({
-      dataList: [
-        {
-          id: '222',
-          imgUrl: '../../../images/wedding-1.jpg',
-          groom: 'LLLLL',
-          bride: 'NNNNN',
-          weddingDate: '2018年8月8日',
-          weekDate: '星期三',
-          isTop: 1
-        },
-        {
-          id: '222',
-          imgUrl: '../../../images/wedding-2.jpg',
-          groom: 'LLLLL',
-          bride: 'NNNNN',
-          weddingDate: '2018年8月9日',
-          weekDate: '星期三',
-          isTop: 0
-        },
-        {
-          id: '222',
-          imgUrl: '../../../images/wedding-2.jpg',
-          groom: 'LLLLL',
-          bride: 'NNNNN',
-          weddingDate: '2018年8月6日',
-          weekDate: '星期三',
-          isTop: 0
-        }
-      ]
+      dataObj:{
+        id:'2222',
+        surfaceImg: 'https://www.zhencome.com/files/weddingdefault/contact_bg_2.png',
+        weddingDate:'2017年11月11日',
+        dates: new Date('2017-11-11 00:00:00'),
+        weekDate: '星期一',
+        lunarDate: '二零一七年十一月十一日',
+        time: '18:18',
+        timeStr: '下午18:18',
+        seatDesin: '开元名都大酒店',
+        groom: '氨基酸',
+        groomLat: 30.21338957234,
+        groomLng: 120.30880009314,
+        groomPhone:'18268826992',
+        groomGPSAddress: '盛乐村',
+        groomAddress: '萧山区盛乐村14组30号(导航到上市时间阿打卡机很多卡附近)',
+        groomMarkers: [{
+          latitude: 30.21338957234,
+          longitude: 120.30880009314,
+          name: '盛乐村',
+          desc: '描述地址！'}],
+        bride: '阿斯顿',
+        brideLat: 30.21338957234,
+        brideLng: 120.30880009314,
+        bridePhone:'18817386792',
+        brideGPSAddress:'盛乐村',
+        brideAddress:'盛乐村14组30号',
+        brideMarkers: [{
+          latitude: 30.21338957234,
+          longitude: 120.30880009314,
+          name: '盛乐村',
+          desc: '描述地址！'
+        }],
+        welcomeCode: '我们恭候您的光临！',
+        photos: ['https://www.zhencome.com/images/wxcbg/user_bg_1.jpg', 'https://www.zhencome.com/images/wxcbg/user_bg_2.jpg', 'https://www.zhencome.com/images/wxcbg/user_bg_3.jpg', 'https://www.zhencome.com/images/wxcbg/user_bg_1.jpg', 'https://www.zhencome.com/images/wxcbg/user_bg_2.jpg']
+      },
+      topicObj: {
+        id: '111',
+        type: 1,
+        showImage: 'https://www.zhencome.com/files/weddingdefault/topicdefault.jpg',
+        price: 0.00,
+        cprice: 0,
+        styleImage: ['https://www.zhencome.com/files/weddingdefault/contact_bg_2.png', 'https://www.zhencome.com/files/weddingdefault/contact_bg_1.png', 'https://www.zhencome.com/files/weddingdefault/mail_bg_2.jpg']
+      }
     });
+
+
+    that.setPageTitle('氨基酸,阿斯顿结婚请柬');
 
     // wx.showNavigationBarLoading()
     // var params = {
@@ -167,9 +186,9 @@ Page({
 
     })
   },
-  setPageTitle: function () {
+  setPageTitle: function (title) {
     wx.setNavigationBarTitle({
-      title: '结婚请柬'
+      title: title
     })
   },
   upper: function (e) {
@@ -210,11 +229,13 @@ Page({
   },
   //分享
   onShareAppMessage: function () {
+    var that = this;
+    var data = that.data.dataObj;
     return {
-      title: util.config.title,
-      desc: util.config.desc,
-      imageUrl: util.config.imageUrl,
-      path: util.config.wxpath
+      title: data.groom + data.bride+'结婚请柬',
+      desc: data.groom + data.bride + '结婚请柬',
+      imageUrl: data.surfaceImg,
+      path: '/pages/my/invitationCardView/invitationCardView?id=' + data.id
     }
   }
 

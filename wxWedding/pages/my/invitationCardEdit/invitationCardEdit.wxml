@@ -1,3 +1,13 @@
+
+<!-- 选择主题 -->
+<scroll-view class="wedding-photo" wx:if="{{navActive == 'topic'}}" scroll-y="true"  bindscroll="scroll" scroll-top="{{scrollTop}}">
+  <view wx:for="{{topicArray}}" wx:for-item="photo" wx:for-index="photoIndex" wx:key="photo" class="photo-item {{selectTopic.id==photo.id?'data-item-top':''}}">
+    <image src="{{photo.showImage}}" data-src="{{photo.showImage}}" data-index="{{photoIndex}}" mode='aspectFit'bindtap="selectTopic" ></image>
+  <view class="price">{{photo.price == 0?'免费':'¥'+photo.price.toFixed(2)}}+积分{{photo.cprice}}</view>
+  </view>
+</scroll-view>
+
+<!-- 编辑请柬 -->
 <view wx:if="{{navActive == 'favor'}}" class="p-b150">
   <view class="first-img">
     <view class="img-show-box" wx:if="{{dataObj.surfaceImg}}">
@@ -6,7 +16,7 @@
     </view>
 
     <view class="add-first-img" wx:if="{{!dataObj.surfaceImg}}" bindtap="setSurfaceImg">
-      <icon class="iconfont icon-pic"></icon>
+      <icon class="iconfont icon-pic">封面</icon>
     </view>
   </view>
 
@@ -39,7 +49,9 @@
       <input class="invitation-font-i" value="{{dataObj.seatDesin}}" data-key='seatDesin' bindinput="bindInputChange"></input>
     </view>
 
-    <view class="invitation-font m-t50">我们恭候您的光临！</view>
+    <view class="invitation-font m-t50">
+      <textarea focus="{{false}}" data-key='welcomeCode' bindconfirm="bindInputChange" value="{{dataObj.welcomeCode}}"/>
+    </view>
     <view class="invitation-font m-t50">新郎:<input class="invitation-font-i font-name" value="{{dataObj.groom}}" data-key='groom' bindinput="bindInputChange"></input>，新娘:<input class="invitation-font-i font-name" value="{{dataObj.bride}}" data-key='bride' bindinput="bindInputChange"></input></view>
 
     <image class="mail_bg" src="../../../images/mail_bg_1.jpg"></image>
@@ -49,7 +61,7 @@
 <!-- 相册 -->
 
 <scroll-view class="wedding-photo" wx:if="{{navActive == 'pic'}}" scroll-y="true"  bindscroll="scroll" scroll-top="{{scrollTop}}">
-  <image  mode='aspectFit' src="../../../images/contact_bg_2.png" style="height:200rpx;"></image>
+  <image  mode='aspectFit' src="{{selectTopic.styleImage[0]}}" style="height:200rpx;"></image>
   <view class="photo-item" catchtap="choosePhotoImg">
     <icon type="String" class="iconfont icon-add"></icon>
   </view>
@@ -64,7 +76,7 @@
 <!-- 联系电话 -->
 
 <view class="contact-us" wx:if="{{navActive == 'phone'}}">
-  <image src="../../../images/contact_bg_1.png" mode='widthFix'></image>
+  <image src="{{selectTopic.styleImage[1]}}" mode='widthFix'></image>
   <view>
     <view class="contact-show">诚邀您的到来！</view>
     <view>
@@ -76,7 +88,7 @@
       </view>
     </view>
   </view>
-  <image src="../../../images/mail_bg_2.jpg" mode='widthFix' class="contact-bottom-bg"></image>
+  <image src="{{selectTopic.styleImage[2]}}" mode='widthFix' class="contact-bottom-bg"></image>
 </view>
 
 
@@ -85,15 +97,15 @@
 
 <view class="address-location" wx:if="{{navActive == 'location'}}">
   <view>
-    <view>新郎家导航位置<input type='text' class="invitation-font-i" value="{{dataObj.groomGPSAddress}}" data-key='groomGPSAddress' bindconfirm="bindAddressChange"></input></view>
-    <view>新郎家显示地址<input type='text' class="invitation-font-i" value="{{dataObj.groomAddress}}" data-key='groomAddress' bindinput="bindInputChange"></input></view>
-    <map class="address-map" longitude="{{dataObj.groomLng != ''?dataObj.groomLng : longitude}}" latitude="{{dataObj.groomLat != ''?dataObj.groomLat : latitude}}" scale="16" markers="{{groomMarkers.length>0?groomMarkers:markers}}" bindmarkertap="markerTap" show-location="{{true}}" ></map>
+    <view>新郎导航地址<input type='text' class="invitation-font-i" value="{{dataObj.groomGPSAddress}}" data-key='groomGPSAddress' bindconfirm="bindAddressChange"></input></view>
+    <view class="m-t20">新郎详细地址<input type='text' class="invitation-font-i" value="{{dataObj.groomAddress}}" data-key='groomAddress' bindinput="bindInputChange"></input></view>
+    <map class="address-map" longitude="{{dataObj.groomLng != ''?dataObj.groomLng : longitude}}" latitude="{{dataObj.groomLat != ''?dataObj.groomLat : latitude}}" scale="12" markers="{{groomMarkers.length>0?groomMarkers:markers}}" bindmarkertap="markerTap" show-location="{{true}}" ></map>
 
   </view>
-   <view>
-    <view>新娘家导航位置<input type='text' class="invitation-font-i" value="{{dataObj.brideGPSAddress}}" data-key='brideGPSAddress' bindconfirm="bindAddressChange"></input></view>
-    <view>新娘家显示位置<input type='text' class="invitation-font-i" value="{{dataObj.brideAddress}}" data-key='brideAddress' bindinput="bindInputChange"></input></view>
-    <map class="address-map" longitude="{{dataObj.brideLng != ''? dataObj.brideLng : longitude}}" latitude="{{dataObj.brideLat != ''?dataObj.brideLat :latitude}}" scale="16" markers="{{brideMarkers.length>0?brideMarkers:markers}}" bindmarkertap="markerTap" show-location="{{true}}" ></map>
+   <view class="m-t50">
+    <view>新娘导航地址<input type='text' class="invitation-font-i" value="{{dataObj.brideGPSAddress}}" data-key='brideGPSAddress' bindconfirm="bindAddressChange"></input></view>
+    <view class="m-t20">新娘详细地址<input type='text' class="invitation-font-i" value="{{dataObj.brideAddress}}" data-key='brideAddress' bindinput="bindInputChange"></input></view>
+    <map class="address-map" longitude="{{dataObj.brideLng != ''? dataObj.brideLng : longitude}}" latitude="{{dataObj.brideLat != ''?dataObj.brideLat :latitude}}" scale="12" markers="{{brideMarkers.length>0?brideMarkers:markers}}" bindmarkertap="markerTap" show-location="{{true}}" ></map>
   </view> 
 
 

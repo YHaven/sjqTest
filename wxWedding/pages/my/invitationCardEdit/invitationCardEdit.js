@@ -9,6 +9,8 @@ Page({
   data: {
     userInfo: {},
     dataList: [],
+    topicArray:[],
+    selectTopic:{},
     dataObj:{
       surfaceImg:'',
       weddingDate: nowDate.Format('yyyy年MM月dd日'),
@@ -24,10 +26,11 @@ Page({
       bride: '',
       brideLat: '',
       brideLng: '',
+      welcomeCode:'',
       photos:[]
     },
     scrollTop: 0,
-    navActive:'location',
+    navActive:'topic',
     markers: [{
       // iconPath: "/resources/others.png",
       id: 0,
@@ -47,13 +50,13 @@ Page({
     var that = this;
     that.musicBox(8000);
     that.getUserType();//获取用户信息
-    that.setPageTitle();
-    
+    that.loadTopic();
     that.getCity();//获取地址信息
+    that.setPageTitle('主题选择');
   },
   onShow: function () {
     var that = this;
-    that.loadData();
+    // that.loadData();
   },
   getUserType: function () {
     var that = this;
@@ -247,7 +250,7 @@ Page({
       console.log(data)
     };
     var success = function (data) {
-      console.log(data)
+      // console.log(data)
       var wxMarkerData = data.result;
       var groomMarkers = [];
       var brideMarkers = [];
@@ -318,9 +321,14 @@ Page({
 
     
   },
-
-
+  mapBindCallOutTap:function(e){
+    console.log('mapBindCallOutTap')
+  },
+  mapBindTap:function(e){
+    console.log('mapBindTap')
+  },
   markerTap: function(e) {
+    console.log('xxxxxxaddress')
     //console.log(e.markerId)
   },
 
@@ -328,7 +336,7 @@ Page({
     var that = this;
     var oldData = that.data.dataObj;
 
-    var imagesArray = oldData.photos;
+    var imagesArray = oldData.photos || [];
     var imageObj = {};
     imageObj.imgId = "222";
     imageObj.savePath = "https://www.zhencome.com/images/wxcbg/user_bg_1.jpg";
@@ -360,55 +368,43 @@ Page({
     var current = e.target.dataset.src;
     wx.previewImage({
       current: current, // 当前显示图片的http链接  
-      urls: this.data.photos // 需要预览的图片http链接列表  
+      urls: this.data.dataObj.photos // 需要预览的图片http链接列表  
     })
   },
-
+  loadTopic:function(){
+    var that = this;
+    that.setData({
+      topicArray:[
+        {
+          id: '111',
+          type: 1,
+          showImage: 'https://www.zhencome.com/files/weddingdefault/topicdefault.jpg',
+          price: 0.00,
+          cprice: 0,
+          styleImage: ['contact_bg_2.png', 'contact_bg_1.png', 'mail_bg_2.jpg']
+        }],
+      selectTopic: {
+        id: '111',
+        type: 1,
+        showImage: 'https://www.zhencome.com/files/weddingdefault/topicdefault.jpg',
+        price: 0.00,
+        cprice: 0,
+        styleImage: ['https://www.zhencome.com/files/weddingdefault/contact_bg_2.png', 'https://www.zhencome.com/files/weddingdefault/contact_bg_1.png', 'https://www.zhencome.com/files/weddingdefault/mail_bg_2.jpg']
+      }
+    });
+  },
+  selectTopic:function(e){
+    var that = this;
+    var data = e.currentTarget.dataset;
+    that.setData({
+      selectTopic: that.data.topicArray[data.index]
+    })
+  },
   loadData: function () {
     var that = this;
     that.setData({
-      dataList: [
-        {
-          id: '222',
-          imgUrl: '../../../images/wedding-1.jpg',
-          groom: 'LLLLL',
-          bride: 'NNNNN',
-          weddingDate: '2018年8月8日',
-          weekDate: '星期三',
-          isTop: 1
-        },
-        {
-          id: '222',
-          imgUrl: '../../../images/wedding-2.jpg',
-          groom: 'LLLLL',
-          bride: 'NNNNN',
-          weddingDate: '2018年8月9日',
-          weekDate: '星期三',
-          isTop: 0
-        },
-        {
-          id: '222',
-          imgUrl: '../../../images/wedding-2.jpg',
-          groom: 'LLLLL',
-          bride: 'NNNNN',
-          weddingDate: '2018年8月6日',
-          weekDate: '星期三',
-          isTop: 0
-        }
-      ]
+      dataObj: {}
     });
-
-    // wx.showNavigationBarLoading()
-    // var params = {
-    //   page: 1
-    // }
-    // that.setData({
-    //   dataList: []
-    // })
-    // plana.getPersonalList.call(that, config.apiList.plana.getHouseList, params, function (res) {
-    //   wx.hideNavigationBarLoading()
-    // });
-
 
   },
   viewInvitationNav: function (e) {
@@ -425,9 +421,9 @@ Page({
       phoneNumber: data.phone //仅为示例，并非真实的电话号码
     })
   },
-  setPageTitle:function(){
+  setPageTitle:function(title){
     wx.setNavigationBarTitle({
-      title: '结婚请柬'
+      title: title
     })
   },
   upper: function (e) {
@@ -471,27 +467,37 @@ Page({
     // if (!that.data.checkPass) {
     //   return false;
     // }
-
+    var dataObj = that.data.dataObj;
     var params = {};
-    if (that.data.userInfo.userType == '0') {
-      params.uid = that.data.userInfo.userId;
-      params.sid = '';
-    } else {
-      params.uid = '';
-      params.sid = that.data.userInfo.sid;
-    }
+    var params = dataObj;
 
     var nextActive = '';
+    if (that.data.navActive == 'topic') {
+      if (typeof that.data.selectTopic.id == 'undefined'){
+        util.message.show.call(that,{
+          content: '请选择主题',
+          icon: 'null',
+          duration: 3000
+        })
+        return false;
+      }
+      nextActive = 'favor';
+      that.setPageTitle('编辑请柬');
+    }
+
     if (that.data.navActive == 'favor'){
       nextActive = 'pic';
+      that.setPageTitle('添加相册');
     }
 
     if (that.data.navActive == 'pic'){
       nextActive = 'phone';
+      that.setPageTitle('联系方式');
     }
 
     if (that.data.navActive == 'phone') {
       nextActive = 'location';
+      that.setPageTitle('婚礼地址');
     }
 
     if (that.data.navActive == 'location') {
@@ -510,53 +516,30 @@ Page({
     //测试区
     return false;
 
-
-    params.orderId = that.data.orderId;
-    //console.log(params)
-    var goodsImgId = [];
-    var nowImages = that.data.images;
+    console.log(params)
+    wx.showNavigationBarLoading()
+    var photosImgId = [];
+    var nowImages = dataObj.photos;
     for (var i = 0; i < nowImages.length; i++) {
-      goodsImgId.push(nowImages[i].imgId);
+      photosImgId.push(nowImages[i].imgId);
     }
-    if (goodsImgId.length > 0) {
-      wx.showNavigationBarLoading()
-      params.goodsImgList = goodsImgId.join(',');
-      util.postData.call(that, config.wxApi.addOrder, params, function (res) {
-        //console.log(res)
-        wx.hideNavigationBarLoading()
-        if (res.data.err == 0) {
-          var orderId = res.data.data.id;
-          var userInfo = that.data.userInfo;
-          userInfo.sid = res.data.data.sid;   //绑定商家了？
-          that.setData({
-            orderId: orderId,
-            userInfo: userInfo
-          });
-
-          wx.setStorage({
-            key: 'person_info',
-            data: userInfo
-          })
-
-          var toUrl = '../createOrderDetail/createOrderDetail?orderId=' + orderId;
-          if (that.data.userInfo.userType == '1') {
-            toUrl = '../createOrderSeller/createOrderSeller?orderId=' + orderId;
-          }
-
-          //console.log('orderId'+orderId)
-          wx.navigateTo({
-            url: toUrl
-          })
-        }
-
-      });
-    } else {
-      // util.message.show.call(that,{
-      // 	content: '请添加商品图片',
-      // 	icon: 'null',
-      // 	duration: 3000
-      // })
+    if (photosImgId.length > 0) {
+      params.photosImgList = photosImgId.join(',');
     }
+    util.postData.call(that, config.wxApi.addOrder, params, function (res) {
+      //console.log(res)
+      wx.hideNavigationBarLoading()
+      if (res.data.err == 0) {
+
+        var toUrl = '../createOrderDetail/createOrderDetail?orderId=' + orderId;
+
+        //console.log('orderId'+orderId)
+        wx.navigateTo({
+          url: toUrl
+        })
+      }
+
+    });
 
   },
 

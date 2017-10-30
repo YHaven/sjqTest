@@ -30,6 +30,9 @@ page{background: #cd010d;}
     height: 400rpx;
     margin: 17rpx;
     float: left;
+    background: rgba(0,0,0,0.7);
+    text-align: center;
+    position: relative;
 }
 
 .contact-us{background: #f3be4c;min-height: 1200rpx;position: relative;text-align: center;}
@@ -38,6 +41,6 @@ page{background: #cd010d;}
 .contact-us button{width: 50%;margin-top: 20rpx;background: #cd010d;}
 
 
-.address-location{color: #ffffff;text-indent: 30rpx;}
+.address-location{color: #ffffff;text-indent: 30rpx;padding-top:50rpx; padding-bottom: 88rpx;text-align: center;}
 .address-location .address-map{width: 90%;margin: 20rpx auto;}
 .address-location button{width: 60%;margin-top: 30rpx;margin-bottom: 50rpx; background: #a10009;}
