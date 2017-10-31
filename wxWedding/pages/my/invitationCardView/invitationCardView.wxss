@@ -43,4 +43,6 @@ page{background: #cd010d;}
 
 .address-location{color: #ffffff;text-indent: 30rpx;padding-top:50rpx; padding-bottom: 88rpx;text-align: center;}
 .address-location .address-map{width: 90%;margin: 20rpx auto;}
-.address-location button{width: 60%;margin-top: 30rpx;margin-bottom: 50rpx; background: #a10009;}
+.address-location button,.invitation-info .home-button{width: 60%;margin-top: 30rpx;margin-bottom: 50rpx; background: #a10009;}
+
+.music-jh{display: none;}

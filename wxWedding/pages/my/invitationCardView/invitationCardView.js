@@ -137,7 +137,13 @@ Page({
         showImage: 'https://www.zhencome.com/files/weddingdefault/topicdefault.jpg',
         price: 0.00,
         cprice: 0,
-        styleImage: ['https://www.zhencome.com/files/weddingdefault/contact_bg_2.png', 'https://www.zhencome.com/files/weddingdefault/contact_bg_1.png', 'https://www.zhencome.com/files/weddingdefault/mail_bg_2.jpg']
+        styleImage: ['https://www.zhencome.com/files/weddingdefault/contact_bg_2.png', 'https://www.zhencome.com/files/weddingdefault/contact_bg_1.png', 'https://www.zhencome.com/files/weddingdefault/mail_bg_2.jpg'],
+        music:{
+          poster:'https://www.zhencome.com/files/weddingdefault/jiehun8.png',
+          name:'咱们结婚吧',
+          author:'齐晨',
+          src:'https://www.zhencome.com/files/weddingdefault/jiehun8.mp3'
+        }
       }
     });
 
@@ -156,6 +162,11 @@ Page({
     // });
 
 
+  },
+  onReady: function (e) {
+    // 使用 wx.createAudioContext 获取 audio 上下文 context
+    this.audioCtx = wx.createAudioContext('myAudio');
+    this.audioCtx.play();
   },
   viewInvitationNav: function (e) {
     var that = this;
@@ -226,6 +237,27 @@ Page({
       };
       util.postDataList.call(that, util.config.apiList.plana.getMessageList, params)
     }
+  },
+  viewNavDetail: function (e) {
+    var that = this;
+    var data = e.currentTarget.dataset;
+    if (data.url.indexOf('index/home/home') > 0) {
+      wx.redirectTo({
+        url: data.url
+      });
+      return false;
+    }
+
+    if (data.url.indexOf('my/my/my') > 0) {
+      console.log('xxx')
+      wx.redirectTo({
+        url: data.url
+      });
+      return false;
+    }
+    wx.navigateTo({
+      url: data.url
+    })
   },
   //分享
   onShareAppMessage: function () {

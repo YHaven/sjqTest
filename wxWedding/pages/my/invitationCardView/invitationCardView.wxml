@@ -1,8 +1,9 @@
-<view wx:if="{{navActive == 'favor'}}" class="p-b150">
+<view wx:if="{{navActive == 'favor'}}" class="p-b150 invitation-info">
   <view class="first-img">
     <view class="img-show-box">
       <view class="music-box"></view>
        <image animation="{{animation}}" src="{{dataObj.surfaceImg == ''?'../../../images/wedding_bg_1.jpg':dataObj.surfaceImg}}" class="banner-item"></image> 
+       <audio class="music-jh" poster="{{topicObj.music.poster}}" name="{{topicObj.music.name}}" author="{{topicObj.music.author}}" src="{{topicObj.music.src}}" id="myAudio" controls loop="{{true}}"></audio>
     </view>
 
     <view class="add-first-img" wx:if="{{false}}">
@@ -35,6 +36,8 @@
 
     <image class="mail_bg" src="../../../images/mail_bg_1.jpg"></image>
   </view>
+
+  <button class="home-button" type="primary" loading="{{loading}}"  data-url="../../my/my/my" bindtap="viewNavDetail">我也要制作</button>
 </view>
   
 <scroll-view class="wedding-photo" wx:if="{{navActive == 'pic'}}" scroll-y="true"  bindscroll="scroll" scroll-top="{{scrollTop}}">

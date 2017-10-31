@@ -20,7 +20,7 @@ Page({
     wx.getStorage({
       key: 'skin',
       success: function(res){
-        console.log(res.data);
+        // console.log(res.data);
         if (res.data == "") {
           that.setData({
             skin: util.config.skinList[0].imgUrl
