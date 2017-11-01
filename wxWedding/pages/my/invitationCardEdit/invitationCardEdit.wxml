@@ -1,7 +1,7 @@
-
+<audio class="music-jh" poster="{{topicObj.music.poster}}" name="{{topicObj.music.name}}" author="{{topicObj.music.author}}" src="{{topicObj.music.src}}" id="myAudio" controls loop="{{true}}" binderror="binderror"></audio>
 <!-- 选择主题 -->
 <scroll-view class="wedding-photo" wx:if="{{navActive == 'topic'}}" scroll-y="true"  bindscroll="scroll" scroll-top="{{scrollTop}}">
-  <view wx:for="{{topicArray}}" wx:for-item="photo" wx:for-index="photoIndex" wx:key="photo" class="photo-item {{selectTopic.id==photo.id?'data-item-top':''}}">
+  <view wx:for="{{topicArray}}" wx:for-item="photo" wx:for-index="photoIndex" wx:key="photo" class="photo-item {{topicObj.id==photo.id?'data-item-top':''}}">
     <image src="{{photo.showImage}}" data-src="{{photo.showImage}}" data-index="{{photoIndex}}" mode='aspectFit'bindtap="selectTopic" ></image>
   <view class="price">{{photo.price == 0?'免费':'¥'+photo.price.toFixed(2)}}+积分{{photo.cprice}}</view>
   </view>
@@ -11,8 +11,8 @@
 <view wx:if="{{navActive == 'favor'}}" class="p-b150">
   <view class="first-img">
     <view class="img-show-box" wx:if="{{dataObj.surfaceImg}}">
-      <image src="{{selectTopic.styleImage[4]}}" class="needle-img"></image>  
-      <view class="music-box" style="background: rgba(255,255,255,0.3) url('{{selectTopic.styleImage[3]}}') no-repeat center 0;background-size:100% 100%;"></view>
+      <image src="{{topicObj.styleImage[4]}}" class="needle-img"></image>  
+      <view class="music-box" style="background: rgba(255,255,255,0.3) url('{{topicObj.styleImage[3]}}') no-repeat center 0;background-size:100% 100%;"></view>
        <image animation="{{animation}}" src="{{dataObj.surfaceImg}}" class="surface-img"></image> 
     </view>
 
@@ -62,7 +62,7 @@
 <!-- 相册 -->
 
 <scroll-view class="wedding-photo" wx:if="{{navActive == 'pic'}}" scroll-y="true"  bindscroll="scroll" scroll-top="{{scrollTop}}">
-  <image  mode='aspectFit' src="{{selectTopic.styleImage[0]}}" style="height:200rpx;"></image>
+  <image  mode='aspectFit' src="{{topicObj.styleImage[0]}}" style="height:200rpx;"></image>
   <view class="photo-item" catchtap="choosePhotoImg">
     <icon type="String" class="iconfont icon-add"></icon>
   </view>
@@ -77,7 +77,7 @@
 <!-- 联系电话 -->
 
 <view class="contact-us" wx:if="{{navActive == 'phone'}}">
-  <image src="{{selectTopic.styleImage[1]}}" mode='widthFix'></image>
+  <image src="{{topicObj.styleImage[1]}}" mode='widthFix'></image>
   <view>
     <view class="contact-show">诚邀您的到来！</view>
     <view>
@@ -89,7 +89,7 @@
       </view>
     </view>
   </view>
-  <image src="{{selectTopic.styleImage[2]}}" mode='widthFix' class="contact-bottom-bg"></image>
+  <image src="{{topicObj.styleImage[2]}}" mode='widthFix' class="contact-bottom-bg"></image>
 </view>
 
 

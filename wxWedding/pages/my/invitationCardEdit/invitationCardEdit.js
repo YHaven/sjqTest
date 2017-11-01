@@ -10,7 +10,7 @@ Page({
     userInfo: {},
     dataList: [],
     topicArray:[],
-    selectTopic:{},
+    topicObj:{},
     dataObj:{
       surfaceImg:'',
       weddingDate: nowDate.Format('yyyy年MM月dd日'),
@@ -392,7 +392,7 @@ Page({
           cprice: 0,
           styleImage: ['contact_bg_2.png', 'contact_bg_1.png', 'mail_bg_2.jpg']
         }],
-      selectTopic: {
+      topicObj: {
         id: '111',
         type: 1,
         showImage: 'https://www.zhencome.com/files/weddingdefault/topicdefault.jpg',
@@ -417,7 +417,7 @@ Page({
               cprice: 0,
               styleImage: ['contact_bg_2.png', 'contact_bg_1.png', 'mail_bg_2.jpg']
             }],
-          selectTopic: {
+          topicObj: {
             id: '111',
             type: 1,
             showImage: 'https://www.zhencome.com/files/weddingdefault/topicdefault.jpg',
@@ -439,7 +439,7 @@ Page({
     var that = this;
     var data = e.currentTarget.dataset;
     that.setData({
-      selectTopic: that.data.topicArray[data.index]
+      topicObj: that.data.topicArray[data.index]
     })
   },
   loadData: function () {
@@ -531,7 +531,7 @@ Page({
 
     var nextActive = '';
     if (that.data.navActive == 'topic') {
-      if (typeof that.data.selectTopic.id == 'undefined'){
+      if (typeof that.data.topicObj.id == 'undefined'){
         util.message.show.call(that,{
           content: '请选择主题',
           icon: 'null',

@@ -100,3 +100,5 @@ textarea{margin: 0 auto;border: 1px solid #cd010d;}
     width: 600rpx;
     margin-top: 60rpx;
 }
+
+.music-jh{display:none;}
