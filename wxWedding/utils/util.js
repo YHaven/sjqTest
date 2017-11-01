@@ -125,12 +125,17 @@ function getAccessToken(cb,fail_cb){
 function postData(url, params, cb, fail_cb){
    var that = this
 
-  //  params.Api = 'yfb';
+   var header = { 'content-type': 'application/x-www-form-urlencoded' }
+   var session_id = wx.getStorageSync('PHPSESSID');//本地取存储的sessionID  
+   if (session_id != "" && session_id != null) {
+     header = { 'content-type': 'application/x-www-form-urlencoded', 'Cookie': 'JSESSIONID=' + session_id }
+   }
 
    wx.request({
       url: url,
       data:params,
       method: 'POST', 
+      header: header,
       // header: {'content-type': 'application/json'},
       success: function(res){
 
@@ -149,36 +154,33 @@ function postData(url, params, cb, fail_cb){
 function postDataList(url, params, cb, fail_cb){
    var that = this
    message.hide.call(that)
-
+   var header = { 'content-type': 'application/x-www-form-urlencoded' }
    var session_id = wx.getStorageSync('PHPSESSID');//本地取存储的sessionID  
    if (session_id != "" && session_id != null) {
-     var header = { 'content-type': 'application/x-www-form-urlencoded', 'Cookie': 'JSESSIONID=' + session_id }
-   } else {
-     var header = { 'content-type': 'application/x-www-form-urlencoded'     }
-   }  
-  //  params.Api = 'yfb';
+     header = { 'content-type': 'application/x-www-form-urlencoded', 'Cookie': 'JSESSIONID=' + session_id }
+   }
 
    wx.request({
       url: url,
       data:params,
       method: 'POST', 
-      // header: header,
+      header: header,
       success: function(res){
         // console.log(res)
-        if(res.data.err === 0){
-          if(typeof res.data.data.orderList == 'undefined' ||res.data.data.orderList.length === 0 ){
+        if (res.data.status){
+          if (typeof res.data.data.dataList == 'undefined' || res.data.data.dataList.length === 0 ){
             that.setData({
               hasMore: false,
               showLoading: false
             })
           }else{
             that.setData({
-              dataList: that.data.dataList.concat(res.data.data.orderList),
+              dataList: that.data.dataList.concat(res.data.data.dataList),
               start: that.data.start + 1,
               hasMore: false,  //现在必为空
               showLoading: false
             })
-            if(res.data.data.orderList.length<10){
+            if (res.data.data.dataList.length<10){
               that.setData({
                 hasMore: false,
               })
@@ -222,13 +224,12 @@ function uploadImg(url, params, cb, fail_cb){
         sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
         success: function (res) {
             var tempFilePaths = res.tempFilePaths;
-            // var session_id = wx.getStorageSync('PHPSESSID');//本地取存储的sessionID  
-            // if (session_id != "" && session_id != null) {
-            //   var header = { 'content-type': 'application/x-www-form-urlencoded', 'Cookie': 'JSESSIONID=' + session_id }
-            // } else {
-            //   var header = { 'content-type': 'application/x-www-form-urlencoded'     }
-            // }  
-            var header = { 'content-type': 'multipart/form-data'     }
+            var header = { 'content-type': 'application/x-www-form-urlencoded' }
+            var session_id = wx.getStorageSync('PHPSESSID');//本地取存储的sessionID  
+            if (session_id != "" && session_id != null) {
+              header = { 'content-type': 'application/x-www-form-urlencoded', 'Cookie': 'JSESSIONID=' + session_id }
+            }
+            // var header = { 'content-type': 'multipart/form-data'     }
             wx.uploadFile({
                 url: url,
                 filePath: tempFilePaths[0],

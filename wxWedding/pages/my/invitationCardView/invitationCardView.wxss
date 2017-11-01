@@ -3,14 +3,19 @@
 
 page{background: #cd010d;}
 .no-border{border: 0;}
-.first-img{text-align: center;margin-top:30rpx; }
+.first-img{text-align: center;margin-top:30rpx;height: 540rpx; }
 .first-img .add-first-img{width: 375rpx;height: 375rpx;line-height: 375rpx;margin: 0 auto;}
 .add-first-img .iconfont{font-size: 108rpx;color: #ffffff;}
 
 .img-show-box{position: relative;}
-.img-show-box .music-box{position: absolute;top: -14rpx;left:50%;margin-left: -202rpx; width: 400rpx;height: 400rpx;border: 1rpx solid #666;border-radius: 50%;z-index: 1;background: #000000;z-index: -1;}
-.first-img image{width: 375rpx;height: 375rpx;border-radius: 50%;}
-.first-img image{animation: 1.2s linear 0s normal none infinite running rotating;}
+.img-show-box .music-box{position: absolute;top: -14rpx;left:50%;margin-left: -270rpx; width: 540rpx;height: 540rpx;border-radius: 50%;z-index: 1;background: #000000;z-index: -1;}
+.img-show-box .needle-img{position: absolute;top: -150rpx;z-index: 1;width:144rpx;height: 205rpx;left: 50%;margin-left: -122rpx;}
+
+
+.invitation-band{background:#f3be4c;min-height: 300rpx;position: relative;margin: 30rpx;border-radius: 10rpx;overflow: hidden;padding-bottom: 200rpx;}
+.invitation-band .mail_bg{height: 200rpx;position: absolute;bottom: 0rpx;display: block;border-radius: 10rpx;}
+.first-img .surface-img{width: 375rpx;height: 375rpx;border-radius: 50%;margin-top: 70rpx;}
+.first-img .surface-img{animation: 1.2s linear 0s normal none infinite running rotating;}
 
 
 .invitation-band{background:#f3be4c;min-height: 300rpx;position: relative;margin: 30rpx;border-radius: 10rpx;overflow: hidden;padding-bottom: 200rpx;}
@@ -45,4 +50,4 @@ page{background: #cd010d;}
 .address-location .address-map{width: 90%;margin: 20rpx auto;}
 .address-location button,.invitation-info .home-button{width: 60%;margin-top: 30rpx;margin-bottom: 50rpx; background: #a10009;}
 
-.music-jh{display: none;}
+.music-jh{display:none;}

@@ -4,9 +4,9 @@ Page({
     userInfo: {},
     dataList: [],
     dataObj:{},
+    invitationId:'',
     scrollTop: 0,
     navActive: 'favor',
-    photos: ['https://www.zhencome.com/images/wxcbg/user_bg_1.jpg', 'https://www.zhencome.com/images/wxcbg/user_bg_2.jpg', 'https://www.zhencome.com/images/wxcbg/user_bg_3.jpg', 'https://www.zhencome.com/images/wxcbg/user_bg_1.jpg', 'https://www.zhencome.com/images/wxcbg/user_bg_2.jpg', 'https://www.zhencome.com/images/wxcbg/user_bg_3.jpg', 'https://www.zhencome.com/images/wxcbg/user_bg_1.jpg', 'https://www.zhencome.com/images/wxcbg/user_bg_2.jpg', 'https://www.zhencome.com/images/wxcbg/user_bg_3.jpg'],
     markers: [{
       // iconPath: "/resources/others.png",
       id: 0,
@@ -24,7 +24,13 @@ Page({
   },
   onLoad: function (options) {
     var that = this;
-    console.log(options.id)
+
+    if (options.id) {
+      that.setData({
+        invitationId: options.id
+      })
+    }
+    
     that.musicBox(8000);
     that.getUserType();//获取用户信息
   },
@@ -94,6 +100,28 @@ Page({
   },
   loadData: function () {
     var that = this;
+
+    wx.showNavigationBarLoading()
+    var invitationId = that.data.invitationId;
+    if (invitationId) {
+      var params = {
+        id: invitationId
+      }
+    } else {
+      var params = {}
+    }
+    // util.postData.call(that, util.config.wxApi.invitationModify, params,function(res){
+    //   if (res.data.status) {
+    //     var data = res.data.data
+    //     that.setData({
+    //       dataObj: data
+    //     })
+    //   }
+
+    //   wx.hideNavigationBarLoading()
+    // });
+
+
     that.setData({
       dataObj:{
         id:'2222',
@@ -129,7 +157,7 @@ Page({
           desc: '描述地址！'
         }],
         welcomeCode: '我们恭候您的光临！',
-        photos: ['https://www.zhencome.com/images/wxcbg/user_bg_1.jpg', 'https://www.zhencome.com/images/wxcbg/user_bg_2.jpg', 'https://www.zhencome.com/images/wxcbg/user_bg_3.jpg', 'https://www.zhencome.com/images/wxcbg/user_bg_1.jpg', 'https://www.zhencome.com/images/wxcbg/user_bg_2.jpg']
+        photos: ['https://www.zhencome.com/images/wxcbg/user_bg_1.jpg', 'https://www.zhencome.com/images/wxcbg/user_bg_2.jpg', 'https://www.zhencome.com/images/wxcbg/user_bg_3.jpg', 'https://www.zhencome.com/files/weddingdefault/logoooo.png', 'https://www.zhencome.com/files/weddingdefault/needle.png']
       },
       topicObj: {
         id: '111',
@@ -137,7 +165,7 @@ Page({
         showImage: 'https://www.zhencome.com/files/weddingdefault/topicdefault.jpg',
         price: 0.00,
         cprice: 0,
-        styleImage: ['https://www.zhencome.com/files/weddingdefault/contact_bg_2.png', 'https://www.zhencome.com/files/weddingdefault/contact_bg_1.png', 'https://www.zhencome.com/files/weddingdefault/mail_bg_2.jpg'],
+        styleImage: ['https://www.zhencome.com/files/weddingdefault/contact_bg_2.png', 'https://www.zhencome.com/files/weddingdefault/contact_bg_1.png', 'https://www.zhencome.com/files/weddingdefault/mail_bg_2.jpg','https://www.zhencome.com/files/weddingdefault/logoooo.png', 'https://www.zhencome.com/files/weddingdefault/needle.png'],
         music:{
           poster:'https://www.zhencome.com/files/weddingdefault/jiehun8.png',
           name:'咱们结婚吧',
@@ -149,7 +177,10 @@ Page({
 
 
     that.setPageTitle('氨基酸,阿斯顿结婚请柬');
-
+    setTimeout(function(){
+      that.createMusicAudio();
+    },3000)
+    // that.createMusicAudio();
     // wx.showNavigationBarLoading()
     // var params = {
     //   page: 1
@@ -163,10 +194,18 @@ Page({
 
 
   },
-  onReady: function (e) {
+  createMusicAudio: function () {
     // 使用 wx.createAudioContext 获取 audio 上下文 context
-    this.audioCtx = wx.createAudioContext('myAudio');
-    this.audioCtx.play();
+    var that = this;
+    // var audioCtx = wx.createInnerAudioContext('myAudio');
+    // audioCtx.loop = true;
+    // audioCtx.src = that.data.topicObj.music.src;
+    // audioCtx.play();
+
+    var audioCtx = wx.createAudioContext('myAudio')
+    audioCtx.setSrc(that.data.topicObj.music.src)
+    audioCtx.play()
+
   },
   viewInvitationNav: function (e) {
     var that = this;

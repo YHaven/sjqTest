@@ -48,6 +48,11 @@ Page({
   },
   onLoad: function (options) {
     var that = this;
+    if (options.id) {
+      that.setData({
+        invitationId: options.id
+      })
+    }
     that.musicBox(8000);
     that.getUserType();//获取用户信息
     that.loadTopic();
@@ -56,7 +61,7 @@ Page({
   },
   onShow: function () {
     var that = this;
-    // that.loadData();
+    that.loadData();
   },
   getUserType: function () {
     var that = this;
@@ -373,8 +378,12 @@ Page({
   },
   loadTopic:function(){
     var that = this;
+
+    wx.showNavigationBarLoading()
+    
+    
     that.setData({
-      topicArray:[
+      topicArray: [
         {
           id: '111',
           type: 1,
@@ -389,9 +398,42 @@ Page({
         showImage: 'https://www.zhencome.com/files/weddingdefault/topicdefault.jpg',
         price: 0.00,
         cprice: 0,
-        styleImage: ['https://www.zhencome.com/files/weddingdefault/contact_bg_2.png', 'https://www.zhencome.com/files/weddingdefault/contact_bg_1.png', 'https://www.zhencome.com/files/weddingdefault/mail_bg_2.jpg']
+        styleImage: ['https://www.zhencome.com/files/weddingdefault/contact_bg_2.png', 'https://www.zhencome.com/files/weddingdefault/contact_bg_1.png', 'https://www.zhencome.com/files/weddingdefault/mail_bg_2.jpg', 'https://www.zhencome.com/files/weddingdefault/logoooo.png', 'https://www.zhencome.com/files/weddingdefault/needle.png']
       }
     });
+    var params = {
+      id: invitationId
+    }
+    util.postData.call(that, util.config.wxApi.invitationTopic, params, function (res) {
+      if (res.data.status) {
+        var data = res.data.data
+        that.setData({
+          topicArray: [
+            {
+              id: '111',
+              type: 1,
+              showImage: 'https://www.zhencome.com/files/weddingdefault/topicdefault.jpg',
+              price: 0.00,
+              cprice: 0,
+              styleImage: ['contact_bg_2.png', 'contact_bg_1.png', 'mail_bg_2.jpg']
+            }],
+          selectTopic: {
+            id: '111',
+            type: 1,
+            showImage: 'https://www.zhencome.com/files/weddingdefault/topicdefault.jpg',
+            price: 0.00,
+            cprice: 0,
+            styleImage: ['https://www.zhencome.com/files/weddingdefault/contact_bg_2.png', 'https://www.zhencome.com/files/weddingdefault/contact_bg_1.png', 'https://www.zhencome.com/files/weddingdefault/mail_bg_2.jpg']
+          }
+        });
+      }
+
+      wx.hideNavigationBarLoading()
+    });
+
+
+
+    
   },
   selectTopic:function(e){
     var that = this;
@@ -402,9 +444,25 @@ Page({
   },
   loadData: function () {
     var that = this;
-    that.setData({
-      dataObj: {}
-    });
+
+    wx.showNavigationBarLoading()
+    var invitationId = that.data.invitationId;
+    if (invitationId) {
+      var params = {
+        id: invitationId
+      }
+      util.postData.call(that, util.config.wxApi.invitationModify, params,function(res){
+        if (res.data.status) {
+          var data = res.data.data
+          that.setData({
+            dataObj: data
+          })
+        }
+
+        wx.hideNavigationBarLoading()
+      });
+    }
+    
 
   },
   viewInvitationNav: function (e) {
@@ -459,7 +517,7 @@ Page({
         msgResource: that.data.msgResource,
         businessId: util.config.apiList.plana.business
       };
-      util.postDataList.call(that, util.config.apiList.plana.getMessageList, params)
+      util.postData.call(that, util.config.wxApi.invitationModify, params)
     }
   },
   saveDataInfo: function () {
@@ -501,57 +559,52 @@ Page({
     }
 
     if (that.data.navActive == 'location') {
-      wx.navigateTo({
-        url: '../invitationCardView/invitationCardView'
-      })
+      console.log(params)
+      wx.showNavigationBarLoading()
+      var photosImgId = [];
+      var nowImages = dataObj.photos;
+      for (var i = 0; i < nowImages.length; i++) {
+        photosImgId.push(nowImages[i].imgId);
+      }
+      if (photosImgId.length > 0) {
+        params.photosImgList = photosImgId.join(',');
+      }
+      util.postData.call(that, util.config.wxApi.invitationModify, params, function (res) {
+        //console.log(res)
+        wx.hideNavigationBarLoading()
+        if (res.data.status) {
+
+          var toUrl = '../invitationCardView/invitationCardView?id=' + res.data.id;
+
+          //console.log('orderId'+orderId)
+          wx.navigateTo({
+            url: toUrl
+          })
+        }
+
+      });
+
     }else{
       that.setData({
         navActive: nextActive
       });
     }
 
-    
 
     
-    //测试区
-    return false;
-
-    console.log(params)
-    wx.showNavigationBarLoading()
-    var photosImgId = [];
-    var nowImages = dataObj.photos;
-    for (var i = 0; i < nowImages.length; i++) {
-      photosImgId.push(nowImages[i].imgId);
-    }
-    if (photosImgId.length > 0) {
-      params.photosImgList = photosImgId.join(',');
-    }
-    util.postData.call(that, config.wxApi.addOrder, params, function (res) {
-      //console.log(res)
-      wx.hideNavigationBarLoading()
-      if (res.data.err == 0) {
-
-        var toUrl = '../createOrderDetail/createOrderDetail?orderId=' + orderId;
-
-        //console.log('orderId'+orderId)
-        wx.navigateTo({
-          url: toUrl
-        })
-      }
-
-    });
 
   },
 
   chooseImg: function (cb) {
     var that = this;
     var params = {};
-    params.uid = that.data.userInfo.userId;
+    params.vt = 1;
+    params.businessId = util.wxApi.business;
     //console.log(params);
     util.uploadImg(util.config.wxApi.uploadImg, params, function (res) {
       console.log(res);
       var data = JSON.parse(res.data);
-      if (data.err == 0) {
+      if (data.status) {
         cb(data);
         // var imagesArray = that.data.images;
         // var imageObj = {};

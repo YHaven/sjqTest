@@ -11,8 +11,9 @@
 <view wx:if="{{navActive == 'favor'}}" class="p-b150">
   <view class="first-img">
     <view class="img-show-box" wx:if="{{dataObj.surfaceImg}}">
-      <view class="music-box"></view>
-       <image animation="{{animation}}" src="{{dataObj.surfaceImg}}" class="banner-item"></image> 
+      <image src="{{selectTopic.styleImage[4]}}" class="needle-img"></image>  
+      <view class="music-box" style="background: rgba(255,255,255,0.3) url('{{selectTopic.styleImage[3]}}') no-repeat center 0;background-size:100% 100%;"></view>
+       <image animation="{{animation}}" src="{{dataObj.surfaceImg}}" class="surface-img"></image> 
     </view>
 
     <view class="add-first-img" wx:if="{{!dataObj.surfaceImg}}" bindtap="setSurfaceImg">

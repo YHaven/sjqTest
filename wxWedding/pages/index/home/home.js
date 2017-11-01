@@ -11,17 +11,28 @@ Page({
 	},
 	onLoad: function (options) {
 		var that = this;
-    util.checkOpenSetting();//检查授权
-    that.getUserType();//获取用户信息
+
 		that.getInviteCode(options);//显示访客
-    that.loadBanner([]);//加载banner
-    that.loadData();
+    
 
 
 	},
-	onShow:function(){
-		var that = this;
-	},
+  onShow: function () {
+    var that = this
+    wx.showNavigationBarLoading()
+    var params = {
+      page: 1
+    }
+    that.setData({
+      dataList: []
+    })
+    util.postDataList.call(that, util.config.wxApi.invitationList, params, function (res) {
+      console.log(res);
+      that.loadData();
+      that.loadBanner([]);//加载banner
+      wx.hideNavigationBarLoading()
+    });
+  },
 	getUserType:function(){
 		var that = this;
 		var userInfo =  wx.getStorageSync('person_info');
@@ -94,12 +105,12 @@ Page({
   onPullDownRefresh: function () {
     var that = this
     that.setData({
-      films: [],
+      dataList: [],
       hasMore: true,
       showLoading: true,
       start: 1
     })
-    this.onLoad()
+    this.onShow()
   },
   onReachBottom: function () {
     var that = this

@@ -21,33 +21,42 @@ App({
 
               that.initStorage(userInfo);
 
-              that.getOpenId(login_res.code, res, function (o_res) {
+              that.toLoginWedding(login_res.code, res, function (t_res) {
                 //console.log(t_res);
-                if (o_res.data.err == 0) {
-                  var openId = o_res.data.data.openid;
-                  userInfo.openId = openId;
-                  //console.log(openId)
-                  that.toLogin(openId, res, function (t_res) {
-                    var userId = t_res.data.data.id;
-                    //console.log(userId)
-                    userInfo.userId = userId;
-                    userInfo.sid = '';
-
-                    that.getSysUserInfo(userId, function (s_res) {
-                      // console.log(s_res.data);
-                      if (s_res.data.err == 0) {
-                        userInfo.oUserInfo = s_res.data.data
-
-                        that.initStorage(userInfo);
-                      }
-                    });
-
-
-
-                  })
-                }
-
+                console.log(t_res.data.sessionId);
+                wx.setStorageSync('PHPSESSID', t_res.data.sessionId);
+                res.userInfo.userType = t_res.data.userType;
+                res.userInfo.userPhone = t_res.data.userPhone;
               })
+
+
+              // that.getOpenId(login_res.code, res, function (o_res) {
+              //   //console.log(t_res);
+              //   if (o_res.data.err == 0) {
+              //     var openId = o_res.data.data.openid;
+              //     userInfo.openId = openId;
+              //     //console.log(openId)
+              //     that.toLogin(openId, res, function (t_res) {
+              //       var userId = t_res.data.data.id;
+              //       //console.log(userId)
+              //       userInfo.userId = userId;
+              //       userInfo.sid = '';
+
+              //       that.getSysUserInfo(userId, function (s_res) {
+              //         // console.log(s_res.data);
+              //         if (s_res.data.err == 0) {
+              //           userInfo.oUserInfo = s_res.data.data
+
+              //           that.initStorage(userInfo);
+              //         }
+              //       });
+
+
+
+              //     })
+              //   }
+
+              // })
 
             }
           })
@@ -97,6 +106,21 @@ App({
     params.signature = userinfo.signature;
     params.encryptedData = userinfo.encryptedData;
     params.iv = userinfo.iv;
+    util.postData.call(that, url, params, cb, fail_cb);
+  },
+  toLoginWedding: function (code, userinfo, cb, fail_cb) {
+    var that = this;
+    var url = util.config.wxApi.login;
+    var params = userinfo.userInfo;
+    params.vt = 1;
+    params.type = 'wCode';
+    params.wxCode = code;
+    params.businessId = util.config.wxApi.business;
+    //params.rawData = userinfo.rawData;
+    params.signature = userinfo.signature;
+    params.encryptedData = userinfo.encryptedData;
+    params.iv = userinfo.iv;
+
     util.postData.call(that, url, params, cb, fail_cb);
   },
   getSysUserInfo: function (uid, cb, fail_cb) {

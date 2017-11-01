@@ -1,9 +1,12 @@
+<audio class="music-jh" poster="{{topicObj.music.poster}}" name="{{topicObj.music.name}}" author="{{topicObj.music.author}}" src="{{topicObj.music.src}}" id="myAudio" controls loop="{{true}}" binderror="binderror"></audio>
+
 <view wx:if="{{navActive == 'favor'}}" class="p-b150 invitation-info">
   <view class="first-img">
     <view class="img-show-box">
-      <view class="music-box"></view>
-       <image animation="{{animation}}" src="{{dataObj.surfaceImg == ''?'../../../images/wedding_bg_1.jpg':dataObj.surfaceImg}}" class="banner-item"></image> 
-       <audio class="music-jh" poster="{{topicObj.music.poster}}" name="{{topicObj.music.name}}" author="{{topicObj.music.author}}" src="{{topicObj.music.src}}" id="myAudio" controls loop="{{true}}"></audio>
+       <image src="{{topicObj.styleImage[4]}}" class="needle-img"></image>  
+      <view class="music-box" style="background: rgba(255,255,255,0.3) url('{{topicObj.styleImage[3]}}') no-repeat center 0;background-size:100% 100%;"></view>
+       <image animation="{{animation}}" src="{{dataObj.surfaceImg == ''?'../../../images/wedding_bg_1.jpg':dataObj.surfaceImg}}" class="surface-img"></image> 
+       
     </view>
 
     <view class="add-first-img" wx:if="{{false}}">

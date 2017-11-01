@@ -11,10 +11,21 @@ Page({
 		var that = this;
     that.getUserType();//获取用户信息
 	},
-	onShow:function(){
-		var that = this;
-    that.loadData();
-	},
+  onShow: function () {
+    var that = this
+    wx.showNavigationBarLoading()
+    var params = {
+      page: 1,
+      myType:1
+    }
+    that.setData({
+      dataList: []
+    })
+    util.postDataList.call(that, util.config.wxApi.invitationList, params, function (res) {
+      //console.log(res);
+      wx.hideNavigationBarLoading()
+    });
+  },
 	getUserType:function(){
 		var that = this;
 		var userInfo =  wx.getStorageSync('person_info');
@@ -71,16 +82,26 @@ Page({
 
   },
   onPullDownRefresh: function () {
-    var that = this;
-    that.onShow();
+    var that = this
+    that.setData({
+      dataList: [],
+      hasMore: true,
+      showLoading: true,
+      start: 1
+    })
+    this.onShow()
   },
   onReachBottom: function () {
     var that = this
     if (!that.data.showLoading) {
+      wx.showNavigationBarLoading()
       var params = {
         page: that.data.start
       }
-      plana.getPersonalList.call(that, config.apiList.plana.getHouseList, params);
+      util.postDataList.call(that, util.config.wxApi.invitationList, params, function (res) {
+        //console.log(res);
+        wx.hideNavigationBarLoading()
+      });
     }
   },
   showOpera: function (e) {

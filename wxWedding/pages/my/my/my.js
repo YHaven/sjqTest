@@ -37,6 +37,9 @@ Page({
   getUserType: function () {
     var that = this;
     var userInfo = wx.getStorageSync('person_info');
+    if (userInfo == ''){
+      util.checkOpenSetting();//检查授权
+    }
     that.setData({
       userInfo: userInfo
     });
