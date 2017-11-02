@@ -1,8 +1,12 @@
+<view>
+
+</view>
+
 <view class="data-list">
   <view class="data-p" wx:for="{{dataList}}" wx:for-item="dataItem" wx:for-index="dataIndex" wx:key="data">
     <view class="data-item {{dataItem.isTop == 1 ? 'data-item-top' : ''}} {{dataItem.show == true ? 'data-opra' : ''}}">
       <view class="data-img " data-url="{{dataItem.id}}" data-index="{{dataIndex}}" catchtap="showOpera">
-        <image src="{{dataItem.imgUrl}}"></image>
+        <image src="{{dataItem.surfaceImg}}" mode="aspectFill"></image>
       </view>
       <view class="note-info">
         {{dataItem.groom}}&&{{dataItem.bride}}--{{dataItem.weddingDate}}({{dataItem.weekDate}})
@@ -25,3 +29,6 @@
 </view>
 
 <navigator url="../invitationCardEdit/invitationCardEdit" class="add-btn">新增</navigator>
+
+<import src="../../../component/message/message.wxml"/>
+<template is="message" data="{{message: message}}"/>

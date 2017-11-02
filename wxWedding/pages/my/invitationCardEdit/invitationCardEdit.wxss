@@ -51,7 +51,7 @@ textarea{margin: 0 auto;border: 1px solid #cd010d;}
 .invitation-band .invitation-title{padding: 20rpx 0rpx;color: #cd010d;font-weight: bold;}
 .invitation-band .invitation-title text{display: inline-block; width: 30rpx;float: left;}
 .invitation-font{color: #cd010d;font-size: 36rpx;}
-.invitation-font-i{color: #000000;min-width: 100rpx;display: inline-block;padding-left: 20rpx;border: 1px solid #cd010d;overflow:inherit;}
+.invitation-font-i{color: #000000;min-width: 100rpx;display: inline-block;border: 1px solid #cd010d;overflow:inherit;}
 .invitation-font-i.date{width: 480rpx;text-align: left;}
 .invitation-font-i.font-name{width: 212rpx;}
 .invitation-font-i input{height: 48rpx;}

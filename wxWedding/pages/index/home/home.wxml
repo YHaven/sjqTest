@@ -1,7 +1,7 @@
 <swiper class="banner" indicator-dots="{{indicatorDots}}" autoplay="true">
   <block wx:for="{{bannerList}}" wx:for-item="bannerItem" wx:for-index="bannerIndex" wx:key="banner">
     <swiper-item data-type="{{bannerItem.type}}" data-url="{{bannerItem.ad_url}}" data-title="{{bannerItem.ad_name}}" bindtap="viewNavDetail">
-      <image src="{{bannerItem.ad_img}}" class="banner-item"></image>
+      <image src="{{bannerItem.ad_img}}" mode="aspectFit" class="banner-item"></image>
     </swiper-item>
   </block>
 </swiper>
@@ -9,7 +9,7 @@
 <view class="data-list">
   <view class="data-item {{dataItem.isTop == 1 ? 'data-item-top' : ''}}" wx:for="{{dataList}}" wx:for-item="dataItem" wx:for-index="dataIndex" wx:key="data">
     <view class="data-img" data-url="../../my/invitationCardView/invitationCardView?id={{dataItem.id}}" bindtap="viewNavDetail">
-      <image src="{{dataItem.imgUrl}}"></image>
+      <image src="{{dataItem.surfaceImg}}" mode="aspectFill"></image>
     </view>
 
     <view class="note-info">

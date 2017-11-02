@@ -9,8 +9,24 @@ Page({
   data: {
     userInfo: {},
     dataList: [],
-    topicArray:[],
-    topicObj:{},
+    invitationId:'',
+    topicArray: [
+      {
+        id: 1,
+        type: 1,
+        showImage: 'https://www.zhencome.com/files/weddingdefault/topicdefault.jpg',
+        price: 0.00,
+        cprice: 0,
+        styleImage: ['contact_bg_2.png', 'contact_bg_1.png', 'mail_bg_2.jpg']
+      }],
+    topicObj: {
+      id: 1,
+      type: 1,
+      showImage: 'https://www.zhencome.com/files/weddingdefault/topicdefault.jpg',
+      price: 0.00,
+      cprice: 0,
+      styleImage: ['https://www.zhencome.com/files/weddingdefault/contact_bg_2.png', 'https://www.zhencome.com/files/weddingdefault/contact_bg_1.png', 'https://www.zhencome.com/files/weddingdefault/mail_bg_2.jpg', 'https://www.zhencome.com/files/weddingdefault/logoooo.png', 'https://www.zhencome.com/files/weddingdefault/needle.png']
+    },
     dataObj:{
       surfaceImg:'',
       weddingDate: nowDate.Format('yyyy年MM月dd日'),
@@ -55,7 +71,10 @@ Page({
     }
     that.musicBox(8000);
     that.getUserType();//获取用户信息
-    that.loadTopic();
+    setTimeout(function(){
+      that.loadTopic();
+    },3000)
+    
     that.getCity();//获取地址信息
     that.setPageTitle('主题选择');
   },
@@ -139,19 +158,14 @@ Page({
   setSurfaceImg:function(e){
       var that = this;
 
-      // that.chooseImg(function(res){
+      that.chooseImg(function(res){
 
-      //   var oldData = that.data.dataObj;
-      //   oldData.surfaceImg = '../../../images/wedding_bg_1.jpg';
-      //   that.setData({
-      //     dataObj: oldData
-      //   });
-      // });
-
-      var oldData = that.data.dataObj;
-      oldData.surfaceImg = '../../../images/wedding_bg_1.jpg';
-      that.setData({
-        dataObj: oldData
+        var oldData = that.data.dataObj;
+        oldData.surfaceImg = util.config.homepath+res.imgurlsmall;
+        oldData.surfaceImgId = res.imgid;
+        that.setData({
+          dataObj: oldData
+        });
       });
       
   },
@@ -339,17 +353,21 @@ Page({
 
   choosePhotoImg:function(){
     var that = this;
-    var oldData = that.data.dataObj;
+    that.chooseImg(function (res) {
 
-    var imagesArray = oldData.photos || [];
-    var imageObj = {};
-    imageObj.imgId = "222";
-    imageObj.savePath = "https://www.zhencome.com/images/wxcbg/user_bg_1.jpg";
-    imagesArray.push(imageObj);
-    oldData.photos = imagesArray;
-    that.setData({
-      dataObj: oldData
+      var oldData = that.data.dataObj;
+      var imagesArray = oldData.photos || [];
+      var imageObj = {};
+      imageObj.imgId = res.imgid;
+      imageObj.savePath = util.config.homepath + res.imgurlsmall;
+      imagesArray.push(imageObj);
+      oldData.photos = imagesArray;
+      that.setData({
+        dataObj: oldData
+      });
     });
+    
+   
   },
   removeImg: function (e) {
     var that = this;
@@ -378,56 +396,18 @@ Page({
   },
   loadTopic:function(){
     var that = this;
-
     wx.showNavigationBarLoading()
-    
-    
-    that.setData({
-      topicArray: [
-        {
-          id: '111',
-          type: 1,
-          showImage: 'https://www.zhencome.com/files/weddingdefault/topicdefault.jpg',
-          price: 0.00,
-          cprice: 0,
-          styleImage: ['contact_bg_2.png', 'contact_bg_1.png', 'mail_bg_2.jpg']
-        }],
-      topicObj: {
-        id: '111',
-        type: 1,
-        showImage: 'https://www.zhencome.com/files/weddingdefault/topicdefault.jpg',
-        price: 0.00,
-        cprice: 0,
-        styleImage: ['https://www.zhencome.com/files/weddingdefault/contact_bg_2.png', 'https://www.zhencome.com/files/weddingdefault/contact_bg_1.png', 'https://www.zhencome.com/files/weddingdefault/mail_bg_2.jpg', 'https://www.zhencome.com/files/weddingdefault/logoooo.png', 'https://www.zhencome.com/files/weddingdefault/needle.png']
-      }
-    });
     var params = {
-      id: invitationId
+      id: that.data.invitationId
     }
     util.postData.call(that, util.config.wxApi.invitationTopic, params, function (res) {
       if (res.data.status) {
         var data = res.data.data
-        that.setData({
-          topicArray: [
-            {
-              id: '111',
-              type: 1,
-              showImage: 'https://www.zhencome.com/files/weddingdefault/topicdefault.jpg',
-              price: 0.00,
-              cprice: 0,
-              styleImage: ['contact_bg_2.png', 'contact_bg_1.png', 'mail_bg_2.jpg']
-            }],
-          topicObj: {
-            id: '111',
-            type: 1,
-            showImage: 'https://www.zhencome.com/files/weddingdefault/topicdefault.jpg',
-            price: 0.00,
-            cprice: 0,
-            styleImage: ['https://www.zhencome.com/files/weddingdefault/contact_bg_2.png', 'https://www.zhencome.com/files/weddingdefault/contact_bg_1.png', 'https://www.zhencome.com/files/weddingdefault/mail_bg_2.jpg']
-          }
-        });
+        // that.setData({
+        //   topicArray: [],
+        //   topicObj: {}
+        // });
       }
-
       wx.hideNavigationBarLoading()
     });
 
@@ -445,17 +425,19 @@ Page({
   loadData: function () {
     var that = this;
 
-    wx.showNavigationBarLoading()
+    
     var invitationId = that.data.invitationId;
     if (invitationId) {
+      wx.showNavigationBarLoading()
       var params = {
-        id: invitationId
+        id: that.data.invitationId
       }
-      util.postData.call(that, util.config.wxApi.invitationModify, params,function(res){
+      util.postData.call(that, util.config.wxApi.invitationView, params,function(res){
         if (res.data.status) {
-          var data = res.data.data
+          var data = res.data
           that.setData({
-            dataObj: data
+            dataObj: data.invitation,
+            topicObj: data.invitationTopic
           })
         }
 
@@ -526,7 +508,7 @@ Page({
     //   return false;
     // }
     var dataObj = that.data.dataObj;
-    var params = {};
+    // var params = {};
     var params = dataObj;
 
     var nextActive = '';
@@ -559,16 +541,21 @@ Page({
     }
 
     if (that.data.navActive == 'location') {
-      console.log(params)
+      // console.log(params)
+
+
       wx.showNavigationBarLoading()
       var photosImgId = [];
       var nowImages = dataObj.photos;
       for (var i = 0; i < nowImages.length; i++) {
-        photosImgId.push(nowImages[i].imgId);
+        photosImgId.push(nowImages[i].imgId + ':' + nowImages[i].savePath);
       }
       if (photosImgId.length > 0) {
-        params.photosImgList = photosImgId.join(',');
+        params.photosIdArr = photosImgId.join(',');
       }
+      params.businessId = util.config.wxApi.business;
+      params.topicId = that.data.topicObj.id;
+      // return false;
       util.postData.call(that, util.config.wxApi.invitationModify, params, function (res) {
         //console.log(res)
         wx.hideNavigationBarLoading()
@@ -599,10 +586,10 @@ Page({
     var that = this;
     var params = {};
     params.vt = 1;
-    params.businessId = util.wxApi.business;
+    params.businessId = util.config.wxApi.business;
     //console.log(params);
-    util.uploadImg(util.config.wxApi.uploadImg, params, function (res) {
-      console.log(res);
+    util.uploadImg(util.config.wxApi.fileUpload, params, function (res) {
+      // console.log(res);
       var data = JSON.parse(res.data);
       if (data.status) {
         cb(data);

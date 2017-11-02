@@ -101,8 +101,9 @@ Page({
   loadData: function () {
     var that = this;
 
-    wx.showNavigationBarLoading()
+   
     var invitationId = that.data.invitationId;
+    console.log(invitationId)
     if (invitationId) {
       var params = {
         id: invitationId
@@ -110,16 +111,17 @@ Page({
     } else {
       var params = {}
     }
-    // util.postData.call(that, util.config.wxApi.invitationModify, params,function(res){
-    //   if (res.data.status) {
-    //     var data = res.data.data
-    //     that.setData({
-    //       dataObj: data
-    //     })
-    //   }
+    wx.showNavigationBarLoading();
+    util.postData.call(that, util.config.wxApi.invitationView, params,function(res){
+      if (res.data.status) {
+        var data = res.data.data
+        that.setData({
+          dataObj: data
+        })
+      }
 
-    //   wx.hideNavigationBarLoading()
-    // });
+      wx.hideNavigationBarLoading()
+    });
 
 
     that.setData({

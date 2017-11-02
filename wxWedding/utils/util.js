@@ -122,7 +122,10 @@ function getAccessToken(cb,fail_cb){
     })
 }
 
-function postData(url, params, cb, fail_cb){
+
+
+
+function postDataNo(url, params, cb, fail_cb){
    var that = this
 
    var header = { 'content-type': 'application/x-www-form-urlencoded' }
@@ -146,6 +149,32 @@ function postData(url, params, cb, fail_cb){
         typeof fail_cb == 'function' && fail_cb()
       }
     })
+}
+
+function postData(url, params, cb, fail_cb) {
+  var that = this
+
+  var header = { 'content-type': 'application/x-www-form-urlencoded' }
+   var session_id = wx.getStorageSync('PHPSESSID');//本地取存储的sessionID  
+   if (session_id != "" && session_id != null) {
+     header = { 'content-type': 'application/x-www-form-urlencoded', 'Cookie': 'JSESSIONID=' + session_id }
+   }
+  wx.request({
+    url: url,
+    data: params,
+    method: 'POST',
+    header: header,
+    // header: {'content-type': 'application/json'},
+    success: function (res) {
+
+      wx.stopPullDownRefresh()
+      typeof cb == 'function' && cb(res)
+    },
+    fail: function () {
+      wx.stopPullDownRefresh()
+      typeof fail_cb == 'function' && fail_cb()
+    }
+  })
 }
 
 
@@ -190,7 +219,7 @@ function postDataList(url, params, cb, fail_cb){
             showLoading: false
           })
           message.show.call(that, {
-            content: res.data.mes,
+            content: res.data.errorinfo,
             icon: 'offline',
             duration: 3000
           })
@@ -328,6 +357,7 @@ module.exports = {
   getNextMonth:getNextMonth,
   getDate: getDate,
   getTime: getTime,
+  postDataNo: postDataNo,
   postData:postData,
   postDataList:postDataList,
   uploadImg:uploadImg,

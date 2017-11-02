@@ -14,28 +14,13 @@ Page({
 
 		that.getInviteCode(options);//显示访客
     
+    that.loadData()
+    that.loadBanner();//加载banner
 
 
 	},
   onShow: function () {
-    var that = this
-    wx.showNavigationBarLoading()
-    var params = {
-      page: 1,
-      businessId: util.config.wxApi.business
-    }
-    that.setData({
-      dataList: []
-    })
-    setTimeout(function(){
-      util.postDataList.call(that, util.config.wxApi.invitationList, params, function (res) {
-        // console.log(res);
-        that.loadData();
-        that.loadBanner([]);//加载banner
-        wx.hideNavigationBarLoading()
-      });
-    },3000);
-    
+    var that = this;
   },
 	getUserType:function(){
 		var that = this;
@@ -61,63 +46,64 @@ Page({
       businessId: util.config.wxApi.business
     }
 
-    util.postDataList.call(that, util.config.wxApi.siteInfo, params, function (res) {
+    util.postDataNo.call(that, util.config.wxApi.siteInfo, params, function (res) {
       if (res.data.status) {
-        
+        that.setData({
+          bannerList: res.data.banner_list
+        });
       }
       wx.hideNavigationBarLoading()
     });
-
-
-		var defaultBanner = {};
-    defaultBanner.ad_img ="../../../images/wedding-3.jpg";
-		// banner = [];
-		var bannerArray = [];
-		if(banner.length<=0){
-			bannerArray.push(defaultBanner);
-		}else{
-			for(var i=0;i<banner.length;i++){
-				bannerArray.push(banner[i])
-			}
-		}
-		that.setData({
-			bannerList: bannerArray
-		});
+		
 	},
 
   loadData:function(){
       var that = this;
+
+      wx.showNavigationBarLoading()
+      var params = {
+        page: 1,
+        businessId: util.config.wxApi.business
+      }
       that.setData({
-        dataList:[
-          {
-            id:'222',
-            imgUrl:'../../../images/wedding-1.jpg',
-            groom:'LLLLL',
-            bride:'NNNNN',
-            weddingDate:'2018年8月8日',
-            weekDate:'星期三',
-            isTop:1
-          },
-          {
-            id: '222',
-            imgUrl: '../../../images/wedding-2.jpg',
-            groom: 'LLLLL',
-            bride: 'NNNNN',
-            weddingDate: '2018年8月9日',
-            weekDate: '星期三',
-            isTop: 0
-          },
-          {
-            id: '222',
-            imgUrl: '../../../images/wedding-2.jpg',
-            groom: 'LLLLL',
-            bride: 'NNNNN',
-            weddingDate: '2018年8月6日',
-            weekDate: '星期三',
-            isTop: 0
-          }
-        ]
+        dataList: []
+      })
+      util.postDataList.call(that, util.config.wxApi.invitationList, params, function (res) {
+        wx.hideNavigationBarLoading()
       });
+
+
+      // that.setData({
+      //   dataList:[
+      //     {
+      //       id:'222',
+      //       imgUrl:'../../../images/wedding-1.jpg',
+      //       groom:'LLLLL',
+      //       bride:'NNNNN',
+      //       weddingDate:'2018年8月8日',
+      //       weekDate:'星期三',
+      //       isTop:1
+      //     },
+      //     {
+      //       id: '222',
+      //       imgUrl: '../../../images/wedding-2.jpg',
+      //       groom: 'LLLLL',
+      //       bride: 'NNNNN',
+      //       weddingDate: '2018年8月9日',
+      //       weekDate: '星期三',
+      //       isTop: 0
+      //     },
+      //     {
+      //       id: '222',
+      //       imgUrl: '../../../images/wedding-2.jpg',
+      //       groom: 'LLLLL',
+      //       bride: 'NNNNN',
+      //       weddingDate: '2018年8月6日',
+      //       weekDate: '星期三',
+      //       isTop: 0
+      //     }
+      //   ]
+      // });
   },
   onPullDownRefresh: function () {
     var that = this

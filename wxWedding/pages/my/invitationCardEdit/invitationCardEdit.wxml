@@ -51,7 +51,7 @@
     </view>
 
     <view class="invitation-font m-t50">
-      <textarea focus="{{false}}" data-key='welcomeCode' bindconfirm="bindInputChange" value="{{dataObj.welcomeCode}}"/>
+      <textarea focus="{{false}}" data-key='welcomeCode' bindinput="bindInputChange" value="{{dataObj.welcomeCode}}"/>
     </view>
     <view class="invitation-font m-t50">新郎:<input class="invitation-font-i font-name" value="{{dataObj.groom}}" data-key='groom' bindinput="bindInputChange"></input>，新娘:<input class="invitation-font-i font-name" value="{{dataObj.bride}}" data-key='bride' bindinput="bindInputChange"></input></view>
 

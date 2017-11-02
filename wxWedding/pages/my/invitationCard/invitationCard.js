@@ -16,7 +16,7 @@ Page({
     wx.showNavigationBarLoading()
     var params = {
       page: 1,
-      myType:1
+      invitationType:1
     }
     that.setData({
       dataList: []
@@ -120,14 +120,14 @@ Page({
   viewData: function (e) {
     var data = e.currentTarget.dataset;
     wx.navigateTo({
-      url: '../invitationCardView/invitationCardView?dataid='+data.id
+      url: '../invitationCardView/invitationCardView?id='+data.id
     })
   },
   //编辑
   editData: function (e) {
     var data = e.currentTarget.dataset;
     wx.navigateTo({
-      url: '../invitationCardEdit/invitationCardEdit?dataid=' + data.id
+      url: '../invitationCardEdit/invitationCardEdit?id=' + data.id
     })
   },
   //添加

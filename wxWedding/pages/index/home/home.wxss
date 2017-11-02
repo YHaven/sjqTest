@@ -1,5 +1,5 @@
 @import "../../../styles/reset.wxss";
-.banner{height: 350rpx;}
+.banner{height: 350rpx;background: rgba(0, 0, 0, 0.5);}
 .banner image{width: 100%;height:100%;}
 
 .data-list{
