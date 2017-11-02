@@ -21,17 +21,21 @@ Page({
     var that = this
     wx.showNavigationBarLoading()
     var params = {
-      page: 1
+      page: 1,
+      businessId: util.config.wxApi.business
     }
     that.setData({
       dataList: []
     })
-    util.postDataList.call(that, util.config.wxApi.invitationList, params, function (res) {
-      console.log(res);
-      that.loadData();
-      that.loadBanner([]);//加载banner
-      wx.hideNavigationBarLoading()
-    });
+    setTimeout(function(){
+      util.postDataList.call(that, util.config.wxApi.invitationList, params, function (res) {
+        // console.log(res);
+        that.loadData();
+        that.loadBanner([]);//加载banner
+        wx.hideNavigationBarLoading()
+      });
+    },3000);
+    
   },
 	getUserType:function(){
 		var that = this;
@@ -52,6 +56,19 @@ Page({
 	loadBanner: function (banner) {
 		// [{"img":"","title":"","url":""}]
 		var that = this;
+
+    var params = {
+      businessId: util.config.wxApi.business
+    }
+
+    util.postDataList.call(that, util.config.wxApi.siteInfo, params, function (res) {
+      if (res.data.status) {
+        
+      }
+      wx.hideNavigationBarLoading()
+    });
+
+
 		var defaultBanner = {};
     defaultBanner.ad_img ="../../../images/wedding-3.jpg";
 		// banner = [];

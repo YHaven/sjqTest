@@ -126,11 +126,10 @@ function postData(url, params, cb, fail_cb){
    var that = this
 
    var header = { 'content-type': 'application/x-www-form-urlencoded' }
-   var session_id = wx.getStorageSync('PHPSESSID');//本地取存储的sessionID  
-   if (session_id != "" && session_id != null) {
-     header = { 'content-type': 'application/x-www-form-urlencoded', 'Cookie': 'JSESSIONID=' + session_id }
-   }
-
+  //  var session_id = wx.getStorageSync('PHPSESSID');//本地取存储的sessionID  
+  //  if (session_id != "" && session_id != null) {
+  //    header = { 'content-type': 'application/x-www-form-urlencoded', 'Cookie': 'JSESSIONID=' + session_id }
+  //  }
    wx.request({
       url: url,
       data:params,
@@ -168,19 +167,19 @@ function postDataList(url, params, cb, fail_cb){
       success: function(res){
         // console.log(res)
         if (res.data.status){
-          if (typeof res.data.data.dataList == 'undefined' || res.data.data.dataList.length === 0 ){
+          if (typeof res.data.dataList == 'undefined' || res.data.dataList.length === 0 ){
             that.setData({
               hasMore: false,
               showLoading: false
             })
           }else{
             that.setData({
-              dataList: that.data.dataList.concat(res.data.data.dataList),
+              dataList: that.data.dataList.concat(res.data.dataList),
               start: that.data.start + 1,
               hasMore: false,  //现在必为空
               showLoading: false
             })
-            if (res.data.data.dataList.length<10){
+            if (res.data.dataList.length<10){
               that.setData({
                 hasMore: false,
               })

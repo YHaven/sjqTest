@@ -23,7 +23,7 @@ App({
 
               that.toLoginWedding(login_res.code, res, function (t_res) {
                 //console.log(t_res);
-                console.log(t_res.data.sessionId);
+                // console.log(t_res.data.sessionId);
                 wx.setStorageSync('PHPSESSID', t_res.data.sessionId);
                 res.userInfo.userType = t_res.data.userType;
                 res.userInfo.userPhone = t_res.data.userPhone;

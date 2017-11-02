@@ -11,6 +11,7 @@ module.exports = {
       business: 5,
       fileUpload: homepath + '/wedding/file!upfile.action',
       login: homepath + '/wedding/index!alogin.action',
+      siteInfo: homepath + '/wedding/index!siteInfo.action',
       invitationList: homepath + '/wedding/index!invitationList.action',
       invitationView: homepath + '/wedding/index!invitationView.action',
       invitationModify: homepath + '/wedding/index!invitationModify.action',
