@@ -73,7 +73,7 @@ Page({
     that.getUserType();//获取用户信息
     setTimeout(function(){
       that.loadTopic();
-    },3000)
+    },1000)
     
     that.getCity();//获取地址信息
     that.setPageTitle('主题选择');

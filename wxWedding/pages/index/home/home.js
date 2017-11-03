@@ -113,18 +113,19 @@ Page({
       showLoading: true,
       start: 1
     })
-    this.onShow()
+    this.loadData()
   },
   onReachBottom: function () {
     var that = this
-    if (!that.data.showLoading) {
+    if (!that.data.showLoading && that.data.hasMore) {
+      wx.showNavigationBarLoading()
       var params = {
-        vt: '1',
         page: that.data.start,
-        msgResource: that.data.msgResource,
-        businessId: config.apiList.plana.business
-      };
-      plana.getMessageList.call(that, config.apiList.plana.getMessageList, params)
+        businessId: util.config.wxApi.business
+      }
+      util.postDataList.call(that, util.config.wxApi.invitationList, params, function (res) {
+        wx.hideNavigationBarLoading()
+      });
     }
   },
 	viewBannerDetail:function(e){
