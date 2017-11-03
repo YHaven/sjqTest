@@ -259,6 +259,7 @@ Page({
     that.setData({
       dataObj: oldData
     });
+    // console.log(that.data.dataObj)
   },
 
   bindAddressChange:function(e) {
@@ -402,11 +403,24 @@ Page({
     }
     util.postData.call(that, util.config.wxApi.invitationTopic, params, function (res) {
       if (res.data.status) {
-        var data = res.data.data
-        // that.setData({
-        //   topicArray: [],
-        //   topicObj: {}
-        // });
+        var topicArr = res.data.dataList;
+        var topicArrNew = [];
+        for (var i = 0; i < topicArr.length;i++ ){
+          var topicObj = topicArr[i];
+          topicObj.styleImage = topicObj.styleImage.split(';');
+          topicObj.music = {
+            poster: 'https://www.zhencome.com/files/weddingdefault/jiehun8.png',
+            name: '咱们结婚吧',
+            author: '齐晨',
+            src: 'https://www.zhencome.com/files/weddingdefault/jiehun8.mp3'
+          }
+          topicArrNew.push(topicObj);
+        }
+        
+        that.setData({
+          topicArray: topicArrNew,
+          topicObj: topicArrNew[0]
+        });
       }
       wx.hideNavigationBarLoading()
     });
@@ -430,15 +444,54 @@ Page({
     if (invitationId) {
       wx.showNavigationBarLoading()
       var params = {
-        id: that.data.invitationId
+        id: invitationId
       }
       util.postData.call(that, util.config.wxApi.invitationView, params,function(res){
         if (res.data.status) {
-          var data = res.data
+          var dataObj = res.data.invitation;
+          var topicObj = res.data.invitationTopic;
+
+          if (dataObj.photosIdArr.length > 0) {
+            var photos = dataObj.photosIdArr.split(',');
+            var photoArr = [];
+            for (var p = 0; p < photos.length; p++) {
+              
+              photoArr.push({
+                savePath:photos[p].substring(photos[p].indexOf('http'), photos[p].length),
+                imgId: photos[p].substring(0, photos[p].indexOf('http')-1)
+              })
+            }
+            dataObj.photos = photoArr;
+            // console.log(photoArr)
+          }
+
+          dataObj.groomMarkers = {
+            iconPath: "../../../images/marker_red.png",
+            latitude: dataObj.groomLat,
+            longitude: dataObj.groomLng,
+            name: dataObj.groomGPSAddress,
+            desc: dataObj.groomAddress
+          }
+          dataObj.brideMarkers = {
+            iconPath: "../../../images/marker_red.png",
+            latitude: dataObj.brideLat,
+            longitude: dataObj.brideLng,
+            name: dataObj.brideGPSAddress,
+            desc: dataObj.brideAddress
+          }
+
+          topicObj.styleImage = topicObj.styleImage.split(';');
+          topicObj.music = {
+            poster: 'https://www.zhencome.com/files/weddingdefault/jiehun8.png',
+            name: '咱们结婚吧',
+            author: '齐晨',
+            src: 'https://www.zhencome.com/files/weddingdefault/jiehun8.mp3'
+          }
           that.setData({
-            dataObj: data.invitation,
-            topicObj: data.invitationTopic
+            dataObj: dataObj,
+            topicObj: topicObj
           })
+        
         }
 
         wx.hideNavigationBarLoading()
@@ -552,6 +605,10 @@ Page({
       }
       if (photosImgId.length > 0) {
         params.photosIdArr = photosImgId.join(',');
+      }
+      var invitationId = that.data.invitationId;
+      if (invitationId) {
+        params.invitationId = invitationId;
       }
       params.businessId = util.config.wxApi.business;
       params.topicId = that.data.topicObj.id;

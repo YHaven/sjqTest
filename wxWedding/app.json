@@ -2,8 +2,10 @@
     "pages":[
         
         "pages/index/home/home",
+        
         "pages/my/my/my",
         "pages/my/skin/skin",
+        "pages/my/start/start",
         "pages/my/invitationCard/invitationCard",
         "pages/my/invitationCardEdit/invitationCardEdit",
         "pages/my/invitationCardView/invitationCardView"

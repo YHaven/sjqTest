@@ -1,4 +1,4 @@
-.nav-block{display: flex;text-align: center;position: fixed;bottom: 0px;width: 100%;background-color: #cd010d;border-top: 1px solid #b80000;}
+.nav-block{display: flex;text-align: center;position: fixed;bottom: 0px;width: 100%;background-color: #cd010d;border-top: 1px solid #b80000;z-index:2;}
 .nav-item{flex: 1;padding:10rpx 0rpx;color: #ccc;}
 .nav-item.cearte-order{position: relative;flex: 0.5;}
 .nav-item.cearte-order image{position: absolute;width: 150rpx;height: 150rpx;top: -45rpx;left: 0rpx;}

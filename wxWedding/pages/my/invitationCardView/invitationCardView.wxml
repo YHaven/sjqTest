@@ -1,5 +1,14 @@
 <audio class="music-jh" poster="{{topicObj.music.poster}}" name="{{topicObj.music.name}}" author="{{topicObj.music.author}}" src="{{topicObj.music.src}}" id="myAudio" controls loop="{{true}}" binderror="binderror"></audio>
 
+<view wx:if="{{open}}" class="open-start" animation="{{animationOpenData}}">
+  <view class="start-img">
+    <image src="https://www.zhencome.com/files/weddingdefault/card1.jpg"  ></image>
+    <view class="qi-btn" bindtouchend="slidethis">启</view>
+  </view>
+  
+</view>
+
+
 <view wx:if="{{navActive == 'favor'}}" class="p-b150 invitation-info">
   <view class="first-img">
     <view class="img-show-box">

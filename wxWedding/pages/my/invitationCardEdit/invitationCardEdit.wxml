@@ -13,7 +13,7 @@
     <view class="img-show-box" wx:if="{{dataObj.surfaceImg}}">
       <image src="{{topicObj.styleImage[4]}}" class="needle-img"></image>  
       <view class="music-box" style="background: rgba(255,255,255,0.3) url('{{topicObj.styleImage[3]}}') no-repeat center 0;background-size:100% 100%;"></view>
-       <image animation="{{animation}}" src="{{dataObj.surfaceImg}}" class="surface-img"></image> 
+       <image animation="{{animation}}" src="{{dataObj.surfaceImg}}" class="surface-img" bindtap="setSurfaceImg"></image> 
     </view>
 
     <view class="add-first-img" wx:if="{{!dataObj.surfaceImg}}" bindtap="setSurfaceImg">
