@@ -11,7 +11,7 @@
 .f-r{float: right;}
 
 .blue-btn{padding: 10rpx;background: #84d9d4;border-radius: 50rpx;margin: 10rpx auto;width:200rpx; }
-.red-btn{padding: 10rpx;background: #a6010a;border-radius: 50rpx;margin: 10rpx auto;width:200rpx;color: #f9b61d; }
+.red-btn{padding: 10rpx;background: #a6010a;border-radius: 50rpx;margin: 45rpx auto;width:200rpx;color: #f9b61d; }
 .text-c{text-align: center}
 .text-l{text-align: left}
 .text-r{text-align: right}

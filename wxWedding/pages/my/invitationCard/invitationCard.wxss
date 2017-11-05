@@ -14,14 +14,14 @@
 .data-item{width: 340rpx;height: 280rpx;position: relative;margin: 0 auto;margin-bottom: 20rpx;border-radius: 10rpx;overflow: hidden;}
 .data-item{border-bottom: 2rpx solid #a6010a; box-shadow: 0 10rpx 40rpx #a6010a;}
 .data-img{width: 340rpx;height: 280rpx;}
-.note-info{position: absolute;bottom: 0rpx;background: rgba(0, 0, 0, 0.5);width: 710rpx;color: #fff;padding: 10rpx 0rpx; text-align: center;font-size: 24rpx;}
+.note-info{position: absolute;bottom: 0rpx;background: rgba(0, 0, 0, 0.5);width: 340rpx;color: #fff;padding: 10rpx 0rpx; text-align: center;font-size: 24rpx;}
 
 .data-opra{  
   transform: rotate(0deg) scale(1) translate(-40%,0%);   
   -webkit-transform: rotate(0deg) scale(1) translate(-40%,0%);   
 } 
 .data-p{position: relative;}
-.opera-block{position: absolute;right: 30rpx;top: 10rpx; text-align: center;}
+.opera-block{position: absolute;right: 0rpx;top: 0rpx;left:0rpx;bottom: 0rpx;background: rgba(0, 0, 0, 0.5); text-align: center;}
 .add-btn{position: fixed;bottom: 80rpx;right: 10rpx;width: 100rpx;height: 100rpx;line-height: 100rpx;text-align: center; border-radius: 50%;border: 1px solid #a6010a;box-shadow:0 5rpx 5rpx #a6010a;font-size: 30rpx;color: #f9b61d;background: #a6010a;}
 .data-item-top::after {
     content: '置顶';

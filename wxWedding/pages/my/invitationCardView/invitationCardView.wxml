@@ -1,3 +1,4 @@
+
 <audio class="music-jh" poster="{{topicObj.music.poster}}" name="{{topicObj.music.name}}" author="{{topicObj.music.author}}" src="{{topicObj.music.src}}" id="myAudio" controls loop="{{true}}" binderror="binderror"></audio>
 
 <view wx:if="{{open}}" class="open-start" animation="{{animationOpenData}}">
@@ -9,7 +10,7 @@
 </view>
 
 
-<view wx:if="{{navActive == 'favor'}}" class="p-b150 invitation-info">
+<view wx:if="{{navActive == 'favor'}}" class="p-b150 invitation-info"  style="background-image: url(../../../images/jhb_bg.jpg);background-position:50%;background-repeat:no-repeat;background-size:auto 100%;">
   <view class="first-img">
     <view class="img-show-box">
        <image src="{{topicObj.styleImage[4]}}" class="needle-img"></image>  
@@ -84,3 +85,4 @@
 
 <import src="../../../component/invitationNav/invitationNav.wxml" />
 <template is="invitationNav" data="{{navActive:navActive,navArray:[{navName:'请柬',navIcon:'favor_light',navKey:'favor'},{navName:'相册',navIcon:'pic',navKey:'pic'},{navName:'电话',navIcon:'phone',navKey:'phone'},{navName:'导航',navIcon:'location',navKey:'location'}]}}" />
+

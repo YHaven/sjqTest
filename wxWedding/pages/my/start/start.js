@@ -22,7 +22,7 @@ Page({
       cardUrl: 'https://www.zhencome.com/files/weddingdefault/card1.jpg',
       cardInfo: {
         cardTitle: '来结婚吧',
-        cardInfoMes: ['一月一送，浪漫节日送浪漫花', '一月两送，有趣节日送奇异花', '一月四送，有你在每天都是最好的节日']
+        cardInfoMes: ['一月一送，浪漫节日送浪漫花', '客服电话', '18268826992']
       }
     }
     ]

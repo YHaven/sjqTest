@@ -1,13 +1,13 @@
 @import "../../../styles/reset.wxss";
 @import "../../../component/invitationNav/invitationNav.wxss";
 
-page{background: #cd010d;}
+ page{background: #cd010d;} 
 .no-border{border: 0;}
-.first-img{text-align: center;margin-top:30rpx;height: 540rpx; }
+.first-img{text-align: center;padding-top:30rpx;height: 540rpx; }
 .first-img .add-first-img{width: 375rpx;height: 375rpx;line-height: 375rpx;margin: 0 auto;}
 .add-first-img .iconfont{font-size: 108rpx;color: #ffffff;}
 
-.img-show-box{position: relative;}
+.img-show-box{position: relative;z-index: 2;}
 .img-show-box .music-box{position: absolute;top: -14rpx;left:50%;margin-left: -270rpx; width: 540rpx;height: 540rpx;border-radius: 50%;z-index: 1;background: #000000;z-index: -1;}
 .img-show-box .needle-img{position: absolute;top: -150rpx;z-index: 1;width:144rpx;height: 205rpx;left: 50%;margin-left: -122rpx;}
 

@@ -13,7 +13,8 @@
     </view>
 
     <view class="note-info">
-      {{dataItem.groom}}&&{{dataItem.bride}}--{{dataItem.weddingDate}}({{dataItem.weekDate}})
+      {{dataItem.groom}}💕{{dataItem.bride}}
+      <view>{{dataItem.weddingDate}}({{dataItem.weekDate}})</view>
     </view>
   </view>
 
