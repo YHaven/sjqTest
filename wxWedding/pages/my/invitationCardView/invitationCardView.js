@@ -77,22 +77,7 @@ Page({
   },
   musicBox: function (sleepTimer) {
     var that = this;
-    that.animation = wx.createAnimation({
-      // 动画持续时间，单位ms，默认值 400
-      duration: sleepTimer,
-      timingFunction: 'linear',
-      // 延迟多长时间开始
-      delay: 0,
-      // transformOrigin: 'left top 0',
-      success: function (res) {
-        console.log(res)
-      }
-    });
-    that.rotate(sleepTimer);
-    // setInterval(function(){
-    //   console.log('2222')
-    //   that.rotate();
-    // }, sleepTimer);
+    util.animationFun.animationFun.rotatingAll.call(that, 'animationR', sleepTimer);
 
   },
   rotate: function (sleepTimer) {
@@ -117,7 +102,7 @@ Page({
       })
       i++;
       // console.log(i);
-    }.bind(that), sleepTimer);
+    }, sleepTimer);
 
   },
   loadData: function () {

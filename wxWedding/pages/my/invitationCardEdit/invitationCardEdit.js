@@ -360,15 +360,16 @@ Page({
 
   choosePhotoImg:function(){
     var that = this;
+    var oldData = that.data.dataObj;
     that.chooseImg(function (res) {
-
-      var oldData = that.data.dataObj;
       var imagesArray = oldData.photos || [];
+      console.log(oldData);
       var imageObj = {};
       imageObj.imgId = res.imgid;
       imageObj.savePath = util.config.homepath + res.imgurlsmall;
       imagesArray.push(imageObj);
       oldData.photos = imagesArray;
+      console.log(imagesArray);
       that.setData({
         dataObj: oldData
       });
@@ -499,7 +500,7 @@ Page({
           }
           that.setData({
             dataObj: dataObj,
-            topicObj: topicObj
+            topicId: topicObj.id
           })
         
         }

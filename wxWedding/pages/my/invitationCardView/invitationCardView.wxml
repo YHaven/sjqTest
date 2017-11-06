@@ -15,8 +15,8 @@
     <view class="img-show-box">
        <image src="{{topicObj.styleImage[4]}}" class="needle-img"></image>  
       <view class="music-box" style="background: rgba(255,255,255,0.3) url('{{topicObj.styleImage[3]}}') no-repeat center 0;background-size:100% 100%;"></view>
-       <image animation="{{animation}}" src="{{dataObj.surfaceImg == ''?'../../../images/wedding_bg_1.jpg':dataObj.surfaceImg}}" class="surface-img"></image> 
-       
+        
+       <image animation="{{animationR}}" src="{{dataObj.surfaceImg == ''?'../../../images/wedding_bg_1.jpg':dataObj.surfaceImg}}" class="surface-img"></image>
     </view>
 
     <view class="add-first-img" wx:if="{{false}}">
@@ -44,8 +44,8 @@
       <text class="invitation-font-i">{{dataObj.seatDesin}}</text>
     </view>
 
-    <view class="invitation-font m-t50">{{dataObj.welcomeCode}}</view>
-    <view class="invitation-font m-t50">新郎:{{dataObj.groom}}，新娘:{{dataObj.bride}}</view>
+    <view class="invitation-font m-t20">{{dataObj.welcomeCode}}</view>
+    <view class="invitation-font m-t20">新郎:{{dataObj.groom}}，新娘:{{dataObj.bride}}</view>
 
     <image class="mail_bg" src="../../../images/mail_bg_1.jpg"></image>
   </view>

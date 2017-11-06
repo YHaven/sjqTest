@@ -15,7 +15,6 @@
 .invitation-band{background:#f3be4c;min-height: 300rpx;position: relative;margin: 30rpx;border-radius: 10rpx;overflow: hidden;padding-bottom: 200rpx;}
 .invitation-band .mail_bg{height: 200rpx;position: absolute;bottom: 0rpx;display: block;border-radius: 10rpx;}
 .first-img .surface-img{width: 375rpx;height: 375rpx;border-radius: 50%;margin-top: 70rpx;}
-.first-img .surface-img{animation: 1.2s linear 0s normal none infinite running rotating;}
 
 
 .invitation-band{background:#f3be4c;min-height: 300rpx;position: relative;margin: 30rpx;border-radius: 10rpx;overflow: hidden;padding-bottom: 200rpx;}

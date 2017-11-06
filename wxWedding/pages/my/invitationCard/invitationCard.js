@@ -33,54 +33,6 @@ Page({
 			userInfo: userInfo
 		});
 	},
-
-  loadData:function(){
-      var that = this;
-      that.setData({
-        dataList:[
-          {
-            id:'222',
-            imgUrl:'../../../images/wedding-1.jpg',
-            groom:'LLLLL',
-            bride:'NNNNN',
-            weddingDate:'2018年8月8日',
-            weekDate:'星期三',
-            isTop:1
-          },
-          {
-            id: '222',
-            imgUrl: '../../../images/wedding-2.jpg',
-            groom: 'LLLLL',
-            bride: 'NNNNN',
-            weddingDate: '2018年8月9日',
-            weekDate: '星期三',
-            isTop: 0
-          },
-          {
-            id: '222',
-            imgUrl: '../../../images/wedding-2.jpg',
-            groom: 'LLLLL',
-            bride: 'NNNNN',
-            weddingDate: '2018年8月6日',
-            weekDate: '星期三',
-            isTop: 0
-          }
-        ]
-      });
-
-      // wx.showNavigationBarLoading()
-      // var params = {
-      //   page: 1
-      // }
-      // that.setData({
-      //   dataList: []
-      // })
-      // plana.getPersonalList.call(that, config.apiList.plana.getHouseList, params, function (res) {
-      //   wx.hideNavigationBarLoading()
-      // });
-
-
-  },
   onPullDownRefresh: function () {
     var that = this
     that.setData({
@@ -114,6 +66,26 @@ Page({
     }
     this.setData({
       dataList: oldData
+    })
+  },
+  viewNavDetail: function (e) {
+    var that = this;
+    var data = e.currentTarget.dataset;
+    if (data.url.indexOf('index/home/home') > 0) {
+      wx.redirectTo({
+        url: data.url
+      });
+      return false;
+    }
+
+    if (data.url.indexOf('my/my/my') > 0) {
+      wx.redirectTo({
+        url: data.url
+      });
+      return false;
+    }
+    wx.navigateTo({
+      url: data.url
     })
   },
   //预览

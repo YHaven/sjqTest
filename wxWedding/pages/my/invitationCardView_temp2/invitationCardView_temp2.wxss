@@ -1,28 +1,53 @@
 @import "../../../styles/reset.wxss";
-
-.invitation-page{left: -2rpx;top: -2rpx;right: 0rpx;bottom: 0rpx;position: absolute;}
+page{background: #cd010d;}
+.invitation-page{left: 0rpx;top: 0rpx;right: 0rpx;bottom: 0rpx;position: absolute;height: 100%;border: 0px;margin: 0px;padding: 0px;}
 .music-jh{display:none;}
 
-
+.displaynone{display: none;}
 .firstpage{z-index: 0}
 .secondpage{z-index: -1}
-.invitation-contact{width: 550rpx;height: 880rpx;color: rgb(160, 145, 127); margin: 0 auto;margin-top: 130rpx;text-align: center;z-index: 1;position: relative;}
+.invitation-contact{left: 80rpx;top: 80rpx;right: 80rpx;bottom: 80rpx;color: rgb(160, 145, 127);text-align: center;z-index: 1;position: absolute;}
 .music-icon{height: 90rpx;width: 90rpx;margin-top: 120rpx;}
 .invitation-title{font-weight: bold;}
 .invitation-title .title-1{font-size: 48rpx;}
 .invitation-title .title-2{font-size: 24rpx;}
 .invitation-title .title-3{font-size: 96rpx;}
-.invitation-title .title-5{font-size: 24rpx;margin-top: 50rpx;}
+.invitation-title .title-5{font-size: 24rpx;position: absolute;bottom: 50rpx;width: 100%;}
 .invitation-title .headimg-icon{width: 260rpx;height: 86rpx;}
 .invitation-title .author-name{font-size: 26rpx;}
 .invitation-title .author-name text{margin: 0 40rpx;}
-.invitation-title .icon-likefill{margin-top: 180rpx;}
+.invitation-title .icon-likefill{position: absolute;bottom: 150rpx;margin-left: -10rpx;}
 
-.invitation-background{width: 550rpx;height: 880rpx;background: rgb(206, 198, 188);position: absolute;top: 130rpx;left: 50%;margin-left: -270rpx; z-index: 0;opacity: 0;}
+.invitation-background{left: 80rpx;top: 80rpx;right: 80rpx;bottom: 80rpx;background: rgb(206, 198, 188);position: absolute; z-index: 0;opacity: 0;}
 .single-snow-icon{width: 42rpx;height: 42rpx;opacity: 0;}
 .single-snow-icon.top-middle{position: absolute;top: 0rpx;left: 50%;margin-left: -21rpx;}
 .single-snow-icon.bottom-middle{position: absolute;bottom: 0rpx;left: 50%;margin-left: -21rpx;}
+.single-snow-icon.top-left{position: absolute;top: 0rpx;left: 0rpx;}
+.single-snow-icon.top-right{position: absolute;top: 0rpx;right: 0rpx;}
+.single-snow-icon.bottom-left{position: absolute;bottom: 0rpx;left: 0rpx;}
+.single-snow-icon.bottom-right{position: absolute;bottom: 0rpx;right: 0rpx;}
 
-.tie-icon{width: 800rpx;height: 380rpx;position: absolute;bottom: -380rpx;left: 50%;margin-left: -400rpx;opacity: 0;}
-.bottom-img-icon{width: 800rpx;height: 380rpx;position: absolute;bottom: 200rpx;left: 50%;margin-left: -400rpx;overflow: hidden;z-index: 1;}
-.snow-icon{width: 750;height: 1200rpx;position: absolute;bottom: 0rpx;left: 50%;margin-left: -375rpx;}
+
+.tie-icon{width: 800rpx;height: 380rpx;position: absolute;bottom: -380rpx;left: 50%;margin-left: -400rpx;opacity: 0;z-index: 1;}
+.bottom-img-icon{width: 800rpx;height: 380rpx;position: absolute;bottom: 0rpx;left: 50%;margin-left: -400rpx;overflow: hidden;z-index: 1;}
+.snow-icon{width: 750rpx;height: 1200rpx;position: absolute;bottom: 0rpx;left: 50%;margin-left: -375rpx;}
+
+
+.invitation-band{text-align: center;}
+.invitation-band .invitation-title{padding: 20rpx 0rpx;color:rgb(160, 145, 127);font-weight: bold;font-size: 50rpx;margin-top: 50rpx;}
+.invitation-band .invitation-title text{display: inline-block; width: 30rpx;}
+.invitation-band .invitation-font{color: rgb(160, 145, 127);font-size: 30rpx;}
+.invitation-band .invitation-font-i{color: #000000;min-width: 300rpx;display: inline-block;padding-left: 20rpx;}
+.invitation-band .invitation-font-i.date{width: 380rpx;text-align: left;}
+
+.invitation-band .button{display: flex;}
+.invitation-band button{background: rgba(0,0,0,.1);flex: 1;margin: 0rpx 10rpx;color: rgb(160, 145, 127)}
+
+
+
+.page3 .invitation-contact image{width: 90%;height: 300rpx;margin-top: 20rpx;opacity: 0;}
+
+.page4 .invitation-contact .img-1{height: 280rpx;}
+.page4 .invitation-contact .img-2{height: 280rpx;width: 40%;float: left;opacity: 0;}
+.page4 .invitation-contact .img-3{height: 280rpx;width: 60%;float: right;opacity: 0;}
+.page4 .invitation-contact .img-4{height: 280rpx;opacity: 0;}

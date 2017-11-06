@@ -3,7 +3,8 @@ Page({
   data: {
     userInfo: {},
     currentPage:'firstpage',
-    invitationId:''
+    invitationId:'',
+    showPage:['0']
   },
   onLoad: function (options) {
     var that = this;
@@ -27,41 +28,58 @@ Page({
     var that = this;
     that.loadData();
   },
-  nextPage:function(e){
+  swiperChange:function(e){
     var that = this;
-    var data = e.currentTarget.dataset;
-    var currentpage = data.currentpage;
-    console.log(currentpage)
-    
-    var nextpage = 'secondpage';
-    if(currentpage == 'firstpage'){
-      nextpage = 'secondpage';
-    }
-    if (currentpage == 'secondpage') {
-      nextpage = 'firstpage';
-    }
-    util.animationFun.animationFun.opacityEnd.call(that, currentpage, 1000, 1, 1000);
-    util.animationFun.animationFun.opacityEnd.call(that, nextpage, 1000, 0, 1000);
-    setTimeout(function(){
+    var current = e.detail.current;
+    var oldShowPage = that.data.showPage;
+    if (oldShowPage.indexOf(''+current)<0){
+      oldShowPage.push('' + current);
       that.setData({
-        currentPage: nextpage
-      })
-    },2000);
-
+        showPage: oldShowPage
+      });
+      if(current == 1){
+        that.secondPageAnimation();
+      }
+      if (current == 2) {
+        that.thirdPageAnimation();
+      }
+      if(current == 3){
+        that.fourthPageAnimation();
+      }
+    }
   },
 
   firstPageAnimation:function(){
     var that = this;
     util.animationFun.animationFun.rotatingAll.call(that, 'rotatingAll', 5000);
-    util.animationFun.animationFun.translateYEnd.call(that, 'translateYEnd', 1000, -290);
-    util.animationFun.animationFun.translateYEnd.call(that, 'translateYEnd', 1000, -290);
-
+    util.animationFun.animationFun.translateYEnd.call(that, 'translateYEnd', 1000, -200);
     util.animationFun.animationFun.opacityEnd.call(that, 'opacityEnd', 1000, 0, 1000);
-    util.animationFun.animationFun.translateXEnd.call(that, 'translateXTopLeftEnd', 1000, -126, 2000);
-    util.animationFun.animationFun.translateXEnd.call(that, 'translateXTopRightEnd', 1000, 128, 2000);
-    util.animationFun.animationFun.translateXEnd.call(that, 'translateXBottomLeftEnd', 1000, -126, 2000);
-    util.animationFun.animationFun.translateXEnd.call(that, 'translateXBottomRightEnd', 1000, 128, 2000);
-    util.animationFun.animationFun.scaleAndOpacity.call(that, 'scaleAndOpacity', 1000, 4, 'red');
+    util.animationFun.animationFun.opacityEnd.call(that, 'opacityEndSingle', 1000, 0, 2000);
+    util.animationFun.animationFun.scaleAndOpacity.call(that, 'scaleAndOpacity', 1000, 4);
+  },
+  secondPageAnimation:function(){
+      var that = this;
+      util.animationFun.animationFun.opacityEnd.call(that, 'opacityEnd2', 1000, 0, 1000);
+      util.animationFun.animationFun.translateYEnd.call(that, 'translateYEnd2', 1000, -120);
+      util.animationFun.animationFun.opacityEnd.call(that, 'opacityEndSingle2', 1000, 0, 2000);
+      
+  },
+  thirdPageAnimation:function(){
+    var that = this;
+    util.animationFun.animationFun.opacityEnd.call(that, 'opacityEnd3', 2000, 0, 1000);
+    util.animationFun.animationFun.translateYEnd.call(that, 'translateYEnd3', 1000, -100);
+    util.animationFun.animationFun.opacityEnd.call(that, 'opacityEndSingle3', 1000, 0, 2000);
+    util.animationFun.animationFun.opacityEnd.call(that, 'opacityEndImg0', 1000, 0, 3000);
+    util.animationFun.animationFun.rotatingYEnd.call(that, 'opacityEndImg1', 1000,180, 4000);
+  },
+  fourthPageAnimation: function () {
+    var that = this;
+    util.animationFun.animationFun.opacityEnd.call(that, 'opacityEnd4', 1000, 0, 1000);
+    util.animationFun.animationFun.translateYEnd.call(that, 'translateYEnd4', 1000, -100);
+    util.animationFun.animationFun.opacityEnd.call(that, 'opacityEndSingle4', 1000, 0, 2000);
+    util.animationFun.animationFun.opacityEnd.call(that, 'opacityEndImg3', 1000, 0, 3000);
+    util.animationFun.animationFun.opacityEnd.call(that, 'opacityEndImg4', 1000, 0, 4000);
+    util.animationFun.animationFun.opacityEnd.call(that, 'opacityEndImg5', 1000, 0, 5000);
   },
   getUserType: function () {
     var that = this;

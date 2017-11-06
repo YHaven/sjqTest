@@ -14,7 +14,7 @@
       </view>
 
       <view class="opera-block" wx-if="{{dataItem.show}}">
-        <view data-id="{{dataItem.id}}" catchtap="viewData" class="red-btn">预览</view>
+        <view data-id="{{dataItem.id}}" data-url="{{dataItem.topicId != 2?'../../my/invitationCardView/invitationCardView?id='+dataItem.id : '../../my/invitationCardView_temp2/invitationCardView_temp2?id='+dataItem.id}}"  catchtap="viewNavDetail" class="red-btn">预览</view>
         <view data-id="{{dataItem.id}}" catchtap="editData" class="red-btn">编辑</view>
         <!-- <view data-id="{{dataItem.id}}" catchtap="deleteData" class="blue-btn">删除</view> -->
       </view>

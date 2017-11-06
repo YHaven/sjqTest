@@ -71,6 +71,31 @@ var animationFun = {
 
 
   },
+  
+  //水平旋转
+  rotatingYEnd: function (keyName, loopTimer, rDeg, delayTime) {
+    var that = this;
+    if (typeof delayTime == 'undefined') {
+      delayTime = 0
+    }
+    that[keyName] = wx.createAnimation({
+      // 动画持续时间，单位ms，默认值 400
+      duration: loopTimer,
+      timingFunction: 'linear',
+      // 延迟多长时间开始
+      delay: delayTime,
+      // transformOrigin: 'left top 0',
+      success: function (res) {
+        console.log(res)
+      }
+    });
+
+    that[keyName].opacity(1, 0).rotateY(rDeg).step();
+
+    var exportObj = {};
+    exportObj[keyName] = that[keyName].export()
+    that.setData(exportObj)
+  },
   //缩放
   scaleEnd: function (keyName, loopTimer, scaleNumber, delayTime) {
     var that = this;
