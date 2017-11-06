@@ -10,6 +10,7 @@ Page({
     userInfo: {},
     dataList: [],
     invitationId:'',
+    topicId:1,
     topicArray: [
       {
         id: 1,
@@ -46,7 +47,7 @@ Page({
       photos:[]
     },
     scrollTop: 0,
-    navActive:'topic',
+    navActive:'favor',
     markers: [{
       // iconPath: "/resources/others.png",
       id: 0,
@@ -67,6 +68,11 @@ Page({
     if (options.id) {
       that.setData({
         invitationId: options.id
+      })
+    }
+    if (options.topicid) {
+      that.setData({
+        topicId: options.topicid
       })
     }
     that.musicBox(8000);
@@ -405,8 +411,12 @@ Page({
       if (res.data.status) {
         var topicArr = res.data.dataList;
         var topicArrNew = [];
+        var selectTopic = {};
         for (var i = 0; i < topicArr.length;i++ ){
           var topicObj = topicArr[i];
+          if (that.data.topicId == topicObj.id){
+            selectTopic = topicObj;
+          }
           topicObj.styleImage = topicObj.styleImage.split(';');
           topicObj.music = {
             poster: 'https://www.zhencome.com/files/weddingdefault/jiehun8.png',
@@ -611,7 +621,8 @@ Page({
         params.invitationId = invitationId;
       }
       params.businessId = util.config.wxApi.business;
-      params.topicId = that.data.topicObj.id;
+      params.topicId = that.data.topicId;
+      // params.topicId = that.data.topicObj.id;
       // return false;
       util.postData.call(that, util.config.wxApi.invitationModify, params, function (res) {
         //console.log(res)

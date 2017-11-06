@@ -9,33 +9,9 @@ textarea{margin: 0 auto;border: 1px solid #cd010d;}
 .add-first-img .iconfont{font-size: 108rpx;color: #ffffff;}
 .nav-item.createOrder{background-color: #a10009;}
 
-.data-item-top::after {
-    content: '选中';
-    display: block;
-    position: absolute;
-    top: 5px;
-    right: 3px;
-    z-index: 4;
-    text-align: center;
-    transform: rotate(45deg);
-    color: #fff;
-}
-.data-item-top {
-    border: 3rpx solid #f3be4c;
-}
-
-.data-item-top::before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: -80rpx;
-    right: -80rpx;
-    z-index: 4;
-    width: 160rpx;
-    height: 160rpx;
-    transform: rotate(45deg);
-    background-color: #f3be4c;
-}
+.data-item-top::after{content: '选中';display: block;position: absolute;top: 5px;right: 3px;z-index: 4;text-align: center;transform: rotate(45deg);color: #fff;}
+.data-item-top{border: 3rpx solid #f3be4c;}
+.data-item-top::before{content: '';display: block;position: absolute;top: -80rpx;right: -80rpx;z-index: 4;width: 160rpx;height: 160rpx;transform: rotate(45deg);background-color: #f3be4c;}
 
 .img-show-box{position: relative;}
 .img-show-box .music-box{position: absolute;top: -14rpx;left:50%;margin-left: -270rpx; width: 540rpx;height: 540rpx;border-radius: 50%;z-index: 1;background: #000000;z-index: -1;}

@@ -4,9 +4,10 @@ Page({
     gridList: [
       // {enName:'favorite', zhName:'我的操作'},
       // {enName:'history', zhName:'浏览记录'},
-      // {enName:'shake', zhName:'摇一摇'},
+      // {enName:'read', zhName:'我的主题'},
       
       { enIcon: 'favor', zhName: '我的请柬', toPage: 'invitationCard'},
+      { enIcon: 'read', zhName: '我的模板', toPage: 'invitationStyle'},
       {enIcon: 'magic', zhName: '关于我们', toPage: 'start' }
       // {enName:'setting', zhName:'设置'}
     ],

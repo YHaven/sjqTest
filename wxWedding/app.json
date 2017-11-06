@@ -1,13 +1,17 @@
 {
     "pages":[
-        
+        "pages/my/invitationCardView_temp2/invitationCardView_temp2",
         "pages/index/home/home",
-        
+
         "pages/my/my/my",
         "pages/my/skin/skin",
         "pages/my/start/start",
+        "pages/my/signIn/signIn",
+        "pages/my/invitationStyle/invitationStyle",
+        
         "pages/my/invitationCard/invitationCard",
         "pages/my/invitationCardEdit/invitationCardEdit",
+        
         "pages/my/invitationCardView/invitationCardView"
         
     ],

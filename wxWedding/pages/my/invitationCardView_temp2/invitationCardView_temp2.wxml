@@ -1,0 +1,41 @@
+<audio class="music-jh" poster="{{topicObj.music.poster}}" name="{{topicObj.music.name}}" author="{{topicObj.music.author}}" src="{{topicObj.music.src}}" id="myAudio" controls loop="{{true}}" binderror="binderror"></audio>
+
+<view class="invitation-page" style="background-image: url({{topicObj.styleImage[2]}});background-position:50% 50%;background-size:cover;display:{{currentPage == 'firstpage'?'block':'none'}}" data-currentpage="firstpage" bindtap="nextPage" animation="{{firstpage}}">
+
+  <view class="invitation-background" animation="{{opacityEnd}}" >
+    <image class="single-snow-icon top-middle" animation="{{translateXTopLeftEnd}}" src="{{topicObj.styleImage[1]}}"></image>
+    <image class="single-snow-icon top-middle" animation="{{translateXTopRightEnd}}" src="{{topicObj.styleImage[1]}}"></image>
+    <image class="single-snow-icon bottom-middle" animation="{{translateXBottomLeftEnd}}" src="{{topicObj.styleImage[1]}}"></image>
+    <image class="single-snow-icon bottom-middle" animation="{{translateXBottomRightEnd}}" src="{{topicObj.styleImage[1]}}"></image>
+  </view>
+  <view class="invitation-contact">
+    <image class="music-icon" animation="{{rotatingAll}}"  src="{{topicObj.styleImage[0]}}"></image>
+    <view class="invitation-title">
+      <view class="title-1">INVITATION</view>
+      <view class="title-2">· 邀请您参加我们的婚礼 ·</view>
+      <view class="title-3">—</view>
+      <image class="headimg-icon" src="{{topicObj.styleImage[3]}}"></image>
+      <view class="author-name"><text>{{dataObj.groom}}</text><text>{{dataObj.bride}}</text> </view>
+      <icon class="iconfont icon-likefill" animation="{{scaleAndOpacity}}" ></icon>
+      <view class="title-5">· WELCOME TO MY HOUSE ·</view>
+    </view>
+  </view>
+  
+  <image class="tie-icon" animation="{{translateYEnd}}" src="{{topicObj.styleImage[4]}}"></image>
+  <view class="bottom-img-icon">
+    <image class="snow-icon" src="{{topicObj.styleImage[5]}}"></image>
+  </view>
+  
+
+
+</view>
+
+
+<view class="invitation-page" style="background-image: url({{topicObj.styleImage[2]}});background-position:50% 50%;background-size:cover;display:{{currentPage == 'secondpage'?'block':'none'}}" data-currentpage="secondpage" bindtap="nextPage" animation="{{secondpage}}">
+222
+</view>
+
+
+
+
+

@@ -1,4 +1,5 @@
 @import "../styles/fontic.wxss";
+@import "../styles/animation.wxss";
 @import "../component/nav/nav.wxss";
 @import "../component/message/message.wxss";
 .clear {clear:both; height:0; font-size:0; line-height:0; overflow:hidden;}

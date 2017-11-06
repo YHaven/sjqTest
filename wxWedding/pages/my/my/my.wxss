@@ -146,6 +146,7 @@ page{background: #fff;}
 
 .iconfont{font-size: 36px;}
 .iconfont.icon-favor{color: #ff971c;}
+.iconfont.icon-read{color: #4590c1;}
 
 
 .grid-icon-history {

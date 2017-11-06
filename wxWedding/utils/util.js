@@ -1,4 +1,5 @@
 var config = require('./config.js')
+var animationFun = require('./animation.js')
 var message = require('../component/message/message') //dialog提示
 
 function formatTime(time) {
@@ -365,5 +366,6 @@ module.exports = {
   isEmptyObject:isEmptyObject,
   message:message,
   checkOpenSetting: checkOpenSetting,
+  animationFun: animationFun,
   config:config
 }

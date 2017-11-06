@@ -1,0 +1,36 @@
+<view>
+
+</view>
+
+<view class="data-list">
+  <view class="data-p" wx:for="{{dataList}}" wx:for-item="dataItem" wx:for-index="dataIndex" wx:key="data">
+    <view class="data-item {{dataItem.isTop == 1 ? 'data-item-top' : ''}} {{dataItem.show_bak == true ? 'data-opra' : ''}}">
+      <view class="data-img " data-url="{{dataItem.id}}" data-index="{{dataIndex}}" catchtap="showOpera">
+        <image src="{{dataItem.surfaceImg}}" mode="aspectFill"></image>
+      </view>
+      <view class="note-info">
+        {{dataItem.groom}}💕{{dataItem.bride}}
+        <view>{{dataItem.weddingDate}}({{dataItem.weekDate}})</view>
+      </view>
+
+      <view class="opera-block" wx-if="{{dataItem.show}}">
+        <view data-id="{{dataItem.id}}" catchtap="viewData" class="red-btn">预览</view>
+        <view data-id="{{dataItem.id}}" catchtap="editData" class="red-btn">编辑</view>
+        <!-- <view data-id="{{dataItem.id}}" catchtap="deleteData" class="blue-btn">删除</view> -->
+      </view>
+    </view>
+    
+  </view>
+  <block wx:if="{{hasMore}}">
+    <view class="loading-tip">拼命加载中…</view>
+  </block>
+  <block wx:else>
+    <view class="loading-tip">没有更多内容了</view>
+  </block>
+
+</view>
+
+<navigator url="../invitationCardEdit/invitationCardEdit" class="add-btn">新增</navigator>
+
+<import src="../../../component/message/message.wxml"/>
+<template is="message" data="{{message: message}}"/>

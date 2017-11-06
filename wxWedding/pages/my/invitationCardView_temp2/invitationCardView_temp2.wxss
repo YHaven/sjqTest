@@ -1,0 +1,28 @@
+@import "../../../styles/reset.wxss";
+
+.invitation-page{left: -2rpx;top: -2rpx;right: 0rpx;bottom: 0rpx;position: absolute;}
+.music-jh{display:none;}
+
+
+.firstpage{z-index: 0}
+.secondpage{z-index: -1}
+.invitation-contact{width: 550rpx;height: 880rpx;color: rgb(160, 145, 127); margin: 0 auto;margin-top: 130rpx;text-align: center;z-index: 1;position: relative;}
+.music-icon{height: 90rpx;width: 90rpx;margin-top: 120rpx;}
+.invitation-title{font-weight: bold;}
+.invitation-title .title-1{font-size: 48rpx;}
+.invitation-title .title-2{font-size: 24rpx;}
+.invitation-title .title-3{font-size: 96rpx;}
+.invitation-title .title-5{font-size: 24rpx;margin-top: 50rpx;}
+.invitation-title .headimg-icon{width: 260rpx;height: 86rpx;}
+.invitation-title .author-name{font-size: 26rpx;}
+.invitation-title .author-name text{margin: 0 40rpx;}
+.invitation-title .icon-likefill{margin-top: 180rpx;}
+
+.invitation-background{width: 550rpx;height: 880rpx;background: rgb(206, 198, 188);position: absolute;top: 130rpx;left: 50%;margin-left: -270rpx; z-index: 0;opacity: 0;}
+.single-snow-icon{width: 42rpx;height: 42rpx;opacity: 0;}
+.single-snow-icon.top-middle{position: absolute;top: 0rpx;left: 50%;margin-left: -21rpx;}
+.single-snow-icon.bottom-middle{position: absolute;bottom: 0rpx;left: 50%;margin-left: -21rpx;}
+
+.tie-icon{width: 800rpx;height: 380rpx;position: absolute;bottom: -380rpx;left: 50%;margin-left: -400rpx;opacity: 0;}
+.bottom-img-icon{width: 800rpx;height: 380rpx;position: absolute;bottom: 200rpx;left: 50%;margin-left: -400rpx;overflow: hidden;z-index: 1;}
+.snow-icon{width: 750;height: 1200rpx;position: absolute;bottom: 0rpx;left: 50%;margin-left: -375rpx;}
