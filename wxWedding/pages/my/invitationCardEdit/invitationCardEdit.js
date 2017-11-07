@@ -622,7 +622,8 @@ Page({
         params.invitationId = invitationId;
       }
       params.businessId = util.config.wxApi.business;
-      params.topicId = that.data.topicId;
+      var topicId = that.data.topicId;
+      params.topicId = topicId;
       // params.topicId = that.data.topicObj.id;
       // return false;
       util.postData.call(that, util.config.wxApi.invitationModify, params, function (res) {
@@ -631,9 +632,13 @@ Page({
         if (res.data.status) {
 
           var toUrl = '../invitationCardView/invitationCardView?id=' + res.data.id;
+          if (topicId != 1){
+            toUrl = '../invitationCardView_temp' + topicId + '/invitationCardView' + topicId +'?id=' + res.data.id;
+          }
+          
 
           //console.log('orderId'+orderId)
-          wx.navigateTo({
+          wx.redirectTo({
             url: toUrl
           })
         }

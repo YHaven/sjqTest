@@ -34,54 +34,6 @@ Page({
 			userInfo: userInfo
 		});
 	},
-
-  loadData:function(){
-      var that = this;
-      that.setData({
-        dataList:[
-          {
-            id:'222',
-            imgUrl:'../../../images/wedding-1.jpg',
-            groom:'LLLLL',
-            bride:'NNNNN',
-            weddingDate:'2018年8月8日',
-            weekDate:'星期三',
-            isTop:1
-          },
-          {
-            id: '222',
-            imgUrl: '../../../images/wedding-2.jpg',
-            groom: 'LLLLL',
-            bride: 'NNNNN',
-            weddingDate: '2018年8月9日',
-            weekDate: '星期三',
-            isTop: 0
-          },
-          {
-            id: '222',
-            imgUrl: '../../../images/wedding-2.jpg',
-            groom: 'LLLLL',
-            bride: 'NNNNN',
-            weddingDate: '2018年8月6日',
-            weekDate: '星期三',
-            isTop: 0
-          }
-        ]
-      });
-
-      // wx.showNavigationBarLoading()
-      // var params = {
-      //   page: 1
-      // }
-      // that.setData({
-      //   dataList: []
-      // })
-      // plana.getPersonalList.call(that, config.apiList.plana.getHouseList, params, function (res) {
-      //   wx.hideNavigationBarLoading()
-      // });
-
-
-  },
   onPullDownRefresh: function () {
     var that = this
     that.setData({
@@ -108,10 +60,29 @@ Page({
   selectTopic:function(e){
     var data = e.currentTarget.dataset;
     var id = data.id;
+    var price = Number(data.price);
+    var cprice = Number(data.cprice);
     var url = '../invitationCardEdit/invitationCardEdit?topicid=' + data.id;
-    wx.navigateTo({
-      url: url
-    })
+    if (cprice>0){
+      wx.showModal({
+        title: '提示',
+        content: '这是一个积分模板',
+        success: function (res) {
+          if (res.confirm) {
+            wx.navigateTo({
+              url: url
+            })
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
+        }
+      })
+    }else{
+      wx.navigateTo({
+        url: url
+      })
+    }
+    
   },
   showOpera: function (e) {
     var data = e.currentTarget.dataset;

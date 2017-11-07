@@ -26,7 +26,9 @@ App({
                 // console.log(t_res.data.sessionId);
                 wx.setStorageSync('PHPSESSID', t_res.data.sessionId);
                 res.userInfo.userType = t_res.data.userType;
+                
                 res.userInfo.userPhone = t_res.data.userPhone;
+                res.userInfo.creditPrice = t_res.data.creditPrice;
               })
 
 

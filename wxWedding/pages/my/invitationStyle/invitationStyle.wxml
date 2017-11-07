@@ -1,7 +1,7 @@
 <view class="data-list ">
   <view class="data-contact clearfix">
     <view wx:for="{{dataList}}" wx:for-item="topic" wx:for-index="topicIndex" wx:key="topic" class="photo-item {{recommend==topic.id?'data-item-top':''}}">
-      <image src="{{topic.showImage}}" data-src="{{topic.showImage}}" data-index="{{topicIndex}}" mode='aspectFit' bindtap="selectTopic" data-id="{{topic.id}}"></image>
+      <image src="{{topic.showImage}}" data-src="{{topic.showImage}}" data-index="{{topicIndex}}" mode='aspectFit' bindtap="selectTopic" data-price="{{topic.price}}" data-cprice="{{topic.cprice}}" data-id="{{topic.id}}"></image>
       <view class="price">{{topic.price == 0?'免费':'¥'+topic.price.toFixed(2)}}+积分{{topic.cprice}}</view>
     </view>
   </view>

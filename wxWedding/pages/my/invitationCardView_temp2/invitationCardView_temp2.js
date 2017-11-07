@@ -37,6 +37,7 @@ Page({
       that.setData({
         showPage: oldShowPage
       });
+      console.log(current)
       if(current == 1){
         that.secondPageAnimation();
       }
@@ -45,6 +46,12 @@ Page({
       }
       if(current == 3){
         that.fourthPageAnimation();
+      }
+      if(current == 4){
+        that.fifthPageAnimation();
+      }
+      if (current == 5) {
+        that.sixthPageAnimation();
       }
     }
   },
@@ -80,6 +87,18 @@ Page({
     util.animationFun.animationFun.opacityEnd.call(that, 'opacityEndImg3', 1000, 0, 3000);
     util.animationFun.animationFun.opacityEnd.call(that, 'opacityEndImg4', 1000, 0, 4000);
     util.animationFun.animationFun.opacityEnd.call(that, 'opacityEndImg5', 1000, 0, 5000);
+  },
+  fifthPageAnimation: function () {
+    var that = this;
+    util.animationFun.animationFun.opacityEnd.call(that, 'opacityEnd5', 1000, 0, 1000);
+    util.animationFun.animationFun.translateYEnd.call(that, 'translateYEnd5', 1000, -100);
+    util.animationFun.animationFun.opacityEnd.call(that, 'opacityEndSingle5', 1000, 0, 2000);
+  },
+  sixthPageAnimation: function () {
+    var that = this;
+    util.animationFun.animationFun.opacityEnd.call(that, 'opacityEnd6', 1000, 0, 1000);
+    util.animationFun.animationFun.translateYEnd.call(that, 'translateYEnd6', 1000, -100);
+    util.animationFun.animationFun.opacityEnd.call(that, 'opacityEndSingle6', 1000, 0, 2000);
   },
   getUserType: function () {
     var that = this;

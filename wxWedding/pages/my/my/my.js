@@ -1,4 +1,6 @@
 var util = require('../../../utils/util.js')
+
+var app = getApp();
 Page({
   data:{
     gridList: [
@@ -7,7 +9,7 @@ Page({
       // {enName:'read', zhName:'我的主题'},
       
       { enIcon: 'favor', zhName: '我的请柬', toPage: 'invitationCard'},
-      { enIcon: 'read', zhName: '我的模板', toPage: 'invitationStyle'},
+      { enIcon: 'read', zhName: '请柬模板', toPage: 'invitationStyle'},
       {enIcon: 'magic', zhName: '关于我们', toPage: 'start' }
       // {enName:'setting', zhName:'设置'}
     ],
@@ -43,6 +45,13 @@ Page({
       
       util.checkOpenSetting();//检查授权
     }
+    var session_id = wx.getStorageSync('PHPSESSID');
+    if (session_id == ''){
+      app.getUserInfo();
+
+    }
+    
+    
     that.setData({
       userInfo: userInfo
     });

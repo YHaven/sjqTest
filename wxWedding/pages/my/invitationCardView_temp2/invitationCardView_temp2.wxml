@@ -1,6 +1,6 @@
 <audio class="music-jh" poster="{{topicObj.music.poster}}" name="{{topicObj.music.name}}" author="{{topicObj.music.author}}" src="{{topicObj.music.src}}" id="myAudio" controls loop="{{true}}" binderror="binderror"></audio>
 
-<swiper class="invitation-page" indicator-dots="{{true}}" autoplay="{{false}}" vertical="{{true}}" style="background-image: url({{topicObj.styleImage[2]}});background-position:50% 50%;background-size:cover;" bindchange="swiperChange">
+<swiper class="invitation-page" indicator-dots="{{true}}" autoplay="{{false}}" vertical="{{true}}" circular="{{true}}" style="background-image: url({{topicObj.styleImage[2]}});background-position:50% 50%;background-size:cover;" bindchange="swiperChange">
   <swiper-item>
     <view class="invitation-background" animation="{{opacityEnd}}">
       <image class="single-snow-icon top-left" animation="{{opacityEndSingle}}" src="{{topicObj.styleImage[1]}}"></image>
@@ -81,6 +81,7 @@
     <view class="invitation-contact invitation-band">
       <view class="invitation-title">
         <view>相册</view>
+        <view class="title-3">—</view>
         <image src="{{dataObj.photos[0]}}" data-src="{{dataObj.photos[0]}}" bindtap="previewImage" animation="{{opacityEndImg0}}" ></image>
         <image src="{{dataObj.photos[1]}}" data-src="{{dataObj.photos[1]}}" bindtap="previewImage" animation="{{opacityEndImg1}}"></image>
         <view class="title-5">· WELCOME TO MY HOUSE ·</view>
@@ -115,41 +116,43 @@
 
   <swiper-item class="page5">
     <image class="snow-icon" src="{{topicObj.styleImage[5]}}"></image>
-    <view class="invitation-background invitation-band" animation="{{opacityEnd4}}">
-      <image class="single-snow-icon top-left" animation="{{opacityEndSingle4}}" src="{{topicObj.styleImage[1]}}"></image>
-      <image class="single-snow-icon top-right" animation="{{opacityEndSingle4}}" src="{{topicObj.styleImage[1]}}"></image>
-      <image class="single-snow-icon bottom-left" animation="{{opacityEndSingle4}}" src="{{topicObj.styleImage[1]}}"></image>
-      <image class="single-snow-icon bottom-right" animation="{{opacityEndSingle4}}" src="{{topicObj.styleImage[1]}}"></image>
+    <view class="invitation-background invitation-band" animation="{{opacityEnd5}}">
+      <image class="single-snow-icon top-left" animation="{{opacityEndSingle5}}" src="{{topicObj.styleImage[1]}}"></image>
+      <image class="single-snow-icon top-right" animation="{{opacityEndSingle5}}" src="{{topicObj.styleImage[1]}}"></image>
+      <image class="single-snow-icon bottom-left" animation="{{opacityEndSingle5}}" src="{{topicObj.styleImage[1]}}"></image>
+      <image class="single-snow-icon bottom-right" animation="{{opacityEndSingle5}}" src="{{topicObj.styleImage[1]}}"></image>
 
     </view>
-    <view class="invitation-contact">
+    <view class="invitation-contact invitation-band">
       <view>
-    <view>新郎地址:{{dataObj.groomAddress}}</view>
+    
     <map class="address-map" longitude="{{dataObj.groomLng}}" latitude="{{dataObj.groomLat}}" scale="12" markers="{{dataObj.groomMarkers}}" bindmarkertap="markertap" show-location="{{true}}" ></map>
+    <view>新郎地址:{{dataObj.groomAddress}}</view>
      <button data-latitude="{{dataObj.groomLat}}" data-longitude="{{dataObj.groomLng}}" data-name="{{dataObj.groomGPSAddress}}" data-address="{{dataObj.groomAddress}}" bindtap="openLocation">导航到新郎家</button> 
   </view>
   <view>
-    <view>新娘地址:{{dataObj.brideAddress}}</view>
+    
     <map class="address-map" longitude="{{dataObj.brideLng}}" latitude="{{dataObj.brideLat}}" scale="12" markers="{{dataObj.brideMarkers}}" bindmarkertap="markertap" show-location="{{true}}" ></map>
+    <view>新娘地址:{{dataObj.brideAddress}}</view>
      <button data-latitude="{{dataObj.brideLat}}" data-longitude="{{dataObj.brideLng}}" data-name="{{dataObj.brideGPSAddress}}" data-address="{{dataObj.brideAddress}}" bindtap="openLocation">导航到新娘家</button> 
   </view>
       
     </view>
-    <image class="tie-icon" animation="{{translateYEnd4}}" src="{{topicObj.styleImage[4]}}"></image>
+    <image class="tie-icon" animation="{{translateYEnd5}}" src="{{topicObj.styleImage[4]}}"></image>
   </swiper-item>
 
   <swiper-item class="page6">
     <image class="snow-icon" src="{{topicObj.styleImage[5]}}"></image>
-    <view class="invitation-background invitation-band" animation="{{opacityEnd4}}">
-      <image class="single-snow-icon top-left" animation="{{opacityEndSingle4}}" src="{{topicObj.styleImage[1]}}"></image>
-      <image class="single-snow-icon top-right" animation="{{opacityEndSingle4}}" src="{{topicObj.styleImage[1]}}"></image>
-      <image class="single-snow-icon bottom-left" animation="{{opacityEndSingle4}}" src="{{topicObj.styleImage[1]}}"></image>
-      <image class="single-snow-icon bottom-right" animation="{{opacityEndSingle4}}" src="{{topicObj.styleImage[1]}}"></image>
+    <view class="invitation-background invitation-band" animation="{{opacityEnd6}}">
+      <image class="single-snow-icon top-left" animation="{{opacityEndSingle6}}" src="{{topicObj.styleImage[1]}}"></image>
+      <image class="single-snow-icon top-right" animation="{{opacityEndSingle6}}" src="{{topicObj.styleImage[1]}}"></image>
+      <image class="single-snow-icon bottom-left" animation="{{opacityEndSingle6}}" src="{{topicObj.styleImage[1]}}"></image>
+      <image class="single-snow-icon bottom-right" animation="{{opacityEndSingle6}}" src="{{topicObj.styleImage[1]}}"></image>
 
     </view>
     <view class="invitation-contact">
       
-      <button class="home-button" type="primary" loading="{{loading}}"  data-url="../../my/my/my" bindtap="viewNavDetail">我也要制作</button>
+      <button class="home-button" type="warn" loading="{{loading}}"  data-url="../../my/my/my" bindtap="viewNavDetail">我也要制作</button>
 
     </view>
     <image class="tie-icon" animation="{{translateYEnd4}}" src="{{topicObj.styleImage[4]}}"></image>
