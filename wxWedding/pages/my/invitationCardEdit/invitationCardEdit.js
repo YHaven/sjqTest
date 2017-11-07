@@ -225,9 +225,11 @@ Page({
 
   //  点击日期组件确定事件  
   bindDateChange: function (e) {
-    // console.log(e.detail.value)
+    
     var that = this;
-    var selectDate = new Date(e.detail.value + ' 00:00:00');
+    var dateValue = e.detail.value.replace(/-/g, "/");
+    // console.log(dateValue)
+    var selectDate = new Date(dateValue + ' 00:00:00');
     var lunarDate = lunarCalendar.calendar.solar2lunar(selectDate.Format('yyyy'), selectDate.Format('MM'), selectDate.Format('dd'));
     var oldData = that.data.dataObj;
     oldData.dates = selectDate.Format('yyyy-MM-dd 00:00:00');
@@ -633,7 +635,7 @@ Page({
 
           var toUrl = '../invitationCardView/invitationCardView?id=' + res.data.id;
           if (topicId != 1){
-            toUrl = '../invitationCardView_temp' + topicId + '/invitationCardView' + topicId +'?id=' + res.data.id;
+            toUrl = '../invitationCardView_temp' + topicId + '/invitationCardView_temp' + topicId +'?id=' + res.data.id;
           }
           
 
