@@ -253,9 +253,10 @@ Page({
   onShareAppMessage: function () {
     var that = this;
     var data = that.data.dataObj;
+    var topicId = that.data.topicObj.id;
     var path = '/pages/my/invitationCardView/invitationCardView?id=' + data.id;
-    if (that.data.topicObj.id>=2){
-      path = '/pages/my/invitationCardView_temp' + data.id + '/invitationCardView_temp' + data.id + '?id=' + data.id;
+    if (topicId>=2){
+      path = '/pages/my/invitationCardView_temp' + topicId + '/invitationCardView_temp' + topicId + '?id=' + data.id;
     }
     return {
       title: data.groom +'💕'+ data.bride+'结婚请柬',
