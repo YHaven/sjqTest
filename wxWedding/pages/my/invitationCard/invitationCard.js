@@ -108,11 +108,34 @@ Page({
     var data = e.currentTarget.dataset;
     var params = {};
     params.checkMark = data.checkmark;
-    util.postData.call(that, util.config.wxApi.invitationCheck, params, function (res) {
-      if (res.data.status) {
-        that.onShow();
+    var showText = '隐藏';
+    if(params.checkMark != '0'){
+      showText = '显示';
+    }
+    wx.showModal({
+      title: '提示',
+      content: '是否' + showText+'这个请柬？',
+      success: function (res) {
+        if (res.confirm) {
+          util.postData.call(that, util.config.wxApi.invitationCheck, params, function (res) {
+            if (res.data.status) {
+              wx.showToast({
+                title: '处理成功',
+                icon: 'success',
+                duration: 2000
+              })
+              setTimeout(function(){
+                that.onShow();
+              },2000)
+              
+            }
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
       }
     })
+    
   },
   //添加
   addData: function () {

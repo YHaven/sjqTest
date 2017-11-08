@@ -1,16 +1,21 @@
 @import "../../../styles/reset.wxss";
+page{background: #f6f6f6;}
 .banner{height: 300rpx;background: rgba(0, 0, 0, 0.5);}
 .banner image{width: 100%;height:100%;}
 
 .data-list{
+    background: #fff;
     box-sizing: border-box;
     /* width: 750rpx; */
-    padding: 30rpx 15rpx 120rpx;
+    margin: 0rpx 0rpx 120rpx;
+    padding: 0rpx 15rpx;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
 }
+.data-title{width: 100%;margin: 20rpx 0rpx;color: #333333;text-align: center;}
+.data-title .iconfont{font-size: 42rpx;color: #a6010a;}
 .data-item{width: 340rpx;height: 280rpx;position: relative;margin: 0 auto;margin-bottom: 20rpx;border-radius: 10rpx;overflow: hidden;}
 .data-item{border-bottom: 2rpx solid #a6010a; box-shadow: 0 10rpx 40rpx #a6010a;}
 .data-img{width: 340rpx;height: 280rpx;}

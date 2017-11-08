@@ -3,7 +3,7 @@
 page{background: #fff;}
 .user-info {
     box-sizing: border-box;
-    width: 750rpx;
+    /* width: 750rpx; */
     height: 400rpx;
     padding: 30rpx 0;
     display: flex;
