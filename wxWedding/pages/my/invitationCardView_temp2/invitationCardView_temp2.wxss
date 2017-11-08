@@ -18,7 +18,7 @@ page{background: #cd010d;}
 .invitation-title .author-name text{margin: 0 40rpx;}
 .invitation-title .icon-likefill{position: absolute;bottom: 150rpx;margin-left: -10rpx;}
 
-.invitation-background{left: 80rpx;top: 80rpx;right: 80rpx;bottom: 80rpx;background: rgb(206, 198, 188);position: absolute; z-index: 0;opacity: 0;}
+.invitation-background{left: 50rpx;top: 80rpx;right: 50rpx;bottom: 80rpx;background: rgb(206, 198, 188);position: absolute; z-index: 0;opacity: 0;}
 .single-snow-icon{width: 50rpx;height: 50rpx;opacity: 0;}
 .single-snow-icon.top-middle{position: absolute;top: 0rpx;left: 50%;margin-left: -21rpx;}
 .single-snow-icon.bottom-middle{position: absolute;bottom: 0rpx;left: 50%;margin-left: -21rpx;}
