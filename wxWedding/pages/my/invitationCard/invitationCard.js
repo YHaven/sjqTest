@@ -107,10 +107,13 @@ Page({
     var that= this;
     var data = e.currentTarget.dataset;
     var params = {};
-    params.checkMark = data.checkmark;
+    var checkMark = data.checkmark;
+    params.id = data.id;
     var showText = '隐藏';
-    if(params.checkMark != '0'){
+    params.checkMark = 1;
+    if(checkMark != '0'){
       showText = '显示';
+      params.checkMark = 0;
     }
     wx.showModal({
       title: '提示',
