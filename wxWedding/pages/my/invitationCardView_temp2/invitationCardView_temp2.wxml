@@ -153,7 +153,8 @@
     <view class="invitation-contact">
       
       <button class="home-button" type="warn" loading="{{loading}}"  data-url="../../my/my/my" bindtap="viewNavDetail">我也要制作</button>
-
+      <view class="m-t50">感谢您的访问</view>
+      <!-- <view class="m-t50">有需求请加微信：y_haiwei</view> -->
     </view>
     <image class="tie-icon" animation="{{translateYEnd4}}" src="{{topicObj.styleImage[4]}}"></image>
   </swiper-item>

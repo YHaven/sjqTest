@@ -274,6 +274,23 @@ function uploadImg(url, params, cb, fail_cb){
     })
 }
 
+function selfShowModal(text) {
+
+  wx.showModal({
+    title: '提示',
+    content: text,
+    success: function (res) {
+      if (res.confirm) {
+        
+      } else if (res.cancel) {
+       
+      }
+    }
+  })
+
+}
+
+
 // 是否为空对象
 
 function isEmptyObject(e) {
@@ -365,6 +382,7 @@ module.exports = {
   getAccessToken:getAccessToken,
   isEmptyObject:isEmptyObject,
   message:message,
+  selfShowModal: selfShowModal,
   checkOpenSetting: checkOpenSetting,
   animationFun: animationFun,
   config:config

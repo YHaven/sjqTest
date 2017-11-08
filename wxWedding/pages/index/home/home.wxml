@@ -8,7 +8,7 @@
 
 <view class="data-list">
   <view class="data-item {{dataItem.isTop == 1 ? 'data-item-top' : ''}}" wx:for="{{dataList}}" wx:for-item="dataItem" wx:for-index="dataIndex" wx:key="data">
-    <view class="data-img" data-url="{{dataItem.topicId != 2?'../../my/invitationCardView/invitationCardView?id='+dataItem.id : '../../my/invitationCardView_temp2/invitationCardView_temp2?id='+dataItem.id}}" bindtap="viewNavDetail">
+    <view class="data-img" data-url="{{dataItem.topicId == 1?'../../my/invitationCardView/invitationCardView?id='+dataItem.id : '../../my/invitationCardView_temp'+ dataItem.topicId +'/invitationCardView_temp'+ dataItem.topicId +'?id='+dataItem.id}}" bindtap="viewNavDetail">
       <image src="{{dataItem.surfaceImg}}" mode="aspectFill"></image>
     </view>
 

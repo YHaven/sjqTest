@@ -41,16 +41,16 @@ page{background: #cd010d;}
 .invitation-band .invitation-font-i.date{width: 380rpx;text-align: left;}
 
 .invitation-band .button{display: flex;}
-.invitation-band button{background: rgba(0,0,0,.1);flex: 1;margin: 0rpx 10rpx;color: rgb(162, 147, 129)}
+.invitation-band button{background: rgba(0,0,0,.1);flex: 1;margin: 0rpx 10rpx;color: rgb(162, 147, 129);font-size: 28rpx;}
 
 
 
 .page3 .invitation-contact image{width: 90%;height: 300rpx;margin-top: 20rpx;opacity: 0;}
 
-.page4 .invitation-contact .img-1{height: 280rpx;}
+.page4 .invitation-contact .img-1{height: 280rpx;margin-bottom: 5rpx;}
 .page4 .invitation-contact .img-2{height: 280rpx;width: 40%;float: left;opacity: 0;}
 .page4 .invitation-contact .img-3{height: 280rpx;width: 60%;float: right;opacity: 0;}
-.page4 .invitation-contact .img-4{height: 280rpx;opacity: 0;}
+.page4 .invitation-contact .img-4{height: 280rpx;opacity: 0;margin-top: 5rpx;}
 
 .page5 .invitation-band{font-size: 28rpx;}
 .page5 .address-map{width: 90%;margin: 20rpx auto;height: 300rpx;}

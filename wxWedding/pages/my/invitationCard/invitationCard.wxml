@@ -14,9 +14,10 @@
       </view>
 
       <view class="opera-block" wx-if="{{dataItem.show}}">
-        <view data-id="{{dataItem.id}}" data-url="{{dataItem.topicId != 2?'../../my/invitationCardView/invitationCardView?id='+dataItem.id : '../../my/invitationCardView_temp2/invitationCardView_temp2?id='+dataItem.id}}"  catchtap="viewNavDetail" class="red-btn">预览</view>
+        <view data-id="{{dataItem.id}}" data-url="{{dataItem.topicId == 1?'../../my/invitationCardView/invitationCardView?id='+dataItem.id : '../../my/invitationCardView_temp'+ dataItem.topicId +'/invitationCardView_temp'+ dataItem.topicId +'?id='+dataItem.id}}"  catchtap="viewNavDetail" class="red-btn">预览</view>
         <view data-id="{{dataItem.id}}" catchtap="editData" class="red-btn">编辑</view>
-        <!-- <view data-id="{{dataItem.id}}" catchtap="deleteData" class="blue-btn">删除</view> -->
+         <view wx:if="{{dataItem.checkMark==0}}" data-id="{{dataItem.id}}" data-checkmark="{{dataItem.checkMark}}" catchtap="checkData" class="blue-btn">隐藏</view> 
+         <view wx:if="{{dataItem.checkMark!=0}}" data-id="{{dataItem.id}}" data-checkmark="{{dataItem.checkMark}}"  catchtap="checkData" class="blue-btn">显示</view> 
       </view>
     </view>
     

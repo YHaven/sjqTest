@@ -102,6 +102,18 @@ Page({
       url: '../invitationCardEdit/invitationCardEdit?id=' + data.id
     })
   },
+  //上下架
+  checkData:function(e){
+    var that= this;
+    var data = e.currentTarget.dataset;
+    var params = {};
+    params.checkMark = data.checkmark;
+    util.postData.call(that, util.config.wxApi.invitationCheck, params, function (res) {
+      if (res.data.status) {
+        that.onShow();
+      }
+    })
+  },
   //添加
   addData: function () {
 

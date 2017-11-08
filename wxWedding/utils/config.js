@@ -15,10 +15,8 @@ module.exports = {
       invitationList: homepath + '/wedding/index!invitationList.action',
       invitationView: homepath + '/wedding/index!invitationView.action',
       invitationModify: homepath + '/wedding/index!invitationModify.action',
-      invitationTopic: homepath + '/wedding/index!invitationTopic.action',
-      member:homepath+'/index.php?s=/Member/index', //用户信息
-      getOpenId:homepath+'/index.php?s=/Member/get_openId', //用户信息
-      getUserInfo:homepath+'/index.php?s=/member/getUserInfo' //用户信息
+      invitationCheck: homepath + '/wedding/index!invitationCheck.action',
+      invitationTopic: homepath + '/wedding/index!invitationTopic.action'
 
     },
     weixinApi:{

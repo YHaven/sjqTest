@@ -82,7 +82,6 @@ Page({
     },1000)
     
     that.getCity();//获取地址信息
-    that.setPageTitle('主题选择');
   },
   onShow: function () {
     var that = this;
@@ -578,8 +577,9 @@ Page({
     var params = dataObj;
 
     var nextActive = '';
+    var topicId = that.data.topicId;
     if (that.data.navActive == 'topic') {
-      if (typeof that.data.topicObj.id == 'undefined'){
+      if (typeof topicId == 'undefined' || topicId == ''){
         util.message.show.call(that,{
           content: '请选择主题',
           icon: 'null',
@@ -587,28 +587,137 @@ Page({
         })
         return false;
       }
+
       nextActive = 'favor';
       that.setPageTitle('编辑请柬');
     }
 
     if (that.data.navActive == 'favor'){
+
+      if (typeof params.showImage == 'undefined' || params.showImage == '') {
+        util.message.show.call(that, {
+          content: '请选择封面图',
+          icon: 'null',
+          duration: 3000
+        })
+        return false;
+      }
+      if (typeof params.seatDesin == 'undefined' || params.seatDesin == '') {
+        util.message.show.call(that, {
+          content: '席设哪里？',
+          icon: 'null',
+          duration: 3000
+        })
+        return false;
+      }
+      if (typeof params.welcomeCode == 'undefined' || params.welcomeCode == '') {
+        util.message.show.call(that, {
+          content: '请说点欢迎语~',
+          icon: 'null',
+          duration: 3000
+        })
+        return false;
+      }
+
+      if (typeof params.groom == 'undefined' || params.groom == '') {
+        util.message.show.call(that, {
+          content: '新郎是谁？',
+          icon: 'null',
+          duration: 3000
+        })
+        return false;
+      }
+
+      if (typeof params.bride == 'undefined' || params.bride == '') {
+        util.message.show.call(that, {
+          content: '新娘是谁？',
+          icon: 'null',
+          duration: 3000
+        })
+        return false;
+      }
+
+
+
       nextActive = 'pic';
       that.setPageTitle('添加相册');
     }
 
     if (that.data.navActive == 'pic'){
+
+      if (typeof params.photos == 'undefined' || params.photos.length<3) {
+        util.message.show.call(that, {
+          content: '至少上传3张相片',
+          icon: 'null',
+          duration: 3000
+        })
+        return false;
+      }
+
       nextActive = 'phone';
       that.setPageTitle('联系方式');
     }
 
     if (that.data.navActive == 'phone') {
+
+      var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
+      if (typeof params.groomPhone == 'undefined' || params.groomPhone == '' || !myreg.test(params.groomPhone)) {
+        util.message.show.call(that, {
+          content: '请输入正确的新郎联系方式',
+          icon: 'null',
+          duration: 3000
+        })
+        return false;
+      }
+
+      if (typeof params.bridePhone == 'undefined' || params.bridePhone == '' || !myreg.test(params.bridePhone)) {
+        util.message.show.call(that, {
+          content: '请输入正确的新娘联系方式',
+          icon: 'null',
+          duration: 3000
+        })
+        return false;
+      }
+
+
       nextActive = 'location';
       that.setPageTitle('婚礼地址');
     }
 
     if (that.data.navActive == 'location') {
       // console.log(params)
-
+      if (typeof params.groomGPSAddress == 'undefined' || params.groomGPSAddress == '') {
+        util.message.show.call(that, {
+          content: '请输入新郎导航地址',
+          icon: 'null',
+          duration: 3000
+        })
+        return false;
+      }
+      if (typeof params.groomAddress == 'undefined' || params.groomAddress == '') {
+        util.message.show.call(that, {
+          content: '请输入新郎地址',
+          icon: 'null',
+          duration: 3000
+        })
+        return false;
+      }
+      if (typeof params.brideGPSAddress == 'undefined' || params.brideGPSAddress == '') {
+        util.message.show.call(that, {
+          content: '请输入新娘导航地址',
+          icon: 'null',
+          duration: 3000
+        })
+        return false;
+      }
+      if (typeof params.brideAddress == 'undefined' || params.brideAddress == '') {
+        util.message.show.call(that, {
+          content: '请输入新娘地址',
+          icon: 'null',
+          duration: 3000
+        })
+        return false;
+      }
 
       wx.showNavigationBarLoading()
       var photosImgId = [];
@@ -624,10 +733,11 @@ Page({
         params.invitationId = invitationId;
       }
       params.businessId = util.config.wxApi.business;
-      var topicId = that.data.topicId;
+      
       params.topicId = topicId;
       // params.topicId = that.data.topicObj.id;
-      // return false;
+
+
       util.postData.call(that, util.config.wxApi.invitationModify, params, function (res) {
         //console.log(res)
         wx.hideNavigationBarLoading()
