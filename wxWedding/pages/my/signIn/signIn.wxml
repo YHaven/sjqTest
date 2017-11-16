@@ -1,2 +1,22 @@
-<!--pages/my/signIn/signIn.wxml-->
-<text>pages/my/signIn/signIn.wxml</text>
+<view class="sign-bg">
+  <image src="{{styleImg[0]}}" class="sign-bg-img" mode="widthFix"></image>
+  <image src="{{styleImg[1]}}" class="sign-btn" bindtap="signIn"></image>
+
+  <view class="sign-log">
+    <view class="sign-title">签到记录</view>
+    <view class="sign-list">
+      <view class="sign-item">
+        <view class="sign-time">2017-11-16 00:00:00</view>
+        <view class="sign-value text-r">+10</view>
+      </view>
+      <view class="sign-item">
+        <view class="sign-time">2017-11-16 00:00:00</view>
+        <view class="sign-value text-r">+10</view>
+      </view>
+      <view class="sign-item">
+        <view class="sign-time">2017-11-16 00:00:00</view>
+        <view class="sign-value text-r">+10</view>
+      </view>
+    </view>
+  </view>
+</view>

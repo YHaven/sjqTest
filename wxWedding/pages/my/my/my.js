@@ -10,6 +10,7 @@ Page({
       
       { enIcon: 'favor', zhName: '我的请柬', toPage: 'invitationCard'},
       { enIcon: 'read', zhName: '请柬模板', toPage: 'invitationStyle'},
+      { enIcon: 'tag', zhName: '签到', toPage: 'signIn' },
       {enIcon: 'magic', zhName: '关于我们', toPage: 'start' }
       // {enName:'setting', zhName:'设置'}
     ],

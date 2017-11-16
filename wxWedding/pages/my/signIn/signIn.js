@@ -5,14 +5,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    styleImg: ['https://www.zhencome.com/files/weddingdefault/wedding_sign_bg.png', 'https://www.zhencome.com/files/weddingdefault/wedding_sign_button.png', 'https://www.zhencome.com/files/weddingdefault/wedding_sign_rule.jpg'],
+    todaySign:true
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var that = this;
+    that.getUserType();//获取用户信息
   },
 
   /**
@@ -62,5 +64,34 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  signIn:function(){
+    var that = this;
+    if (that.data.todaySign){
+      wx.showToast({
+        title: '今天已签',
+        icon: 'success',
+        duration: 2000
+      })
+
+      return false;
+    }
+
+    wx.showToast({
+      title: '处理成功',
+      icon: 'success',
+      duration: 2000
+    })
+    setTimeout(function () {
+      that.onShow();
+    }, 2000)
+  },
+  getUserType: function () {
+    var that = this;
+    var userInfo = wx.getStorageSync('person_info');
+
+    that.setData({
+      userInfo: userInfo
+    });
   }
 })

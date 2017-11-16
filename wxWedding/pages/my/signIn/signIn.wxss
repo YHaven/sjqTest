@@ -1,1 +1,7 @@
-/* pages/my/signIn/signIn.wxss */
+@import "../../../styles/reset.wxss";
+.sign-bg{background-color: #fcce06;position: relative;}
+.sign-bg-img{width: 100%;}
+.sign-btn{width: 500rpx;height: 105rpx;position: absolute;top: 800rpx;left: 50%;margin-left: -250rpx;}
+.sign-log{text-align: center;padding-bottom: 200rpx;}
+.sign-log .sign-title{font-size: 48rpx;color: #fff;margin-bottom: 30rpx;}
+.sign-item .sign-time,.sign-item .sign-value{width: 40%;display: inline-block;font-size: 30rpx;padding: 0rpx 10rpx;}

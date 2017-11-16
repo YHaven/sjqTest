@@ -594,7 +594,7 @@ Page({
 
     if (that.data.navActive == 'favor'){
 
-      if (typeof params.showImage == 'undefined' || params.showImage == '') {
+      if (typeof params.surfaceImg == 'undefined' || params.surfaceImg == '') {
         util.message.show.call(that, {
           content: '请选择封面图',
           icon: 'null',
