@@ -753,6 +753,12 @@ Page({
           wx.redirectTo({
             url: toUrl
           })
+        }else{
+          util.message.show.call(that, {
+            content: res.data.errorinfo,
+            icon: 'null',
+            duration: 3000
+          })
         }
 
       });

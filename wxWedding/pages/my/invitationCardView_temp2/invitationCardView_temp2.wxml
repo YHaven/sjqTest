@@ -82,8 +82,8 @@
       <view class="invitation-title">
         <view>相册</view>
         <view class="title-3">—</view>
-        <image src="{{dataObj.photos[0]}}" data-src="{{dataObj.photos[0]}}" bindtap="previewImage" animation="{{opacityEndImg0}}" ></image>
-        <image src="{{dataObj.photos[1]}}" data-src="{{dataObj.photos[1]}}" bindtap="previewImage" animation="{{opacityEndImg1}}"></image>
+        <image src="{{dataObj.photos[0]}}" data-src="{{dataObj.photos[0]}}" mode="aspectFit" bindtap="previewImage" animation="{{opacityEndImg0}}" ></image>
+        <image src="{{dataObj.photos[1]}}" data-src="{{dataObj.photos[1]}}" mode="aspectFit" bindtap="previewImage" animation="{{opacityEndImg1}}"></image>
         <view class="title-5">· WELCOME TO MY HOUSE ·</view>
       </view>
 
@@ -104,9 +104,9 @@
     <view class="invitation-contact invitation-band">
       <view class="invitation-title">
         <image src="{{dataObj.photos[2]}}" data-src="{{dataObj.photos[2]}}" bindtap="previewImage" class="img-1" mode="aspectFit" animation="{{opacityEndImg2}}" ></image>
-        <image src="{{dataObj.photos[3]}}" data-src="{{dataObj.photos[3]}}" bindtap="previewImage" class="img-2" animation="{{opacityEndImg3}}"></image>
-        <image src="{{dataObj.photos[4]}}" data-src="{{dataObj.photos[4]}}" bindtap="previewImage" class="img-3" animation="{{opacityEndImg4}}"></image>
-        <image src="{{dataObj.photos[5]}}" data-src="{{dataObj.photos[5]}}" bindtap="previewImage" class="img-4" animation="{{opacityEndImg5}}"></image>
+        <image src="{{dataObj.photos[3]}}" data-src="{{dataObj.photos[3]}}" bindtap="previewImage" class="img-2" mode="aspectFit" animation="{{opacityEndImg3}}"></image>
+        <image src="{{dataObj.photos[4]}}" data-src="{{dataObj.photos[4]}}" bindtap="previewImage" class="img-3" mode="aspectFit" animation="{{opacityEndImg4}}"></image>
+        <image src="{{dataObj.photos[5]}}" data-src="{{dataObj.photos[5]}}" bindtap="previewImage" class="img-4" mode="aspectFit" animation="{{opacityEndImg5}}"></image>
       </view>
 
       

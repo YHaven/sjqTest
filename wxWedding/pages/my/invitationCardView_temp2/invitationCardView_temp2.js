@@ -37,7 +37,7 @@ Page({
       that.setData({
         showPage: oldShowPage
       });
-      console.log(current)
+      // console.log(current)
       if(current == 1){
         that.secondPageAnimation();
       }

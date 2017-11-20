@@ -5,8 +5,8 @@ page{background: #cd010d;}
 textarea{margin: 0 auto;border: 1px solid #cd010d;}
 .no-border{border: 0;} 
 .first-img{text-align: center;margin-top:30rpx;height: 540rpx; }
-.first-img .add-first-img{width: 375rpx;height: 375rpx;line-height: 375rpx;margin: 0 auto;}
-.add-first-img .iconfont{font-size: 108rpx;color: #ffffff;}
+.first-img .add-first-img{width: 510rpx;height: 420rpx;line-height: 140rpx;margin: 0 auto;color: #ffffff;}
+.add-first-img .iconfont{font-size: 108rpx;}
 .nav-item.createOrder{background-color: #a10009;}
 
 .data-item-top::after{content: '选中';display: block;position: absolute;top: 5px;right: 3px;z-index: 4;text-align: center;transform: rotate(45deg);color: #fff;}
@@ -21,6 +21,7 @@ textarea{margin: 0 auto;border: 1px solid #cd010d;}
 .invitation-band{background:#f3be4c;min-height: 300rpx;position: relative;margin: 30rpx;border-radius: 10rpx;overflow: hidden;padding-bottom: 200rpx;}
 .invitation-band .mail_bg{height: 200rpx;position: absolute;bottom: 0rpx;display: block;border-radius: 10rpx;}
 .first-img .surface-img{width: 375rpx;height: 375rpx;border-radius: 50%;margin-top: 70rpx;}
+.first-img .surface-img-all{width: 510rpx;height: 420rpx;margin-top: 70rpx;}
 
 .invitation-band{font-family:Verdana, Geneva, Tahoma, sans-serif;text-align: center;font-size: 42rpx;}
 .invitation-band .invitation-title{padding: 20rpx 0rpx;color: #cd010d;font-weight: bold;}

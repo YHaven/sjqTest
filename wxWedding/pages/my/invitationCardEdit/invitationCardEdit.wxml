@@ -11,13 +11,15 @@
 <view wx:if="{{navActive == 'favor'}}" class="p-b150">
   <view class="first-img">
     <view class="img-show-box" wx:if="{{dataObj.surfaceImg}}">
-      <image src="{{topicObj.styleImage[4]}}" class="needle-img"></image>  
+      <image src="{{dataObj.surfaceImg}}" bindtap="setSurfaceImg" class="surface-img-all" mode='aspectFit'></image>
+      <!-- <image src="{{topicObj.styleImage[4]}}" class="needle-img"></image>  
       <view class="music-box" style="background: rgba(255,255,255,0.3) url('{{topicObj.styleImage[3]}}') no-repeat center 0;background-size:100% 100%;"></view>
-       <image animation="{{animation}}" src="{{dataObj.surfaceImg}}" class="surface-img" bindtap="setSurfaceImg"></image> 
+       <image animation="{{animation}}" src="{{dataObj.surfaceImg}}" class="surface-img" bindtap="setSurfaceImg"></image>  -->
     </view>
 
     <view class="add-first-img" wx:if="{{!dataObj.surfaceImg}}" bindtap="setSurfaceImg">
-      <icon class="iconfont icon-pic">封面</icon>
+      <icon class="iconfont icon-pic"></icon>
+      <view>封面340*280等比缩放</view>
     </view>
   </view>
 
@@ -79,7 +81,18 @@
 <view class="contact-us" wx:if="{{navActive == 'phone'}}">
   <image src="{{topicObj.styleImage[1]}}" mode='widthFix'></image>
   <view>
-    <view class="contact-show">诚邀您的到来！</view>
+    <view class="contact-show">
+      是否首页展示？
+      <radio-group class="radio-group" bindchange="bindInputChange" data-key='checkMark'>
+        <label class="radio">
+          <radio value="0" checked="{{dataObj.checkMark==0?true:false}}"/>是
+        </label>
+        <label class="radio">
+          <radio value="1" checked="{{dataObj.checkMark!=0?true:false}}"/>否
+        </label>
+      </radio-group>
+    </view>
+
     <view>
       <view class="invitation-font m-t50">
       新郎电话:<input type='number' maxlength="11" class="invitation-font-i" value="{{dataObj.groomPhone}}" data-key='groomPhone' bindinput="bindInputChange"></input>

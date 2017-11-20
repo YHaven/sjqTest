@@ -11,6 +11,7 @@
       <view class="note-info">
         {{dataItem.groom}}💕{{dataItem.bride}}
         <view>{{dataItem.weddingDate}}({{dataItem.weekDate}})</view>
+        <view>浏览次数：{{dataItem.viewNumber?dataItem.viewNumber:'暂未统计'}}</view>
       </view>
 
       <view class="opera-block" wx-if="{{dataItem.show}}">
