@@ -1,4 +1,4 @@
-// pages/my/signIn/signIn.js
+var util = require('../../../utils/util.js')
 Page({
 
   /**
@@ -6,7 +6,11 @@ Page({
    */
   data: {
     styleImg: ['https://www.zhencome.com/files/weddingdefault/wedding_sign_bg.png', 'https://www.zhencome.com/files/weddingdefault/wedding_sign_button.png', 'https://www.zhencome.com/files/weddingdefault/wedding_sign_rule.jpg'],
-    todaySign:true
+    todaySign:false,
+    hasMore: true,
+    showLoading: true,
+    start: 1,
+    dataList: []
   },
 
   /**
@@ -15,6 +19,7 @@ Page({
   onLoad: function (options) {
     var that = this;
     that.getUserType();//获取用户信息
+    that.loadData();
   },
 
   /**
@@ -28,9 +33,23 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    
   },
+  loadData: function () {
+    var that = this;
 
+    wx.showNavigationBarLoading()
+    var params = {
+      page: 1,
+      businessId: util.config.wxApi.business
+    }
+    that.setData({
+      dataList: []
+    })
+    util.postDataList.call(that, util.config.wxApi.signInList, params, function (res) {
+      wx.hideNavigationBarLoading()
+    });
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */
@@ -77,11 +96,29 @@ Page({
       return false;
     }
 
-    wx.showToast({
-      title: '处理成功',
-      icon: 'success',
-      duration: 2000
-    })
+    wx.showNavigationBarLoading()
+    var params = {
+      businessId: util.config.wxApi.business
+    }
+    util.postData.call(that, util.config.wxApi.signIn, params, function (res) {
+      if (res.data.status) {
+        wx.showToast({
+          title: '处理成功',
+          icon: 'success',
+          duration: 2000
+        })
+      }else{
+        wx.showToast({
+          title: res.data.errorinfo,
+          duration: 2000
+        })
+      }
+      wx.hideNavigationBarLoading()
+    });
+
+
+
+    
     setTimeout(function () {
       that.onShow();
     }, 2000)
