@@ -748,9 +748,9 @@ Page({
     params.topicId = topicId;
     // params.topicId = that.data.topicObj.id;
 
-
     util.postData.call(that, util.config.wxApi.invitationModify, params, function (res) {
       //console.log(res)
+      // console.log(params)
       wx.hideNavigationBarLoading()
       if (res.data.status) {
 
