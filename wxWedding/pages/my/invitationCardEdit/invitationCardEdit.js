@@ -4,13 +4,13 @@ var bmap = require('../../../utils/bmap-wx.min.js')
 var nowDate = new Date();
 var BMap = new bmap.BMapWX({
   ak: util.config.bmapAK
-}); 
+});
 Page({
   data: {
     userInfo: {},
     dataList: [],
-    invitationId:'',
-    topicId:1,
+    invitationId: '',
+    topicId: 1,
     topicArray: [
       {
         id: 1,
@@ -28,26 +28,26 @@ Page({
       cprice: 0,
       styleImage: ['https://www.zhencome.com/files/weddingdefault/contact_bg_2.png', 'https://www.zhencome.com/files/weddingdefault/contact_bg_1.png', 'https://www.zhencome.com/files/weddingdefault/mail_bg_2.jpg', 'https://www.zhencome.com/files/weddingdefault/logoooo.png', 'https://www.zhencome.com/files/weddingdefault/needle.png']
     },
-    dataObj:{
-      surfaceImg:'',
+    dataObj: {
+      surfaceImg: '',
       weddingDate: nowDate.Format('yyyy年MM月dd日'),
       dates: nowDate.Format('yyyy-MM-dd 00:00:00'),
       weekDate: util.formatWeek(nowDate),
       lunarDate: lunarCalendar.calendar.solar2lunar(nowDate.Format('yyyy'), nowDate.Format('MM'), nowDate.Format('dd')).yearStr,
-      time:'18:18',
-      timeStr:'下午18:18',
-      seatDesin:'',
+      time: '18:18',
+      timeStr: '下午18:18',
+      seatDesin: '',
       groom: '',
-      groomLat:'',
+      groomLat: '',
       groomLng: '',
       bride: '',
       brideLat: '',
       brideLng: '',
-      welcomeCode:'',
-      photos:[]
+      welcomeCode: '',
+      photos: []
     },
     scrollTop: 0,
-    navActive:'favor',
+    navActive: 'favor',
     markers: [{
       // iconPath: "/resources/others.png",
       id: 0,
@@ -77,10 +77,10 @@ Page({
     }
     that.musicBox(8000);
     that.getUserType();//获取用户信息
-    setTimeout(function(){
+    setTimeout(function () {
       that.loadTopic();
-    },1000)
-    
+    }, 1000)
+
     that.getCity();//获取地址信息
   },
   onShow: function () {
@@ -123,7 +123,7 @@ Page({
   },
 
   // 获取地址
-  getCityStr:function(){
+  getCityStr: function () {
     var that = this;
     // 发起regeocoding检索请求 
 
@@ -153,26 +153,26 @@ Page({
 
       },
       fail: function () {
-        
+
       }
     })
   },
 
 
   //选择设置封面图
-  setSurfaceImg:function(e){
-      var that = this;
+  setSurfaceImg: function (e) {
+    var that = this;
 
-      that.chooseImg(function(res){
+    that.chooseImg(function (res) {
 
-        var oldData = that.data.dataObj;
-        oldData.surfaceImg = util.config.homepath+res.imgurlsmall;
-        oldData.surfaceImgId = res.imgid;
-        that.setData({
-          dataObj: oldData
-        });
+      var oldData = that.data.dataObj;
+      oldData.surfaceImg = util.config.homepath + res.imgurlsmall;
+      oldData.surfaceImgId = res.imgid;
+      that.setData({
+        dataObj: oldData
       });
-      
+    });
+
   },
 
   //封面图旋转效果
@@ -224,7 +224,7 @@ Page({
 
   //  点击日期组件确定事件  
   bindDateChange: function (e) {
-    
+
     var that = this;
     var dateValue = e.detail.value.replace(/-/g, "/");
     // console.log(dateValue)
@@ -247,9 +247,9 @@ Page({
     var that = this;
     var oldData = that.data.dataObj;
     var time = e.detail.value;
-    if (Number(time.split(':')[0])<12){
+    if (Number(time.split(':')[0]) < 12) {
       oldData.timeStr = '上午' + time;
-    }else{
+    } else {
       oldData.timeStr = '下午' + time;
     }
     oldData.time = time;
@@ -258,7 +258,7 @@ Page({
     });
   },
 
-  bindInputChange:function(e){
+  bindInputChange: function (e) {
     var that = this;
     var oldData = that.data.dataObj;
     var dataKey = e.target.dataset.key;
@@ -269,7 +269,7 @@ Page({
     // console.log(that.data.dataObj)
   },
 
-  bindAddressChange:function(e) {
+  bindAddressChange: function (e) {
     var that = this;
     var oldData = that.data.dataObj;
     var dataKey = e.target.dataset.key;
@@ -281,8 +281,8 @@ Page({
       var wxMarkerData = data.result;
       var groomMarkers = [];
       var brideMarkers = [];
-      if (wxMarkerData.length>0){
-        if (typeof wxMarkerData[0].location == 'undefined'){
+      if (wxMarkerData.length > 0) {
+        if (typeof wxMarkerData[0].location == 'undefined') {
           return false;
         }
         if (dataKey == 'groomGPSAddress') {
@@ -300,7 +300,7 @@ Page({
             }
             markers.push(marker);
           }
-          
+
           groomMarkers = markers;
         }
         if (dataKey == 'brideGPSAddress') {
@@ -329,15 +329,15 @@ Page({
         groomMarkers: groomMarkers
 
       });
-      
-    } 
+
+    }
     BMap.suggestion({
       query: e.detail.value,
-      region: that.data.addressComponent.city||'杭州市',
+      region: that.data.addressComponent.city || '杭州市',
       city_limit: false,
       fail: fail,
       success: success
-    }); 
+    });
 
     // //发起POI检索请求 
     // BMap.search({
@@ -346,20 +346,20 @@ Page({
     //   success: success
     // }); 
 
-    
+
   },
-  mapBindCallOutTap:function(e){
+  mapBindCallOutTap: function (e) {
     console.log('mapBindCallOutTap')
   },
-  mapBindTap:function(e){
+  mapBindTap: function (e) {
     console.log('mapBindTap')
   },
-  markerTap: function(e) {
+  markerTap: function (e) {
     console.log('xxxxxxaddress')
     //console.log(e.markerId)
   },
 
-  choosePhotoImg:function(){
+  choosePhotoImg: function () {
     var that = this;
     var oldData = that.data.dataObj;
     that.chooseImg(function (res) {
@@ -375,8 +375,8 @@ Page({
         dataObj: oldData
       });
     });
-    
-   
+
+
   },
   removeImg: function (e) {
     var that = this;
@@ -403,7 +403,7 @@ Page({
       urls: this.data.dataObj.photos // 需要预览的图片http链接列表  
     })
   },
-  loadTopic:function(){
+  loadTopic: function () {
     var that = this;
     wx.showNavigationBarLoading()
     var params = {
@@ -414,9 +414,9 @@ Page({
         var topicArr = res.data.dataList;
         var topicArrNew = [];
         var selectTopic = {};
-        for (var i = 0; i < topicArr.length;i++ ){
+        for (var i = 0; i < topicArr.length; i++) {
           var topicObj = topicArr[i];
-          if (that.data.topicId == topicObj.id){
+          if (that.data.topicId == topicObj.id) {
             selectTopic = topicObj;
           }
           topicObj.styleImage = topicObj.styleImage.split(';');
@@ -428,7 +428,7 @@ Page({
           }
           topicArrNew.push(topicObj);
         }
-        
+
         that.setData({
           topicArray: topicArrNew,
           topicObj: topicArrNew[0]
@@ -439,9 +439,9 @@ Page({
 
 
 
-    
+
   },
-  selectTopic:function(e){
+  selectTopic: function (e) {
     var that = this;
     var data = e.currentTarget.dataset;
     that.setData({
@@ -451,14 +451,14 @@ Page({
   loadData: function () {
     var that = this;
 
-    
+
     var invitationId = that.data.invitationId;
     if (invitationId) {
       wx.showNavigationBarLoading()
       var params = {
         id: invitationId
       }
-      util.postData.call(that, util.config.wxApi.invitationView, params,function(res){
+      util.postData.call(that, util.config.wxApi.invitationView, params, function (res) {
         if (res.data.status) {
           var dataObj = res.data.invitation;
           var topicObj = res.data.invitationTopic;
@@ -467,10 +467,10 @@ Page({
             var photos = dataObj.photosIdArr.split(',');
             var photoArr = [];
             for (var p = 0; p < photos.length; p++) {
-              
+
               photoArr.push({
-                savePath:photos[p].substring(photos[p].indexOf('http'), photos[p].length),
-                imgId: photos[p].substring(0, photos[p].indexOf('http')-1)
+                savePath: photos[p].substring(photos[p].indexOf('http'), photos[p].length),
+                imgId: photos[p].substring(0, photos[p].indexOf('http') - 1)
               })
             }
             dataObj.photos = photoArr;
@@ -503,13 +503,13 @@ Page({
             dataObj: dataObj,
             topicId: topicObj.id
           })
-        
+
         }
 
         wx.hideNavigationBarLoading()
       });
     }
-    
+
 
   },
   viewInvitationNav: function (e) {
@@ -519,14 +519,14 @@ Page({
       navActive: data.navkey
     })
   },
-  callPhone:function(e){
+  callPhone: function (e) {
     var that = this;
     var data = e.currentTarget.dataset;
     wx.makePhoneCall({
       phoneNumber: data.phone //仅为示例，并非真实的电话号码
     })
   },
-  setPageTitle:function(title){
+  setPageTitle: function (title) {
     wx.setNavigationBarTitle({
       title: title
     })
@@ -539,11 +539,11 @@ Page({
   },
   scroll: function (e) {
     var that = this;
-    if (e.detail.scrollTop + 550 >= e.detail.scrollHeight){
+    if (e.detail.scrollTop + 550 >= e.detail.scrollHeight) {
       // console.log(e);
       // that.onReachBottom()
     }
-    
+
   },
   onPullDownRefresh: function () {
     var that = this
@@ -567,6 +567,34 @@ Page({
       util.postData.call(that, util.config.wxApi.invitationModify, params)
     }
   },
+
+  swiperChange: function (e) {
+    var that = this;
+    var current = e.detail.current;
+    var nextActive = that.data.navActive;
+    if (current == 0) {
+      nextActive = 'favor';
+      that.setPageTitle('编辑请柬');
+    }
+    if (current == 1) {
+      nextActive = 'pic';
+      that.setPageTitle('添加相册');
+    }
+    if (current == 2) {
+      nextActive = 'phone';
+      that.setPageTitle('联系方式');
+    }
+    if (current == 3) {
+      nextActive = 'location';
+      that.setPageTitle('婚礼地址');
+    }
+    if (current == 4) {
+      nextActive = 'push';
+      that.setPageTitle('去发布');
+    }
+
+  },
+
   saveDataInfo: function () {
     var that = this;
     // if (!that.data.checkPass) {
@@ -579,8 +607,8 @@ Page({
     var nextActive = '';
     var topicId = that.data.topicId;
     if (that.data.navActive == 'topic') {
-      if (typeof topicId == 'undefined' || topicId == ''){
-        util.message.show.call(that,{
+      if (typeof topicId == 'undefined' || topicId == '') {
+        util.message.show.call(that, {
           content: '请选择主题',
           icon: 'null',
           duration: 3000
@@ -592,185 +620,159 @@ Page({
       that.setPageTitle('编辑请柬');
     }
 
-    if (that.data.navActive == 'favor'){
 
-      if (typeof params.surfaceImg == 'undefined' || params.surfaceImg == '') {
-        util.message.show.call(that, {
-          content: '请选择封面图',
-          icon: 'null',
-          duration: 3000
-        })
-        return false;
-      }
-      if (typeof params.seatDesin == 'undefined' || params.seatDesin == '') {
-        util.message.show.call(that, {
-          content: '席设哪里？',
-          icon: 'null',
-          duration: 3000
-        })
-        return false;
-      }
-      if (typeof params.welcomeCode == 'undefined' || params.welcomeCode == '') {
-        util.message.show.call(that, {
-          content: '请说点欢迎语~',
-          icon: 'null',
-          duration: 3000
-        })
-        return false;
-      }
-
-      if (typeof params.groom == 'undefined' || params.groom == '') {
-        util.message.show.call(that, {
-          content: '新郎是谁？',
-          icon: 'null',
-          duration: 3000
-        })
-        return false;
-      }
-
-      if (typeof params.bride == 'undefined' || params.bride == '') {
-        util.message.show.call(that, {
-          content: '新娘是谁？',
-          icon: 'null',
-          duration: 3000
-        })
-        return false;
-      }
-
-
-
-      nextActive = 'pic';
-      that.setPageTitle('添加相册');
+    if (typeof params.surfaceImg == 'undefined' || params.surfaceImg == '') {
+      util.message.show.call(that, {
+        content: '请选择封面图',
+        icon: 'null',
+        duration: 3000
+      })
+      return false;
+    }
+    if (typeof params.seatDesin == 'undefined' || params.seatDesin == '') {
+      util.message.show.call(that, {
+        content: '席设哪里？',
+        icon: 'null',
+        duration: 3000
+      })
+      return false;
+    }
+    if (typeof params.welcomeCode == 'undefined' || params.welcomeCode == '') {
+      util.message.show.call(that, {
+        content: '请说点欢迎语~',
+        icon: 'null',
+        duration: 3000
+      })
+      return false;
     }
 
-    if (that.data.navActive == 'pic'){
-
-      if (typeof params.photos == 'undefined' || params.photos.length<3) {
-        util.message.show.call(that, {
-          content: '至少上传3张相片',
-          icon: 'null',
-          duration: 3000
-        })
-        return false;
-      }
-
-      nextActive = 'phone';
-      that.setPageTitle('联系方式');
+    if (typeof params.groom == 'undefined' || params.groom == '') {
+      util.message.show.call(that, {
+        content: '新郎是谁？',
+        icon: 'null',
+        duration: 3000
+      })
+      return false;
     }
 
-    if (that.data.navActive == 'phone') {
-
-      var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
-      if (typeof params.groomPhone == 'undefined' || params.groomPhone == '' || !myreg.test(params.groomPhone)) {
-        util.message.show.call(that, {
-          content: '请输入正确的新郎联系方式',
-          icon: 'null',
-          duration: 3000
-        })
-        return false;
-      }
-
-      if (typeof params.bridePhone == 'undefined' || params.bridePhone == '' || !myreg.test(params.bridePhone)) {
-        util.message.show.call(that, {
-          content: '请输入正确的新娘联系方式',
-          icon: 'null',
-          duration: 3000
-        })
-        return false;
-      }
-
-
-      nextActive = 'location';
-      that.setPageTitle('婚礼地址');
+    if (typeof params.bride == 'undefined' || params.bride == '') {
+      util.message.show.call(that, {
+        content: '新娘是谁？',
+        icon: 'null',
+        duration: 3000
+      })
+      return false;
     }
 
-    if (that.data.navActive == 'location') {
-      // console.log(params)
-      if (typeof params.groomGPSAddress == 'undefined' || params.groomGPSAddress == '') {
-        util.message.show.call(that, {
-          content: '请输入新郎导航地址',
-          icon: 'null',
-          duration: 3000
-        })
-        return false;
-      }
-      if (typeof params.groomAddress == 'undefined' || params.groomAddress == '') {
-        util.message.show.call(that, {
-          content: '请输入新郎地址',
-          icon: 'null',
-          duration: 3000
-        })
-        return false;
-      }
-      if (typeof params.brideGPSAddress == 'undefined' || params.brideGPSAddress == '') {
-        util.message.show.call(that, {
-          content: '请输入新娘导航地址',
-          icon: 'null',
-          duration: 3000
-        })
-        return false;
-      }
-      if (typeof params.brideAddress == 'undefined' || params.brideAddress == '') {
-        util.message.show.call(that, {
-          content: '请输入新娘地址',
-          icon: 'null',
-          duration: 3000
-        })
-        return false;
-      }
-
-      wx.showNavigationBarLoading()
-      var photosImgId = [];
-      var nowImages = dataObj.photos;
-      for (var i = 0; i < nowImages.length; i++) {
-        photosImgId.push(nowImages[i].imgId + ':' + nowImages[i].savePath);
-      }
-      if (photosImgId.length > 0) {
-        params.photosIdArr = photosImgId.join(',');
-      }
-      var invitationId = that.data.invitationId;
-      if (invitationId) {
-        params.invitationId = invitationId;
-      }
-      params.businessId = util.config.wxApi.business;
-      
-      params.topicId = topicId;
-      // params.topicId = that.data.topicObj.id;
 
 
-      util.postData.call(that, util.config.wxApi.invitationModify, params, function (res) {
-        //console.log(res)
-        wx.hideNavigationBarLoading()
-        if (res.data.status) {
+    if (typeof params.photos == 'undefined' || params.photos.length < 3) {
+      util.message.show.call(that, {
+        content: '至少上传3张相片',
+        icon: 'null',
+        duration: 3000
+      })
+      return false;
+    }
 
-          var toUrl = '../invitationCardView/invitationCardView?id=' + res.data.id;
-          if (topicId != 1){
-            toUrl = '../invitationCardView_temp' + topicId + '/invitationCardView_temp' + topicId +'?id=' + res.data.id;
-          }
-          
 
-          //console.log('orderId'+orderId)
-          wx.redirectTo({
-            url: toUrl
-          })
-        }else{
-          util.message.show.call(that, {
-            content: res.data.errorinfo,
-            icon: 'null',
-            duration: 3000
-          })
+
+    var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
+    if (typeof params.groomPhone == 'undefined' || params.groomPhone == '' || !myreg.test(params.groomPhone)) {
+      util.message.show.call(that, {
+        content: '请输入正确的新郎联系方式',
+        icon: 'null',
+        duration: 3000
+      })
+      return false;
+    }
+
+    if (typeof params.bridePhone == 'undefined' || params.bridePhone == '' || !myreg.test(params.bridePhone)) {
+      util.message.show.call(that, {
+        content: '请输入正确的新娘联系方式',
+        icon: 'null',
+        duration: 3000
+      })
+      return false;
+    }
+
+
+    if (typeof params.groomGPSAddress == 'undefined' || params.groomGPSAddress == '') {
+      util.message.show.call(that, {
+        content: '请输入新郎导航地址',
+        icon: 'null',
+        duration: 3000
+      })
+      return false;
+    }
+    if (typeof params.groomAddress == 'undefined' || params.groomAddress == '') {
+      util.message.show.call(that, {
+        content: '请输入新郎地址',
+        icon: 'null',
+        duration: 3000
+      })
+      return false;
+    }
+    if (typeof params.brideGPSAddress == 'undefined' || params.brideGPSAddress == '') {
+      util.message.show.call(that, {
+        content: '请输入新娘导航地址',
+        icon: 'null',
+        duration: 3000
+      })
+      return false;
+    }
+    if (typeof params.brideAddress == 'undefined' || params.brideAddress == '') {
+      util.message.show.call(that, {
+        content: '请输入新娘地址',
+        icon: 'null',
+        duration: 3000
+      })
+      return false;
+    }
+
+    wx.showNavigationBarLoading()
+    var photosImgId = [];
+    var nowImages = dataObj.photos;
+    for (var i = 0; i < nowImages.length; i++) {
+      photosImgId.push(nowImages[i].imgId + ':' + nowImages[i].savePath);
+    }
+    if (photosImgId.length > 0) {
+      params.photosIdArr = photosImgId.join(',');
+    }
+    var invitationId = that.data.invitationId;
+    if (invitationId) {
+      params.invitationId = invitationId;
+    }
+    params.businessId = util.config.wxApi.business;
+
+    params.topicId = topicId;
+    // params.topicId = that.data.topicObj.id;
+
+
+    util.postData.call(that, util.config.wxApi.invitationModify, params, function (res) {
+      //console.log(res)
+      wx.hideNavigationBarLoading()
+      if (res.data.status) {
+
+        var toUrl = '../invitationCardView/invitationCardView?id=' + res.data.id;
+        if (topicId != 1) {
+          toUrl = '../invitationCardView_temp' + topicId + '/invitationCardView_temp' + topicId + '?id=' + res.data.id;
         }
 
-      });
 
-    }else{
-      that.setData({
-        navActive: nextActive
-      });
-    }
+        //console.log('orderId'+orderId)
+        wx.redirectTo({
+          url: toUrl
+        })
+      } else {
+        util.message.show.call(that, {
+          content: res.data.errorinfo,
+          icon: 'null',
+          duration: 3000
+        })
+      }
 
-
-    
+    });
 
   },
 

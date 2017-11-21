@@ -8,7 +8,11 @@
 </scroll-view>
 
 <!-- 编辑请柬 -->
-<view wx:if="{{navActive == 'favor'}}" class="p-b150">
+
+<swiper class="invitation-page" indicator-dots="{{true}}" autoplay="{{false}}" vertical="{{false}}" circular="{{true}}"  bindchange="swiperChange">
+
+<swiper-item class="swiper-item">
+<scroll-view scroll-y="true" style="height:1100rpx;">
   <view class="first-img">
     <view class="img-show-box" wx:if="{{dataObj.surfaceImg}}">
       <image src="{{dataObj.surfaceImg}}" bindtap="setSurfaceImg" class="surface-img-all" mode='aspectFit'></image>
@@ -59,26 +63,27 @@
 
     <image class="mail_bg" src="../../../images/mail_bg_1.jpg"></image>
   </view>
-</view>
+</scroll-view>
+</swiper-item>
   
 <!-- 相册 -->
-
-<scroll-view class="wedding-photo" wx:if="{{navActive == 'pic'}}" scroll-y="true"  bindscroll="scroll" scroll-top="{{scrollTop}}">
+<swiper-item class="swiper-item">
+<scroll-view class="wedding-photo" scroll-y="true"  bindscroll="scroll" scroll-top="{{scrollTop}}">
   <image  mode='aspectFit' src="{{topicObj.styleImage[0]}}" style="height:200rpx;"></image>
-  <view class="photo-item" catchtap="choosePhotoImg">
-    <icon type="String" class="iconfont icon-add"></icon>
-  </view>
+  
   <view wx:for="{{dataObj.photos}}" wx:for-item="photo" wx:for-index="photoIndex" wx:key="photo" class="photo-item">
     <icon class="iconfont icon-close" data-index="{{photoIndex}}" catchtap="removeImg"></icon>
     <image src="{{photo.savePath}}" data-src="{{photo.savePath}}" mode='aspectFit' bindtap="previewImage"></image>
   </view>
-  
+  <view class="photo-item" catchtap="choosePhotoImg">
+    <icon type="String" class="iconfont icon-add"></icon>
+  </view>
 </scroll-view>
-
+</swiper-item>
 
 <!-- 联系电话 -->
 
-<view class="contact-us" wx:if="{{navActive == 'phone'}}">
+<swiper-item class="contact-us swiper-item">
   <image src="{{topicObj.styleImage[1]}}" mode='widthFix'></image>
   <view>
     <view class="contact-show">
@@ -103,13 +108,13 @@
     </view>
   </view>
   <image src="{{topicObj.styleImage[2]}}" mode='widthFix' class="contact-bottom-bg"></image>
-</view>
+</swiper-item>
 
 
 <!-- 联系地址 -->
 
 
-<view class="address-location" wx:if="{{navActive == 'location'}}">
+<swiper-item  class="address-location swiper-item">
   <view>
     <view>新郎导航地址<input type='text' class="invitation-font-i" value="{{dataObj.groomGPSAddress}}" data-key='groomGPSAddress' bindconfirm="bindAddressChange"></input></view>
     <view class="m-t20">新郎详细地址<input type='text' class="invitation-font-i" value="{{dataObj.groomAddress}}" data-key='groomAddress' bindinput="bindInputChange"></input></view>
@@ -125,14 +130,23 @@
 
   <view class="location-address">您的当前位置在：{{formatted_address}}</view>
   <view class="location-coord">坐标：经度({{latitude}}),纬度纬度({{longitude}})</view>
-  <button class="location-refresh" type="primary" loading="{{loading}}" bindtap="getCity">重新定位</button>
-</view> 
+  <!-- <button class="location-refresh" type="primary" loading="{{loading}}" bindtap="getCity">重新定位</button> -->
+</swiper-item> 
 
-<view class="nav-block">
+
+<swiper-item  class="swiper-item">
+  <button class="location-refresh" type="primary" loading="{{loading}}" catchtap="saveDataInfo">立即发布</button>
+</swiper-item> 
+
+
+</swiper>
+
+
+<!-- <view class="nav-block">
   <view class="nav-item createOrder {{checkPass?'':'disabled'}}" catchtap="saveDataInfo">
     <view class="nav-name">{{navActive == "location"?"发布":"下一步"}}</view>
   </view>
-</view> 
+</view>  -->
 
 
 <import src="../../../component/message/message.wxml"/>

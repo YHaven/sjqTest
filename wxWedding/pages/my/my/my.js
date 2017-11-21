@@ -18,7 +18,7 @@ Page({
   },
   onLoad:function(cb){
     var that = this;
-    that.getUserType();//获取用户信息
+    
   },
   onShow:function(){
     var that = this
@@ -37,6 +37,8 @@ Page({
         }
       }
     })
+
+    that.getUserType();//获取用户信息
   },
 
   getUserType: function () {
@@ -56,6 +58,7 @@ Page({
     that.setData({
       userInfo: userInfo
     });
+    // console.log(userInfo)
   },
   viewNavDetail: function (e) {
     var that = this;

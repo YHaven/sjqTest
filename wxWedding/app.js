@@ -25,10 +25,11 @@ App({
                 //console.log(t_res);
                 // console.log(t_res.data.sessionId);
                 wx.setStorageSync('PHPSESSID', t_res.data.sessionId);
-                res.userInfo.userType = t_res.data.userType;
+                userInfo.userType = t_res.data.userType;
                 
-                res.userInfo.userPhone = t_res.data.userPhone;
-                res.userInfo.creditPrice = t_res.data.creditPrice;
+                userInfo.userPhone = t_res.data.userPhone;
+                userInfo.creditPrice = t_res.data.creditPrice;
+                that.initStorage(userInfo);
               })
 
 
@@ -135,12 +136,12 @@ App({
   initStorage: function (personInfo) {
     wx.getStorageInfo({
       success: function (res) {
-        if (!('person_info' in res.keys)) {
+        // if (!('person_info' in res.keys)) {
           wx.setStorage({
             key: 'person_info',
             data: personInfo
           })
-        }
+        // }
 
         // 判断背景卡选择数据是否存在，没有则创建
         if (!('skin' in res.keys)) {

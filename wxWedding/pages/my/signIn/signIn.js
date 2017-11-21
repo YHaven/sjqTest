@@ -19,7 +19,7 @@ Page({
   onLoad: function (options) {
     var that = this;
     that.getUserType();//获取用户信息
-    that.loadData();
+    // that.loadData();
   },
 
   /**
@@ -33,7 +33,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+    var that = this;
+    that.loadData();
   },
   loadData: function () {
     var that = this;
@@ -103,10 +104,15 @@ Page({
     util.postData.call(that, util.config.wxApi.signIn, params, function (res) {
       if (res.data.status) {
         wx.showToast({
-          title: '处理成功',
+          title: '签到成功！',
           icon: 'success',
           duration: 2000
         })
+
+        that.setData({
+          todaySign:true
+        })
+
       }else{
         wx.showToast({
           title: res.data.errorinfo,

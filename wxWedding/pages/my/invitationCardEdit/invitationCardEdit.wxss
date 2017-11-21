@@ -2,6 +2,8 @@
 @import "../../../component/invitationNav/invitationNav.wxss";
 
 page{background: #cd010d;}
+.invitation-page{left: 0rpx;right: 0rpx;position: absolute;height: 100%;border: 0px;margin: 0px;padding: 0px;}
+.invitation-page .swiper-item{z-index: 999;}
 textarea{margin: 0 auto;border: 1px solid #cd010d;}
 .no-border{border: 0;} 
 .first-img{text-align: center;margin-top:30rpx;height: 540rpx; }
@@ -49,7 +51,7 @@ textarea{margin: 0 auto;border: 1px solid #cd010d;}
 .wedding-photo .photo-item .icon-add{font-size: 180rpx;color: #fff;margin-top: 110rpx;}
 
 .contact-us{background: #f3be4c;min-height: 1200rpx;position: relative;text-align: center;}
-.contact-us .contact-bottom-bg{position: absolute;bottom: 102rpx;left: -1rpx;}
+.contact-us .contact-bottom-bg{position: absolute;bottom: 0rpx;left: -1rpx;}
 .contact-us .contact-show{margin: 50rpx 0rpx;color: #cd010d;font-size: 38rpx;}
 .contact-us button{width: 50%;margin-top: 20rpx;background: #cd010d;}
 
