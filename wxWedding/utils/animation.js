@@ -230,6 +230,42 @@ var animationFun = {
 
 
   },
+  //一直上移隐藏
+  translateYAll: function (keyName, loopTimer, downNumber, delayTime) {
+    var that = this;
+    if (typeof delayTime == 'undefined') {
+      delayTime = 0
+    }
+    that[keyName] = wx.createAnimation({
+      // 动画持续时间，单位ms，默认值 400
+      duration: loopTimer,
+      timingFunction: 'linear',
+      // 延迟多长时间开始
+      delay: delayTime,
+      // transformOrigin: 'left top 0',
+      success: function (res) {
+        console.log(res)
+      }
+    });
+
+    that[keyName].opacity(1, 0).translateY(-downNumber).step();
+    that[keyName].translateY(0).opacity(0, 1).step();
+    var exportObj = {};
+    exportObj[keyName] = that[keyName].export()
+    that.setData(exportObj)
+
+    var i = 2;
+    setInterval(function () {
+      that[keyName].opacity(1, 0).translateY(-downNumber).step();
+      that[keyName].translateY(0).opacity(0, 1).step();
+      exportObj = {};
+      exportObj[keyName] = that[keyName].export()
+      that.setData(exportObj)
+      i++;
+    }, loopTimer)
+
+
+  },
 }
 
 

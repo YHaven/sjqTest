@@ -1,0 +1,67 @@
+<view class="music" bindtap="musicControl">
+  <audio class="music-jh" poster="{{topicObj.music.poster}}" name="{{topicObj.music.name}}" author="{{topicObj.music.author}}" src="{{topicObj.music.src}}" id="myAudio" controls loop="{{true}}" binderror="binderror"></audio>
+  <view class="control" style="background-image: url({{musicOpen?topicObj.styleImage[2]:''}});">
+    <view animation="{{rotatingAllMusic}}" class="control-after" style="background-image: url({{topicObj.styleImage[1]}});"></view>
+  </view>
+</view>
+
+
+
+
+<view class="up-r" animation="{{translateYAllUp}}"><image src="{{topicObj.styleImage[3]}}"></image></view>
+
+
+<swiper class="invitation-page" indicator-dots="{{false}}" autoplay="{{false}}" vertical="{{true}}" circular="{{true}}" style="background-image: url({{topicObj.styleImage[0]}});background-position:50% 50%;background-size:cover;" bindchange="swiperChange">
+  <swiper-item class="page1">
+    <view class="cmp cmp-1" ><image src="{{topicObj.styleImage[4]}}"></image></view>
+    <view class="cmp cmp-2" ><image src="{{topicObj.styleImage[5]}}"></image></view>
+    <view class="cmp cmp-3" ><image src="{{topicObj.styleImage[6]}}"></image></view>
+    <view class="cmp cmp-4" ><image src="{{topicObj.styleImage[7]}}"></image></view>
+    <view class="cmp cmp-5" ><image src="{{topicObj.styleImage[8]}}"></image></view>
+    <view class="cmp cmp-6" ><image src="{{topicObj.styleImage[9]}}"></image></view>
+    <view class="cmp cmp-7" animation="{{opacityEnd2}}"><image src="{{topicObj.styleImage[10]}}"></image></view>
+    <view class="cmp cmp-8" ><image src="{{topicObj.styleImage[11]}}"></image></view>
+    <view class="cmp cmp-9" ><image src="{{topicObj.styleImage[12]}}"></image></view>
+    <view class="cmp cmp-10" ><image src="{{topicObj.styleImage[13]}}"></image></view>
+    <view class="cmp cmp-11" ><image src="{{topicObj.styleImage[14]}}"></image></view>
+    <view class="cmp cmp-12" ><image src="{{topicObj.styleImage[16]}}"></image></view>
+    <view class="cmp cmp-13" animation="{{opacityEnd1}}"><image src="{{topicObj.styleImage[15]}}"></image></view>
+    <view class="cmp cmp-14" ><image src="{{topicObj.styleImage[17]}}"></image></view>
+    <view class="cmp cmp-15" ><image src="{{topicObj.styleImage[18]}}"></image></view>
+    <view class="cmp cmp-16" ><image src="{{topicObj.styleImage[19]}}"></image></view>
+    <view class="cmp cmp-17" ><image src="{{topicObj.styleImage[20]}}"></image></view>
+    <view class="cmp cmp-18" ><image src="{{topicObj.styleImage[21]}}"></image></view>
+    <view class="cmp cmp-19" ><image src="{{topicObj.styleImage[22]}}"></image></view>
+    <view class="cmp cmp-20" ><image src="{{topicObj.styleImage[23]}}"></image></view>
+    <view class="cmp cmp-21" animation="{{opacityEnd3}}"><image src="{{topicObj.styleImage[24]}}"></image></view>
+    <view class="cmp cmp-22" >
+      <view animation="{{translateYEnd1}}">公历：{{dataObj.weddingDate}}（{{dataObj.weekDate}}）{{dataObj.timeStr}}</view>
+      <view animation="{{translateYEnd2}}">农历：{{dataObj.lunarDate}}</view>
+      <view animation="{{translateYEnd3}}">席设：{{dataObj.seatDesin}}</view>
+    </view>
+    <view class="cmp cmp-23" animation="{{translateXEnd1}}">{{dataObj.groom}}</view>
+    <view class="cmp cmp-24" animation="{{translateXEnd2}}">{{dataObj.bride}}</view>
+            
+  </swiper-item>
+
+  <swiper-item class="page2">
+
+  </swiper-item>
+
+  <swiper-item class="page3">
+
+  </swiper-item>
+
+  <swiper-item class="page4">
+
+  </swiper-item>
+
+  <swiper-item class="page5">
+
+  </swiper-item>
+
+  <swiper-item class="page6">
+
+  </swiper-item>
+
+</swiper>
