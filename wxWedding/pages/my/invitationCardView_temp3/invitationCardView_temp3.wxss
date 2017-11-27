@@ -66,8 +66,8 @@ page{background: #f8f8f8;}
 .page4 .cmp-5{width: 380rpx;height: 380rpx;left:4.25%;top: 35%;background: #eeedf2;border-radius: 50%;}
 .page4 .cmp-6{width: 360rpx;height: 360rpx;left:5.48%;top: 35.96%;background: #eeedf2;border-radius: 50%;}
 .page4 .cmp-7{width: 36rpx;height: 34rpx;left:88.82%;top: 41.62%;}
-.page4 .cmp-8{width: 98rpx;height: 69rpx;left:64%;top: 29.58%;}
-.page4 .cmp-9{width: 38rpx;height: 36rpx;left:58.37%;top: 34%;}
+.page4 .cmp-8{width: 98rpx;height: 69rpx;left:66%;top: 32.58%;}
+.page4 .cmp-9{width: 38rpx;height: 36rpx;left:58.37%;top: 37%;}
 .page4 .cmp-10{width: 152rpx;height: 194rpx;left:1.72%;top: 50%;z-index: 1;}
 .page4 .cmp-11{width: 52rpx;height: 62rpx;left:6.25%;top: 35.79%;}
 .page4 .cmp-12{width: 48rpx;height: 46rpx;left:24.33%;top: 8%;}
