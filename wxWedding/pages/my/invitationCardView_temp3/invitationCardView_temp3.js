@@ -72,16 +72,33 @@ Page({
   },
   secondPageAnimation:function(){
       var that = this;
-      
-      
+      util.animationFun.animationFun.rotatingEnd.call(that, 'rotatingEnd1',500,'', 90,1000);
+      util.animationFun.animationFun.translateXEnd.call(that, 'translateXEnd_2_1', 1000, '150%', 0);
+      util.animationFun.animationFun.translateXEnd.call(that, 'translateXEnd_2_2', 1000, '-150%', 0);
+      util.animationFun.animationFun.translateXEnd.call(that, 'translateXEnd_2_3', 1000, '150%', 1000);
+      util.animationFun.animationFun.translateXEnd.call(that, 'translateXEnd_2_4', 1000, '-150%', 1000);
+      util.animationFun.animationFun.translateXEnd.call(that, 'translateXEnd_2_5', 1000, '150%', 0);
+      util.animationFun.animationFun.translateXEnd.call(that, 'translateXEnd_2_6', 1000, '-150%', 0);
+      util.animationFun.animationFun.scaleEnd.call(that, 'scaleEnd_2_1', 1000, 2, 0);
+      util.animationFun.animationFun.scaleEnd.call(that, 'scaleEnd_2_2', 1000, 2, 0);
+
   },
   thirdPageAnimation:function(){
     var that = this;
-    
+    util.animationFun.animationFun.translateXEnd.call(that, 'translateXEnd_3_1', 1000, '150%', 0);
+    util.animationFun.animationFun.translateXEnd.call(that, 'translateXEnd_3_2', 1000, '150%', 200);
+    util.animationFun.animationFun.translateXEnd.call(that, 'translateXEnd_3_3', 1000, '150%', 400);
+    util.animationFun.animationFun.translateXEnd.call(that, 'translateXEnd_3_4', 1000, '150%', 500);
+    util.animationFun.animationFun.scaleEnd.call(that, 'scaleEnd_3_1', 1000, 2, 1000);
+    util.animationFun.animationFun.scaleEnd.call(that, 'scaleEnd_3_2', 1000, 1, 800);
   },
   fourthPageAnimation: function () {
     var that = this;
-    
+    util.animationFun.animationFun.translateXEnd.call(that, 'translateXEnd_4_1', 1000, '-150%', 0);
+    util.animationFun.animationFun.translateXEnd.call(that, 'translateXEnd_4_2', 1000, '150%', 200);
+    util.animationFun.animationFun.translateYEnd.call(that, 'translateYEnd_4_1', 1000, '-150%', 800);
+    util.animationFun.animationFun.scaleEnd.call(that, 'scaleEnd_4_1', 1000, 2, 0);
+    util.animationFun.animationFun.scaleEnd.call(that, 'scaleEnd_4_2', 1000, 2, 0);
   },
   fifthPageAnimation: function () {
     var that = this;

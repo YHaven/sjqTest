@@ -9,7 +9,7 @@ page{background: #f8f8f8;}
 
 .music-jh{display:none;}
 
-.page1 .cmp{position: absolute;z-index: 0;color: rgb(85, 85, 85); font-family: 微软雅黑; font-weight: 400; font-style: normal; font-size: 28rpx;}
+.cmp{position: absolute;z-index: 0;color: rgb(85, 85, 85); font-family: 微软雅黑; font-weight: 400; font-style: normal; font-size: 28rpx;}
 .page1 .cmp-1{width: 52rpx;height: 42rpx;left: 50%;margin-left: -26rpx;top: 45.66%;}
 .page1 .cmp-2{width: 148rpx;height: 140rpx;left: -70rpx;top: 37.5%;}
 .page1 .cmp-3{width: 112rpx;height: 182rpx;left:39%;top: 2%;}
@@ -35,3 +35,44 @@ page{background: #f8f8f8;}
 .page1 .cmp-22 view{opacity: 0;}
 .page1 .cmp-23{width: 300rpx;left:60%;top: 45%;font-size: 45rpx;text-align: right;color: rgb(85, 85, 85); font-family: 微软雅黑; font-weight: 700; font-style: normal;opacity: 0;}
 .page1 .cmp-24{width: 300rpx;left:0%;top: 45%;font-size: 45rpx;text-align: left;color: rgb(85, 85, 85); font-family: 微软雅黑; font-weight: 700; font-style: normal;opacity: 0;}
+
+.page2 .cmp-1{width: 680rpx;height: 580rpx;left:-131.72%;top: 49.75%;opacity: 0;}
+.page2 .cmp-2{width: 642rpx;height: 484rpx;left:136.11%;top: 50.43%;opacity: 0;}
+.page2 .cmp-3{width: 452rpx;height: 396rpx;left:-63.78%;top: 10%;background: #eeedf2;border-radius: 50%;opacity: 0;}
+.page2 .cmp-4{width: 392rpx;height: 382rpx;left:108.53%;top: 11.53%;background: #eeedf2;border-radius: 50%;overflow: hidden;opacity: 0;}
+.page2 .cmp-5{width: 268rpx;height: auto;left:-7.29%;top: 20.37%;border: 1px dashed #555555;border-radius: 5rpx;padding: 8rpx;opacity: 0;}
+.page2 .cmp-6{width: 362rpx;height: 180rpx;left:-20.39%;top: 32%;opacity: 0;}
+.page2 .cmp-7{width: 64rpx;height: 76rpx;left:1.06%;top: 7.5%;}
+.page2 .cmp-8{width: 114rpx;height: 84rpx;left:59.43%;top: 39.4%;opacity: 0;}
+.page2 .cmp-9{width: 67rpx;height: 57rpx;left:57.9%;top: 44%;opacity: 0;}
+.page2 .cmp-10{width: 44rpx;height: 41rpx;left:52.6%;top: 42%;opacity: 0;}
+.page2 .cmp-11{width: 150rpx;height: 142rpx;left:7.57%;top: 84%;}
+
+.page3 .cmp-1{width: 748rpx;height: 1128rpx;left:-150%;top: 0%;z-index: -1;opacity: 0;}
+.page3 .cmp-2{width: 748rpx;height: 1128rpx;left:-150%;top: 0%;z-index: -1;opacity: 0;}
+.page3 .cmp-3{width: 722rpx;height: 1124rpx;left:-145%;top: 0%;z-index: 0;opacity: 0;}
+.page3 .cmp-4{width: 692rpx;height: 1120rpx;left:-140%;top: 0%;opacity: 0;}
+.page3 .cmp-5{width: 246rpx;height: 222rpx;left:54.25%;top: 70%;opacity: 0;}
+.page3 .cmp-6{width: 68rpx;height: 66rpx;left:54.65%;top: 80%;opacity: 0;}
+.page3 .cmp-7{width: 90rpx;height: 76rpx;left:77.52%;top: 9.69%;opacity: 0;}
+.page3 .cmp-8{width: 176rpx;height: 160rpx;left:43.35%;top: 80.52%;opacity: 0;}
+.page3 .cmp-9{width: 40rpx;height: 30rpx;left:87.76%;top: 87.52%;opacity: 0;}
+.page3 .cmp-10{width: 520rpx;height: auto;left:107.34%;top: 91%;font-size: 14rpx;opacity: 0;}
+
+.page4 .cmp-1{width: 360rpx;height: 360rpx;left:111%;top: 8.47%;background: #eeedf2;border-radius: 50%;opacity: 0;}
+.page4 .cmp-2{width: 332rpx;height: 332rpx;left:-24.8%;top: 9.65%;background: #eeedf2;border-radius: 50%;opacity: 0;}
+.page4 .cmp-3{width: 360rpx;height: 360rpx;left:46.27%;top: 65.22%;background: #eeedf2;border-radius: 50%;}
+.page4 .cmp-4{width: 332rpx;height: 332rpx;left:47.87%;top: 66.14%;background: #eeedf2;border-radius: 50%;}
+.page4 .cmp-5{width: 380rpx;height: 380rpx;left:4.25%;top: 35%;background: #eeedf2;border-radius: 50%;}
+.page4 .cmp-6{width: 360rpx;height: 360rpx;left:5.48%;top: 35.96%;background: #eeedf2;border-radius: 50%;}
+.page4 .cmp-7{width: 36rpx;height: 34rpx;left:88.82%;top: 41.62%;}
+.page4 .cmp-8{width: 98rpx;height: 69rpx;left:64%;top: 29.58%;}
+.page4 .cmp-9{width: 38rpx;height: 36rpx;left:58.37%;top: 34%;}
+.page4 .cmp-10{width: 152rpx;height: 194rpx;left:1.72%;top: 50%;z-index: 1;}
+.page4 .cmp-11{width: 52rpx;height: 62rpx;left:6.25%;top: 35.79%;}
+.page4 .cmp-12{width: 48rpx;height: 46rpx;left:24.33%;top: 8%;}
+.page4 .cmp-13{width: 288rpx;height: 140rpx;left:55.18%;top: 84%;}
+.page4 .cmp-14{width: 70rpx;height: 62rpx;left:71.21%;top: 90.46%;}
+.page4 .cmp-15{width: 422rpx;height: auto;left:6.87%;top: 78.34%;}
+.page4 .cmp-16{width: 420rpx;height: auto;left:8.78%;top: 30.38%;opacity: 0;}
+.page4 .cmp-17{width: 686rpx;height: 144rpx;left:59.25%;top: 45.57%;}

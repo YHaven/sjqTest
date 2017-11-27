@@ -45,14 +45,73 @@
   </swiper-item>
 
   <swiper-item class="page2">
-
+      <view class="cmp cmp-1" animation="{{translateXEnd_2_3}}"><image src="{{topicObj.styleImage[25]}}"></image></view>
+      <view class="cmp cmp-2" animation="{{translateXEnd_2_4}}"><image src="{{topicObj.styleImage[26]}}"></image></view>
+      <view class="cmp cmp-3" animation="{{translateXEnd_2_1}}"></view>
+      <view class="cmp cmp-4" animation="{{translateXEnd_2_2}}"><image src="{{topicObj.styleImage[28]}}"></image></view>
+      <view class="cmp cmp-5" animation="{{rotatingEnd1}}" >
+        <view>醒来看见阳谷和你</view>
+        <view>开始一天美丽心情</view>
+      </view>
+      <view class="cmp cmp-6" animation="{{translateXEnd_2_5}}"><image src="{{topicObj.styleImage[29]}}"></image></view>
+      <view class="cmp cmp-7" ><image src="{{topicObj.styleImage[15]}}"></image></view>
+      <view class="cmp cmp-8" animation="{{translateXEnd_2_6}}"><image src="{{topicObj.styleImage[20]}}"></image></view>
+      <view class="cmp cmp-9" animation="{{scaleEnd_2_1}}" ><image src="{{topicObj.styleImage[30]}}"></image></view>
+      <view class="cmp cmp-10" animation="{{scaleEnd_2_2}}"><image src="{{topicObj.styleImage[11]}}"></image></view>
+      <view class="cmp cmp-11" ><image src="{{topicObj.styleImage[31]}}"></image></view>
   </swiper-item>
 
   <swiper-item class="page3">
+        <view class="cmp cmp-1" animation="{{translateXEnd_3_1}}"><image src="{{topicObj.styleImage[32]}}"></image></view>
+        <view class="cmp cmp-2" animation="{{translateXEnd_3_2}}"><image src="{{topicObj.styleImage[33]}}"></image></view>
+        <view class="cmp cmp-3" animation="{{translateXEnd_3_3}}"><image src="{{topicObj.styleImage[34]}}"></image></view>
+        <view class="cmp cmp-4" animation="{{translateXEnd_3_4}}"><image src="{{topicObj.styleImage[35]}}"></image></view>
+        <view class="cmp cmp-5" animation="{{scaleEnd_3_2}}"><image src="{{topicObj.styleImage[36]}}"></image></view>
+        <view class="cmp cmp-6" animation="{{scaleEnd_3_2}}"><image src="{{topicObj.styleImage[37]}}"></image></view>
+        <view class="cmp cmp-7" animation="{{scaleEnd_3_1}}"><image src="{{topicObj.styleImage[30]}}"></image></view>
+        <view class="cmp cmp-8" animation="{{scaleEnd_3_2}}"><image src="{{topicObj.styleImage[23]}}"></image></view>
+        <view class="cmp cmp-9" animation="{{scaleEnd_3_2}}"><image src="{{topicObj.styleImage[38]}}"></image></view>
+        <view class="cmp cmp-10" animation="{{scaleEnd_3_1}}">
+          <view>生命宛如</view>
+          <view>静静的相拥的河</view>
+        </view>
 
   </swiper-item>
 
   <swiper-item class="page4">
+      <view class="cmp cmp-1" animation="{{translateXEnd_4_1}}"></view>
+      <view class="cmp cmp-2" animation="{{translateXEnd_4_2}}"><image src="{{topicObj.styleImage[40]}}"></image></view>
+      <view class="cmp cmp-3" animation="{{translateXEnd_4_3}}"></view>
+      <view class="cmp cmp-4" animation="{{translateXEnd_4_4}}"><image src="{{topicObj.styleImage[40]}}"></image></view>
+      <view class="cmp cmp-5" animation="{{translateXEnd_4_5}}"></view>
+      <view class="cmp cmp-6" animation="{{translateXEnd_4_6}}"><image src="{{topicObj.styleImage[40]}}"></image></view>
+      <view class="cmp cmp-7" animation="{{}}"><image src="{{topicObj.styleImage[37]}}"></image></view>
+      <view class="cmp cmp-8" animation="{{scaleEnd_4_1}}"><image src="{{topicObj.styleImage[43]}}"></image></view>
+      <view class="cmp cmp-9" animation="{{scaleEnd_4_2}}"><image src="{{topicObj.styleImage[11]}}"></image></view>
+      <view class="cmp cmp-10" animation="{{}}"><image src="{{topicObj.styleImage[44]}}"></image></view>
+      <view class="cmp cmp-11" animation="{{}}"><image src="{{topicObj.styleImage[15]}}"></image></view>
+      <view class="cmp cmp-12" animation="{{}}"><image src="{{topicObj.styleImage[45]}}"></image></view>
+      <view class="cmp cmp-13" animation="{{}}"><image src="{{topicObj.styleImage[46]}}"></image></view>
+      <view class="cmp cmp-14" animation="{{}}"><image src="{{topicObj.styleImage[31]}}"></image></view>
+
+      <view class="cmp cmp-15" animation="{{}}">
+        <view>未来仿佛一下就在眼前</view>
+        <view>本来还觉得很遥远</view>
+        <view>直到你出现在我面前</view>
+        <view>嘴角上扬心还在跳</view>
+      </view>
+      <view class="cmp cmp-16" animation="{{translateYEnd_4_1}}">
+        <view>一开始淡淡的喜欢</view>
+        <view>原来爱会</view>
+        <view>慢慢的增加重量</view>
+      </view>
+      <view class="cmp cmp-17" animation="{{}}">
+        <view>醒来看见阳谷和你</view>
+        <view>开始一天美丽心情</view>
+        <view>感觉无与伦比</view>
+        <view>有你在的世界自由清新</view>
+      </view>
+
 
   </swiper-item>
 
