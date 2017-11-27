@@ -1,0 +1,35 @@
+{
+    "data": [
+        {
+            "rec_id": "1194",
+            "goods_id": "6013",
+            "name": "测试商品",
+            "goods_price": "1.00",
+            "goods_attr": "123|均码",
+            "goods_number": 4,
+            "formated_shop_price": "¥0.00",
+            "img": {
+                "small": "http://www.topws.cn/images/201705/thumb_img/6013_thumb_G_1494532334790.jpg",
+                "thumb": "http://www.topws.cn/images/201705/goods_img/6013_G_1494532334802.png",
+                "url": "http://www.topws.cn/images/201705/source_img/6013_G_1494532334619.png"
+            }
+        },
+        {
+            "rec_id": "1194",
+            "goods_id": "6013",
+            "name": "测试商品2",
+            "goods_price": "1.00",
+            "goods_attr": "123|均码",
+            "goods_number": 6,
+            "formated_shop_price": "¥0.00",
+            "img": {
+                "small": "http://www.topws.cn/images/201705/thumb_img/6013_thumb_G_1494532334790.jpg",
+                "thumb": "http://www.topws.cn/images/201705/goods_img/6013_G_1494532334802.png",
+                "url": "http://www.topws.cn/images/201705/source_img/6013_G_1494532334619.png"
+            }
+        }
+    ],
+    "status": {
+        "succeed": 1
+    }
+}

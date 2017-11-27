@@ -1,0 +1,282 @@
+{
+    "data": {
+        "cart_list": [
+            {
+                "5674": 0,
+                "seller_id": "7908",
+                "seller_name": "雷迪宾宝",
+                "id": "7908",
+                "name": "雷迪宾宝",
+                "goods_list": [
+                    {
+                        "rec_id": "413",
+                        "seller_id": "7908",
+                        "goods_id": "5674",
+                        "goods_sn": "2285",
+                        "goods_name": "2017春夏灰色牛仔长裤时尚休闲 [灰色] [28] ",
+                        "goods_price": "85.00",
+                        "market_price": "0.00",
+                        "formated_goods_price": "￥85.00",
+                        "formated_market_price": "¥0.00",
+                        "goods_number": "2",
+                        "attr": "灰色|28",
+                        "goods_attr": [],
+                        "goods_attr_id": "35850,35851",
+                        "subtotal": "¥0.00",
+                        "img": {
+                            "thumb": "http://www.topws.cn/images/201704/goods_img/5674_G_1492800496031.jpg",
+                            "url": "http://www.topws.cn/images/201704/source_img/5674_G_1492800496720.jpg",
+                            "small": "http://www.topws.cn/images/201704/thumb_img/5674_thumb_G_1492800496885.jpg"
+                        },
+                        "is_valid": 1,
+                        "is_arrive": 1,
+                        "arrive_warn": "满足起批量能享受批发价"
+                    }
+                ]
+            },
+            {
+                "6032": 0,
+                "seller_id": "31892",
+                "seller_name": "PM卧龙测试店铺",
+                "id": "31892",
+                "name": "PM卧龙测试店铺",
+                "goods_list": [
+                    {
+                        "rec_id": "409",
+                        "seller_id": "31892",
+                        "goods_id": "6032",
+                        "goods_sn": "12",
+                        "goods_name": "2017测试测试测试测试测试 [R] [均码] ",
+                        "goods_price": "212.00",
+                        "market_price": "0.00",
+                        "formated_goods_price": "￥212.00",
+                        "formated_market_price": "¥0.00",
+                        "goods_number": "2",
+                        "attr": "R|均码",
+                        "goods_attr": [],
+                        "goods_attr_id": "37631,37632",
+                        "subtotal": "¥0.00",
+                        "img": {
+                            "thumb": "http://www.topws.cn/images/201705/goods_img/6032_G_1495753986924.jpg",
+                            "url": "http://www.topws.cn/images/201705/source_img/6032_G_1495753986707.jpg",
+                            "small": "http://www.topws.cn/images/201705/thumb_img/6032_thumb_G_1495753986721.jpg"
+                        },
+                        "is_valid": 1,
+                        "is_arrive": 1,
+                        "arrive_warn": "满足起批量能享受批发价"
+                    }
+                ]
+            },
+            {
+                "129": 0,
+                "seller_id": "48370",
+                "seller_name": "农佳女",
+                "id": "48370",
+                "name": "农佳女",
+                "goods_list": [
+                    {
+                        "rec_id": "414",
+                        "seller_id": "48370",
+                        "goods_id": "129",
+                        "goods_sn": "袖子肚子绣花",
+                        "goods_name": "2017春 农佳女 时尚休闲女士衬衫 [白色] [均码] ",
+                        "goods_price": "90.00",
+                        "market_price": "0.00",
+                        "formated_goods_price": "￥90.00",
+                        "formated_market_price": "¥0.00",
+                        "goods_number": "1",
+                        "attr": "白色|均码",
+                        "goods_attr": [],
+                        "goods_attr_id": "1064,1065",
+                        "subtotal": "¥0.00",
+                        "img": {
+                            "thumb": "http://www.topws.cn/images/201703/goods_img/129_G_1490643020261.JGG",
+                            "url": "http://www.topws.cn/images/201703/source_img/129_G_1490643020968.JGG",
+                            "small": "http://www.topws.cn/images/201703/thumb_img/129_thumb_G_1490643020814.jpg"
+                        },
+                        "is_valid": 1,
+                        "is_arrive": 1,
+                        "arrive_warn": "满足起批量能享受批发价"
+                    }
+                ]
+            },
+            {
+                "6017": 0,
+                "6035": 0,
+                "seller_id": "51384",
+                "seller_name": "测试李志鹏",
+                "id": "51384",
+                "name": "测试李志鹏",
+                "goods_list": [
+                    {
+                        "rec_id": "140",
+                        "seller_id": "51384",
+                        "goods_id": "6017",
+                        "goods_sn": "SJQ006017",
+                        "goods_name": "测试环境NO.3 [白色] [均码] ",
+                        "goods_price": "90.00",
+                        "market_price": "0.00",
+                        "formated_goods_price": "￥90.00",
+                        "formated_market_price": "¥0.00",
+                        "goods_number": "1",
+                        "attr": "颜色:白色[¥0.00] \n尺码:均码[¥0.00] \n",
+                        "goods_attr": [
+                            {
+                                "name": "颜色",
+                                "value": "白色[¥0.00] "
+                            },
+                            {
+                                "name": "尺码",
+                                "value": "均码[¥0.00] "
+                            }
+                        ],
+                        "goods_attr_id": "37592,37593",
+                        "subtotal": "¥0.00",
+                        "img": {
+                            "thumb": "http://www.topws.cn/images/201705/goods_img/6017_G_1495818797354.jpg",
+                            "url": "http://www.topws.cn/images/201705/source_img/6017_G_1495818797591.jpg",
+                            "small": "http://www.topws.cn/images/201705/thumb_img/6017_thumb_G_1495818797352.jpg"
+                        },
+                        "is_valid": 1,
+                        "is_arrive": 1,
+                        "arrive_warn": "满足起批量能享受批发价"
+                    },
+                    {
+                        "rec_id": "306",
+                        "seller_id": "51384",
+                        "goods_id": "6035",
+                        "goods_sn": "天狗天狗∪･ω･∪",
+                        "goods_name": "2017夏恩怨 [啊路] [38] ",
+                        "goods_price": "80.00",
+                        "market_price": "0.00",
+                        "formated_goods_price": "￥80.00",
+                        "formated_market_price": "¥0.00",
+                        "goods_number": "4",
+                        "attr": "啊路|38",
+                        "goods_attr": [],
+                        "goods_attr_id": "37640,37641",
+                        "subtotal": "¥0.00",
+                        "img": {
+                            "thumb": "http://www.topws.cn/images/201705/goods_img/6035_G_1494443001061.jpg",
+                            "url": "http://www.topws.cn/images/201705/source_img/6035_G_1494443001714.jpg",
+                            "small": "http://www.topws.cn/images/201705/thumb_img/6035_thumb_G_1494443001540.jpg"
+                        },
+                        "is_valid": 1,
+                        "is_arrive": 1,
+                        "arrive_warn": "满足起批量能享受批发价"
+                    }
+                ]
+            }
+        ],
+        "total": {
+            "goods_price": "¥0.00",
+            "market_price": "¥0.00",
+            "saving": "¥0.00",
+            "save_rate": 0,
+            "goods_amount": 0,
+            "real_goods_count": 1,
+            "virtual_goods_count": 4
+        },
+        "related_goods": [
+            {
+                "goods_id": "5572",
+                "name": "新款雪纺印花连衣裙",
+                "promote_price": "",
+                "shop_price": "¥279.00",
+                "market_price": "¥0.00",
+                "img": {
+                    "small": "http://www.topws.cn/images/201704/thumb_img/5572_thumb_G_1492646705888.jpg",
+                    "url": "http://www.topws.cn/images/201704/source_img/5572_G_1492646705266.jpg",
+                    "thumb": "http://www.topws.cn/images/201704/goods_img/5572_G_1492646705048.jpg"
+                }
+            },
+            {
+                "goods_id": "5571",
+                "name": "雪纺印花甜美连衣裙",
+                "promote_price": "",
+                "shop_price": "¥160.00",
+                "market_price": "¥0.00",
+                "img": {
+                    "small": "http://www.topws.cn/images/201704/thumb_img/5571_thumb_G_1492646524761.jpg",
+                    "url": "http://www.topws.cn/images/201704/source_img/5571_G_1492646524787.jpg",
+                    "thumb": "http://www.topws.cn/images/201704/goods_img/5571_G_1492646524250.jpg"
+                }
+            },
+            {
+                "goods_id": "4670",
+                "name": "2017实拍女神同款镂空刺绣花朵拼接连衣裙2058",
+                "promote_price": "",
+                "shop_price": "¥159.00",
+                "market_price": "¥0.00",
+                "img": {
+                    "small": "http://www.topws.cn/images/201704/thumb_img/4670_thumb_G_1492369726113.jpg",
+                    "url": "http://www.topws.cn/images/201704/source_img/4670_G_1492369726694.jpg",
+                    "thumb": "http://www.topws.cn/images/201704/goods_img/4670_G_1492369726223.jpg"
+                }
+            },
+            {
+                "goods_id": "5151",
+                "name": "2017夏季新款中老年雪纺连衣裙无袖气质吊带裙V领女装妈妈装D32",
+                "promote_price": "",
+                "shop_price": "¥197.00",
+                "market_price": "¥0.00",
+                "img": {
+                    "small": "http://www.topws.cn/images/201704/thumb_img/5151_thumb_G_1492382354015.jpg",
+                    "url": "http://www.topws.cn/images/201704/source_img/5151_G_1492382354626.jpg",
+                    "thumb": "http://www.topws.cn/images/201704/goods_img/5151_G_1492382354966.jpg"
+                }
+            },
+            {
+                "goods_id": "5633",
+                "name": "2017春夏 零五七一 拉链连帽纯色长袖季中长款直筒拼接风衣 LWQY2719-1】",
+                "promote_price": "",
+                "shop_price": "¥143.00",
+                "market_price": "¥0.00",
+                "img": {
+                    "small": "http://www.topws.cn/images/201704/thumb_img/5633_thumb_G_1492724933037.jpg",
+                    "url": "http://www.topws.cn/images/201704/source_img/5633_G_1492724933615.png",
+                    "thumb": "http://www.topws.cn/images/201704/goods_img/5633_G_1492724933529.png"
+                }
+            },
+            {
+                "goods_id": "4602",
+                "name": "新款雪纺印花连衣裙008",
+                "promote_price": "",
+                "shop_price": "¥159.00",
+                "market_price": "¥0.00",
+                "img": {
+                    "small": "http://www.topws.cn/images/201704/thumb_img/4602_thumb_G_1492380708802.jpg",
+                    "url": "http://www.topws.cn/images/201704/source_img/4602_G_1492380708353.jpg",
+                    "thumb": "http://www.topws.cn/images/201704/goods_img/4602_G_1492380708176.jpg"
+                }
+            },
+            {
+                "goods_id": "5121",
+                "name": "2017夏季 未来元素 时尚镶钻牛仔裙",
+                "promote_price": "",
+                "shop_price": "¥89.00",
+                "market_price": "¥0.00",
+                "img": {
+                    "small": "http://www.topws.cn/images/201704/thumb_img/5121_thumb_G_1492380531440.jpg",
+                    "url": "http://www.topws.cn/images/201704/source_img/5121_G_1492380531792.jpg",
+                    "thumb": "http://www.topws.cn/images/201704/goods_img/5121_G_1492380531892.jpg"
+                }
+            },
+            {
+                "goods_id": "5651",
+                "name": "时尚爆款连衣裙",
+                "promote_price": "",
+                "shop_price": "¥50.00",
+                "market_price": "¥0.00",
+                "img": {
+                    "small": "http://www.topws.cn/images/201704/thumb_img/5651_thumb_G_1492729820872.jpg",
+                    "url": "http://www.topws.cn/images/201704/source_img/5651_G_1492729820306.png",
+                    "thumb": "http://www.topws.cn/images/201704/goods_img/5651_G_1492729820392.png"
+                }
+            }
+        ]
+    },
+    "status": {
+        "succeed": 1
+    }
+}

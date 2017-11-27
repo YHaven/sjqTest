@@ -1,0 +1,50 @@
+{
+    "data": {
+        "rec_id": "1164",
+        "return_brief": "",
+        "ret_id": "204",
+        "user_id": "50450",
+        "back_shipping_name": "",
+        "back_invoice_no": "",
+        "out_shipping_name": "",
+        "out_invoice_no": "",
+        "cause_id": "1",
+        "return_sn": "2017060716343185500",
+        "apply_time": "2017-06-07 16:26:32",
+        "should_return": "1.00",
+        "return_shipping_fee": "5.00",
+        "return_status": "5",
+        "refound_status": "0",
+        "return_type": "1",
+        "goods_name": "测试环境NO.6",
+        "goods_thumb": "images/201706/thumb_img/6029_thumb_G_1496599546892.jpg",
+        "goods_id": "6029",
+        "return_number": "1",
+        "cause_name": "发错了，款式/尺码/数量不对",
+        "ff_return_status": "卖家同意退货，请将商品寄回",
+        "ff_return_type": "退货",
+        "log": [
+            {
+                "return_status": "您发起退货申请",
+                "action_note": "原因：发错了，款式/尺码/数量不对  金额：6",
+                "log_time": "2017-06-07 16:26:32"
+            }
+        ],
+        "repeat": 1,
+        "goods_list": [
+            {
+                "goods_id": "6029",
+                "goods_name": "测试环境NO.6",
+                "goods_thumb": "http://www.topws.cn/images/201706/thumb_img/6029_thumb_G_1496599546892.jpg",
+                "ru_id": "51384",
+                "goods_attr": "颜色:红[¥0.00] \n尺码:XXS[¥0.00] \n",
+                "return_number": "1"
+            }
+        ],
+        "shop_name": "测试李志鹏",
+        "ru_id": "51384"
+    },
+    "status": {
+        "succeed": 1
+    }
+}

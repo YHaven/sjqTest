@@ -1,0 +1,99 @@
+{
+    "data": {
+        "order_type": "GENERAL_GOODS",
+        "consignee": {
+            "address_name": "",
+            "consignee": "黄盛彦",
+            "email": "",
+            "country": "1",
+            "province": "31",
+            "city": "383",
+            "district": "3235",
+            "street": "0",
+            "address": "新街镇盛乐村14组30号",
+            "zipcode": "",
+            "tel": "18817386792",
+            "mobile": "18817386792",
+            "sign_building": "",
+            "best_time": "",
+            "audit": "0",
+            "id": "10148",
+            "country_name": "中国",
+            "province_name": "浙江",
+            "city_name": "杭州",
+            "district_name": "萧山区"
+        },
+        "shop_list": [
+            {
+                "shop_id": 31892,
+                "shop_name": "PM卧龙测试店铺",
+                "goods_list": [
+                    {
+                        "goods_id": 6131,
+                        "goods_sn": "111",
+                        "goods_name": "测试测试测试测哎哎哎试",
+                        "goods_number": 2,
+                        "goods_price": "108.00",
+                        "new_shop_price": "100.00",
+                        "goods_image": "http://www.topws.cn/images/201709/thumb_img/6131_thumb_G_1506301742104.jpg",
+                        "goods_thumb": "images/201709/thumb_img/6131_thumb_G_1506301742104.jpg",
+                        "spec": [
+                            {
+                                "rec_id": "44",
+                                "color": "1|XXS",
+                                "size": "",
+                                "product_number": "2",
+                                "product_id": "35797",
+                                "goods_attr": "1|XXS",
+                                "goods_attr_id": "38063,38064"
+                            }
+                        ]
+                    }
+                ],
+                "goods_total": 2,
+                "shop_money": 216,
+                "shipping_list": [
+                    {
+                        "shipping_id": "37",
+                        "shipping_code": "a_express",
+                        "shipping_name": "快递配送",
+                        "shipping_desc": "新增快递配送方式，商家自定义 By ECJIA TEAM.",
+                        "shipping_fee": 7,
+                        "cac_name": "",
+                        "is_use": 1
+                    },
+                    {
+                        "shipping_id": "52",
+                        "shipping_code": "cac",
+                        "shipping_name": "上门自提",
+                        "shipping_desc": "买家自己到商家指定地点取货",
+                        "shipping_fee": 0,
+                        "is_use": 0,
+                        "cac_name": "速度速度",
+                        "cac_address": "说到底是的",
+                        "cac_day": "周一至周一",
+                        "cac_time": "8:00--21:00",
+                        "cac_goods_weight": "2kg"
+                    }
+                ],
+                "shop_shipping_fee": 7,
+                "shop_favourable": {},
+                "coupons": [],
+                "cac_goods_weight": "2kg"
+            }
+        ],
+        "total_goods_num": 2,
+        "total_goods_money": 216,
+        "total_shipping_fee": 7,
+        "total_order_money": 223,
+        "allow_use_bonus": 1,
+        "bonus": [],
+        "pay_info": {
+            "pay_code": "pay_alipay",
+            "pay_id": "17"
+        }
+    },
+    "status": {
+        "succeed": 1
+    }
+}

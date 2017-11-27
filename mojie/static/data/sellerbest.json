@@ -1,0 +1,69 @@
+{
+    "data": [
+        {
+            "id": "66",
+            "shop_logo": "http://localhost/sjqapp/content/uploads/",
+            "market_name": "四季青广场",
+            "shop_name": "安安的店",
+            "coupon_str": "满500-200，满1000-500",
+            "seller_goods": [
+                {
+                    "id": "6",
+                    "name": "端美2014夏装新款女装宽松大码拼接女打底短袖t恤928 7176短袖黑桃色 M",
+                    "market_price": "￥58.80",
+                    "shop_price": "￥49.00",
+                    "img": {
+                        "thumb": "images/201407/thumb_img/6_thumb_G_1405013721216.jpg",
+                        "url": "images/201407/source_img/6_G_1405013721918.jpg",
+                        "small": "images/201407/goods_img/6_G_1405013721609.jpg"
+                    }
+                },
+                {
+                    "id": "8",
+                    "name": "欧束 2014夏装防晒衣防紫外线中长袖透明外搭开衫夏季薄空调衫开衫6352 黑色 均码",
+                    "market_price": "￥82.80",
+                    "shop_price": "￥69.00",
+                    "img": {
+                        "thumb": "images/201407/thumb_img/8_thumb_G_1405013924442.jpg",
+                        "url": "images/201407/source_img/8_G_1405013924174.jpg",
+                        "small": "images/201407/goods_img/8_G_1405013924057.jpg"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "66",
+            "shop_logo": "http://localhost/sjqapp/content/uploads/",
+            "cat_name": "女士服装 短袖",
+            "market_name": "四季青广场",
+            "shop_name": "安安的店",
+            "seller_goods": [
+                {
+                    "id": "6",
+                    "name": "端美2014夏装新款女装宽松大码拼接女打底短袖t恤928 7176短袖黑桃色 M",
+                    "market_price": "￥58.80",
+                    "shop_price": "￥49.00",
+                    "img": {
+                        "thumb": "images/201407/thumb_img/6_thumb_G_1405013721216.jpg",
+                        "url": "images/201407/source_img/6_G_1405013721918.jpg",
+                        "small": "images/201407/goods_img/6_G_1405013721609.jpg"
+                    }
+                },
+                {
+                    "id": "8",
+                    "name": "欧束 2014夏装防晒衣防紫外线中长袖透明外搭开衫夏季薄空调衫开衫6352 黑色 均码",
+                    "market_price": "￥82.80",
+                    "shop_price": "￥69.00",
+                    "img": {
+                        "thumb": "images/201407/thumb_img/8_thumb_G_1405013924442.jpg",
+                        "url": "images/201407/source_img/8_G_1405013924174.jpg",
+                        "small": "images/201407/goods_img/8_G_1405013924057.jpg"
+                    }
+                }
+            ]
+        }
+    ],
+    "status": {
+        "succeed": 1
+    }
+}

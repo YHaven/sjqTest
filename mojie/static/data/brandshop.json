@@ -1,0 +1,49 @@
+{
+    "data": {
+        "img": "http://www.topws.cn/images/best_shop.jpg",
+        "shop_list": [
+            {
+                "id": "31892",
+                "shop_logo": "http://www.topws.cn/data/store_street/brand_thumb/1501805262796187666.png",
+                "shop_name": "PM卧龙测试店铺",
+                "shop_desc": "测试店铺 @#$$%^<>?这是测试环境的店铺描述 asdfasdf asdfasdf@#$$%^<>?"
+            },
+            {
+                "id": "49865",
+                "shop_logo": "http://www.topws.cn/data/store_street/brand_thumb/1506362275683854388.png",
+                "shop_name": "adga",
+                "shop_desc": "123456789"
+            },
+            {
+                "id": "47179",
+                "shop_logo": "http://www.topws.cn/data/store_street/brand_thumb/1506362222167410889.png",
+                "shop_name": "李志鹏测试店铺1",
+                "shop_desc": "测试店铺描述"
+            },
+            {
+                "id": "51462",
+                "shop_logo": "http://www.topws.cn/data/store_street/brand_thumb/1506362165466041738.png",
+                "shop_name": "李志鹏店铺2",
+                "shop_desc": "测试李志鹏店铺描述"
+            },
+            {
+                "id": "49352",
+                "shop_logo": "http://www.topws.cn/data/store_street/brand_thumb/1506362040428788732.png",
+                "shop_name": "2.3测试店铺1",
+                "shop_desc": "2.6测试店铺描述"
+            },
+            {
+                "id": "51470",
+                "shop_logo": "http://www.topws.cn/data/store_street/brand_thumb/1506361708809006658.png",
+                "shop_name": "小飞66",
+                "shop_desc": "小飞66测试店铺描述"
+            }
+        ]
+    },
+    "status": {
+        "succeed": 1
+    },
+    "paginated": {
+        "more": 0
+    }
+}

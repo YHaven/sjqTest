@@ -1,0 +1,221 @@
+{
+    "data": {
+        "id": "17269",
+        "cat_id": "11",
+        "goods_sn": "橙衣阁11809",
+        "goods_name": "3f188 EGG女装2017秋冬季新款时尚长袖中领针织衫11809",
+        "collected": 0,
+        "market_price": "0.00",
+        "shop_price": "¥53.00",
+        "integral": 0,
+        "click_count": "698",
+        "brand_id": "0",
+        "goods_number": "241",
+        "goods_weight": "300克",
+        "promote_price": 0,
+        "formated_promote_price": "¥0.00",
+        "promote_start_date": "",
+        "promote_end_date": "",
+        "is_shipping": "0",
+        "img": {
+            "thumb": "http://img.alicdn.com/imgextra/i4/3100582725/TB2hNUlaBUSMeJjSszcXXbnwVXa_!!3100582725.jpg",
+            "url": "http://img.alicdn.com/imgextra/i4/3100582725/TB2hNUlaBUSMeJjSszcXXbnwVXa_!!3100582725.jpg",
+            "small": "http://img.alicdn.com/imgextra/i4/3100582725/TB2hNUlaBUSMeJjSszcXXbnwVXa_!!3100582725.jpg_300x300.jpg"
+        },
+        "rank_prices": [
+            {
+                "id": 12,
+                "rank_name": "特殊会员组",
+                "unformatted_price": "53.00",
+                "price": "¥53.00"
+            },
+            {
+                "id": 10,
+                "rank_name": "普通会员",
+                "unformatted_price": "53.00",
+                "price": "¥53.00"
+            }
+        ],
+        "pictures": [
+            {
+                "small": "http://img.alicdn.com/imgextra/i1/3100582725/TB27lsqayERMeJjSspjXXcpOXXa_!!3100582725.jpg_300x300.jpg",
+                "thumb": "http://img.alicdn.com/imgextra/i1/3100582725/TB27lsqayERMeJjSspjXXcpOXXa_!!3100582725.jpg_300x300.jpg",
+                "url": "http://img.alicdn.com/imgextra/i1/3100582725/TB27lsqayERMeJjSspjXXcpOXXa_!!3100582725.jpg"
+            },
+            {
+                "small": "http://img.alicdn.com/imgextra/i1/3100582725/TB2ZDJmaBxRMKJjy0FdXXaifFXa_!!3100582725.jpg_300x300.jpg",
+                "thumb": "http://img.alicdn.com/imgextra/i1/3100582725/TB2ZDJmaBxRMKJjy0FdXXaifFXa_!!3100582725.jpg_300x300.jpg",
+                "url": "http://img.alicdn.com/imgextra/i1/3100582725/TB2ZDJmaBxRMKJjy0FdXXaifFXa_!!3100582725.jpg"
+            },
+            {
+                "small": "http://img.alicdn.com/imgextra/i1/3100582725/TB2fA3qaEgQMeJjy0FfXXbddXXa_!!3100582725.jpg_300x300.jpg",
+                "thumb": "http://img.alicdn.com/imgextra/i1/3100582725/TB2fA3qaEgQMeJjy0FfXXbddXXa_!!3100582725.jpg_300x300.jpg",
+                "url": "http://img.alicdn.com/imgextra/i1/3100582725/TB2fA3qaEgQMeJjy0FfXXbddXXa_!!3100582725.jpg"
+            },
+            {
+                "small": "http://img.alicdn.com/imgextra/i4/3100582725/TB2GlXhaCFRMKJjy0FhXXX.xpXa_!!3100582725.jpg_300x300.jpg",
+                "thumb": "http://img.alicdn.com/imgextra/i4/3100582725/TB2GlXhaCFRMKJjy0FhXXX.xpXa_!!3100582725.jpg_300x300.jpg",
+                "url": "http://img.alicdn.com/imgextra/i4/3100582725/TB2GlXhaCFRMKJjy0FhXXX.xpXa_!!3100582725.jpg"
+            },
+            {
+                "small": "http://img.alicdn.com/imgextra/i4/3100582725/TB2hNUlaBUSMeJjSszcXXbnwVXa_!!3100582725.jpg_300x300.jpg",
+                "thumb": "http://img.alicdn.com/imgextra/i4/3100582725/TB2hNUlaBUSMeJjSszcXXbnwVXa_!!3100582725.jpg_300x300.jpg",
+                "url": "http://img.alicdn.com/imgextra/i4/3100582725/TB2hNUlaBUSMeJjSszcXXbnwVXa_!!3100582725.jpg"
+            }
+        ],
+        "properties": [
+            {
+                "name": "成分含量",
+                "value": "30%及以下"
+            },
+            {
+                "name": "面料",
+                "value": "棉"
+            },
+            {
+                "name": "上市年份/季节",
+                "value": "2017年秋季"
+            }
+        ],
+        "specification": [
+            {
+                "attr_type": "1",
+                "name": "颜色分类",
+                "value": [
+                    {
+                        "label": "黑色",
+                        "price": "",
+                        "format_price": "¥0.00",
+                        "id": "125183"
+                    },
+                    {
+                        "label": "白色",
+                        "price": "",
+                        "format_price": "¥0.00",
+                        "id": "125184"
+                    },
+                    {
+                        "label": "黄色",
+                        "price": "",
+                        "format_price": "¥0.00",
+                        "id": "125185"
+                    },
+                    {
+                        "label": "砖红",
+                        "price": "",
+                        "format_price": "¥0.00",
+                        "id": "125186"
+                    }
+                ]
+            },
+            {
+                "attr_type": "1",
+                "name": "尺码",
+                "value": [
+                    {
+                        "label": "均码",
+                        "price": "",
+                        "format_price": "¥0.00",
+                        "id": "125187"
+                    }
+                ]
+            }
+        ],
+        "coupons": [],
+        "unformatted_shop_price": "53.00",
+        "is_wg": "0",
+        "activity_type": "GENERAL_GOODS",
+        "saving_price": 0,
+        "formatted_saving_price": "已省0元",
+        "rec_type": "GENERAL_GOODS",
+        "object_id": "",
+        "give_integral": 53,
+        "goods_url": null,
+        "favourable_list": [],
+        "related_goods": [
+            {
+                "goods_id": "16726",
+                "name": "2017新款长袖针织衫",
+                "promote_price": "",
+                "shop_price": "¥35.00",
+                "market_price": "¥0.00",
+                "img": {
+                    "small": "http://www.sjqhz.cn/images/201708/thumb_img/16726_thumb_G_1502150375014.jpg",
+                    "url": "http://www.sjqhz.cn/images/201708/source_img/16726_G_1502150375435.jpg",
+                    "thumb": "http://www.sjqhz.cn/images/201708/goods_img/16726_G_1502150375485.jpg"
+                },
+                "activity_type": "GENERAL_GOODS",
+                "object_id": 0,
+                "saving_price": 0,
+                "formatted_saving_price": "已省0元"
+            }
+        ],
+        "seller_id": "38480",
+        "merchant_info": {
+            "id": "38480",
+            "seller_name": "四季青集合店",
+            "seller_logo": "",
+            "goods_count": 556,
+            "follower": 16,
+            "comment": {
+                "comment_goods": "100%",
+                "comment_server": "100%",
+                "comment_delivery": "100%"
+            }
+        },
+        "is_warehouse": null,
+        "server_desc": "由专营店从总店发货并提供售后服务",
+        "comment_count": 0,
+        "positive_rate": "100%",
+        "share_link": "http://www.sjqhz.cn/mobile/index.php?r=goods&id=17269",
+        "volume_price": [
+            {
+                "number": "1",
+                "price": "61.00",
+                "format_price": "￥61.00"
+            },
+            {
+                "number": "5",
+                "price": "60.00",
+                "format_price": "￥60.00"
+            },
+            {
+                "number": "10",
+                "price": "59.00",
+                "format_price": "￥59.00"
+            }
+        ],
+        "products": [
+            {
+                "product_id": "111026",
+                "goods_attr": "125186|125187",
+                "product_number": "57",
+                "goods_attr_str": "砖红,均码"
+            },
+            {
+                "product_id": "111027",
+                "goods_attr": "125183|125187",
+                "product_number": "60",
+                "goods_attr_str": "黑色,均码"
+            },
+            {
+                "product_id": "111028",
+                "goods_attr": "125184|125187",
+                "product_number": "38",
+                "goods_attr_str": "白色,均码"
+            },
+            {
+                "product_id": "111029",
+                "goods_attr": "125185|125187",
+                "product_number": "84",
+                "goods_attr_str": "黄色,均码"
+            }
+        ],
+        "hxkf_id": "imtest001",
+        "hxkf_name": "四季青客服A",
+        "hx_text": "http://www.sjqhz.cn/goods.php?id=17269"
+    },
+    "status": {
+        "succeed": 1
+    }
+}

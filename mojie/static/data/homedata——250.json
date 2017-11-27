@@ -1,0 +1,641 @@
+{
+    "data": {
+        "player": [
+            {
+                "photo": {
+                    "small": "http://www.sjqhz.cn/data/afficheimg/1501782890342357799.jpg",
+                    "thumb": "http://www.sjqhz.cn/data/afficheimg/1501782890342357799.jpg",
+                    "url": "http://www.sjqhz.cn/data/afficheimg/1501782890342357799.jpg"
+                },
+                "url": "http://www.sjqhz.cn/mobile/index.php?r=store/index/shop_info&id=52996",
+                "description": "",
+                "action": "",
+                "action_id": 0
+            },
+            {
+                "photo": {
+                    "small": "http://www.sjqhz.cn/data/afficheimg/1501782847260783745.jpg",
+                    "thumb": "http://www.sjqhz.cn/data/afficheimg/1501782847260783745.jpg",
+                    "url": "http://www.sjqhz.cn/data/afficheimg/1501782847260783745.jpg"
+                },
+                "url": "http://www.sjqhz.cn/mobile/index.php?r=store/index/shop_info&id=52996",
+                "description": "",
+                "action": "",
+                "action_id": 0
+            },
+            {
+                "photo": {
+                    "small": "http://www.sjqhz.cn/data/afficheimg/1501782907370782478.jpg",
+                    "thumb": "http://www.sjqhz.cn/data/afficheimg/1501782907370782478.jpg",
+                    "url": "http://www.sjqhz.cn/data/afficheimg/1501782907370782478.jpg"
+                },
+                "url": "http://www.sjqhz.cn/mobile/index.php?r=store/index/shop_info&id=53039",
+                "description": "",
+                "action": "",
+                "action_id": 0
+            },
+            {
+                "photo": {
+                    "small": "http://www.sjqhz.cn/data/afficheimg/1500418126845269487.jpg",
+                    "thumb": "http://www.sjqhz.cn/data/afficheimg/1500418126845269487.jpg",
+                    "url": "http://www.sjqhz.cn/data/afficheimg/1500418126845269487.jpg"
+                },
+                "url": "http://www.sjqhz.cn/mobile/index.php?r=store/index/shop_info&id=33948",
+                "description": "",
+                "action": "",
+                "action_id": 0
+            },
+            {
+                "photo": {
+                    "small": "http://www.sjqhz.cn/data/afficheimg/1501524209124588773.jpg",
+                    "thumb": "http://www.sjqhz.cn/data/afficheimg/1501524209124588773.jpg",
+                    "url": "http://www.sjqhz.cn/data/afficheimg/1501524209124588773.jpg"
+                },
+                "url": "http://www.sjqhz.cn/mobile/index.php?r=store/index/shop_info&id=45924",
+                "description": "",
+                "action": "",
+                "action_id": 0
+            },
+            {
+                "photo": {
+                    "small": "http://www.sjqhz.cn/data/afficheimg/1500418164120251853.jpg",
+                    "thumb": "http://www.sjqhz.cn/data/afficheimg/1500418164120251853.jpg",
+                    "url": "http://www.sjqhz.cn/data/afficheimg/1500418164120251853.jpg"
+                },
+                "url": "http://www.sjqhz.cn/mobile/index.php?r=store/index/shop_info&id=53002",
+                "description": "",
+                "action": "",
+                "action_id": 0
+            }
+        ],
+        "mobile_menu": [
+            {
+                "image": "http://www.sjqhz.cn/data/shortcut/1502158914248136054.png",
+                "text": "买手推荐",
+                "url": "http://www.sjqhz.cn/topic.php?topic_id=19"
+            },
+            {
+                "image": "http://www.sjqhz.cn/data/shortcut/1502158937568659887.png",
+                "text": "品牌折扣",
+                "url": "http://www.sjqhz.cn/topic.php?topic_id=20"
+            },
+            {
+                "image": "http://www.sjqhz.cn/data/shortcut/1502158955717342446.png",
+                "text": "工厂专供",
+                "url": "http://www.sjqhz.cn/topic.php?topic_id=21"
+            },
+            {
+                "image": "http://www.sjqhz.cn/data/shortcut/1502158993027633064.png",
+                "text": "四季青街",
+                "url": "ecjiaopen://app?open_type=spec_address&belong=hz"
+            },
+            {
+                "image": "http://www.sjqhz.cn/data/shortcut/1502159024618572539.png",
+                "text": "广州街",
+                "url": "ecjiaopen://app?open_type=spec_address&belong=gd"
+            }
+        ],
+        "time_group": [
+            {
+                "id": "5928",
+                "name": "款男士夏季薄款潮束脚裤男修身九分休闲裤男韩版小脚哈伦裤",
+                "img1": "http://www.sjqhz.cn/images/201704/goods_img/5928_G_1493330446334.jpg",
+                "img2": "http://www.sjqhz.cn/images/201704/goods_img/5928_P_1493330446406.jpg",
+                "img3": "http://www.sjqhz.cn/images/201704/goods_img/5928_P_1493330446779.jpg",
+                "left_second": 144797,
+                "group_rule": [
+                    {
+                        "price": 53,
+                        "num": 3,
+                        "price_str": "￥53",
+                        "num_str": "3件成团"
+                    },
+                    {
+                        "price": 50,
+                        "num": 5,
+                        "price_str": "￥50",
+                        "num_str": "5件"
+                    },
+                    {
+                        "price": 48,
+                        "num": 10,
+                        "price_str": "￥48",
+                        "num_str": "10件"
+                    }
+                ],
+                "objectId": "393",
+                "recType": "GROUPBUY_GOODS",
+                "buy_num": 0
+            },
+            {
+                "id": "6780",
+                "name": "无袖前短后长下摆背心tee",
+                "img1": "http://www.sjqhz.cn/images/201705/goods_img/6780_G_1494379009352.jpg",
+                "img2": "http://www.sjqhz.cn/images/201705/goods_img/6786780_P_1494379010880.jpg",
+                "img3": "http://www.sjqhz.cn/images/201705/goods_img/6786780_P_1494379011864.jpg",
+                "left_second": 58397,
+                "group_rule": [
+                    {
+                        "price": 32,
+                        "num": 3,
+                        "price_str": "￥32",
+                        "num_str": "3件成团"
+                    },
+                    {
+                        "price": 30,
+                        "num": 5,
+                        "price_str": "￥30",
+                        "num_str": "5件"
+                    },
+                    {
+                        "price": 28,
+                        "num": 10,
+                        "price_str": "￥28",
+                        "num_str": "10件"
+                    }
+                ],
+                "objectId": "397",
+                "recType": "GROUPBUY_GOODS",
+                "buy_num": 0
+            },
+            {
+                "id": "5948",
+                "name": "波西米亚甜美可爱一字领露肩前短后长度假沙滩裙雪纺连衣裙送腰带",
+                "img1": "http://www.sjqhz.cn/images/201704/goods_img/5948_G_1493337757735.jpg",
+                "img2": "http://www.sjqhz.cn/images/201704/goods_img/5948_P_1493337757370.jpg",
+                "img3": "http://www.sjqhz.cn/images/201704/goods_img/5948_P_1493337758639.jpg",
+                "left_second": 58397,
+                "group_rule": [
+                    {
+                        "price": 40,
+                        "num": 3,
+                        "price_str": "￥40",
+                        "num_str": "3件成团"
+                    },
+                    {
+                        "price": 38,
+                        "num": 5,
+                        "price_str": "￥38",
+                        "num_str": "5件"
+                    },
+                    {
+                        "price": 36,
+                        "num": 10,
+                        "price_str": "￥36",
+                        "num_str": "10件"
+                    }
+                ],
+                "objectId": "400",
+                "recType": "GROUPBUY_GOODS",
+                "buy_num": 0
+            }
+        ],
+        "recommend_goods": [
+            {
+                "id": "16343",
+                "goods_name": "新款 韩版蝙蝠袖宽松连帽牛仔外套女刺绣",
+                "shop_name": "流行驿站",
+                "img": {
+                    "small": "http://www.sjqhz.cn/images/201707/thumb_img/16343_thumb_G_1501181024362.jpg",
+                    "thumb": "http://www.sjqhz.cn/images/201707/goods_img/16343_G_1501181024737.jpg",
+                    "url": "http://www.sjqhz.cn/images/201707/source_img/16343_G_1501181024540.jpg"
+                },
+                "shop_price": "68.00",
+                "formated_shop_price": "￥68.00"
+            },
+            {
+                "id": "16532",
+                "goods_name": "秋季新款休闲百搭复古蓝格子衬衣外套",
+                "shop_name": "靓依阁",
+                "img": {
+                    "small": "http://www.sjqhz.cn/images/201707/thumb_img/16532_thumb_G_1501442291750.jpg",
+                    "thumb": "http://www.sjqhz.cn/images/201707/goods_img/16532_G_1501442291390.jpg",
+                    "url": "http://www.sjqhz.cn/images/201707/source_img/16532_G_1501442291151.jpg"
+                },
+                "shop_price": "48.00",
+                "formated_shop_price": "￥48.00"
+            },
+            {
+                "id": "16654",
+                "goods_name": "韩国女装连衣裙显瘦裹身裙波西米亚长裙开叉七分袖沙滩裙海边度假",
+                "shop_name": "赵小姐的衣橱",
+                "img": {
+                    "small": "http://www.sjqhz.cn/images/201708/thumb_img/16654_thumb_G_1501806020448.jpg",
+                    "thumb": "http://www.sjqhz.cn/images/201708/goods_img/16654_G_1501806020486.jpg",
+                    "url": "http://www.sjqhz.cn/images/201708/source_img/16654_G_1501806020734.jpg"
+                },
+                "shop_price": "99.00",
+                "formated_shop_price": "￥99.00"
+            },
+            {
+                "id": "16655",
+                "goods_name": "夏季新款女装露背吊带裙子雪纺连衣裙长裙波西米亚海边度假沙滩裙",
+                "shop_name": "赵小姐的衣橱",
+                "img": {
+                    "small": "http://www.sjqhz.cn/images/201708/thumb_img/16655_thumb_G_1501806204928.jpg",
+                    "thumb": "http://www.sjqhz.cn/images/201708/goods_img/16655_G_1501806204590.jpg",
+                    "url": "http://www.sjqhz.cn/images/201708/source_img/16655_G_1501806204800.jpg"
+                },
+                "shop_price": "99.00",
+                "formated_shop_price": "￥99.00"
+            },
+            {
+                "id": "16656",
+                "goods_name": "复古文艺绣花水溶花边拼接纯棉连衣裙女中长款甜美淑女海边度假裙",
+                "shop_name": "赵小姐的衣橱",
+                "img": {
+                    "small": "http://www.sjqhz.cn/images/201708/thumb_img/16656_thumb_G_1501806308556.jpg",
+                    "thumb": "http://www.sjqhz.cn/images/201708/goods_img/16656_G_1501806308438.jpg",
+                    "url": "http://www.sjqhz.cn/images/201708/source_img/16656_G_1501806308263.jpg"
+                },
+                "shop_price": "169.00",
+                "formated_shop_price": "￥169.00"
+            },
+            {
+                "id": "16657",
+                "goods_name": "夏飞飞袖收腰系带露肩一字领雪纺连衣裙气质礼服中长裙海边沙滩裙",
+                "shop_name": "赵小姐的衣橱",
+                "img": {
+                    "small": "http://www.sjqhz.cn/images/201708/thumb_img/16657_thumb_G_1501806423489.jpg",
+                    "thumb": "http://www.sjqhz.cn/images/201708/goods_img/16657_G_1501806423122.jpg",
+                    "url": "http://www.sjqhz.cn/images/201708/source_img/16657_G_1501806423833.jpg"
+                },
+                "shop_price": "139.00",
+                "formated_shop_price": "￥139.00"
+            },
+            {
+                "id": "16688",
+                "goods_name": "实拍 韩版复古条纹上衣下摆开叉气质针织衫",
+                "shop_name": "潮流女装024",
+                "img": {
+                    "small": "http://www.sjqhz.cn/images/201708/thumb_img/16688_thumb_G_1502131852880.jpg",
+                    "thumb": "http://www.sjqhz.cn/images/201708/goods_img/16688_G_1502131852256.jpg",
+                    "url": "http://www.sjqhz.cn/images/201708/source_img/16688_G_1502131852389.jpg"
+                },
+                "shop_price": "45.00",
+                "formated_shop_price": "￥45.00"
+            },
+            {
+                "id": "16704",
+                "goods_name": "2017冬季 新款 微凯丽 时尚简约羊绒大衣7011",
+                "shop_name": "四季青集合店",
+                "img": {
+                    "small": "http://www.sjqhz.cn/images/201708/thumb_img/16704_thumb_G_1502141734238.jpg",
+                    "thumb": "http://www.sjqhz.cn/images/201708/goods_img/16704_G_1502141734237.jpg",
+                    "url": "http://www.sjqhz.cn/images/201708/source_img/16704_G_1502141734724.jpg"
+                },
+                "shop_price": "709.00",
+                "formated_shop_price": "￥709.00"
+            },
+            {
+                "id": "16711",
+                "goods_name": "实拍实价 翻领排扣宽松薄款格子衬衣",
+                "shop_name": "广州三叶027",
+                "img": {
+                    "small": "http://www.sjqhz.cn/images/201708/thumb_img/16711_thumb_G_1502147192246.jpg",
+                    "thumb": "http://www.sjqhz.cn/images/201708/goods_img/16711_G_1502147192395.jpg",
+                    "url": "http://www.sjqhz.cn/images/201708/source_img/16711_G_1502147192915.jpg"
+                },
+                "shop_price": "36.00",
+                "formated_shop_price": "￥36.00"
+            },
+            {
+                "id": "16730",
+                "goods_name": "2017冬季 新款 微凯丽 时尚简约羊绒大衣072",
+                "shop_name": "四季青集合店",
+                "img": {
+                    "small": "http://www.sjqhz.cn/images/201708/thumb_img/16730_thumb_G_1502213675005.jpg",
+                    "thumb": "http://www.sjqhz.cn/images/201708/goods_img/16730_G_1502213675733.jpg",
+                    "url": "http://www.sjqhz.cn/images/201708/source_img/16730_G_1502213675652.jpg"
+                },
+                "shop_price": "729.00",
+                "formated_shop_price": "￥729.00"
+            },
+            {
+                "id": "16731",
+                "goods_name": "2017冬季 新款 微凯丽 时尚简约羊绒大衣7035",
+                "shop_name": "四季青集合店",
+                "img": {
+                    "small": "http://www.sjqhz.cn/images/201708/thumb_img/16731_thumb_G_1502213783362.jpg",
+                    "thumb": "http://www.sjqhz.cn/images/201708/goods_img/16731_G_1502213783222.jpg",
+                    "url": "http://www.sjqhz.cn/images/201708/source_img/16731_G_1502213783122.jpg"
+                },
+                "shop_price": "729.00",
+                "formated_shop_price": "￥729.00"
+            },
+            {
+                "id": "16732",
+                "goods_name": "2017冬季 新款 微凯丽 时尚简约羊绒大衣7039",
+                "shop_name": "四季青集合店",
+                "img": {
+                    "small": "http://www.sjqhz.cn/images/201708/thumb_img/16732_thumb_G_1502213879459.jpg",
+                    "thumb": "http://www.sjqhz.cn/images/201708/goods_img/16732_G_1502213879892.jpg",
+                    "url": "http://www.sjqhz.cn/images/201708/source_img/16732_G_1502213879249.jpg"
+                },
+                "shop_price": "669.00",
+                "formated_shop_price": "￥669.00"
+            }
+        ],
+        "factory_goods": [
+            {
+                "id": "14677",
+                "goods_name": "2017秋季倪裳最新时尚爆款休闲外套",
+                "shop_name": "倪裳工厂店",
+                "img": {
+                    "small": "http://www.sjqhz.cn/images/201708/thumb_img/14677_thumb_G_1502062346151.jpg",
+                    "thumb": "http://www.sjqhz.cn/images/201708/goods_img/14677_G_1502062346340.jpg",
+                    "url": "http://www.sjqhz.cn/images/201708/source_img/14677_G_1502062346997.jpg"
+                },
+                "shop_price": "100.00",
+                "formated_shop_price": "￥100.00"
+            },
+            {
+                "id": "14679",
+                "goods_name": "2017爆款时尚休闲两件套",
+                "shop_name": "倪裳工厂店",
+                "img": {
+                    "small": "http://www.sjqhz.cn/images/shopfw/main/seller_id/52996/2017/07/14/thumb_img/thumburl_P_efdc5ecc99e741c48f0b2f7a62d5939c_main.jpg",
+                    "thumb": "http://www.sjqhz.cn/images/shopfw/main/seller_id/52996/2017/07/14/goods_img/imgurl_P_efdc5ecc99e741c48f0b2f7a62d5939c_main.jpg",
+                    "url": "http://www.sjqhz.cn/images/shopfw/main/seller_id/52996/2017/07/14/source_img/original_P_efdc5ecc99e741c48f0b2f7a62d5939c_main.jpg"
+                },
+                "shop_price": "90.00",
+                "formated_shop_price": "￥90.00"
+            },
+            {
+                "id": "14681",
+                "goods_name": "2017爆款时尚连衣裙配腰带",
+                "shop_name": "倪裳工厂店",
+                "img": {
+                    "small": "http://www.sjqhz.cn/images/shopfw/main/seller_id/52996/2017/07/14/thumb_img/thumburl_P_8c2e9f01d8804dc1a60eb3ec613a84a9_main.jpg",
+                    "thumb": "http://www.sjqhz.cn/images/shopfw/main/seller_id/52996/2017/07/14/goods_img/imgurl_P_8c2e9f01d8804dc1a60eb3ec613a84a9_main.jpg",
+                    "url": "http://www.sjqhz.cn/images/shopfw/main/seller_id/52996/2017/07/14/source_img/original_P_8c2e9f01d8804dc1a60eb3ec613a84a9_main.jpg"
+                },
+                "shop_price": "90.00",
+                "formated_shop_price": "￥90.00"
+            },
+            {
+                "id": "14685",
+                "goods_name": "2017时尚爆款两件套套装",
+                "shop_name": "倪裳工厂店",
+                "img": {
+                    "small": "http://www.sjqhz.cn/images/shopfw/main/seller_id/52996/2017/07/14/thumb_img/thumburl_P_d1f27f025b354298b04349f9cb8b03bb_main.jpg",
+                    "thumb": "http://www.sjqhz.cn/images/shopfw/main/seller_id/52996/2017/07/14/goods_img/imgurl_P_d1f27f025b354298b04349f9cb8b03bb_main.jpg",
+                    "url": "http://www.sjqhz.cn/images/shopfw/main/seller_id/52996/2017/07/14/source_img/original_P_d1f27f025b354298b04349f9cb8b03bb_main.jpg"
+                },
+                "shop_price": "100.00",
+                "formated_shop_price": "￥100.00"
+            },
+            {
+                "id": "16249",
+                "goods_name": "蕾丝衫/雪纺衫纯色圆领长袖套头直筒2017年春秋季时尚潮流",
+                "shop_name": "巧尚依格",
+                "img": {
+                    "small": "http://www.sjqhz.cn/images/shopfw/main/seller_id/53035/2017/07/26/thumb_img/thumburl_P_0b71218f89a64c7c81928722e3ad0c54_main.jpg",
+                    "thumb": "http://www.sjqhz.cn/images/shopfw/main/seller_id/53035/2017/07/26/goods_img/imgurl_P_0b71218f89a64c7c81928722e3ad0c54_main.jpg",
+                    "url": "http://www.sjqhz.cn/images/shopfw/main/seller_id/53035/2017/07/26/source_img/original_P_0b71218f89a64c7c81928722e3ad0c54_main.jpg"
+                },
+                "shop_price": "55.00",
+                "formated_shop_price": "￥55.00"
+            },
+            {
+                "id": "16259",
+                "goods_name": "2017年春秋季韩版百搭潮流优雅七分袖中长款修身显瘦风衣",
+                "shop_name": "巧尚依格",
+                "img": {
+                    "small": "http://www.sjqhz.cn/images/shopfw/main/seller_id/53035/2017/07/26/thumb_img/thumburl_P_555004610f0a4a84a0533519c41d92d1_main.jpg",
+                    "thumb": "http://www.sjqhz.cn/images/shopfw/main/seller_id/53035/2017/07/26/goods_img/imgurl_P_555004610f0a4a84a0533519c41d92d1_main.jpg",
+                    "url": "http://www.sjqhz.cn/images/shopfw/main/seller_id/53035/2017/07/26/source_img/original_P_555004610f0a4a84a0533519c41d92d1_main.jpg"
+                },
+                "shop_price": "105.00",
+                "formated_shop_price": "￥105.00"
+            },
+            {
+                "id": "16654",
+                "goods_name": "韩国女装连衣裙显瘦裹身裙波西米亚长裙开叉七分袖沙滩裙海边度假",
+                "shop_name": "赵小姐的衣橱",
+                "img": {
+                    "small": "http://www.sjqhz.cn/images/201708/thumb_img/16654_thumb_G_1501806020448.jpg",
+                    "thumb": "http://www.sjqhz.cn/images/201708/goods_img/16654_G_1501806020486.jpg",
+                    "url": "http://www.sjqhz.cn/images/201708/source_img/16654_G_1501806020734.jpg"
+                },
+                "shop_price": "99.00",
+                "formated_shop_price": "￥99.00"
+            },
+            {
+                "id": "16655",
+                "goods_name": "夏季新款女装露背吊带裙子雪纺连衣裙长裙波西米亚海边度假沙滩裙",
+                "shop_name": "赵小姐的衣橱",
+                "img": {
+                    "small": "http://www.sjqhz.cn/images/201708/thumb_img/16655_thumb_G_1501806204928.jpg",
+                    "thumb": "http://www.sjqhz.cn/images/201708/goods_img/16655_G_1501806204590.jpg",
+                    "url": "http://www.sjqhz.cn/images/201708/source_img/16655_G_1501806204800.jpg"
+                },
+                "shop_price": "99.00",
+                "formated_shop_price": "￥99.00"
+            },
+            {
+                "id": "16656",
+                "goods_name": "复古文艺绣花水溶花边拼接纯棉连衣裙女中长款甜美淑女海边度假裙",
+                "shop_name": "赵小姐的衣橱",
+                "img": {
+                    "small": "http://www.sjqhz.cn/images/201708/thumb_img/16656_thumb_G_1501806308556.jpg",
+                    "thumb": "http://www.sjqhz.cn/images/201708/goods_img/16656_G_1501806308438.jpg",
+                    "url": "http://www.sjqhz.cn/images/201708/source_img/16656_G_1501806308263.jpg"
+                },
+                "shop_price": "169.00",
+                "formated_shop_price": "￥169.00"
+            },
+            {
+                "id": "16657",
+                "goods_name": "夏飞飞袖收腰系带露肩一字领雪纺连衣裙气质礼服中长裙海边沙滩裙",
+                "shop_name": "赵小姐的衣橱",
+                "img": {
+                    "small": "http://www.sjqhz.cn/images/201708/thumb_img/16657_thumb_G_1501806423489.jpg",
+                    "thumb": "http://www.sjqhz.cn/images/201708/goods_img/16657_G_1501806423122.jpg",
+                    "url": "http://www.sjqhz.cn/images/201708/source_img/16657_G_1501806423833.jpg"
+                },
+                "shop_price": "139.00",
+                "formated_shop_price": "￥139.00"
+            },
+            {
+                "id": "16671",
+                "goods_name": "我的小伙伴实拍 2017新款秋条百搭显瘦条纹铁环衬衫女3",
+                "shop_name": "时尚女士",
+                "img": {
+                    "small": "http://www.sjqhz.cn/images/201708/thumb_img/16671_thumb_G_1502062287633.jpg",
+                    "thumb": "http://www.sjqhz.cn/images/201708/goods_img/16671_G_1502062287242.jpg",
+                    "url": "http://www.sjqhz.cn/images/201708/source_img/16671_G_1502062287086.jpg"
+                },
+                "shop_price": "45.00",
+                "formated_shop_price": "￥45.00"
+            },
+            {
+                "id": "16681",
+                "goods_name": "实拍新款　条纹一字领露肩长袖 全棉针织T恤女",
+                "shop_name": "依依服饰021",
+                "img": {
+                    "small": "http://www.sjqhz.cn/images/201708/thumb_img/16681_thumb_G_1502069833137.jpg",
+                    "thumb": "http://www.sjqhz.cn/images/201708/goods_img/16681_G_1502069833305.jpg",
+                    "url": "http://www.sjqhz.cn/images/201708/source_img/16681_G_1502069833788.jpg"
+                },
+                "shop_price": "36.00",
+                "formated_shop_price": "￥36.00"
+            },
+            {
+                "id": "16721",
+                "goods_name": "实拍秋冬阔腿裤女韩版毛呢休闲九分裤哈伦裤高腰呢子宽腿萝裤",
+                "shop_name": "恰衣牛仔",
+                "img": {
+                    "small": "http://www.sjqhz.cn/images/201708/thumb_img/16721_thumb_G_1502148994309.jpg",
+                    "thumb": "http://www.sjqhz.cn/images/201708/goods_img/16721_G_1502148994628.jpg",
+                    "url": "http://www.sjqhz.cn/images/201708/source_img/16721_G_1502148994220.jpg"
+                },
+                "shop_price": "43.00",
+                "formated_shop_price": "￥43.00"
+            },
+            {
+                "id": "16728",
+                "goods_name": "秋季新款收袖针织衫",
+                "shop_name": "小喵服饰",
+                "img": {
+                    "small": "http://www.sjqhz.cn/images/201708/thumb_img/16728_thumb_G_1502151897121.jpg",
+                    "thumb": "http://www.sjqhz.cn/images/201708/goods_img/16728_G_1502151897456.jpg",
+                    "url": "http://www.sjqhz.cn/images/201708/source_img/16728_G_1502151897306.jpg"
+                },
+                "shop_price": "35.00",
+                "formated_shop_price": "￥35.00"
+            }
+        ],
+        "brand_shop": [
+            {
+                "id": "47540",
+                "shop_logo": "http://www.sjqhz.cn/data/store_street/brand_thumb/1502042661871778814.png",
+                "shop_name": "DK诚品",
+                "coupon_str": "轻松休闲 简约大牌"
+            },
+            {
+                "id": "48804",
+                "shop_logo": "http://www.sjqhz.cn/data/store_street/brand_thumb/1502042551644032892.png",
+                "shop_name": "wj外贸",
+                "coupon_str": "自信从容 冰点清仓"
+            },
+            {
+                "id": "16825",
+                "shop_logo": "http://www.sjqhz.cn/data/store_street/brand_thumb/1502042628677076285.png",
+                "shop_name": "拜金女孩",
+                "coupon_str": "造作吧 我的女孩"
+            },
+            {
+                "id": "628",
+                "shop_logo": "http://www.sjqhz.cn/data/store_street/brand_thumb/1502042047759734134.png",
+                "shop_name": "曼琳秋伊",
+                "coupon_str": "穿搭升级 时尚风暴"
+            },
+            {
+                "id": "52996",
+                "shop_logo": "http://www.sjqhz.cn/data/store_street/brand_thumb/1502042859326982993.png",
+                "shop_name": "倪裳工厂店",
+                "coupon_str": "耍大牌 潮我看"
+            },
+            {
+                "id": "53040",
+                "shop_logo": "http://www.sjqhz.cn/data/store_street/brand_thumb/1502042595330415305.png",
+                "shop_name": "欧诗鑫羽工厂店",
+                "coupon_str": "大牌工厂折扣"
+            }
+        ],
+        "yun_market": [
+            {
+                "id": "28",
+                "belong": "hz",
+                "name": "四季青老市场",
+                "image": "http://www.sjqhz.cn/data/yunmarket/1502158465522310780.png"
+            },
+            {
+                "id": "43",
+                "belong": "hz",
+                "name": "周边市场",
+                "image": "http://www.sjqhz.cn/data/yunmarket/1502160563507787869.png"
+            },
+            {
+                "id": "32",
+                "belong": "hz",
+                "name": "四季青南区",
+                "image": "http://www.sjqhz.cn/data/yunmarket/1502158453769715710.png"
+            },
+            {
+                "id": "30",
+                "belong": "hz",
+                "name": "四季青东大楼",
+                "image": "http://www.sjqhz.cn/data/yunmarket/1502158476778486815.png"
+            },
+            {
+                "id": "31",
+                "belong": "hz",
+                "name": "九堡大市场",
+                "image": "http://www.sjqhz.cn/data/yunmarket/1502158444932948081.png"
+            },
+            {
+                "id": "44",
+                "belong": "gd",
+                "name": "十三行新中国",
+                "image": "http://www.sjqhz.cn/data/yunmarket/1492047347799121794.jpg"
+            },
+            {
+                "id": "45",
+                "belong": "gd",
+                "name": "沙河万佳",
+                "image": "http://www.sjqhz.cn/data/yunmarket/1492047400541332698.jpg"
+            },
+            {
+                "id": "46",
+                "belong": "gd",
+                "name": "十三行红遍天",
+                "image": "http://www.sjqhz.cn/data/yunmarket/1492047446982544557.jpg"
+            },
+            {
+                "id": "47",
+                "belong": "gd",
+                "name": "沙河南城",
+                "image": "http://www.sjqhz.cn/data/yunmarket/1492047496758950547.jpg"
+            },
+            {
+                "id": "48",
+                "belong": "gd",
+                "name": "广州沙河金马",
+                "image": "http://www.sjqhz.cn/data/yunmarket/1492047556157837498.jpg"
+            }
+        ],
+        "activity_topic": [
+            {},
+            {
+                "image": "http://www.sjqhz.cn/data/afficheimg/1502229144160099423.png",
+                "url": "ecjiaopen://app?open_type=special_topic&topic_id=22"
+            },
+            {
+                "image": "http://www.sjqhz.cn/data/afficheimg/1502229185668931140.png",
+                "url": "ecjiaopen://app?open_type=special_topic&topic_id=23"
+            },
+            {
+                "image": "http://www.sjqhz.cn/data/afficheimg/1502229208473283015.png",
+                "url": "ecjiaopen://app?open_type=special_topic&topic_id=24"
+            },
+            {},
+            {
+                "image": "http://www.sjqhz.cn/data/afficheimg/1502214164842778522.jpg",
+                "url": "ecjiaopen://app?open_type=special_topic&topic_id=25"
+            },
+            {
+                "image": "http://www.sjqhz.cn/data/afficheimg/1502214226328529614.jpg",
+                "url": "ecjiaopen://app?open_type=special_topic&topic_id=26"
+            },
+            {
+                "image": "http://www.sjqhz.cn/data/afficheimg/1502214264255614452.jpg",
+                "url": "ecjiaopen://app?open_type=special_topic&topic_id=27"
+            }
+        ]
+    },
+    "status": {
+        "succeed": 1
+    }
+}

@@ -1,0 +1,68 @@
+{
+    "error": 0,
+    "message": "成功",
+    "sort_goods_arr": {
+        "id_02": {
+            "class_show": "0",
+            "class_status": "0",
+            "class_titpic": ""
+        },
+        "id_01": {
+            "class_show": "0",
+            "class_status": "0",
+            "class_titpic": ""
+        },
+        "id_03": {
+            "class_show": "0",
+            "class_status": "0",
+            "class_titpic": "",
+            "goods": [
+                {
+                    "goods_id": "11064",
+                    "goods_name": "2017 夏季新款 牧牧家 童装女童玫红色外套",
+                    "goods_name_style": "+",
+                    "market_price": "0.00",
+                    "is_new": "0",
+                    "is_best": "0",
+                    "is_hot": "0",
+                    "org_price": "55.00",
+                    "shop_price": 61,
+                    "promote_price": "",
+                    "promote_start_date": "0",
+                    "promote_end_date": "0",
+                    "goods_brief": "",
+                    "goods_thumb": "../images/201706/thumb_img/11064_thumb_G_1497999859429.jpg",
+                    "goods_img": "images/201706/goods_img/11064_G_1497999859578.jpg",
+                    "good_number": "500",
+                    "url": "http://www.sjqhz.cn/goods.php?id=11064",
+                    "goods_style_name": "2017 夏季新款 牧牧家 童装女童玫红色外套",
+                    "short_name": "2017 夏季新款 牧牧家 童装女童玫红色外套",
+                    "short_style_name": "2017 夏季新款 牧牧家 童装女童玫红色外套"
+                },
+                {
+                    "goods_id": "16854",
+                    "goods_name": "2017秋季新款韩范简约T恤女短袖圆领套头修身7分袖纯色打底衫女潮",
+                    "goods_name_style": "+",
+                    "market_price": "0.00",
+                    "is_new": "0",
+                    "is_best": "0",
+                    "is_hot": "0",
+                    "org_price": "28.00",
+                    "shop_price": 31,
+                    "promote_price": "",
+                    "promote_start_date": "0",
+                    "promote_end_date": "0",
+                    "goods_brief": "",
+                    "goods_thumb": "../images/201708/thumb_img/16854_thumb_G_1502655740326.jpg",
+                    "goods_img": "images/201708/goods_img/16854_G_1502655740977.jpg",
+                    "good_number": "40",
+                    "url": "http://www.sjqhz.cn/goods.php?id=16854",
+                    "goods_style_name": "2017秋季新款韩范简约T恤女短袖圆领套头修身7分袖纯色打底衫女潮",
+                    "short_name": "2017秋季新款韩范简约T恤女短袖圆领套头修身7分袖纯色打底衫女潮",
+                    "short_style_name": "2017秋季新款韩范简约T恤女短袖圆领套头修身7分袖纯色打底衫女潮"
+                }
+            ]
+        }
+    },
+    "new_time": "2017-10-26 16:03:07"
+}

@@ -1,0 +1,411 @@
+{
+    "data": {
+        "player": [
+            {
+                "photo": {
+                    "small": "http://www.topws.cn/data/afficheimg/1501024752695847108.jpg",
+                    "thumb": "http://www.topws.cn/data/afficheimg/1501024752695847108.jpg",
+                    "url": "http://www.topws.cn/data/afficheimg/1501024752695847108.jpg"
+                },
+                "url": "",
+                "description": "",
+                "action": "",
+                "action_id": 0
+            },
+            {
+                "photo": {
+                    "small": "http://www.topws.cn/data/afficheimg/1506359313774485188.png",
+                    "thumb": "http://www.topws.cn/data/afficheimg/1506359313774485188.png",
+                    "url": "http://www.topws.cn/data/afficheimg/1506359313774485188.png"
+                },
+                "url": "",
+                "description": "",
+                "action": "",
+                "action_id": 0
+            },
+            {
+                "photo": {
+                    "small": "http://www.topws.cn/data/afficheimg/1506359355833924426.png",
+                    "thumb": "http://www.topws.cn/data/afficheimg/1506359355833924426.png",
+                    "url": "http://www.topws.cn/data/afficheimg/1506359355833924426.png"
+                },
+                "url": "",
+                "description": "",
+                "action": "",
+                "action_id": 0
+            },
+            {
+                "photo": {
+                    "small": "http://www.topws.cn/data/afficheimg/1501022311718734340.jpg",
+                    "thumb": "http://www.topws.cn/data/afficheimg/1501022311718734340.jpg",
+                    "url": "http://www.topws.cn/data/afficheimg/1501022311718734340.jpg"
+                },
+                "url": "ecjiaopen://app?open_type=merchant&merchant_id=47736",
+                "description": "",
+                "action": "",
+                "action_id": 0
+            },
+            {
+                "photo": {
+                    "small": "http://www.topws.cn/data/afficheimg/1501022297662607909.jpg",
+                    "thumb": "http://www.topws.cn/data/afficheimg/1501022297662607909.jpg",
+                    "url": "http://www.topws.cn/data/afficheimg/1501022297662607909.jpg"
+                },
+                "url": "",
+                "description": "",
+                "action": "",
+                "action_id": 0
+            },
+            {
+                "photo": {
+                    "small": "http://www.topws.cn/data/afficheimg/1506359367408262112.png",
+                    "thumb": "http://www.topws.cn/data/afficheimg/1506359367408262112.png",
+                    "url": "http://www.topws.cn/data/afficheimg/1506359367408262112.png"
+                },
+                "url": "http://www.sjqhz.cn/topic.php?topic_id=43",
+                "description": "",
+                "action": "",
+                "action_id": 0
+            }
+        ],
+        "mobile_menu": [
+            {
+                "image": "http://www.topws.cn/data/shortcut/1506363116554477603.png",
+                "text": "网红推荐",
+                "url": "http://www.baidu.com"
+            },
+            {
+                "image": "http://www.topws.cn/data/shortcut/1506363255759592678.png",
+                "text": "网红推荐",
+                "url": ""
+            },
+            {
+                "image": "http://www.topws.cn/data/shortcut/1506363328435357121.png",
+                "text": "四季特卖",
+                "url": ""
+            },
+            {
+                "image": "http://www.topws.cn/data/shortcut/1506363362628053033.png",
+                "text": "名店推荐",
+                "url": ""
+            }
+        ],
+        "factory_goods": [
+            {
+                "id": "5740",
+                "goods_name": "2017夏季新款两件套裙",
+                "shop_name": "童装世界",
+                "img": {
+                    "small": "http://www.topws.cn/images/201704/thumb_img/5740_thumb_G_1493071962032.jpg",
+                    "thumb": "http://www.topws.cn/images/201704/goods_img/5740_G_1493071962442.jpg",
+                    "url": "http://www.topws.cn/images/201704/source_img/5740_G_1493071962127.jpg"
+                },
+                "shop_price": "65.00",
+                "formated_shop_price": "￥13.00"
+            },
+            {
+                "id": "5738",
+                "goods_name": "2017年夏装新款破洞牛仔裤2017238",
+                "shop_name": "丽丽新服饰",
+                "img": {
+                    "small": "http://www.topws.cn/images/201704/thumb_img/5738_thumb_G_1493064807944.jpg",
+                    "thumb": "http://www.topws.cn/images/201704/goods_img/5738_G_1493064807272.jpg",
+                    "url": "http://www.topws.cn/images/201704/source_img/5738_G_1493064807819.jpg"
+                },
+                "shop_price": "68.00",
+                "formated_shop_price": "￥14.00"
+            },
+            {
+                "id": "5605",
+                "goods_name": "精品男装短袖直销026",
+                "shop_name": "威尼帅特",
+                "img": {
+                    "small": "http://www.topws.cn/images/201704/thumb_img/5605_thumb_G_1492709212181.jpg",
+                    "thumb": "http://www.topws.cn/images/201704/goods_img/5605_G_1492709212982.jpg",
+                    "url": "http://www.topws.cn/images/201704/source_img/5605_G_1492709212831.jpg"
+                },
+                "shop_price": "75.00",
+                "formated_shop_price": "￥15.00"
+            },
+            {
+                "id": "5452",
+                "goods_name": "2017年新款，原单尾货",
+                "shop_name": "大摇大摆",
+                "img": {
+                    "small": "http://www.topws.cn/images/201704/thumb_img/5452_thumb_G_1492558150505.jpg",
+                    "thumb": "http://www.topws.cn/images/201704/goods_img/5452_G_1492558150705.jpg",
+                    "url": "http://www.topws.cn/images/201704/source_img/5452_G_1492558150840.jpg"
+                },
+                "shop_price": "230.00",
+                "formated_shop_price": "￥46.00"
+            },
+            {
+                "id": "4627",
+                "goods_name": "2017爆款牛仔裙",
+                "shop_name": "倒影",
+                "img": {
+                    "small": "http://www.topws.cn/images/201704/thumb_img/4627_thumb_G_1492218833968.jpg",
+                    "thumb": "http://www.topws.cn/images/201704/goods_img/4627_G_1492218833932.jpg",
+                    "url": "http://www.topws.cn/images/201704/source_img/4627_G_1492218833385.jpg"
+                },
+                "shop_price": "80.00",
+                "formated_shop_price": "￥16.00"
+            },
+            {
+                "id": "4626",
+                "goods_name": "2017夏 锦彬依秀 时尚休闲女士上衣",
+                "shop_name": "锦彬依秀",
+                "img": {
+                    "small": "http://www.topws.cn/images/201704/thumb_img/4626_thumb_G_1492218804423.jpg",
+                    "thumb": "http://www.topws.cn/images/201704/goods_img/4626_G_1492218804680.jpg",
+                    "url": "http://www.topws.cn/images/201704/source_img/4626_G_1492218804573.jpg"
+                },
+                "shop_price": "55.00",
+                "formated_shop_price": "￥11.00"
+            }
+        ],
+        "brand_shop": [
+            {
+                "id": "31892",
+                "shop_logo": "http://www.topws.cn/data/store_street/brand_thumb/1501805262796187666.png",
+                "shop_name": "PM卧龙测试店铺",
+                "shop_desc": "测试店铺 @#$$%^<>?这是测试环境的店铺描述 asdfasdf asdfasdf@#$$%^<>?"
+            },
+            {
+                "id": "49865",
+                "shop_logo": "http://www.topws.cn/data/store_street/brand_thumb/1506362275683854388.png",
+                "shop_name": "adga",
+                "shop_desc": "123456789"
+            },
+            {
+                "id": "47179",
+                "shop_logo": "http://www.topws.cn/data/store_street/brand_thumb/1506362222167410889.png",
+                "shop_name": "李志鹏测试店铺1",
+                "shop_desc": "测试店铺描述"
+            },
+            {
+                "id": "49352",
+                "shop_logo": "http://www.topws.cn/data/store_street/brand_thumb/1506362040428788732.png",
+                "shop_name": "2.3测试店铺1",
+                "shop_desc": "2.6测试店铺描述"
+            },
+            {
+                "id": "51470",
+                "shop_logo": "http://www.topws.cn/data/store_street/brand_thumb/1506361708809006658.png",
+                "shop_name": "小飞66",
+                "shop_desc": "小飞66测试店铺描述"
+            }
+        ],
+        "yun_market": [
+            {
+                "id": "28",
+                "belong": "hz",
+                "name": "四季青老市场",
+                "image": "http://www.topws.cn/data/yunmarket/1491328721988834807.png"
+            },
+            {
+                "id": "30",
+                "belong": "hz",
+                "name": "四季青东大楼",
+                "image": "http://www.topws.cn/data/yunmarket/1490588870088881466.png"
+            },
+            {
+                "id": "31",
+                "belong": "hz",
+                "name": "九堡大市场",
+                "image": "http://www.topws.cn/data/yunmarket/1490588927437511324.png"
+            },
+            {
+                "id": "32",
+                "belong": "hz",
+                "name": "四季青南区",
+                "image": "http://www.topws.cn/data/yunmarket/1490588964714543707.png"
+            },
+            {
+                "id": "43",
+                "belong": "hz",
+                "name": "周边市场",
+                "image": "http://www.topws.cn/data/yunmarket/1492133288423550384.jpg"
+            }
+        ],
+        "activity_topic": [
+            {},
+            {
+                "image": "http://www.topws.cn/data/afficheimg/1508893067303793710.png",
+                "url": "ecjiaopen://app?open_type=bonus_info&bonus_id=73,74,75"
+            },
+            {
+                "image": "http://www.topws.cn/data/afficheimg/1508893195225149039.png",
+                "url": "ecjiaopen://app?open_type=bonus_info&bonus_id=60,61"
+            },
+            {},
+            {},
+            {},
+            {},
+            {},
+            {}
+        ],
+        "anchor_recommend": [
+            {
+                "topic_id": "17",
+                "video_img": "http://www.topws.cn/data/afficheimg/20170927lonxtm.jpg",
+                "title": "如何穿的不臃肿又保暖",
+                "anchor_name": "HD_Hana娜娜",
+                "anchor_img": "http://www.topws.cn/data/afficheimg/20170927eityqk.jpg"
+            },
+            {
+                "topic_id": "16",
+                "video_img": "http://www.topws.cn/data/afficheimg/20170927utmkxk.png",
+                "title": "13",
+                "anchor_name": "CVBS",
+                "anchor_img": "http://www.topws.cn/data/afficheimg/20170927pqfirg.png"
+            },
+            {
+                "topic_id": "15",
+                "video_img": "http://www.topws.cn/data/afficheimg/20170927luvfxh.png",
+                "title": "12",
+                "anchor_name": "供货价",
+                "anchor_img": "http://www.topws.cn/data/afficheimg/20170927rcdktb.png"
+            },
+            {
+                "topic_id": "14",
+                "video_img": "http://www.topws.cn/data/afficheimg/20170926hsjsac.png",
+                "title": "456",
+                "anchor_name": "史蒂夫",
+                "anchor_img": "http://www.topws.cn/data/afficheimg/20170927etoimb.png"
+            },
+            {
+                "topic_id": "13",
+                "video_img": "http://www.topws.cn/data/afficheimg/20170927puxxkr.png",
+                "title": "123",
+                "anchor_name": "大飞哥",
+                "anchor_img": "http://www.topws.cn/data/afficheimg/20170927rztkmo.png"
+            },
+            {
+                "topic_id": "10",
+                "video_img": "http://www.topws.cn/data/afficheimg/20170927jsnnyh.png",
+                "title": "zhuanti",
+                "anchor_name": "陈毅",
+                "anchor_img": "http://www.topws.cn/data/afficheimg/20170927cwmukq.png"
+            },
+            {
+                "topic_id": "8",
+                "video_img": "http://www.topws.cn/data/afficheimg/20170927ngqvjr.png",
+                "title": "童装精品",
+                "anchor_name": "阿凡达",
+                "anchor_img": "http://www.topws.cn/data/afficheimg/20170927rfsxtb.png"
+            },
+            {
+                "topic_id": "7",
+                "video_img": "http://www.topws.cn/data/afficheimg/20170927iavrib.png",
+                "title": "男装精品",
+                "anchor_name": "秦莞尔",
+                "anchor_img": "http://www.topws.cn/data/afficheimg/20170927xrkcyz.png"
+            },
+            {
+                "topic_id": "6",
+                "video_img": "http://www.topws.cn/data/afficheimg/20170927meazgs.png",
+                "title": "女士精品",
+                "anchor_name": "任天野",
+                "anchor_img": "http://www.topws.cn/data/afficheimg/20170927tshuto.png"
+            },
+            {
+                "topic_id": "5",
+                "video_img": "http://www.topws.cn/data/afficheimg/20170927nchrij.png",
+                "title": "限时抢批",
+                "anchor_name": "Yui",
+                "anchor_img": "http://www.topws.cn/data/afficheimg/20170927rkcwqi.png"
+            },
+            {
+                "topic_id": "2",
+                "video_img": "http://www.topws.cn/data/afficheimg/20170927nyykph.png",
+                "title": "今日上新",
+                "anchor_name": "小凳子",
+                "anchor_img": "http://www.topws.cn/data/afficheimg/20170927xlaaks.png"
+            }
+        ],
+        "star_same": [
+            {
+                "id": "4776",
+                "goods_name": "2017 秀宣 情侣爷爷奶奶头像T恤",
+                "img": {
+                    "small": "http://www.topws.cn/images/201704/thumb_img/4776_thumb_G_1492302541733.jpg",
+                    "thumb": "http://www.topws.cn/images/201704/goods_img/4776_G_1492302541076.jpg",
+                    "url": "http://www.topws.cn/images/201704/source_img/4776_G_1492302541025.jpg"
+                },
+                "shop_price": "45.00",
+                "formated_shop_price": "￥9.00"
+            },
+            {
+                "id": "4636",
+                "goods_name": "贵★★品牌折扣正品春夏装缕空系带时尚女士连衣裙七分袖新款淑女",
+                "img": {
+                    "small": "http://www.topws.cn/images/shopfw/main/seller_id/49799/2017/04/15/thumb_img/thumburl_G_5b4e3579484f40578885af341718da12_main.jpg",
+                    "thumb": "http://www.topws.cn/images/shopfw/main/seller_id/49799/2017/04/15/goods_img/imgurl_G_5b4e3579484f40578885af341718da12_main.jpg",
+                    "url": "http://www.topws.cn/images/shopfw/main/seller_id/49799/2017/04/15/source_img/original_G_5b4e3579484f40578885af341718da12_main.jpg"
+                },
+                "shop_price": "109.00",
+                "formated_shop_price": "￥22.00"
+            },
+            {
+                "id": "4634",
+                "goods_name": "2017夏季  韩江丽影  薯条图案时尚短袖T恤",
+                "img": {
+                    "small": "http://www.topws.cn/images/201704/thumb_img/4634_thumb_G_1492219655121.jpg",
+                    "thumb": "http://www.topws.cn/images/201704/goods_img/4634_G_1492219655052.jpg",
+                    "url": "http://www.topws.cn/images/201704/source_img/4634_G_1492219655511.jpg"
+                },
+                "shop_price": "37.00",
+                "formated_shop_price": "￥8.00"
+            },
+            {
+                "id": "4633",
+                "goods_name": "2017新款九分微喇叭流苏阔腿裤修身弹性显瘦牛仔裤女毛边韩国",
+                "img": {
+                    "small": "http://www.topws.cn/images/201704/thumb_img/4633_thumb_G_1492219648985.jpg",
+                    "thumb": "http://www.topws.cn/images/201704/goods_img/4633_G_1492219648948.jpg",
+                    "url": "http://www.topws.cn/images/201704/source_img/4633_G_1492219648599.jpg"
+                },
+                "shop_price": "38.00",
+                "formated_shop_price": "￥8.00"
+            },
+            {
+                "id": "4631",
+                "goods_name": "2017夏季   韩江丽影  数字1984时尚T恤",
+                "img": {
+                    "small": "http://www.topws.cn/images/201704/thumb_img/4631_thumb_G_1492392106785.jpg",
+                    "thumb": "http://www.topws.cn/images/201704/goods_img/4631_G_1492392106582.jpg",
+                    "url": "http://www.topws.cn/images/201704/source_img/4631_G_1492392106659.jpg"
+                },
+                "shop_price": "37.00",
+                "formated_shop_price": "￥8.00"
+            },
+            {
+                "id": "4630",
+                "goods_name": "2017夏新款韩版时尚潮休闲宽松短袖T恤女打底衫系带圆领白色印花",
+                "img": {
+                    "small": "http://www.topws.cn/images/201704/thumb_img/4630_thumb_G_1492219485946.jpg",
+                    "thumb": "http://www.topws.cn/images/201704/goods_img/4630_G_1492219485051.jpg",
+                    "url": "http://www.topws.cn/images/201704/source_img/4630_G_1492219485239.jpg"
+                },
+                "shop_price": "41.00",
+                "formated_shop_price": "￥9.00"
+            },
+            {
+                "id": "4629",
+                "goods_name": "夏季V领修身显瘦长款大摆连衣裙休闲中年复古碎花女连衣裙女长裙",
+                "img": {
+                    "small": "http://www.topws.cn/images/201704/thumb_img/4629_thumb_G_1492219331678.jpg",
+                    "thumb": "http://www.topws.cn/images/201704/goods_img/4629_G_1492219331359.jpg",
+                    "url": "http://www.topws.cn/images/201704/source_img/4629_G_1492219331625.jpg"
+                },
+                "shop_price": "89.00",
+                "formated_shop_price": "￥18.00"
+            }
+        ],
+        "time_group": []
+    },
+    "status": {
+        "succeed": 1
+    }
+}

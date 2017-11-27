@@ -1,0 +1,23 @@
+{
+    "data": [
+        {
+            "id": "10290",
+            "consignee": "后果",
+            "address": "特福芬",
+            "country": "1",
+            "province": "3",
+            "city": "38",
+            "district": "418",
+            "country_name": "中国",
+            "province_name": "安徽",
+            "city_name": "巢湖",
+            "district_name": "无为县",
+            "tel": "18258181174",
+            "mobile": "18258181174",
+            "default_address": 1
+        }
+    ],
+    "status": {
+        "succeed": 1
+    }
+}

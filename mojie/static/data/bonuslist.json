@@ -1,0 +1,31 @@
+{
+    "data": [
+        {
+            "bobus_id": "51",
+            "bonus_amount": "89.99",
+            "formatted_bonus_amount": "￥89.99",
+            "request_amount": "需消费总额超过90.00元使用",
+            "use_range": "全场通用",
+            "use_time_str": "使用期限",
+            "start_date": "2017-05-23",
+            "end_date": "2017-05-31",
+            "receive_num": "每人最多领取1张",
+            "status": 0
+        },
+        {
+            "bobus_id": "52",
+            "bonus_amount": "89.99",
+            "formatted_bonus_amount": "￥89.99",
+            "request_amount": "需消费总额超过0.00元使用",
+            "use_range": "全场通用",
+            "use_time_str": "使用期限",
+            "start_date": "2017-05-23",
+            "end_date": "2017-05-31",
+            "receive_num": "每人最多领取0张",
+            "status": 1
+        }
+    ],
+    "status": {
+        "succeed": 1
+    }
+}

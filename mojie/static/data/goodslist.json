@@ -1,0 +1,274 @@
+{
+    "data": [
+        {
+            "goods_id": "4626",
+            "name": "2017夏 锦彬依秀 时尚休闲女士上衣",
+            "market_price": "￥11",
+            "shop_price": "￥11",
+            "promote_price": "",
+            "goods_gallery": [
+                "http://www.topws.cn/images/201704/thumb_img/4626_thumb_G_1492218804423.jpg",
+                "http://www.topws.cn/images/201704/thumb_img/4626_thumb_P_1492218806817.jpg"
+            ],
+            "img": {
+                "thumb": "http://www.topws.cn/images/201704/goods_img/4626_G_1492218804680.jpg",
+                "url": "http://www.topws.cn/images/201704/source_img/4626_G_1492218804573.jpg",
+                "small": "http://www.topws.cn/images/201704/thumb_img/4626_thumb_G_1492218804423.jpg"
+            },
+            "activity_type": "GENERAL_GOODS",
+            "object_id": 0,
+            "saving_price": 0,
+            "formatted_saving_price": "已省0元"
+        },
+        {
+            "goods_id": "5369",
+            "name": "实拍 唐嫣同款新款春秋季休闲直筒阔腿裤高腰拖地宽腿长裤",
+            "market_price": "￥9",
+            "shop_price": "￥9",
+            "promote_price": "",
+            "goods_gallery": [
+                "http://www.topws.cn/images/201704/thumb_img/5369_thumb_G_1492465224362.jpg",
+                "http://www.topws.cn/images/201704/thumb_img/5369_thumb_P_1492465225234.jpg",
+                "http://www.topws.cn/images/201704/thumb_img/5369_thumb_P_1492465226410.jpg"
+            ],
+            "img": {
+                "thumb": "http://www.topws.cn/images/201704/goods_img/5369_G_1492465224181.jpg",
+                "url": "http://www.topws.cn/images/201704/source_img/5369_G_1492465224145.jpg",
+                "small": "http://www.topws.cn/images/201704/thumb_img/5369_thumb_G_1492465224362.jpg"
+            },
+            "activity_type": "GENERAL_GOODS",
+            "object_id": 0,
+            "saving_price": 0,
+            "formatted_saving_price": "已省0元"
+        },
+        {
+            "goods_id": "4622",
+            "name": "2017夏季 水灵灵 新款时尚休闲亲子套装爸爸款912",
+            "market_price": "￥25",
+            "shop_price": "￥25",
+            "promote_price": "",
+            "goods_gallery": [
+                "http://www.topws.cn/images/201704/thumb_img/4622_thumb_G_1492372304017.jpg",
+                "http://www.topws.cn/images/201704/thumb_img/4622_thumb_P_1492372305251.jpg",
+                "http://www.topws.cn/images/201704/thumb_img/4622_thumb_P_1492372305023.jpg"
+            ],
+            "img": {
+                "thumb": "http://www.topws.cn/images/201704/goods_img/4622_G_1492372304217.jpg",
+                "url": "http://www.topws.cn/images/201704/source_img/4622_G_1492372304182.jpg",
+                "small": "http://www.topws.cn/images/201704/thumb_img/4622_thumb_G_1492372304017.jpg"
+            },
+            "activity_type": "GENERAL_GOODS",
+            "object_id": 0,
+            "saving_price": 0,
+            "formatted_saving_price": "已省0元"
+        },
+        {
+            "goods_id": "5740",
+            "name": "2017夏季新款两件套裙",
+            "market_price": "￥13",
+            "shop_price": "￥13",
+            "promote_price": "",
+            "goods_gallery": [
+                "http://www.topws.cn/images/201704/thumb_img/5740_thumb_G_1493071962032.jpg",
+                "http://www.topws.cn/images/201704/thumb_img/5740_thumb_P_1493071962277.jpg"
+            ],
+            "img": {
+                "thumb": "http://www.topws.cn/images/201704/goods_img/5740_G_1493071962442.jpg",
+                "url": "http://www.topws.cn/images/201704/source_img/5740_G_1493071962127.jpg",
+                "small": "http://www.topws.cn/images/201704/thumb_img/5740_thumb_G_1493071962032.jpg"
+            },
+            "activity_type": "GENERAL_GOODS",
+            "object_id": 0,
+            "saving_price": 0,
+            "formatted_saving_price": "已省0元"
+        },
+        {
+            "goods_id": "4620",
+            "name": "2017夏 琪琪 时尚清新绣花棉麻小衫",
+            "market_price": "￥11.6",
+            "shop_price": "￥11.6",
+            "promote_price": "",
+            "goods_gallery": [
+                "http://www.topws.cn/images/201704/thumb_img/4620_thumb_G_1492217959744.jpg",
+                "http://www.topws.cn/images/201704/thumb_img/4620_thumb_P_1492217967264.jpg",
+                "http://www.topws.cn/images/201704/thumb_img/4620_thumb_P_1492217968469.jpg",
+                "http://www.topws.cn/images/201704/thumb_img/4620_thumb_P_1492217970877.jpg",
+                "http://www.topws.cn/images/201704/thumb_img/4620_thumb_P_1492217971610.jpg"
+            ],
+            "img": {
+                "thumb": "http://www.topws.cn/images/201704/goods_img/4620_G_1492217959016.jpg",
+                "url": "http://www.topws.cn/images/201704/source_img/4620_G_1492217959682.jpg",
+                "small": "http://www.topws.cn/images/201704/thumb_img/4620_thumb_G_1492217959744.jpg"
+            },
+            "activity_type": "GENERAL_GOODS",
+            "object_id": 0,
+            "saving_price": 0,
+            "formatted_saving_price": "已省0元"
+        },
+        {
+            "goods_id": "5452",
+            "name": "2017年新款，原单尾货",
+            "market_price": "￥46",
+            "shop_price": "￥46",
+            "promote_price": "",
+            "goods_gallery": [
+                "http://www.topws.cn/images/201704/thumb_img/5452_thumb_G_1492558150505.jpg",
+                "http://www.topws.cn/images/201704/thumb_img/5452_thumb_P_1492558151601.jpg",
+                "http://www.topws.cn/images/201704/thumb_img/5452_thumb_P_1492558154930.jpg",
+                "http://www.topws.cn/images/201704/thumb_img/5452_thumb_P_1492558156950.jpg"
+            ],
+            "img": {
+                "thumb": "http://www.topws.cn/images/201704/goods_img/5452_G_1492558150705.jpg",
+                "url": "http://www.topws.cn/images/201704/source_img/5452_G_1492558150840.jpg",
+                "small": "http://www.topws.cn/images/201704/thumb_img/5452_thumb_G_1492558150505.jpg"
+            },
+            "activity_type": "GENERAL_GOODS",
+            "object_id": 0,
+            "saving_price": 0,
+            "formatted_saving_price": "已省0元"
+        },
+        {
+            "goods_id": "4617",
+            "name": "2017夏装新款韩版圆领宽松半袖亮片印花字母学生时尚t恤女短袖",
+            "market_price": "￥8.6",
+            "shop_price": "￥8.6",
+            "promote_price": "",
+            "goods_gallery": [
+                "http://www.topws.cn/images/201704/thumb_img/4617_thumb_G_1492217841146.jpg",
+                "http://www.topws.cn/images/201704/thumb_img/4617_thumb_P_1492217842136.jpg"
+            ],
+            "img": {
+                "thumb": "http://www.topws.cn/images/201704/goods_img/4617_G_1492217841946.jpg",
+                "url": "http://www.topws.cn/images/201704/source_img/4617_G_1492217841386.jpg",
+                "small": "http://www.topws.cn/images/201704/thumb_img/4617_thumb_G_1492217841146.jpg"
+            },
+            "activity_type": "GENERAL_GOODS",
+            "object_id": 0,
+            "saving_price": 0,
+            "formatted_saving_price": "已省0元"
+        },
+        {
+            "goods_id": "5738",
+            "name": "2017年夏装新款破洞牛仔裤2017238",
+            "market_price": "￥13.6",
+            "shop_price": "￥13.6",
+            "promote_price": "",
+            "goods_gallery": [
+                "http://www.topws.cn/images/201704/thumb_img/5738_thumb_G_1493064807944.jpg",
+                "http://www.topws.cn/images/201704/thumb_img/5738_thumb_P_1493064814457.jpg",
+                "http://www.topws.cn/images/201704/thumb_img/5738_thumb_P_1493064817159.jpg",
+                "http://www.topws.cn/images/201704/thumb_img/5738_thumb_P_1493064821273.jpg",
+                "http://www.topws.cn/images/201704/thumb_img/5738_thumb_P_1493064824258.jpg"
+            ],
+            "img": {
+                "thumb": "http://www.topws.cn/images/201704/goods_img/5738_G_1493064807272.jpg",
+                "url": "http://www.topws.cn/images/201704/source_img/5738_G_1493064807819.jpg",
+                "small": "http://www.topws.cn/images/201704/thumb_img/5738_thumb_G_1493064807944.jpg"
+            },
+            "activity_type": "GENERAL_GOODS",
+            "object_id": 0,
+            "saving_price": 0,
+            "formatted_saving_price": "已省0元"
+        },
+        {
+            "goods_id": "4623",
+            "name": "2017爆款背带裙",
+            "market_price": "￥16",
+            "shop_price": "￥16",
+            "promote_price": "",
+            "goods_gallery": [
+                "http://www.topws.cn/images/201704/thumb_img/4623_thumb_G_1492218644773.jpg",
+                "http://www.topws.cn/images/201704/thumb_img/4623_thumb_P_1492218645797.jpg"
+            ],
+            "img": {
+                "thumb": "http://www.topws.cn/images/201704/goods_img/4623_G_1492218644439.jpg",
+                "url": "http://www.topws.cn/images/201704/source_img/4623_G_1492218644019.jpg",
+                "small": "http://www.topws.cn/images/201704/thumb_img/4623_thumb_G_1492218644773.jpg"
+            },
+            "activity_type": "GENERAL_GOODS",
+            "object_id": 0,
+            "saving_price": 0,
+            "formatted_saving_price": "已省0元"
+        },
+        {
+            "goods_id": "4627",
+            "name": "2017爆款牛仔裙",
+            "market_price": "￥16",
+            "shop_price": "￥16",
+            "promote_price": "",
+            "goods_gallery": [
+                "http://www.topws.cn/images/201704/thumb_img/4627_thumb_G_1492218833968.jpg",
+                "http://www.topws.cn/images/201704/thumb_img/4627_thumb_P_1492218833512.jpg"
+            ],
+            "img": {
+                "thumb": "http://www.topws.cn/images/201704/goods_img/4627_G_1492218833932.jpg",
+                "url": "http://www.topws.cn/images/201704/source_img/4627_G_1492218833385.jpg",
+                "small": "http://www.topws.cn/images/201704/thumb_img/4627_thumb_G_1492218833968.jpg"
+            },
+            "activity_type": "GENERAL_GOODS",
+            "object_id": 0,
+            "saving_price": 0,
+            "formatted_saving_price": "已省0元"
+        }
+    ],
+    "status": {
+        "succeed": 1
+    },
+    "paginated": {
+        "total": 12,
+        "count": 12,
+        "more": 1,
+        "price_grade": [
+            {
+                "sn": "0",
+                "goods_num": "1941",
+                "start": 0,
+                "end": 100,
+                "price_range": "0 - 100",
+                "formated_start": "¥0.00",
+                "formated_end": "¥100.00",
+                "selected": 0
+            },
+            {
+                "sn": "1",
+                "goods_num": "624",
+                "start": 100,
+                "end": 200,
+                "price_range": "100 - 200",
+                "formated_start": "¥100.00",
+                "formated_end": "¥200.00",
+                "selected": 0
+            },
+            {
+                "sn": "2",
+                "goods_num": "31",
+                "start": 200,
+                "end": 300,
+                "price_range": "200 - 300",
+                "formated_start": "¥200.00",
+                "formated_end": "¥300.00",
+                "selected": 0
+            },
+            {
+                "sn": "3",
+                "goods_num": "7",
+                "start": 300,
+                "end": 400,
+                "price_range": "300 - 400",
+                "formated_start": "¥300.00",
+                "formated_end": "¥400.00",
+                "selected": 0
+            },
+            {
+                "sn": "4",
+                "goods_num": "5",
+                "start": 400,
+                "end": 500,
+                "price_range": "400 - 500",
+                "formated_start": "¥400.00",
+                "formated_end": "¥500.00",
+                "selected": 0
+            }
+        ]
+    }
+}

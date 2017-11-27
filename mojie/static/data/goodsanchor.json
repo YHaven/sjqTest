@@ -1,0 +1,131 @@
+{
+    "data": {
+        "img": "http://www.topws.cn/images/star_recommend.jpg",
+        "goods_list": [
+            {
+                "goods_id": "6129",
+                "goods_name": "5252587425",
+                "goods_price": "45.00",
+                "formated_goods_price": "￥45.00",
+                "img": {
+                    "small": "http://hz.topws.cn/images/201708/thumb_img/6129_thumb_G_1502308668049.jpg",
+                    "url": "http://hz.topws.cn/images/201708/source_img/6129_G_1502308668978.jpg",
+                    "thumb": "http://hz.topws.cn/images/201708/goods_img/6129_G_1502308668369.jpg"
+                }
+            },
+            {
+                "goods_id": "6128",
+                "goods_name": "个数好的很好的很",
+                "goods_price": "45.00",
+                "formated_goods_price": "￥45.00",
+                "img": {
+                    "small": "http://www.topws.cn/images/201708/thumb_img/6128_thumb_G_1501798006595.jpg",
+                    "url": "http://www.topws.cn/images/201708/source_img/6128_G_1501798006399.jpg",
+                    "thumb": "http://www.topws.cn/images/201708/goods_img/6128_G_1501798006919.jpg"
+                }
+            },
+            {
+                "goods_id": "6127",
+                "goods_name": "觉得接电话回电话",
+                "goods_price": "45.00",
+                "formated_goods_price": "￥45.00",
+                "img": {
+                    "small": "http://www.topws.cn/images/201708/thumb_img/6127_thumb_G_1501782883075.jpg",
+                    "url": "http://www.topws.cn/images/201708/source_img/6127_G_1501782883298.jpg",
+                    "thumb": "http://www.topws.cn/images/201708/goods_img/6127_G_1501782883203.jpg"
+                }
+            },
+            {
+                "goods_id": "6126",
+                "goods_name": "回到家的军事基地",
+                "goods_price": "45.00",
+                "formated_goods_price": "￥45.00",
+                "img": {
+                    "small": "http://www.topws.cn/images/201707/thumb_img/6126_thumb_G_1501437142317.jpg",
+                    "url": "http://www.topws.cn/images/201707/source_img/6126_G_1501437142022.jpg",
+                    "thumb": "http://www.topws.cn/images/201707/goods_img/6126_G_1501437142295.jpg"
+                }
+            },
+            {
+                "goods_id": "6124",
+                "goods_name": "就大家大家回到古代好的",
+                "goods_price": "45.00",
+                "formated_goods_price": "￥45.00",
+                "img": {
+                    "small": "http://www.topws.cn/images/201708/thumb_img/6124_thumb_G_1502308684317.jpg",
+                    "url": "http://www.topws.cn/images/201708/source_img/6124_G_1502308684852.jpg",
+                    "thumb": "http://www.topws.cn/images/201708/goods_img/6124_G_1502308684908.jpg"
+                }
+            },
+            {
+                "goods_id": "6115",
+                "goods_name": "5220532052",
+                "goods_price": "45.00",
+                "formated_goods_price": "￥45.00",
+                "img": {
+                    "small": "http://www.topws.cn/images/201707/thumb_img/6115_thumb_G_1500416240955.jpg",
+                    "url": "http://www.topws.cn/images/201707/source_img/6115_G_1500416240704.jpg",
+                    "thumb": "http://www.topws.cn/images/201707/goods_img/6115_G_1500416240911.jpg"
+                }
+            },
+            {
+                "goods_id": "6111",
+                "goods_name": "我的阿斯蒂芬哦啊请问欧日up噢去玩儿",
+                "goods_price": "45.00",
+                "formated_goods_price": "￥45.00",
+                "img": {
+                    "small": "http://www.topws.cn/images/201708/thumb_img/6111_thumb_G_1502145894853.jpg",
+                    "url": "http://www.topws.cn/images/201708/source_img/6111_G_1502145894383.jpg",
+                    "thumb": "http://www.topws.cn/images/201708/goods_img/6111_G_1502145894330.jpg"
+                }
+            },
+            {
+                "goods_id": "6110",
+                "goods_name": "消失后阿斯蒂芬阿斯蒂芬",
+                "goods_price": "45.00",
+                "formated_goods_price": "￥45.00",
+                "img": {
+                    "small": "http://www.topws.cn/images/201708/thumb_img/6110_thumb_G_1502145495425.jpg",
+                    "url": "http://www.topws.cn/images/201708/source_img/6110_G_1502145495781.jpg",
+                    "thumb": "http://www.topws.cn/images/201708/goods_img/6110_G_1502145495554.jpg"
+                }
+            }
+        ],
+        "video": [
+            {
+                "vid": "12",
+                "video_img": "http://www.topws.cn/data/afficheimg/20170925imolzw.png",
+                "title": "测试网红",
+                "anchor_name": "网红",
+                "anchor_img": "http://www.topws.cn/data/afficheimg/20170925gricfj.png"
+            },
+            {
+                "vid": "11",
+                "video_img": "http://www.topws.cn/data/afficheimg/20170916lsbcgo.gif",
+                "title": "测试2017.09.16",
+                "anchor_name": "hana",
+                "anchor_img": "http://www.topws.cn/data/afficheimg/20170916vrpmpp.jpg"
+            },
+            {
+                "vid": "3",
+                "video_img": "http://www.topws.cn/",
+                "title": "限时秒杀H5",
+                "anchor_name": "小桌子",
+                "anchor_img": "http://www.topws.cn/"
+            },
+            {
+                "vid": "2",
+                "video_img": "http://www.topws.cn/",
+                "title": "今日上新",
+                "anchor_name": "小凳子",
+                "anchor_img": "http://www.topws.cn/"
+            }
+        ]
+    },
+    "status": {
+        "succeed": 1
+    },
+    "paginated": {
+        "more": 0
+    }
+}

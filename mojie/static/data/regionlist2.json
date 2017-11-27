@@ -1,0 +1,214 @@
+{
+    "data": {
+        "more": 1,
+        "regions": [
+            {
+                "id": "2",
+                "name": "北京",
+                "parent_id": "1",
+                "level": "1"
+            },
+            {
+                "id": "3",
+                "name": "安徽",
+                "parent_id": "1",
+                "level": "1"
+            },
+            {
+                "id": "4",
+                "name": "福建",
+                "parent_id": "1",
+                "level": "1"
+            },
+            {
+                "id": "5",
+                "name": "甘肃",
+                "parent_id": "1",
+                "level": "1"
+            },
+            {
+                "id": "6",
+                "name": "广东",
+                "parent_id": "1",
+                "level": "1"
+            },
+            {
+                "id": "7",
+                "name": "广西",
+                "parent_id": "1",
+                "level": "1"
+            },
+            {
+                "id": "8",
+                "name": "贵州",
+                "parent_id": "1",
+                "level": "1"
+            },
+            {
+                "id": "9",
+                "name": "海南",
+                "parent_id": "1",
+                "level": "1"
+            },
+            {
+                "id": "10",
+                "name": "河北",
+                "parent_id": "1",
+                "level": "1"
+            },
+            {
+                "id": "11",
+                "name": "河南",
+                "parent_id": "1",
+                "level": "1"
+            },
+            {
+                "id": "12",
+                "name": "黑龙江",
+                "parent_id": "1",
+                "level": "1"
+            },
+            {
+                "id": "13",
+                "name": "湖北",
+                "parent_id": "1",
+                "level": "1"
+            },
+            {
+                "id": "14",
+                "name": "湖南",
+                "parent_id": "1",
+                "level": "1"
+            },
+            {
+                "id": "15",
+                "name": "吉林",
+                "parent_id": "1",
+                "level": "1"
+            },
+            {
+                "id": "16",
+                "name": "江苏",
+                "parent_id": "1",
+                "level": "1"
+            },
+            {
+                "id": "17",
+                "name": "江西",
+                "parent_id": "1",
+                "level": "1"
+            },
+            {
+                "id": "18",
+                "name": "辽宁",
+                "parent_id": "1",
+                "level": "1"
+            },
+            {
+                "id": "19",
+                "name": "内蒙古",
+                "parent_id": "1",
+                "level": "1"
+            },
+            {
+                "id": "20",
+                "name": "宁夏",
+                "parent_id": "1",
+                "level": "1"
+            },
+            {
+                "id": "21",
+                "name": "青海",
+                "parent_id": "1",
+                "level": "1"
+            },
+            {
+                "id": "22",
+                "name": "山东",
+                "parent_id": "1",
+                "level": "1"
+            },
+            {
+                "id": "23",
+                "name": "山西",
+                "parent_id": "1",
+                "level": "1"
+            },
+            {
+                "id": "24",
+                "name": "陕西",
+                "parent_id": "1",
+                "level": "1"
+            },
+            {
+                "id": "25",
+                "name": "上海",
+                "parent_id": "1",
+                "level": "1"
+            },
+            {
+                "id": "26",
+                "name": "四川",
+                "parent_id": "1",
+                "level": "1"
+            },
+            {
+                "id": "27",
+                "name": "天津",
+                "parent_id": "1",
+                "level": "1"
+            },
+            {
+                "id": "28",
+                "name": "西藏",
+                "parent_id": "1",
+                "level": "1"
+            },
+            {
+                "id": "29",
+                "name": "新疆",
+                "parent_id": "1",
+                "level": "1"
+            },
+            {
+                "id": "30",
+                "name": "云南",
+                "parent_id": "1",
+                "level": "1"
+            },
+            {
+                "id": "31",
+                "name": "浙江",
+                "parent_id": "1",
+                "level": "1"
+            },
+            {
+                "id": "32",
+                "name": "重庆",
+                "parent_id": "1",
+                "level": "1"
+            },
+            {
+                "id": "33",
+                "name": "香港",
+                "parent_id": "1",
+                "level": "1"
+            },
+            {
+                "id": "34",
+                "name": "澳门",
+                "parent_id": "1",
+                "level": "1"
+            },
+            {
+                "id": "35",
+                "name": "台湾",
+                "parent_id": "1",
+                "level": "1"
+            }
+        ]
+    },
+    "status": {
+        "succeed": 1
+    }
+}

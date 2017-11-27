@@ -1,0 +1,16 @@
+{
+    "data": {
+        "more": 1,
+        "regions": [
+            {
+                "id": "1",
+                "name": "中国",
+                "parent_id": "0",
+                "level": "0"
+            }
+        ]
+    },
+    "status": {
+        "succeed": 1
+    }
+}

@@ -1,0 +1,73 @@
+{
+    "data": {
+        "order_sn": "2017092914342722853",
+        "add_time": "2017-09-29 14:31:15",
+        "pay_time": "2017-09-30 15:11:53",
+        "goods_amount": "324.00",
+        "shipping_fee": "18.00",
+        "bonus": "100.00",
+        "coupons": "0.00",
+        "discount": "0.00",
+        "discountall": 100,
+        "total_fee": 242,
+        "pay_name": "余额支付",
+        "pay_id": "16",
+        "status_code": "shipped",
+        "label_order_status": "待收货",
+        "order_amount": "0.00",
+        "amount_paid": 242,
+        "group_type": 0,
+        "is_cac": 0,
+        "cac_mobile": "",
+        "cac_address": "",
+        "cac_user_name": "",
+        "consignee": "杭州测试李志鹏",
+        "country": "中国",
+        "province": "安徽",
+        "city": "蚌埠",
+        "district": "西市区",
+        "address": "测试",
+        "zipcode": "",
+        "tel": "",
+        "mobile": "15671278825",
+        "sign_building": "",
+        "invoice_no": "12345678789456123",
+        "shipping_name": "申通快递",
+        "is_commented": 1,
+        "is_showorder": 1,
+        "ret_id": "530",
+        "ceiling": 8,
+        "ceiling_shipping_fee": 18,
+        "can_return": 0,
+        "order_type": 0,
+        "ru_id": "31892",
+        "shop_name": "PM卧龙测试店铺",
+        "goods_list": [
+            {
+                "rec_id": "2488",
+                "goods_id": "6131",
+                "name": "测试测试测试测哎哎哎试",
+                "goods_attr": "1,XXS*3",
+                "goods_price": "108.00",
+                "goods_number": "3",
+                "subtotal": "¥324.00",
+                "ceiling": 8,
+                "shipping_fee": 18,
+                "formated_shop_price": "¥108.00",
+                "is_commented": 0,
+                "return": 0,
+                "return_status": 0,
+                "ret_id": 0,
+                "img": {
+                    "small": "http://www.topws.cn/images/201709/thumb_img/6131_thumb_G_1506301742104.jpg",
+                    "thumb": "http://www.topws.cn/images/201709/goods_img/6131_G_1506301742121.png",
+                    "url": "http://www.topws.cn/images/201709/source_img/6131_G_1506301742055.png"
+                }
+            }
+        ],
+        "is_fifteen": false
+    },
+    "status": {
+        "succeed": 1
+    }
+}

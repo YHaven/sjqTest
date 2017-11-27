@@ -1,0 +1,37 @@
+{
+    "data": {
+        "topic_id": "12",
+        "video_img": "http://www.topws.cn/data/afficheimg/20170925imolzw.png",
+        "video_url": "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4",
+        "title": "",
+        "anchor_name": "",
+        "anchor_img": "http://www.topws.cn/data/afficheimg/20170925gricfj.png",
+        "sub_goods": [
+            {
+                "goods_id": "6110",
+                "goods_name": "消失后阿斯蒂芬阿斯蒂芬",
+                "shop_price": "¥5.02",
+                "promote_price": "",
+                "promote_start_date": "",
+                "promote_end_date": "",
+                "img": {
+                    "small": "http://www.topws.cn/images/201708/thumb_img/6110_thumb_G_1502145495425.jpg",
+                    "url": "http://www.topws.cn/images/201708/source_img/6110_G_1502145495781.jpg",
+                    "thumb": "http://www.topws.cn/images/201708/goods_img/6110_G_1502145495554.jpg"
+                },
+                "activity_type": "GENERAL_GOODS",
+                "object_id": "",
+                "topic_type": "28",
+                "list_type": "0"
+            }
+        ]
+    },
+    "status": {
+        "succeed": 1
+    },
+    "paginated": {
+        "total": 1,
+        "count": 1,
+        "more": 1
+    }
+}
