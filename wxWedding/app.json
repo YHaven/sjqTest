@@ -1,6 +1,6 @@
 {
     "pages":[
-        "pages/my/invitationCardView_temp3/invitationCardView_temp3",
+        
         "pages/index/home/home",
 
         "pages/my/my/my",
@@ -9,6 +9,7 @@
         "pages/my/signIn/signIn",
         "pages/my/invitationStyle/invitationStyle",
         "pages/my/invitationCardView_temp2/invitationCardView_temp2",
+        "pages/my/invitationCardView_temp3/invitationCardView_temp3",
         "pages/my/invitationCard/invitationCard",
         "pages/my/invitationCardEdit/invitationCardEdit",
         
